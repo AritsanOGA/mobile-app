@@ -1,0 +1,61 @@
+name: artisan_oga
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  flutter_svg_provider: ^1.0.7
+  intl: ^0.18.0
+  hive_flutter: ^1.1.0
+  hive: ^2.1.0
+  dio: ^5.4.3+1
+  file_picker: ^6.1.1
+  image_picker: ^1.0.4
+  flutter_easyloading: ^3.0.5
+  path_provider: ^2.1.2
+  fluttertoast: ^8.0.8
+  date_picker_plus: ^3.0.0
+  syncfusion_flutter_datepicker: ^23.2.4
+  flutterwave_standard: ^1.0.8
+  loading_animation_widget: ^1.2.1
+  page_transition: "^2.1.0"
+  
+  
+
+
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/img_cba516f1_4b44_4.png"
+
+
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Poppins
+      fonts: 
+        - asset: assets/fonts/PoppinsMedium.ttf
+          weight: 500
+    - family: Inter
+      fonts: 
+        - asset: assets/fonts/InterSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/InterRegular.ttf
+          weight: 400
+        - asset: assets/fonts/InterMedium.ttf
+          weight: 500
+        - asset: assets/fonts/InterBold.ttf
+          weight: 700
