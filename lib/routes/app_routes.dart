@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../presentation/signup_options_page_screen/signup_options_page_screen.dart';
 import '../presentation/login_options_page_screen/login_options_page_screen.dart';
-import '../presentation/employer_sign_uppage_screen/employer_sign_uppage_screen.dart';
-import '../presentation/employer_signuppage_one_screen/employer_signuppage_one_screen.dart';
+import '../features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
+import '../features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
 import '../presentation/successful_page_screen/successful_page_screen.dart';
-import '../presentation/employer_login_page_screen/employer_login_page_screen.dart';
+import '../features/authentication/presentation/screens/employer_login_page_screen.dart';
 import '../presentation/search_result_page_screen/search_result_page_screen.dart';
 import '../presentation/payments_made_page_screen/payments_made_page_screen.dart';
 import '../presentation/post_job_two_screen/post_job_two_screen.dart';
@@ -24,15 +24,15 @@ import '../presentation/message_page_screen/message_page_screen.dart';
 import '../presentation/message_page_chatting_one_screen/message_page_chatting_one_screen.dart';
 import '../presentation/change_password_page_screen/change_password_page_screen.dart';
 import '../presentation/update_profile_page_screen/update_profile_page_screen.dart';
-import '../presentation/j_s_create_account_page_three_screen/j_s_create_account_page_three_screen.dart';
-import '../presentation/j_s_create_account_page_four_screen/j_s_create_account_page_four_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import '../presentation/j_s_create_account_page_five_screen/j_s_create_account_page_five_screen.dart';
 import '../presentation/j_s_create_account_page_six_screen/j_s_create_account_page_six_screen.dart';
 import '../presentation/j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
 import '../presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
 import '../presentation/j_s_create_account_page_one_screen/j_s_create_account_page_one_screen.dart';
 import '../presentation/verification_page_one_screen/verification_page_one_screen.dart';
-import '../presentation/j_s_login_page_screen/j_s_login_page_screen.dart';
+import '../features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import '../presentation/dashboard_screen/dashboard_screen.dart';
 import '../presentation/search_job_result_page_screen/search_job_result_page_screen.dart';
 import '../presentation/notification_bar_page_screen/notification_bar_page_screen.dart';
@@ -205,14 +205,14 @@ class AppRoutes {
     messagePageChattingOneScreen: (context) => MessagePageChattingOneScreen(),
     changePasswordPageScreen: (context) => ChangePasswordPageScreen(),
     //updateProfilePageScreen: (context) => UpdateProfilePageScreen(),
-    jSCreateAccountPageThreeScreen: (context) =>
-        JSCreateAccountPageThreeScreen(),
-    jSCreateAccountPageFourScreen: (context) => JSCreateAccountPageFourScreen(),
+    // jSCreateAccountPageThreeScreen: (context) =>
+    //     JSCreateAccountPageThreeScreen(),
+    // jSCreateAccountPageFourScreen: (context) => JSCreateAccountPageFourScreen(),
     jSCreateAccountPageFiveScreen: (context) => JSCreateAccountPageFiveScreen(),
     jSCreateAccountPageSixScreen: (context) => JSCreateAccountPageSixScreen(),
     jSCreateAccountPageScreen: (context) => JSCreateAccountPageScreen(),
     jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageTwoScreen(),
-    jSCreateAccountPageOneScreen: (context) => JSCreateAccountPageOneScreen(),
+    // jSCreateAccountPageOneScreen: (context) => JSCreateAccountPageOneScreen(),
     verificationPageOneScreen: (context) => VerificationPageOneScreen(),
     jSLoginPageScreen: (context) => JSLoginPageScreen(),
     dashboardScreen: (context) => DashboardPage(),

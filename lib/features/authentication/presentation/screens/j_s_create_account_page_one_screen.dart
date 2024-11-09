@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:artisan_oga/presentation/j_s_login_page_screen/j_s_login_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -11,17 +11,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../j_s_create_account_page_four_screen/j_s_create_account_page_four_screen.dart';
+import 'j_s_create_account_page_two_screen.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageThreeScreen extends StatefulWidget {
+class JSCreateAccountPageOneScreen extends StatefulWidget {
   @override
-  _JSCreateAccountPageThreeScreenState createState() =>
-      _JSCreateAccountPageThreeScreenState();
+  _JSCreateAccountPageOneScreenState createState() =>
+      _JSCreateAccountPageOneScreenState();
 }
 
-class _JSCreateAccountPageThreeScreenState
-    extends State<JSCreateAccountPageThreeScreen> {
+class _JSCreateAccountPageOneScreenState
+    extends State<JSCreateAccountPageOneScreen> {
   // Declare any variables or state properties here
 
   TextEditingController firstNameController = TextEditingController();
@@ -347,19 +347,24 @@ class _JSCreateAccountPageThreeScreenState
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => JSCreateAccountPageFourScreen()),
+                    builder: (context) => JSCreateAccountPagetTwoScreen()),
               );
             }
           } else {
-            Fluttertoast.showToast(
-                msg: "Fill in all fields",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                timeInSecForIosWeb: 1,
-                backgroundColor:
-                    const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
-                textColor: Colors.white,
-                fontSize: 16.0);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => JSCreateAccountPagetTwoScreen()),
+              );
+            // Fluttertoast.showToast(
+            //     msg: "Fill in all fields",
+            //     toastLength: Toast.LENGTH_SHORT,
+            //     gravity: ToastGravity.CENTER,
+            //     timeInSecForIosWeb: 1,
+            //     backgroundColor:
+            //         const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
+            //     textColor: Colors.white,
+            //     fontSize: 16.0);
           }
         }),
         text: "Next",

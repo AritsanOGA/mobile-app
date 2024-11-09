@@ -1,4 +1,4 @@
-import 'package:artisan_oga/presentation/employer_sign_uppage_screen/employer_sign_uppage_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
 import 'package:artisan_oga/presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -6,7 +6,7 @@ import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../j_s_create_account_page_three_screen/j_s_create_account_page_three_screen.dart';
+import '../../features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
 
 class SignupOptionsPageScreen extends StatelessWidget {
   const SignupOptionsPageScreen({Key? key})
@@ -68,7 +68,7 @@ class SignupOptionsPageScreen extends StatelessWidget {
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
                             duration: Durations.long1,
-                            child: JSCreateAccountPageThreeScreen()));
+                            child: JSCreateAccountPageOneScreen()));
                   }),
                   height: 51.v,
                   text: "Register as a job seeker",

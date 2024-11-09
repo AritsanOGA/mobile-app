@@ -1,9 +1,9 @@
-import 'package:artisan_oga/presentation/j_s_login_page_screen/j_s_login_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 
-import '../employer_login_page_screen/employer_login_page_screen.dart';
+import '../../features/authentication/presentation/screens/employer_login_page_screen.dart';
 
 class LoginOptionsPageScreen extends StatelessWidget {
   const LoginOptionsPageScreen({Key? key})

@@ -1,7 +1,7 @@
 import 'package:artisan_oga/presentation/awards/view.dart';
 import 'package:artisan_oga/presentation/education/view.dart';
 import 'package:artisan_oga/presentation/experience/view.dart';
-import 'package:artisan_oga/presentation/j_s_login_page_screen/j_s_login_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/presentation/update_profile_page_one_screen/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';

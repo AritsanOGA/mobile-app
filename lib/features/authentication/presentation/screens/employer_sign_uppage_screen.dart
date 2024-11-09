@@ -1,5 +1,5 @@
-import 'package:artisan_oga/presentation/employer_login_page_screen/employer_login_page_screen.dart';
-import 'package:artisan_oga/presentation/employer_signuppage_one_screen/employer_signuppage_one_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';
@@ -12,8 +12,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../services/auth.dart';
-import '../../services/default.dart';
+import '../../../../services/auth.dart';
+import '../../../../services/default.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerSignUpPageScreen extends StatefulWidget {

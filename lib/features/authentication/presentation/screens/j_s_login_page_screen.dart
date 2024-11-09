@@ -1,5 +1,5 @@
 import 'package:artisan_oga/presentation/dashboard_screen/dashboard_screen.dart';
-import 'package:artisan_oga/presentation/j_s_create_account_page_four_screen/j_s_create_account_page_four_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -8,7 +8,7 @@ import 'package:artisan_oga/widgets/custom_text_form_field.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import '../j_s_create_account_page_three_screen/j_s_create_account_page_three_screen.dart';
+import 'j_s_create_account_page_one_screen.dart';
 
 class JSLoginPageScreen extends StatefulWidget {
   JSLoginPageScreen({Key? key}) : super(key: key);
@@ -193,7 +193,7 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                JSCreateAccountPageThreeScreen()),
+                                JSCreateAccountPagetTwoScreen()),
                       );
                     }),
                     child: RichText(

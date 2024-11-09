@@ -5,20 +5,20 @@ import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/widgets/custom_text_form_field.dart';
 import 'package:hive/hive.dart';
 
-import '../j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
+import '../../../../presentation/j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
+import '../../../../presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageSixScreen extends StatefulWidget {
-  JSCreateAccountPageSixScreen({Key? key}) : super(key: key);
+class JSCreateAccountPageFourScreen extends StatefulWidget {
+  JSCreateAccountPageFourScreen({Key? key}) : super(key: key);
 
   @override
-  _JSCreateAccountPageSixScreenState createState() =>
-      _JSCreateAccountPageSixScreenState();
+  _JSCreateAccountPageFourScreenState createState() =>
+      _JSCreateAccountPageFourScreenState();
 }
 
-class _JSCreateAccountPageSixScreenState
-    extends State<JSCreateAccountPageSixScreen> {
+class _JSCreateAccountPageFourScreenState
+    extends State<JSCreateAccountPageFourScreen> {
   List<String> dropdownItemList = ["Yes, I do", "No Work Experience"];
   List<String> commutTypeList = ["Remote", "Hybrid", "Onsite"];
 

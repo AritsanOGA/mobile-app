@@ -8,18 +8,18 @@ import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../services/default.dart';
-import '../j_s_create_account_page_five_screen/j_s_create_account_page_five_screen.dart';
+import '../../../../services/default.dart';
+import '../../../../presentation/j_s_create_account_page_five_screen/j_s_create_account_page_five_screen.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageFourScreen extends StatefulWidget {
+class JSCreateAccountPagetTwoScreen extends StatefulWidget {
   @override
-  _JSCreateAccountPageFourScreenState createState() =>
-      _JSCreateAccountPageFourScreenState();
+  _JSCreateAccountPagetTwoScreenState createState() =>
+      _JSCreateAccountPagetTwoScreenState();
 }
 
-class _JSCreateAccountPageFourScreenState
-    extends State<JSCreateAccountPageFourScreen> {
+class _JSCreateAccountPagetTwoScreenState
+    extends State<JSCreateAccountPagetTwoScreen> {
   // Declare any variables or state properties here
 
   TextEditingController streetaddressController = TextEditingController();
@@ -284,16 +284,21 @@ class _JSCreateAccountPageFourScreenState
                                         JSCreateAccountPageFiveScreen()),
                               );
                             } else {
-                              Fluttertoast.showToast(
-                                  msg: "Please fill all fields properly",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.CENTER,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 86, 86, 86)
-                                          .withOpacity(0.6),
-                                  textColor: Colors.white,
-                                  fontSize: 16.0);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          JSCreateAccountPageFiveScreen()));
+                              // Fluttertoast.showToast(
+                              //     msg: "Please fill all fields properly",
+                              //     toastLength: Toast.LENGTH_SHORT,
+                              //     gravity: ToastGravity.CENTER,
+                              //     timeInSecForIosWeb: 1,
+                              //     backgroundColor:
+                              //         const Color.fromARGB(255, 86, 86, 86)
+                              //             .withOpacity(0.6),
+                              //     textColor: Colors.white,
+                              //     fontSize: 16.0);
                             }
                           }),
                           text: "Next",
