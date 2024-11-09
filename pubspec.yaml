@@ -23,6 +23,10 @@ dependencies:
   flutterwave_standard: ^1.0.8
   loading_animation_widget: ^1.2.1
   page_transition: "^2.1.0"
+  logger: ^2.4.0
+  connectivity_plus: ^6.1.0
+  equatable: ^2.0.5
+  dartz: ^0.10.1
   
   
 

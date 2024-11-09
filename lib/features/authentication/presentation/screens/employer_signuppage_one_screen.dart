@@ -1,21 +1,21 @@
 import 'dart:io';
 
-import 'package:artisan_oga/services/auth.dart';
+import 'package:artisan_oga/core/services/auth.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_title.dart';
-import 'package:artisan_oga/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/widgets/custom_drop_down.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_title.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../services/default.dart';
+import '../../../../core/services/default.dart';
 import '../../../../presentation/js_account_create_success/js_account_create_success.dart';
 
 // ignore_for_file: must_be_immutable

@@ -2,7 +2,7 @@ import 'package:artisan_oga/presentation/login_options_page_screen/login_options
 import 'package:artisan_oga/presentation/signup_options_page_screen/signup_options_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:page_transition/page_transition.dart';
 
 class WelcomePageScreen extends StatelessWidget {

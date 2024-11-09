@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
 
-import '../../core/utils/format_text.dart';
-import '../../services/candidates.dart';
+import '../../core/utils/app_formatter.dart';
+import '../../core/services/candidates.dart';
 
 class ViewAwardsPage extends StatefulWidget {
   @override

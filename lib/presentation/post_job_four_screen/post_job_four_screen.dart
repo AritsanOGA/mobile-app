@@ -1,8 +1,8 @@
-import 'package:artisan_oga/services/employers.dart';
-import 'package:artisan_oga/widgets/custom_radio_button.dart';
+import 'package:artisan_oga/core/services/employers.dart';
+import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../services/auth.dart';
+import '../../core/services/auth.dart';
 import '../payment_page_screen/payment_page_screen.dart';
 
 class PostJobFourScreen extends StatefulWidget {

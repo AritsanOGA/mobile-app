@@ -4,9 +4,9 @@ import 'package:artisan_oga/features/authentication/presentation/screens/j_s_log
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_drop_down.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';

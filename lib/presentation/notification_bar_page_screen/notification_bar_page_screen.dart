@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';import 'package:artisan_oga/core/app_export.dart';import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';import 'package:artisan_oga/widgets/app_bar/appbar_subtitle.dart';import 'package:artisan_oga/widgets/app_bar/custom_app_bar.dart';import 'package:artisan_oga/widgets/custom_bottom_bar.dart';import 'widgets/joblisting_item_widget.dart';
+import 'package:flutter/material.dart';import 'package:artisan_oga/core/app_export.dart';import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';import 'package:artisan_oga/shared/widgets/custom_bottom_bar.dart';import 'widgets/joblisting_item_widget.dart';
 // ignore_for_file: must_be_immutable
 class NotificationBarPageScreen extends StatelessWidget {NotificationBarPageScreen({Key? key}) : super(key: key);
 

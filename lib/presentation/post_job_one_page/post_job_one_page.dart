@@ -1,17 +1,17 @@
 import 'package:artisan_oga/presentation/post_job_two_screen/post_job_two_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/widgets/custom_icon_button.dart';
-import 'package:artisan_oga/widgets/custom_radio_button.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../services/default.dart';
-import '../../widgets/custom_elevated_button.dart';
+import '../../core/services/default.dart';
+import '../../shared/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class PostJobOnePage extends StatefulWidget {

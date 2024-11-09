@@ -1,20 +1,20 @@
 import 'package:artisan_oga/presentation/employer_dashboard_page/employer_dashboard_page.dart';
-import 'package:artisan_oga/services/auth.dart';
+import 'package:artisan_oga/core/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../services/default.dart';
-import '../../widgets/custom_drop_down.dart';
+import '../../core/services/default.dart';
+import '../../shared/widgets/custom_drop_down.dart';
 
 // ignore_for_file: must_be_immutable
 class UpdateProfilePageOneScreen extends StatefulWidget {

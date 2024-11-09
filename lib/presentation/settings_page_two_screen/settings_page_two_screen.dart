@@ -5,7 +5,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/j_s_log
 import 'package:artisan_oga/presentation/update_profile_page_one_screen/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_bottom_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_bottom_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';

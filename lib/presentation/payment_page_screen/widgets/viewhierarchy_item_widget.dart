@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutterwave_standard/core/TransactionCallBack.dart';
@@ -21,7 +21,7 @@ import 'package:flutterwave_standard/view/view_utils.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../../services/employers.dart';
+import '../../../core/services/employers.dart';
 import '../../employer_dashboard_page/employer_dashboard_page.dart';
 
 // ignore: must_be_immutable

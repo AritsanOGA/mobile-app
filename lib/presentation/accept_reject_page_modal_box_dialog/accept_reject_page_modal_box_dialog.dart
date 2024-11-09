@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_drop_down.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class AcceptRejectPageModalBoxDialog extends StatelessWidget {
