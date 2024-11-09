@@ -5,8 +5,8 @@ import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/widgets/custom_text_form_field.dart';
 import 'package:hive/hive.dart';
 
-import '../../../../presentation/j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../../../../presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
+import 'j_s_create_account_page_six_screen.dart';
+import 'j_s_create_account_page_five_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFourScreen extends StatefulWidget {
@@ -257,7 +257,7 @@ class _JSCreateAccountPageFourScreenState
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          JSCreateAccountPageTwoScreen()),
+                                          JSCreateAccountPageFiveScreen()),
                                 );
                               }),
                               text: "Next",

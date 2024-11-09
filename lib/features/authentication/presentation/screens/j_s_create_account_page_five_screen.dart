@@ -12,22 +12,22 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../services/auth.dart';
-import '../../services/default.dart';
-import '../j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../js_account_create_success/js_account_create_success.dart';
+import '../../../../services/auth.dart';
+import '../../../../services/default.dart';
+import 'j_s_create_account_page_six_screen.dart';
+import '../../../../presentation/js_account_create_success/js_account_create_success.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageTwoScreen extends StatefulWidget {
-  JSCreateAccountPageTwoScreen({Key? key}) : super(key: key);
+class JSCreateAccountPageFiveScreen extends StatefulWidget {
+  JSCreateAccountPageFiveScreen({Key? key}) : super(key: key);
 
   @override
-  _JSCreateAccountPageTwoScreenState createState() =>
-      _JSCreateAccountPageTwoScreenState();
+  _JSCreateAccountPageFiveScreenState createState() =>
+      _JSCreateAccountPageFiveScreenState();
 }
 
-class _JSCreateAccountPageTwoScreenState
-    extends State<JSCreateAccountPageTwoScreen> {
+class _JSCreateAccountPageFiveScreenState
+    extends State<JSCreateAccountPageFiveScreen> {
   List<String> dropdownItemList = ["Item One", "Item Two", "Item Three"];
 
   TextEditingController yearsOfExperienceEditTextController =

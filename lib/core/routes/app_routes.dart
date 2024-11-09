@@ -26,10 +26,10 @@ import '../presentation/change_password_page_screen/change_password_page_screen.
 import '../presentation/update_profile_page_screen/update_profile_page_screen.dart';
 import '../features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
 import '../features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
-import '../presentation/j_s_create_account_page_five_screen/j_s_create_account_page_five_screen.dart';
-import '../presentation/j_s_create_account_page_six_screen/j_s_create_account_page_six_screen.dart';
-import '../presentation/j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
+import '../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
 import '../presentation/j_s_create_account_page_one_screen/j_s_create_account_page_one_screen.dart';
 import '../presentation/verification_page_one_screen/verification_page_one_screen.dart';
 import '../features/authentication/presentation/screens/j_s_login_page_screen.dart';
@@ -208,10 +208,10 @@ class AppRoutes {
     // jSCreateAccountPageThreeScreen: (context) =>
     //     JSCreateAccountPageThreeScreen(),
     // jSCreateAccountPageFourScreen: (context) => JSCreateAccountPageFourScreen(),
-    jSCreateAccountPageFiveScreen: (context) => JSCreateAccountPageFiveScreen(),
-    jSCreateAccountPageSixScreen: (context) => JSCreateAccountPageSixScreen(),
-    jSCreateAccountPageScreen: (context) => JSCreateAccountPageScreen(),
-    jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageTwoScreen(),
+    // jSCreateAccountPageFiveScreen: (context) => JSCreateAccountPageFiveScreen(),
+    jSCreateAccountPageSixScreen: (context) => JSCreateAccountPageFourScreen(),
+    jSCreateAccountPageScreen: (context) => JSCreateAccountPageFiveScreen(),
+    jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageFiveScreen(),
     // jSCreateAccountPageOneScreen: (context) => JSCreateAccountPageOneScreen(),
     verificationPageOneScreen: (context) => VerificationPageOneScreen(),
     jSLoginPageScreen: (context) => JSLoginPageScreen(),

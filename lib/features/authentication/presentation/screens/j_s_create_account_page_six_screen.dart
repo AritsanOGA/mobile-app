@@ -4,8 +4,8 @@ import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageScreen extends StatelessWidget {
-  JSCreateAccountPageScreen({Key? key}) : super(key: key);
+class JSCreateAccountPageSixScreen extends StatelessWidget {
+  JSCreateAccountPageSixScreen({Key? key}) : super(key: key);
 
   TextEditingController nameController = TextEditingController();
 

@@ -351,11 +351,11 @@ class _JSCreateAccountPageOneScreenState
               );
             }
           } else {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => JSCreateAccountPagetTwoScreen()),
-              );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => JSCreateAccountPagetTwoScreen()),
+            );
             // Fluttertoast.showToast(
             //     msg: "Fill in all fields",
             //     toastLength: Toast.LENGTH_SHORT,

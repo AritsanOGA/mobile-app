@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../../../../services/default.dart';
-import '../../../../presentation/j_s_create_account_page_five_screen/j_s_create_account_page_five_screen.dart';
+import 'j_s_create_account_page_three_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPagetTwoScreen extends StatefulWidget {
@@ -281,14 +281,14 @@ class _JSCreateAccountPagetTwoScreenState
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        JSCreateAccountPageFiveScreen()),
+                                        JSCreateAccountPagetThreeScreen()),
                               );
                             } else {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          JSCreateAccountPageFiveScreen()));
+                                          JSCreateAccountPagetThreeScreen()));
                               // Fluttertoast.showToast(
                               //     msg: "Please fill all fields properly",
                               //     toastLength: Toast.LENGTH_SHORT,

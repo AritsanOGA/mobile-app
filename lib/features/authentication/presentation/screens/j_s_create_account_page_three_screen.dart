@@ -8,17 +8,17 @@ import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../j_s_create_account_page_six_screen/j_s_create_account_page_six_screen.dart';
+import 'j_s_create_account_page_four_screen.dart';
 
 // ignore_for_file: must_be_immutable
-class JSCreateAccountPageFiveScreen extends StatefulWidget {
+class JSCreateAccountPagetThreeScreen extends StatefulWidget {
   @override
-  _JSCreateAccountPageFiveScreenState createState() =>
-      _JSCreateAccountPageFiveScreenState();
+  _JSCreateAccountPagetThreeScreenState createState() =>
+      _JSCreateAccountPagetThreeScreenState();
 }
 
-class _JSCreateAccountPageFiveScreenState
-    extends State<JSCreateAccountPageFiveScreen> {
+class _JSCreateAccountPagetThreeScreenState
+    extends State<JSCreateAccountPagetThreeScreen> {
   //
   List<String> dropdownItemList = ["Yes", "No Education"];
 
@@ -250,7 +250,7 @@ class _JSCreateAccountPageFiveScreenState
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          JSCreateAccountPageSixScreen()),
+                                          JSCreateAccountPageFourScreen()),
                                 );
                               }),
                               text: "Next",
