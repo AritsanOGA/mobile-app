@@ -60,6 +60,7 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                   ),
                   SizedBox(height: 7.v),
                   CustomTextFormField(
+                       title:'Password' ,
                     controller: emailController,
                     hintText: "example@gmail.com",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -75,6 +76,7 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                   ),
                   SizedBox(height: 6.v),
                   CustomTextFormField(
+                       title:'Password' ,
                     controller: passwordController,
                     hintText: "*************",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -184,7 +186,7 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                       }
                     }),
                     text: "Log in",
-                    buttonTextStyle: CustomTextStyles.titleMediumGray5001,
+                  
                   ),
                   SizedBox(height: 27.v),
                   GestureDetector(

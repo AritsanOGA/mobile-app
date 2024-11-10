@@ -51,11 +51,11 @@ class LoginOptionsPageScreen extends StatelessWidget {
                           builder: (context) => EmployerLoginPageScreen()),
                     );
                   }),
-                  height: 51.v,
+             
                   text: "Login as an Employer",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle:
-                      CustomTextStyles.titleLargeOnPrimaryContainer,
+                  // buttonStyle: CustomButtonStyles.outlineGray,
+                  // buttonTextStyle:
+                  //     CustomTextStyles.titleLargeOnPrimaryContainer,
                 ),
                 SizedBox(height: 16.v),
                 CustomElevatedButton(
@@ -66,10 +66,9 @@ class LoginOptionsPageScreen extends StatelessWidget {
                           builder: (context) => JSLoginPageScreen()),
                     );
                   }),
-                  height: 51.v,
+                  
                   text: "Login as a job seeker",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle: CustomTextStyles.titleLargeGray50,
+               
                 ),
                 SizedBox(height: 63.v),
                 SizedBox(

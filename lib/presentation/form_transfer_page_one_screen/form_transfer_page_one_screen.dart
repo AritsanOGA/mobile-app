@@ -113,6 +113,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSelectBankvalue(BuildContext context) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: selectBankvalueController,
         hintText: "Select Bank",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -121,6 +122,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildTypeofPayment(BuildContext context) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: typeofPaymentController,
         hintText: "Type of Payment",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -129,6 +131,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSelectPackagevalue(BuildContext context) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: selectPackagevalueController,
         hintText: "Select Package",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -145,6 +148,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 9.v),
               CustomTextFormField(
+                title:'Password' ,
                   width: 180.h,
                   controller: dateController,
                   hintText: "e.g 10 candidates",
@@ -163,6 +167,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 9.v),
               CustomTextFormField(
+                title:'Password' ,
                   width: 180.h,
                   controller: amountController,
                   hintText: "e.g NGN 25,000.00",
@@ -188,6 +193,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 8.v),
               CustomTextFormField(
+                title:'Password' ,
                   width: 180.h,
                   controller: nameController,
                   hintText: "Enter depositor’s name",
@@ -208,6 +214,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 10.v),
               CustomTextFormField(
+                title:'Password' ,
                   width: 180.h,
                   controller: locationController,
                   hintText: "Enter your Location",
@@ -224,7 +231,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildInputTeller(BuildContext context) {
-    return CustomTextFormField(
+    return CustomTextFormField(title:'Password' ,
         controller: inputTellerController,
         hintText: "Input Teller",
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -233,7 +240,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildSubmit(BuildContext context) {
-    return CustomElevatedButton(text: "Submit");
+    return CustomElevatedButton(text: "Submit", onPressed: () {  },);
   }
 
   /// Navigates back to the previous screen.

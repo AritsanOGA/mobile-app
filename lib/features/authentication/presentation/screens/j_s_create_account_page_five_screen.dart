@@ -132,7 +132,7 @@ class _JSCreateAccountPageFiveScreenState
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
+                      child: CustomTextFormField(   title:'Password' ,
                           controller: guarantorNameController,
                           hintText: "Guarantor name",
                           hintStyle: theme.textTheme.titleSmall!)),
@@ -147,7 +147,7 @@ class _JSCreateAccountPageFiveScreenState
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
+                      child: CustomTextFormField(   title:'Password' ,
                           textInputType: TextInputType.emailAddress,
                           controller: guarantorEmailController,
                           hintText: "Guarantor email",
@@ -162,7 +162,7 @@ class _JSCreateAccountPageFiveScreenState
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
+                      child: CustomTextFormField(   title:'Password' ,
                           textInputType: TextInputType.phone,
                           controller: guarantorPhoneController,
                           hintText: "Guarantor phone",
@@ -177,7 +177,7 @@ class _JSCreateAccountPageFiveScreenState
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
+                      child: CustomTextFormField(   title:'Password' ,
                           controller: guarantorAddressController,
                           hintText: "Guarantor address",
                           hintStyle: theme.textTheme.titleSmall!)),
@@ -233,11 +233,10 @@ class _JSCreateAccountPageFiveScreenState
         onPressed: (() {
           pickImage();
         }),
-        height: 34.v,
-        width: 80.h,
+
         text: "Choose File",
-        buttonStyle: CustomButtonStyles.fillBlueGray,
-        buttonTextStyle: theme.textTheme.labelMedium!);
+
+        );
   }
 
   /// Section Widget
@@ -246,11 +245,10 @@ class _JSCreateAccountPageFiveScreenState
         onPressed: (() {
           pickResumeFile();
         }),
-        height: 34.v,
-        width: 80.h,
+   
         text: "Choose File",
-        buttonStyle: CustomButtonStyles.fillBlueGray,
-        buttonTextStyle: theme.textTheme.labelMedium!);
+    
+        );
   }
 
   /// Section Widget
@@ -485,7 +483,7 @@ class _JSCreateAccountPageFiveScreenState
                   });
         }),
         text: "Finish",
-        margin: EdgeInsets.symmetric(horizontal: 3.h));
+        );
   }
 
   /// Navigates back to the previous screen.

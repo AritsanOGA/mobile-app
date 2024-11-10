@@ -126,6 +126,7 @@ class JSCreateAccountPageOneScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+          title:'Password' ,
             controller: nameController,
             hintText: "Enter Guarantor’s Name",
             hintStyle: theme.textTheme.titleSmall!));
@@ -136,6 +137,7 @@ class JSCreateAccountPageOneScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+          title:'Password' ,
             controller: emailController,
             hintText: "Enter Guarantor’s Email",
             hintStyle: theme.textTheme.titleSmall!,
@@ -147,6 +149,7 @@ class JSCreateAccountPageOneScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+          title:'Password' ,
             controller: addressController,
             hintText: "Enter Residential Address",
             hintStyle: theme.textTheme.titleSmall!,
@@ -156,7 +159,7 @@ class JSCreateAccountPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSubmit(BuildContext context) {
     return CustomElevatedButton(
-        text: "Submit", margin: EdgeInsets.symmetric(horizontal: 3.h));
+        text: "Submit",  onPressed: () {  },);
   }
 
   /// Navigates back to the previous screen.

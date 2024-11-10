@@ -55,28 +55,42 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
                               Align(
                                   alignment: Alignment.center,
                                   child: Text(
-                                      "Hi, enter your email and password to create a new account",
+                                      "Hi, Kindly fill your information below",
                                       style: theme.textTheme.bodyMedium)),
-                              SizedBox(height: 31.v),
-                              Text("Email",
-                                  style: CustomTextStyles
-                                      .bodyMediumPrimaryContainer_1),
-                              SizedBox(height: 7.v),
-                              _buildEmailField(context),
-                              SizedBox(height: 28.v),
-                              Text("Password",
-                                  style: CustomTextStyles
-                                      .bodyMediumPrimaryContainer_1),
-                              SizedBox(height: 6.v),
-                              _buildPasswordField(context),
-                              SizedBox(height: 27.v),
-                              Text("Confirm Password",
-                                  style: CustomTextStyles
-                                      .bodyMediumPrimaryContainer_1),
-                              SizedBox(height: 7.v),
-                              _buildConfirmPasswordField(context),
+                              SizedBox(height: 35.v),
+                              CustomTextFormField(
+                                title: 'Email',
+                                hintText: 'example@gmail.com',
+                              ),
+
+                              SizedBox(height: 32.v),
+
+                              CustomTextFormField(
+                                title: 'Password',
+                                hintText: '*************',
+                                isPassword: true,
+                              ),
+
+                              SizedBox(height: 32.v),
+
+                              CustomTextFormField(
+                                title: 'Confirm Password',
+                                hintText: '*************',
+                                isPassword: true,
+                              ),
                               SizedBox(height: 44.v),
-                              _buildNextButton(context),
+                              CustomElevatedButton(
+                                text: 'Next',
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          type: PageTransitionType.bottomToTop,
+                                          child:
+                                              EmployerSignuppageOneScreen()));
+                                },
+                              ),
+                              //_buildNextButton(context),
                               SizedBox(height: 27.v),
                               Align(
                                   alignment: Alignment.center,
@@ -131,6 +145,7 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
   /// Section Widget
   Widget _buildEmailField(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: _emailFieldController,
         hintText: "example@gmail.com",
         hintStyle: theme.textTheme.titleSmall!,
@@ -140,6 +155,7 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
   /// Section Widget
   Widget _buildPasswordField(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: _passwordFieldController,
         hintText: "*************",
         textInputType: TextInputType.visiblePassword,
@@ -157,6 +173,7 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
   /// Section Widget
   Widget _buildConfirmPasswordField(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: _confirmPasswordFieldController,
         hintText: "*************",
         hintStyle: theme.textTheme.titleSmall!,
@@ -176,74 +193,62 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
   /// Section Widget
   Widget _buildNextButton(BuildContext context) {
     return CustomElevatedButton(
-        onPressed: (() {
-          if (_emailFieldController.text.isNotEmpty &&
-              _passwordFieldController.text.isNotEmpty &&
-              _confirmPasswordFieldController.text.isNotEmpty) {
-            if (_passwordFieldController.text ==
-                _confirmPasswordFieldController.text) {
-              var newEmployerInfo = [
-                _emailFieldController.text,
-                _passwordFieldController.text
-              ];
+      onPressed: (() {
+        if (_emailFieldController.text.isNotEmpty &&
+            _passwordFieldController.text.isNotEmpty &&
+            _confirmPasswordFieldController.text.isNotEmpty) {
+          if (_passwordFieldController.text ==
+              _confirmPasswordFieldController.text) {
+            var newEmployerInfo = [
+              _emailFieldController.text,
+              _passwordFieldController.text
+            ];
 
-              EasyLoading.show();
-              Auth()
-                  .checkEmailExists(
-                    email: _emailFieldController.text,
-                  )
-                  .then((value) => {
-                        //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
-                        if (value == "EXISTS")
-                          {
-                            print(value.toString()),
-                            EasyLoading.dismiss(),
-                            Fluttertoast.showToast(
-                                msg:
-                                    "That email is already in use, try another",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor:
-                                    const Color.fromARGB(255, 86, 86, 86)
-                                        .withOpacity(0.6),
-                                textColor: Colors.white,
-                                fontSize: 16.0),
+            EasyLoading.show();
+            Auth()
+                .checkEmailExists(
+                  email: _emailFieldController.text,
+                )
+                .then((value) => {
+                      //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
+                      if (value == "EXISTS")
+                        {
+                          print(value.toString()),
+                          EasyLoading.dismiss(),
+                          Fluttertoast.showToast(
+                              msg: "That email is already in use, try another",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.CENTER,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor:
+                                  const Color.fromARGB(255, 86, 86, 86)
+                                      .withOpacity(0.6),
+                              textColor: Colors.white,
+                              fontSize: 16.0),
 
-                            // Navigator.pushNamed(context, EmployerLogin()),
-                          }
-                        else
-                          {
-                            print(value.toString()),
-                            //  Navigator.pop(context),
-                            EasyLoading.dismiss(),
-                            // Navigator.pop(context),
-                            //  EasyLoading.showToast(value.toString())
+                          // Navigator.pushNamed(context, EmployerLogin()),
+                        }
+                      else
+                        {
+                          print(value.toString()),
+                          //  Navigator.pop(context),
+                          EasyLoading.dismiss(),
+                          // Navigator.pop(context),
+                          //  EasyLoading.showToast(value.toString())
 
-                            Hive.box("artisan")
-                                .put("new_employer_info", newEmployerInfo),
+                          Hive.box("artisan")
+                              .put("new_employer_info", newEmployerInfo),
 
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.bottomToTop,
-                                    child: EmployerSignuppageOneScreen()))
-                          }
-                      });
-            } else {
-              Fluttertoast.showToast(
-                  msg: "Please confirm your password properly!",
-                  toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.CENTER,
-                  timeInSecForIosWeb: 1,
-                  backgroundColor:
-                      const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
-                  textColor: Colors.white,
-                  fontSize: 16.0);
-            }
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.bottomToTop,
+                                  child: EmployerSignuppageOneScreen()))
+                        }
+                    });
           } else {
             Fluttertoast.showToast(
-                msg: "Please fill all fields",
+                msg: "Please confirm your password properly!",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.CENTER,
                 timeInSecForIosWeb: 1,
@@ -252,9 +257,20 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
                 textColor: Colors.white,
                 fontSize: 16.0);
           }
-        }),
-        text: "Next",
-        buttonTextStyle: CustomTextStyles.titleMediumGray5001);
+        } else {
+          Fluttertoast.showToast(
+              msg: "Please fill all fields",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              timeInSecForIosWeb: 1,
+              backgroundColor:
+                  const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
+              textColor: Colors.white,
+              fontSize: 16.0);
+        }
+      }),
+      text: "Next",
+    );
   }
 
   /// Navigates back to the previous screen.

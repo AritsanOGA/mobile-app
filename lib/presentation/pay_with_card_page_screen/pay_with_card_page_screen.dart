@@ -87,6 +87,7 @@ class PayWithCardPageScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+          title:'Password' ,
             controller: enterDigitPinController,
             hintText: "Enter your 6 Digit Pin",
             hintStyle: theme.textTheme.titleSmall!,
@@ -107,6 +108,7 @@ class PayWithCardPageScreen extends StatelessWidget {
         child: Padding(
             padding: EdgeInsets.only(right: 10.h),
             child: CustomTextFormField(
+              title:'Password' ,
                 controller: dateController,
                 hintText: "Expire Date",
                 hintStyle: theme.textTheme.titleSmall!,
@@ -128,6 +130,7 @@ class PayWithCardPageScreen extends StatelessWidget {
         child: Padding(
             padding: EdgeInsets.only(left: 10.h),
             child: CustomTextFormField(
+              title:'Password' ,
                 controller: cwController,
                 hintText: "CW",
                 hintStyle: theme.textTheme.titleSmall!,
@@ -157,6 +160,7 @@ class PayWithCardPageScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+          title:'Password' ,
             controller: yourDigitPinController,
             hintText: "Your 4 Digit Pin",
             hintStyle: theme.textTheme.titleSmall!,
@@ -190,7 +194,7 @@ class PayWithCardPageScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildMakePayment(BuildContext context) {
     return CustomElevatedButton(
-        text: "Make Payment", margin: EdgeInsets.symmetric(horizontal: 3.h));
+        text: "Make Payment", onPressed: () {  },);
   }
 
   /// Navigates back to the previous screen.

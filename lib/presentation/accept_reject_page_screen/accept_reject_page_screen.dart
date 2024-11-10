@@ -51,12 +51,9 @@ class AcceptRejectPageScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CustomElevatedButton(
-                                height: 46.v,
-                                width: 135.h,
-                                text: "Accept",
-                                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-                                buttonTextStyle:
-                                    CustomTextStyles.titleMediumGray50Bold),
+                              text: "Accept",
+                              onPressed: () {},
+                            ),
                             CustomOutlinedButton(
                                 height: 46.v,
                                 width: 135.h,
@@ -68,11 +65,9 @@ class AcceptRejectPageScreen extends StatelessWidget {
                           ])),
                   Spacer(),
                   CustomElevatedButton(
-                      height: 46.v,
-                      text: "View Candidates",
-                      margin: EdgeInsets.symmetric(horizontal: 3.h),
-                      buttonTextStyle: CustomTextStyles
-                          .titleLargeOnPrimaryContainerSemiBold),
+                    text: "View Candidates",
+                    onPressed: () {},
+                  ),
                   SizedBox(height: 49.v),
                   SizedBox(
                       width: 130.h,

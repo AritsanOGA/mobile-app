@@ -191,6 +191,7 @@ class _JSCreateAccountPageOneScreenState
             SizedBox(
               width: double.maxFinite,
               child: CustomTextFormField(
+                   title:'Password' ,
                   textInputType: TextInputType.phone,
                   width: 180.h,
                   controller: phoneController,
@@ -215,6 +216,7 @@ class _JSCreateAccountPageOneScreenState
                         Text("First Name", style: theme.textTheme.bodyMedium),
                         SizedBox(height: 6.v),
                         CustomTextFormField(
+                             title:'Password' ,
                             width: 180.h,
                             controller: firstNameController,
                             hintText: "First Name",
@@ -229,6 +231,7 @@ class _JSCreateAccountPageOneScreenState
                         Text("Last Name", style: theme.textTheme.bodyMedium),
                         SizedBox(height: 6.v),
                         CustomTextFormField(
+                             title:'Password' ,
                             width: 180.h,
                             controller: lastNameController,
                             hintText: "Last Name",
@@ -242,6 +245,7 @@ class _JSCreateAccountPageOneScreenState
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             controller: emailController,
             hintText: "example@gmail.com",
             hintStyle: theme.textTheme.titleSmall!,
@@ -253,6 +257,7 @@ class _JSCreateAccountPageOneScreenState
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             textInputType: TextInputType.emailAddress,
             controller: emailController1,
             hintText: "Re-enter example@gmail.com",
@@ -262,6 +267,7 @@ class _JSCreateAccountPageOneScreenState
   /// Section Widget
   Widget _buildPassword(BuildContext context) {
     return CustomTextFormField(
+         title:'Password' ,
         width: 180.h,
         controller: passwordController,
         hintText: "************",
@@ -280,6 +286,7 @@ class _JSCreateAccountPageOneScreenState
               Text("Confirm Password", style: theme.textTheme.bodyMedium),
               SizedBox(height: 7.v),
               CustomTextFormField(
+                   title:'Password' ,
                   width: 180.h,
                   controller: confirmpasswordController,
                   hintText: "************",
@@ -368,7 +375,7 @@ class _JSCreateAccountPageOneScreenState
           }
         }),
         text: "Next",
-        margin: EdgeInsets.symmetric(horizontal: 3.h));
+       );
   }
 
   Future<void> pickImage() async {

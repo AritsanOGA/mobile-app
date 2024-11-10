@@ -258,12 +258,12 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                   });
         }
       }),
-      height: 29.v,
-      width: 122.h,
+      // height: 29.v,
+      // width: 122.h,
       text: "Select",
-      buttonStyle: CustomButtonStyles.outlineBlack,
-      buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainer,
-      alignment: Alignment.center,
+      // buttonStyle: CustomButtonStyles.outlineBlack,
+      // buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainer,
+      // alignment: Alignment.center,
     );
   }
 
@@ -282,12 +282,12 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
   /// Section Widget
   Widget _buildFree(BuildContext context) {
     return CustomElevatedButton(
-      height: 29.v,
-      width: 122.h,
-      text: widget.planName.toString(),
-      buttonStyle: CustomButtonStyles.outlineBlack,
-      buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainer,
-      alignment: Alignment.topCenter,
+      // height: 29.v,
+      // width: 122.h,
+      text: widget.planName.toString(), onPressed: () {  },
+      // buttonStyle: CustomButtonStyles.outlineBlack,
+      // buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainer,
+      // alignment: Alignment.topCenter,
     );
   }
 

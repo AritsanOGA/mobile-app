@@ -49,8 +49,8 @@ class ApplyForJobsScreen extends StatelessWidget {
                 flex: 56,
               ),
               CustomElevatedButton(
-                text: "Back to Home",
-                buttonTextStyle: CustomTextStyles.titleMediumGray5001,
+                text: "Back to Home", onPressed: () {  },
+               // buttonTextStyle: CustomTextStyles.titleMediumGray5001,
               ),
               SizedBox(height: 34.v),
               SizedBox(

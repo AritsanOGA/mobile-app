@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
     Key? key,
     this.alignment,
@@ -25,6 +25,9 @@ class CustomTextFormField extends StatelessWidget {
     this.filled = false,
     this.validator,
     this.readOnly = false,
+    this.isPassword = false,
+    this.isObscure = false,
+    required this.title,
   }) : super(
           key: key,
         );
@@ -50,12 +53,15 @@ class CustomTextFormField extends StatelessWidget {
   final String? hintText;
 
   final TextStyle? hintStyle;
+  final bool? isPassword;
+  bool? isObscure;
 
   final Widget? prefix;
 
   final BoxConstraints? prefixConstraints;
 
   final Widget? suffix;
+  final String title;
 
   final BoxConstraints? suffixConstraints;
 
@@ -72,43 +78,125 @@ class CustomTextFormField extends StatelessWidget {
   final bool? readOnly;
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  bool _obscureText = false;
+  @override
   Widget build(BuildContext context) {
-    return alignment != null
-        ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: textFormFieldWidget(context),
-          )
-        : textFormFieldWidget(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(widget.title,
+            style: CustomTextStyles.bodyMediumPrimaryContainer_1),
+        SizedBox(height: 7.v),
+        SizedBox(
+          width: widget.width ?? double.maxFinite,
+          child: TextFormField(
+            readOnly: widget.readOnly!,
+            scrollPadding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            controller: widget.controller,
+            style: widget.textStyle ??
+                CustomTextStyles.titleSmallPrimaryContainer_1,
+            obscureText: widget.isObscure!,
+            textInputAction: widget.textInputAction,
+            keyboardType: widget.textInputType,
+            maxLines: widget.maxLines ?? 1,
+            decoration: InputDecoration(
+              hintText: widget.hintText ?? "",
+              hintStyle:
+                  widget.hintStyle ?? CustomTextStyles.labelLargeBluegray400,
+              prefixIcon: widget.prefix,
+              prefixIconConstraints: widget.prefixConstraints,
+              suffixIcon: widget.isPassword!
+                  ? IconButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.isObscure = !widget.isObscure!;
+                        });
+                      },
+                      icon: Icon(
+                          widget.isObscure!
+                              ? Icons.visibility_off
+                              : Icons.visibility_sharp,
+                          color: Colors.black),
+                    )
+                  : null,
+              suffixIconConstraints: widget.suffixConstraints,
+              isDense: true,
+              contentPadding: widget.contentPadding ?? EdgeInsets.all(15.h),
+              fillColor: widget.fillColor,
+              filled: widget.filled,
+              border: widget.borderDecoration ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(7.h),
+                    borderSide: BorderSide(
+                      color: appTheme.blueGray10001,
+                      width: 1,
+                    ),
+                  ),
+              enabledBorder: widget.borderDecoration ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(7.h),
+                    borderSide: BorderSide(
+                      color: appTheme.blueGray10001,
+                      width: 1,
+                    ),
+                  ),
+              focusedBorder: widget.borderDecoration ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(7.h),
+                    borderSide: BorderSide(
+                      color: appTheme.gray500,
+                      width: 1,
+                    ),
+                  ),
+            ),
+            validator: widget.validator,
+          ),
+        ),
+      ],
+    );
+    // alignment != null
+    //     ? Align(
+    //         alignment: alignment ?? Alignment.center,
+    //         child: textFormFieldWidget(context),
+    //       )
+    //     : textFormFieldWidget(context);
   }
 
   Widget textFormFieldWidget(BuildContext context) => SizedBox(
-        width: width ?? double.maxFinite,
+        width: widget.width ?? double.maxFinite,
         child: TextFormField(
-          readOnly: readOnly!,
+          readOnly: widget.readOnly!,
           scrollPadding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          controller: controller,
-          style: textStyle ?? CustomTextStyles.titleSmallPrimaryContainer_1,
-          obscureText: obscureText!,
-          textInputAction: textInputAction,
-          keyboardType: textInputType,
-          maxLines: maxLines ?? 1,
+          controller: widget.controller,
+          style:
+              widget.textStyle ?? CustomTextStyles.titleSmallPrimaryContainer_1,
+          obscureText: widget.obscureText!,
+          textInputAction: widget.textInputAction,
+          keyboardType: widget.textInputType,
+          maxLines: widget.maxLines ?? 1,
           decoration: decoration,
-          validator: validator,
+          validator: widget.validator,
         ),
       );
+
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
-        hintStyle: hintStyle ?? CustomTextStyles.labelLargeBluegray400,
-        prefixIcon: prefix,
-        prefixIconConstraints: prefixConstraints,
-        suffixIcon: suffix,
-        suffixIconConstraints: suffixConstraints,
+        hintText: widget.hintText ?? "",
+        hintStyle: widget.hintStyle ?? CustomTextStyles.labelLargeBluegray400,
+        prefixIcon: widget.prefix,
+        prefixIconConstraints: widget.prefixConstraints,
+        suffixIcon: widget.suffix,
+        suffixIconConstraints: widget.suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.all(15.h),
-        fillColor: fillColor,
-        filled: filled,
-        border: borderDecoration ??
+        contentPadding: widget.contentPadding ?? EdgeInsets.all(15.h),
+        fillColor: widget.fillColor,
+        filled: widget.filled,
+        border: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(7.h),
               borderSide: BorderSide(
@@ -116,7 +204,7 @@ class CustomTextFormField extends StatelessWidget {
                 width: 1,
               ),
             ),
-        enabledBorder: borderDecoration ??
+        enabledBorder: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(7.h),
               borderSide: BorderSide(
@@ -124,7 +212,7 @@ class CustomTextFormField extends StatelessWidget {
                 width: 1,
               ),
             ),
-        focusedBorder: borderDecoration ??
+        focusedBorder: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(7.h),
               borderSide: BorderSide(

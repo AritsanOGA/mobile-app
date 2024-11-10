@@ -121,12 +121,9 @@ class AcceptRejectPageModalBoxDialog extends StatelessWidget {
           ),
           SizedBox(height: 31.v),
           CustomElevatedButton(
-            height: 46.v,
-            width: 135.h,
-            text: "Submit",
-            buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-            buttonTextStyle: CustomTextStyles.titleMediumGray50Bold,
-            alignment: Alignment.center,
+         
+            text: "Submit", onPressed: () {  },
+          
           ),
           SizedBox(height: 2.v),
         ],

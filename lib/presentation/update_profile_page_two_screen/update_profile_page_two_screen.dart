@@ -156,6 +156,7 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 1.h),
         child: CustomTextFormField(
+            title: 'Password',
             controller: fullNameEditTextController,
             hintText: "e.g David Jude",
             hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -168,6 +169,7 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 1.h),
         child: CustomTextFormField(
+            title: 'Password',
             controller: emailEditTextController,
             hintText: "Enter Email Address",
             hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -181,6 +183,7 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 1.h),
         child: CustomTextFormField(
+            title: 'Password',
             controller: jobPreferencesEditTextController,
             hintText: "Enter Job Preferences",
             hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -193,6 +196,7 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 1.h),
         child: CustomTextFormField(
+            title: 'Password',
             controller: phoneNumberEditTextController,
             hintText: "Enter Phone Number",
             hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -205,10 +209,11 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildNextButton(BuildContext context) {
     return CustomElevatedButton(
-        text: "Next",
-        margin: EdgeInsets.only(left: 1.h),
-        buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
-        buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold);
+      text: "Next", onPressed: () {},
+      // margin: EdgeInsets.only(left: 1.h),
+      // buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
+      // buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold
+    );
   }
 
   /// Navigates back to the previous screen.

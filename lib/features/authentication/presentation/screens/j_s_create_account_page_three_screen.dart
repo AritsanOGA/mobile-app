@@ -130,6 +130,7 @@ class _JSCreateAccountPagetThreeScreenState
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 3.h),
                                   child: CustomTextFormField(
+                                       title:'Password' ,
                                       controller: schoolNameController,
                                       hintText: "Enter School Name",
                                       hintStyle: theme.textTheme.titleSmall!))
@@ -149,6 +150,7 @@ class _JSCreateAccountPagetThreeScreenState
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 3.h),
                                   child: CustomTextFormField(
+                                       title:'Password' ,
                                       controller: courseNameController,
                                       hintText: "Enter Course Name",
                                       hintStyle: theme.textTheme.titleSmall!,
@@ -254,7 +256,7 @@ class _JSCreateAccountPagetThreeScreenState
                                 );
                               }),
                               text: "Next",
-                              margin: EdgeInsets.symmetric(horizontal: 3.h)),
+                              ),
                         ]))))));
   }
 

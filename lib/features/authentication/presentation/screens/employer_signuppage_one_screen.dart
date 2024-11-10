@@ -96,33 +96,43 @@ class _EmployerSignuppageOneScreenState
                           width: 327.h,
                           margin: EdgeInsets.symmetric(horizontal: 26.h),
                           child: Text(
-                              "Fill in your information below to create account as an employer",
+                              "Your personal data is safe with us, and no one else will be able to see it.",
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,
                               style: theme.textTheme.bodyMedium)),
                       SizedBox(height: 38.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("First Name",
-                              style: theme.textTheme.bodyMedium)),
                       SizedBox(height: 6.v),
                       CustomTextFormField(
+                          title: 'First Name',
                           controller: firstNameController,
                           hintText: "eg: Kingsley ",
                           hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 38.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text("Last Name",
-                              style: theme.textTheme.bodyMedium)),
-                      SizedBox(height: 6.v),
+                      SizedBox(height: 32.v),
                       CustomTextFormField(
+                          title: 'Last Name',
                           controller: lastNameController,
                           hintText: "eg  Leo",
                           hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 27.v),
-                      _buildEgCEO1(context),
+                      SizedBox(height: 32.v),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomTextFormField(
+                              title: 'Office Title',
+                              width: 180.h,
+                              controller: officeTitleController,
+                              hintText: "e.g CEO",
+                              hintStyle: theme.textTheme.titleSmall!),
+                          CustomTextFormField(
+                              title: 'Company Name',
+                              width: 180.h,
+                              controller: officeTitleController,
+                              hintText: "e.g ArtisanOga",
+                              hintStyle: theme.textTheme.titleSmall!)
+                        ],
+                      ),
+                      // _buildEgCEO1(context),
                       SizedBox(height: 27.v),
                       Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
@@ -296,6 +306,7 @@ class _EmployerSignuppageOneScreenState
               Text("Office Title", style: theme.textTheme.bodyMedium),
               SizedBox(height: 7.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: officeTitleController,
                   hintText: "e.g CEO",
@@ -313,6 +324,7 @@ class _EmployerSignuppageOneScreenState
               Text("Company Name", style: theme.textTheme.bodyMedium),
               SizedBox(height: 5.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: companyController,
                   hintText: "e.g ArtisanOga",
@@ -405,6 +417,7 @@ class _EmployerSignuppageOneScreenState
                     Text("City", style: theme.textTheme.bodyMedium),
                     SizedBox(height: 6.v),
                     CustomTextFormField(
+                        title: 'Password',
                         controller: cityController,
                         hintText: "City",
                         hintStyle: theme.textTheme.titleSmall!),
@@ -422,6 +435,7 @@ class _EmployerSignuppageOneScreenState
               Text("Phone no", style: theme.textTheme.bodyMedium),
               SizedBox(height: 6.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: phoneController,
                   hintText: "e.g 703 345 1345",
@@ -484,14 +498,13 @@ class _EmployerSignuppageOneScreenState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomElevatedButton(
-                        onPressed: (() {
-                          pickImage();
-                        }),
-                        height: 34.v,
-                        width: 80.h,
-                        text: "Choose File",
-                        buttonStyle: CustomButtonStyles.fillBlueGray,
-                        buttonTextStyle: theme.textTheme.labelMedium!),
+                      onPressed: (() {
+                        pickImage();
+                      }),
+                      // height: 34.v,
+                      // width: 80.h,
+                      text: "Choose File",
+                    ),
                     Padding(
                         padding: EdgeInsets.only(top: 8.v, bottom: 10.v),
                         child: Text(

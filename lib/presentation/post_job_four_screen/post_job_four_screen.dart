@@ -222,13 +222,14 @@ class _PostJobFourScreenState extends State<PostJobFourScreen> {
                                 duration: Durations.long1,
                                 child: PaymentPageScreen()));
                       }),
-                      height: 41.v,
-                      width: 110.h,
+                      // height: 41.v,
+                      // width: 110.h,
                       text: "Post Job",
-                      margin: EdgeInsets.only(right: 3.h),
-                      buttonStyle: CustomButtonStyles.fillPrimaryTL20,
-                      buttonTextStyle: CustomTextStyles.titleMediumGray5018,
-                      alignment: Alignment.centerRight),
+                      // margin: EdgeInsets.only(right: 3.h),
+                      // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
+                      // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
+                      // alignment: Alignment.centerRight
+                      ),
                   SizedBox(height: 5.v)
                 ])))));
   }

@@ -193,6 +193,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildFullNameEditText(BuildContext context, String fullName) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: fullNameEditTextController,
         hintText: fullName,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -202,6 +203,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildAboutEditText(BuildContext context, String about) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: aboutTextController,
         hintText: about,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -212,6 +214,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildAddressEditText(BuildContext context, String streetAddress) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: addressEditTextController,
         hintText: streetAddress == "null" ? "--" : streetAddress,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -221,6 +224,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildCompanyEditText(BuildContext context, String company) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: companyTextController,
         hintText: company,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -231,6 +235,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildCountryEditText(BuildContext context, String country) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: countryEditTextController,
         hintText: country,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -241,6 +246,7 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   /// Section Widget
   Widget _buildCityEditText(BuildContext context, String city) {
     return CustomTextFormField(
+      title:'Password' ,
         controller: cityEditTextController,
         hintText: city,
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -252,7 +258,8 @@ class _EmployerProfilePageScreenState extends State<EmployerProfilePageScreen> {
   Widget _buildSaveButton(BuildContext context) {
     return CustomElevatedButton(
         text: "Save",
-        buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold);
+        // buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold,
+        onPressed: () {  },);
   }
 
   /// Navigates back to the previous screen.

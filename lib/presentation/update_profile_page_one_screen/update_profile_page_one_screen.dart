@@ -450,8 +450,8 @@ class _UpdateProfilePageOneScreenState
                               }
                             }),
                             text: "Update",
-                            buttonTextStyle:
-                                CustomTextStyles.titleMediumGray5001,
+                            // buttonTextStyle:
+                            //     CustomTextStyles.titleMediumGray5001,
                           ),
                         ])))));
   }
@@ -681,10 +681,11 @@ class _UpdateProfilePageOneScreenState
   /// Section Widget
   Widget _buildNext(BuildContext context) {
     return CustomElevatedButton(
-        text: "Next",
-        margin: EdgeInsets.only(left: 1.h),
-        buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
-        buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold);
+        text: "Next", onPressed: () {  },
+        // margin: EdgeInsets.only(left: 1.h),
+        // buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
+        // buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold
+        );
   }
 
   /// Navigates back to the previous screen.

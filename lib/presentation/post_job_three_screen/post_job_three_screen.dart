@@ -257,13 +257,14 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                                     duration: Durations.long1,
                                     child: PostJobFourScreen()));
                           }),
-                          height: 41.v,
-                          width: 110.h,
+                          // height: 41.v,
+                          // width: 110.h,
                           text: "Next",
-                          margin: EdgeInsets.only(right: 2.h),
-                          buttonStyle: CustomButtonStyles.fillPrimaryTL20,
-                          buttonTextStyle: CustomTextStyles.titleMediumGray5018,
-                          alignment: Alignment.centerRight),
+                          // margin: EdgeInsets.only(right: 2.h),
+                          // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
+                          // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
+                          // alignment: Alignment.centerRight
+                          ),
                       SizedBox(height: 5.v)
                     ])))));
   }

@@ -74,6 +74,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             controller: nameController,
             hintText: "Enter Company’s Name",
             hintStyle: theme.textTheme.titleSmall!));
@@ -84,6 +85,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             controller: enterRoleController,
             hintText: "Enter Role",
             hintStyle: theme.textTheme.titleSmall!));
@@ -94,6 +96,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             textInputType: TextInputType.number,
             controller: mmddyyController,
             hintText: "MM/DD/YY",
@@ -105,6 +108,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
+             title:'Password' ,
             controller: inputHereController,
             hintText: "Input here",
             hintStyle: theme.textTheme.titleSmall!,
@@ -115,7 +119,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildNext(BuildContext context) {
     return CustomElevatedButton(
-        text: "Finish", margin: EdgeInsets.symmetric(horizontal: 3.h));
+        text: "Finish", onPressed: () {  }, );
   }
 
   /// Navigates back to the previous screen.

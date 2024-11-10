@@ -112,6 +112,7 @@ class _JSCreateAccountPagetTwoScreenState
                       Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
                           child: CustomTextFormField(
+                               title:'Password' ,
                               controller: streetaddressController,
                               hintText: "Enter Street Address",
                               hintStyle: theme.textTheme.titleSmall!)),
@@ -302,7 +303,7 @@ class _JSCreateAccountPagetTwoScreenState
                             }
                           }),
                           text: "Next",
-                          margin: EdgeInsets.symmetric(horizontal: 3.h)),
+                        ),
                     ])))));
   }
 
@@ -342,6 +343,7 @@ class _JSCreateAccountPagetTwoScreenState
           Text("City", style: theme.textTheme.bodyMedium),
           SizedBox(height: 5.v),
           CustomTextFormField(
+               title:'Password' ,
               controller: cityController,
               hintText: "City",
               hintStyle: theme.textTheme.titleSmall!)

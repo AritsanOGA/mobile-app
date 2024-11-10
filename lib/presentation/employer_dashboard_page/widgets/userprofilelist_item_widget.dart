@@ -75,12 +75,11 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               SizedBox(height: 11.v),
               SizedBox(height: 23.v),
               CustomElevatedButton(
-                height: 30.v,
-                width: 125.h,
-                text: "View",
-                buttonStyle: CustomButtonStyles.fillSecondaryContainer,
-                buttonTextStyle: CustomTextStyles.titleSmallOnPrimaryContainer,
-                alignment: Alignment.center,
+          
+                text: "View", onPressed: () {  },
+                // buttonStyle: CustomButtonStyles.fillSecondaryContainer,
+                // buttonTextStyle: CustomTextStyles.titleSmallOnPrimaryContainer,
+                // alignment: Alignment.center,
               ),
             ],
           ),

@@ -54,11 +54,11 @@ class SignupOptionsPageScreen extends StatelessWidget {
                             type: PageTransitionType.rightToLeft,
                             child: EmployerSignUpPageScreen()));
                   }),
-                  height: 51.v,
+                  // height: 51.v,
                   text: "Register as an Employer",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle:
-                      CustomTextStyles.titleLargeOnPrimaryContainer,
+                  // buttonStyle: CustomButtonStyles.outlineGray,
+                  // buttonTextStyle:
+                  //     CustomTextStyles.titleLargeOnPrimaryContainer,
                 ),
                 SizedBox(height: 16.v),
                 CustomElevatedButton(
@@ -70,10 +70,10 @@ class SignupOptionsPageScreen extends StatelessWidget {
                             duration: Durations.long1,
                             child: JSCreateAccountPageOneScreen()));
                   }),
-                  height: 51.v,
+                  // height: 51.v,
                   text: "Register as a job seeker",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle: CustomTextStyles.titleLargeGray50,
+                  // buttonStyle: CustomButtonStyles.outlineGray,
+                  // buttonTextStyle: CustomTextStyles.titleLargeGray50,
                 ),
                 SizedBox(height: 63.v),
                 SizedBox(

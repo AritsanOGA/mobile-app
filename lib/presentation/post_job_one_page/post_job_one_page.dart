@@ -143,15 +143,16 @@ class _PostJobOnePageState extends State<PostJobOnePage> {
                                 duration: Durations.long1,
                                 child: PostJobTwoScreen()));
                       }),
-                      height: 41.v,
-                      width: 110.h,
+                      // height: 41.v,
+                      // width: 110.h,
                       text: "Next",
-                      margin: EdgeInsets.only(right: 2.h),
-                      buttonStyle:
-                          CustomButtonStyles.fillSecondaryContainerTL20,
-                      buttonTextStyle:
-                          CustomTextStyles.titleMediumOnPrimaryContainer18,
-                      alignment: Alignment.centerRight),
+                      // margin: EdgeInsets.only(right: 2.h),
+                      // buttonStyle:
+                      //     CustomButtonStyles.fillSecondaryContainerTL20,
+                      // buttonTextStyle:
+                      //     CustomTextStyles.titleMediumOnPrimaryContainer18,
+                      // alignment: Alignment.centerRight
+                      ),
                   SizedBox(
                     width: double.maxFinite,
                     height: 20,

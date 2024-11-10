@@ -147,7 +147,7 @@ class _JSCreateAccountPageFourScreenState
                           SizedBox(height: 6.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
+                              child: CustomTextFormField(   title:'Password' ,
                                   controller: nameController,
                                   hintText: "Enter Company Name",
                                   hintStyle: theme.textTheme.titleSmall!)),
@@ -161,7 +161,7 @@ class _JSCreateAccountPageFourScreenState
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
+                              child: CustomTextFormField(   title:'Password' ,
                                   controller: enterJobRoleController,
                                   hintText: "Job role",
                                   hintStyle: theme.textTheme.titleSmall!,
@@ -176,7 +176,7 @@ class _JSCreateAccountPageFourScreenState
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
+                              child: CustomTextFormField(   title:'Password' ,
                                   controller: enterJobDescriptionController,
                                   hintText: "Job Description",
                                   hintStyle: theme.textTheme.titleSmall!,
@@ -191,7 +191,7 @@ class _JSCreateAccountPageFourScreenState
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
+                              child: CustomTextFormField(   title:'Password' ,
                                   textInputType: TextInputType.number,
                                   controller: startYearController,
                                   hintText: "Start Year",
@@ -207,7 +207,7 @@ class _JSCreateAccountPageFourScreenState
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
+                              child: CustomTextFormField(   title:'Password' ,
                                   controller: endYearController,
                                   textInputType: TextInputType.number,
                                   hintText: "End Year",
@@ -261,7 +261,7 @@ class _JSCreateAccountPageFourScreenState
                                 );
                               }),
                               text: "Next",
-                              margin: EdgeInsets.symmetric(horizontal: 3.h)),
+                              ),
                         ]))))));
   }
 

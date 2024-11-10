@@ -49,7 +49,7 @@ class PaymentSuccessfulScreen extends StatelessWidget {
                 flex: 44,
               ),
               CustomElevatedButton(
-                text: "Continue",
+                text: "Continue", onPressed: () {  },
               ),
               SizedBox(height: 68.v),
               SizedBox(

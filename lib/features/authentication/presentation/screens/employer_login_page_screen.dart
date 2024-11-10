@@ -65,6 +65,7 @@ class _EmployerLoginPageScreenState extends State<EmployerLoginPageScreen> {
                   ),
                   SizedBox(height: 7.v),
                   CustomTextFormField(
+                       title:'Password' ,
                     controller: emailController,
                     hintText: "example@gmail.com",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -80,6 +81,7 @@ class _EmployerLoginPageScreenState extends State<EmployerLoginPageScreen> {
                   ),
                   SizedBox(height: 6.v),
                   CustomTextFormField(
+                    title:'Password' ,
                     controller: passwordController,
                     hintText: "*************",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -191,7 +193,7 @@ class _EmployerLoginPageScreenState extends State<EmployerLoginPageScreen> {
                       }
                     }),
                     text: "Log in",
-                    buttonTextStyle: CustomTextStyles.titleMediumGray5001,
+                  
                   ),
                   SizedBox(height: 27.v),
                   GestureDetector(
