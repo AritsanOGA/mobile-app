@@ -1,10 +1,11 @@
 import 'package:artisan_oga/features/authentication/data/model/user_activation_model.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/user_activation_entity.dart';
 import 'package:equatable/equatable.dart';
 
 
 class UserEntity extends Equatable {
   const UserEntity({
-   // this.userActivation,
+    this.userActivation,
     this.id,
     this.firstName,
     this.lastName,
@@ -21,10 +22,10 @@ class UserEntity extends Equatable {
     this.gender,
     this.phoneNumber,
     this.country,
-    this.language, UserActivationModel? userActivation,
+    this.language,
   });
 
- // final UserActivationEntity? userActivation;
+  final UserActivationEntity? userActivation;
   final String? id;
   final String? firstName;
   final String? lastName;
@@ -44,7 +45,7 @@ class UserEntity extends Equatable {
   final String? language;
 
   UserEntity copyWith({
-  //  UserActivationEntity? userActivation,
+    UserActivationEntity? userActivation,
     String? id,
     String? firstName,
     String? lastName,
@@ -64,7 +65,7 @@ class UserEntity extends Equatable {
     String? language,
   }) =>
       UserEntity(
-       // userActivation: userActivation ?? this.userActivation,
+        userActivation: userActivation ?? this.userActivation,
         id: id ?? this.id,
         firstName: firstName ?? this.firstName,
         lastName: lastName ?? this.lastName,
@@ -86,7 +87,7 @@ class UserEntity extends Equatable {
 
   @override
   List<Object?> get props => [
-      //  userActivation,
+        userActivation,
         id,
         firstName,
         lastName,

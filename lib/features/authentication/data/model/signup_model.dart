@@ -1,5 +1,5 @@
 import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
-import 'package:sportive23/src/features/authentication/domain/entities/signup_entity.dart';
+
 
 class SignupModel extends SignupEntity {
   const SignupModel({
