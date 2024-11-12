@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/services/auth.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -83,250 +84,253 @@ class _EmployerSignuppageOneScreenState
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            appBar: _buildAppBar(context),
-            body: SingleChildScrollView(
-                child: Container(
-                    width: double.maxFinite,
-                    //  height: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
-                    child: Column(children: [
-                      Container(
-                          width: 327.h,
-                          margin: EdgeInsets.symmetric(horizontal: 26.h),
-                          child: Text(
-                              "Your personal data is safe with us, and no one else will be able to see it.",
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.bodyMedium)),
-                      SizedBox(height: 38.v),
-                      SizedBox(height: 6.v),
-                      CustomTextFormField(
-                          title: 'First Name',
-                          controller: firstNameController,
-                          hintText: "eg: Kingsley ",
-                          hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 32.v),
-                      CustomTextFormField(
-                          title: 'Last Name',
-                          controller: lastNameController,
-                          hintText: "eg  Leo",
-                          hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 32.v),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+    return 
+      
+      
+        SafeArea(
+            child: Scaffold(
+                appBar: _buildAppBar(context),
+                body: SingleChildScrollView(
+                    child: Container(
+                        width: double.maxFinite,
+                        //  height: double.maxFinite,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
+                        child: Column(children: [
+                          Container(
+                              width: 327.h,
+                              margin: EdgeInsets.symmetric(horizontal: 26.h),
+                              child: Text(
+                                  "Your personal data is safe with us, and no one else will be able to see it.",
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.center,
+                                  style: theme.textTheme.bodyMedium)),
+                          SizedBox(height: 38.v),
+                          SizedBox(height: 6.v),
                           CustomTextFormField(
-                              title: 'Office Title',
-                              width: 180.h,
-                              controller: officeTitleController,
-                              hintText: "e.g CEO",
+                              title: 'First Name',
+                              controller: firstNameController,
+                              hintText: "eg: Kingsley ",
                               hintStyle: theme.textTheme.titleSmall!),
+                          SizedBox(height: 32.v),
                           CustomTextFormField(
-                              title: 'Company Name',
-                              width: 180.h,
-                              controller: officeTitleController,
-                              hintText: "e.g ArtisanOga",
-                              hintStyle: theme.textTheme.titleSmall!)
-                        ],
-                      ),
-                      SizedBox(height: 32.v),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text('Country',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
-                              ],
-                            ),
+                              title: 'Last Name',
+                              controller: lastNameController,
+                              hintText: "eg  Leo",
+                              hintStyle: theme.textTheme.titleSmall!),
+                          SizedBox(height: 32.v),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CustomTextFormField(
+                                  title: 'Office Title',
+                                  width: 180.h,
+                                  controller: officeTitleController,
+                                  hintText: "e.g CEO",
+                                  hintStyle: theme.textTheme.titleSmall!),
+                              CustomTextFormField(
+                                  title: 'Company Name',
+                                  width: 180.h,
+                                  controller: officeTitleController,
+                                  hintText: "e.g ArtisanOga",
+                                  hintStyle: theme.textTheme.titleSmall!)
+                            ],
                           ),
-                          SizedBox(width: 20.v),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Gender',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
-                              ],
-                            ),
+                          SizedBox(height: 32.v),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  // mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('Country',
+                                        style: CustomTextStyles
+                                            .bodyMediumPrimaryContainer_1),
+                                    CustomDropDown(),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(width: 20.v),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Gender',
+                                        style: CustomTextStyles
+                                            .bodyMediumPrimaryContainer_1),
+                                    CustomDropDown(),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      // _buildEgCEO1(context),
-                      SizedBox(height: 27.v),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: CustomTextFormField(
-                                title: 'Phone no',
-                                controller: lastNameController,
-                                hintText: "eg  09033447788",
-                                hintStyle: theme.textTheme.titleSmall!),
+                          // _buildEgCEO1(context),
+                          SizedBox(height: 27.v),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: CustomTextFormField(
+                                    title: 'Phone no',
+                                    controller: lastNameController,
+                                    hintText: "eg  09033447788",
+                                    hintStyle: theme.textTheme.titleSmall!),
+                              ),
+                              SizedBox(width: 20.v),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('State',
+                                        style: CustomTextStyles
+                                            .bodyMediumPrimaryContainer_1),
+                                    CustomDropDown(),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          SizedBox(width: 20.v),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('State',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
-                              ],
-                            ),
+                          SizedBox(height: 27.v),
+        
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Upload Company Logo",
+                                        style: theme.textTheme.bodyMedium),
+                                    SizedBox(height: 5.v),
+                                    _buildChooseFile(context),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('City',
+                                        style: CustomTextStyles
+                                            .bodyMediumPrimaryContainer_1),
+                                    CustomDropDown(),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 27.v),
-
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Upload Company Logo",
-                                    style: theme.textTheme.bodyMedium),
-                                SizedBox(height: 5.v),
-                                _buildChooseFile(context),
-                              ],
-                            ),
+        
+                        
+                          SizedBox(height: 14.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Row(children: [
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgEmojioneMonoto,
+                                    height: 24.adaptSize,
+                                    width: 24.adaptSize),
+                                Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.h, top: 4.v, bottom: 2.v),
+                                    child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              text: "I Agree With The",
+                                              style: CustomTextStyles
+                                                  .titleSmallff3a332c_1),
+                                          TextSpan(text: " "),
+                                          TextSpan(
+                                              text: "Terms and Conditions",
+                                              style: CustomTextStyles
+                                                  .titleSmallfff7941e_1)
+                                        ]),
+                                        textAlign: TextAlign.left))
+                              ])),
+                          SizedBox(height: 35.v),
+                          CustomElevatedButton(
+                            text: "Submit",
+                            onPressed: (() {
+                              if ( //_emailController.text.isNotEmpty &&
+                                  companyController.text.isNotEmpty &&
+                                      firstNameController.text.isNotEmpty &&
+                                      lastNameController.text.isNotEmpty &&
+                                      phoneController.text.isNotEmpty &&
+                                      // selectedCountry != null &&
+                                      cityController.text.isNotEmpty) {
+                                EasyLoading.show();
+                                Auth()
+                                    .newEmployer(
+                                        fullname: firstNameController.text +
+                                            " " +
+                                            lastNameController.text,
+                                        email: new_employer_info[0],
+                                        password: new_employer_info[1],
+                                        confirmPassword: new_employer_info[1],
+                                        phone: phoneController.text,
+                                        country: selectedCountry,
+                                        city: cityController.text,
+                                        state: selectedState,
+                                        businessName: companyController.text,
+                                        logo: image,
+                                        education_qualification:
+                                            selectedEducationOption,
+                                        companyName: companyController.text)
+                                    .then((value) => {
+                                          //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
+                                          if (value == "success")
+                                            {
+                                              print(value.toString()),
+                                              EasyLoading.dismiss(),
+                                              Fluttertoast.showToast(
+                                                  msg:
+                                                      "Your account was created successfully",
+                                                  toastLength: Toast.LENGTH_SHORT,
+                                                  gravity: ToastGravity.CENTER,
+                                                  timeInSecForIosWeb: 1,
+                                                  backgroundColor:
+                                                      const Color.fromARGB(
+                                                              255, 86, 86, 86)
+                                                          .withOpacity(0.6),
+                                                  textColor: Colors.white,
+                                                  fontSize: 16.0),
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          JSCreateAccountSuccess()))
+                                            }
+                                          else
+                                            {
+                                              EasyLoading.dismiss(),
+                                              print(value.toString()),
+                                              // Navigator.pop(context),
+        
+                                              Fluttertoast.showToast(
+                                                  msg: value.toString(),
+                                                  toastLength: Toast.LENGTH_SHORT,
+                                                  gravity: ToastGravity.CENTER,
+                                                  timeInSecForIosWeb: 1,
+                                                  backgroundColor:
+                                                      const Color.fromARGB(
+                                                              255, 86, 86, 86)
+                                                          .withOpacity(0.6),
+                                                  textColor: Colors.white,
+                                                  fontSize: 16.0)
+                                            }
+                                        });
+                                //  Navigator.pushNamed(context, AppRoutes.employerRegisterPageOneScreen);
+                              } else {
+                                EasyLoading.showToast("Please fill out all fields");
+                              }
+                            }),
                           ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('City',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-
-                    
-                      SizedBox(height: 14.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Row(children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgEmojioneMonoto,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 11.h, top: 4.v, bottom: 2.v),
-                                child: RichText(
-                                    text: TextSpan(children: [
-                                      TextSpan(
-                                          text: "I Agree With The",
-                                          style: CustomTextStyles
-                                              .titleSmallff3a332c_1),
-                                      TextSpan(text: " "),
-                                      TextSpan(
-                                          text: "Terms and Conditions",
-                                          style: CustomTextStyles
-                                              .titleSmallfff7941e_1)
-                                    ]),
-                                    textAlign: TextAlign.left))
-                          ])),
-                      SizedBox(height: 35.v),
-                      CustomElevatedButton(
-                        text: "Submit",
-                        onPressed: (() {
-                          if ( //_emailController.text.isNotEmpty &&
-                              companyController.text.isNotEmpty &&
-                                  firstNameController.text.isNotEmpty &&
-                                  lastNameController.text.isNotEmpty &&
-                                  phoneController.text.isNotEmpty &&
-                                  // selectedCountry != null &&
-                                  cityController.text.isNotEmpty) {
-                            EasyLoading.show();
-                            Auth()
-                                .newEmployer(
-                                    fullname: firstNameController.text +
-                                        " " +
-                                        lastNameController.text,
-                                    email: new_employer_info[0],
-                                    password: new_employer_info[1],
-                                    confirmPassword: new_employer_info[1],
-                                    phone: phoneController.text,
-                                    country: selectedCountry,
-                                    city: cityController.text,
-                                    state: selectedState,
-                                    businessName: companyController.text,
-                                    logo: image,
-                                    education_qualification:
-                                        selectedEducationOption,
-                                    companyName: companyController.text)
-                                .then((value) => {
-                                      //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
-                                      if (value == "success")
-                                        {
-                                          print(value.toString()),
-                                          EasyLoading.dismiss(),
-                                          Fluttertoast.showToast(
-                                              msg:
-                                                  "Your account was created successfully",
-                                              toastLength: Toast.LENGTH_SHORT,
-                                              gravity: ToastGravity.CENTER,
-                                              timeInSecForIosWeb: 1,
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                          255, 86, 86, 86)
-                                                      .withOpacity(0.6),
-                                              textColor: Colors.white,
-                                              fontSize: 16.0),
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      JSCreateAccountSuccess()))
-                                        }
-                                      else
-                                        {
-                                          EasyLoading.dismiss(),
-                                          print(value.toString()),
-                                          // Navigator.pop(context),
-
-                                          Fluttertoast.showToast(
-                                              msg: value.toString(),
-                                              toastLength: Toast.LENGTH_SHORT,
-                                              gravity: ToastGravity.CENTER,
-                                              timeInSecForIosWeb: 1,
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                          255, 86, 86, 86)
-                                                      .withOpacity(0.6),
-                                              textColor: Colors.white,
-                                              fontSize: 16.0)
-                                        }
-                                    });
-                            //  Navigator.pushNamed(context, AppRoutes.employerRegisterPageOneScreen);
-                          } else {
-                            EasyLoading.showToast("Please fill out all fields");
-                          }
-                        }),
-                      ),
-                      SizedBox(height: 90.v),
-                      SizedBox(
-                          width: 130.h,
-                          child: Divider(color: theme.colorScheme.onPrimary))
-                    ])))));
-  }
-
+                          SizedBox(height: 90.v),
+                          SizedBox(
+                              width: 130.h,
+                              child: Divider(color: theme.colorScheme.onPrimary))
+                        ])))));
+      }
+   
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(

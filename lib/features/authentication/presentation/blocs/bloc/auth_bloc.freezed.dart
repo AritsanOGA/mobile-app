@@ -24,6 +24,9 @@ mixin _$AuthEvent {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -42,6 +45,9 @@ mixin _$AuthEvent {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -55,6 +61,9 @@ mixin _$AuthEvent {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -72,6 +81,9 @@ mixin _$AuthEvent {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +96,9 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) =>
       throw _privateConstructorUsedError;
@@ -96,6 +111,9 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) =>
@@ -191,6 +209,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -212,6 +233,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -228,6 +252,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -251,6 +278,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedCountry(this);
@@ -266,6 +296,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedCountry?.call(this);
@@ -281,6 +314,9 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -373,6 +409,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -394,6 +433,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -410,6 +452,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -433,6 +478,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedGender(this);
@@ -448,6 +496,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedGender?.call(this);
@@ -463,6 +514,9 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -554,6 +608,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -575,6 +632,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -591,6 +651,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -614,6 +677,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedState(this);
@@ -629,6 +695,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedState?.call(this);
@@ -644,6 +713,9 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -735,6 +807,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -756,6 +831,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -772,6 +850,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -795,6 +876,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedCity(this);
@@ -810,6 +894,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedCity?.call(this);
@@ -825,6 +912,9 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -918,6 +1008,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -939,6 +1032,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -955,6 +1051,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -978,6 +1077,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedCompanyLogo(this);
@@ -993,6 +1095,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedCompanyLogo?.call(this);
@@ -1008,6 +1113,9 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -1101,6 +1209,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -1122,6 +1233,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -1138,6 +1252,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -1161,6 +1278,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return updateSelectedIsChecked(this);
@@ -1176,6 +1296,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return updateSelectedIsChecked?.call(this);
@@ -1191,6 +1314,9 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -1209,6 +1335,535 @@ abstract class _UpdateSelectedIsChecked implements AuthEvent {
   @JsonKey(ignore: true)
   _$$UpdateSelectedIsCheckedImplCopyWith<_$UpdateSelectedIsCheckedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginUserImplCopyWith<$Res> {
+  factory _$$LoginUserImplCopyWith(
+          _$LoginUserImpl value, $Res Function(_$LoginUserImpl) then) =
+      __$$LoginUserImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LoginEntity param});
+}
+
+/// @nodoc
+class __$$LoginUserImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LoginUserImpl>
+    implements _$$LoginUserImplCopyWith<$Res> {
+  __$$LoginUserImplCopyWithImpl(
+      _$LoginUserImpl _value, $Res Function(_$LoginUserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? param = null,
+  }) {
+    return _then(_$LoginUserImpl(
+      null == param
+          ? _value.param
+          : param // ignore: cast_nullable_to_non_nullable
+              as LoginEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginUserImpl implements _LoginUser {
+  const _$LoginUserImpl(this.param);
+
+  @override
+  final LoginEntity param;
+
+  @override
+  String toString() {
+    return 'AuthEvent.loginUser(param: $param)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginUserImpl &&
+            (identical(other.param, param) || other.param == param));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, param);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginUserImplCopyWith<_$LoginUserImpl> get copyWith =>
+      __$$LoginUserImplCopyWithImpl<_$LoginUserImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerUser,
+  }) {
+    return loginUser(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+  }) {
+    return loginUser?.call(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+    required TResult orElse(),
+  }) {
+    if (loginUser != null) {
+      return loginUser(param);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterUser value) registerUser,
+  }) {
+    return loginUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterUser value)? registerUser,
+  }) {
+    return loginUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterUser value)? registerUser,
+    required TResult orElse(),
+  }) {
+    if (loginUser != null) {
+      return loginUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginUser implements AuthEvent {
+  const factory _LoginUser(final LoginEntity param) = _$LoginUserImpl;
+
+  LoginEntity get param;
+  @JsonKey(ignore: true)
+  _$$LoginUserImplCopyWith<_$LoginUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCountriesImplCopyWith<$Res> {
+  factory _$$GetCountriesImplCopyWith(
+          _$GetCountriesImpl value, $Res Function(_$GetCountriesImpl) then) =
+      __$$GetCountriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCountriesImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GetCountriesImpl>
+    implements _$$GetCountriesImplCopyWith<$Res> {
+  __$$GetCountriesImplCopyWithImpl(
+      _$GetCountriesImpl _value, $Res Function(_$GetCountriesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetCountriesImpl implements _GetCountries {
+  const _$GetCountriesImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.getCountries()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCountriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerUser,
+  }) {
+    return getCountries();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+  }) {
+    return getCountries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+    required TResult orElse(),
+  }) {
+    if (getCountries != null) {
+      return getCountries();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterUser value) registerUser,
+  }) {
+    return getCountries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterUser value)? registerUser,
+  }) {
+    return getCountries?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterUser value)? registerUser,
+    required TResult orElse(),
+  }) {
+    if (getCountries != null) {
+      return getCountries(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCountries implements AuthEvent {
+  const factory _GetCountries() = _$GetCountriesImpl;
+}
+
+/// @nodoc
+abstract class _$$GetStateImplCopyWith<$Res> {
+  factory _$$GetStateImplCopyWith(
+          _$GetStateImpl value, $Res Function(_$GetStateImpl) then) =
+      __$$GetStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetStateImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GetStateImpl>
+    implements _$$GetStateImplCopyWith<$Res> {
+  __$$GetStateImplCopyWithImpl(
+      _$GetStateImpl _value, $Res Function(_$GetStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetStateImpl implements _GetState {
+  const _$GetStateImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.getState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerUser,
+  }) {
+    return getState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+  }) {
+    return getState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerUser,
+    required TResult orElse(),
+  }) {
+    if (getState != null) {
+      return getState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterUser value) registerUser,
+  }) {
+    return getState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterUser value)? registerUser,
+  }) {
+    return getState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterUser value)? registerUser,
+    required TResult orElse(),
+  }) {
+    if (getState != null) {
+      return getState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetState implements AuthEvent {
+  const factory _GetState() = _$GetStateImpl;
 }
 
 /// @nodoc
@@ -1338,6 +1993,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     required TResult Function(String value) updateSelectedCity,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
     required TResult Function(
             String fullName,
             String officeTitle,
@@ -1360,6 +2018,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult? Function(String value)? updateSelectedCity,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -1377,6 +2038,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult Function(String value)? updateSelectedCity,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerUser,
@@ -1401,6 +2065,9 @@ class _$RegisterUserImpl implements _RegisterUser {
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_RegisterUser value) registerUser,
   }) {
     return registerUser(this);
@@ -1416,6 +2083,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_RegisterUser value)? registerUser,
   }) {
     return registerUser?.call(this);
@@ -1431,6 +2101,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
     TResult Function(_RegisterUser value)? registerUser,
     required TResult orElse(),
   }) {
@@ -1468,26 +2141,61 @@ mixin _$AuthState {
   String? get state => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get countryId => throw _privateConstructorUsedError;
+  List<StateResponseEntity> get states => throw _privateConstructorUsedError;
+  List<CountryResponseEntity> get countries =>
+      throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
   ViewState get viewState => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)
+    required TResult Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)?
+    TResult? Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)?
+    TResult Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)?
         initial,
     required TResult orElse(),
   }) =>
@@ -1525,6 +2233,10 @@ abstract class $AuthStateCopyWith<$Res> {
       String? state,
       String? city,
       File? file,
+      String? errorMessage,
+      String? countryId,
+      List<StateResponseEntity> states,
+      List<CountryResponseEntity> countries,
       bool isChecked,
       ViewState viewState});
 }
@@ -1547,6 +2259,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? state = freezed,
     Object? city = freezed,
     Object? file = freezed,
+    Object? errorMessage = freezed,
+    Object? countryId = freezed,
+    Object? states = null,
+    Object? countries = null,
     Object? isChecked = null,
     Object? viewState = null,
   }) {
@@ -1571,6 +2287,22 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as File?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryId: freezed == countryId
+          ? _value.countryId
+          : countryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      states: null == states
+          ? _value.states
+          : states // ignore: cast_nullable_to_non_nullable
+              as List<StateResponseEntity>,
+      countries: null == countries
+          ? _value.countries
+          : countries // ignore: cast_nullable_to_non_nullable
+              as List<CountryResponseEntity>,
       isChecked: null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
@@ -1597,6 +2329,10 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? state,
       String? city,
       File? file,
+      String? errorMessage,
+      String? countryId,
+      List<StateResponseEntity> states,
+      List<CountryResponseEntity> countries,
       bool isChecked,
       ViewState viewState});
 }
@@ -1617,6 +2353,10 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? state = freezed,
     Object? city = freezed,
     Object? file = freezed,
+    Object? errorMessage = freezed,
+    Object? countryId = freezed,
+    Object? states = null,
+    Object? countries = null,
     Object? isChecked = null,
     Object? viewState = null,
   }) {
@@ -1641,6 +2381,22 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as File?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryId: freezed == countryId
+          ? _value.countryId
+          : countryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      states: null == states
+          ? _value._states
+          : states // ignore: cast_nullable_to_non_nullable
+              as List<StateResponseEntity>,
+      countries: null == countries
+          ? _value._countries
+          : countries // ignore: cast_nullable_to_non_nullable
+              as List<CountryResponseEntity>,
       isChecked: null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
@@ -1662,8 +2418,14 @@ class _$InitialImpl implements _Initial {
       this.state,
       this.city,
       this.file,
+      this.errorMessage,
+      this.countryId,
+      final List<StateResponseEntity> states = const [],
+      final List<CountryResponseEntity> countries = const [],
       this.isChecked = false,
-      this.viewState = ViewState.idle});
+      this.viewState = ViewState.idle})
+      : _states = states,
+        _countries = countries;
 
   @override
   final String? gender;
@@ -1676,6 +2438,28 @@ class _$InitialImpl implements _Initial {
   @override
   final File? file;
   @override
+  final String? errorMessage;
+  @override
+  final String? countryId;
+  final List<StateResponseEntity> _states;
+  @override
+  @JsonKey()
+  List<StateResponseEntity> get states {
+    if (_states is EqualUnmodifiableListView) return _states;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_states);
+  }
+
+  final List<CountryResponseEntity> _countries;
+  @override
+  @JsonKey()
+  List<CountryResponseEntity> get countries {
+    if (_countries is EqualUnmodifiableListView) return _countries;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_countries);
+  }
+
+  @override
   @JsonKey()
   final bool isChecked;
   @override
@@ -1684,7 +2468,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, city: $city, file: $file, isChecked: $isChecked, viewState: $viewState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, city: $city, file: $file, errorMessage: $errorMessage, countryId: $countryId, states: $states, countries: $countries, isChecked: $isChecked, viewState: $viewState)';
   }
 
   @override
@@ -1697,6 +2481,13 @@ class _$InitialImpl implements _Initial {
             (identical(other.state, state) || other.state == state) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.file, file) || other.file == file) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            (identical(other.countryId, countryId) ||
+                other.countryId == countryId) &&
+            const DeepCollectionEquality().equals(other._states, _states) &&
+            const DeepCollectionEquality()
+                .equals(other._countries, _countries) &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
             (identical(other.viewState, viewState) ||
@@ -1705,7 +2496,18 @@ class _$InitialImpl implements _Initial {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, gender, country, state, city, file, isChecked, viewState);
+      runtimeType,
+      gender,
+      country,
+      state,
+      city,
+      file,
+      errorMessage,
+      countryId,
+      const DeepCollectionEquality().hash(_states),
+      const DeepCollectionEquality().hash(_countries),
+      isChecked,
+      viewState);
 
   @JsonKey(ignore: true)
   @override
@@ -1716,34 +2518,66 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)
+    required TResult Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)
         initial,
   }) {
-    return initial(gender, country, state, city, file, isChecked, viewState);
+    return initial(gender, country, state, city, file, errorMessage, countryId,
+        states, countries, isChecked, viewState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)?
+    TResult? Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)?
         initial,
   }) {
-    return initial?.call(
-        gender, country, state, city, file, isChecked, viewState);
+    return initial?.call(gender, country, state, city, file, errorMessage,
+        countryId, states, countries, isChecked, viewState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, String? country, String? state,
-            String? city, File? file, bool isChecked, ViewState viewState)?
+    TResult Function(
+            String? gender,
+            String? country,
+            String? state,
+            String? city,
+            File? file,
+            String? errorMessage,
+            String? countryId,
+            List<StateResponseEntity> states,
+            List<CountryResponseEntity> countries,
+            bool isChecked,
+            ViewState viewState)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(gender, country, state, city, file, isChecked, viewState);
+      return initial(gender, country, state, city, file, errorMessage,
+          countryId, states, countries, isChecked, viewState);
     }
     return orElse();
   }
@@ -1784,6 +2618,10 @@ abstract class _Initial implements AuthState {
       final String? state,
       final String? city,
       final File? file,
+      final String? errorMessage,
+      final String? countryId,
+      final List<StateResponseEntity> states,
+      final List<CountryResponseEntity> countries,
       final bool isChecked,
       final ViewState viewState}) = _$InitialImpl;
 
@@ -1797,6 +2635,14 @@ abstract class _Initial implements AuthState {
   String? get city;
   @override
   File? get file;
+  @override
+  String? get errorMessage;
+  @override
+  String? get countryId;
+  @override
+  List<StateResponseEntity> get states;
+  @override
+  List<CountryResponseEntity> get countries;
   @override
   bool get isChecked;
   @override

@@ -8,6 +8,10 @@ class AuthState with _$AuthState {
     String? state,
     String? city,
     File? file,
+    String? errorMessage,
+    String? countryId,
+    @Default([]) List<StateResponseEntity> states,
+    @Default([]) List<CountryResponseEntity> countries,
     @Default(false) bool isChecked,
     @Default(ViewState.idle) ViewState viewState,
   }) = _Initial;

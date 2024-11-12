@@ -14,12 +14,18 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedCompanyLogo;
   const factory AuthEvent.updateSelectedIsChecked(bool value) =
       _UpdateSelectedIsChecked;
-  const factory AuthEvent.registerUser(
-      {required String fullName,
-      required String officeTitle,
-      required String companyName,
-      required String phoneNumber,
-      required String email,
-      required String pasword,
-      }) = _RegisterUser;
+  const factory AuthEvent.loginUser(  
+  LoginEntity param) = _LoginUser;
+      const factory AuthEvent.getCountries() = _GetCountries;
+      const factory AuthEvent.getState() = _GetState;
+  const factory AuthEvent.registerUser({
+    required String fullName,
+    required String officeTitle,
+    required String companyName,
+    required String phoneNumber,
+    required String email,
+    required String pasword,
+  }) = _RegisterUser;
+
+  // AuthEvent.updateHere(bool value)
 }
