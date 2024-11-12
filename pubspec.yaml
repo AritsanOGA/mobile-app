@@ -29,6 +29,9 @@ dependencies:
   equatable: ^2.0.5
   dartz: ^0.10.1
   freezed_annotation: ^2.4.4
+  flutter_bloc: ^8.1.5
+  get_it: ^8.0.2
+  shared_preferences: ^2.3.3
   
   
 
@@ -54,6 +57,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - assets/svgs/
   fonts: 
     - family: Poppins
       fonts: 

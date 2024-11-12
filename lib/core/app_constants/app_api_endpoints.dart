@@ -1,15 +1,15 @@
 
 class AppApiEndpoint {
   const AppApiEndpoint._();
-  static const String scheme = 'https';
-  static const String host = 'api.sportive23.ng';
+  static const String scheme = 'http';
+  static const String host = '//35.157.203.193:8030';
   static const int receiveTimeout = 50000;
   static const int sendTimeout = 50000;
 
   static Uri baseUri = Uri(scheme: scheme, host: host, path: '/api/v1');
 
-  static Uri signup = baseUri.replace(path: '/api/v1/auth/signup');
-  static Uri login = baseUri.replace(path: '/api/v1/auth/login');
+  static Uri signup = baseUri.replace(path: '/api/v1/employer/signup');
+  static Uri login = baseUri.replace(path: '/api/v1/login');
 
   static Uri league = baseUri.replace(path: '/api/v1/leagues');
   static Uri team = baseUri.replace(path: '/api/v1/teams');

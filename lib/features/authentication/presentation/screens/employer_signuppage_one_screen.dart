@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/services/auth.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -132,46 +133,90 @@ class _EmployerSignuppageOneScreenState
                               hintStyle: theme.textTheme.titleSmall!)
                         ],
                       ),
+                      SizedBox(height: 32.v),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Country',
+                                    style: CustomTextStyles
+                                        .bodyMediumPrimaryContainer_1),
+                                CustomDropDown(),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 20.v),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Gender',
+                                    style: CustomTextStyles
+                                        .bodyMediumPrimaryContainer_1),
+                                CustomDropDown(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                       // _buildEgCEO1(context),
                       SizedBox(height: 27.v),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 3.h),
-                          child: CustomDropDown(
-                              icon: Container(
-                                  padding: EdgeInsets.all(3.h),
-                                  margin: EdgeInsets.fromLTRB(
-                                      30.h, 14.v, 20.h, 14.v),
-                                  decoration: BoxDecoration(
-                                      color: theme.colorScheme.primary,
-                                      borderRadius: BorderRadius.circular(9.h)),
-                                  child: CustomImageView(
-                                      imagePath: ImageConstant.imgCheckmark,
-                                      height: 11.adaptSize,
-                                      width: 11.adaptSize)),
-                              hintText: "Educational Qualifications",
-                              items: dropdownItemList1,
-                              onChanged: (value) {
-                                setState(() {
-                                  selectedEducationOption = value;
-                                });
-                              })),
-                      SizedBox(height: 28.v),
-                      _buildCountry1(context),
-                      SizedBox(height: 28.v),
-                      _buildPhone1(context),
-                      SizedBox(height: 29.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Row(children: [
-                            Text("Upload Company Logo\n(optional)",
-                                style: theme.textTheme.bodyMedium),
-                            Padding(
-                                padding: EdgeInsets.only(left: 38.h),
-                                child: Text("City",
-                                    style: theme.textTheme.bodyMedium))
-                          ])),
-                      SizedBox(height: 5.v),
-                      _buildChooseFile(context),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: CustomTextFormField(
+                                title: 'Phone no',
+                                controller: lastNameController,
+                                hintText: "eg  09033447788",
+                                hintStyle: theme.textTheme.titleSmall!),
+                          ),
+                          SizedBox(width: 20.v),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('State',
+                                    style: CustomTextStyles
+                                        .bodyMediumPrimaryContainer_1),
+                                CustomDropDown(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 27.v),
+
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Upload Company Logo",
+                                    style: theme.textTheme.bodyMedium),
+                                SizedBox(height: 5.v),
+                                _buildChooseFile(context),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('City',
+                                    style: CustomTextStyles
+                                        .bodyMediumPrimaryContainer_1),
+                                CustomDropDown(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+
+                    
                       SizedBox(height: 14.v),
                       Align(
                           alignment: Alignment.centerLeft,
@@ -490,28 +535,37 @@ class _EmployerSignuppageOneScreenState
       Expanded(
           child: Container(
               margin: EdgeInsets.only(right: 10.h),
-              padding: EdgeInsets.symmetric(vertical: 6.v),
+              padding: EdgeInsets.symmetric(vertical: 6.v, horizontal: 5.v),
               decoration: AppDecoration.outlineBlueGray
                   .copyWith(borderRadius: BorderRadiusStyle.roundedBorder7),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomElevatedButton(
-                      onPressed: (() {
-                        pickImage();
-                      }),
-                      // height: 34.v,
-                      // width: 80.h,
-                      text: "Choose File",
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(top: 8.v, bottom: 10.v),
-                        child: Text(
-                            image == null ? "No file chosen" : "Image selected",
-                            style: theme.textTheme.labelLarge))
-                  ]))),
-      Expanded(child: _buildGender(context))
+              child:
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                InkWell(
+                    onTap: () {
+                      pickImage();
+                    },
+                    child: Container(
+                        height: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: ColorSchemes.primaryColorScheme.primary),
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Text('choose file',
+                                style: theme.textTheme.labelMedium
+                                    ?.copyWith(color: Colors.white)),
+                          ),
+                        ))),
+                SizedBox(width: 5.v),
+                Padding(
+                  padding: EdgeInsets.only(top: 5.v, right: 5.v),
+                  child: Text(
+                      image == null ? "No file chosen" : "Image selected",
+                      style: theme.textTheme.labelLarge),
+                )
+              ]))),
+      //  Expanded(child: _buildGender(context))
     ]);
   }
 

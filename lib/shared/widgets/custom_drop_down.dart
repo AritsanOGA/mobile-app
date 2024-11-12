@@ -1,4 +1,6 @@
+import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app_export.dart';
 
 class CustomDropDown extends StatelessWidget {
@@ -78,8 +80,12 @@ class CustomDropDown extends StatelessWidget {
   Widget get dropDownWidget => SizedBox(
         width: width ?? double.maxFinite,
         child: DropdownButtonFormField(
+          isExpanded: true,
           focusNode: focusNode ?? FocusNode(),
-          icon: icon,
+          icon: Padding(
+            padding: const EdgeInsets.only(right:5.0),
+            child: SvgPicture.asset(AppAsset.dropdown),
+          ),
           autofocus: autofocus!,
           style: textStyle ?? theme.textTheme.titleSmall,
           items: items?.map<DropdownMenuItem<String>>((String value) {

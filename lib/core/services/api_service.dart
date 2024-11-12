@@ -11,7 +11,7 @@ abstract class ApiService {
   //? For making get request to the endpoint
   Future<dynamic> get({
     required Uri url,
-    required Map<String, dynamic> queryParameters,
+     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   });
 
@@ -86,7 +86,7 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<dynamic> get({
     required Uri url,
-    required Map<String, dynamic> queryParameters,
+     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   }) async {
     _log.i(
