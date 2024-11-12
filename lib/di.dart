@@ -12,12 +12,12 @@ final locator = GetIt.instance;
 
 void init() {
   locator
-  ..registerLazySingleton<Dio>(()=> Dio())
-  ..registerLazySingleton<ApiService>(()=> ApiServiceImpl(locator()))
+    ..registerLazySingleton<Dio>(() => Dio())
+    ..registerLazySingleton<ApiService>(() => ApiServiceImpl(locator()))
     ..registerLazySingleton<AuthRemoteDataSource>(
         () => AuthRemoteDataSourceImpl(locator()))
-    ..registerLazySingleton<AuthRepository>(
-        () => AuthRepositoryImpl(authRemoteDataSource: locator()))
+    ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
+        authRemoteDataSource: locator(), localDataSource: locator()))
     ..registerLazySingleton<SignupUseCase>(() => SignupUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(

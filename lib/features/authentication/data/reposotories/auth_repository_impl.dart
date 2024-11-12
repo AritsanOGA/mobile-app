@@ -1,11 +1,14 @@
 import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
+import 'package:artisan_oga/core/extensions/extention.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_local_datasource.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -74,5 +77,16 @@ class AuthRepositoryImpl implements AuthRepository {
         ),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, List<CountryResponseEntity>>> getCountries() {
+    return authRemoteDataSource.getCountries().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<StateResponseEntity>>> getState(
+      String countryId) {
+    return authRemoteDataSource.getState(countryId).makeRequest();
   }
 }

@@ -4,7 +4,6 @@ import 'package:artisan_oga/features/authentication/domain/entities/signup_entit
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
-
 class SignupUseCase implements UseCase<bool, SignupEntity> {
   SignupUseCase(this.repository);
   final AuthRepository repository;
