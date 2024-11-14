@@ -34,7 +34,7 @@ mixin _$AuthEvent {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,7 +50,7 @@ mixin _$AuthEvent {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,7 +66,7 @@ mixin _$AuthEvent {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -84,7 +84,7 @@ mixin _$AuthEvent {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,7 +99,7 @@ mixin _$AuthEvent {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,7 +114,7 @@ mixin _$AuthEvent {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,7 +219,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCountry(value);
   }
@@ -238,7 +238,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCountry?.call(value);
   }
@@ -257,7 +257,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCountry != null) {
@@ -281,7 +281,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedCountry(this);
   }
@@ -299,7 +299,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedCountry?.call(this);
   }
@@ -317,7 +317,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCountry != null) {
@@ -419,7 +419,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedGender(value);
   }
@@ -438,7 +438,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedGender?.call(value);
   }
@@ -457,7 +457,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -481,7 +481,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedGender(this);
   }
@@ -499,7 +499,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedGender?.call(this);
   }
@@ -517,7 +517,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -618,7 +618,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedState(value);
   }
@@ -637,7 +637,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedState?.call(value);
   }
@@ -656,7 +656,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedState != null) {
@@ -680,7 +680,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedState(this);
   }
@@ -698,7 +698,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedState?.call(this);
   }
@@ -716,7 +716,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedState != null) {
@@ -817,7 +817,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCity(value);
   }
@@ -836,7 +836,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCity?.call(value);
   }
@@ -855,7 +855,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCity != null) {
@@ -879,7 +879,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedCity(this);
   }
@@ -897,7 +897,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedCity?.call(this);
   }
@@ -915,7 +915,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCity != null) {
@@ -1018,7 +1018,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCompanyLogo(value);
   }
@@ -1037,7 +1037,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedCompanyLogo?.call(value);
   }
@@ -1056,7 +1056,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCompanyLogo != null) {
@@ -1080,7 +1080,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedCompanyLogo(this);
   }
@@ -1098,7 +1098,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedCompanyLogo?.call(this);
   }
@@ -1116,7 +1116,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedCompanyLogo != null) {
@@ -1219,7 +1219,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedIsChecked(value);
   }
@@ -1238,7 +1238,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return updateSelectedIsChecked?.call(value);
   }
@@ -1257,7 +1257,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedIsChecked != null) {
@@ -1281,7 +1281,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return updateSelectedIsChecked(this);
   }
@@ -1299,7 +1299,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return updateSelectedIsChecked?.call(this);
   }
@@ -1317,7 +1317,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (updateSelectedIsChecked != null) {
@@ -1417,7 +1417,7 @@ class _$LoginUserImpl implements _LoginUser {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return loginUser(param);
   }
@@ -1436,7 +1436,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return loginUser?.call(param);
   }
@@ -1455,7 +1455,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (loginUser != null) {
@@ -1479,7 +1479,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return loginUser(this);
   }
@@ -1497,7 +1497,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return loginUser?.call(this);
   }
@@ -1515,7 +1515,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (loginUser != null) {
@@ -1588,7 +1588,7 @@ class _$GetCountriesImpl implements _GetCountries {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return getCountries();
   }
@@ -1607,7 +1607,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return getCountries?.call();
   }
@@ -1626,7 +1626,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -1650,7 +1650,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return getCountries(this);
   }
@@ -1668,7 +1668,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return getCountries?.call(this);
   }
@@ -1686,7 +1686,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -1754,7 +1754,7 @@ class _$GetStateImpl implements _GetState {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
     return getState();
   }
@@ -1773,7 +1773,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
     return getState?.call();
   }
@@ -1792,7 +1792,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -1816,7 +1816,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
     return getState(this);
   }
@@ -1834,7 +1834,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
     return getState?.call(this);
   }
@@ -1852,7 +1852,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -1954,7 +1954,7 @@ class _$RegisterUserImpl implements _RegisterUser {
 
   @override
   String toString() {
-    return 'AuthEvent.registerUser(fullName: $fullName, officeTitle: $officeTitle, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, pasword: $pasword)';
+    return 'AuthEvent.registerEmployer(fullName: $fullName, officeTitle: $officeTitle, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, pasword: $pasword)';
   }
 
   @override
@@ -2003,9 +2003,9 @@ class _$RegisterUserImpl implements _RegisterUser {
             String phoneNumber,
             String email,
             String pasword)
-        registerUser,
+        registerEmployer,
   }) {
-    return registerUser(
+    return registerEmployer(
         fullName, officeTitle, companyName, phoneNumber, email, pasword);
   }
 
@@ -2023,9 +2023,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
   }) {
-    return registerUser?.call(
+    return registerEmployer?.call(
         fullName, officeTitle, companyName, phoneNumber, email, pasword);
   }
 
@@ -2043,11 +2043,11 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
-        registerUser,
+        registerEmployer,
     required TResult orElse(),
   }) {
-    if (registerUser != null) {
-      return registerUser(
+    if (registerEmployer != null) {
+      return registerEmployer(
           fullName, officeTitle, companyName, phoneNumber, email, pasword);
     }
     return orElse();
@@ -2068,9 +2068,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
-    required TResult Function(_RegisterUser value) registerUser,
+    required TResult Function(_RegisterUser value) registerEmployer,
   }) {
-    return registerUser(this);
+    return registerEmployer(this);
   }
 
   @override
@@ -2086,9 +2086,9 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
-    TResult? Function(_RegisterUser value)? registerUser,
+    TResult? Function(_RegisterUser value)? registerEmployer,
   }) {
-    return registerUser?.call(this);
+    return registerEmployer?.call(this);
   }
 
   @override
@@ -2104,11 +2104,11 @@ class _$RegisterUserImpl implements _RegisterUser {
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
-    TResult Function(_RegisterUser value)? registerUser,
+    TResult Function(_RegisterUser value)? registerEmployer,
     required TResult orElse(),
   }) {
-    if (registerUser != null) {
-      return registerUser(this);
+    if (registerEmployer != null) {
+      return registerEmployer(this);
     }
     return orElse();
   }

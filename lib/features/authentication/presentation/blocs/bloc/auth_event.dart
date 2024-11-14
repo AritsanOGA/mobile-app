@@ -18,7 +18,7 @@ class AuthEvent with _$AuthEvent {
   LoginEntity param) = _LoginUser;
       const factory AuthEvent.getCountries() = _GetCountries;
       const factory AuthEvent.getState() = _GetState;
-  const factory AuthEvent.registerUser({
+  const factory AuthEvent.registerEmployer({
     required String fullName,
     required String officeTitle,
     required String companyName,
