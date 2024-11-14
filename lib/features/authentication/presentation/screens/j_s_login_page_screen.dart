@@ -51,32 +51,17 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                     style: CustomTextStyles.bodyMediumGray700_2,
                   ),
                   SizedBox(height: 52.v),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Email",
-                      style: CustomTextStyles.bodyMediumPrimaryContainer_1,
-                    ),
-                  ),
-                  SizedBox(height: 7.v),
                   CustomTextFormField(
-                       title:'Password' ,
+                    title: 'Email',
                     controller: emailController,
                     hintText: "example@gmail.com",
                     hintStyle: theme.textTheme.titleSmall!,
                     textInputType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 28.v),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Password",
-                      style: CustomTextStyles.bodyMediumPrimaryContainer_1,
-                    ),
-                  ),
                   SizedBox(height: 6.v),
                   CustomTextFormField(
-                       title:'Password' ,
+                    title: 'Password',
                     controller: passwordController,
                     hintText: "*************",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -186,7 +171,6 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                       }
                     }),
                     text: "Log in",
-                  
                   ),
                   SizedBox(height: 27.v),
                   GestureDetector(
@@ -195,7 +179,7 @@ class _JSLoginPageScreenState extends State<JSLoginPageScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                JSCreateAccountPagetTwoScreen()),
+                                JSCreateAccountPageOneScreen()),
                       );
                     }),
                     child: RichText(

@@ -112,7 +112,7 @@ class _JSCreateAccountPagetTwoScreenState
                       Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
                           child: CustomTextFormField(
-                               title:'Password' ,
+                              title: 'Password',
                               controller: streetaddressController,
                               hintText: "Enter Street Address",
                               hintStyle: theme.textTheme.titleSmall!)),
@@ -244,66 +244,65 @@ class _JSCreateAccountPagetTwoScreenState
                       _buildDateOfBirth1(context),
                       SizedBox(height: 60.v),
                       CustomElevatedButton(
-                          onPressed: (() {
-                            if (streetaddressController.text.isNotEmpty &&
-                                selectedDate != "yyyy-MM-dd" &&
-                                cityController.text.isNotEmpty) {
-                              //retrieve data from hive store
-                              var newUserData =
-                                  Hive.box("artisan").get("new_applicant");
+                        onPressed: (() {
+                          if (streetaddressController.text.isNotEmpty &&
+                              selectedDate != "yyyy-MM-dd" &&
+                              cityController.text.isNotEmpty) {
+                            //retrieve data from hive store
+                            var newUserData =
+                                Hive.box("artisan").get("new_applicant");
 
-                              //update the array of maps
-                              //push each item from the form to the array
+                            //update the array of maps
+                            //push each item from the form to the array
 
-                              newUserData.add(
-                                  {"street": streetaddressController.text});
+                            newUserData
+                                .add({"street": streetaddressController.text});
 
-                              newUserData.add({"state": selectedStateName});
+                            newUserData.add({"state": selectedStateName});
 
-                              newUserData
-                                  .add({"country": selectedCountry.toString()});
+                            newUserData
+                                .add({"country": selectedCountry.toString()});
 
-                              newUserData.add({
-                                "job_category": selectedCategory.toString()
-                              });
+                            newUserData.add(
+                                {"job_category": selectedCategory.toString()});
 
-                              newUserData.add({"dob": selectedDate});
+                            newUserData.add({"dob": selectedDate});
 
-                              newUserData.add({"city": cityController.text});
+                            newUserData.add({"city": cityController.text});
 
-                              newUserData.add({"skills": selectedSkills});
+                            newUserData.add({"skills": selectedSkills});
 
-                              //re-save the updated array
+                            //re-save the updated array
 
-                              Hive.box("artisan")
-                                  .put("new_applicant", newUserData);
+                            Hive.box("artisan")
+                                .put("new_applicant", newUserData);
 
-                              Navigator.push(
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      JSCreateAccountPagetThreeScreen()),
+                            );
+                          } else {
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        JSCreateAccountPagetThreeScreen()),
-                              );
-                            } else {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSCreateAccountPagetThreeScreen()));
-                              // Fluttertoast.showToast(
-                              //     msg: "Please fill all fields properly",
-                              //     toastLength: Toast.LENGTH_SHORT,
-                              //     gravity: ToastGravity.CENTER,
-                              //     timeInSecForIosWeb: 1,
-                              //     backgroundColor:
-                              //         const Color.fromARGB(255, 86, 86, 86)
-                              //             .withOpacity(0.6),
-                              //     textColor: Colors.white,
-                              //     fontSize: 16.0);
-                            }
-                          }),
-                          text: "Next",
-                        ),
+                                        JSCreateAccountPagetThreeScreen()));
+                            // Fluttertoast.showToast(
+                            //     msg: "Please fill all fields properly",
+                            //     toastLength: Toast.LENGTH_SHORT,
+                            //     gravity: ToastGravity.CENTER,
+                            //     timeInSecForIosWeb: 1,
+                            //     backgroundColor:
+                            //         const Color.fromARGB(255, 86, 86, 86)
+                            //             .withOpacity(0.6),
+                            //     textColor: Colors.white,
+                            //     fontSize: 16.0);
+                          }
+                        }),
+                        text: "Next",
+                      ),
                     ])))));
   }
 
@@ -343,7 +342,7 @@ class _JSCreateAccountPagetTwoScreenState
           Text("City", style: theme.textTheme.bodyMedium),
           SizedBox(height: 5.v),
           CustomTextFormField(
-               title:'Password' ,
+              title: 'Password',
               controller: cityController,
               hintText: "City",
               hintStyle: theme.textTheme.titleSmall!)
