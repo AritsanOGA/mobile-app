@@ -102,20 +102,11 @@ class _JSCreateAccountPagetTwoScreenState
                                             .titleMediumOnPrimary)))
                           ])),
                       SizedBox(height: 38.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Street Address",
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 6.v),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 3.h),
-                          child: CustomTextFormField(
-                              title: 'Password',
-                              controller: streetaddressController,
-                              hintText: "Enter Street Address",
-                              hintStyle: theme.textTheme.titleSmall!)),
+                      CustomTextFormField(
+                          title: 'Street Address',
+                          controller: streetaddressController,
+                          hintText: "Enter Street Address",
+                          hintStyle: theme.textTheme.titleSmall!),
                       SizedBox(height: 29.v),
                       Align(
                           alignment: Alignment.centerLeft,
@@ -179,14 +170,14 @@ class _JSCreateAccountPagetTwoScreenState
                                       ),
                                     ))
                               ])),
-                      SizedBox(height: 29.v),
-                      _buildCity(context),
+                      // SizedBox(height: 29.v),
+                      // _buildCity(context),
                       SizedBox(height: 29.v),
                       Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
                               padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Job Category",
+                              child: Text("Job Type",
                                   style: theme.textTheme.bodyMedium))),
                       SizedBox(height: 5.v),
                       GestureDetector(
@@ -212,36 +203,54 @@ class _JSCreateAccountPagetTwoScreenState
                                   : selectedCategoryName),
                             )),
                       ),
+
+                      // SizedBox(height: 27.v),
+                      // selectedCategory == 0
+                      //     ? SizedBox()
+                      //     : Text("Enter Your Skills", style: TextStyle()),
+                      // SizedBox(height: 9.v),
+                      // selectedCategory == 0
+                      //     ? SizedBox()
+                      //     : GestureDetector(
+                      //         onTap: (() {
+                      //           showSkillsList(context);
+                      //         }),
+                      //         child: Container(
+                      //             width: double.maxFinite,
+                      //             height: 50,
+                      //             padding: EdgeInsets.symmetric(
+                      //                 vertical: 12, horizontal: 10),
+                      //             decoration: BoxDecoration(
+                      //                 borderRadius:
+                      //                     BorderRadius.all(Radius.circular(8)),
+                      //                 border: Border.all(
+                      //                     width: 1, color: Colors.grey)),
+                      //             child: Text(
+                      //               selectedSkills.length == 0
+                      //                   ? "Select skills"
+                      //                   : "${selectedSkills.length} selected",
+                      //               style: TextStyle(fontSize: 16.v),
+                      //             )),
+                      //       ),
                       SizedBox(height: 27.v),
-                      selectedCategory == 0
-                          ? SizedBox()
-                          : Text("Enter Your Skills", style: TextStyle()),
-                      SizedBox(height: 9.v),
-                      selectedCategory == 0
-                          ? SizedBox()
-                          : GestureDetector(
-                              onTap: (() {
-                                showSkillsList(context);
-                              }),
-                              child: Container(
-                                  width: double.maxFinite,
-                                  height: 50,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 10),
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(8)),
-                                      border: Border.all(
-                                          width: 1, color: Colors.grey)),
-                                  child: Text(
-                                    selectedSkills.length == 0
-                                        ? "Select skills"
-                                        : "${selectedSkills.length} selected",
-                                    style: TextStyle(fontSize: 16.v),
-                                  )),
-                            ),
-                      SizedBox(height: 27.v),
-                      _buildDateOfBirth1(context),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: CustomTextFormField(
+                                title: 'Street Address',
+                                controller: streetaddressController,
+                                hintText: "Enter Street Address",
+                                hintStyle: theme.textTheme.titleSmall!),
+                          ),
+                          Expanded(
+                            child: CustomTextFormField(
+                                title: 'City',
+                                controller: streetaddressController,
+                                hintText: "Enter Street Address",
+                                hintStyle: theme.textTheme.titleSmall!),
+                          ),
+                        ],
+                      ),
                       SizedBox(height: 60.v),
                       CustomElevatedButton(
                         onPressed: (() {
@@ -353,9 +362,7 @@ class _JSCreateAccountPagetTwoScreenState
   Widget _buildDateOfBirth1(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [_buildDateOfBirth(context)]));
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: []));
   }
 
   /// Navigates back to the previous screen.

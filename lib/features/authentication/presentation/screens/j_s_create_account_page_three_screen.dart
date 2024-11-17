@@ -116,46 +116,62 @@ class _JSCreateAccountPagetThreeScreenState
                                     });
                                   })),
                           SizedBox(height: 28.v),
-                          selectedEducationOption == "Yes"
-                              ? Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                      padding: EdgeInsets.only(left: 3.h),
-                                      child: Text("School Name",
-                                          style: theme.textTheme.bodyMedium)))
-                              : SizedBox(),
-                          SizedBox(height: 6.v),
+                          // selectedEducationOption == "Yes"
+                          //     ? Align(
+                          //         alignment: Alignment.centerLeft,
+                          //         child: Padding(
+                          //             padding: EdgeInsets.only(left: 3.h),
+                          //             child: Text("School Name",
+                          //                 style: theme.textTheme.bodyMedium)))
+                          //     : SizedBox(),
+                          // SizedBox(height: 6.v),
                           selectedEducationOption == "Yes"
                               ? Padding(
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 3.h),
                                   child: CustomTextFormField(
-                                       title:'Password' ,
+                                      title: 'School Name',
                                       controller: schoolNameController,
                                       hintText: "Enter School Name",
                                       hintStyle: theme.textTheme.titleSmall!))
                               : SizedBox(),
                           SizedBox(height: 27.v),
-                          selectedEducationOption == "Yes"
-                              ? Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                      padding: EdgeInsets.only(left: 3.h),
-                                      child: Text("Course Name",
-                                          style: theme.textTheme.bodyMedium)))
-                              : SizedBox(),
-                          SizedBox(height: 7.v),
+
                           selectedEducationOption == "Yes"
                               ? Padding(
                                   padding:
                                       EdgeInsets.symmetric(horizontal: 3.h),
                                   child: CustomTextFormField(
-                                       title:'Password' ,
+                                      title: 'Course Name',
                                       controller: courseNameController,
                                       hintText: "Enter Course Name",
                                       hintStyle: theme.textTheme.titleSmall!,
                                       textInputAction: TextInputAction.done))
                               : SizedBox(),
+                          SizedBox(height: 27.v),
+
+                          selectedEducationOption == "Yes"
+                              ? Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 3.h),
+                                  child: CustomTextFormField(
+                                      title: 'Graduation Year',
+                                      controller: courseNameController,
+                                      hintText: "Enter Graduation Year",
+                                      hintStyle: theme.textTheme.titleSmall!,
+                                      textInputAction: TextInputAction.done))
+                              : SizedBox(),
+                          SizedBox(height: 27.v),
+
+                          CustomDropDown(
+                              hintText: "Certificate Obtained",
+                              items: dropdownItemList,
+                              onChanged: (value) {
+                                setState(() {
+                                  selectedEducationOption = value;
+                                });
+                              }),
+
                           /*
 
  SizedBox(height: 27.v),
@@ -217,46 +233,46 @@ class _JSCreateAccountPagetThreeScreenState
                          */
                           SizedBox(height: 54.v),
                           CustomElevatedButton(
-                              onPressed: (() {
-                                //retrieve data from hive store
-                                var newUserData =
-                                    Hive.box("artisan").get("new_applicant");
+                            onPressed: (() {
+                              // //retrieve data from hive store
+                              // var newUserData =
+                              //     Hive.box("artisan").get("new_applicant");
 
-                                //update the array of maps
-                                //push each item from the form to the array
+                              // //update the array of maps
+                              // //push each item from the form to the array
 
-                                newUserData.add({
-                                  "educational_qualification":
-                                      selectedEducationOption
-                                });
+                              // newUserData.add({
+                              //   "educational_qualification":
+                              //       selectedEducationOption
+                              // });
 
-                                newUserData.add(
-                                    {"school_name": schoolNameController.text});
+                              // newUserData.add(
+                              //     {"school_name": schoolNameController.text});
 
-                                newUserData.add(
-                                    {"course_name": courseNameController.text});
+                              // newUserData.add(
+                              //     {"course_name": courseNameController.text});
 
-                                newUserData.add(
-                                    {"award_title": awardTitleController.text});
+                              // newUserData.add(
+                              //     {"award_title": awardTitleController.text});
 
-                                newUserData.add({
-                                  "award_year": enterAwardYearController.text
-                                });
+                              // newUserData.add({
+                              //   "award_year": enterAwardYearController.text
+                              // });
 
-                                //re-save the updated array
+                              // //re-save the updated array
 
-                                Hive.box("artisan")
-                                    .put("new_applicant", newUserData);
+                              // Hive.box("artisan")
+                              //     .put("new_applicant", newUserData);
 
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSCreateAccountPageFourScreen()),
-                                );
-                              }),
-                              text: "Next",
-                              ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        JSCreateAccountPageFourScreen()),
+                              );
+                            }),
+                            text: "Next",
+                          ),
                         ]))))));
   }
 

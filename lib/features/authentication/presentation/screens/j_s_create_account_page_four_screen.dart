@@ -77,191 +77,184 @@ class _JSCreateAccountPageFourScreenState
                                                 .titleMediumOnPrimary)))
                               ])),
                           SizedBox(height: 38.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("How would you like to work",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 16.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomDropDown(
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Remote",
-                                  items: commutTypeList,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      selectedCommutType = value;
-                                    });
-                                  })),
-                          SizedBox(height: 28.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text(
-                                      "Do you have any work experience?",
-                                      style: theme.textTheme.bodyMedium))),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 3.h),
+                          //         child: Text("How would you like to work",
+                          //             style: theme.textTheme.bodyMedium))),
+                          // SizedBox(height: 16.v),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          //     child: CustomDropDown(
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText: "Remote",
+                          //         items: commutTypeList,
+                          //         onChanged: (value) {
+                          //           setState(() {
+                          //             selectedCommutType = value;
+                          //           });
+                          //         })),
+                          // SizedBox(height: 28.v),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 3.h),
+                          //         child: Text(
+                          //             "Do you have any work experience?",
+                          //             style: theme.textTheme.bodyMedium))),
+                          // SizedBox(height: 6.v),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          //     child: CustomDropDown(
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText: "Do you have work experience?",
+                          //         items: dropdownItemList,
+                          //         onChanged: (value) {
+                          //           setState(() {
+                          //             selectedJobHistoryOption = value;
+                          //           });
+                          //         })),
+                          // SizedBox(height: 38.v),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 3.h),
+                          //         child: Text("Company Name",
+                          //             style: theme.textTheme.bodyMedium))),
                           SizedBox(height: 6.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomDropDown(
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Do you have work experience?",
-                                  items: dropdownItemList,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      selectedJobHistoryOption = value;
-                                    });
-                                  })),
-                          SizedBox(height: 38.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Company Name",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 6.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(   title:'Password' ,
+                              child: CustomTextFormField(
+                                  title: 'Company Name',
                                   controller: nameController,
                                   hintText: "Enter Company Name",
                                   hintStyle: theme.textTheme.titleSmall!)),
                           SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Job role",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 7.v),
+
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(   title:'Password' ,
+                              child: CustomTextFormField(
+                                  title: 'Role',
                                   controller: enterJobRoleController,
-                                  hintText: "Job role",
+                                  hintText: "Enter Role",
                                   hintStyle: theme.textTheme.titleSmall!,
                                   textInputAction: TextInputAction.done)),
                           SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Job Description",
-                                      style: theme.textTheme.bodyMedium))),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 3.h),
+                          //         child: Text("Job Description",
+                          //             style: theme.textTheme.bodyMedium))),
+                          // SizedBox(height: 7.v),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          //     child: CustomTextFormField(
+                          //         title: 'Password',
+                          //         controller: enterJobDescriptionController,
+                          //         hintText: "Job Description",
+                          //         hintStyle: theme.textTheme.titleSmall!,
+                          //         textInputAction: TextInputAction.done)),
+                          // SizedBox(height: 27.v),
+
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(   title:'Password' ,
-                                  controller: enterJobDescriptionController,
-                                  hintText: "Job Description",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
-                          SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Start Year",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 7.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(   title:'Password' ,
+                              child: CustomTextFormField(
+                                  title: 'Start Yea',
                                   textInputType: TextInputType.number,
                                   controller: startYearController,
                                   hintText: "Start Year",
                                   hintStyle: theme.textTheme.titleSmall!,
                                   textInputAction: TextInputAction.done)),
                           SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("End Year",
-                                      style: theme.textTheme.bodyMedium))),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 3.h),
+                          //         child: Text("End Year",
+                          //             style: theme.textTheme.bodyMedium))),
                           SizedBox(height: 7.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(   title:'Password' ,
-                                  controller: endYearController,
+                              child: CustomTextFormField(
+                                  title: 'Description',
                                   textInputType: TextInputType.number,
-                                  hintText: "End Year",
+                                  controller: startYearController,
+                                  hintText: "Input here",
                                   hintStyle: theme.textTheme.titleSmall!,
                                   textInputAction: TextInputAction.done)),
                           SizedBox(height: 38.v),
                           CustomElevatedButton(
-                              onPressed: (() {
-                                //retrieve data from hive store
-                                var newUserData =
-                                    Hive.box("artisan").get("new_applicant");
+                            onPressed: (() {
+                              //retrieve data from hive store
+                              // var newUserData =
+                              //     Hive.box("artisan").get("new_applicant");
 
-                                //update the array of maps
-                                //push each item from the form to the array
+                              // //update the array of maps
+                              // //push each item from the form to the array
 
-                                newUserData.add({
-                                  "work_experience": selectedJobHistoryOption
-                                });
+                              // newUserData.add({
+                              //   "work_experience": selectedJobHistoryOption
+                              // });
 
-                                newUserData.add(
-                                    {"job_role": enterJobRoleController.text});
+                              // newUserData.add(
+                              //     {"job_role": enterJobRoleController.text});
 
-                                newUserData
-                                    .add({"company_name": nameController.text});
+                              // newUserData
+                              //     .add({"company_name": nameController.text});
 
-                                newUserData.add({
-                                  "job_description":
-                                      enterJobDescriptionController.text
-                                });
+                              // newUserData.add({
+                              //   "job_description":
+                              //       enterJobDescriptionController.text
+                              // });
 
-                                newUserData.add({
-                                  "job_start_year": startYearController.text
-                                });
+                              // newUserData.add(
+                              //     {"job_start_year": startYearController.text});
 
-                                newUserData.add(
-                                    {"job_end_year": endYearController.text});
+                              // newUserData.add(
+                              //     {"job_end_year": endYearController.text});
 
-                                newUserData
-                                    .add({"commute_type": selectedCommutType});
+                              // newUserData
+                              //     .add({"commute_type": selectedCommutType});
 
-                                //re-save the updated array
+                              // //re-save the updated array
 
-                                Hive.box("artisan")
-                                    .put("new_applicant", newUserData);
+                              // Hive.box("artisan")
+                              //     .put("new_applicant", newUserData);
 
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSCreateAccountPageFiveScreen()),
-                                );
-                              }),
-                              text: "Next",
-                              ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        JSCreateAccountPageFiveScreen()),
+                              );
+                            }),
+                            text: "Next",
+                          ),
                         ]))))));
   }
 

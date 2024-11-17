@@ -166,7 +166,9 @@ class _JSCreateAccountPageOneScreenState
                                         TextInputType.visiblePassword,
                                     obscureText: true)
                               ]),
-    Row(
+                          SizedBox(height: 38.v),
+
+                          Row(
                             children: [
                               Expanded(
                                 child: Column(
@@ -175,7 +177,7 @@ class _JSCreateAccountPageOneScreenState
                                     Text("Upload Company Logo",
                                         style: theme.textTheme.bodyMedium),
                                     SizedBox(height: 5.v),
-                                  //  _buildChooseFile(context),
+                                    //  _buildChooseFile(context),
                                   ],
                                 ),
                               ),
@@ -194,35 +196,76 @@ class _JSCreateAccountPageOneScreenState
                           ),
                           //  _buildPassword1(context),
                           SizedBox(height: 28.v),
-                          Container(
-                              child: Text("Gender",
-                                  textAlign: TextAlign.start,
-                                  style: theme.textTheme.bodyMedium)),
-                          SizedBox(height: 5.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: CustomDropDown(
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Male",
-                                  items: genderList,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      selectedGender = value;
-                                    });
-                                  })),
-                          SizedBox(height: 60.v),
-                          _buildNext(context),
+
+                          CustomElevatedButton(
+                            onPressed: (() {
+                              if (firstNameController.text.isNotEmpty &&
+                                  lastNameController.text.isNotEmpty &&
+                                  phoneController.text.isNotEmpty &&
+                                  emailController.text.isNotEmpty &&
+                                  passwordController.text.isNotEmpty) {
+                                if (passwordController.text !=
+                                    confirmpasswordController.text) {
+                                  Fluttertoast.showToast(
+                                      msg:
+                                          "Please confirm your password properly",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.CENTER,
+                                      timeInSecForIosWeb: 1,
+                                      backgroundColor:
+                                          const Color.fromARGB(255, 86, 86, 86)
+                                              .withOpacity(0.6),
+                                      textColor: Colors.white,
+                                      fontSize: 16.0);
+
+                                  //password and confirm password are not the same
+                                } else {
+                                  newUserData = [
+                                    {
+                                      "full_name": firstNameController.text +
+                                          " " +
+                                          lastNameController.text
+                                    },
+                                    {"phone": phoneController.text},
+                                    {"email": emailController.text},
+                                    {"password": passwordController.text},
+                                    {
+                                      "confirm_password":
+                                          confirmpasswordController.text
+                                    },
+                                    {"gender": selectedGender},
+                                  ];
+
+                                  Hive.box("artisan")
+                                      .put("new_applicant", newUserData);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            JSCreateAccountPagetTwoScreen()),
+                                  );
+                                }
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          JSCreateAccountPagetTwoScreen()),
+                                );
+                                // Fluttertoast.showToast(
+                                //     msg: "Fill in all fields",
+                                //     toastLength: Toast.LENGTH_SHORT,
+                                //     gravity: ToastGravity.CENTER,
+                                //     timeInSecForIosWeb: 1,
+                                //     backgroundColor:
+                                //         const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
+                                //     textColor: Colors.white,
+                                //     fontSize: 16.0);
+                              }
+                            }),
+                            text: "Next",
+                          ),
+                          //    _buildNext(context),
                           SizedBox(height: 21.v),
                           GestureDetector(
                               onTap: (() {

@@ -86,14 +86,27 @@ class _JSCreateAccountPageFiveScreenState
                                 style: CustomTextStyles.titleMediumOnPrimary))
                       ])),
                   SizedBox(height: 40.v),
+                  CustomDropDown(),
+
+                  SizedBox(height: 25.v),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Upload Your Passport *",
+                          child: Text("Guarantor Name *",
                               style: theme.textTheme.bodyMedium))),
                   SizedBox(height: 5.v),
-                  _buildUploadPassport(context),
+                  CustomDropDown(),
+                           SizedBox(height: 27.v),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 3.h),
+                      child: CustomTextFormField(
+                          title: 'Years of Experience',
+                          controller: guarantorNameController,
+                          hintText: "e.g 3+ years",
+                          hintStyle: theme.textTheme.titleSmall!)),
+                  SizedBox(height: 27.v),
+                  CustomDropDown(),
                   SizedBox(height: 29.v),
                   Align(
                       alignment: Alignment.centerLeft,
@@ -122,66 +135,19 @@ class _JSCreateAccountPageFiveScreenState
                                         : "1 file chosen",
                                     style: theme.textTheme.labelLarge))
                           ])),
-                  SizedBox(height: 25.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Guarantor Name *",
-                              style: theme.textTheme.bodyMedium))),
-                  SizedBox(height: 5.v),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(   title:'Password' ,
-                          controller: guarantorNameController,
-                          hintText: "Guarantor name",
-                          hintStyle: theme.textTheme.titleSmall!)),
-                  SizedBox(height: 27.v),
                   SizedBox(height: 29.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Guarantor Email *",
-                              style: theme.textTheme.bodyMedium))),
+              
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(   title:'Password' ,
+                      child: CustomTextFormField(
+                          title: 'Describe what you can do',
                           textInputType: TextInputType.emailAddress,
                           controller: guarantorEmailController,
-                          hintText: "Guarantor email",
+                          hintText: "Input here",
                           hintStyle: theme.textTheme.titleSmall!)),
                   SizedBox(height: 29.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Guarantor Phone *",
-                              style: theme.textTheme.bodyMedium))),
-                  SizedBox(height: 5.v),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(   title:'Password' ,
-                          textInputType: TextInputType.phone,
-                          controller: guarantorPhoneController,
-                          hintText: "Guarantor phone",
-                          hintStyle: theme.textTheme.titleSmall!)),
-                  SizedBox(height: 29.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Guarantor Address *",
-                              style: theme.textTheme.bodyMedium))),
-                  SizedBox(height: 5.v),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(   title:'Password' ,
-                          controller: guarantorAddressController,
-                          hintText: "Guarantor address",
-                          hintStyle: theme.textTheme.titleSmall!)),
-                  SizedBox(height: 44.v),
+
                   _buildNextButton(context),
                   SizedBox(height: 74.v),
                   SizedBox(
@@ -230,25 +196,21 @@ class _JSCreateAccountPageFiveScreenState
   /// Section Widget
   Widget _buildChooseImageButton(BuildContext context) {
     return CustomElevatedButton(
-        onPressed: (() {
-          pickImage();
-        }),
-
-        text: "Choose File",
-
-        );
+      onPressed: (() {
+        pickImage();
+      }),
+      text: "Choose File",
+    );
   }
 
   /// Section Widget
   Widget _buildChooseFileButton(BuildContext context) {
     return CustomElevatedButton(
-        onPressed: (() {
-          pickResumeFile();
-        }),
-   
-        text: "Choose File",
-    
-        );
+      onPressed: (() {
+        pickResumeFile();
+      }),
+      text: "Choose File",
+    );
   }
 
   /// Section Widget
@@ -274,216 +236,214 @@ class _JSCreateAccountPageFiveScreenState
   /// Section Widget
   Widget _buildNextButton(BuildContext context) {
     return CustomElevatedButton(
-        onPressed: (() {
-          //variables
-          String? fullName,
-              email,
-              password,
-              confirmPassword,
-              phone,
-              country,
-              dob,
-              state,
-              city,
-              street,
-              gender,
-              jobCategory,
-              educationQualification,
-              schoolName,
-              courseName,
-              workExperience,
-              jobRole,
-              jobDescription,
-              jobStartYear,
-              jobEndYear,
-              companyName,
-              awardYear,
-              awardTitle,
-              commuteType;
-          ;
+      onPressed: (() {
+        //variables
+        String? fullName,
+            email,
+            password,
+            confirmPassword,
+            phone,
+            country,
+            dob,
+            state,
+            city,
+            street,
+            gender,
+            jobCategory,
+            educationQualification,
+            schoolName,
+            courseName,
+            workExperience,
+            jobRole,
+            jobDescription,
+            jobStartYear,
+            jobEndYear,
+            companyName,
+            awardYear,
+            awardTitle,
+            commuteType;
+        ;
 
-          List<int>? skills;
+        List<int>? skills;
 
-          EasyLoading.show();
-          var newUserData = Hive.box("artisan").get("new_applicant");
+        EasyLoading.show();
+        var newUserData = Hive.box("artisan").get("new_applicant");
 
-          print("data " + newUserData.toString());
+        print("data " + newUserData.toString());
 
-          print("sent phone: " + newUserData.first["full_name"].toString());
+        print("sent phone: " + newUserData.first["full_name"].toString());
 
-          for (var item in newUserData) {
-            if (item.containsKey("full_name")) {
-              fullName = item["full_name"];
-            }
-            if (item.containsKey("phone")) {
-              phone = item["phone"];
-            }
-            if (item.containsKey("email")) {
-              email = item["email"];
-            }
-            if (item.containsKey("password")) {
-              password = item["password"];
-            }
-            if (item.containsKey("confirm_password")) {
-              confirmPassword = item["confirm_password"];
-            }
-            if (item.containsKey("dob")) {
-              dob = item["dob"];
-            }
-
-            if (item.containsKey("state")) {
-              state = item["state"].toString();
-            }
-
-            if (item.containsKey("city")) {
-              city = item["city"];
-            }
-
-            if (item.containsKey("street")) {
-              street = item["street"];
-            }
-
-            if (item.containsKey("gender")) {
-              gender = item["gender"];
-            }
-
-            if (item.containsKey("country")) {
-              country = item["country"];
-            }
-
-            if (item.containsKey("job_category")) {
-              jobCategory = item["job_category"];
-            }
-
-            if (item.containsKey("educational_qualification")) {
-              educationQualification = item["educational_qualification"];
-            }
-
-            if (item.containsKey("school_name")) {
-              schoolName = item["school_name"];
-            }
-
-            if (item.containsKey("course_name")) {
-              courseName = item["course_name"];
-            }
-
-            if (item.containsKey("work_experience")) {
-              workExperience = item["work_experience"];
-            }
-
-            if (item.containsKey("company_name")) {
-              companyName = item["company_name"];
-            }
-
-            if (item.containsKey("job_role")) {
-              jobRole = item["job_role"];
-            }
-
-            if (item.containsKey("job_description")) {
-              jobDescription = item["job_description"];
-            }
-
-            if (item.containsKey("job_start_year")) {
-              jobStartYear = item["job_start_year"];
-            }
-
-            if (item.containsKey("job_end_year")) {
-              jobEndYear = item["job_end_year"];
-            }
-
-            if (item.containsKey("award_title")) {
-              awardTitle = item["award_title"];
-            }
-
-            if (item.containsKey("award_year")) {
-              awardYear = item["award_year"];
-            }
-
-            if (item.containsKey("skills")) {
-              skills = item["skills"];
-            }
-
-            if (item.containsKey("gender")) {
-              gender = item["gender"];
-            }
-
-            if (item.containsKey("commute_type")) {
-              commuteType = item["commute_type"];
-            }
-            // Check and print other keys you need
+        for (var item in newUserData) {
+          if (item.containsKey("full_name")) {
+            fullName = item["full_name"];
+          }
+          if (item.containsKey("phone")) {
+            phone = item["phone"];
+          }
+          if (item.containsKey("email")) {
+            email = item["email"];
+          }
+          if (item.containsKey("password")) {
+            password = item["password"];
+          }
+          if (item.containsKey("confirm_password")) {
+            confirmPassword = item["confirm_password"];
+          }
+          if (item.containsKey("dob")) {
+            dob = item["dob"];
           }
 
-          Auth()
-              .newCandidate(
-                  fullname: fullName!,
-                  email: email,
-                  password: password,
-                  confirmPassword: confirmPassword,
-                  phone: phone,
-                  address: street,
-                  country: int.parse(country.toString()),
-                  dob: dob,
-                  state: state,
-                  city: city,
-                  resume: resume,
-                  employmentHistory: workExperience,
-                  companyName: companyName,
-                  jobDescription: jobDescription,
-                  jobRole: jobRole,
-                  startYear: jobStartYear,
-                  end_year: jobEndYear,
-                  categories: int.parse(jobCategory.toString()),
-                  qualification: educationQualification,
-                  schoolName: schoolName,
-                  courseName: courseName,
-                  awardTitle: awardTitle,
-                  awardYear: awardYear,
-                  artisan_skills: skills,
-                  guarantorName: guarantorNameController.text,
-                  guarantorAddress: guarantorAddressController.text,
-                  guarantorPhone: guarantorPhoneController.text,
-                  guarantorEmail: guarantorEmailController.text,
-                  gender: gender,
-                  passport: image,
-                  commuteType: commuteType)
-              .then((value) => {
-                    if (value == "success")
-                      {
-                        EasyLoading.dismiss(),
-                        Fluttertoast.showToast(
-                            msg: "Your account has been successfully created",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor:
-                                const Color.fromARGB(255, 86, 86, 86)
-                                    .withOpacity(0.6),
-                            textColor: Colors.white,
-                            fontSize: 16.0),
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => JSCreateAccountSuccess()),
-                        )
-                      }
-                    else
-                      {
-                        EasyLoading.dismiss(),
-                        Fluttertoast.showToast(
-                            msg: value,
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            timeInSecForIosWeb: 1,
-                            backgroundColor:
-                                const Color.fromARGB(255, 86, 86, 86)
-                                    .withOpacity(0.6),
-                            textColor: Colors.white,
-                            fontSize: 16.0),
-                      }
-                  });
-        }),
-        text: "Finish",
-        );
+          if (item.containsKey("state")) {
+            state = item["state"].toString();
+          }
+
+          if (item.containsKey("city")) {
+            city = item["city"];
+          }
+
+          if (item.containsKey("street")) {
+            street = item["street"];
+          }
+
+          if (item.containsKey("gender")) {
+            gender = item["gender"];
+          }
+
+          if (item.containsKey("country")) {
+            country = item["country"];
+          }
+
+          if (item.containsKey("job_category")) {
+            jobCategory = item["job_category"];
+          }
+
+          if (item.containsKey("educational_qualification")) {
+            educationQualification = item["educational_qualification"];
+          }
+
+          if (item.containsKey("school_name")) {
+            schoolName = item["school_name"];
+          }
+
+          if (item.containsKey("course_name")) {
+            courseName = item["course_name"];
+          }
+
+          if (item.containsKey("work_experience")) {
+            workExperience = item["work_experience"];
+          }
+
+          if (item.containsKey("company_name")) {
+            companyName = item["company_name"];
+          }
+
+          if (item.containsKey("job_role")) {
+            jobRole = item["job_role"];
+          }
+
+          if (item.containsKey("job_description")) {
+            jobDescription = item["job_description"];
+          }
+
+          if (item.containsKey("job_start_year")) {
+            jobStartYear = item["job_start_year"];
+          }
+
+          if (item.containsKey("job_end_year")) {
+            jobEndYear = item["job_end_year"];
+          }
+
+          if (item.containsKey("award_title")) {
+            awardTitle = item["award_title"];
+          }
+
+          if (item.containsKey("award_year")) {
+            awardYear = item["award_year"];
+          }
+
+          if (item.containsKey("skills")) {
+            skills = item["skills"];
+          }
+
+          if (item.containsKey("gender")) {
+            gender = item["gender"];
+          }
+
+          if (item.containsKey("commute_type")) {
+            commuteType = item["commute_type"];
+          }
+          // Check and print other keys you need
+        }
+
+        Auth()
+            .newCandidate(
+                fullname: fullName!,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword,
+                phone: phone,
+                address: street,
+                country: int.parse(country.toString()),
+                dob: dob,
+                state: state,
+                city: city,
+                resume: resume,
+                employmentHistory: workExperience,
+                companyName: companyName,
+                jobDescription: jobDescription,
+                jobRole: jobRole,
+                startYear: jobStartYear,
+                end_year: jobEndYear,
+                categories: int.parse(jobCategory.toString()),
+                qualification: educationQualification,
+                schoolName: schoolName,
+                courseName: courseName,
+                awardTitle: awardTitle,
+                awardYear: awardYear,
+                artisan_skills: skills,
+                guarantorName: guarantorNameController.text,
+                guarantorAddress: guarantorAddressController.text,
+                guarantorPhone: guarantorPhoneController.text,
+                guarantorEmail: guarantorEmailController.text,
+                gender: gender,
+                passport: image,
+                commuteType: commuteType)
+            .then((value) => {
+                  if (value == "success")
+                    {
+                      EasyLoading.dismiss(),
+                      Fluttertoast.showToast(
+                          msg: "Your account has been successfully created",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: const Color.fromARGB(255, 86, 86, 86)
+                              .withOpacity(0.6),
+                          textColor: Colors.white,
+                          fontSize: 16.0),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => JSCreateAccountSuccess()),
+                      )
+                    }
+                  else
+                    {
+                      EasyLoading.dismiss(),
+                      Fluttertoast.showToast(
+                          msg: value,
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: const Color.fromARGB(255, 86, 86, 86)
+                              .withOpacity(0.6),
+                          textColor: Colors.white,
+                          fontSize: 16.0),
+                    }
+                });
+      }),
+      text: "Finish",
+    );
   }
 
   /// Navigates back to the previous screen.
