@@ -1,5 +1,3 @@
-
-
 import 'package:artisan_oga/features/authentication/data/model/user_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 

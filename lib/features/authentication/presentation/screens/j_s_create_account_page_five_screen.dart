@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/presentation/components/loader.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -63,31 +65,35 @@ class _JSCreateAccountPageFiveScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: '',
+            ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                 child: SingleChildScrollView(
                     child: Column(children: [
                   SizedBox(height: 26.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Row(children: [
-                        CustomImageView(
-                            imagePath: ImageConstant.imgArrowLeftOnprimary,
-                            height: 16.adaptSize,
-                            width: 16.adaptSize,
-                            margin: EdgeInsets.symmetric(vertical: 2.v),
-                            onTap: () {
-                              onTapImgArrowLeft(context);
-                            }),
-                        Padding(
-                            padding: EdgeInsets.only(left: 7.h),
-                            child: Text("Back",
-                                style: CustomTextStyles.titleMediumOnPrimary))
-                      ])),
-                  SizedBox(height: 40.v),
+                  // Align(
+                  //     alignment: Alignment.centerLeft,
+                  //     child: Row(children: [
+                  //       CustomImageView(
+                  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
+                  //           height: 16.adaptSize,
+                  //           width: 16.adaptSize,
+                  //           margin: EdgeInsets.symmetric(vertical: 2.v),
+                  //           onTap: () {
+                  //             onTapImgArrowLeft(context);
+                  //           }),
+                  //       Padding(
+                  //           padding: EdgeInsets.only(left: 7.h),
+                  //           child: Text("Back",
+                  //               style: CustomTextStyles.titleMediumOnPrimary))
+                  //     ])),
+                  // SizedBox(height: 40.v),
                   CustomDropDown(),
-
+                  Text("Guarantor Name *", style: theme.textTheme.bodyMedium),
                   SizedBox(height: 25.v),
                   Align(
                       alignment: Alignment.centerLeft,
@@ -97,7 +103,7 @@ class _JSCreateAccountPageFiveScreenState
                               style: theme.textTheme.bodyMedium))),
                   SizedBox(height: 5.v),
                   CustomDropDown(),
-                           SizedBox(height: 27.v),
+                  SizedBox(height: 27.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),
                       child: CustomTextFormField(
@@ -136,7 +142,7 @@ class _JSCreateAccountPageFiveScreenState
                                     style: theme.textTheme.labelLarge))
                           ])),
                   SizedBox(height: 29.v),
-              
+
                   SizedBox(height: 5.v),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 3.h),

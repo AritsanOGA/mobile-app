@@ -1,6 +1,8 @@
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/app_export.dart';
@@ -30,17 +32,20 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          theme: theme,
-          title: 'artisan_oga',
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.welcomePageScreen,
-          routes: AppRoutes.routes,
-          builder: EasyLoading.init(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (_) => AuthBloc())],
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return MaterialApp(
+            theme: theme,
+            title: 'artisan_oga',
+            debugShowCheckedModeBanner: false,
+            initialRoute: AppRoutes.welcomePageScreen,
+            routes: AppRoutes.routes,
+            builder: EasyLoading.init(),
+          );
+        },
+      ),
     );
   }
 }

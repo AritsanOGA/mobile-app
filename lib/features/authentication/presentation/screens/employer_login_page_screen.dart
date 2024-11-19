@@ -1,16 +1,11 @@
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
-import 'package:artisan_oga/core/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../presentation/employer_dashboard_page/employer_dashboard_page.dart';
 
 class EmployerLoginPageScreen extends StatefulWidget {
   EmployerLoginPageScreen({Key? key}) : super(key: key);

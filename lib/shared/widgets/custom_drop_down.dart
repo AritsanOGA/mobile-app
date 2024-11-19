@@ -83,7 +83,7 @@ class CustomDropDown extends StatelessWidget {
           isExpanded: true,
           focusNode: focusNode ?? FocusNode(),
           icon: Padding(
-            padding: const EdgeInsets.only(right:5.0),
+            padding: const EdgeInsets.only(right: 5.0),
             child: SvgPicture.asset(AppAsset.dropdown),
           ),
           autofocus: autofocus!,

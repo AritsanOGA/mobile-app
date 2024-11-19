@@ -1,3 +1,5 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
@@ -72,6 +74,10 @@ class _JSCreateAccountPagetTwoScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: '',
+            ),
             // resizeToAvoidBottomInset: false,
             body: SingleChildScrollView(
                 child: Container(
@@ -79,29 +85,8 @@ class _JSCreateAccountPagetTwoScreenState
                     padding:
                         EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                     child: Column(children: [
-                      SizedBox(height: 26.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Row(children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgArrowLeftOnprimary,
-                                height: 16.adaptSize,
-                                width: 16.adaptSize,
-                                margin: EdgeInsets.symmetric(vertical: 2.v),
-                                onTap: () {
-                                  onTapImgArrowLeft(context);
-                                }),
-                            GestureDetector(
-                                onTap: (() {
-                                  Navigator.pop(context);
-                                }),
-                                child: Padding(
-                                    padding: EdgeInsets.only(left: 7.h),
-                                    child: Text("Back",
-                                        style: CustomTextStyles
-                                            .titleMediumOnPrimary)))
-                          ])),
-                      SizedBox(height: 38.v),
+                      SizedBox(height: 10.v),
+
                       CustomTextFormField(
                           title: 'Street Address',
                           controller: streetaddressController,
@@ -237,16 +222,19 @@ class _JSCreateAccountPagetTwoScreenState
                         children: [
                           Expanded(
                             child: CustomTextFormField(
-                                title: 'Street Address',
+                                title: 'Date of Birth',
                                 controller: streetaddressController,
                                 hintText: "Enter Street Address",
                                 hintStyle: theme.textTheme.titleSmall!),
+                          ),
+                          SizedBox(
+                            width: 20.h,
                           ),
                           Expanded(
                             child: CustomTextFormField(
                                 title: 'City',
                                 controller: streetaddressController,
-                                hintText: "Enter Street Address",
+                                hintText: "Enter City",
                                 hintStyle: theme.textTheme.titleSmall!),
                           ),
                         ],

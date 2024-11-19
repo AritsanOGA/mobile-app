@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -52,6 +54,10 @@ class _JSCreateAccountPageOneScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Create your Profile',
+            ),
             resizeToAvoidBottomInset: false,
             body: SizedBox(
                 width: SizeUtils.width,
@@ -61,44 +67,16 @@ class _JSCreateAccountPageOneScreenState
                     child: Container(
                         width: double.maxFinite,
                         padding: EdgeInsets.symmetric(
-                            horizontal: 22.h, vertical: 12.v),
+                            horizontal: 25.h, vertical: 12.v),
                         child: Column(children: [
-                          SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(right: 104.h),
-                                  child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        // CustomImageView(
-                                        //     imagePath: ImageConstant
-                                        //         .imgArrowLeftOnprimary,
-                                        //     height: 16.adaptSize,
-                                        //     width: 16.adaptSize,
-                                        //     margin: EdgeInsets.only(
-                                        //         top: 2.v, bottom: 6.v),
-                                        //     onTap: () {
-                                        //       onTapImgArrowLeft(context);
-                                        //     }),
-                                        Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 87.h),
-                                            child: Text("Create your Profile",
-                                                style:
-                                                    theme.textTheme.titleLarge))
-                                      ]))),
-                          SizedBox(height: 28.v),
-                          Container(
-                              width: 327.h,
-                              margin: EdgeInsets.symmetric(horizontal: 29.h),
-                              child: Text(
-                                  "Your personal data is safe with us, and no one else will be able to see it.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: theme.textTheme.bodyMedium)),
+                          SizedBox(height: 2.v),
+
+                          Text(
+                              "Your personal data is safe with us, and no one\nelse will be able to see it.",
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.bodyMedium),
                           SizedBox(height: 38.v),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +95,7 @@ class _JSCreateAccountPageOneScreenState
                                     child: Padding(
                                         padding: EdgeInsets.only(left: 10.h),
                                         child: CustomTextFormField(
-                                            title: 'Phone no',
+                                            title: 'Phone Number',
                                             width: 180.h,
                                             controller: lastNameController,
                                             hintText: "e.g 703 345 1345",
@@ -156,7 +134,7 @@ class _JSCreateAccountPageOneScreenState
                                       obscureText: true),
                                 ),
                                 CustomTextFormField(
-                                    title: 'Password',
+                                    title: 'Confirm Password',
                                     width: 180.h,
                                     controller: confirmpasswordController,
                                     hintText: "************",
@@ -185,10 +163,14 @@ class _JSCreateAccountPageOneScreenState
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('City',
+                                    Text('Gender',
                                         style: CustomTextStyles
                                             .bodyMediumPrimaryContainer_1),
-                                    CustomDropDown(),
+                                    SizedBox(height: 7.v),
+                                    CustomDropDown(
+                                      items: [],
+                                      onChanged: (value) {},
+                                    ),
                                   ],
                                 ),
                               ),

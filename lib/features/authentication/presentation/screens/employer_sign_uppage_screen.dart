@@ -1,11 +1,9 @@
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_title.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,9 +11,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
-
 import '../../../../core/services/auth.dart';
-import '../../../../core/services/default.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerSignUpPageScreen extends StatefulWidget {
@@ -41,7 +37,9 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
         child: SafeArea(
             child: Scaffold(
                 //resizeToAvoidBottomInset: false,
-                appBar: _buildAppBar(context),
+                appBar: CustomAppBar(
+                  title: 'Sign Up',
+                ),
                 body: SingleChildScrollView(
                     padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -135,18 +133,18 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 38.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftOnprimary,
-            margin: EdgeInsets.only(left: 22.h, top: 17.v, bottom: 22.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarTitle(text: "Sign Up"));
-  }
+  // PreferredSizeWidget _buildAppBar(BuildContext context) {
+  //   return CustomAppBar(
+  //       leadingWidth: 38.h,
+  //       leading: AppbarLeadingImage(
+  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
+  //           margin: EdgeInsets.only(left: 22.h, top: 17.v, bottom: 22.v),
+  //           onTap: () {
+  //             onTapArrowLeft(context);
+  //           }),
+  //       centerTitle: true,
+  //       title: AppbarTitle(text: "Sign Up"));
+  // }
 
   /// Section Widget
   Widget _buildEmailField(BuildContext context) {

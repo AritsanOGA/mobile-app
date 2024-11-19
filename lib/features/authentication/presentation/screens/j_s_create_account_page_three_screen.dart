@@ -1,3 +1,5 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
@@ -49,6 +51,10 @@ class _JSCreateAccountPagetThreeScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: '',
+            ),
             resizeToAvoidBottomInset: false,
             body: SizedBox(
                 width: SizeUtils.width,
@@ -60,36 +66,13 @@ class _JSCreateAccountPagetThreeScreenState
                         padding: EdgeInsets.symmetric(
                             horizontal: 22.h, vertical: 12.v),
                         child: Column(children: [
-                          SizedBox(height: 26.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Row(children: [
-                                CustomImageView(
-                                    imagePath:
-                                        ImageConstant.imgArrowLeftOnprimary,
-                                    height: 16.adaptSize,
-                                    width: 16.adaptSize,
-                                    margin: EdgeInsets.symmetric(vertical: 2.v),
-                                    onTap: () {
-                                      onTapImgArrowLeft(context);
-                                    }),
-                                GestureDetector(
-                                    onTap: (() {
-                                      Navigator.pop(context);
-                                    }),
-                                    child: Padding(
-                                        padding: EdgeInsets.only(left: 7.h),
-                                        child: Text("Back",
-                                            style: CustomTextStyles
-                                                .titleMediumOnPrimary)))
-                              ])),
-                          SizedBox(height: 38.v),
+                          SizedBox(height: 10.v),
+
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
                                   padding: EdgeInsets.only(left: 3.h),
-                                  child: Text(
-                                      "Do you have any educational qualifications?",
+                                  child: Text("Educational Qualification",
                                       style: theme.textTheme.bodyMedium))),
                           SizedBox(height: 6.v),
                           Padding(
@@ -134,19 +117,6 @@ class _JSCreateAccountPagetThreeScreenState
                                       controller: schoolNameController,
                                       hintText: "Enter School Name",
                                       hintStyle: theme.textTheme.titleSmall!))
-                              : SizedBox(),
-                          SizedBox(height: 27.v),
-
-                          selectedEducationOption == "Yes"
-                              ? Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 3.h),
-                                  child: CustomTextFormField(
-                                      title: 'Course Name',
-                                      controller: courseNameController,
-                                      hintText: "Enter Course Name",
-                                      hintStyle: theme.textTheme.titleSmall!,
-                                      textInputAction: TextInputAction.done))
                               : SizedBox(),
                           SizedBox(height: 27.v),
 

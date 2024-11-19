@@ -3,12 +3,11 @@ import 'dart:io';
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/services/auth.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_title.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
@@ -86,7 +85,9 @@ class _EmployerSignuppageOneScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: _buildAppBar(context),
+            appBar: CustomAppBar(
+              title: 'Register',
+            ),
             body: SingleChildScrollView(
                 child: Container(
                     width: double.maxFinite,
@@ -327,19 +328,19 @@ class _EmployerSignuppageOneScreenState
                     ])))));
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 38.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftOnprimary,
-            margin: EdgeInsets.only(left: 22.h, top: 17.v, bottom: 22.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarTitle(text: "Register"));
-  }
+  // /// Section Widget
+  // PreferredSizeWidget _buildAppBar(BuildContext context) {
+  //   return CustomAppBar(
+  //       leadingWidth: 38.h,
+  //       leading: AppbarLeadingImage(
+  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
+  //           margin: EdgeInsets.only(left: 22.h, top: 17.v, bottom: 22.v),
+  //           onTap: () {
+  //             onTapArrowLeft(context);
+  //           }),
+  //       centerTitle: true,
+  //       title: AppbarTitle(text: "Register"));
+  // }
 
   /// Section Widget
   Widget _buildEgCEO(BuildContext context) {
