@@ -4,29 +4,30 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app_export.dart';
 
 class CustomDropDown extends StatelessWidget {
-  CustomDropDown({
-    Key? key,
-    this.alignment,
-    this.width,
-    this.focusNode,
-    this.icon,
-    this.autofocus = true,
-    this.textStyle,
-    this.items,
-    this.hintText,
-    this.hintStyle,
-    this.prefix,
-    this.prefixConstraints,
-    this.suffix,
-    this.suffixConstraints,
-    this.contentPadding,
-    this.borderDecoration,
-    this.fillColor,
-    this.filled = false,
-    this.validator,
-    this.onChanged,
-    this.selectedItem
-  }) : super(
+  CustomDropDown(
+      {Key? key,
+      this.alignment,
+      this.width,
+      this.focusNode,
+      this.icon,
+      this.autofocus = true,
+      this.textStyle,
+      this.items,
+      this.hintText,
+      this.hintStyle,
+      this.prefix,
+      this.prefixConstraints,
+      this.suffix,
+      this.suffixConstraints,
+      this.contentPadding,
+      this.borderDecoration,
+      this.fillColor,
+      this.filled = false,
+      this.validator,
+      this.onChanged,
+      this.selectedItem,
+      this.title})
+      : super(
           key: key,
         );
 
@@ -45,7 +46,7 @@ class CustomDropDown extends StatelessWidget {
   final List<String>? items;
 
   final String? hintText;
-    final String? selectedItem;
+  final String? selectedItem;
 
   final TextStyle? hintStyle;
 
@@ -54,6 +55,7 @@ class CustomDropDown extends StatelessWidget {
   final BoxConstraints? prefixConstraints;
 
   final Widget? suffix;
+  final String? title;
 
   final BoxConstraints? suffixConstraints;
 
@@ -71,17 +73,11 @@ class CustomDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return alignment != null
-        ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: dropDownWidget,
-          )
-        : dropDownWidget;
-  }
-
-  Widget get dropDownWidget => SizedBox(
-        width: width ?? double.maxFinite,
-        child: DropdownButtonFormField(
+    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(title ?? '', style: CustomTextStyles.bodyMediumPrimaryContainer_1),
+        SizedBox(height: 7.v),
+        DropdownButtonFormField(
           value: selectedItem,
           isExpanded: true,
           focusNode: focusNode ?? FocusNode(),
@@ -107,7 +103,21 @@ class CustomDropDown extends StatelessWidget {
             onChanged!(value.toString());
           },
         ),
-      );
+      ],
+    );
+
+    // alignment != null
+    //     ? Align(
+    //         alignment: alignment ?? Alignment.center,
+    //         child: dropDownWidget,
+    //       )
+    //     : dropDownWidget;
+  }
+
+  // Widget get dropDownWidget => SizedBox(
+  //       width: width ?? double.maxFinite,
+  //       child:
+  //     );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
         hintStyle: hintStyle ?? theme.textTheme.titleSmall,

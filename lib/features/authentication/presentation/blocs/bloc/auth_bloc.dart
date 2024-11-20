@@ -13,6 +13,8 @@ import 'package:artisan_oga/features/authentication/domain/usecases/login_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/signup_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -48,13 +50,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final String selectedGender = '--Selected--';
   final List<String> genders = ['--Selected--', 'Male', 'Female', 'Other'];
   String selectedJobType = "--Selected--";
+    String selectedEducationalQualification = "--Selected--";
   List<String> dropdownItemJobType = [
     "--Selected--",
-        "Full Time",
+    "Full Time",
     "Tempoary",
     "Contract",
     "Part Time"
   ];
+    List<String> educationalQualification = [
+    "Primary school",
+    "Junior secondary",
+    "High school",
+    "University",
+    "Masters",
+    "Post Graduate Edu.",
+  ];
+
+  DateTime? selectedDate;
+
+  final dateField = TextEditingController(text: "--Select date--");
+
+  void datePicker(context) async {
+    final DateTime? datePicked = await showDatePicker(
+      context: context,
+
+      initialDate: selectedDate ?? DateTime.now(), // Default to current date
+      firstDate: DateTime(2000), // Earliest selectable date
+      lastDate: DateTime(2101), // Latest selectable date
+    );
+    dateField.text =
+        '${datePicked!.month}-${datePicked.day}-${datePicked.year}';
+    print('date ${dateField.text}');
+  }
 
   void setGender() {}
   FutureOr<void> _onUpdateSelectedCountry(

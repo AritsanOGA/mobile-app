@@ -1,10 +1,13 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 
 import 'j_s_create_account_page_six_screen.dart';
@@ -42,6 +45,7 @@ class _JSCreateAccountPageFourScreenState
 
   @override
   Widget build(BuildContext context) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -144,13 +148,15 @@ class _JSCreateAccountPageFourScreenState
                           //           });
                           //         })),
                           // SizedBox(height: 38.v),
-                          // Align(
-                          //     alignment: Alignment.centerLeft,
-                          //     child: Padding(
-                          //         padding: EdgeInsets.only(left: 3.h),
-                          //         child: Text("Company Name",
-                          //             style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 6.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                  padding: EdgeInsets.only(left: 3.h),
+                                  child: Text("Employment History",
+                                      style: theme.textTheme.bodyLarge
+                                          ?.copyWith(
+                                              fontWeight: FontWeight.w600)))),
+                          SizedBox(height: 15.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
                               child: CustomTextFormField(
@@ -187,15 +193,14 @@ class _JSCreateAccountPageFourScreenState
                           // SizedBox(height: 27.v),
 
                           SizedBox(height: 7.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'Start Year',
-                                  textInputType: TextInputType.number,
-                                  controller: startYearController,
-                                  hintText: "Start Year",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
+                          CustomDateFormField(
+                            hint: authBloc.dateField.text,
+                            onTap: () {
+                              authBloc.datePicker(context);
+                            },
+                            label: 'Start Year',
+                          ),
+
                           SizedBox(height: 27.v),
                           // Align(
                           //     alignment: Alignment.centerLeft,

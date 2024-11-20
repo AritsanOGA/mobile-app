@@ -19,7 +19,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   path_provider: ^2.1.2
   fluttertoast: ^8.0.8
-  date_picker_plus: ^3.0.0
+  #date_picker_plus: ^3.0.0
   syncfusion_flutter_datepicker: ^23.2.4
   flutterwave_standard: ^1.0.8
   loading_animation_widget: ^1.2.1

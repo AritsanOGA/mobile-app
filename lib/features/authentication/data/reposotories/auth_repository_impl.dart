@@ -5,9 +5,11 @@ import 'package:artisan_oga/core/extensions/extention.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_local_datasource.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
@@ -88,5 +90,16 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, List<StateResponseEntity>>> getState(
       String countryId) {
     return authRemoteDataSource.getState(countryId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<CategoryResponseEntity>>> getCategory() {
+    return authRemoteDataSource.getCategory().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<SkillResponseEntity>>> getSkill(
+      String categoryId) {
+    return authRemoteDataSource.getSkill(categoryId).makeRequest();
   }
 }

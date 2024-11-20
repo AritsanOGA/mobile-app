@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
@@ -231,12 +232,20 @@ class _JSCreateAccountPagetTwoScreenState
                       Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(
-                                title: 'Date of Birth',
-                                controller: streetaddressController,
-                                hintText: "Enter Street Address",
-                                hintStyle: theme.textTheme.titleSmall!),
-                          ),
+                              child: CustomDateFormField(
+                            hint: authBloc.dateField.text,
+                            onTap: () {
+                              authBloc.datePicker(context);
+                            },
+                            label: 'Date of Birth',
+                          )
+
+                              // CustomTextFormField(
+                              //     title: 'Date of Birth',
+                              //     controller: streetaddressController,
+                              //     hintText: "Enter Street Address",
+                              //     hintStyle: theme.textTheme.titleSmall!),
+                              ),
                           SizedBox(
                             width: 20.h,
                           ),

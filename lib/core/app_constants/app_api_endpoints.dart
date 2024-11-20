@@ -1,4 +1,3 @@
-
 class AppApiEndpoint {
   const AppApiEndpoint._();
   static const String scheme = 'http';
@@ -10,9 +9,11 @@ class AppApiEndpoint {
 
   static Uri signup = baseUri.replace(path: '/api/v1/employer/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');
+  static Uri getCountry = baseUri.replace(path: '/api/v1/countries');
+  static Uri getState = baseUri.replace(path: '/api/v1/countries/states');
 
-  static Uri league = baseUri.replace(path: '/api/v1/leagues');
-  static Uri team = baseUri.replace(path: '/api/v1/teams');
+  static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
+  static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
 
   static Uri uploadUserImage = baseUri.replace(path: '/api/v1/user/image');
 
@@ -81,6 +82,5 @@ class AppApiEndpoint {
         path: 'api/v1/leagues/top-red/$leagueId',
       );
 
-  static Uri activeLeagues =
-      baseUri.replace(path: '/api/v1/leagues/active');
+  static Uri activeLeagues = baseUri.replace(path: '/api/v1/leagues/active');
 }

@@ -76,7 +76,7 @@ class _JSCreateAccountPageFiveScreenState
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                      SizedBox(height: 26.v),
+                      SizedBox(height: 6.v),
                       // Align(
                       //     alignment: Alignment.centerLeft,
                       //     child: Row(children: [
@@ -94,10 +94,10 @@ class _JSCreateAccountPageFiveScreenState
                       //               style: CustomTextStyles.titleMediumOnPrimary))
                       //     ])),
                       // SizedBox(height: 40.v),
-                      Text("Select Job Category",
-                          style: theme.textTheme.bodyMedium),
-                      SizedBox(height: 10.v),
-                      CustomDropDown(),
+
+                      CustomDropDown(
+                        title: 'Select Job Category',
+                      ),
 
                       SizedBox(height: 25.v),
                       Padding(
@@ -108,14 +108,10 @@ class _JSCreateAccountPageFiveScreenState
                               hintText: "e.g 3+ years",
                               hintStyle: theme.textTheme.titleSmall!)),
                       SizedBox(height: 27.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Select Skill",
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 10.v),
-                      CustomDropDown(),
+
+                      CustomDropDown(
+                        title: "Select Skill",
+                      ),
 
                       SizedBox(height: 29.v),
                       Align(
