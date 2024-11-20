@@ -1,3 +1,5 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -19,6 +21,10 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: '',
+            ),
             body: SingleChildScrollView(
                 child: Container(
                     padding:
@@ -26,45 +32,46 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 30,
-                          ),
-                          SizedBox(height: 39.v),
+                          // SizedBox(
+                          //   height: 30,
+                          // ),
+
                           Padding(
                               padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Employment History",
+                              child: Text("Add Guarantor",
                                   style: CustomTextStyles
                                       .titleMediumOnPrimaryMedium)),
-                          SizedBox(height: 18.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Company Name",
-                                  style: theme.textTheme.bodyMedium)),
-                          SizedBox(height: 5.v),
-                          _buildName(context),
+
+                          SizedBox(height: 15.v),
+                          CustomTextFormField(
+                              title: 'Name',
+                              controller: nameController,
+                              hintText: "Enter Guarantor’s Name",
+                              hintStyle: theme.textTheme.titleSmall!),
                           SizedBox(height: 28.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Role",
-                                  style: theme.textTheme.bodyMedium)),
-                          SizedBox(height: 6.v),
-                          _buildEnterRole(context),
+
+                          CustomTextFormField(
+                              title: 'Email',
+                              controller: nameController,
+                              hintText: "Enter Guarantor’s Email",
+                              hintStyle: theme.textTheme.titleSmall!),
+
                           SizedBox(height: 28.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Start Year",
-                                  style: theme.textTheme.bodyMedium)),
-                          SizedBox(height: 6.v),
-                          _buildMmddyy(context),
+
+                          CustomTextFormField(
+                              title: 'Residential Address',
+                              controller: nameController,
+                              hintText: "Enter Residential Address",
+                              hintStyle: theme.textTheme.titleSmall!),
+
                           SizedBox(height: 29.v),
-                          Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Description",
-                                  style: theme.textTheme.bodyMedium)),
-                          SizedBox(height: 5.v),
-                          _buildInputHere(context),
-                          SizedBox(height: 44.v),
-                          _buildNext(context),
+                          CustomElevatedButton(
+                            text: "Submit",
+                            onPressed: () {},
+                          )
+                          // _buildInputHere(context),
+                          // SizedBox(height: 44.v),
+                          // _buildNext(context),
                           // Spacer(),
                         ])))));
   }
@@ -74,9 +81,9 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
-             title:'Password' ,
+            title: 'Password',
             controller: nameController,
-            hintText: "Enter Company’s Name",
+            hintText: "Enter Guarantor’s Name",
             hintStyle: theme.textTheme.titleSmall!));
   }
 
@@ -85,7 +92,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
-             title:'Password' ,
+            title: 'Password',
             controller: enterRoleController,
             hintText: "Enter Role",
             hintStyle: theme.textTheme.titleSmall!));
@@ -96,7 +103,7 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
         child: CustomTextFormField(
-             title:'Password' ,
+            title: 'Password',
             textInputType: TextInputType.number,
             controller: mmddyyController,
             hintText: "MM/DD/YY",
@@ -104,22 +111,24 @@ class JSCreateAccountPageSixScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildInputHere(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 3.h),
-        child: CustomTextFormField(
-             title:'Password' ,
-            controller: inputHereController,
-            hintText: "Input here",
-            hintStyle: theme.textTheme.titleSmall!,
-            textInputAction: TextInputAction.done,
-            maxLines: 10));
-  }
+  // Widget _buildInputHere(BuildContext context) {
+  //   return Padding(
+  //       padding: EdgeInsets.symmetric(horizontal: 3.h),
+  //       child: CustomTextFormFieldß
+  //           title: 'Password',
+  //           controller: inputHereController,
+  //           hintText: "Input here",
+  //           hintStyle: theme.textTheme.titleSmall!,
+  //           textInputAction: TextInputAction.done,
+  //           maxLines: 10));
+  // }
 
   /// Section Widget
   Widget _buildNext(BuildContext context) {
     return CustomElevatedButton(
-        text: "Finish", onPressed: () {  }, );
+      text: "Finish",
+      onPressed: () {},
+    );
   }
 
   /// Navigates back to the previous screen.

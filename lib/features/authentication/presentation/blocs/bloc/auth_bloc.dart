@@ -45,7 +45,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUseCase _loginUseCase;
   final CountryUseCase _countryUseCase;
   final StateUseCase _stateUseCase;
-  final List<String> genders = ['Male', 'Female', 'Other'];
+  final String selectedGender = '--Selected--';
+  final List<String> genders = ['--Selected--', 'Male', 'Female', 'Other'];
+  String selectedJobType = "--Selected--";
+  List<String> dropdownItemJobType = [
+    "--Selected--",
+        "Full Time",
+    "Tempoary",
+    "Contract",
+    "Part Time"
+  ];
+
+  void setGender() {}
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
     emit(state.copyWith(country: event.value));

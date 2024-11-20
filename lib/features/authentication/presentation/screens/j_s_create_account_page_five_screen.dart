@@ -73,93 +73,129 @@ class _JSCreateAccountPageFiveScreenState
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                 child: SingleChildScrollView(
-                    child: Column(children: [
-                  SizedBox(height: 26.v),
-                  // Align(
-                  //     alignment: Alignment.centerLeft,
-                  //     child: Row(children: [
-                  //       CustomImageView(
-                  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
-                  //           height: 16.adaptSize,
-                  //           width: 16.adaptSize,
-                  //           margin: EdgeInsets.symmetric(vertical: 2.v),
-                  //           onTap: () {
-                  //             onTapImgArrowLeft(context);
-                  //           }),
-                  //       Padding(
-                  //           padding: EdgeInsets.only(left: 7.h),
-                  //           child: Text("Back",
-                  //               style: CustomTextStyles.titleMediumOnPrimary))
-                  //     ])),
-                  // SizedBox(height: 40.v),
-                  CustomDropDown(),
-                  Text("Guarantor Name *", style: theme.textTheme.bodyMedium),
-                  SizedBox(height: 25.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Guarantor Name *",
-                              style: theme.textTheme.bodyMedium))),
-                  SizedBox(height: 5.v),
-                  CustomDropDown(),
-                  SizedBox(height: 27.v),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
-                          title: 'Years of Experience',
-                          controller: guarantorNameController,
-                          hintText: "e.g 3+ years",
-                          hintStyle: theme.textTheme.titleSmall!)),
-                  SizedBox(height: 27.v),
-                  CustomDropDown(),
-                  SizedBox(height: 29.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Upload Your CV",
-                              style: theme.textTheme.bodyMedium))),
-                  SizedBox(height: 10.v),
-                  //pick resume widget
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: 3.h),
-                      padding: EdgeInsets.all(6.h),
-                      decoration: AppDecoration.outlineBlueGray.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder7),
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            _buildChooseFileButton(context),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 5.h, top: 8.v, bottom: 10.v),
-                                child: Text(
-                                    resume == null
-                                        ? "No file chosen"
-                                        : "1 file chosen",
-                                    style: theme.textTheme.labelLarge))
-                          ])),
-                  SizedBox(height: 29.v),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                      SizedBox(height: 26.v),
+                      // Align(
+                      //     alignment: Alignment.centerLeft,
+                      //     child: Row(children: [
+                      //       CustomImageView(
+                      //           imagePath: ImageConstant.imgArrowLeftOnprimary,
+                      //           height: 16.adaptSize,
+                      //           width: 16.adaptSize,
+                      //           margin: EdgeInsets.symmetric(vertical: 2.v),
+                      //           onTap: () {
+                      //             onTapImgArrowLeft(context);
+                      //           }),
+                      //       Padding(
+                      //           padding: EdgeInsets.only(left: 7.h),
+                      //           child: Text("Back",
+                      //               style: CustomTextStyles.titleMediumOnPrimary))
+                      //     ])),
+                      // SizedBox(height: 40.v),
+                      Text("Select Job Category",
+                          style: theme.textTheme.bodyMedium),
+                      SizedBox(height: 10.v),
+                      CustomDropDown(),
 
-                  SizedBox(height: 5.v),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      child: CustomTextFormField(
-                          title: 'Describe what you can do',
-                          textInputType: TextInputType.emailAddress,
-                          controller: guarantorEmailController,
-                          hintText: "Input here",
-                          hintStyle: theme.textTheme.titleSmall!)),
-                  SizedBox(height: 29.v),
+                      SizedBox(height: 25.v),
+                      Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          child: CustomTextFormField(
+                              title: 'Years of Experience',
+                              controller: guarantorNameController,
+                              hintText: "e.g 3+ years",
+                              hintStyle: theme.textTheme.titleSmall!)),
+                      SizedBox(height: 27.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 3.h),
+                              child: Text("Select Skill",
+                                  style: theme.textTheme.bodyMedium))),
+                      SizedBox(height: 10.v),
+                      CustomDropDown(),
 
-                  _buildNextButton(context),
-                  SizedBox(height: 74.v),
-                  SizedBox(
-                      width: 130.h,
-                      child: Divider(color: theme.colorScheme.onPrimary))
-                ])))));
+                      SizedBox(height: 29.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 3.h),
+                              child: Text("Upload Your CV",
+                                  style: theme.textTheme.bodyMedium))),
+                      SizedBox(height: 10.v),
+                      //pick resume widget
+                      Container(
+                          margin: EdgeInsets.only(right: 10.h),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 6.v, horizontal: 5.v),
+                          decoration: AppDecoration.outlineBlueGray.copyWith(
+                              borderRadius: BorderRadiusStyle.roundedBorder7),
+                          child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InkWell(
+                                    onTap: () {
+                                      pickImage();
+                                    },
+                                    child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            color: ColorSchemes
+                                                .primaryColorScheme.primary),
+                                        child: Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            child: Text('choose file',
+                                                style: theme
+                                                    .textTheme.labelMedium
+                                                    ?.copyWith(
+                                                        color: Colors.white)),
+                                          ),
+                                        ))),
+                                SizedBox(width: 5.v),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(top: 5.v, right: 5.v),
+                                  child: Text(
+                                      image == null
+                                          ? "No file chosen"
+                                          : "Image selected",
+                                      style: theme.textTheme.labelLarge),
+                                )
+                              ])),
+
+                      SizedBox(height: 29.v),
+
+                      Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          child: CustomTextFormField(
+                              title: 'Describe what you can do',
+                              textInputType: TextInputType.emailAddress,
+                              controller: guarantorEmailController,
+                              hintText: "Input here",
+                              maxLines: 5,
+                              hintStyle: theme.textTheme.titleSmall!)),
+                      SizedBox(height: 29.v),
+                      CustomElevatedButton(
+                          text: 'Next',
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        JSCreateAccountPageSixScreen()));
+                          }),
+                      // _buildNextButton(context),
+                      SizedBox(height: 74.v),
+                      SizedBox(
+                          width: 130.h,
+                          child: Divider(color: theme.colorScheme.onPrimary))
+                    ])))));
   }
 
   Future<void> pickImage() async {

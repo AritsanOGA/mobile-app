@@ -25,6 +25,7 @@ class CustomDropDown extends StatelessWidget {
     this.filled = false,
     this.validator,
     this.onChanged,
+    this.selectedItem
   }) : super(
           key: key,
         );
@@ -44,6 +45,7 @@ class CustomDropDown extends StatelessWidget {
   final List<String>? items;
 
   final String? hintText;
+    final String? selectedItem;
 
   final TextStyle? hintStyle;
 
@@ -80,6 +82,7 @@ class CustomDropDown extends StatelessWidget {
   Widget get dropDownWidget => SizedBox(
         width: width ?? double.maxFinite,
         child: DropdownButtonFormField(
+          value: selectedItem,
           isExpanded: true,
           focusNode: focusNode ?? FocusNode(),
           icon: Padding(

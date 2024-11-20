@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/local_storage.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
 import 'package:artisan_oga/features/authentication/data/reposotories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
@@ -9,20 +10,29 @@ import 'package:artisan_oga/features/authentication/domain/usecases/signup_useca
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'features/authentication/data/data_source/auth_local_datasource.dart';
 
 final locator = GetIt.instance;
 
-void init() {
+Future<void> init() async {
+  final sharedPref = await SharedPreferences.getInstance();
   locator
     ..registerLazySingleton<Dio>(() => Dio())
     ..registerLazySingleton<ApiService>(() => ApiServiceImpl(locator()))
+    ..registerLazySingleton<SharedPreferences>(() => sharedPref)
     ..registerLazySingleton<AuthRemoteDataSource>(
         () => AuthRemoteDataSourceImpl(locator()))
+    ..registerLazySingleton<AuthLocalDataSource>(
+        () => AuthLocalDataSourceImpl(locator()))
+    ..registerLazySingleton<LocalStorageService>(
+        () => LocalStorageServiceImpl(locator()))
     ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
         authRemoteDataSource: locator(), localDataSource: locator()))
     ..registerLazySingleton<SignupUseCase>(() => SignupUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
-      ..registerLazySingleton<CountryUseCase>(() => CountryUseCase(locator()))
+    ..registerLazySingleton<CountryUseCase>(() => CountryUseCase(locator()))
     ..registerLazySingleton<StateUseCase>(() => StateUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(
         () => GetUserDataUseCase(locator()));

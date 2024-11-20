@@ -1,3 +1,4 @@
+import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +12,10 @@ var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Hive.initFlutter();
+  await Future.wait(
+    [init(), Hive.initFlutter()],
+  );
+
   await Hive.openBox("artisan");
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

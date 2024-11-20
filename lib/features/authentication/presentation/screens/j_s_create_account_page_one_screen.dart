@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
@@ -9,6 +10,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
@@ -52,231 +54,238 @@ class _JSCreateAccountPageOneScreenState
   List<Map<String, dynamic>>? newUserData;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: AppColors.kwhite,
-            appBar: CustomAppBar(
-              title: 'Create your Profile',
-            ),
-            resizeToAvoidBottomInset: false,
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: Container(
-                        width: double.maxFinite,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 25.h, vertical: 12.v),
-                        child: Column(children: [
-                          SizedBox(height: 2.v),
+    final authBloc = BlocProvider.of<AuthBloc>(context);
+    return BlocProvider(
+      create: (context) => AuthBloc(),
+      child: SafeArea(
+          child: Scaffold(
+              backgroundColor: AppColors.kwhite,
+              appBar: CustomAppBar(
+                title: 'Create your Profile',
+              ),
+              resizeToAvoidBottomInset: false,
+              body: SizedBox(
+                  width: SizeUtils.width,
+                  child: SingleChildScrollView(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: Container(
+                          width: double.maxFinite,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 25.h, vertical: 12.v),
+                          child: Column(children: [
+                            SizedBox(height: 2.v),
 
-                          Text(
-                              "Your personal data is safe with us, and no one\nelse will be able to see it.",
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.bodyMedium),
-                          SizedBox(height: 38.v),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                    child: Padding(
-                                        padding: EdgeInsets.only(right: 10.h),
-                                        child: CustomTextFormField(
-                                            title: 'Full Name',
-                                            width: 180.h,
-                                            controller: firstNameController,
-                                            hintText: "Enter Full Name",
-                                            hintStyle:
-                                                theme.textTheme.titleSmall!))),
-                                Expanded(
-                                    child: Padding(
-                                        padding: EdgeInsets.only(left: 10.h),
-                                        child: CustomTextFormField(
-                                            title: 'Phone Number',
-                                            width: 180.h,
-                                            controller: lastNameController,
-                                            hintText: "e.g 703 345 1345",
-                                            hintStyle:
-                                                theme.textTheme.titleSmall!)))
-                              ]),
-                          //   _buildFullName1(context),
-                          SizedBox(height: 29.v),
+                            Text(
+                                "Your personal data is safe with us, and no one\nelse will be able to see it.",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.center,
+                                style: theme.textTheme.bodyMedium),
+                            SizedBox(height: 38.v),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                      child: Padding(
+                                          padding: EdgeInsets.only(right: 10.h),
+                                          child: CustomTextFormField(
+                                              title: 'Full Name',
+                                              width: 180.h,
+                                              controller: firstNameController,
+                                              hintText: "Enter Full Name",
+                                              hintStyle: theme
+                                                  .textTheme.titleSmall!))),
+                                  Expanded(
+                                      child: Padding(
+                                          padding: EdgeInsets.only(left: 10.h),
+                                          child: CustomTextFormField(
+                                              title: 'Phone Number',
+                                              width: 180.h,
+                                              controller: lastNameController,
+                                              hintText: "e.g 703 345 1345",
+                                              hintStyle:
+                                                  theme.textTheme.titleSmall!)))
+                                ]),
+                            //   _buildFullName1(context),
+                            SizedBox(height: 29.v),
 
-                          CustomTextFormField(
-                              title: 'Email Address (optional)',
-                              controller: emailController,
-                              hintText: "example@gmail.com",
-                              hintStyle: theme.textTheme.titleSmall!,
-                              textInputType: TextInputType.emailAddress),
-                          SizedBox(height: 29.v),
-                          CustomTextFormField(
-                              title: 'Confirm Email Address',
-                              controller: emailController,
-                              hintText: "Re-enter example@gmail.com",
-                              hintStyle: theme.textTheme.titleSmall!,
-                              textInputType: TextInputType.emailAddress),
-                          SizedBox(height: 38.v),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: CustomTextFormField(
-                                      title: 'Password',
+                            CustomTextFormField(
+                                title: 'Email Address (optional)',
+                                controller: emailController,
+                                hintText: "example@gmail.com",
+                                hintStyle: theme.textTheme.titleSmall!,
+                                textInputType: TextInputType.emailAddress),
+                            SizedBox(height: 29.v),
+                            CustomTextFormField(
+                                title: 'Confirm Email Address',
+                                controller: emailController,
+                                hintText: "Re-enter example@gmail.com",
+                                hintStyle: theme.textTheme.titleSmall!,
+                                textInputType: TextInputType.emailAddress),
+                            SizedBox(height: 38.v),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: CustomTextFormField(
+                                        title: 'Password',
+                                        width: 180.h,
+                                        controller: passwordController,
+                                        hintText: "************",
+                                        hintStyle: theme.textTheme.titleSmall!,
+                                        textInputType:
+                                            TextInputType.visiblePassword,
+                                        obscureText: true),
+                                  ),
+                                  CustomTextFormField(
+                                      title: 'Confirm Password',
                                       width: 180.h,
-                                      controller: passwordController,
+                                      controller: confirmpasswordController,
                                       hintText: "************",
                                       hintStyle: theme.textTheme.titleSmall!,
+                                      textInputAction: TextInputAction.done,
                                       textInputType:
                                           TextInputType.visiblePassword,
-                                      obscureText: true),
-                                ),
-                                CustomTextFormField(
-                                    title: 'Confirm Password',
-                                    width: 180.h,
-                                    controller: confirmpasswordController,
-                                    hintText: "************",
-                                    hintStyle: theme.textTheme.titleSmall!,
-                                    textInputAction: TextInputAction.done,
-                                    textInputType:
-                                        TextInputType.visiblePassword,
-                                    obscureText: true)
-                              ]),
-                          SizedBox(height: 38.v),
+                                      obscureText: true)
+                                ]),
+                            SizedBox(height: 38.v),
 
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Upload Company Logo",
-                                        style: theme.textTheme.bodyMedium),
-                                    SizedBox(height: 5.v),
-                                    //  _buildChooseFile(context),
-                                  ],
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Upload Company Logo",
+                                          style: theme.textTheme.bodyMedium),
+                                      SizedBox(height: 5.v),
+                                      //  _buildChooseFile(context),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Gender',
-                                        style: CustomTextStyles
-                                            .bodyMediumPrimaryContainer_1),
-                                    SizedBox(height: 7.v),
-                                    CustomDropDown(
-                                      items: [],
-                                      onChanged: (value) {},
-                                    ),
-                                  ],
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Gender',
+                                          style: CustomTextStyles
+                                              .bodyMediumPrimaryContainer_1),
+                                      SizedBox(height: 7.v),
+                                      CustomDropDown(
+                                        items: authBloc.genders,
+                                        selectedItem: authBloc.selectedGender,
+                                        onChanged: (value) {},
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          //  _buildPassword1(context),
-                          SizedBox(height: 28.v),
+                              ],
+                            ),
+                            //  _buildPassword1(context),
+                            SizedBox(height: 28.v),
 
-                          CustomElevatedButton(
-                            onPressed: (() {
-                              if (firstNameController.text.isNotEmpty &&
-                                  lastNameController.text.isNotEmpty &&
-                                  phoneController.text.isNotEmpty &&
-                                  emailController.text.isNotEmpty &&
-                                  passwordController.text.isNotEmpty) {
-                                if (passwordController.text !=
-                                    confirmpasswordController.text) {
-                                  Fluttertoast.showToast(
-                                      msg:
-                                          "Please confirm your password properly",
-                                      toastLength: Toast.LENGTH_SHORT,
-                                      gravity: ToastGravity.CENTER,
-                                      timeInSecForIosWeb: 1,
-                                      backgroundColor:
-                                          const Color.fromARGB(255, 86, 86, 86)
-                                              .withOpacity(0.6),
-                                      textColor: Colors.white,
-                                      fontSize: 16.0);
+                            CustomElevatedButton(
+                              onPressed: (() {
+                                if (firstNameController.text.isNotEmpty &&
+                                    lastNameController.text.isNotEmpty &&
+                                    phoneController.text.isNotEmpty &&
+                                    emailController.text.isNotEmpty &&
+                                    passwordController.text.isNotEmpty) {
+                                  if (passwordController.text !=
+                                      confirmpasswordController.text) {
+                                    Fluttertoast.showToast(
+                                        msg:
+                                            "Please confirm your password properly",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        gravity: ToastGravity.CENTER,
+                                        timeInSecForIosWeb: 1,
+                                        backgroundColor: const Color.fromARGB(
+                                                255, 86, 86, 86)
+                                            .withOpacity(0.6),
+                                        textColor: Colors.white,
+                                        fontSize: 16.0);
 
-                                  //password and confirm password are not the same
+                                    //password and confirm password are not the same
+                                  } else {
+                                    newUserData = [
+                                      {
+                                        "full_name": firstNameController.text +
+                                            " " +
+                                            lastNameController.text
+                                      },
+                                      {"phone": phoneController.text},
+                                      {"email": emailController.text},
+                                      {"password": passwordController.text},
+                                      {
+                                        "confirm_password":
+                                            confirmpasswordController.text
+                                      },
+                                      {"gender": selectedGender},
+                                    ];
+
+                                    Hive.box("artisan")
+                                        .put("new_applicant", newUserData);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              JSCreateAccountPagetTwoScreen()),
+                                    );
+                                  }
                                 } else {
-                                  newUserData = [
-                                    {
-                                      "full_name": firstNameController.text +
-                                          " " +
-                                          lastNameController.text
-                                    },
-                                    {"phone": phoneController.text},
-                                    {"email": emailController.text},
-                                    {"password": passwordController.text},
-                                    {
-                                      "confirm_password":
-                                          confirmpasswordController.text
-                                    },
-                                    {"gender": selectedGender},
-                                  ];
-
-                                  Hive.box("artisan")
-                                      .put("new_applicant", newUserData);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             JSCreateAccountPagetTwoScreen()),
                                   );
+                                  // Fluttertoast.showToast(
+                                  //     msg: "Fill in all fields",
+                                  //     toastLength: Toast.LENGTH_SHORT,
+                                  //     gravity: ToastGravity.CENTER,
+                                  //     timeInSecForIosWeb: 1,
+                                  //     backgroundColor:
+                                  //         const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
+                                  //     textColor: Colors.white,
+                                  //     fontSize: 16.0);
                                 }
-                              } else {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSCreateAccountPagetTwoScreen()),
-                                );
-                                // Fluttertoast.showToast(
-                                //     msg: "Fill in all fields",
-                                //     toastLength: Toast.LENGTH_SHORT,
-                                //     gravity: ToastGravity.CENTER,
-                                //     timeInSecForIosWeb: 1,
-                                //     backgroundColor:
-                                //         const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
-                                //     textColor: Colors.white,
-                                //     fontSize: 16.0);
-                              }
-                            }),
-                            text: "Next",
-                          ),
-                          //    _buildNext(context),
-                          SizedBox(height: 21.v),
-                          GestureDetector(
-                              onTap: (() {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSLoginPageScreen()),
-                                );
                               }),
-                              child: RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text: "Already have an account?",
-                                        style: CustomTextStyles
-                                            .titleSmallff666666),
-                                    TextSpan(text: " "),
-                                    TextSpan(
-                                        text: "Sign In",
-                                        style:
-                                            CustomTextStyles.titleSmallfff7941e)
-                                  ]),
-                                  textAlign: TextAlign.left)),
-                          SizedBox(height: 62.v),
-                          SizedBox(
-                              width: 130.h,
-                              child:
-                                  Divider(color: theme.colorScheme.onPrimary))
-                        ]))))));
+                              text: "Next",
+                            ),
+                            //    _buildNext(context),
+                            SizedBox(height: 21.v),
+                            GestureDetector(
+                                onTap: (() {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            JSLoginPageScreen()),
+                                  );
+                                }),
+                                child: RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                          text: "Already have an account?",
+                                          style: CustomTextStyles
+                                              .titleSmallff666666),
+                                      TextSpan(text: " "),
+                                      TextSpan(
+                                          text: "Sign In",
+                                          style: CustomTextStyles
+                                              .titleSmallfff7941e)
+                                    ]),
+                                    textAlign: TextAlign.left)),
+                            SizedBox(height: 62.v),
+                            SizedBox(
+                                width: 130.h,
+                                child:
+                                    Divider(color: theme.colorScheme.onPrimary))
+                          ])))))),
+    );
   }
 
   /// Section Widget

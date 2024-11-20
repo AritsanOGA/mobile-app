@@ -22,3 +22,4 @@ class AuthResultEntity extends Equatable {
         user,
       ];
 }
+
