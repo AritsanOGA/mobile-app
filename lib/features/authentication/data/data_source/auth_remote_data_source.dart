@@ -4,20 +4,23 @@ import 'package:artisan_oga/features/authentication/data/model/auth_result_model
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/login_model.dart';
-import 'package:artisan_oga/features/authentication/data/model/signup_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/register_employer_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
-  Future<AuthResultEntity> signup(SignupEntity entity);
+  Future<AuthResultEntity> registerEmployer(RegisterEmployerEntity entity);
+  Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity);
+
   Future<List<CountryResponseEntity>> getCountries();
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
@@ -37,10 +40,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> signup(SignupEntity entity) async {
+  Future<AuthResultEntity> registerEmployer(RegisterEmployerEntity entity) async {
     final result = await api.post(
       url: AppApiEndpoint.signup,
-      body: SignupModel.fromEntity(entity).toJson(),
+      body: RegisterEmployerModel.fromEntity(entity).toJson(),
     );
 
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
@@ -104,5 +107,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           ),
         )
         .toList();
+  }
+  
+  @override
+  Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity) {
+    // TODO: implement registerJobSeeker
+    throw UnimplementedError();
   }
 }

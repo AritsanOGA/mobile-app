@@ -1,7 +1,7 @@
-import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 
-class SignupModel extends SignupEntity {
-  const SignupModel({
+class RegisterEmployerModel extends RegisterEmployerEntity {
+  const RegisterEmployerModel({
     required super.email,
     required super.password,
     required super.country,
@@ -16,19 +16,20 @@ class SignupModel extends SignupEntity {
     required super.phoneNumber,
   });
 
-  factory SignupModel.fromEntity(SignupEntity entity) => SignupModel(
-      email: entity.email,
-      password: entity.password,
-      country: entity.country,
-      fullName: entity.fullName,
-      companyName: entity.companyName,
-      state: entity.state,
-      isChecked: entity.isChecked,
-      officeTitle: entity.officeTitle,
-      city: entity.city,
-      companyLogo: entity.companyLogo,
-      gender: entity.gender,
-      phoneNumber: entity.phoneNumber);
+  factory RegisterEmployerModel.fromEntity(RegisterEmployerEntity entity) =>
+      RegisterEmployerModel(
+          email: entity.email,
+          password: entity.password,
+          country: entity.country,
+          fullName: entity.fullName,
+          companyName: entity.companyName,
+          state: entity.state,
+          isChecked: entity.isChecked,
+          officeTitle: entity.officeTitle,
+          city: entity.city,
+          companyLogo: entity.companyLogo,
+          gender: entity.gender,
+          phoneNumber: entity.phoneNumber);
 
   Map<String, dynamic> toJson() => {
         'email': email,

@@ -12,6 +12,8 @@ class AuthState with _$AuthState {
     String? countryId,
     @Default([]) List<StateResponseEntity> states,
     @Default([]) List<CountryResponseEntity> countries,
+    @Default([]) List<CategoryResponseEntity> category,
+    @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
     @Default(ViewState.idle) ViewState viewState,
   }) = _Initial;

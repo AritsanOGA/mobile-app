@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 
-class SignupEntity extends Equatable {
-  const SignupEntity(
+class RegisterJobSeekerEntity extends Equatable {
+  const RegisterJobSeekerEntity(
       {required this.fullName,
       required this.officeTitle,
       required this.companyName,

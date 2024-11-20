@@ -4,9 +4,12 @@ import 'package:artisan_oga/features/authentication/data/data_source/auth_remote
 import 'package:artisan_oga/features/authentication/data/reposotories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
-import 'package:artisan_oga/features/authentication/domain/usecases/signup_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -30,10 +33,15 @@ Future<void> init() async {
         () => LocalStorageServiceImpl(locator()))
     ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
         authRemoteDataSource: locator(), localDataSource: locator()))
-    ..registerLazySingleton<SignupUseCase>(() => SignupUseCase(locator()))
+    ..registerLazySingleton<RegisterEmployerUseCase>(
+        () => RegisterEmployerUseCase(locator()))
+    ..registerLazySingleton<RegisterJobSeekerUseCase>(
+        () => RegisterJobSeekerUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
     ..registerLazySingleton<CountryUseCase>(() => CountryUseCase(locator()))
     ..registerLazySingleton<StateUseCase>(() => StateUseCase(locator()))
+    ..registerLazySingleton<CategoryUseCase>(() => CategoryUseCase(locator()))
+    ..registerLazySingleton<SkillUseCase>(() => SkillUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(
         () => GetUserDataUseCase(locator()));
 }

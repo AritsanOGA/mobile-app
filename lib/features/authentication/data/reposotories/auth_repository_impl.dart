@@ -8,7 +8,8 @@ import 'package:artisan_oga/features/authentication/data/data_source/auth_remote
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
@@ -61,9 +62,9 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> signup(SignupEntity param) async {
+  Future<Either<Failure, bool>> registerEmployer(RegisterEmployerEntity param) async {
     try {
-      final result = await authRemoteDataSource.signup(param);
+      final result = await authRemoteDataSource.registerEmployer(param);
       await localDataSource.cacheUser(result);
       UserService().authData = result;
       return const Right(true);
@@ -102,4 +103,25 @@ class AuthRepositoryImpl implements AuthRepository {
       String categoryId) {
     return authRemoteDataSource.getSkill(categoryId).makeRequest();
   }
+
+  @override
+  Future<Either<Failure, bool>> RegisterJobSeeker(RegisterJobSeekerEntity param)  async{
+      try {
+      final result = await authRemoteDataSource.registerJobSeeker(param);
+      await localDataSource.cacheUser(result);
+      UserService().authData = result;
+      return const Right(true);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+}
 }

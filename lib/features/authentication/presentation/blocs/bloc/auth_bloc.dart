@@ -4,13 +4,17 @@ import 'dart:io';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/signup_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
-import 'package:artisan_oga/features/authentication/domain/usecases/signup_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +26,13 @@ part 'auth_bloc.freezed.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(
-      {SignupUseCase? signupUseCase,
+      {RegisterEmployerUseCase? registerEmployerUseCase,
+      RegisterJobSeekerUseCase? registerJobSeekerUseCase,
       LoginUseCase? loginUseCase,
       CountryUseCase? countryUseCase,
       StateUseCase? stateUseCase})
-      : _signupUseCase = signupUseCase ?? locator(),
+      : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
+        _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
         _loginUseCase = loginUseCase ?? locator(),
         _countryUseCase = countryUseCase ?? locator(),
         _stateUseCase = stateUseCase ?? locator(),
@@ -37,20 +43,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
-    on<_RegisterUser>(_onRegisterUser);
+    on<_RegisterEmployer>(_onRegisterEmployer);
+    on<_RegisterJobSeeker>(_onRegisterJobSeeker);
     on<_LoginUser>(_onLoginUser);
     on<_GetCountries>(_onGetCountries);
     on<_GetState>(_onGetState);
   }
 
-  final SignupUseCase _signupUseCase;
+  final RegisterEmployerUseCase _registerEmployerUseCase;
+  final RegisterJobSeekerUseCase _registerJobSeekerUseCase;
   final LoginUseCase _loginUseCase;
   final CountryUseCase _countryUseCase;
   final StateUseCase _stateUseCase;
   final String selectedGender = '--Selected--';
   final List<String> genders = ['--Selected--', 'Male', 'Female', 'Other'];
   String selectedJobType = "--Selected--";
-    String selectedEducationalQualification = "--Selected--";
+  String selectedEducationalQualification = "--Selected--";
   List<String> dropdownItemJobType = [
     "--Selected--",
     "Full Time",
@@ -58,7 +66,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     "Contract",
     "Part Time"
   ];
-    List<String> educationalQualification = [
+  List<String> educationalQualification = [
     "Primary school",
     "Junior secondary",
     "High school",
@@ -115,11 +123,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(isChecked: event.value));
   }
 
-  FutureOr<void> _onRegisterUser(
-      _RegisterUser event, Emitter<AuthState> emit) async {
+  FutureOr<void> _onRegisterEmployer(
+      _RegisterEmployer event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _signupUseCase(SignupEntity(
+    await _registerEmployerUseCase(RegisterEmployerEntity(
             email: event.email,
             password: event.pasword,
             fullName: event.fullName,
@@ -184,5 +192,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       ),
     );
+  }
+
+  FutureOr<void> _onRegisterJobSeeker(
+      _RegisterJobSeeker event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+
+    await _registerJobSeekerUseCase(RegisterJobSeekerEntity(
+            email: event.email,
+            password: event.pasword,
+            fullName: event.fullName,
+            country: state.country ?? '',
+            gender: state.gender ?? '',
+            city: state.city ?? '',
+            state: state.state ?? '',
+            isChecked: state.isChecked,
+            companyLogo: state.file!,
+            companyName: event.companyName,
+            phoneNumber: event.phoneNumber,
+            officeTitle: event.officeTitle))
+        .then((value) {
+      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(viewState: ViewState.success)));
+    });
   }
 }
