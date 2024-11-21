@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/custom_bottom_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../employer_profile/employer_profile.dart';
 import '../update_profile_page_screen/update_profile_page_screen.dart';
 
 class SettingsPageOneScreen extends StatefulWidget {

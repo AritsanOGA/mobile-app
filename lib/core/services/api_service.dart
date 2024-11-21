@@ -101,7 +101,7 @@ class ApiServiceImpl implements ApiService {
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.message);
       throw ServerException(
         trace: trace,
@@ -131,7 +131,7 @@ class ApiServiceImpl implements ApiService {
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.response?.data['message']);
       throw ServerException(
         trace: trace,
@@ -161,7 +161,7 @@ class ApiServiceImpl implements ApiService {
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.response?.data['message']);
       throw ServerException(
         trace: trace,
@@ -188,7 +188,7 @@ class ApiServiceImpl implements ApiService {
 
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.toString());
       throw ServerException(
         trace: trace,
@@ -212,7 +212,7 @@ class ApiServiceImpl implements ApiService {
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.toString());
       throw ServerException(
         trace: trace,
@@ -240,7 +240,7 @@ class ApiServiceImpl implements ApiService {
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
-    } on DioError catch (error, trace) {
+    } on DioException catch (error, trace) {
       _log.e('Error from $url', error: error.toString());
       throw ServerException(
         trace: trace,

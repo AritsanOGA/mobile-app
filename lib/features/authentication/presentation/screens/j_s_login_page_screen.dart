@@ -1,5 +1,4 @@
 import 'package:artisan_oga/presentation/dashboard_screen/dashboard_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/core/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';

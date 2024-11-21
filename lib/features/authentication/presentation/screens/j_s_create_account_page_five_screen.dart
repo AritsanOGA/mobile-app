@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:artisan_oga/presentation/components/loader.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';

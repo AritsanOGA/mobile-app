@@ -1,23 +1,14 @@
-import 'package:artisan_oga/presentation/nav_draweritem/nav_draweritem.dart';
-import 'package:artisan_oga/presentation/post_job_one_page/post_job_one_page.dart';
-import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/shared/widgets/custom_search_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../core/utils/app_formatter.dart';
-import '../../core/services/default.dart';
 import '../../shared/widgets/custom_outlined_button.dart';
-import '../dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import '../settings_page_two_screen/settings_page_two_screen.dart';
-import '../view_all_candidates/view_all_candidates.dart';
 
 //jobs seeker dashboard
 // ignore_for_file: must_be_immutable

@@ -1,4 +1,3 @@
-import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

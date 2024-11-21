@@ -1,8 +1,4 @@
-import 'dart:convert';
-import 'dart:io';
-import 'dart:math';
 import 'package:flutter/foundation.dart';
-import 'package:hive/hive.dart';
 import 'package:dio/dio.dart' as eos;
 
 class Employers {
@@ -27,7 +23,7 @@ class Employers {
         print(response.toString());
         return data["data"];
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -106,7 +102,7 @@ class Employers {
         }
         //print(data.toString());
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       if (e.response != null) {
         // DioError has response data when available
         print(e.response!.data);

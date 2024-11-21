@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:dio/dio.dart' as eos;
@@ -32,7 +29,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -62,7 +59,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -90,7 +87,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -119,7 +116,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -149,7 +146,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -183,7 +180,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -218,7 +215,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -254,7 +251,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -284,7 +281,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -313,7 +310,7 @@ class Default {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return [];
     }
@@ -347,7 +344,7 @@ class Default {
         print("SUCCESSFUL!");
         return "success";
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("ERROR!");
       if (e.response != null) {
         if (e.response!.data != null) {

@@ -1,14 +1,10 @@
-import 'dart:convert';
 import 'dart:io';
-import 'dart:math';
 import 'package:dio/dio.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:dio/dio.dart' as eos;
 import 'package:path/path.dart' as path;
-import 'package:path_provider/path_provider.dart' as path_provider;
 
 class Auth {
   //static String userId = Hive.box('name').get('userID');
@@ -127,7 +123,7 @@ class Auth {
           }
           //print(data.toString());
         }
-      } on eos.DioError catch (e) {
+      } on eos.DioException catch (e) {
         if (e.response != null) {
           // DioError has response data when available
           print(
@@ -179,7 +175,7 @@ class Auth {
         }
         //print(data.toString());
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       if (e.response != null) {
         // DioError has response data when available
         print(e.response!.data);
@@ -217,7 +213,7 @@ class Auth {
     // Get the file extension
 
     if (logo != null) {
-      String fileExtension = path.extension(logo!.path);
+      String fileExtension = path.extension(logo.path);
 
       // Check and validate the file type for passport
       if (fileExtension == '.jpg' ||
@@ -258,7 +254,7 @@ class Auth {
               return "success";
             }
           }
-        } on eos.DioError catch (e) {
+        } on eos.DioException catch (e) {
           if (e.response != null) {
             if (e.response!.statusCode == 400) {
               return (e.response!);
@@ -300,7 +296,7 @@ class Auth {
             return "success";
           }
         }
-      } on eos.DioError catch (e) {
+      } on eos.DioException catch (e) {
         if (e.response != null) {
           if (e.response!.statusCode == 400) {
             print("hgj " + e.response!.data["message"].toString());
@@ -348,7 +344,7 @@ class Auth {
           return "That account belongs to an Employer. Please use employer portal to signin";
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       if (e.response != null) {
         if (e.response!.data != null) {
           if (e.response!.statusCode == 400 &&
@@ -396,7 +392,7 @@ class Auth {
         print("SUCCESSFUL!");
         return "success";
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("ERROR!");
       if (e.response != null) {
         if (e.response!.data != null) {

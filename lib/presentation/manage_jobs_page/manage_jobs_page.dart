@@ -1,7 +1,6 @@
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:artisan_oga/core/services/default.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:hive/hive.dart';

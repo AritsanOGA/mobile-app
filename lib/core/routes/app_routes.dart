@@ -23,14 +23,8 @@ import '../../presentation/candidates_profile_accept_page_screen/candidates_prof
 import '../../presentation/message_page_screen/message_page_screen.dart';
 import '../../presentation/message_page_chatting_one_screen/message_page_chatting_one_screen.dart';
 import '../../presentation/change_password_page_screen/change_password_page_screen.dart';
-import '../../presentation/update_profile_page_screen/update_profile_page_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
-import '../../presentation/j_s_create_account_page_one_screen/j_s_create_account_page_one_screen.dart';
 import '../../presentation/verification_page_one_screen/verification_page_one_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import '../../presentation/dashboard_screen/dashboard_screen.dart';

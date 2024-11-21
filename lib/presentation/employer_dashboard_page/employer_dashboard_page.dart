@@ -1,13 +1,9 @@
-import 'package:artisan_oga/presentation/nav_draweritem/nav_draweritem.dart';
 import 'package:artisan_oga/presentation/post_job_one_page/post_job_one_page.dart';
 import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/shared/widgets/custom_search_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';

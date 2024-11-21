@@ -1,4 +1,3 @@
-import 'package:artisan_oga/features/authentication/data/model/user_activation_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/user_activation_entity.dart';
 import 'package:equatable/equatable.dart';
 

@@ -1,8 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-import 'dart:math';
-import 'package:flutter/foundation.dart';
-import 'package:hive/hive.dart';
 import 'package:dio/dio.dart' as eos;
 
 class Candidates {
@@ -33,7 +28,7 @@ class Candidates {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -63,7 +58,7 @@ class Candidates {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -93,7 +88,7 @@ class Candidates {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -123,7 +118,7 @@ class Candidates {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
@@ -153,7 +148,7 @@ class Candidates {
           return [];
         }
       }
-    } on eos.DioError catch (e) {
+    } on eos.DioException catch (e) {
       print("Error:" + e.message.toString());
       return 400;
     }
