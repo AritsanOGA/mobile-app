@@ -22,8 +22,15 @@ mixin _$AuthEvent {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -36,12 +43,30 @@ mixin _$AuthEvent {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,16 +76,45 @@ mixin _$AuthEvent {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,16 +124,45 @@ mixin _$AuthEvent {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) =>
@@ -91,10 +174,20 @@ mixin _$AuthEvent {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -108,9 +201,16 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -124,9 +224,16 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -224,8 +331,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -238,12 +352,30 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedCountry(value);
@@ -256,16 +388,45 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedCountry?.call(value);
@@ -278,16 +439,45 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -305,10 +495,20 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -325,9 +525,16 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -344,9 +551,16 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -441,8 +655,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -455,12 +676,30 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedGender(value);
@@ -473,16 +712,45 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedGender?.call(value);
@@ -495,16 +763,45 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -522,10 +819,20 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -542,9 +849,16 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -561,9 +875,16 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -657,8 +978,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -671,12 +999,30 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedState(value);
@@ -689,16 +1035,45 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedState?.call(value);
@@ -711,16 +1086,45 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -738,10 +1142,20 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -758,9 +1172,16 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -777,9 +1198,16 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -873,8 +1301,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -887,12 +1322,30 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedCity(value);
@@ -905,16 +1358,45 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedCity?.call(value);
@@ -927,16 +1409,45 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -954,10 +1465,20 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -974,9 +1495,16 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -993,9 +1521,16 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -1018,6 +1553,1307 @@ abstract class _UpdateSelectedCity implements AuthEvent {
   @JsonKey(ignore: true)
   _$$UpdateSelectedCityImplCopyWith<_$UpdateSelectedCityImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedCategoryImplCopyWith<$Res> {
+  factory _$$UpdateSelectedCategoryImplCopyWith(
+          _$UpdateSelectedCategoryImpl value,
+          $Res Function(_$UpdateSelectedCategoryImpl) then) =
+      __$$UpdateSelectedCategoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedCategoryImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSelectedCategoryImpl>
+    implements _$$UpdateSelectedCategoryImplCopyWith<$Res> {
+  __$$UpdateSelectedCategoryImplCopyWithImpl(
+      _$UpdateSelectedCategoryImpl _value,
+      $Res Function(_$UpdateSelectedCategoryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedCategoryImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
+  const _$UpdateSelectedCategoryImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedCategory(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedCategoryImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedCategoryImplCopyWith<_$UpdateSelectedCategoryImpl>
+      get copyWith => __$$UpdateSelectedCategoryImplCopyWithImpl<
+          _$UpdateSelectedCategoryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedCategory(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedCategory?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCategory != null) {
+      return updateSelectedCategory(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCategory != null) {
+      return updateSelectedCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedCategory implements AuthEvent {
+  const factory _UpdateSelectedCategory(final String value) =
+      _$UpdateSelectedCategoryImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedCategoryImplCopyWith<_$UpdateSelectedCategoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedSkillImplCopyWith<$Res> {
+  factory _$$UpdateSelectedSkillImplCopyWith(_$UpdateSelectedSkillImpl value,
+          $Res Function(_$UpdateSelectedSkillImpl) then) =
+      __$$UpdateSelectedSkillImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedSkillImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSelectedSkillImpl>
+    implements _$$UpdateSelectedSkillImplCopyWith<$Res> {
+  __$$UpdateSelectedSkillImplCopyWithImpl(_$UpdateSelectedSkillImpl _value,
+      $Res Function(_$UpdateSelectedSkillImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedSkillImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
+  const _$UpdateSelectedSkillImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedSkill(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedSkillImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
+      __$$UpdateSelectedSkillImplCopyWithImpl<_$UpdateSelectedSkillImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedSkill(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedSkill?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedSkill != null) {
+      return updateSelectedSkill(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedSkill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedSkill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedSkill != null) {
+      return updateSelectedSkill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedSkill implements AuthEvent {
+  const factory _UpdateSelectedSkill(final String value) =
+      _$UpdateSelectedSkillImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedJobTypeImplCopyWith<$Res> {
+  factory _$$UpdateSelectedJobTypeImplCopyWith(
+          _$UpdateSelectedJobTypeImpl value,
+          $Res Function(_$UpdateSelectedJobTypeImpl) then) =
+      __$$UpdateSelectedJobTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedJobTypeImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSelectedJobTypeImpl>
+    implements _$$UpdateSelectedJobTypeImplCopyWith<$Res> {
+  __$$UpdateSelectedJobTypeImplCopyWithImpl(_$UpdateSelectedJobTypeImpl _value,
+      $Res Function(_$UpdateSelectedJobTypeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedJobTypeImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
+  const _$UpdateSelectedJobTypeImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedJobType(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedJobTypeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedJobTypeImplCopyWith<_$UpdateSelectedJobTypeImpl>
+      get copyWith => __$$UpdateSelectedJobTypeImplCopyWithImpl<
+          _$UpdateSelectedJobTypeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedJobType(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedJobType?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedJobType != null) {
+      return updateSelectedJobType(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedJobType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedJobType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedJobType != null) {
+      return updateSelectedJobType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedJobType implements AuthEvent {
+  const factory _UpdateSelectedJobType(final String value) =
+      _$UpdateSelectedJobTypeImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedJobTypeImplCopyWith<_$UpdateSelectedJobTypeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedEducationQualificationImplCopyWith<$Res> {
+  factory _$$UpdateSelectedEducationQualificationImplCopyWith(
+          _$UpdateSelectedEducationQualificationImpl value,
+          $Res Function(_$UpdateSelectedEducationQualificationImpl) then) =
+      __$$UpdateSelectedEducationQualificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedEducationQualificationImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res,
+        _$UpdateSelectedEducationQualificationImpl>
+    implements _$$UpdateSelectedEducationQualificationImplCopyWith<$Res> {
+  __$$UpdateSelectedEducationQualificationImplCopyWithImpl(
+      _$UpdateSelectedEducationQualificationImpl _value,
+      $Res Function(_$UpdateSelectedEducationQualificationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedEducationQualificationImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedEducationQualificationImpl
+    implements _UpdateSelectedEducationQualification {
+  const _$UpdateSelectedEducationQualificationImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedEducationQualification(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedEducationQualificationImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedEducationQualificationImplCopyWith<
+          _$UpdateSelectedEducationQualificationImpl>
+      get copyWith => __$$UpdateSelectedEducationQualificationImplCopyWithImpl<
+          _$UpdateSelectedEducationQualificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedEducationQualification(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedEducationQualification?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedEducationQualification != null) {
+      return updateSelectedEducationQualification(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedEducationQualification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedEducationQualification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedEducationQualification != null) {
+      return updateSelectedEducationQualification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedEducationQualification implements AuthEvent {
+  const factory _UpdateSelectedEducationQualification(final String value) =
+      _$UpdateSelectedEducationQualificationImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedEducationQualificationImplCopyWith<
+          _$UpdateSelectedEducationQualificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1091,8 +2927,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -1105,12 +2948,30 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedCompanyLogo(value);
@@ -1123,16 +2984,45 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedCompanyLogo?.call(value);
@@ -1145,16 +3035,45 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -1172,10 +3091,20 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -1192,9 +3121,16 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -1211,9 +3147,16 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -1309,8 +3252,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -1323,12 +3273,30 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return updateSelectedIsChecked(value);
@@ -1341,16 +3309,45 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return updateSelectedIsChecked?.call(value);
@@ -1363,16 +3360,45 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -1390,10 +3416,20 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -1410,9 +3446,16 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -1429,9 +3472,16 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -1453,6 +3503,655 @@ abstract class _UpdateSelectedIsChecked implements AuthEvent {
   bool get value;
   @JsonKey(ignore: true)
   _$$UpdateSelectedIsCheckedImplCopyWith<_$UpdateSelectedIsCheckedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedPassportImplCopyWith<$Res> {
+  factory _$$UpdateSelectedPassportImplCopyWith(
+          _$UpdateSelectedPassportImpl value,
+          $Res Function(_$UpdateSelectedPassportImpl) then) =
+      __$$UpdateSelectedPassportImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedPassportImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSelectedPassportImpl>
+    implements _$$UpdateSelectedPassportImplCopyWith<$Res> {
+  __$$UpdateSelectedPassportImplCopyWithImpl(
+      _$UpdateSelectedPassportImpl _value,
+      $Res Function(_$UpdateSelectedPassportImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedPassportImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
+  const _$UpdateSelectedPassportImpl(this.value);
+
+  @override
+  final File value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedPassport(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedPassportImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedPassportImplCopyWith<_$UpdateSelectedPassportImpl>
+      get copyWith => __$$UpdateSelectedPassportImplCopyWithImpl<
+          _$UpdateSelectedPassportImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedPassport(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedPassport?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedPassport != null) {
+      return updateSelectedPassport(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedPassport(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedPassport?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedPassport != null) {
+      return updateSelectedPassport(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedPassport implements AuthEvent {
+  const factory _UpdateSelectedPassport(final File value) =
+      _$UpdateSelectedPassportImpl;
+
+  File get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedPassportImplCopyWith<_$UpdateSelectedPassportImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedResumeImplCopyWith<$Res> {
+  factory _$$UpdateSelectedResumeImplCopyWith(_$UpdateSelectedResumeImpl value,
+          $Res Function(_$UpdateSelectedResumeImpl) then) =
+      __$$UpdateSelectedResumeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({File value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedResumeImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSelectedResumeImpl>
+    implements _$$UpdateSelectedResumeImplCopyWith<$Res> {
+  __$$UpdateSelectedResumeImplCopyWithImpl(_$UpdateSelectedResumeImpl _value,
+      $Res Function(_$UpdateSelectedResumeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedResumeImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
+  const _$UpdateSelectedResumeImpl(this.value);
+
+  @override
+  final File value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSelectedResume(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedResumeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedResumeImplCopyWith<_$UpdateSelectedResumeImpl>
+      get copyWith =>
+          __$$UpdateSelectedResumeImplCopyWithImpl<_$UpdateSelectedResumeImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function() getState,
+    required TResult Function(
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String phoneNumber,
+            String email,
+            String pasword)
+        registerEmployer,
+    required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
+        registerJobSeeker,
+  }) {
+    return updateSelectedResume(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function()? getState,
+    TResult? Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+  }) {
+    return updateSelectedResume?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function()? getState,
+    TResult Function(String fullName, String officeTitle, String companyName,
+            String phoneNumber, String email, String pasword)?
+        registerEmployer,
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
+        registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedResume != null) {
+      return updateSelectedResume(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateSelectedResume(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateSelectedResume?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedResume != null) {
+      return updateSelectedResume(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedResume implements AuthEvent {
+  const factory _UpdateSelectedResume(final File value) =
+      _$UpdateSelectedResumeImpl;
+
+  File get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedResumeImplCopyWith<_$UpdateSelectedResumeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1524,8 +4223,15 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -1538,12 +4244,30 @@ class _$LoginUserImpl implements _LoginUser {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return loginUser(param);
@@ -1556,16 +4280,45 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return loginUser?.call(param);
@@ -1578,16 +4331,45 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -1605,10 +4387,20 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -1625,9 +4417,16 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -1644,9 +4443,16 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -1712,8 +4518,15 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -1726,12 +4539,30 @@ class _$GetCountriesImpl implements _GetCountries {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return getCountries();
@@ -1744,16 +4575,45 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return getCountries?.call();
@@ -1766,16 +4626,45 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -1793,10 +4682,20 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -1813,9 +4712,16 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -1832,9 +4738,16 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -1895,8 +4808,15 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -1909,12 +4829,30 @@ class _$GetStateImpl implements _GetState {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return getState();
@@ -1927,16 +4865,45 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return getState?.call();
@@ -1949,16 +4916,45 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -1976,10 +4972,20 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -1996,9 +5002,16 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -2015,9 +5028,16 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -2162,8 +5182,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -2176,12 +5203,30 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return registerEmployer(
@@ -2195,16 +5240,45 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return registerEmployer?.call(
@@ -2218,16 +5292,45 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
@@ -2246,10 +5349,20 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -2266,9 +5379,16 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -2285,9 +5405,16 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -2329,12 +5456,30 @@ abstract class _$$RegisterJobSeekerImplCopyWith<$Res> {
       __$$RegisterJobSeekerImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {String fullName,
+      {String email,
+      String password,
+      String confirmPassword,
+      String fullName,
       String officeTitle,
       String companyName,
+      String city,
+      String passport,
+      String resume,
+      String gender,
       String phoneNumber,
-      String email,
-      String pasword});
+      String guarantorName,
+      String guarantorEmail,
+      String residentialAddress,
+      String yearsOfExperience,
+      String describeYourRole,
+      String dateOFBirth,
+      String role,
+      String description,
+      String startYear,
+      String endYear,
+      String schoolName,
+      String certificateObtained,
+      String graduationYear});
 }
 
 /// @nodoc
@@ -2348,14 +5493,44 @@ class __$$RegisterJobSeekerImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? email = null,
+    Object? password = null,
+    Object? confirmPassword = null,
     Object? fullName = null,
     Object? officeTitle = null,
     Object? companyName = null,
+    Object? city = null,
+    Object? passport = null,
+    Object? resume = null,
+    Object? gender = null,
     Object? phoneNumber = null,
-    Object? email = null,
-    Object? pasword = null,
+    Object? guarantorName = null,
+    Object? guarantorEmail = null,
+    Object? residentialAddress = null,
+    Object? yearsOfExperience = null,
+    Object? describeYourRole = null,
+    Object? dateOFBirth = null,
+    Object? role = null,
+    Object? description = null,
+    Object? startYear = null,
+    Object? endYear = null,
+    Object? schoolName = null,
+    Object? certificateObtained = null,
+    Object? graduationYear = null,
   }) {
     return _then(_$RegisterJobSeekerImpl(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      confirmPassword: null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
       fullName: null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -2368,17 +5543,77 @@ class __$$RegisterJobSeekerImplCopyWithImpl<$Res>
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      passport: null == passport
+          ? _value.passport
+          : passport // ignore: cast_nullable_to_non_nullable
+              as String,
+      resume: null == resume
+          ? _value.resume
+          : resume // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      guarantorName: null == guarantorName
+          ? _value.guarantorName
+          : guarantorName // ignore: cast_nullable_to_non_nullable
               as String,
-      pasword: null == pasword
-          ? _value.pasword
-          : pasword // ignore: cast_nullable_to_non_nullable
+      guarantorEmail: null == guarantorEmail
+          ? _value.guarantorEmail
+          : guarantorEmail // ignore: cast_nullable_to_non_nullable
+              as String,
+      residentialAddress: null == residentialAddress
+          ? _value.residentialAddress
+          : residentialAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      yearsOfExperience: null == yearsOfExperience
+          ? _value.yearsOfExperience
+          : yearsOfExperience // ignore: cast_nullable_to_non_nullable
+              as String,
+      describeYourRole: null == describeYourRole
+          ? _value.describeYourRole
+          : describeYourRole // ignore: cast_nullable_to_non_nullable
+              as String,
+      dateOFBirth: null == dateOFBirth
+          ? _value.dateOFBirth
+          : dateOFBirth // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      startYear: null == startYear
+          ? _value.startYear
+          : startYear // ignore: cast_nullable_to_non_nullable
+              as String,
+      endYear: null == endYear
+          ? _value.endYear
+          : endYear // ignore: cast_nullable_to_non_nullable
+              as String,
+      schoolName: null == schoolName
+          ? _value.schoolName
+          : schoolName // ignore: cast_nullable_to_non_nullable
+              as String,
+      certificateObtained: null == certificateObtained
+          ? _value.certificateObtained
+          : certificateObtained // ignore: cast_nullable_to_non_nullable
+              as String,
+      graduationYear: null == graduationYear
+          ? _value.graduationYear
+          : graduationYear // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -2388,13 +5623,37 @@ class __$$RegisterJobSeekerImplCopyWithImpl<$Res>
 
 class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
   const _$RegisterJobSeekerImpl(
-      {required this.fullName,
+      {required this.email,
+      required this.password,
+      required this.confirmPassword,
+      required this.fullName,
       required this.officeTitle,
       required this.companyName,
+      required this.city,
+      required this.passport,
+      required this.resume,
+      required this.gender,
       required this.phoneNumber,
-      required this.email,
-      required this.pasword});
+      required this.guarantorName,
+      required this.guarantorEmail,
+      required this.residentialAddress,
+      required this.yearsOfExperience,
+      required this.describeYourRole,
+      required this.dateOFBirth,
+      required this.role,
+      required this.description,
+      required this.startYear,
+      required this.endYear,
+      required this.schoolName,
+      required this.certificateObtained,
+      required this.graduationYear});
 
+  @override
+  final String email;
+  @override
+  final String password;
+  @override
+  final String confirmPassword;
   @override
   final String fullName;
   @override
@@ -2402,15 +5661,45 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
   @override
   final String companyName;
   @override
+  final String city;
+  @override
+  final String passport;
+  @override
+  final String resume;
+  @override
+  final String gender;
+  @override
   final String phoneNumber;
   @override
-  final String email;
+  final String guarantorName;
   @override
-  final String pasword;
+  final String guarantorEmail;
+  @override
+  final String residentialAddress;
+  @override
+  final String yearsOfExperience;
+  @override
+  final String describeYourRole;
+  @override
+  final String dateOFBirth;
+  @override
+  final String role;
+  @override
+  final String description;
+  @override
+  final String startYear;
+  @override
+  final String endYear;
+  @override
+  final String schoolName;
+  @override
+  final String certificateObtained;
+  @override
+  final String graduationYear;
 
   @override
   String toString() {
-    return 'AuthEvent.registerJobSeeker(fullName: $fullName, officeTitle: $officeTitle, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, pasword: $pasword)';
+    return 'AuthEvent.registerJobSeeker(email: $email, password: $password, confirmPassword: $confirmPassword, fullName: $fullName, officeTitle: $officeTitle, companyName: $companyName, city: $city, passport: $passport, resume: $resume, gender: $gender, phoneNumber: $phoneNumber, guarantorName: $guarantorName, guarantorEmail: $guarantorEmail, residentialAddress: $residentialAddress, yearsOfExperience: $yearsOfExperience, describeYourRole: $describeYourRole, dateOFBirth: $dateOFBirth, role: $role, description: $description, startYear: $startYear, endYear: $endYear, schoolName: $schoolName, certificateObtained: $certificateObtained, graduationYear: $graduationYear)';
   }
 
   @override
@@ -2418,21 +5707,78 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterJobSeekerImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword) &&
             (identical(other.fullName, fullName) ||
                 other.fullName == fullName) &&
             (identical(other.officeTitle, officeTitle) ||
                 other.officeTitle == officeTitle) &&
             (identical(other.companyName, companyName) ||
                 other.companyName == companyName) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.passport, passport) ||
+                other.passport == passport) &&
+            (identical(other.resume, resume) || other.resume == resume) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.pasword, pasword) || other.pasword == pasword));
+            (identical(other.guarantorName, guarantorName) ||
+                other.guarantorName == guarantorName) &&
+            (identical(other.guarantorEmail, guarantorEmail) ||
+                other.guarantorEmail == guarantorEmail) &&
+            (identical(other.residentialAddress, residentialAddress) ||
+                other.residentialAddress == residentialAddress) &&
+            (identical(other.yearsOfExperience, yearsOfExperience) ||
+                other.yearsOfExperience == yearsOfExperience) &&
+            (identical(other.describeYourRole, describeYourRole) ||
+                other.describeYourRole == describeYourRole) &&
+            (identical(other.dateOFBirth, dateOFBirth) ||
+                other.dateOFBirth == dateOFBirth) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.startYear, startYear) ||
+                other.startYear == startYear) &&
+            (identical(other.endYear, endYear) || other.endYear == endYear) &&
+            (identical(other.schoolName, schoolName) ||
+                other.schoolName == schoolName) &&
+            (identical(other.certificateObtained, certificateObtained) ||
+                other.certificateObtained == certificateObtained) &&
+            (identical(other.graduationYear, graduationYear) ||
+                other.graduationYear == graduationYear));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, fullName, officeTitle,
-      companyName, phoneNumber, email, pasword);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        email,
+        password,
+        confirmPassword,
+        fullName,
+        officeTitle,
+        companyName,
+        city,
+        passport,
+        resume,
+        gender,
+        phoneNumber,
+        guarantorName,
+        guarantorEmail,
+        residentialAddress,
+        yearsOfExperience,
+        describeYourRole,
+        dateOFBirth,
+        role,
+        description,
+        startYear,
+        endYear,
+        schoolName,
+        certificateObtained,
+        graduationYear
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2448,8 +5794,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
+    required TResult Function(String value) updateSelectedCategory,
+    required TResult Function(String value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function() getState,
@@ -2462,16 +5815,57 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
             String pasword)
         registerEmployer,
     required TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
             String fullName,
             String officeTitle,
             String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
             String phoneNumber,
-            String email,
-            String pasword)
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)
         registerJobSeeker,
   }) {
     return registerJobSeeker(
-        fullName, officeTitle, companyName, phoneNumber, email, pasword);
+        email,
+        password,
+        confirmPassword,
+        fullName,
+        officeTitle,
+        companyName,
+        city,
+        passport,
+        resume,
+        gender,
+        phoneNumber,
+        guarantorName,
+        guarantorEmail,
+        residentialAddress,
+        yearsOfExperience,
+        describeYourRole,
+        dateOFBirth,
+        role,
+        description,
+        startYear,
+        endYear,
+        schoolName,
+        certificateObtained,
+        graduationYear);
   }
 
   @override
@@ -2481,20 +5875,72 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(String value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function()? getState,
     TResult? Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult? Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult? Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
   }) {
     return registerJobSeeker?.call(
-        fullName, officeTitle, companyName, phoneNumber, email, pasword);
+        email,
+        password,
+        confirmPassword,
+        fullName,
+        officeTitle,
+        companyName,
+        city,
+        passport,
+        resume,
+        gender,
+        phoneNumber,
+        guarantorName,
+        guarantorEmail,
+        residentialAddress,
+        yearsOfExperience,
+        describeYourRole,
+        dateOFBirth,
+        role,
+        description,
+        startYear,
+        endYear,
+        schoolName,
+        certificateObtained,
+        graduationYear);
   }
 
   @override
@@ -2504,22 +5950,74 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
+    TResult Function(String value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function()? getState,
     TResult Function(String fullName, String officeTitle, String companyName,
             String phoneNumber, String email, String pasword)?
         registerEmployer,
-    TResult Function(String fullName, String officeTitle, String companyName,
-            String phoneNumber, String email, String pasword)?
+    TResult Function(
+            String email,
+            String password,
+            String confirmPassword,
+            String fullName,
+            String officeTitle,
+            String companyName,
+            String city,
+            String passport,
+            String resume,
+            String gender,
+            String phoneNumber,
+            String guarantorName,
+            String guarantorEmail,
+            String residentialAddress,
+            String yearsOfExperience,
+            String describeYourRole,
+            String dateOFBirth,
+            String role,
+            String description,
+            String startYear,
+            String endYear,
+            String schoolName,
+            String certificateObtained,
+            String graduationYear)?
         registerJobSeeker,
     required TResult orElse(),
   }) {
     if (registerJobSeeker != null) {
       return registerJobSeeker(
-          fullName, officeTitle, companyName, phoneNumber, email, pasword);
+          email,
+          password,
+          confirmPassword,
+          fullName,
+          officeTitle,
+          companyName,
+          city,
+          passport,
+          resume,
+          gender,
+          phoneNumber,
+          guarantorName,
+          guarantorEmail,
+          residentialAddress,
+          yearsOfExperience,
+          describeYourRole,
+          dateOFBirth,
+          role,
+          description,
+          startYear,
+          endYear,
+          schoolName,
+          certificateObtained,
+          graduationYear);
     }
     return orElse();
   }
@@ -2532,10 +6030,20 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedState value) updateSelectedState,
     required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
@@ -2552,9 +6060,16 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedState value)? updateSelectedState,
     TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
@@ -2571,9 +6086,16 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedState value)? updateSelectedState,
     TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
@@ -2590,19 +6112,55 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
 
 abstract class _RegisterJobSeeker implements AuthEvent {
   const factory _RegisterJobSeeker(
-      {required final String fullName,
+      {required final String email,
+      required final String password,
+      required final String confirmPassword,
+      required final String fullName,
       required final String officeTitle,
       required final String companyName,
+      required final String city,
+      required final String passport,
+      required final String resume,
+      required final String gender,
       required final String phoneNumber,
-      required final String email,
-      required final String pasword}) = _$RegisterJobSeekerImpl;
+      required final String guarantorName,
+      required final String guarantorEmail,
+      required final String residentialAddress,
+      required final String yearsOfExperience,
+      required final String describeYourRole,
+      required final String dateOFBirth,
+      required final String role,
+      required final String description,
+      required final String startYear,
+      required final String endYear,
+      required final String schoolName,
+      required final String certificateObtained,
+      required final String graduationYear}) = _$RegisterJobSeekerImpl;
 
+  String get email;
+  String get password;
+  String get confirmPassword;
   String get fullName;
   String get officeTitle;
   String get companyName;
+  String get city;
+  String get passport;
+  String get resume;
+  String get gender;
   String get phoneNumber;
-  String get email;
-  String get pasword;
+  String get guarantorName;
+  String get guarantorEmail;
+  String get residentialAddress;
+  String get yearsOfExperience;
+  String get describeYourRole;
+  String get dateOFBirth;
+  String get role;
+  String get description;
+  String get startYear;
+  String get endYear;
+  String get schoolName;
+  String get certificateObtained;
+  String get graduationYear;
   @JsonKey(ignore: true)
   _$$RegisterJobSeekerImplCopyWith<_$RegisterJobSeekerImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2613,14 +6171,26 @@ mixin _$AuthState {
   String? get gender => throw _privateConstructorUsedError;
   String? get country => throw _privateConstructorUsedError;
   String? get state => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
+  String? get jsCountry => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get countryId => throw _privateConstructorUsedError;
+  String? get jsGender => throw _privateConstructorUsedError;
+  String? get jobType => throw _privateConstructorUsedError;
+  String? get jsState => throw _privateConstructorUsedError;
+  String? get city => throw _privateConstructorUsedError;
+  File? get picture => throw _privateConstructorUsedError;
+  String? get educationalQualification => throw _privateConstructorUsedError;
+  String? get dateOFBirth => throw _privateConstructorUsedError;
+  String? get startYear => throw _privateConstructorUsedError;
+  String? get endYear => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
+  String? get skills => throw _privateConstructorUsedError;
+  File? get resume => throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   List<CountryResponseEntity> get countries =>
       throw _privateConstructorUsedError;
-  List<CategoryResponseEntity> get category =>
+  List<CategoryResponseEntity> get categoryList =>
       throw _privateConstructorUsedError;
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
@@ -2631,13 +6201,25 @@ mixin _$AuthState {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)
@@ -2650,13 +6232,25 @@ mixin _$AuthState {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)?
@@ -2669,13 +6263,25 @@ mixin _$AuthState {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)?
@@ -2714,13 +6320,25 @@ abstract class $AuthStateCopyWith<$Res> {
       {String? gender,
       String? country,
       String? state,
-      String? city,
+      String? jsCountry,
       File? file,
       String? errorMessage,
       String? countryId,
+      String? jsGender,
+      String? jobType,
+      String? jsState,
+      String? city,
+      File? picture,
+      String? educationalQualification,
+      String? dateOFBirth,
+      String? startYear,
+      String? endYear,
+      String? category,
+      String? skills,
+      File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
-      List<CategoryResponseEntity> category,
+      List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
       ViewState viewState});
@@ -2742,13 +6360,25 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? gender = freezed,
     Object? country = freezed,
     Object? state = freezed,
-    Object? city = freezed,
+    Object? jsCountry = freezed,
     Object? file = freezed,
     Object? errorMessage = freezed,
     Object? countryId = freezed,
+    Object? jsGender = freezed,
+    Object? jobType = freezed,
+    Object? jsState = freezed,
+    Object? city = freezed,
+    Object? picture = freezed,
+    Object? educationalQualification = freezed,
+    Object? dateOFBirth = freezed,
+    Object? startYear = freezed,
+    Object? endYear = freezed,
+    Object? category = freezed,
+    Object? skills = freezed,
+    Object? resume = freezed,
     Object? states = null,
     Object? countries = null,
-    Object? category = null,
+    Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
     Object? viewState = null,
@@ -2766,9 +6396,9 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
+      jsCountry: freezed == jsCountry
+          ? _value.jsCountry
+          : jsCountry // ignore: cast_nullable_to_non_nullable
               as String?,
       file: freezed == file
           ? _value.file
@@ -2782,6 +6412,54 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.countryId
           : countryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      jsGender: freezed == jsGender
+          ? _value.jsGender
+          : jsGender // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jobType: freezed == jobType
+          ? _value.jobType
+          : jobType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jsState: freezed == jsState
+          ? _value.jsState
+          : jsState // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      picture: freezed == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      educationalQualification: freezed == educationalQualification
+          ? _value.educationalQualification
+          : educationalQualification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dateOFBirth: freezed == dateOFBirth
+          ? _value.dateOFBirth
+          : dateOFBirth // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startYear: freezed == startYear
+          ? _value.startYear
+          : startYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      endYear: freezed == endYear
+          ? _value.endYear
+          : endYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      skills: freezed == skills
+          ? _value.skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resume: freezed == resume
+          ? _value.resume
+          : resume // ignore: cast_nullable_to_non_nullable
+              as File?,
       states: null == states
           ? _value.states
           : states // ignore: cast_nullable_to_non_nullable
@@ -2790,9 +6468,9 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.countries
           : countries // ignore: cast_nullable_to_non_nullable
               as List<CountryResponseEntity>,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
+      categoryList: null == categoryList
+          ? _value.categoryList
+          : categoryList // ignore: cast_nullable_to_non_nullable
               as List<CategoryResponseEntity>,
       skill: null == skill
           ? _value.skill
@@ -2822,13 +6500,25 @@ abstract class _$$InitialImplCopyWith<$Res>
       {String? gender,
       String? country,
       String? state,
-      String? city,
+      String? jsCountry,
       File? file,
       String? errorMessage,
       String? countryId,
+      String? jsGender,
+      String? jobType,
+      String? jsState,
+      String? city,
+      File? picture,
+      String? educationalQualification,
+      String? dateOFBirth,
+      String? startYear,
+      String? endYear,
+      String? category,
+      String? skills,
+      File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
-      List<CategoryResponseEntity> category,
+      List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
       ViewState viewState});
@@ -2848,13 +6538,25 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? gender = freezed,
     Object? country = freezed,
     Object? state = freezed,
-    Object? city = freezed,
+    Object? jsCountry = freezed,
     Object? file = freezed,
     Object? errorMessage = freezed,
     Object? countryId = freezed,
+    Object? jsGender = freezed,
+    Object? jobType = freezed,
+    Object? jsState = freezed,
+    Object? city = freezed,
+    Object? picture = freezed,
+    Object? educationalQualification = freezed,
+    Object? dateOFBirth = freezed,
+    Object? startYear = freezed,
+    Object? endYear = freezed,
+    Object? category = freezed,
+    Object? skills = freezed,
+    Object? resume = freezed,
     Object? states = null,
     Object? countries = null,
-    Object? category = null,
+    Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
     Object? viewState = null,
@@ -2872,9 +6574,9 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
+      jsCountry: freezed == jsCountry
+          ? _value.jsCountry
+          : jsCountry // ignore: cast_nullable_to_non_nullable
               as String?,
       file: freezed == file
           ? _value.file
@@ -2888,6 +6590,54 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.countryId
           : countryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      jsGender: freezed == jsGender
+          ? _value.jsGender
+          : jsGender // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jobType: freezed == jobType
+          ? _value.jobType
+          : jobType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jsState: freezed == jsState
+          ? _value.jsState
+          : jsState // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      picture: freezed == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      educationalQualification: freezed == educationalQualification
+          ? _value.educationalQualification
+          : educationalQualification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dateOFBirth: freezed == dateOFBirth
+          ? _value.dateOFBirth
+          : dateOFBirth // ignore: cast_nullable_to_non_nullable
+              as String?,
+      startYear: freezed == startYear
+          ? _value.startYear
+          : startYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      endYear: freezed == endYear
+          ? _value.endYear
+          : endYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      skills: freezed == skills
+          ? _value.skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resume: freezed == resume
+          ? _value.resume
+          : resume // ignore: cast_nullable_to_non_nullable
+              as File?,
       states: null == states
           ? _value._states
           : states // ignore: cast_nullable_to_non_nullable
@@ -2896,9 +6646,9 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._countries
           : countries // ignore: cast_nullable_to_non_nullable
               as List<CountryResponseEntity>,
-      category: null == category
-          ? _value._category
-          : category // ignore: cast_nullable_to_non_nullable
+      categoryList: null == categoryList
+          ? _value._categoryList
+          : categoryList // ignore: cast_nullable_to_non_nullable
               as List<CategoryResponseEntity>,
       skill: null == skill
           ? _value._skill
@@ -2923,19 +6673,31 @@ class _$InitialImpl implements _Initial {
       {this.gender,
       this.country,
       this.state,
-      this.city,
+      this.jsCountry,
       this.file,
       this.errorMessage,
       this.countryId,
+      this.jsGender,
+      this.jobType,
+      this.jsState,
+      this.city,
+      this.picture,
+      this.educationalQualification,
+      this.dateOFBirth,
+      this.startYear,
+      this.endYear,
+      this.category,
+      this.skills,
+      this.resume,
       final List<StateResponseEntity> states = const [],
       final List<CountryResponseEntity> countries = const [],
-      final List<CategoryResponseEntity> category = const [],
+      final List<CategoryResponseEntity> categoryList = const [],
       final List<SkillResponseEntity> skill = const [],
       this.isChecked = false,
       this.viewState = ViewState.idle})
       : _states = states,
         _countries = countries,
-        _category = category,
+        _categoryList = categoryList,
         _skill = skill;
 
   @override
@@ -2945,13 +6707,37 @@ class _$InitialImpl implements _Initial {
   @override
   final String? state;
   @override
-  final String? city;
+  final String? jsCountry;
   @override
   final File? file;
   @override
   final String? errorMessage;
   @override
   final String? countryId;
+  @override
+  final String? jsGender;
+  @override
+  final String? jobType;
+  @override
+  final String? jsState;
+  @override
+  final String? city;
+  @override
+  final File? picture;
+  @override
+  final String? educationalQualification;
+  @override
+  final String? dateOFBirth;
+  @override
+  final String? startYear;
+  @override
+  final String? endYear;
+  @override
+  final String? category;
+  @override
+  final String? skills;
+  @override
+  final File? resume;
   final List<StateResponseEntity> _states;
   @override
   @JsonKey()
@@ -2970,13 +6756,13 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_countries);
   }
 
-  final List<CategoryResponseEntity> _category;
+  final List<CategoryResponseEntity> _categoryList;
   @override
   @JsonKey()
-  List<CategoryResponseEntity> get category {
-    if (_category is EqualUnmodifiableListView) return _category;
+  List<CategoryResponseEntity> get categoryList {
+    if (_categoryList is EqualUnmodifiableListView) return _categoryList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_category);
+    return EqualUnmodifiableListView(_categoryList);
   }
 
   final List<SkillResponseEntity> _skill;
@@ -2997,7 +6783,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, city: $city, file: $file, errorMessage: $errorMessage, countryId: $countryId, states: $states, countries: $countries, category: $category, skill: $skill, isChecked: $isChecked, viewState: $viewState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, countryId: $countryId, jsGender: $jsGender, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, category: $category, skills: $skills, resume: $resume, states: $states, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState)';
   }
 
   @override
@@ -3008,16 +6794,36 @@ class _$InitialImpl implements _Initial {
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.state, state) || other.state == state) &&
-            (identical(other.city, city) || other.city == city) &&
+            (identical(other.jsCountry, jsCountry) ||
+                other.jsCountry == jsCountry) &&
             (identical(other.file, file) || other.file == file) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.countryId, countryId) ||
                 other.countryId == countryId) &&
+            (identical(other.jsGender, jsGender) ||
+                other.jsGender == jsGender) &&
+            (identical(other.jobType, jobType) || other.jobType == jobType) &&
+            (identical(other.jsState, jsState) || other.jsState == jsState) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.picture, picture) || other.picture == picture) &&
+            (identical(
+                    other.educationalQualification, educationalQualification) ||
+                other.educationalQualification == educationalQualification) &&
+            (identical(other.dateOFBirth, dateOFBirth) ||
+                other.dateOFBirth == dateOFBirth) &&
+            (identical(other.startYear, startYear) ||
+                other.startYear == startYear) &&
+            (identical(other.endYear, endYear) || other.endYear == endYear) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.skills, skills) || other.skills == skills) &&
+            (identical(other.resume, resume) || other.resume == resume) &&
             const DeepCollectionEquality().equals(other._states, _states) &&
             const DeepCollectionEquality()
                 .equals(other._countries, _countries) &&
-            const DeepCollectionEquality().equals(other._category, _category) &&
+            const DeepCollectionEquality()
+                .equals(other._categoryList, _categoryList) &&
             const DeepCollectionEquality().equals(other._skill, _skill) &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
@@ -3026,21 +6832,34 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      gender,
-      country,
-      state,
-      city,
-      file,
-      errorMessage,
-      countryId,
-      const DeepCollectionEquality().hash(_states),
-      const DeepCollectionEquality().hash(_countries),
-      const DeepCollectionEquality().hash(_category),
-      const DeepCollectionEquality().hash(_skill),
-      isChecked,
-      viewState);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        gender,
+        country,
+        state,
+        jsCountry,
+        file,
+        errorMessage,
+        countryId,
+        jsGender,
+        jobType,
+        jsState,
+        city,
+        picture,
+        educationalQualification,
+        dateOFBirth,
+        startYear,
+        endYear,
+        category,
+        skills,
+        resume,
+        const DeepCollectionEquality().hash(_states),
+        const DeepCollectionEquality().hash(_countries),
+        const DeepCollectionEquality().hash(_categoryList),
+        const DeepCollectionEquality().hash(_skill),
+        isChecked,
+        viewState
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -3055,20 +6874,56 @@ class _$InitialImpl implements _Initial {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)
         initial,
   }) {
-    return initial(gender, country, state, city, file, errorMessage, countryId,
-        states, countries, category, skill, isChecked, viewState);
+    return initial(
+        gender,
+        country,
+        state,
+        jsCountry,
+        file,
+        errorMessage,
+        countryId,
+        jsGender,
+        jobType,
+        jsState,
+        city,
+        picture,
+        educationalQualification,
+        dateOFBirth,
+        startYear,
+        endYear,
+        category,
+        skills,
+        resume,
+        states,
+        countries,
+        categoryList,
+        skill,
+        isChecked,
+        viewState);
   }
 
   @override
@@ -3078,20 +6933,56 @@ class _$InitialImpl implements _Initial {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)?
         initial,
   }) {
-    return initial?.call(gender, country, state, city, file, errorMessage,
-        countryId, states, countries, category, skill, isChecked, viewState);
+    return initial?.call(
+        gender,
+        country,
+        state,
+        jsCountry,
+        file,
+        errorMessage,
+        countryId,
+        jsGender,
+        jobType,
+        jsState,
+        city,
+        picture,
+        educationalQualification,
+        dateOFBirth,
+        startYear,
+        endYear,
+        category,
+        skills,
+        resume,
+        states,
+        countries,
+        categoryList,
+        skill,
+        isChecked,
+        viewState);
   }
 
   @override
@@ -3101,13 +6992,25 @@ class _$InitialImpl implements _Initial {
             String? gender,
             String? country,
             String? state,
-            String? city,
+            String? jsCountry,
             File? file,
             String? errorMessage,
             String? countryId,
+            String? jsGender,
+            String? jobType,
+            String? jsState,
+            String? city,
+            File? picture,
+            String? educationalQualification,
+            String? dateOFBirth,
+            String? startYear,
+            String? endYear,
+            String? category,
+            String? skills,
+            File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
-            List<CategoryResponseEntity> category,
+            List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
             ViewState viewState)?
@@ -3115,8 +7018,32 @@ class _$InitialImpl implements _Initial {
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(gender, country, state, city, file, errorMessage,
-          countryId, states, countries, category, skill, isChecked, viewState);
+      return initial(
+          gender,
+          country,
+          state,
+          jsCountry,
+          file,
+          errorMessage,
+          countryId,
+          jsGender,
+          jobType,
+          jsState,
+          city,
+          picture,
+          educationalQualification,
+          dateOFBirth,
+          startYear,
+          endYear,
+          category,
+          skills,
+          resume,
+          states,
+          countries,
+          categoryList,
+          skill,
+          isChecked,
+          viewState);
     }
     return orElse();
   }
@@ -3155,13 +7082,25 @@ abstract class _Initial implements AuthState {
       {final String? gender,
       final String? country,
       final String? state,
-      final String? city,
+      final String? jsCountry,
       final File? file,
       final String? errorMessage,
       final String? countryId,
+      final String? jsGender,
+      final String? jobType,
+      final String? jsState,
+      final String? city,
+      final File? picture,
+      final String? educationalQualification,
+      final String? dateOFBirth,
+      final String? startYear,
+      final String? endYear,
+      final String? category,
+      final String? skills,
+      final File? resume,
       final List<StateResponseEntity> states,
       final List<CountryResponseEntity> countries,
-      final List<CategoryResponseEntity> category,
+      final List<CategoryResponseEntity> categoryList,
       final List<SkillResponseEntity> skill,
       final bool isChecked,
       final ViewState viewState}) = _$InitialImpl;
@@ -3173,7 +7112,7 @@ abstract class _Initial implements AuthState {
   @override
   String? get state;
   @override
-  String? get city;
+  String? get jsCountry;
   @override
   File? get file;
   @override
@@ -3181,11 +7120,35 @@ abstract class _Initial implements AuthState {
   @override
   String? get countryId;
   @override
+  String? get jsGender;
+  @override
+  String? get jobType;
+  @override
+  String? get jsState;
+  @override
+  String? get city;
+  @override
+  File? get picture;
+  @override
+  String? get educationalQualification;
+  @override
+  String? get dateOFBirth;
+  @override
+  String? get startYear;
+  @override
+  String? get endYear;
+  @override
+  String? get category;
+  @override
+  String? get skills;
+  @override
+  File? get resume;
+  @override
   List<StateResponseEntity> get states;
   @override
   List<CountryResponseEntity> get countries;
   @override
-  List<CategoryResponseEntity> get category;
+  List<CategoryResponseEntity> get categoryList;
   @override
   List<SkillResponseEntity> get skill;
   @override

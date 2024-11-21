@@ -209,6 +209,15 @@ class _JSCreateAccountPageFourScreenState
                           //         child: Text("End Year",
                           //             style: theme.textTheme.bodyMedium))),
                           SizedBox(height: 7.v),
+                          CustomDateFormField(
+                            hint: authBloc.dateField.text,
+                            onTap: () {
+                              authBloc.datePicker(context);
+                            },
+                            label: 'Start Year',
+                          ),
+
+                          SizedBox(height: 27.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 3.h),
                               child: CustomTextFormField(

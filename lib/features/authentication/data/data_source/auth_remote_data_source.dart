@@ -40,7 +40,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> registerEmployer(RegisterEmployerEntity entity) async {
+  Future<AuthResultEntity> registerEmployer(
+      RegisterEmployerEntity entity) async {
     final result = await api.post(
       url: AppApiEndpoint.signup,
       body: RegisterEmployerModel.fromEntity(entity).toJson(),
@@ -108,7 +109,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         )
         .toList();
   }
-  
+
   @override
   Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity) {
     // TODO: implement registerJobSeeker

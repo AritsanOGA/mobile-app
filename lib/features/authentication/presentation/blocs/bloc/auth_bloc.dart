@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math';
 
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -200,17 +201,36 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     await _registerJobSeekerUseCase(RegisterJobSeekerEntity(
             email: event.email,
-            password: event.pasword,
+            password: event.password,
             fullName: event.fullName,
             country: state.country ?? '',
             gender: state.gender ?? '',
             city: state.city ?? '',
             state: state.state ?? '',
             isChecked: state.isChecked,
-            companyLogo: state.file!,
+            passport: state.picture!,
+            resume: state.resume!,
+            confirmPassword: event.confirmPassword,
             companyName: event.companyName,
             phoneNumber: event.phoneNumber,
-            officeTitle: event.officeTitle))
+            officeTitle: event.officeTitle,
+            jobType: state.jobType ?? '',
+            skill: state.skills ?? '',
+            guarantorEmail: event.guarantorEmail,
+            role: event.role,
+            guarantorName: event.guarantorName,
+            yearsOfExperience: event.yearsOfExperience,
+            describeYourRole: '',
+            residentialAddress: event.residentialAddress,
+            description: event.description,
+            startYear: event.startYear,
+            endYear: event.endYear,
+            educationalQualification: state.educationalQualification ?? '',
+            category: state.category ?? '',
+            certificateObtained: event.certificateObtained,
+            schoolName: event.schoolName,
+            dateOFBirth: event.dateOFBirth,
+            graduationYear: event.graduationYear))
         .then((value) {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
