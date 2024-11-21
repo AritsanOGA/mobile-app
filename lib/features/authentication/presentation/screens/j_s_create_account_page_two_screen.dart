@@ -171,7 +171,11 @@ class _JSCreateAccountPagetTwoScreenState
                       CustomDropDown(
                         items: authBloc.dropdownItemJobType,
                         selectedItem: authBloc.selectedJobType,
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          context.read<AuthBloc>().add(
+                                AuthEvent.updateSelectedJobType(value),
+                              );
+                        },
                       ),
                       //  SizedBox(height: 29.v),
                       SizedBox(height: 5.v),
@@ -490,8 +494,7 @@ class _JSCreateAccountPagetTwoScreenState
                               return CheckboxListTile(
                                 fillColor: WidgetStateColor.resolveWith(
                                     (Set<WidgetState> states) {
-                                  if (!states
-                                      .contains(WidgetState.selected)) {
+                                  if (!states.contains(WidgetState.selected)) {
                                     return Colors
                                         .white; // Background color when checked
                                   } else {

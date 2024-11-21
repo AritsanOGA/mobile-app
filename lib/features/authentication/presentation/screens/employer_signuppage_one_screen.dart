@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/services/auth.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
@@ -81,6 +83,7 @@ class _EmployerSignuppageOneScreenState
 
   @override
   Widget build(BuildContext context) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
@@ -144,7 +147,14 @@ class _EmployerSignuppageOneScreenState
                                 Text('Country',
                                     style: CustomTextStyles
                                         .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
+                                CustomDropDown(
+                                  onChanged: (value) {
+                                    context.read<AuthBloc>().add(
+                                          AuthEvent.updateSelectedCountry(
+                                              value),
+                                        );
+                                  },
+                                ),
                               ],
                             ),
                           ),
@@ -156,7 +166,13 @@ class _EmployerSignuppageOneScreenState
                                 Text('Gender',
                                     style: CustomTextStyles
                                         .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
+                                CustomDropDown(
+                                  onChanged: (value) {
+                                    context.read<AuthBloc>().add(
+                                          AuthEvent.updateSelectedGender(value),
+                                        );
+                                  },
+                                ),
                               ],
                             ),
                           ),
@@ -181,7 +197,13 @@ class _EmployerSignuppageOneScreenState
                                 Text('State',
                                     style: CustomTextStyles
                                         .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
+                                CustomDropDown(
+                                  onChanged: (value) {
+                                    context.read<AuthBloc>().add(
+                                          AuthEvent.updateSelectedState(value),
+                                        );
+                                  },
+                                ),
                               ],
                             ),
                           ),

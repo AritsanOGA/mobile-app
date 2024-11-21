@@ -177,7 +177,11 @@ class _JSCreateAccountPageOneScreenState
                                       CustomDropDown(
                                         items: authBloc.genders,
                                         selectedItem: authBloc.selectedGender,
-                                        onChanged: (value) {},
+                                        onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                          AuthEvent.updateSelectedGender(
+                                              value),);
+                                        },
                                       ),
                                     ],
                                   ),
