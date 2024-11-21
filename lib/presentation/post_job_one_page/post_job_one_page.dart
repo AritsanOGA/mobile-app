@@ -1,4 +1,6 @@
 import 'package:artisan_oga/presentation/post_job_two_screen/post_job_two_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
@@ -81,29 +83,44 @@ class _PostJobOnePageState extends State<PostJobOnePage> {
                               style: CustomTextStyles
                                   .titleMediumPrimaryContainerMedium))),
                   SizedBox(height: 23.v),
-                  _buildJobTitleRow(context),
-                  //  SizedBox(height: 22.v),
-                  //  Divider(),
-                  //  _buildPosition(context),
+                  Text("Job Title",
+                      style: CustomTextStyles.titleMediumMedium18),
+                  SizedBox(height: 10.v),
+                  CustomTextFormField(
+                    title: 'Job title*',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    hintText: 'Add job title',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 22.v),
-                  Divider(),
-                  _buildSelectCategoryRow(context),
+                  CustomDropDown(
+                    title: 'Select a Category',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    items: [],
+                    selectedItem: '',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 23.v),
-                  Divider(),
-                  SizedBox(height: 22.v),
-                  // _buildSelectRequiredRow(context),
-                  // SizedBox(height: 23.v),
-                  // Divider(),
-                  //  SizedBox(height: 22.v),
-                  _buildJobDescriptionRow(context),
+                  CustomDropDown(
+                    title: 'Select Required Skill',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    items: [],
+                    selectedItem: '',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 23.v),
-                  Divider(),
-                  SizedBox(height: 22.v),
+                  CustomTextFormField(
+                    title: 'Job Description',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    hintText: 'Add a Job Description',
+                    isBorderNone: true,
+                  ),
+                  SizedBox(height: 27.v),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 1.h),
-                          child: Text("Commute Type",
+                          child: Text("Work Type",
                               style: CustomTextStyles.titleMediumMedium18))),
                   SizedBox(height: 18.v),
                   _buildWorkTypeRadioGroup(context),
@@ -120,38 +137,38 @@ class _PostJobOnePageState extends State<PostJobOnePage> {
                   _buildJobTypeRadioGroup(context),
                   SizedBox(height: 27.v),
                   CustomElevatedButton(
-                      onPressed: (() {
-                        var newJobData = [
-                          {"job_title": jobTitleController.text},
-                          {"position": jobPositionController.text},
-                          {"job_description": jobDescriptionController.text},
-                          {"business_category_id": selectedCategory},
-                          //  {"slected_skills": selectedSkills},
-                          {"work_type": workTypeRadioGroup},
-                          {"hire_type": jobTypeRadioGroup1}
-                        ];
+                    onPressed: (() {
+                      var newJobData = [
+                        {"job_title": jobTitleController.text},
+                        {"position": jobPositionController.text},
+                        {"job_description": jobDescriptionController.text},
+                        {"business_category_id": selectedCategory},
+                        //  {"slected_skills": selectedSkills},
+                        {"work_type": workTypeRadioGroup},
+                        {"hire_type": jobTypeRadioGroup1}
+                      ];
 
-                        print(newJobData.toString());
+                      print(newJobData.toString());
 
-                        Hive.box("artisan").put("new_job_data", newJobData);
+                      Hive.box("artisan").put("new_job_data", newJobData);
 
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                duration: Durations.long1,
-                                child: PostJobTwoScreen()));
-                      }),
-                      // height: 41.v,
-                      // width: 110.h,
-                      text: "Next",
-                      // margin: EdgeInsets.only(right: 2.h),
-                      // buttonStyle:
-                      //     CustomButtonStyles.fillSecondaryContainerTL20,
-                      // buttonTextStyle:
-                      //     CustomTextStyles.titleMediumOnPrimaryContainer18,
-                      // alignment: Alignment.centerRight
-                      ),
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Durations.long1,
+                              child: PostJobTwoScreen()));
+                    }),
+                    // height: 41.v,
+                    // width: 110.h,
+                    text: "Next",
+                    // margin: EdgeInsets.only(right: 2.h),
+                    // buttonStyle:
+                    //     CustomButtonStyles.fillSecondaryContainerTL20,
+                    // buttonTextStyle:
+                    //     CustomTextStyles.titleMediumOnPrimaryContainer18,
+                    // alignment: Alignment.centerRight
+                  ),
                   SizedBox(
                     width: double.maxFinite,
                     height: 20,
@@ -492,8 +509,7 @@ class _PostJobOnePageState extends State<PostJobOnePage> {
                               return CheckboxListTile(
                                 fillColor: WidgetStateColor.resolveWith(
                                     (Set<WidgetState> states) {
-                                  if (!states
-                                      .contains(WidgetState.selected)) {
+                                  if (!states.contains(WidgetState.selected)) {
                                     return Colors
                                         .white; // Background color when checked
                                   } else {

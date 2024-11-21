@@ -1,4 +1,5 @@
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -73,51 +74,20 @@ class _PostJobFourScreenState extends State<PostJobFourScreen> {
                           ]))),
                   SizedBox(height: 23.v),
                   SizedBox(height: 20.v),
-                  _buildOfficeAddress(context),
+                  CustomTextFormField(
+                    title: 'Area',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    hintText: 'Enter Area',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 25.v),
-                  Divider(indent: 2.h, endIndent: 3.h),
-                  Padding(
-                      padding: EdgeInsets.only(left: 2.h, right: 3.h),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Years of experience",
-                                style: CustomTextStyles.titleMediumMedium18),
-                            SizedBox(height: 8.v),
-                            Container(
-                              padding: EdgeInsets.symmetric(vertical: 8.0),
-                              child: TextField(
-                                controller: yearsOfExperienceController,
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  hintText: 'Years of experience',
-                                  hintStyle: TextStyle(
-                                      color: const Color.fromARGB(
-                                          255, 42, 42, 42)),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: const Color.fromARGB(
-                                            255, 81, 48, 36),
-                                        width: 1.0),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: const Color.fromARGB(
-                                            255, 81, 48, 36),
-                                        width: 1.0),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                                style: TextStyle(
-                                    color:
-                                        const Color.fromARGB(255, 42, 42, 42)),
-                              ),
-                            ),
-                          ])),
+                  CustomTextFormField(
+                    title: 'Office Address',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    hintText: 'Enter Office Address',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 25.v),
-                  Divider(indent: 2.h, endIndent: 3.h),
-                  SizedBox(height: 20.v),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -131,31 +101,12 @@ class _PostJobFourScreenState extends State<PostJobFourScreen> {
                         context,
                       )),
                   SizedBox(height: 24.v),
-                  Divider(indent: 2.h, endIndent: 3.h),
-                  SizedBox(height: 24.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.h),
-                          child: Text("Accommodation for?",
-                              style: CustomTextStyles.titleMediumMedium18))),
-                  SizedBox(height: 1.v),
-                  Padding(
-                      padding: EdgeInsets.only(left: 2.h, right: 3.h),
-                      child: _buildAccommodationFor(
-                        context,
-                      )),
-                  SizedBox(height: 24.v),
-                  Divider(indent: 2.h, endIndent: 3.h),
-                  SizedBox(height: 12.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 2.h),
-                          child: Text("Select Currency",
-                              style: CustomTextStyles.titleMediumMedium18))),
-                  SizedBox(height: 22.v),
-                  _buildCurrency(context),
+                  CustomTextFormField(
+                    title: 'Package',
+                    titleStyle: CustomTextStyles.titleMediumMedium18,
+                    hintText: 'Enter Package',
+                    isBorderNone: true,
+                  ),
                   SizedBox(height: 44.v),
                   Align(
                       alignment: Alignment.centerLeft,
@@ -187,44 +138,42 @@ class _PostJobFourScreenState extends State<PostJobFourScreen> {
                               textAlign: TextAlign.left))),
                   SizedBox(height: 18.v),
                   CustomElevatedButton(
-                      onPressed: (() {
-                        var newJobData =
-                            Hive.box("artisan").get("new_job_data");
-                        newJobData.add({
-                          "accommodation_available": accommodationRadioGroup
-                        });
-                        newJobData.add(
-                            {"accommodation_for": accommodationForRadioGroup});
-                        /* newJobData.add({
+                    onPressed: (() {
+                      var newJobData = Hive.box("artisan").get("new_job_data");
+                      newJobData.add(
+                          {"accommodation_available": accommodationRadioGroup});
+                      newJobData.add(
+                          {"accommodation_for": accommodationForRadioGroup});
+                      /* newJobData.add({
                               "compensation_type": compensationTypeRadioGroup
                             });*/
-                        newJobData.add(
-                            {"office_address": officeAddressController.text});
+                      newJobData.add(
+                          {"office_address": officeAddressController.text});
 
-                        newJobData.add({"currency": currencyRadioGroup});
+                      newJobData.add({"currency": currencyRadioGroup});
 
-                        newJobData.add(
-                            {"experience": yearsOfExperienceController.text});
+                      newJobData.add(
+                          {"experience": yearsOfExperienceController.text});
 
-                        Hive.box("artisan").put("new_job_data", newJobData);
+                      Hive.box("artisan").put("new_job_data", newJobData);
 
-                        print(newJobData);
+                      print(newJobData);
 
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                duration: Durations.long1,
-                                child: PaymentPageScreen()));
-                      }),
-                      // height: 41.v,
-                      // width: 110.h,
-                      text: "Post Job",
-                      // margin: EdgeInsets.only(right: 3.h),
-                      // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
-                      // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
-                      // alignment: Alignment.centerRight
-                      ),
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              duration: Durations.long1,
+                              child: PaymentPageScreen()));
+                    }),
+                    // height: 41.v,
+                    // width: 110.h,
+                    text: "Post Job",
+                    // margin: EdgeInsets.only(right: 3.h),
+                    // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
+                    // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
+                    // alignment: Alignment.centerRight
+                  ),
                   SizedBox(height: 5.v)
                 ])))));
   }

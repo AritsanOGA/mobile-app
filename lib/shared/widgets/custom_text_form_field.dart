@@ -15,6 +15,7 @@ class CustomTextFormField extends StatefulWidget {
     this.maxLines,
     this.hintText,
     this.hintStyle,
+    this.titleStyle,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -27,6 +28,7 @@ class CustomTextFormField extends StatefulWidget {
     this.readOnly = false,
     this.isPassword = false,
     this.isObscure = false,
+    this.isBorderNone = false,
     required this.title,
   }) : super(
           key: key,
@@ -35,7 +37,7 @@ class CustomTextFormField extends StatefulWidget {
   final Alignment? alignment;
 
   final double? width;
-
+  final bool? isBorderNone;
   final TextEditingController? scrollPadding;
 
   final TextEditingController? controller;
@@ -53,6 +55,7 @@ class CustomTextFormField extends StatefulWidget {
   final String? hintText;
 
   final TextStyle? hintStyle;
+  final TextStyle? titleStyle;
   final bool? isPassword;
   bool? isObscure;
 
@@ -89,7 +92,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(widget.title,
-            style: CustomTextStyles.bodyMediumPrimaryContainer_1),
+            style: widget.titleStyle ??
+                CustomTextStyles.bodyMediumPrimaryContainer_1),
         SizedBox(height: 7.v),
         SizedBox(
           width: widget.width ?? double.maxFinite,
@@ -126,33 +130,45 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   : null,
               suffixIconConstraints: widget.suffixConstraints,
               isDense: true,
-              contentPadding: widget.contentPadding ?? EdgeInsets.all(15.h),
+              contentPadding: widget.contentPadding ??
+                  EdgeInsets.symmetric(
+                      vertical: 15.h,
+                      horizontal: widget.isBorderNone == true ? 3.h : 15.h),
               fillColor: widget.fillColor,
               filled: widget.filled,
-              border: widget.borderDecoration ??
-                  OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                      color: appTheme.blueGray10001,
-                      width: 1,
+              border: widget.isBorderNone == true
+                  ? UnderlineInputBorder(
+                      borderSide: BorderSide(color: appTheme.blueGray10001),
+                    )
+                  : OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7.h),
+                      borderSide: BorderSide(
+                        color: appTheme.blueGray10001,
+                        width: 1,
+                      ),
                     ),
-                  ),
-              enabledBorder: widget.borderDecoration ??
-                  OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                      color: appTheme.blueGray10001,
-                      width: 1,
+              enabledBorder: widget.isBorderNone == true
+                  ? UnderlineInputBorder(
+                      borderSide: BorderSide(color: appTheme.blueGray10001),
+                    )
+                  : OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7.h),
+                      borderSide: BorderSide(
+                        color: appTheme.blueGray10001,
+                        width: 1,
+                      ),
                     ),
-                  ),
-              focusedBorder: widget.borderDecoration ??
-                  OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7.h),
-                    borderSide: BorderSide(
-                      color: appTheme.gray500,
-                      width: 1,
+              focusedBorder: widget.isBorderNone == true
+                  ? UnderlineInputBorder(
+                      borderSide: BorderSide(color: appTheme.blueGray10001),
+                    )
+                  : OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7.h),
+                      borderSide: BorderSide(
+                        color: appTheme.gray500,
+                        width: 1,
+                      ),
                     ),
-                  ),
             ),
             validator: widget.validator,
           ),

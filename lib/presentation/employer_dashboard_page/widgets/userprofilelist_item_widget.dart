@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -29,7 +30,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: 10.h,
-            vertical: 20.v,
+            vertical: 10.v,
           ),
           decoration: AppDecoration.outlineBlack.copyWith(
             borderRadius: BorderRadiusStyle.roundedBorder12,
@@ -41,6 +42,28 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               SizedBox(height: 6.v),
               Row(
                 children: [
+                  //             CachedNetworkImage(
+                  //   imageUrl: imageURL,
+                  //   fit: BoxFit.cover,
+                  //   progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  //       const Center(),
+                  //   imageBuilder: (context, imageProvider) => Container(
+                  //     width: 180,
+                  //     height: 220,
+                  //     decoration: BoxDecoration(
+                  //       border: Border.all(
+                  //         width: 4,
+                  //         color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
+                  //       ),
+                  //       borderRadius: BorderRadius.circular(16),
+                  //       image: DecorationImage(
+                  //         image: CachedNetworkImageProvider(imageURL),
+                  //         fit: BoxFit.cover,
+                  //       ),
+                  //     ),
+                  //   ),
+                  //   errorWidget: (context, url, error) => const Icon(Icons.error),
+                  // ),
                   Container(
                       child: ClipOval(
                           child: SvgPicture.asset(
@@ -49,38 +72,67 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                     width: 47.adaptSize,
                     alignment: Alignment.topCenter,
                   ))),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.h,
-                      top: 3.v,
-                      bottom: 2.v,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.fullName,
-                          style: CustomTextStyles.titleMediumBlack900,
-                        ),
-                        SizedBox(height: 3.v),
-                        Text(
-                          widget.phone,
-                          style: CustomTextStyles.labelLargePrimaryContainer_1,
-                        ),
-                      ],
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.fullName,
+                        style: CustomTextStyles.titleMediumBlack900,
+                      ),
+                      SizedBox(height: 3.v),
+                      Text(
+                        widget.phone,
+                        style: CustomTextStyles.labelLargePrimaryContainer_1,
+                      ),
+                    ],
                   ),
                 ],
               ),
               SizedBox(height: 11.v),
-              SizedBox(height: 23.v),
-              CustomElevatedButton(
-          
-                text: "View", onPressed: () {  },
-                // buttonStyle: CustomButtonStyles.fillSecondaryContainer,
-                // buttonTextStyle: CustomTextStyles.titleSmallOnPrimaryContainer,
-                // alignment: Alignment.center,
+              Row(
+                children: [
+                  Container(
+                    height: 7,
+                    width: 7,
+                    decoration: BoxDecoration(
+                        color: AppColors.kblack,
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
+                  SizedBox(width: 11.v),
+                  Text('Semi-Skilled',
+                      style: CustomTextStyles.labelLargePrimaryContainer_2)
+                ],
               ),
+              SizedBox(height: 5.v),
+              Row(
+                children: [
+                  Container(
+                    height: 7,
+                    width: 7,
+                    decoration: BoxDecoration(
+                        color: AppColors.kblack,
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
+                  SizedBox(width: 11.v),
+                  Text('Semi-Skilled',
+                      style: CustomTextStyles.labelLargePrimaryContainer_2)
+                ],
+              ),
+              SizedBox(height: 23.v),
+              Container(
+                  height: 50.v,
+                  width: 240.h,
+                  // margin: margin,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: theme.primaryColor),
+                  // margin: EdgeInsets.symmetric(horizontal: 3.h),
+                  child: Center(
+                    child: Text(
+                      'View',
+                      style: CustomTextStyles.titleMediumGray50_1,
+                    ),
+                  )),
             ],
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
+import 'package:artisan_oga/presentation/dashboard_screen/dashboard_screen.dart';
+import 'package:artisan_oga/presentation/employer_dashboard_page/employer_dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -121,14 +123,18 @@ class _EmployerLoginPageScreenState extends State<EmployerLoginPageScreen> {
                     builder: (context, state) {
                       return CustomElevatedButton(
                         onPressed: () {
-                          context.read<AuthBloc>().add(
-                                AuthEvent.loginUser(
-                                  LoginEntity(
-                                    email: emailController.text.trim(),
-                                    password: passwordController.text.trim(),
-                                  ),
-                                ),
-                              );
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EmployerDashboardPage()));
+                          // context.read<AuthBloc>().add(
+                          //       AuthEvent.loginUser(
+                          //         LoginEntity(
+                          //           email: emailController.text.trim(),
+                          //           password: passwordController.text.trim(),
+                          //         ),
+                          //       ),
+                          //     );
                         },
                         text: "Log in",
                       );

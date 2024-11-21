@@ -1,5 +1,6 @@
 import 'package:artisan_oga/presentation/post_job_four_screen/post_job_four_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -80,28 +81,25 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                                         CustomTextStyles.titleMediumOnPrimary))
                           ])),
                       SizedBox(height: 40.v),
-                      Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Remuneration Type",
-                              style: CustomTextStyles.titleMediumMedium18)),
-                      SizedBox(height: 8.v),
-                      CustomDropDown(
-                        icon: Container(
-                          margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
-                          child: CustomImageView(
-                            imagePath: ImageConstant.imgCheckmarkGray700,
-                            height: 16.adaptSize,
-                            width: 16.adaptSize,
-                          ),
-                        ),
-                        hintText: "Salary",
-                        hintStyle: CustomTextStyles.bodyMediumGray700,
-                        items: dropdownItemList,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedRemuneration = value;
-                          });
-                        },
+                      CustomTextFormField(
+                        title: 'Proposed Minimum Salary',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter Minimum Salary',
+                        isBorderNone: true,
+                      ),
+                      SizedBox(height: 30.v),
+                      CustomTextFormField(
+                        title: 'Proposed Maximum Salary',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter Maximum Salary',
+                        isBorderNone: true,
+                      ),
+                      SizedBox(height: 30.v),
+                      CustomTextFormField(
+                        title: 'Application Deadline Date',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter Deadline Date',
+                        isBorderNone: true,
                       ),
                       SizedBox(height: 30.v),
                       selectedRemuneration == "Salary"
@@ -141,21 +139,18 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                               ],
                             ))
                           : SizedBox(),
-                      SizedBox(height: 23.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
-                      SizedBox(height: 22.v),
-                      GestureDetector(
-                          onTap: (() {
-                            _deadline(context);
-                          }),
-                          child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Application Deadline Date",
-                                      style: CustomTextStyles
-                                          .titleMediumMedium18)))),
-                      Padding(
+                      // GestureDetector(
+                      //     onTap: (() {
+                      //       _deadline(context);
+                      //     }),
+                      //     child: Align(
+                      //         alignment: Alignment.centerLeft,
+                      //         child: Padding(
+                      //             padding: EdgeInsets.only(left: 3.h),
+                      //             child: Text("Application Deadline Date",
+                      //                 style: CustomTextStyles
+                      //                     .titleMediumMedium18)))),
+                       Padding(
                           padding: EdgeInsets.only(left: 3.h, right: 2.h),
                           child: _buildEnterApplicationDeadline(
                             context,
@@ -182,88 +177,46 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                               inputFields: "Input Fields")),
                       Divider(),
                       SizedBox(height: 30.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("City",
-                                  style:
-                                      CustomTextStyles.titleMediumMedium18))),
-                      Padding(
-                          padding: EdgeInsets.only(top: 7.v),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                                  child: TextField(
-                                    controller: _cityController,
-                                    decoration: InputDecoration(
-                                      hintText: 'Enter city',
-                                      hintStyle: TextStyle(
-                                          color: const Color.fromARGB(
-                                              255, 42, 42, 42)),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: const Color.fromARGB(
-                                                255, 81, 48, 36),
-                                            width: 1.0),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: const Color.fromARGB(
-                                                255, 81, 48, 36),
-                                            width: 1.0),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                    style: TextStyle(
-                                        color: const Color.fromARGB(
-                                            255, 42, 42, 42)),
-                                  ),
-                                ),
-                              ])),
+                      
+                      
                       SizedBox(height: 56.v),
                       CustomElevatedButton(
-                          onPressed: (() {
-                            var newJobData =
-                                Hive.box("artisan").get("new_job_data");
-                            newJobData
-                                .add({"min_amount": _minSalaryController.text});
-                            newJobData
-                                .add({"max_amount": _maxSalaryController.text});
-                            /* newJobData.add({
-                              "compensation_type": compensationTypeRadioGroup
-                            });*/
-                            newJobData.add(
-                                {"application_deadline": selectedDateString});
+                        onPressed: (() {
+                          // var newJobData =
+                          //     Hive.box("artisan").get("new_job_data");
+                          // newJobData
+                          //     .add({"min_amount": _minSalaryController.text});
+                          // newJobData
+                          //     .add({"max_amount": _maxSalaryController.text});
+                          // /* newJobData.add({
+                          //     "compensation_type": compensationTypeRadioGroup
+                          //   });*/
+                          // newJobData.add(
+                          //     {"application_deadline": selectedDateString});
 
-                            newJobData.add({"state": selectedStateName});
+                          // newJobData.add({"state": selectedStateName});
 
-                            newJobData.add({"city": _cityController.text});
+                          // newJobData.add({"city": _cityController.text});
 
-                            Hive.box("artisan").put("new_job_data", newJobData);
+                          // Hive.box("artisan").put("new_job_data", newJobData);
 
-                            print(newJobData);
+                          // print(newJobData);
 
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    duration: Durations.long1,
-                                    child: PostJobFourScreen()));
-                          }),
-                          // height: 41.v,
-                          // width: 110.h,
-                          text: "Next",
-                          // margin: EdgeInsets.only(right: 2.h),
-                          // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
-                          // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
-                          // alignment: Alignment.centerRight
-                          ),
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Durations.long1,
+                                  child: PostJobFourScreen()));
+                        }),
+                        // height: 41.v,
+                        // width: 110.h,
+                        text: "Next",
+                        // margin: EdgeInsets.only(right: 2.h),
+                        // buttonStyle: CustomButtonStyles.fillPrimaryTL20,
+                        // buttonTextStyle: CustomTextStyles.titleMediumGray5018,
+                        // alignment: Alignment.centerRight
+                      ),
                       SizedBox(height: 5.v)
                     ])))));
   }

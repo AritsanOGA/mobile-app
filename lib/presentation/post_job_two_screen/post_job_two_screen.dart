@@ -1,3 +1,4 @@
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -84,32 +85,40 @@ class _PostJobTwoScreenState extends State<PostJobTwoScreen> {
                       SizedBox(height: 20.v),
                       _buildSkillLevelRadioGroup(context),
                       SizedBox(height: 37.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 1.h),
-                              child: Text("Educational Level",
-                                  style:
-                                      CustomTextStyles.titleMediumMedium18))),
-                      SizedBox(height: 19.v),
-                      _buildAcademicRadioGroup(context),
-                      SizedBox(height: 1.v),
-                      SizedBox(height: 24.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
+
+                      CustomTextFormField(
+                        title: 'Academic Qualification',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter Academic Qualification',
+                        isBorderNone: true,
+                      ),
+                      // Align(
+                      //     alignment: Alignment.centerLeft,
+                      //     child: Padding(
+                      //         padding: EdgeInsets.only(left: 1.h),
+                      //         child: Text("Educational Level",
+                      //             style:
+                      //                 CustomTextStyles.titleMediumMedium18))),
+                      // SizedBox(height: 19.v),
+                      // _buildAcademicRadioGroup(context),
+                      // SizedBox(height: 1.v),
+                      // SizedBox(height: 24.v),
+                      // Divider(indent: 3.h, endIndent: 2.h),
                       SizedBox(height: 22.v),
-                      Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("How many Hirees?",
-                              style: CustomTextStyles.titleMediumMedium18)),
-                      Padding(
-                          padding: EdgeInsets.only(left: 3.h, right: 2.h),
-                          child: _buildEnterNumberHiresRow(context,
-                              enterNumberHires: hireesNumberController.text,
-                              inputFields: "Select")),
+
+                      CustomTextFormField(
+                        title: 'How many Hirees?',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter number hires for this opening',
+                        isBorderNone: true,
+                      ),
+                      // Padding(
+                      //     padding: EdgeInsets.only(left: 3.h, right: 2.h),
+                      //     child: _buildEnterNumberHiresRow(context,
+                      //         enterNumberHires: hireesNumberController.text,
+                      //         inputFields: "Select")),
                       SizedBox(height: 23.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
-                      SizedBox(height: 20.v),
+
                       Padding(
                           padding: EdgeInsets.only(left: 3.h),
                           child: Text("Gender",
@@ -117,56 +126,59 @@ class _PostJobTwoScreenState extends State<PostJobTwoScreen> {
                       SizedBox(height: 20.v),
                       _buildGenderRadioGroup(context),
                       SizedBox(height: 22.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
-                      SizedBox(height: 15.v),
-                      _buildCompanyNameRow(context),
+
+                      CustomTextFormField(
+                        title: 'Company Name',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Enter your Company’s Name',
+                        isBorderNone: true,
+                      ),
+
                       SizedBox(height: 23.v),
-                      Divider(indent: 3.h, endIndent: 2.h),
+                      _buildGenderRadioGroup(context),
                       SizedBox(height: 23.v),
 
                       //  _buildCompensationTypeRadioGroup(context),
                       //  SizedBox(height: 19.v),
                       CustomElevatedButton(
-                          onPressed: (() {
-                            var newJobData =
-                                Hive.box("artisan").get("new_job_data");
-                            newJobData
-                                .add({"industry": companyNameController.text});
-                            newJobData.add({
-                              "no_of_applicant": hireesNumberController.text
-                            });
-                            /* newJobData.add({
-                              "compensation_type": compensationTypeRadioGroup
-                            });*/
-                            newJobData.add({"gender": genderRadioGroup});
+                        onPressed: (() {
+                          // var newJobData =
+                          //     Hive.box("artisan").get("new_job_data");
+                          // newJobData
+                          //     .add({"industry": companyNameController.text});
+                          // newJobData.add(
+                          //     {"no_of_applicant": hireesNumberController.text});
+                          // /* newJobData.add({
+                          //     "compensation_type": compensationTypeRadioGroup
+                          //   });*/
+                          // newJobData.add({"gender": genderRadioGroup});
 
-                            newJobData
-                                .add({"skill_level": skillLevelRadioGroup});
+                          // newJobData.add({"skill_level": skillLevelRadioGroup});
 
-                            newJobData.add(
-                                {"level_of_education": academicRadioGroup});
+                          // newJobData
+                          //     .add({"level_of_education": academicRadioGroup});
 
-                            Hive.box("artisan").put("new_job_data", newJobData);
+                          // Hive.box("artisan").put("new_job_data", newJobData);
 
-                            print(newJobData);
+                          // print(newJobData);
 
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    duration: Durations.long1,
-                                    child: PostJobThreeScreen()));
-                          }),
-                          // height: 41.v,
-                          // width: 110.h,
-                          text: "Next",
-                          // margin: EdgeInsets.only(right: 2.h),
-                          // buttonStyle:
-                          //     CustomButtonStyles.fillSecondaryContainerTL20,
-                          // buttonTextStyle:
-                          //     CustomTextStyles.titleMediumOnPrimaryContainer18,
-                          // alignment: Alignment.centerRight
-                          ),
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Durations.long1,
+                                  child: PostJobThreeScreen()));
+                        }),
+                        // height: 41.v,
+                        // width: 110.h,
+                        text: "Next",
+                        // margin: EdgeInsets.only(right: 2.h),
+                        // buttonStyle:
+                        //     CustomButtonStyles.fillSecondaryContainerTL20,
+                        // buttonTextStyle:
+                        //     CustomTextStyles.titleMediumOnPrimaryContainer18,
+                        // alignment: Alignment.centerRight
+                      ),
                       SizedBox(height: 17.v),
                     ])))));
   }

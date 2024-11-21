@@ -22,7 +22,7 @@ class EmployerDashboardPage extends StatefulWidget {
 class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
   TextEditingController searchController = TextEditingController();
 
-  var employer_info = Hive.box("artisan").get("employer_user_data");
+  //var employer_info = Hive.box("artisan").get("employer_user_data");
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,8 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                         style: CustomTextStyles.titleLargeff3a332cSemiBold,
                       ),
                       TextSpan(
-                        text: employer_info["data"]["full_name"],
+                        text: '',
+                        //employer_info["data"]["full_name"],
                         style: CustomTextStyles.titleLargefff7941e,
                       ),
                     ],
@@ -79,11 +80,16 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
             SizedBox(height: 19.v),
             SizedBox(height: 25.v),
             _buildFeaturedCandidatesRow(context),
+            // UserprofilelistItemWidget(
+            //   fullName: 'Anu',
+            //   phone: '09052729928',
+            // ),
             SizedBox(height: 25.v),
 
             FutureBuilder<dynamic>(
-                future: Default().getAllJobApplicants(
-                    employer_info["data"]["id"].toString()),
+                future: Default().getAllJobApplicants(''
+                    //employer_info["data"]["id"].toString()
+                    ),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
@@ -118,7 +124,11 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
             SizedBox(
               height: 18,
             ),
-
+            _buildJobInformation(context, 'Flutter', 'Lagos', 'Intern'
+                // data[index]["job_title"],
+                // data[index]["state"],
+                // data[index]["hire_type"]
+                ),
             buildRecentJobs(context),
             SizedBox(height: 20.v),
             //_buildDashboardStack(context),
@@ -150,8 +160,9 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
   Widget buildRecentJobs(BuildContext context) {
     return Expanded(
         child: FutureBuilder<dynamic>(
-            future: Default()
-                .getEmployerJobs(employer_info["data"]["id"].toString()),
+            future: Default().getEmployerJobs(''
+                // employer_info["data"]["id"].toString()
+                ),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: CircularProgressIndicator());
@@ -429,7 +440,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
           Padding(
             padding: EdgeInsets.only(top: 1.v),
             child: Text(
-              "Recent Candidates",
+              "Featured Candidates",
               style: CustomTextStyles.titleMediumPrimaryContainer18,
             ),
           ),

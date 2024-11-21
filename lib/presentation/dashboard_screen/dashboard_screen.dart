@@ -24,7 +24,7 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   TextEditingController searchController = TextEditingController();
 
-  var jobseekerInfo = Hive.box("artisan").get("jobseeker_user_data");
+  //var jobseekerInfo = Hive.box("artisan").get("jobseeker_user_data");
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,8 @@ class _DashboardPageState extends State<DashboardPage> {
                         style: CustomTextStyles.titleLargeff3a332cSemiBold,
                       ),
                       TextSpan(
-                        text: jobseekerInfo["data"]["full_name"],
+                        text:'hi',
+                        // jobseekerInfo["data"]["full_name"],
                         style: CustomTextStyles.titleLargefff7941e,
                       ),
                     ],
@@ -310,9 +311,10 @@ class _DashboardPageState extends State<DashboardPage> {
                                       EasyLoading.show();
                                       Default()
                                           .applyForJob(
-                                              user_id: jobseekerInfo["data"]
-                                                      ["id"]
-                                                  .toString(),
+                                              user_id: '',
+                                              // jobseekerInfo["data"]
+                                              //         ["id"]
+                                              //     .toString(),
                                               job_id:
                                                   data[index]["id"].toString())
                                           .then((value) => {

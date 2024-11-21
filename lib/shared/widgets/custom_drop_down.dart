@@ -26,7 +26,8 @@ class CustomDropDown extends StatelessWidget {
       this.validator,
       this.onChanged,
       this.selectedItem,
-      this.title})
+      this.title,
+      this.isBorderNone, this.titleStyle})
       : super(
           key: key,
         );
@@ -67,41 +68,48 @@ class CustomDropDown extends StatelessWidget {
 
   final bool? filled;
 
+  final bool? isBorderNone;
+  final TextStyle? titleStyle;
   final FormFieldValidator<String>? validator;
 
   final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title ?? '', style: CustomTextStyles.bodyMediumPrimaryContainer_1),
+        Text(title ?? '',
+            style: titleStyle ?? CustomTextStyles.bodyMediumPrimaryContainer_1),
         SizedBox(height: 7.v),
-        DropdownButtonFormField(
-          value: selectedItem,
-          isExpanded: true,
-          focusNode: focusNode ?? FocusNode(),
-          icon: Padding(
-            padding: const EdgeInsets.only(right: 5.0),
-            child: SvgPicture.asset(AppAsset.dropdown),
+        SizedBox(
+          height: 50.v,
+          child: DropdownButtonFormField(
+            value: selectedItem,
+            isExpanded: true,
+            focusNode: focusNode ?? FocusNode(),
+            icon: Padding(
+              padding: const EdgeInsets.only(right: 5.0),
+              child: SvgPicture.asset(AppAsset.dropdown),
+            ),
+            autofocus: autofocus!,
+            style: textStyle ?? theme.textTheme.titleSmall,
+            items: items?.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(
+                  value,
+                  overflow: TextOverflow.ellipsis,
+                  style: hintStyle ?? theme.textTheme.titleSmall,
+                ),
+              );
+            }).toList(),
+            decoration: decoration,
+            validator: validator,
+            onChanged: (value) {
+              onChanged!(value.toString());
+            },
           ),
-          autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.titleSmall,
-          items: items?.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(
-                value,
-                overflow: TextOverflow.ellipsis,
-                style: hintStyle ?? theme.textTheme.titleSmall,
-              ),
-            );
-          }).toList(),
-          decoration: decoration,
-          validator: validator,
-          onChanged: (value) {
-            onChanged!(value.toString());
-          },
         ),
       ],
     );
@@ -134,29 +142,38 @@ class CustomDropDown extends StatelessWidget {
             ),
         fillColor: fillColor,
         filled: filled,
-        border: borderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(7.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
+        border: isBorderNone == true
+            ? UnderlineInputBorder(
+                borderSide: BorderSide(color: appTheme.blueGray10001),
+              )
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7.h),
+                borderSide: BorderSide(
+                  color: appTheme.blueGray10001,
+                  width: 1,
+                ),
               ),
-            ),
-        enabledBorder: borderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(7.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
+        enabledBorder: isBorderNone == true
+            ? UnderlineInputBorder(
+                borderSide: BorderSide(color: appTheme.blueGray10001),
+              )
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7.h),
+                borderSide: BorderSide(
+                  color: appTheme.blueGray10001,
+                  width: 1,
+                ),
               ),
-            ),
-        focusedBorder: borderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(7.h),
-              borderSide: BorderSide(
-                color: appTheme.blueGray10001,
-                width: 1,
+        focusedBorder: isBorderNone == true
+            ? UnderlineInputBorder(
+                borderSide: BorderSide(color: appTheme.blueGray10001),
+              )
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7.h),
+                borderSide: BorderSide(
+                  color: appTheme.blueGray10001,
+                  width: 1,
+                ),
               ),
-            ),
       );
 }
