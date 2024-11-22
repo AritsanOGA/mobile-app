@@ -7,13 +7,15 @@ class CustomElevatedButton extends StatelessWidget {
   final double? width;
   final VoidCallback onPressed;
   final BoxDecoration? decoration;
+  final bool isBusy;
   const CustomElevatedButton(
       {super.key,
       required this.text,
       required this.onPressed,
       this.height,
       this.width,
-      this.decoration});
+      this.decoration,
+      this.isBusy = false});
   // CustomElevatedButton({
   //   Key? key,
   //   this.decoration,
@@ -49,12 +51,18 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         // style: buttonStyle,
         onPressed: onPressed,
-        child: Text(
-          text,
-          style:
-              // buttonTextStyle ??
-              CustomTextStyles.titleMediumGray50_1,
-        ),
+        child: isBusy
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : Text(
+                text,
+                style:
+                    // buttonTextStyle ??
+                    CustomTextStyles.titleMediumGray50_1,
+              ),
       ),
     );
     // alignment != null

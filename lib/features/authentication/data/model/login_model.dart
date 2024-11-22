@@ -13,7 +13,7 @@ class LoginModel extends LoginEntity {
       );
 
   Map<String, String> toJson() => {
-        'email': email,
+        'options': email,
         'password': password,
       };
 }

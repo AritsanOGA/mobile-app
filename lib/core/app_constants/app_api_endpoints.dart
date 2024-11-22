@@ -5,7 +5,7 @@ class AppApiEndpoint {
   static const int receiveTimeout = 50000;
   static const int sendTimeout = 50000;
 
-  static Uri baseUri = Uri.parse("http://35.157.203.193:8030/api/v1");
+  static Uri baseUri = Uri.parse("https://api.artisanoga.com/api/v1");
 
   static Uri signup = baseUri.replace(path: '/api/v1/employer/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');

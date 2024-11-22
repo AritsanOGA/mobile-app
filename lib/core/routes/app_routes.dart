@@ -1,3 +1,5 @@
+import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/presentation/employer_dashboard_page/employer_dashboard_page.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -43,6 +45,8 @@ import '../../presentation/update_profile_page_three_screen/update_profile_page_
 import '../../presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
+    static final navigatorKey = GlobalKey<NavigatorState>();
+
   static const String welcomePageScreen = '/welcome_page_screen';
 
   static const String signupOptionsPageScreen = '/signup_options_page_screen';
@@ -224,4 +228,120 @@ class AppRoutes {
     updateProfilePageThreeScreen: (context) => UpdateProfilePageThreeScreen(),
     appNavigationScreen: (context) => AppNavigationScreen()
   };
+
+    static Route<dynamic>? generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case welcomePageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: WelcomePageScreen(),
+        );
+      case signupOptionsPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const SignupOptionsPageScreen(),
+        );
+      case loginOptionsPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const LoginOptionsPageScreen(),
+        );
+
+      case employerSignUppageScreen:
+        return AppPageRouteBuilder(
+          navigateTo:  EmployerSignUpPageScreen(),
+        );
+
+      case employerSignuppageOneScreen:
+        return AppPageRouteBuilder(
+          navigateTo: EmployerSignuppageOneScreen(),
+        );
+      // case verifyPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: VerifyScreen(),
+      //   );
+      // case newPasswordPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const NewPasswordScreen(),
+      //   );
+
+      case successfulPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const SuccessfulPageScreen(),
+        );
+      // case patientDetails1Page:
+      //   return AppPageRouteBuilder(
+      //     setting: settings,
+      //     navigateTo: const PatientDetails1Screen(),
+      //   );
+
+      // case patientDetails2Page:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const PatientDetails2Screen(),
+      //   );
+      // case patientDetails3Page:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const PatientDetails3Screen(),
+      //   );
+      case employerLoginPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const EmployerLoginPageScreen(),
+        );
+      case searchResultPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo:  SearchResultPageScreen(),
+        );
+      case jSCreateAccountPageFourScreen:
+        return AppPageRouteBuilder(
+          navigateTo:  JSCreateAccountPageFourScreen(),
+        );
+      case jSCreateAccountPageFiveScreen:
+        return AppPageRouteBuilder(
+          navigateTo:  JSCreateAccountPageFiveScreen(),
+        );
+      case employerDashboardPage:
+        return AppPageRouteBuilder(
+          navigateTo:  EmployerDashboardPage(),
+        );
+      // case paymentSuccessfulPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const PaymentSuccessfulScreen(),
+      //   );
+
+      // case reviewSummaryPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const ReviewSummary(),
+      //   );
+      // case appointmentPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const AppointmentScreen(),
+      //   );
+      // case bookAppointmentPage:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: const BookAppointmentScreen(),
+      //   );
+      // case bottomNavBar:
+      //   return MaterialPageRoute(builder: (context) => const BottomNavBar());
+
+      // case updateProfilePage:
+      //   return AppPageRouteBuilder(navigateTo: const UpdateProfileScreen());
+      // case passwordManaagerPage:
+      //   return AppPageRouteBuilder(navigateTo: const PasswordManagerScreen());
+      // case settingsPage:
+      //   return AppPageRouteBuilder(navigateTo: const SettingsScreeen());
+      // case paymentMethodPage:
+      //   return AppPageRouteBuilder(navigateTo: const PaymentMethodScreen());
+      // case machineDetailsPage:
+      //   return AppPageRouteBuilder(navigateTo: MachineDetailsScreen());
+      // case cashDetailsPage:
+      //   return AppPageRouteBuilder(navigateTo: CashDetailsScreen());
+      // case generalPage:
+      //   return AppPageRouteBuilder(navigateTo: const GeneralScreen());
+
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            body: Center(child: Text('No route defined for ${settings.name}')),
+          ),
+        );
+    }
+  }
+
 }

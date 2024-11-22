@@ -43,9 +43,11 @@ class MyApp extends StatelessWidget {
             theme: theme,
             title: 'artisan_oga',
             debugShowCheckedModeBanner: false,
+            navigatorKey: AppRoutes.navigatorKey,
+            onGenerateRoute: AppRoutes.generateRoute,
             initialRoute: AppRoutes.welcomePageScreen,
-            routes: AppRoutes.routes,
-            builder: EasyLoading.init(),
+            // routes: AppRoutes.routes,
+            // builder: EasyLoading.init(),
           );
         },
       ),
