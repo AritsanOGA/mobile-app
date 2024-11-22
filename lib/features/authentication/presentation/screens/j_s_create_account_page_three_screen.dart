@@ -69,37 +69,48 @@ class _JSCreateAccountPagetThreeScreenState
                         child: Column(children: [
                           // SizedBox(height: 10.v),
 
-                          // Align(
-                          //     alignment: Alignment.centerLeft,
-                          //     child: Padding(
-                          //         padding: EdgeInsets.only(left: 3.h),
-                          //         child: Text("Educational Qualification",
-                          //             style: theme.textTheme.bodyMedium))),
                           SizedBox(height: 6.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomDropDown(
-                                  title: "Educational Qualification",
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText:
-                                      authBloc.selectedEducationalQualification,
-                                  items: authBloc.educationalQualification,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      selectedEducationOption = value;
-                                    });
-                                  })),
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                              return CustomDropDown<String>(
+                                title: "Educational Qualification",
+                                items: authBloc.genders,
+                                selectedItem: authBloc.genders.first,
+                                //  state.gender ?? "--Select--",
+                                itemLabel: (gender) => gender,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateSelectedGender(
+                                            value ?? ''),
+                                      );
+                                },
+                              );
+                            },
+                          ),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
+                          //     child: CustomDropDown(
+                          //         title: "Educational Qualification",
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText:
+                          //             authBloc.selectedEducationalQualification,
+                          //         items: authBloc.educationalQualification,
+                          //         onChanged: (value) {
+                          //           setState(() {
+                          //             selectedEducationOption = value;
+                          //           });
+                          //         })),
                           SizedBox(height: 28.v),
                           // selectedEducationOption == "Yes"
                           //     ? Align(
@@ -121,7 +132,15 @@ class _JSCreateAccountPagetThreeScreenState
                                   hintStyle: theme.textTheme.titleSmall!)),
                           // : SizedBox(),
                           SizedBox(height: 27.v),
-
+                          Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 3.h),
+                              child: CustomTextFormField(
+                                  title: 'School Name',
+                                  controller: schoolNameController,
+                                  hintText: "Enter School Name",
+                                  hintStyle: theme.textTheme.titleSmall!)),
+                          // : SizedBox(),
+                          SizedBox(height: 27.v),
                           // selectedEducationOption == "Yes"
                           //     ?
                           Padding(

@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
@@ -96,10 +99,34 @@ class _JSCreateAccountPageFiveScreenState
                       //     ])),
                       // SizedBox(height: 40.v),
 
-                      CustomDropDown(
-                        title: 'Select Job Category',
-                      ),
+                      // CustomDropDown(
+                      //   title: 'Select Job Category',
+                      // ),
 
+                      BlocBuilder<AuthBloc, AuthState>(
+                        builder: (context, state) {
+                          if (state.viewState == ViewState.loading) {
+                            return CircularProgressIndicator();
+                          } else if (state.viewState == ViewState.success) {
+                            return CustomDropDown<CategoryResponseEntity>(
+                              items: state.categoryList,
+                              selectedItem: state.category ??
+                                  CategoryResponseEntity(
+                                      id: '4', name: 'ALgeria'),
+                              itemLabel: (country) => country.name,
+                              onChanged: (value) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.updateSelectedCategory(
+                                          value?.name ?? ''),
+                                    );
+                              },
+                            );
+                          }
+                          return Center(
+                            child: Text('Unexpected state encountered'),
+                          );
+                        },
+                      ),
                       SizedBox(height: 25.v),
                       Padding(
                           padding: EdgeInsets.symmetric(horizontal: 3.h),
@@ -110,14 +137,38 @@ class _JSCreateAccountPageFiveScreenState
                               hintStyle: theme.textTheme.titleSmall!)),
                       SizedBox(height: 27.v),
 
-                      CustomDropDown(
-                        title: "Select Skill",
-                        onChanged: (value){
-                                      context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedSkill(
-                                              value),);
+                      BlocBuilder<AuthBloc, AuthState>(
+                        builder: (context, state) {
+                          if (state.viewState == ViewState.loading) {
+                            return CircularProgressIndicator();
+                          } else if (state.viewState == ViewState.success) {
+                            return CustomDropDown<SkillResponseEntity>(
+                              items: state.skill,
+                              selectedItem: state.skills ??
+                                  SkillResponseEntity(
+                                      id: 4, name: 'ALgeria', categoryId: 8),
+                              itemLabel: (country) => country.name,
+                              onChanged: (value) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.updateSelectedSkill(
+                                          value?.name ?? ''),
+                                    );
+                              },
+                            );
+                          }
+                          return Center(
+                            child: Text('Unexpected state encountered'),
+                          );
                         },
                       ),
+                      // CustomDropDown(
+                      //   title: "Select Skill",
+                      //   onChanged: (value){
+                      //                 context.read<AuthBloc>().add(
+                      //                     AuthEvent.updateSelectedSkill(
+                      //                         value),);
+                      //   },
+                      // ),
 
                       SizedBox(height: 29.v),
                       Align(

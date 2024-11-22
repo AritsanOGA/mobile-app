@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app_export.dart';
 
-class CustomDropDown extends StatelessWidget {
+class CustomDropDown<T> extends StatelessWidget {
   CustomDropDown(
       {Key? key,
       this.alignment,
@@ -12,7 +12,7 @@ class CustomDropDown extends StatelessWidget {
       this.icon,
       this.autofocus = true,
       this.textStyle,
-      this.items,
+      required this.items,
       this.hintText,
       this.hintStyle,
       this.prefix,
@@ -24,10 +24,12 @@ class CustomDropDown extends StatelessWidget {
       this.fillColor,
       this.filled = false,
       this.validator,
-      this.onChanged,
-      this.selectedItem,
+      required this.onChanged,
+      required this.selectedItem,
+      required this.itemLabel,
       this.title,
-      this.isBorderNone, this.titleStyle})
+      this.isBorderNone,
+      this.titleStyle})
       : super(
           key: key,
         );
@@ -44,10 +46,10 @@ class CustomDropDown extends StatelessWidget {
 
   final TextStyle? textStyle;
 
-  final List<String>? items;
+  final List<T> items;
 
   final String? hintText;
-  final String? selectedItem;
+  final T selectedItem;
 
   final TextStyle? hintStyle;
 
@@ -71,8 +73,8 @@ class CustomDropDown extends StatelessWidget {
   final bool? isBorderNone;
   final TextStyle? titleStyle;
   final FormFieldValidator<String>? validator;
-
-  final Function(String)? onChanged;
+  final String Function(T) itemLabel;
+  final void Function(T?) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -94,21 +96,19 @@ class CustomDropDown extends StatelessWidget {
             ),
             autofocus: autofocus!,
             style: textStyle ?? theme.textTheme.titleSmall,
-            items: items?.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
+            items: items.map((value) {
+              return DropdownMenuItem<T>(
                 value: value,
                 child: Text(
-                  value,
+                  itemLabel(value),
                   overflow: TextOverflow.ellipsis,
                   style: hintStyle ?? theme.textTheme.titleSmall,
                 ),
               );
             }).toList(),
             decoration: decoration,
-            validator: validator,
-            onChanged: (value) {
-              onChanged!(value.toString());
-            },
+            //validator: validator,
+            onChanged: onChanged,
           ),
         ),
       ],

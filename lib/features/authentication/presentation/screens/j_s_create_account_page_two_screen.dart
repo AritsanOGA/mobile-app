@@ -1,4 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
@@ -75,254 +78,276 @@ class _JSCreateAccountPagetTwoScreenState
   @override
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: AppColors.kwhite,
-            appBar: CustomAppBar(
-              title: '',
-            ),
-            // resizeToAvoidBottomInset: false,
-            body: SingleChildScrollView(
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
-                    child: Column(children: [
-                      SizedBox(height: 10.v),
+    return BlocProvider(
+      create: (context) => AuthBloc(),
+      child: SafeArea(
+          child: Scaffold(
+              backgroundColor: AppColors.kwhite,
+              appBar: CustomAppBar(
+                title: '',
+              ),
+              // resizeToAvoidBottomInset: false,
+              body: SingleChildScrollView(
+                  child: Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 22.h, vertical: 12.v),
+                      child: Column(children: [
+                        SizedBox(height: 10.v),
 
-                      CustomTextFormField(
-                          title: 'Street Address',
-                          controller: streetaddressController,
-                          hintText: "Enter Street Address",
-                          hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 29.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Country",
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 5.v),
-                      GestureDetector(
-                        onTap: (() {
-                          showCoutryList(context);
-                        }),
-                        child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 3.h),
-                            child: Container(
-                              width: double.maxFinite,
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.v, vertical: 15.h),
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8)),
-                                border: Border.all(
-                                  width: 1,
-                                  color: Color.fromARGB(255, 222, 222, 222),
-                                ),
-                              ),
-                              child: Text(selectedCountryName),
-                            )),
-                      ),
-                      SizedBox(height: 27.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("State of Residence",
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 7.v),
-                      Padding(
-                          padding: EdgeInsets.only(right: 10.h),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                GestureDetector(
-                                    onTap: (() {
-                                      showStates(context);
-                                    }),
-                                    child: Container(
-                                      padding: EdgeInsets.symmetric(
-                                          vertical: 12, horizontal: 12),
-                                      child: Text(
-                                        selectedStateName,
-                                        maxLines: 1,
-                                      ),
-                                      width: double.maxFinite,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Color.fromARGB(255, 148, 148,
-                                                148)), // Slightly grayish border
-                                        borderRadius: BorderRadius.circular(
-                                            5.0), // Rounded corners
-                                      ),
-                                    ))
-                              ])),
-                      // SizedBox(height: 29.v),
-                      // _buildCity(context),
-                      SizedBox(height: 29.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Job Type",
-                                  style: theme.textTheme.bodyMedium))),
-                      SizedBox(height: 10.v),
-                      CustomDropDown(
-                        items: authBloc.dropdownItemJobType,
-                        selectedItem: authBloc.selectedJobType,
-                        onChanged: (value) {
-                          context.read<AuthBloc>().add(
-                                AuthEvent.updateSelectedJobType(value),
+                        CustomTextFormField(
+                            title: 'Street Address',
+                            controller: streetaddressController,
+                            hintText: "Enter Street Address",
+                            hintStyle: theme.textTheme.titleSmall!),
+                        SizedBox(height: 29.v),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 3.h),
+                                child: Text("Country",
+                                    style: theme.textTheme.bodyMedium))),
+                        SizedBox(height: 5.v),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            if (state.viewState == ViewState.loading) {
+                              return CircularProgressIndicator();
+                            } else if (state.viewState == ViewState.success) {
+                              return CustomDropDown<CountryResponseEntity>(
+                                items: state.countries,
+                                selectedItem: state.country ??
+                                    CountryResponseEntity(
+                                        id: '4', name: 'ALgeria'),
+                                itemLabel: (country) => country.name,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateSelectedCountry(value!),
+                                      );
+                                },
                               );
-                        },
-                      ),
-                      //  SizedBox(height: 29.v),
-                      SizedBox(height: 5.v),
-                      // GestureDetector(
-                      //   onTap: (() {
-                      //     showCategoriesList(context);
-                      //   }),
-                      //   child: Padding(
-                      //       padding: EdgeInsets.symmetric(horizontal: 3.h),
-                      //       child: Container(
-                      //         width: double.maxFinite,
-                      //         padding: EdgeInsets.symmetric(
-                      //             horizontal: 8.v, vertical: 15.h),
-                      //         decoration: BoxDecoration(
-                      //           borderRadius:
-                      //               BorderRadius.all(Radius.circular(8)),
-                      //           border: Border.all(
-                      //             width: 1,
-                      //             color: Color.fromARGB(255, 222, 222, 222),
-                      //           ),
-                      //         ),
-                      //         child: Text(selectedCategoryName.isEmpty
-                      //             ? "Tap to select"
-                      //             : selectedCategoryName),
-                      //       )),
-                      // ),
-
-                      // SizedBox(height: 27.v),
-                      // selectedCategory == 0
-                      //     ? SizedBox()
-                      //     : Text("Enter Your Skills", style: TextStyle()),
-                      // SizedBox(height: 9.v),
-                      // selectedCategory == 0
-                      //     ? SizedBox()
-                      //     : GestureDetector(
-                      //         onTap: (() {
-                      //           showSkillsList(context);
-                      //         }),
-                      //         child: Container(
-                      //             width: double.maxFinite,
-                      //             height: 50,
-                      //             padding: EdgeInsets.symmetric(
-                      //                 vertical: 12, horizontal: 10),
-                      //             decoration: BoxDecoration(
-                      //                 borderRadius:
-                      //                     BorderRadius.all(Radius.circular(8)),
-                      //                 border: Border.all(
-                      //                     width: 1, color: Colors.grey)),
-                      //             child: Text(
-                      //               selectedSkills.length == 0
-                      //                   ? "Select skills"
-                      //                   : "${selectedSkills.length} selected",
-                      //               style: TextStyle(fontSize: 16.v),
-                      //             )),
-                      //       ),
-                      SizedBox(height: 27.v),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: CustomDateFormField(
-                            hint: authBloc.dateField.text,
-                            onTap: () {
-                              authBloc.datePicker(context);
-                            },
-                            label: 'Date of Birth',
-                          )
-
-                              // CustomTextFormField(
-                              //     title: 'Date of Birth',
-                              //     controller: streetaddressController,
-                              //     hintText: "Enter Street Address",
-                              //     hintStyle: theme.textTheme.titleSmall!),
-                              ),
-                          SizedBox(
-                            width: 20.h,
-                          ),
-                          Expanded(
-                            child: CustomTextFormField(
-                                title: 'City',
-                                controller: streetaddressController,
-                                hintText: "Enter City",
-                                hintStyle: theme.textTheme.titleSmall!),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 60.v),
-                      CustomElevatedButton(
-                        onPressed: (() {
-                          if (streetaddressController.text.isNotEmpty &&
-                              selectedDate != "yyyy-MM-dd" &&
-                              cityController.text.isNotEmpty) {
-                            //retrieve data from hive store
-                            var newUserData =
-                                Hive.box("artisan").get("new_applicant");
-
-                            //update the array of maps
-                            //push each item from the form to the array
-
-                            newUserData
-                                .add({"street": streetaddressController.text});
-
-                            newUserData.add({"state": selectedStateName});
-
-                            newUserData
-                                .add({"country": selectedCountry.toString()});
-
-                            newUserData.add(
-                                {"job_category": selectedCategory.toString()});
-
-                            newUserData.add({"dob": selectedDate});
-
-                            newUserData.add({"city": cityController.text});
-
-                            newUserData.add({"skills": selectedSkills});
-
-                            //re-save the updated array
-
-                            Hive.box("artisan")
-                                .put("new_applicant", newUserData);
-
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      JSCreateAccountPagetThreeScreen()),
+                            }
+                            return Center(
+                              child: Text('Unexpected state encountered'),
                             );
-                          } else {
-                            Navigator.push(
+                          },
+                        ),
+                
+                        SizedBox(height: 27.v),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 3.h),
+                                child: Text("State of Residence",
+                                    style: theme.textTheme.bodyMedium))),
+                        SizedBox(height: 7.v),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            if (state.viewState == ViewState.loading) {
+                              return CircularProgressIndicator();
+                            } else if (state.viewState == ViewState.success) {
+                              return CustomDropDown<StateResponseEntity>(
+                                items: state.states,
+                                selectedItem: state.state ??
+                                    StateResponseEntity(
+                                        id: '4', name: 'ALgeria'),
+                                itemLabel: (state) => state.name,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateSelectedState(
+                                            value?.name ?? ''),
+                                      );
+                                },
+                              );
+                            }
+                            return Center(
+                              child: Text('Unexpected state encountered'),
+                            );
+                          },
+                        ),
+
+                        // SizedBox(height: 29.v),
+                        // _buildCity(context),
+                        SizedBox(height: 29.v),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                                padding: EdgeInsets.only(left: 3.h),
+                                child: Text("Job Type",
+                                    style: theme.textTheme.bodyMedium))),
+                        SizedBox(height: 10.v),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            return CustomDropDown<String>(
+                              items: authBloc.dropdownItemJobType,
+                              selectedItem: authBloc.selectedJobType,
+                              //  state.gender ?? "--Select--",
+                              itemLabel: (gender) => gender,
+                              onChanged: (value) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.updateSelectedJobType(
+                                          value ?? ''),
+                                    );
+                              },
+                            );
+                          },
+                        ),
+                        // CustomDropDown(
+                        //   items: authBloc.dropdownItemJobType,
+                        //   selectedItem: authBloc.selectedJobType,
+                        //   onChanged: (value) {
+                        //     context.read<AuthBloc>().add(
+                        //           AuthEvent.updateSelectedJobType(value),
+                        //         );
+                        //   },
+                        // ),
+                        //  SizedBox(height: 29.v),
+                        SizedBox(height: 5.v),
+                        // GestureDetector(
+                        //   onTap: (() {
+                        //     showCategoriesList(context);
+                        //   }),
+                        //   child: Padding(
+                        //       padding: EdgeInsets.symmetric(horizontal: 3.h),
+                        //       child: Container(
+                        //         width: double.maxFinite,
+                        //         padding: EdgeInsets.symmetric(
+                        //             horizontal: 8.v, vertical: 15.h),
+                        //         decoration: BoxDecoration(
+                        //           borderRadius:
+                        //               BorderRadius.all(Radius.circular(8)),
+                        //           border: Border.all(
+                        //             width: 1,
+                        //             color: Color.fromARGB(255, 222, 222, 222),
+                        //           ),
+                        //         ),
+                        //         child: Text(selectedCategoryName.isEmpty
+                        //             ? "Tap to select"
+                        //             : selectedCategoryName),
+                        //       )),
+                        // ),
+
+                        // SizedBox(height: 27.v),
+                        // selectedCategory == 0
+                        //     ? SizedBox()
+                        //     : Text("Enter Your Skills", style: TextStyle()),
+                        // SizedBox(height: 9.v),
+                        // selectedCategory == 0
+                        //     ? SizedBox()
+                        //     : GestureDetector(
+                        //         onTap: (() {
+                        //           showSkillsList(context);
+                        //         }),
+                        //         child: Container(
+                        //             width: double.maxFinite,
+                        //             height: 50,
+                        //             padding: EdgeInsets.symmetric(
+                        //                 vertical: 12, horizontal: 10),
+                        //             decoration: BoxDecoration(
+                        //                 borderRadius:
+                        //                     BorderRadius.all(Radius.circular(8)),
+                        //                 border: Border.all(
+                        //                     width: 1, color: Colors.grey)),
+                        //             child: Text(
+                        //               selectedSkills.length == 0
+                        //                   ? "Select skills"
+                        //                   : "${selectedSkills.length} selected",
+                        //               style: TextStyle(fontSize: 16.v),
+                        //             )),
+                        //       ),
+                        SizedBox(height: 27.v),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: CustomDateFormField(
+                              hint: authBloc.dateField.text,
+                              onTap: () {
+                                authBloc.datePicker(context);
+                              },
+                              label: 'Date of Birth',
+                            )
+
+                                // CustomTextFormField(
+                                //     title: 'Date of Birth',
+                                //     controller: streetaddressController,
+                                //     hintText: "Enter Street Address",
+                                //     hintStyle: theme.textTheme.titleSmall!),
+                                ),
+                            SizedBox(
+                              width: 20.h,
+                            ),
+                            Expanded(
+                              child: CustomTextFormField(
+                                  title: 'City',
+                                  controller: streetaddressController,
+                                  hintText: "Enter City",
+                                  hintStyle: theme.textTheme.titleSmall!),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 60.v),
+                        CustomElevatedButton(
+                          onPressed: (() {
+                            if (streetaddressController.text.isNotEmpty &&
+                                selectedDate != "yyyy-MM-dd" &&
+                                cityController.text.isNotEmpty) {
+                              //retrieve data from hive store
+                              var newUserData =
+                                  Hive.box("artisan").get("new_applicant");
+
+                              //update the array of maps
+                              //push each item from the form to the array
+
+                              newUserData.add(
+                                  {"street": streetaddressController.text});
+
+                              newUserData.add({"state": selectedStateName});
+
+                              newUserData
+                                  .add({"country": selectedCountry.toString()});
+
+                              newUserData.add({
+                                "job_category": selectedCategory.toString()
+                              });
+
+                              newUserData.add({"dob": selectedDate});
+
+                              newUserData.add({"city": cityController.text});
+
+                              newUserData.add({"skills": selectedSkills});
+
+                              //re-save the updated array
+
+                              Hive.box("artisan")
+                                  .put("new_applicant", newUserData);
+
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        JSCreateAccountPagetThreeScreen()));
-                            // Fluttertoast.showToast(
-                            //     msg: "Please fill all fields properly",
-                            //     toastLength: Toast.LENGTH_SHORT,
-                            //     gravity: ToastGravity.CENTER,
-                            //     timeInSecForIosWeb: 1,
-                            //     backgroundColor:
-                            //         const Color.fromARGB(255, 86, 86, 86)
-                            //             .withOpacity(0.6),
-                            //     textColor: Colors.white,
-                            //     fontSize: 16.0);
-                          }
-                        }),
-                        text: "Next",
-                      ),
-                    ])))));
+                                        JSCreateAccountPagetThreeScreen()),
+                              );
+                            } else {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          JSCreateAccountPagetThreeScreen()));
+                              // Fluttertoast.showToast(
+                              //     msg: "Please fill all fields properly",
+                              //     toastLength: Toast.LENGTH_SHORT,
+                              //     gravity: ToastGravity.CENTER,
+                              //     timeInSecForIosWeb: 1,
+                              //     backgroundColor:
+                              //         const Color.fromARGB(255, 86, 86, 86)
+                              //             .withOpacity(0.6),
+                              //     textColor: Colors.white,
+                              //     fontSize: 16.0);
+                            }
+                          }),
+                          text: "Next",
+                        ),
+                      ]))))),
+    );
   }
 
   /// Section Widget

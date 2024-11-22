@@ -2,7 +2,7 @@ part of 'auth_bloc.dart';
 
 @freezed
 class AuthEvent with _$AuthEvent {
-  const factory AuthEvent.updateSelectedCountry(String value) =
+  const factory AuthEvent.updateSelectedCountry(CountryResponseEntity value) =
       _UpdateSelectedCountry;
   const factory AuthEvent.updateSelectedGender(String value) =
       _UpdateSelectedGender;
@@ -20,6 +20,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedEducationQualification;
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
+
   const factory AuthEvent.updateSelectedIsChecked(bool value) =
       _UpdateSelectedIsChecked;
   const factory AuthEvent.updateSelectedPassport(File value) =
@@ -49,21 +50,17 @@ class AuthEvent with _$AuthEvent {
     required String resume,
     required String gender,
     required String phoneNumber,
-    
     required String guarantorName,
     required String guarantorEmail,
     required String residentialAddress,
     required String yearsOfExperience,
     required String describeYourRole,
-  
     required String dateOFBirth,
-
     required String role,
     required String description,
     required String startYear,
     required String endYear,
     required String schoolName,
-   
     required String certificateObtained,
     required String graduationYear,
   }) = _RegisterJobSeeker;

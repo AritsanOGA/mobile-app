@@ -65,60 +65,60 @@ class AcceptRejectPageModalBoxDialog extends StatelessWidget {
             style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
           ),
           SizedBox(height: 12.v),
-          CustomDropDown(
-            icon: Container(
-              margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgCheckmarkGray700,
-                height: 16.adaptSize,
-                width: 16.adaptSize,
-              ),
-            ),
-            hintText: "10",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            items: dropdownItemList,
-            onChanged: (value) {},
-          ),
+          // CustomDropDown(
+          //   icon: Container(
+          //     margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
+          //     child: CustomImageView(
+          //       imagePath: ImageConstant.imgCheckmarkGray700,
+          //       height: 16.adaptSize,
+          //       width: 16.adaptSize,
+          //     ),
+          //   ),
+          //   hintText: "10",
+          //   hintStyle: CustomTextStyles.bodyMediumGray700,
+          //   items: dropdownItemList,
+          //   onChanged: (value) {},
+          // ),
           SizedBox(height: 12.v),
           Text(
             "Communication Skills",
             style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
           ),
           SizedBox(height: 12.v),
-          CustomDropDown(
-            icon: Container(
-              margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgCheckmarkGray700,
-                height: 16.adaptSize,
-                width: 16.adaptSize,
-              ),
-            ),
-            hintText: "7",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            items: dropdownItemList1,
-            onChanged: (value) {},
-          ),
+          // CustomDropDown(
+          //   icon: Container(
+          //     margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
+          //     child: CustomImageView(
+          //       imagePath: ImageConstant.imgCheckmarkGray700,
+          //       height: 16.adaptSize,
+          //       width: 16.adaptSize,
+          //     ),
+          //   ),
+          //   hintText: "7",
+          //   hintStyle: CustomTextStyles.bodyMediumGray700,
+          //   items: dropdownItemList1,
+          //   onChanged: (value) {},
+          // ),
           SizedBox(height: 13.v),
           Text(
             "Leadership Abilities",
             style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
           ),
           SizedBox(height: 11.v),
-          CustomDropDown(
-            icon: Container(
-              margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
-              child: CustomImageView(
-                imagePath: ImageConstant.imgCheckmarkGray700,
-                height: 16.adaptSize,
-                width: 16.adaptSize,
-              ),
-            ),
-            hintText: "5",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            items: dropdownItemList2,
-            onChanged: (value) {},
-          ),
+          // CustomDropDown(
+          //   icon: Container(
+          //     margin: EdgeInsets.fromLTRB(30.h, 16.v, 14.h, 16.v),
+          //     child: CustomImageView(
+          //       imagePath: ImageConstant.imgCheckmarkGray700,
+          //       height: 16.adaptSize,
+          //       width: 16.adaptSize,
+          //     ),
+          //   ),
+          //   hintText: "5",
+          //   hintStyle: CustomTextStyles.bodyMediumGray700,
+          //   items: dropdownItemList2,
+          //   onChanged: (value) {},
+          // ),
           SizedBox(height: 31.v),
           CustomElevatedButton(
          

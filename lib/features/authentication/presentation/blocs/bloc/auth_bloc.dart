@@ -57,10 +57,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final StateUseCase _stateUseCase;
   final String selectedGender = '--Selected--';
   final List<String> genders = ['--Selected--', 'Male', 'Female', 'Other'];
-  String selectedJobType = "--Selected--";
+  String selectedJobType = "--Select--";
   String selectedEducationalQualification = "--Selected--";
   List<String> dropdownItemJobType = [
-    "--Selected--",
+    "--Select--",
     "Full Time",
     "Tempoary",
     "Contract",
@@ -95,7 +95,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   void setGender() {}
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
-    emit(state.copyWith(country: event.value));
+    emit(state.copyWith(
+      country: event.value,
+    ));
   }
 
   FutureOr<void> _onUpdateSelectedCity(
@@ -115,7 +117,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onUpdateSelectedState(
       _UpdateSelectedState event, Emitter<AuthState> emit) {
-    emit(state.copyWith(state: event.value));
+    // emit(state.copyWith(state: event.value));
   }
 
   FutureOr<void> _onUpdateSelectedIsChecked(
@@ -131,10 +133,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             email: event.email,
             password: event.pasword,
             fullName: event.fullName,
-            country: state.country ?? '',
+            country: state.country?.name ?? '',
             gender: state.gender ?? '',
             city: state.city ?? '',
-            state: state.state ?? '',
+            state: state.state?.name ?? '',
             isChecked: state.isChecked,
             companyLogo: state.file!,
             companyName: event.companyName,
@@ -192,47 +194,48 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       ),
     );
+    print('cou${state.countries}');
   }
 
   FutureOr<void> _onRegisterJobSeeker(
       _RegisterJobSeeker event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _registerJobSeekerUseCase(RegisterJobSeekerEntity(
-            email: event.email,
-            password: event.password,
-            fullName: event.fullName,
-            country: state.country ?? '',
-            gender: state.gender ?? '',
-            city: state.city ?? '',
-            state: state.state ?? '',
-            isChecked: state.isChecked,
-            passport: state.picture!,
-            resume: state.resume!,
-            confirmPassword: event.confirmPassword,
-            companyName: event.companyName,
-            phoneNumber: event.phoneNumber,
-            officeTitle: event.officeTitle,
-            jobType: state.jobType ?? '',
-            skill: state.skills ?? '',
-            guarantorEmail: event.guarantorEmail,
-            role: event.role,
-            guarantorName: event.guarantorName,
-            yearsOfExperience: event.yearsOfExperience,
-            describeYourRole: '',
-            residentialAddress: event.residentialAddress,
-            description: event.description,
-            startYear: event.startYear,
-            endYear: event.endYear,
-            educationalQualification: state.educationalQualification ?? '',
-            category: state.category ?? '',
-            certificateObtained: event.certificateObtained,
-            schoolName: event.schoolName,
-            dateOFBirth: event.dateOFBirth,
-            graduationYear: event.graduationYear))
-        .then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
-    });
+    // await _registerJobSeekerUseCase(RegisterJobSeekerEntity(
+    //         email: event.email,
+    //         password: event.password,
+    //         fullName: event.fullName,
+    //         country: state.country ?? '',
+    //         gender: state.gender ?? '',
+    //         city: state.city ?? '',
+    //         state: state.state ?? '',
+    //         isChecked: state.isChecked,
+    //         passport: state.picture!,
+    //         resume: state.resume!,
+    //         confirmPassword: event.confirmPassword,
+    //         companyName: event.companyName,
+    //         phoneNumber: event.phoneNumber,
+    //         officeTitle: event.officeTitle,
+    //         jobType: state.jobType ?? '',
+    //         skill: state.skills ?? '',
+    //         guarantorEmail: event.guarantorEmail,
+    //         role: event.role,
+    //         guarantorName: event.guarantorName,
+    //         yearsOfExperience: event.yearsOfExperience,
+    //         describeYourRole: '',
+    //         residentialAddress: event.residentialAddress,
+    //         description: event.description,
+    //         startYear: event.startYear,
+    //         endYear: event.endYear,
+    //         educationalQualification: state.educationalQualification ?? '',
+    //         category: state.category ?? '',
+    //         certificateObtained: event.certificateObtained,
+    //         schoolName: event.schoolName,
+    //         dateOFBirth: event.dateOFBirth,
+    //         graduationYear: event.graduationYear))
+    //     .then((value) {
+    //   value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
+    //       (result) => emit(state.copyWith(viewState: ViewState.success)));
+    // });
   }
 }

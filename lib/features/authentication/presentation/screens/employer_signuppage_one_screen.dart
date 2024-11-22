@@ -1,6 +1,9 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/services/auth.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
@@ -84,268 +87,326 @@ class _EmployerSignuppageOneScreenState
   @override
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
-    return SafeArea(
-        child: Scaffold(
-            appBar: CustomAppBar(
-              title: 'Register',
-            ),
-            body: SingleChildScrollView(
-                child: Container(
-                    width: double.maxFinite,
-                    //  height: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
-                    child: Column(children: [
-                      Container(
-                          width: 327.h,
-                          margin: EdgeInsets.symmetric(horizontal: 26.h),
-                          child: Text(
-                              "Your personal data is safe with us, and no one else will be able to see it.",
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.bodyMedium)),
-                      SizedBox(height: 38.v),
-                      SizedBox(height: 6.v),
-                      CustomTextFormField(
-                          title: 'First Name',
-                          controller: firstNameController,
-                          hintText: "eg: Kingsley ",
-                          hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 32.v),
-                      CustomTextFormField(
-                          title: 'Last Name',
-                          controller: lastNameController,
-                          hintText: "eg  Leo",
-                          hintStyle: theme.textTheme.titleSmall!),
-                      SizedBox(height: 32.v),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomTextFormField(
-                              title: 'Office Title',
-                              width: 180.h,
-                              controller: officeTitleController,
-                              hintText: "e.g CEO",
-                              hintStyle: theme.textTheme.titleSmall!),
-                          CustomTextFormField(
-                              title: 'Company Name',
-                              width: 180.h,
-                              controller: officeTitleController,
-                              hintText: "e.g ArtisanOga",
-                              hintStyle: theme.textTheme.titleSmall!)
-                        ],
-                      ),
-                      SizedBox(height: 32.v),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              // mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text('Country',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedCountry(
-                                              value),
-                                        );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 20.v),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Gender',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedGender(value),
-                                        );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      // _buildEgCEO1(context),
-                      SizedBox(height: 27.v),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: CustomTextFormField(
-                                title: 'Phone no',
-                                controller: lastNameController,
-                                hintText: "eg  09033447788",
+    return BlocProvider(
+      create: (context) => AuthBloc()
+        ..add(
+          const AuthEvent.getCountries(),
+        ),
+      child: SafeArea(
+          child: Scaffold(
+              appBar: CustomAppBar(
+                title: 'Register',
+              ),
+              body: SingleChildScrollView(
+                  child: Container(
+                      width: double.maxFinite,
+                      //  height: double.maxFinite,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 25.h, vertical: 12.v),
+                      child: Column(children: [
+                        Container(
+                            width: 327.h,
+                            margin: EdgeInsets.symmetric(horizontal: 26.h),
+                            child: Text(
+                                "Your personal data is safe with us, and no one else will be able to see it.",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.center,
+                                style: theme.textTheme.bodyMedium)),
+                        SizedBox(height: 38.v),
+                        SizedBox(height: 6.v),
+                        CustomTextFormField(
+                            title: 'First Name',
+                            controller: firstNameController,
+                            hintText: "eg: Kingsley ",
+                            hintStyle: theme.textTheme.titleSmall!),
+                        SizedBox(height: 32.v),
+                        CustomTextFormField(
+                            title: 'Last Name',
+                            controller: lastNameController,
+                            hintText: "eg  Leo",
+                            hintStyle: theme.textTheme.titleSmall!),
+                        SizedBox(height: 32.v),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomTextFormField(
+                                title: 'Office Title',
+                                width: 180.h,
+                                controller: officeTitleController,
+                                hintText: "e.g CEO",
                                 hintStyle: theme.textTheme.titleSmall!),
-                          ),
-                          SizedBox(width: 20.v),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('State',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedState(value),
+                            CustomTextFormField(
+                                title: 'Company Name',
+                                width: 180.h,
+                                controller: officeTitleController,
+                                hintText: "e.g ArtisanOga",
+                                hintStyle: theme.textTheme.titleSmall!)
+                          ],
+                        ),
+                        SizedBox(height: 32.v),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                // mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text('Country',
+                                      style: CustomTextStyles
+                                          .bodyMediumPrimaryContainer_1),
+                                  BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      if (state.viewState ==
+                                          ViewState.loading) {
+                                        return CircularProgressIndicator();
+                                      } else if (state.viewState ==
+                                          ViewState.success) {
+                                        return CustomDropDown<
+                                            CountryResponseEntity>(
+                                          items: state.countries,
+                                          selectedItem: state.country ??
+                                              CountryResponseEntity(
+                                                  id: '4', name: 'ALgeria'),
+                                          itemLabel: (country) => country.name,
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent
+                                                      .updateSelectedCountry(
+                                                          value!),
+                                                );
+                                          },
                                         );
-                                  },
-                                ),
-                              ],
+                                      }
+                                      return Center(
+                                        child: Text(
+                                            'Unexpected state encountered'),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 27.v),
-
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Upload Company Logo",
-                                    style: theme.textTheme.bodyMedium),
-                                SizedBox(height: 5.v),
-                                _buildChooseFile(context),
-                              ],
+                            SizedBox(width: 20.v),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Gender',
+                                      style: CustomTextStyles
+                                          .bodyMediumPrimaryContainer_1),
+                                  BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      return CustomDropDown<String>(
+                                        items: authBloc.genders,
+                                        selectedItem: authBloc.genders.first,
+                                        //  state.gender ?? "--Select--",
+                                        itemLabel: (gender) => gender,
+                                        onChanged: (value) {
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent.updateSelectedGender(
+                                                    value ?? ''),
+                                              );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('City',
-                                    style: CustomTextStyles
-                                        .bodyMediumPrimaryContainer_1),
-                                CustomDropDown(),
-                              ],
+                          ],
+                        ),
+                        // _buildEgCEO1(context),
+                        SizedBox(height: 27.v),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: CustomTextFormField(
+                                  title: 'Phone no',
+                                  controller: lastNameController,
+                                  hintText: "eg  09033447788",
+                                  hintStyle: theme.textTheme.titleSmall!),
                             ),
-                          ),
-                        ],
-                      ),
+                            SizedBox(width: 20.v),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('State',
+                                      style: CustomTextStyles
+                                          .bodyMediumPrimaryContainer_1),
+                                  BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      if (state.viewState ==
+                                          ViewState.loading) {
+                                        return CircularProgressIndicator();
+                                      } else if (state.viewState ==
+                                          ViewState.success) {
+                                        return CustomDropDown<
+                                            StateResponseEntity>(
+                                          items: state.states,
+                                          selectedItem: state.state ??
+                                              StateResponseEntity(
+                                                  id: '4', name: 'ALgeria'),
+                                          itemLabel: (state) => state.name,
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.updateSelectedState(
+                                                      value?.name ?? ''),
+                                                );
+                                          },
+                                        );
+                                      }
+                                      return Center(
+                                        child: Text(
+                                            'Unexpected state encountered'),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 27.v),
 
-                      SizedBox(height: 14.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Row(children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgEmojioneMonoto,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 11.h, top: 4.v, bottom: 2.v),
-                                child: RichText(
-                                    text: TextSpan(children: [
-                                      TextSpan(
-                                          text: "I Agree With The",
-                                          style: CustomTextStyles
-                                              .titleSmallff3a332c_1),
-                                      TextSpan(text: " "),
-                                      TextSpan(
-                                          text: "Terms and Conditions",
-                                          style: CustomTextStyles
-                                              .titleSmallfff7941e_1)
-                                    ]),
-                                    textAlign: TextAlign.left))
-                          ])),
-                      SizedBox(height: 35.v),
-                      CustomElevatedButton(
-                        text: "Submit",
-                        onPressed: (() {
-                          if ( //_emailController.text.isNotEmpty &&
-                              companyController.text.isNotEmpty &&
-                                  firstNameController.text.isNotEmpty &&
-                                  lastNameController.text.isNotEmpty &&
-                                  phoneController.text.isNotEmpty &&
-                                  // selectedCountry != null &&
-                                  cityController.text.isNotEmpty) {
-                            EasyLoading.show();
-                            Auth()
-                                .newEmployer(
-                                    fullname: firstNameController.text +
-                                        " " +
-                                        lastNameController.text,
-                                    email: new_employer_info[0],
-                                    password: new_employer_info[1],
-                                    confirmPassword: new_employer_info[1],
-                                    phone: phoneController.text,
-                                    country: selectedCountry,
-                                    city: cityController.text,
-                                    state: selectedState,
-                                    businessName: companyController.text,
-                                    logo: image,
-                                    education_qualification:
-                                        selectedEducationOption,
-                                    companyName: companyController.text)
-                                .then((value) => {
-                                      //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
-                                      if (value == "success")
-                                        {
-                                          print(value.toString()),
-                                          EasyLoading.dismiss(),
-                                          Fluttertoast.showToast(
-                                              msg:
-                                                  "Your account was created successfully",
-                                              toastLength: Toast.LENGTH_SHORT,
-                                              gravity: ToastGravity.CENTER,
-                                              timeInSecForIosWeb: 1,
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                          255, 86, 86, 86)
-                                                      .withOpacity(0.6),
-                                              textColor: Colors.white,
-                                              fontSize: 16.0),
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      JSCreateAccountSuccess()))
-                                        }
-                                      else
-                                        {
-                                          EasyLoading.dismiss(),
-                                          print(value.toString()),
-                                          // Navigator.pop(context),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Upload Company Logo",
+                                      style: theme.textTheme.bodyMedium),
+                                  SizedBox(height: 5.v),
+                                  _buildChooseFile(context),
+                                ],
+                              ),
+                            ),
+                            // Expanded(
+                            //   child: Column(
+                            //     crossAxisAlignment: CrossAxisAlignment.start,
+                            //     children: [
+                            //       Text('City',
+                            //           style: CustomTextStyles
+                            //               .bodyMediumPrimaryContainer_1),
+                            //       CustomDropDown(),
+                            //     ],
+                            //   ),
+                            // ),
+                          ],
+                        ),
 
-                                          Fluttertoast.showToast(
-                                              msg: value.toString(),
-                                              toastLength: Toast.LENGTH_SHORT,
-                                              gravity: ToastGravity.CENTER,
-                                              timeInSecForIosWeb: 1,
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                          255, 86, 86, 86)
-                                                      .withOpacity(0.6),
-                                              textColor: Colors.white,
-                                              fontSize: 16.0)
-                                        }
-                                    });
-                            //  Navigator.pushNamed(context, AppRoutes.employerRegisterPageOneScreen);
-                          } else {
-                            EasyLoading.showToast("Please fill out all fields");
-                          }
-                        }),
-                      ),
-                      SizedBox(height: 90.v),
-                      SizedBox(
-                          width: 130.h,
-                          child: Divider(color: theme.colorScheme.onPrimary))
-                    ])))));
+                        SizedBox(height: 14.v),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Row(children: [
+                              CustomImageView(
+                                  imagePath: ImageConstant.imgEmojioneMonoto,
+                                  height: 24.adaptSize,
+                                  width: 24.adaptSize),
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 11.h, top: 4.v, bottom: 2.v),
+                                  child: RichText(
+                                      text: TextSpan(children: [
+                                        TextSpan(
+                                            text: "I Agree With The",
+                                            style: CustomTextStyles
+                                                .titleSmallff3a332c_1),
+                                        TextSpan(text: " "),
+                                        TextSpan(
+                                            text: "Terms and Conditions",
+                                            style: CustomTextStyles
+                                                .titleSmallfff7941e_1)
+                                      ]),
+                                      textAlign: TextAlign.left))
+                            ])),
+                        SizedBox(height: 35.v),
+                        CustomElevatedButton(
+                          text: "Submit",
+                          onPressed: (() {
+                            if ( //_emailController.text.isNotEmpty &&
+                                companyController.text.isNotEmpty &&
+                                    firstNameController.text.isNotEmpty &&
+                                    lastNameController.text.isNotEmpty &&
+                                    phoneController.text.isNotEmpty &&
+                                    // selectedCountry != null &&
+                                    cityController.text.isNotEmpty) {
+                              EasyLoading.show();
+                              Auth()
+                                  .newEmployer(
+                                      fullname: firstNameController.text +
+                                          " " +
+                                          lastNameController.text,
+                                      email: new_employer_info[0],
+                                      password: new_employer_info[1],
+                                      confirmPassword: new_employer_info[1],
+                                      phone: phoneController.text,
+                                      country: selectedCountry,
+                                      city: cityController.text,
+                                      state: selectedState,
+                                      businessName: companyController.text,
+                                      logo: image,
+                                      education_qualification:
+                                          selectedEducationOption,
+                                      companyName: companyController.text)
+                                  .then((value) => {
+                                        //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
+                                        if (value == "success")
+                                          {
+                                            print(value.toString()),
+                                            EasyLoading.dismiss(),
+                                            Fluttertoast.showToast(
+                                                msg:
+                                                    "Your account was created successfully",
+                                                toastLength: Toast.LENGTH_SHORT,
+                                                gravity: ToastGravity.CENTER,
+                                                timeInSecForIosWeb: 1,
+                                                backgroundColor:
+                                                    const Color.fromARGB(
+                                                            255, 86, 86, 86)
+                                                        .withOpacity(0.6),
+                                                textColor: Colors.white,
+                                                fontSize: 16.0),
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        JSCreateAccountSuccess()))
+                                          }
+                                        else
+                                          {
+                                            EasyLoading.dismiss(),
+                                            print(value.toString()),
+                                            // Navigator.pop(context),
+
+                                            Fluttertoast.showToast(
+                                                msg: value.toString(),
+                                                toastLength: Toast.LENGTH_SHORT,
+                                                gravity: ToastGravity.CENTER,
+                                                timeInSecForIosWeb: 1,
+                                                backgroundColor:
+                                                    const Color.fromARGB(
+                                                            255, 86, 86, 86)
+                                                        .withOpacity(0.6),
+                                                textColor: Colors.white,
+                                                fontSize: 16.0)
+                                          }
+                                      });
+                              //  Navigator.pushNamed(context, AppRoutes.employerRegisterPageOneScreen);
+                            } else {
+                              EasyLoading.showToast(
+                                  "Please fill out all fields");
+                            }
+                          }),
+                        ),
+                        SizedBox(height: 90.v),
+                        SizedBox(
+                            width: 130.h,
+                            child: Divider(color: theme.colorScheme.onPrimary))
+                      ]))))),
+    );
   }
 
   // /// Section Widget
@@ -446,27 +507,27 @@ class _EmployerSignuppageOneScreenState
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text("Gender", style: theme.textTheme.bodyMedium),
               SizedBox(height: 6.v),
-              CustomDropDown(
-                  width: 180.h,
-                  icon: Container(
-                      padding: EdgeInsets.all(3.h),
-                      margin: EdgeInsets.fromLTRB(30.h, 14.v, 20.h, 14.v),
-                      decoration: BoxDecoration(
-                          color: theme.colorScheme.primary,
-                          borderRadius: BorderRadius.circular(9.h)),
-                      child: CustomImageView(
-                          imagePath: ImageConstant.imgCheckmark,
-                          height: 11.adaptSize,
-                          width: 11.adaptSize)),
-                  hintText: "Male",
-                  items: dropdownItemLGender,
-                  onChanged: (value) {
-                    print(value.toString());
+              // CustomDropDown(
+              //     width: 180.h,
+              //     icon: Container(
+              //         padding: EdgeInsets.all(3.h),
+              //         margin: EdgeInsets.fromLTRB(30.h, 14.v, 20.h, 14.v),
+              //         decoration: BoxDecoration(
+              //             color: theme.colorScheme.primary,
+              //             borderRadius: BorderRadius.circular(9.h)),
+              //         child: CustomImageView(
+              //             imagePath: ImageConstant.imgCheckmark,
+              //             height: 11.adaptSize,
+              //             width: 11.adaptSize)),
+              //     hintText: "Male",
+              //     items: dropdownItemLGender,
+              //     onChanged: (value) {
+              //       print(value.toString());
 
-                    setState(() {
-                      gender = value.toString();
-                    });
-                  })
+              //       setState(() {
+              //         gender = value.toString();
+              //       });
+              //     })
             ])));
   }
 

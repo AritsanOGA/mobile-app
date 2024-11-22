@@ -268,31 +268,31 @@ class _UpdateProfilePageOneScreenState
                           ),
 
                           SizedBox(height: 6.v),
-                          Padding(
-                              padding: EdgeInsets.only(right: 1.h),
-                              child: CustomDropDown(
-                                  width: double.maxFinite,
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Male",
-                                  items: dropdownItemLGender,
-                                  onChanged: (value) {
-                                    print(value.toString());
+                          // Padding(
+                          //     padding: EdgeInsets.only(right: 1.h),
+                          //     child: CustomDropDown(
+                          //         width: double.maxFinite,
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText: "Male",
+                          //         items: dropdownItemLGender,
+                          //         onChanged: (value) {
+                          //           print(value.toString());
 
-                                    setState(() {
-                                      gender = value.toString();
-                                    });
-                                  })),
+                          //           setState(() {
+                          //             gender = value.toString();
+                          //           });
+                          //         })),
 
                           SizedBox(
                             height: 20,
@@ -304,31 +304,31 @@ class _UpdateProfilePageOneScreenState
                           ),
 
                           SizedBox(height: 6.v),
-                          Padding(
-                              padding: EdgeInsets.only(right: 1.h),
-                              child: CustomDropDown(
-                                  width: double.maxFinite,
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Full Time",
-                                  items: dropdownItemJobType,
-                                  onChanged: (value) {
-                                    print(value.toString());
+                          // Padding(
+                          //     padding: EdgeInsets.only(right: 1.h),
+                          //     child: CustomDropDown(
+                          //         width: double.maxFinite,
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText: "Full Time",
+                          //         items: dropdownItemJobType,
+                          //         onChanged: (value) {
+                          //           print(value.toString());
 
-                                    setState(() {
-                                      jobType = value.toString();
-                                    });
-                                  })),
+                          //           setState(() {
+                          //             jobType = value.toString();
+                          //           });
+                          //         })),
 
                           SizedBox(
                             height: 20,
@@ -340,31 +340,31 @@ class _UpdateProfilePageOneScreenState
                           ),
 
                           SizedBox(height: 6.v),
-                          Padding(
-                              padding: EdgeInsets.only(right: 1.h),
-                              child: CustomDropDown(
-                                  width: double.maxFinite,
-                                  icon: Container(
-                                      padding: EdgeInsets.all(3.h),
-                                      margin: EdgeInsets.fromLTRB(
-                                          30.h, 14.v, 20.h, 14.v),
-                                      decoration: BoxDecoration(
-                                          color: theme.colorScheme.primary,
-                                          borderRadius:
-                                              BorderRadius.circular(9.h)),
-                                      child: CustomImageView(
-                                          imagePath: ImageConstant.imgCheckmark,
-                                          height: 11.adaptSize,
-                                          width: 11.adaptSize)),
-                                  hintText: "Salary",
-                                  items: dropdownItemJobType,
-                                  onChanged: (value) {
-                                    print(value.toString());
+                          // Padding(
+                          //     padding: EdgeInsets.only(right: 1.h),
+                          //     child: CustomDropDown(
+                          //         width: double.maxFinite,
+                          //         icon: Container(
+                          //             padding: EdgeInsets.all(3.h),
+                          //             margin: EdgeInsets.fromLTRB(
+                          //                 30.h, 14.v, 20.h, 14.v),
+                          //             decoration: BoxDecoration(
+                          //                 color: theme.colorScheme.primary,
+                          //                 borderRadius:
+                          //                     BorderRadius.circular(9.h)),
+                          //             child: CustomImageView(
+                          //                 imagePath: ImageConstant.imgCheckmark,
+                          //                 height: 11.adaptSize,
+                          //                 width: 11.adaptSize)),
+                          //         hintText: "Salary",
+                          //         items: dropdownItemJobType,
+                          //         onChanged: (value) {
+                          //           print(value.toString());
 
-                                    setState(() {
-                                      compensationType = value.toString();
-                                    });
-                                  })),
+                          //           setState(() {
+                          //             compensationType = value.toString();
+                          //           });
+                          //         })),
                           SizedBox(
                             height: 20,
                           ),

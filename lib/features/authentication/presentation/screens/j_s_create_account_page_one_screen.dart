@@ -174,13 +174,15 @@ class _JSCreateAccountPageOneScreenState
                                           style: CustomTextStyles
                                               .bodyMediumPrimaryContainer_1),
                                       SizedBox(height: 7.v),
-                                      CustomDropDown(
+                                      CustomDropDown<String>(
                                         items: authBloc.genders,
-                                        selectedItem: authBloc.selectedGender,
+                                        selectedItem: authBloc.genders.first,
+                                        itemLabel: (gender) => gender,
                                         onChanged: (value) {
-                                              context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedGender(
-                                              value),);
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent.updateSelectedGender(
+                                                    value ?? ''),
+                                              );
                                         },
                                       ),
                                     ],

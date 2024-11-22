@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -72,7 +73,7 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -120,7 +121,7 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -268,7 +269,7 @@ abstract class _$$UpdateSelectedCountryImplCopyWith<$Res> {
           $Res Function(_$UpdateSelectedCountryImpl) then) =
       __$$UpdateSelectedCountryImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String value});
+  $Res call({CountryResponseEntity value});
 }
 
 /// @nodoc
@@ -288,7 +289,7 @@ class __$$UpdateSelectedCountryImplCopyWithImpl<$Res>
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String,
+              as CountryResponseEntity,
     ));
   }
 }
@@ -299,7 +300,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
   const _$UpdateSelectedCountryImpl(this.value);
 
   @override
-  final String value;
+  final CountryResponseEntity value;
 
   @override
   String toString() {
@@ -327,7 +328,8 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -384,7 +386,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -435,7 +437,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -576,10 +578,10 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
 }
 
 abstract class _UpdateSelectedCountry implements AuthEvent {
-  const factory _UpdateSelectedCountry(final String value) =
+  const factory _UpdateSelectedCountry(final CountryResponseEntity value) =
       _$UpdateSelectedCountryImpl;
 
-  String get value;
+  CountryResponseEntity get value;
   @JsonKey(ignore: true)
   _$$UpdateSelectedCountryImplCopyWith<_$UpdateSelectedCountryImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -651,7 +653,8 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -708,7 +711,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -759,7 +762,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -974,7 +977,8 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -1031,7 +1035,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -1082,7 +1086,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -1297,7 +1301,8 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -1354,7 +1359,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -1405,7 +1410,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -1622,7 +1627,8 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -1679,7 +1685,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -1730,7 +1736,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -1945,7 +1951,8 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -2002,7 +2009,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -2053,7 +2060,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -2269,7 +2276,8 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -2326,7 +2334,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -2377,7 +2385,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -2597,7 +2605,8 @@ class _$UpdateSelectedEducationQualificationImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -2654,7 +2663,7 @@ class _$UpdateSelectedEducationQualificationImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -2705,7 +2714,7 @@ class _$UpdateSelectedEducationQualificationImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -2923,7 +2932,8 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -2980,7 +2990,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -3031,7 +3041,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -3248,7 +3258,8 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -3305,7 +3316,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -3356,7 +3367,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -3573,7 +3584,8 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -3630,7 +3642,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -3681,7 +3693,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -3897,7 +3909,8 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -3954,7 +3967,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -4005,7 +4018,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -4219,7 +4232,8 @@ class _$LoginUserImpl implements _LoginUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -4276,7 +4290,7 @@ class _$LoginUserImpl implements _LoginUser {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -4327,7 +4341,7 @@ class _$LoginUserImpl implements _LoginUser {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -4514,7 +4528,8 @@ class _$GetCountriesImpl implements _GetCountries {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -4571,7 +4586,7 @@ class _$GetCountriesImpl implements _GetCountries {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -4622,7 +4637,7 @@ class _$GetCountriesImpl implements _GetCountries {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -4804,7 +4819,8 @@ class _$GetStateImpl implements _GetState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -4861,7 +4877,7 @@ class _$GetStateImpl implements _GetState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -4912,7 +4928,7 @@ class _$GetStateImpl implements _GetState {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -5178,7 +5194,8 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -5236,7 +5253,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -5288,7 +5305,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -5790,7 +5807,8 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) updateSelectedCountry,
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedState,
     required TResult Function(String value) updateSelectedCity,
@@ -5871,7 +5889,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? updateSelectedCountry,
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedState,
     TResult? Function(String value)? updateSelectedCity,
@@ -5946,7 +5964,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? updateSelectedCountry,
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedState,
     TResult Function(String value)? updateSelectedCity,
@@ -6169,8 +6187,8 @@ abstract class _RegisterJobSeeker implements AuthEvent {
 /// @nodoc
 mixin _$AuthState {
   String? get gender => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
+  CountryResponseEntity? get country => throw _privateConstructorUsedError;
+  StateResponseEntity? get state => throw _privateConstructorUsedError;
   String? get jsCountry => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
@@ -6184,8 +6202,8 @@ mixin _$AuthState {
   String? get dateOFBirth => throw _privateConstructorUsedError;
   String? get startYear => throw _privateConstructorUsedError;
   String? get endYear => throw _privateConstructorUsedError;
-  String? get category => throw _privateConstructorUsedError;
-  String? get skills => throw _privateConstructorUsedError;
+  CategoryResponseEntity? get category => throw _privateConstructorUsedError;
+  SkillResponseEntity? get skills => throw _privateConstructorUsedError;
   File? get resume => throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   List<CountryResponseEntity> get countries =>
@@ -6199,8 +6217,8 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -6214,8 +6232,8 @@ mixin _$AuthState {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -6230,8 +6248,8 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -6245,8 +6263,8 @@ mixin _$AuthState {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -6261,8 +6279,8 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -6276,8 +6294,8 @@ mixin _$AuthState {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -6318,8 +6336,8 @@ abstract class $AuthStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String? gender,
-      String? country,
-      String? state,
+      CountryResponseEntity? country,
+      StateResponseEntity? state,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -6333,8 +6351,8 @@ abstract class $AuthStateCopyWith<$Res> {
       String? dateOFBirth,
       String? startYear,
       String? endYear,
-      String? category,
-      String? skills,
+      CategoryResponseEntity? category,
+      SkillResponseEntity? skills,
       File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
@@ -6391,11 +6409,11 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CountryResponseEntity?,
       state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as StateResponseEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -6451,11 +6469,11 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CategoryResponseEntity?,
       skills: freezed == skills
           ? _value.skills
           : skills // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as SkillResponseEntity?,
       resume: freezed == resume
           ? _value.resume
           : resume // ignore: cast_nullable_to_non_nullable
@@ -6498,8 +6516,8 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? gender,
-      String? country,
-      String? state,
+      CountryResponseEntity? country,
+      StateResponseEntity? state,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -6513,8 +6531,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? dateOFBirth,
       String? startYear,
       String? endYear,
-      String? category,
-      String? skills,
+      CategoryResponseEntity? category,
+      SkillResponseEntity? skills,
       File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
@@ -6569,11 +6587,11 @@ class __$$InitialImplCopyWithImpl<$Res>
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CountryResponseEntity?,
       state: freezed == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as StateResponseEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -6629,11 +6647,11 @@ class __$$InitialImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CategoryResponseEntity?,
       skills: freezed == skills
           ? _value.skills
           : skills // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as SkillResponseEntity?,
       resume: freezed == resume
           ? _value.resume
           : resume // ignore: cast_nullable_to_non_nullable
@@ -6703,9 +6721,9 @@ class _$InitialImpl implements _Initial {
   @override
   final String? gender;
   @override
-  final String? country;
+  final CountryResponseEntity? country;
   @override
-  final String? state;
+  final StateResponseEntity? state;
   @override
   final String? jsCountry;
   @override
@@ -6733,9 +6751,9 @@ class _$InitialImpl implements _Initial {
   @override
   final String? endYear;
   @override
-  final String? category;
+  final CategoryResponseEntity? category;
   @override
-  final String? skills;
+  final SkillResponseEntity? skills;
   @override
   final File? resume;
   final List<StateResponseEntity> _states;
@@ -6872,8 +6890,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -6887,8 +6905,8 @@ class _$InitialImpl implements _Initial {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -6931,8 +6949,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -6946,8 +6964,8 @@ class _$InitialImpl implements _Initial {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -6990,8 +7008,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String? gender,
-            String? country,
-            String? state,
+            CountryResponseEntity? country,
+            StateResponseEntity? state,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -7005,8 +7023,8 @@ class _$InitialImpl implements _Initial {
             String? dateOFBirth,
             String? startYear,
             String? endYear,
-            String? category,
-            String? skills,
+            CategoryResponseEntity? category,
+            SkillResponseEntity? skills,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -7080,8 +7098,8 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements AuthState {
   const factory _Initial(
       {final String? gender,
-      final String? country,
-      final String? state,
+      final CountryResponseEntity? country,
+      final StateResponseEntity? state,
       final String? jsCountry,
       final File? file,
       final String? errorMessage,
@@ -7095,8 +7113,8 @@ abstract class _Initial implements AuthState {
       final String? dateOFBirth,
       final String? startYear,
       final String? endYear,
-      final String? category,
-      final String? skills,
+      final CategoryResponseEntity? category,
+      final SkillResponseEntity? skills,
       final File? resume,
       final List<StateResponseEntity> states,
       final List<CountryResponseEntity> countries,
@@ -7108,9 +7126,9 @@ abstract class _Initial implements AuthState {
   @override
   String? get gender;
   @override
-  String? get country;
+  CountryResponseEntity? get country;
   @override
-  String? get state;
+  StateResponseEntity? get state;
   @override
   String? get jsCountry;
   @override
@@ -7138,9 +7156,9 @@ abstract class _Initial implements AuthState {
   @override
   String? get endYear;
   @override
-  String? get category;
+  CategoryResponseEntity? get category;
   @override
-  String? get skills;
+  SkillResponseEntity? get skills;
   @override
   File? get resume;
   @override

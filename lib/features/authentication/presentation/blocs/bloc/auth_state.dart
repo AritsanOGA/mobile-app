@@ -4,8 +4,8 @@ part of 'auth_bloc.dart';
 class AuthState with _$AuthState {
   const factory AuthState.initial({
     String? gender,
-    String? country,
-    String? state,
+    CountryResponseEntity? country,
+    StateResponseEntity? state,
     String? jsCountry,
     File? file,
     String? errorMessage,
@@ -19,8 +19,8 @@ class AuthState with _$AuthState {
     String? dateOFBirth,
     String? startYear,
     String? endYear,
-    String? category,
-    String? skills,
+   CategoryResponseEntity? category,
+    SkillResponseEntity? skills,
     File? resume,
     @Default([]) List<StateResponseEntity> states,
     @Default([]) List<CountryResponseEntity> countries,

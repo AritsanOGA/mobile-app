@@ -32,6 +32,7 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
 
   @override
   Widget build(BuildContext context) {
+        final authBloc = BlocProvider.of<AuthBloc>(context);
     return BlocProvider(
         create: (context) => AuthBloc(),
         child: SafeArea(
