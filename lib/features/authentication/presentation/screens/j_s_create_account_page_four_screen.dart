@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -145,86 +146,103 @@ class _JSCreateAccountPageFourScreenState
                           //           });
                           //         })),
                           // SizedBox(height: 38.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Employment History",
-                                      style: theme.textTheme.bodyLarge
-                                          ?.copyWith(
-                                              fontWeight: FontWeight.w600)))),
-                          SizedBox(height: 15.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'Company Name',
-                                  controller: nameController,
-                                  hintText: "Enter Company Name",
-                                  hintStyle: theme.textTheme.titleSmall!)),
-                          SizedBox(height: 27.v),
-
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'Role',
-                                  controller: enterJobRoleController,
-                                  hintText: "Enter Role",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
-                          SizedBox(height: 27.v),
-                          // Align(
-                          //     alignment: Alignment.centerLeft,
-                          //     child: Padding(
-                          //         padding: EdgeInsets.only(left: 3.h),
-                          //         child: Text("Job Description",
-                          //             style: theme.textTheme.bodyMedium))),
-                          // SizedBox(height: 7.v),
-                          // Padding(
-                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
-                          //     child: CustomTextFormField(
-                          //         title: 'Password',
-                          //         controller: enterJobDescriptionController,
-                          //         hintText: "Job Description",
-                          //         hintStyle: theme.textTheme.titleSmall!,
-                          //         textInputAction: TextInputAction.done)),
-                          // SizedBox(height: 27.v),
-
-                          SizedBox(height: 7.v),
-                          CustomDateFormField(
-                            hint: authBloc.dateField.text,
-                            onTap: () {
-                              authBloc.datePicker(context);
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                              return CustomDropDown<String>(
+                                title: "Employment History",
+                                items: authBloc.employmentHistory,
+                                selectedItem: state.employmentHistory ??
+                                    'No Employment History',
+                                //  state.gender ?? "--Select--",
+                                itemLabel: (history) => history,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateEmploymentHistory(
+                                            value ?? ''),
+                                      );
+                                  print('ssss ${value}');
+                                },
+                              );
                             },
-                            label: 'Start Year',
+                          ),
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                              if (state.employmentHistory ==
+                                  "No Employment History") {
+                                return SizedBox();
+                              } else {
+                                return Column(
+                                  children: [
+                                    SizedBox(height: 28.v),
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'Company Name',
+                                            controller: nameController,
+                                            hintText: "Enter Company Name",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!)),
+                                    SizedBox(height: 27.v),
+
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'Role',
+                                            controller: enterJobRoleController,
+                                            hintText: "Enter Role",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!,
+                                            textInputAction:
+                                                TextInputAction.done)),
+                                    SizedBox(height: 27.v),
+
+                                    SizedBox(height: 7.v),
+                                    CustomDateFormField(
+                                      hint: authBloc.dateField.text,
+                                      onTap: () {
+                                        authBloc.datePicker(context);
+                                      },
+                                      label: 'Start Year',
+                                    ),
+
+                                    SizedBox(height: 27.v),
+                                    CustomDateFormField(
+                                      hint: authBloc.dateField.text,
+                                      onTap: () {
+                                        authBloc.datePicker(context);
+                                      },
+                                      label: 'End Year',
+                                    ),
+
+                                    SizedBox(height: 27.v),
+                                    // Align(
+                                    //     alignment: Alignment.centerLeft,
+                                    //     child: Padding(
+                                    //         padding: EdgeInsets.only(left: 3.h),
+                                    //         child: Text("End Year",
+                                    //             style: theme.textTheme.bodyMedium))),
+
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'Description',
+                                            maxLines: 5,
+                                            textInputType: TextInputType.number,
+                                            controller: startYearController,
+                                            hintText: "Input here",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!,
+                                            textInputAction:
+                                                TextInputAction.done)),
+                                  ],
+                                );
+                              }
+                            },
                           ),
 
-                          SizedBox(height: 27.v),
-                          CustomDateFormField(
-                            hint: authBloc.dateField.text,
-                            onTap: () {
-                              authBloc.datePicker(context);
-                            },
-                            label: 'End Year',
-                          ),
-
-                          SizedBox(height: 27.v),
-                          // Align(
-                          //     alignment: Alignment.centerLeft,
-                          //     child: Padding(
-                          //         padding: EdgeInsets.only(left: 3.h),
-                          //         child: Text("End Year",
-                          //             style: theme.textTheme.bodyMedium))),
-
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'Description',
-                                  maxLines: 5,
-                                  textInputType: TextInputType.number,
-                                  controller: startYearController,
-                                  hintText: "Input here",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
                           SizedBox(height: 38.v),
                           CustomElevatedButton(
                             onPressed: (() {

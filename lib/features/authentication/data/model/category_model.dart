@@ -5,7 +5,7 @@ class CategoryResponseModel extends CategoryResponseEntity {
 
   factory CategoryResponseModel.fromJson(Map<String, dynamic> json) =>
       CategoryResponseModel(
-            id: json['id'] as String? ?? '',
+            id: json['id'] as int? ?? 0,
       name: json['name'] as String? ?? '',
       );
 

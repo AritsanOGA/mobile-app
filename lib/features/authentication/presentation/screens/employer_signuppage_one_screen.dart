@@ -165,9 +165,14 @@ class _EmployerSignuppageOneScreenState
                                         return CustomDropDown<
                                             CountryResponseEntity>(
                                           items: state.countries,
-                                          selectedItem: state.country ??
-                                              CountryResponseEntity(
-                                                  id: '4', name: 'ALgeria'),
+                                          selectedItem:
+                                              state.countries.firstWhere(
+                                            (country) =>
+                                                country.id ==
+                                                (state.country?.id ?? 4),
+                                            orElse: () => CountryResponseEntity(
+                                                id: 4, name: 'ALgeria'),
+                                          ),
                                           itemLabel: (country) => country.name,
                                           onChanged: (value) {
                                             context.read<AuthBloc>().add(
@@ -175,6 +180,16 @@ class _EmployerSignuppageOneScreenState
                                                       .updateSelectedCountry(
                                                           value!),
                                                 );
+                                            print('iddd${value.id.toString()}');
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.getState(
+                                                      value.id.toString()),
+                                                );
+                                            // context.read<AuthBloc>().add(
+                                            //       AuthEvent.getState('44'
+                                            //           //value.id.toString()
+                                            //           ),
+                                            //     );
                                           },
                                         );
                                       }
@@ -245,9 +260,12 @@ class _EmployerSignuppageOneScreenState
                                         return CustomDropDown<
                                             StateResponseEntity>(
                                           items: state.states,
-                                          selectedItem: state.state ??
-                                              StateResponseEntity(
-                                                  id: '4', name: 'ALgeria'),
+                                          selectedItem: state.states.firstWhere(
+                                            (state) =>
+                                                state.id == (state.id ?? 4),
+                                            orElse: () => StateResponseEntity(
+                                                id: 4, name: 'ALgeria'),
+                                          ),
                                           itemLabel: (state) => state.name,
                                           onChanged: (value) {
                                             context.read<AuthBloc>().add(
@@ -279,21 +297,85 @@ class _EmployerSignuppageOneScreenState
                                   Text("Upload Company Logo",
                                       style: theme.textTheme.bodyMedium),
                                   SizedBox(height: 5.v),
-                                  _buildChooseFile(context),
+                                  BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      return Container(
+                                          margin: EdgeInsets.only(right: 10.h),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 6.v, horizontal: 5.v),
+                                          decoration: AppDecoration
+                                              .outlineBlueGray
+                                              .copyWith(
+                                                  borderRadius:
+                                                      BorderRadiusStyle
+                                                          .roundedBorder7),
+                                          child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                InkWell(
+                                                    onTap: () {
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(const AuthEvent
+                                                              .selectCompanyLogo());
+                                                    },
+                                                    child: Container(
+                                                        height: 30,
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        5),
+                                                            color: ColorSchemes
+                                                                .primaryColorScheme
+                                                                .primary),
+                                                        child: Center(
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .symmetric(
+                                                                    horizontal:
+                                                                        5),
+                                                            child: Text(
+                                                                'choose file',
+                                                                style: theme
+                                                                    .textTheme
+                                                                    .labelMedium
+                                                                    ?.copyWith(
+                                                                        color: Colors
+                                                                            .white)),
+                                                          ),
+                                                        ))),
+                                                SizedBox(width: 5.v),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 5.v, right: 5.v),
+                                                  child: Text(
+                                                      state.file == null
+                                                          ? "No file chosen"
+                                                          : "Image selected",
+                                                      style: theme.textTheme
+                                                          .labelLarge),
+                                                )
+                                              ]));
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
-                            // Expanded(
-                            //   child: Column(
-                            //     crossAxisAlignment: CrossAxisAlignment.start,
-                            //     children: [
-                            //       Text('City',
-                            //           style: CustomTextStyles
-                            //               .bodyMediumPrimaryContainer_1),
-                            //       CustomDropDown(),
-                            //     ],
-                            //   ),
-                            // ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomTextFormField(
+                                      title: 'City',
+                                      controller: lastNameController,
+                                      hintText: "eg  Leo",
+                                      hintStyle: theme.textTheme.titleSmall!),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
 

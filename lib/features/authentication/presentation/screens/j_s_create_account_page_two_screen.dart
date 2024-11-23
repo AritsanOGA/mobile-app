@@ -79,7 +79,10 @@ class _JSCreateAccountPagetTwoScreenState
   Widget build(BuildContext context) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
     return BlocProvider(
-      create: (context) => AuthBloc(),
+        create: (context) => AuthBloc()
+        ..add(
+          const AuthEvent.getCountries(),
+        ),
       child: SafeArea(
           child: Scaffold(
               backgroundColor: AppColors.kwhite,
@@ -108,29 +111,50 @@ class _JSCreateAccountPagetTwoScreenState
                                 child: Text("Country",
                                     style: theme.textTheme.bodyMedium))),
                         SizedBox(height: 5.v),
-                        BlocBuilder<AuthBloc, AuthState>(
-                          builder: (context, state) {
-                            if (state.viewState == ViewState.loading) {
-                              return CircularProgressIndicator();
-                            } else if (state.viewState == ViewState.success) {
-                              return CustomDropDown<CountryResponseEntity>(
-                                items: state.countries,
-                                selectedItem: state.country ??
-                                    CountryResponseEntity(
-                                        id: '4', name: 'ALgeria'),
-                                itemLabel: (country) => country.name,
-                                onChanged: (value) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.updateSelectedCountry(value!),
+            BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      if (state.viewState ==
+                                          ViewState.loading) {
+                                        return CircularProgressIndicator();
+                                      } else if (state.viewState ==
+                                          ViewState.success) {
+                                        return CustomDropDown<
+                                            CountryResponseEntity>(
+                                          items: state.countries,
+                                          selectedItem:
+                                              state.countries.firstWhere(
+                                            (country) =>
+                                                country.id ==
+                                                (state.country?.id ?? 4),
+                                            orElse: () => CountryResponseEntity(
+                                                id: 4, name: 'ALgeria'),
+                                          ),
+                                          itemLabel: (country) => country.name,
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent
+                                                      .updateSelectedCountry(
+                                                          value!),
+                                                );
+                                            print('iddd${value.id.toString()}');
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.getState(
+                                                      value.id.toString()),
+                                                );
+                                            // context.read<AuthBloc>().add(
+                                            //       AuthEvent.getState('44'
+                                            //           //value.id.toString()
+                                            //           ),
+                                            //     );
+                                          },
+                                        );
+                                      }
+                                      return Center(
+                                        child: Text(
+                                            'Unexpected state encountered'),
                                       );
-                                },
-                              );
-                            }
-                            return Center(
-                              child: Text('Unexpected state encountered'),
-                            );
-                          },
-                        ),
+                                    },
+                                  ),
                 
                         SizedBox(height: 27.v),
                         Align(
@@ -141,29 +165,36 @@ class _JSCreateAccountPagetTwoScreenState
                                     style: theme.textTheme.bodyMedium))),
                         SizedBox(height: 7.v),
                         BlocBuilder<AuthBloc, AuthState>(
-                          builder: (context, state) {
-                            if (state.viewState == ViewState.loading) {
-                              return CircularProgressIndicator();
-                            } else if (state.viewState == ViewState.success) {
-                              return CustomDropDown<StateResponseEntity>(
-                                items: state.states,
-                                selectedItem: state.state ??
-                                    StateResponseEntity(
-                                        id: '4', name: 'ALgeria'),
-                                itemLabel: (state) => state.name,
-                                onChanged: (value) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.updateSelectedState(
-                                            value?.name ?? ''),
+                                    builder: (context, state) {
+                                      if (state.viewState ==
+                                          ViewState.loading) {
+                                        return CircularProgressIndicator();
+                                      } else if (state.viewState ==
+                                          ViewState.success) {
+                                        return CustomDropDown<
+                                            StateResponseEntity>(
+                                          items: state.states,
+                                          selectedItem: state.states.firstWhere(
+                                            (state) =>
+                                                state.id == (state.id ?? 4),
+                                            orElse: () => StateResponseEntity(
+                                                id: 4, name: 'ALgeria'),
+                                          ),
+                                          itemLabel: (state) => state.name,
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.updateSelectedState(
+                                                      value?.name ?? ''),
+                                                );
+                                          },
+                                        );
+                                      }
+                                      return Center(
+                                        child: Text(
+                                            'Unexpected state encountered'),
                                       );
-                                },
-                              );
-                            }
-                            return Center(
-                              child: Text('Unexpected state encountered'),
-                            );
-                          },
-                        ),
+                                    },
+                                  ),
 
                         // SizedBox(height: 29.v),
                         // _buildCity(context),

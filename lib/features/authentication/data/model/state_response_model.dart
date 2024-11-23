@@ -8,7 +8,7 @@ class StateResponseModel extends StateResponseEntity {
 
   factory StateResponseModel.fromJson(Map<String, dynamic> json) {
     return StateResponseModel(
-      id: json['id'] as String? ?? '',
+      id: json['id'] as int ?? 0,
       name: json['name'] as String? ?? '',
     );
   }

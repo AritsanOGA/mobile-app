@@ -74,184 +74,83 @@ class _JSCreateAccountPagetThreeScreenState
                             builder: (context, state) {
                               return CustomDropDown<String>(
                                 title: "Educational Qualification",
-                                items: authBloc.genders,
-                                selectedItem: authBloc.genders.first,
+                                items: authBloc.educationalQualification,
+                                selectedItem: state.educationalQualification ??
+                                    'No Education',
                                 //  state.gender ?? "--Select--",
                                 itemLabel: (gender) => gender,
                                 onChanged: (value) {
                                   context.read<AuthBloc>().add(
-                                        AuthEvent.updateSelectedGender(
-                                            value ?? ''),
+                                        AuthEvent
+                                            .updateSelectedEducationQualification(
+                                                value ?? ''),
                                       );
+                                  print('ssss ${value}');
                                 },
                               );
                             },
                           ),
-                          // Padding(
-                          //     padding: EdgeInsets.symmetric(horizontal: 3.h),
-                          //     child: CustomDropDown(
-                          //         title: "Educational Qualification",
-                          //         icon: Container(
-                          //             padding: EdgeInsets.all(3.h),
-                          //             margin: EdgeInsets.fromLTRB(
-                          //                 30.h, 14.v, 20.h, 14.v),
-                          //             decoration: BoxDecoration(
-                          //                 color: theme.colorScheme.primary,
-                          //                 borderRadius:
-                          //                     BorderRadius.circular(9.h)),
-                          //             child: CustomImageView(
-                          //                 imagePath: ImageConstant.imgCheckmark,
-                          //                 height: 11.adaptSize,
-                          //                 width: 11.adaptSize)),
-                          //         hintText:
-                          //             authBloc.selectedEducationalQualification,
-                          //         items: authBloc.educationalQualification,
-                          //         onChanged: (value) {
-                          //           setState(() {
-                          //             selectedEducationOption = value;
-                          //           });
-                          //         })),
-                          SizedBox(height: 28.v),
-                          // selectedEducationOption == "Yes"
-                          //     ? Align(
-                          //         alignment: Alignment.centerLeft,
-                          //         child: Padding(
-                          //             padding: EdgeInsets.only(left: 3.h),
-                          //             child: Text("School Name",
-                          //                 style: theme.textTheme.bodyMedium)))
-                          //     : SizedBox(),
-                          // SizedBox(height: 6.v),
-                          // selectedEducationOption == "Yes"
-                          //     ?
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'School Name',
-                                  controller: schoolNameController,
-                                  hintText: "Enter School Name",
-                                  hintStyle: theme.textTheme.titleSmall!)),
-                          // : SizedBox(),
-                          SizedBox(height: 27.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'School Name',
-                                  controller: schoolNameController,
-                                  hintText: "Enter School Name",
-                                  hintStyle: theme.textTheme.titleSmall!)),
-                          // : SizedBox(),
-                          SizedBox(height: 27.v),
-                          // selectedEducationOption == "Yes"
-                          //     ?
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  title: 'Graduation Year',
-                                  controller: courseNameController,
-                                  hintText: "Enter Graduation Year",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
-                          // : SizedBox(),
-                          SizedBox(height: 27.v),
-                          CustomTextFormField(
-                              title: 'Certificate Obtained',
-                              controller: courseNameController,
-                              hintText: "Enter Certificate",
-                              hintStyle: theme.textTheme.titleSmall!,
-                              textInputAction: TextInputAction.done),
-
-                          /*
-
- SizedBox(height: 27.v),
-                          Text(
-                            "Do you have any relevant awards?",
-                            textAlign: TextAlign.start,
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                              if (state.educationalQualification ==
+                                  "No Education") {
+                                return SizedBox();
+                              } else {
+                                return Column(
+                                  children: [
+                                    SizedBox(height: 28.v),
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'School Name',
+                                            controller: schoolNameController,
+                                            hintText: "Enter School Name",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!)),
+                                    // : SizedBox(),
+                                    SizedBox(height: 27.v),
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'School Name',
+                                            controller: schoolNameController,
+                                            hintText: "Enter School Name",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!)),
+                                    // : SizedBox(),
+                                    SizedBox(height: 27.v),
+                                    // selectedEducationOption == "Yes"
+                                    //     ?
+                                    Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.h),
+                                        child: CustomTextFormField(
+                                            title: 'Graduation Year',
+                                            controller: courseNameController,
+                                            hintText: "Enter Graduation Year",
+                                            hintStyle:
+                                                theme.textTheme.titleSmall!,
+                                            textInputAction:
+                                                TextInputAction.done)),
+                                    // : SizedBox(),
+                                    SizedBox(height: 27.v),
+                                    CustomTextFormField(
+                                        title: 'Certificate Obtained',
+                                        controller: courseNameController,
+                                        hintText: "Enter Certificate",
+                                        hintStyle: theme.textTheme.titleSmall!,
+                                        textInputAction: TextInputAction.done),
+                                  ],
+                                );
+                              }
+                            },
                           ),
-                          SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Award Title",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 7.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 3.h),
-                              child: CustomTextFormField(
-                                  controller: awardTitleController,
-                                  hintText: "Enter Award title",
-                                  hintStyle: theme.textTheme.titleSmall!,
-                                  textInputAction: TextInputAction.done)),
-                          SizedBox(height: 27.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Award Year",
-                                      style: theme.textTheme.bodyMedium))),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: double.maxFinite,
-                              child: GestureDetector(
-                                  onTap: (() {
-                                    _showDatePickerBottomSheet(context);
-                                  }),
-                                  child: Padding(
-                                      padding: EdgeInsets.only(right: 10.h),
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              width: 180.h,
-                                              child: Text(selectedDate),
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 10, vertical: 12),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(6)),
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color: Color.fromARGB(
-                                                          255, 220, 219, 219))),
-                                            )
-                                          ])))),
 
-                         */
                           SizedBox(height: 54.v),
                           CustomElevatedButton(
                             onPressed: (() {
-                              // //retrieve data from hive store
-                              // var newUserData =
-                              //     Hive.box("artisan").get("new_applicant");
-
-                              // //update the array of maps
-                              // //push each item from the form to the array
-
-                              // newUserData.add({
-                              //   "educational_qualification":
-                              //       selectedEducationOption
-                              // });
-
-                              // newUserData.add(
-                              //     {"school_name": schoolNameController.text});
-
-                              // newUserData.add(
-                              //     {"course_name": courseNameController.text});
-
-                              // newUserData.add(
-                              //     {"award_title": awardTitleController.text});
-
-                              // newUserData.add({
-                              //   "award_year": enterAwardYearController.text
-                              // });
-
-                              // //re-save the updated array
-
-                              // Hive.box("artisan")
-                              //     .put("new_applicant", newUserData);
-
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(

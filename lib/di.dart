@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/services/local_storage.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
 import 'package:artisan_oga/features/authentication/data/reposotories/auth_repository_impl.dart';
@@ -11,8 +12,10 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_emp
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'features/authentication/data/data_source/auth_local_datasource.dart';
@@ -23,7 +26,10 @@ Future<void> init() async {
   final sharedPref = await SharedPreferences.getInstance();
   locator
     ..registerLazySingleton<Dio>(() => Dio())
+    ..registerLazySingleton(Connectivity.new)
+    ..registerSingleton<Logger>(Logger())
     ..registerLazySingleton<ApiService>(() => ApiServiceImpl(locator()))
+    ..registerLazySingleton<FilePickerService>(() => FilePickerService())
     ..registerLazySingleton<SharedPreferences>(() => sharedPref)
     ..registerLazySingleton<AuthRemoteDataSource>(
         () => AuthRemoteDataSourceImpl(locator()))

@@ -10,7 +10,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedState;
   const factory AuthEvent.updateSelectedCity(String value) =
       _UpdateSelectedCity;
-  const factory AuthEvent.updateSelectedCategory(String value) =
+  const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
   const factory AuthEvent.updateSelectedSkill(String value) =
       _UpdateSelectedSkill;
@@ -18,9 +18,11 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedJobType;
   const factory AuthEvent.updateSelectedEducationQualification(String value) =
       _UpdateSelectedEducationQualification;
+  const factory AuthEvent.updateEmploymentHistory(String value) =
+      _UpdateEmploymentHistory;
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
-
+  const factory AuthEvent.selectCompanyLogo() = _SelectCompanyLogo;
   const factory AuthEvent.updateSelectedIsChecked(bool value) =
       _UpdateSelectedIsChecked;
   const factory AuthEvent.updateSelectedPassport(File value) =
@@ -29,7 +31,9 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedResume;
   const factory AuthEvent.loginUser(LoginEntity param) = _LoginUser;
   const factory AuthEvent.getCountries() = _GetCountries;
-  const factory AuthEvent.getState() = _GetState;
+  const factory AuthEvent.getState(String id) = _GetState;
+  const factory AuthEvent.getCategory() = _GetCategory;
+  const factory AuthEvent.getSkills(String id) = _GetSkills;
   const factory AuthEvent.registerEmployer({
     required String fullName,
     required String officeTitle,

@@ -55,14 +55,30 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final result = await api.get(
       url: AppApiEndpoint.getCountry,
     ) as Map<String, dynamic>;
+    print('hi boo $result');
 
-    return List<dynamic>.from(result['data'] as List)
-        .map(
-          (e) => CountryResponseModel.fromJson(
-            e as Map<String, dynamic>,
-          ),
-        )
-        .toList();
+    try {
+      final rawData = result['data'];
+      if (rawData is List<dynamic>) {
+        List<CountryResponseEntity> contrrr = rawData
+            .where((item) => item is Map<String, dynamic>)
+            .map(
+              (e) => CountryResponseModel.fromJson(
+                e as Map<String, dynamic>,
+              ),
+            )
+            .toList();
+
+        print('Parsed Countries: $contrrr');
+        return contrrr;
+      } else {
+        throw Exception('Expected a list in result["data"], but got: $rawData');
+      }
+    } catch (e, stackTrace) {
+      print('Error parsing countries: $e');
+      print('StackTrace: $stackTrace');
+      throw Exception('Failed to parse countries');
+    }
   }
 
   @override
@@ -83,7 +99,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<List<CategoryResponseEntity>> getCategory() async {
     final result = await api.get(
-      url: AppApiEndpoint.getState,
+      url: AppApiEndpoint.getCategories,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)

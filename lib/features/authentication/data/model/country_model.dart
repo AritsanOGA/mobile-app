@@ -8,7 +8,7 @@ class CountryResponseModel extends CountryResponseEntity {
 
   factory CountryResponseModel.fromJson(Map<String, dynamic> json) {
     return CountryResponseModel(
-      id: json['id'] as String? ?? '',
+      id: json['id'] as int ?? 0,
       name: json['name'] as String? ?? '',
     );
   }
