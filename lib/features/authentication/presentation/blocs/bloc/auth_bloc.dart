@@ -54,6 +54,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedGender>(_onUpdateSelectedGender);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
+    on<_SelectPassport>(_onSelectPassport);
+    on<_SelectResume>(_onSelectResume);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);
@@ -341,5 +343,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
     emit(state.copyWith(file: File(image)));
+  }
+
+  FutureOr<void> _onSelectPassport(
+      _SelectPassport event, Emitter<AuthState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    emit(state.copyWith(picture: File(image)));
+  }
+
+  FutureOr<void> _onSelectResume(
+      _SelectResume event, Emitter<AuthState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    emit(state.copyWith(resume: File(image)));
   }
 }

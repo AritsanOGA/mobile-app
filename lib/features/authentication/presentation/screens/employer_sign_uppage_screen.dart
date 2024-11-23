@@ -8,19 +8,14 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../../../core/services/auth.dart';
 
 // ignore_for_file: must_be_immutable
-class EmployerSignUpPageScreen extends StatefulWidget {
-  @override
-  _EmployerSignUpPageScreenState createState() =>
-      _EmployerSignUpPageScreenState();
-}
-
-class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
+class EmployerSignUpPageScreen extends HookWidget {
   TextEditingController _emailFieldController = TextEditingController();
 
   TextEditingController _passwordFieldController = TextEditingController();
@@ -32,6 +27,9 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final emailController = useTextEditingController();
+    final passwordController = useTextEditingController();
+    final confirmPasswordController = useTextEditingController();
     final authBloc = BlocProvider.of<AuthBloc>(context);
     return BlocProvider(
         create: (context) => AuthBloc(),
@@ -64,24 +62,27 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
                                   CustomTextFormField(
                                     title: 'Email',
                                     hintText: 'example@gmail.com',
+                                    controller: emailController,
                                   ),
 
-                                  SizedBox(height: 32.v),
+                                  SizedBox(height: 30.v),
 
                                   CustomTextFormField(
                                     title: 'Password',
                                     hintText: '*************',
                                     isPassword: true,
+                                    controller: passwordController,
                                   ),
 
-                                  SizedBox(height: 32.v),
+                                  SizedBox(height: 30.v),
 
                                   CustomTextFormField(
                                     title: 'Confirm Password',
                                     hintText: '*************',
                                     isPassword: true,
+                                    controller: confirmPasswordController,
                                   ),
-                                  SizedBox(height: 44.v),
+                                  SizedBox(height: 45.v),
                                   CustomElevatedButton(
                                     text: 'Next',
                                     onPressed: () {
@@ -131,155 +132,5 @@ class _EmployerSignUpPageScreenState extends State<EmployerSignUpPageScreen> {
                                               color:
                                                   theme.colorScheme.onPrimary)))
                                 ])))))));
-  }
-
-  /// Section Widget
-  // PreferredSizeWidget _buildAppBar(BuildContext context) {
-  //   return CustomAppBar(
-  //       leadingWidth: 38.h,
-  //       leading: AppbarLeadingImage(
-  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
-  //           margin: EdgeInsets.only(left: 22.h, top: 17.v, bottom: 22.v),
-  //           onTap: () {
-  //             onTapArrowLeft(context);
-  //           }),
-  //       centerTitle: true,
-  //       title: AppbarTitle(text: "Sign Up"));
-  // }
-
-  /// Section Widget
-  Widget _buildEmailField(BuildContext context) {
-    return CustomTextFormField(
-        title: 'Password',
-        controller: _emailFieldController,
-        hintText: "example@gmail.com",
-        hintStyle: theme.textTheme.titleSmall!,
-        textInputType: TextInputType.emailAddress);
-  }
-
-  /// Section Widget
-  Widget _buildPasswordField(BuildContext context) {
-    return CustomTextFormField(
-        title: 'Password',
-        controller: _passwordFieldController,
-        hintText: "*************",
-        textInputType: TextInputType.visiblePassword,
-        suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgEleyeclose,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
-        suffixConstraints: BoxConstraints(maxHeight: 48.v),
-        obscureText: true,
-        contentPadding: EdgeInsets.only(left: 20.h, top: 15.v, bottom: 15.v));
-  }
-
-  /// Section Widget
-  Widget _buildConfirmPasswordField(BuildContext context) {
-    return CustomTextFormField(
-        title: 'Password',
-        controller: _confirmPasswordFieldController,
-        hintText: "*************",
-        hintStyle: theme.textTheme.titleSmall!,
-        // textInputAction: TextInputAction.done,
-        textInputType: TextInputType.visiblePassword,
-        suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgEleyeclose,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
-        suffixConstraints: BoxConstraints(maxHeight: 48.v),
-        obscureText: true,
-        contentPadding: EdgeInsets.only(left: 20.h, top: 15.v, bottom: 15.v));
-  }
-
-  /// Section Widget
-  Widget _buildNextButton(BuildContext context) {
-    return CustomElevatedButton(
-      onPressed: (() {
-        if (_emailFieldController.text.isNotEmpty &&
-            _passwordFieldController.text.isNotEmpty &&
-            _confirmPasswordFieldController.text.isNotEmpty) {
-          if (_passwordFieldController.text ==
-              _confirmPasswordFieldController.text) {
-            var newEmployerInfo = [
-              _emailFieldController.text,
-              _passwordFieldController.text
-            ];
-
-            EasyLoading.show();
-            Auth()
-                .checkEmailExists(
-                  email: _emailFieldController.text,
-                )
-                .then((value) => {
-                      //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
-                      if (value == "EXISTS")
-                        {
-                          print(value.toString()),
-                          EasyLoading.dismiss(),
-                          Fluttertoast.showToast(
-                              msg: "That email is already in use, try another",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.CENTER,
-                              timeInSecForIosWeb: 1,
-                              backgroundColor:
-                                  const Color.fromARGB(255, 86, 86, 86)
-                                      .withOpacity(0.6),
-                              textColor: Colors.white,
-                              fontSize: 16.0),
-
-                          // Navigator.pushNamed(context, EmployerLogin()),
-                        }
-                      else
-                        {
-                          print(value.toString()),
-                          //  Navigator.pop(context),
-                          EasyLoading.dismiss(),
-                          // Navigator.pop(context),
-                          //  EasyLoading.showToast(value.toString())
-
-                          Hive.box("artisan")
-                              .put("new_employer_info", newEmployerInfo),
-
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.bottomToTop,
-                                  child: EmployerSignuppageOneScreen()))
-                        }
-                    });
-          } else {
-            Fluttertoast.showToast(
-                msg: "Please confirm your password properly!",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                timeInSecForIosWeb: 1,
-                backgroundColor:
-                    const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
-                textColor: Colors.white,
-                fontSize: 16.0);
-          }
-        } else {
-          Fluttertoast.showToast(
-              msg: "Please fill all fields",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.CENTER,
-              timeInSecForIosWeb: 1,
-              backgroundColor:
-                  const Color.fromARGB(255, 86, 86, 86).withOpacity(0.6),
-              textColor: Colors.white,
-              fontSize: 16.0);
-        }
-      }),
-      text: "Next",
-    );
-  }
-
-  /// Navigates back to the previous screen.
-  onTapArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }
