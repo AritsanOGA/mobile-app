@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -200,25 +201,44 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                 ),
                               ],
                             ),
-                         
+
                             SizedBox(height: 45.v),
 
-                            CustomElevatedButton(
-                              onPressed: (() {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JSCreateAccountPagetTwoScreen()),
-                                );
-                                // if (firstNameController.text.isNotEmpty &&
-                                //     lastNameController.text.isNotEmpty &&
-                                //     phoneController.text.isNotEmpty &&
-                                //     emailController.text.isNotEmpty &&
-                                //     passwordController.text.isNotEmpty) {
-                              }),
-                              text: "Next",
-                            ),
+                            // BlocSelector<AuthBloc, AuthState,
+                            //     RegisterJobSeekerEntity>(
+                            //   selector: (state) {
+                            //    return state.registerEmployerRequest
+                            //   },
+                            //   builder: (context, state) {
+                            //     return CustomElevatedButton(
+                            //       onPressed: (() {
+                            //         context.read<AuthBloc>().add(
+                            //               AuthEvent
+                            //                   .updateRegisterEmployerRequest(
+                            //                 registerEmployerRequest.copyWith(
+                            //                   email: emailController.text,
+                            //                   password: passwordController.text,
+                            //                   comfirmPassword:
+                            //                       passwordController.text,
+                            //                 ),
+                            //               ),
+                            //             );
+                            //         Navigator.push(
+                            //           context,
+                            //           MaterialPageRoute(
+                            //               builder: (context) =>
+                            //                   JSCreateAccountPagetTwoScreen()),
+                            //         );
+                            //         // if (firstNameController.text.isNotEmpty &&
+                            //         //     lastNameController.text.isNotEmpty &&
+                            //         //     phoneController.text.isNotEmpty &&
+                            //         //     emailController.text.isNotEmpty &&
+                            //         //     passwordController.text.isNotEmpty) {
+                            //       }),
+                            //       text: "Next",
+                            //     );
+                            //   },
+                            // ),
                             //    _buildNext(context),
                             SizedBox(height: 21.v),
                             GestureDetector(

@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_emp
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -49,6 +50,8 @@ Future<void> init() async {
     ..registerLazySingleton<StateUseCase>(() => StateUseCase(locator()))
     ..registerLazySingleton<CategoryUseCase>(() => CategoryUseCase(locator()))
     ..registerLazySingleton<SkillUseCase>(() => SkillUseCase(locator()))
+    ..registerLazySingleton<VerifyCodeUseCase>(
+        () => VerifyCodeUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(
         () => GetUserDataUseCase(locator()));
 }

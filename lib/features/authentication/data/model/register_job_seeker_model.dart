@@ -1,5 +1,5 @@
-
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
+import 'package:dio/dio.dart';
 
 class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
   const RegisterJobSeekerModel({
@@ -8,13 +8,11 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
     required super.confirmPassword,
     required super.country,
     required super.fullName,
-    required super.officeTitle,
     required super.companyName,
     required super.state,
     required super.city,
     required super.passport,
     required super.resume,
-    required super.isChecked,
     required super.gender,
     required super.phoneNumber,
     required super.jobType,
@@ -34,6 +32,9 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
     required super.educationalQualification,
     required super.certificateObtained,
     required super.graduationYear,
+    required super.streetAddress,
+    required super.courseName,
+    required super.employmentHistory,
   });
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
@@ -45,8 +46,6 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         fullName: entity.fullName,
         companyName: entity.companyName,
         state: entity.state,
-        isChecked: entity.isChecked,
-        officeTitle: entity.officeTitle,
         city: entity.city,
         passport: entity.passport,
         resume: entity.resume,
@@ -69,9 +68,12 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         graduationYear: entity.graduationYear,
         certificateObtained: entity.certificateObtained,
         educationalQualification: entity.educationalQualification,
+        streetAddress: entity.streetAddress,
+        courseName: entity.courseName,
+        employmentHistory: entity.employmentHistory,
       );
 
-  Map<String, dynamic> toJson() => {
+  FormData toJson() => FormData.fromMap({
         'email': email,
         'password': password,
         'password_confirmation': confirmPassword,
@@ -79,11 +81,16 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'fullname': fullName,
         'company_name': companyName,
         'states': state,
-        'isChecked': isChecked,
-        'officeTitle': officeTitle,
+        'employment_history': employmentHistory,
         'city': city,
-        'passport': passport,
-        'resume': resume,
+        'passport': MultipartFile.fromFile(
+          "${passport?.path}",
+          filename: "${passport?.path.split('/').last}",
+        ),
+        'resume': MultipartFile.fromFile(
+          "${resume?.path}",
+          filename: "${resume?.path.split('/').last}",
+        ),
         'gender': gender,
         'phone': phoneNumber,
         'DateOfBirth': dateOFBirth,
@@ -100,9 +107,10 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'guarantor_address': residentialAddress,
         'job_type': jobType,
         'years_of_experience': yearsOfExperience,
-        'job_role': role
-        // guarantor_phone
-        // 'course_name': companyName
-        //'StreetAddress':
-      };
+        'job_title': role,
+        'course_name': courseName,
+        'StreetAddress': streetAddress,
+        'job_description': describeYourRole,
+        'service_description': description,
+      });
 }

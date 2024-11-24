@@ -117,6 +117,8 @@ class EmployerLoginPageScreen extends HookWidget {
                         ),
                       ),
                       SizedBox(height: 41.v),
+
+
                       BlocBuilder<AuthBloc, AuthState>(
                         builder: (context, state) {
                           return CustomElevatedButton(

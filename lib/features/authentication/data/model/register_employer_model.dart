@@ -57,25 +57,5 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
     return toJson().toString();
   }
 
-  // Future<http.MultipartRequest> toMultipart() async {
-  //   final request = http.MultipartRequest();
 
-  //   request.fields.addAll({
-  //     'email': email,
-  //     'password': password,
-  //     'confirm_password': password,
-  //     'country': country,
-  //     'fullName': fullName,
-  //     'company_name': companyName,
-  //     'state': state,
-  //     'city': city,
-  //     'gender': gender,
-  //     'phone': phoneNumber,
-  //     'business_name': companyName,
-  //     'title': officeTitle
-  //   });
-  //   request.files.add(
-  //       await http.MultipartFile.fromPath('logo', companyLogo?.path ?? ''));
-  //   return request;
-  // }
 }

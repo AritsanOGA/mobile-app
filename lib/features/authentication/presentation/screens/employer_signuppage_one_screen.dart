@@ -327,7 +327,25 @@ class EmployerSignuppageOneScreen extends HookWidget {
                           },
                         ),
                         SizedBox(height: 35.v),
-                        BlocBuilder<AuthBloc, AuthState>(
+                        BlocConsumer<AuthBloc, AuthState>(
+                          listener: (context, state) {
+                            if (state.viewState == ViewState.success) {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.verifyEmployerScreen);
+                              // Navigator.pushReplacement(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => HomeScreen(),
+                              //   ),
+                              // );
+                            } else if (state.viewState == ViewState.failure) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: Text(
+                                        state.errorMessage ?? 'Login failed')),
+                              );
+                            }
+                          },
                           builder: (context, state) {
                             return CustomElevatedButton(
                               text: "Submit",

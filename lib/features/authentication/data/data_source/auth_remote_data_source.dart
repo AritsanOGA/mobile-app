@@ -8,8 +8,10 @@ import 'package:artisan_oga/features/authentication/data/model/category_model.da
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/login_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_employer_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/register_job_seeker_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/verify_code_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
@@ -18,6 +20,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_emp
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
@@ -28,6 +31,7 @@ abstract class AuthRemoteDataSource {
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
   Future<List<SkillResponseEntity>> getSkill(String categoryId);
+  Future<bool> verifyCode(VerifyCodeEntity entity);
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -140,8 +144,31 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity) {
-    // TODO: implement registerJobSeeker
-    throw UnimplementedError();
+  Future<AuthResultEntity> registerJobSeeker(
+      RegisterJobSeekerEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.signup,
+      body: RegisterJobSeekerModel.fromEntity(entity).toJson(),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    );
+
+    return AuthResultModel.fromJson(result as Map<String, dynamic>);
+  }
+
+  @override
+  Future<bool> verifyCode(VerifyCodeEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.verifyCode,
+      body: VerifyCodeModel.fromEntity(entity).toJson(),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    );
+
+    return result;
   }
 }

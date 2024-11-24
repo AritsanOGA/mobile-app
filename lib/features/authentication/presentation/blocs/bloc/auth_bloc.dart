@@ -11,6 +11,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_emp
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
@@ -18,6 +19,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_emp
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +37,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       CategoryUseCase? categoryUseCase,
       SkillUseCase? skillUseCase,
       FilePickerService? filePickerService,
-      StateUseCase? stateUseCase})
+      StateUseCase? stateUseCase,
+      VerifyCodeUseCase? verifyCodeUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
         _loginUseCase = loginUseCase ?? locator(),
@@ -44,9 +47,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _categoryUseCase = categoryUseCase ?? locator(),
         _skillUseCase = skillUseCase ?? locator(),
         _filePickerService = filePickerService ?? locator(),
+        _verifyCodeUseCase = verifyCodeUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
+    on<_UpdateRegisterJobSeekerRequest>(_onUpdateRegisterJobSeekerRequest);
     on<_UpdateSelectedCity>(_onUpdateSelectedCity);
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
@@ -67,6 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
     on<_GetSkills>(_onGetSkill);
+    on<_VerifyCode>(_onVerifyCode);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -77,6 +83,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final SkillUseCase _skillUseCase;
   final StateUseCase _stateUseCase;
   final FilePickerService _filePickerService;
+  final VerifyCodeUseCase _verifyCodeUseCase;
 
   final String selectedGender = '--Selected--';
   final List<String> genders = ['--Selected--', 'Male', 'Female', 'Other'];
@@ -168,22 +175,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _RegisterEmployer event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _registerEmployerUseCase(event.param
-            // RegisterEmployerEntity(
-            //       email: event.email,
-            //       password: event.pasword,
-            //       fullName: event.fullName,
-            //       country: state.country?.name ?? '',
-            //       gender: state.gender ?? '',
-            //       city: event.city,
-            //       state: state.state?.name ?? '',
-            //       companyLogo: state.file!,
-            //       companyName: event.companyName,
-            //       phoneNumber: event.phoneNumber,
-            //       officeTitle: event.officeTitle,
-            //       confirmPassword: event.confirmPassword)
-            )
-        .then((value) {
+    await _registerEmployerUseCase(event.param).then((value) {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
     });
@@ -243,41 +235,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _RegisterJobSeeker event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _registerJobSeekerUseCase(event.param
-            // RegisterJobSeekerEntity(
-            //       email: event.email,
-            //       password: event.password,
-            //       fullName: event.fullName,
-            //       country: state.country ?? '',
-            //       gender: state.gender ?? '',
-            //       city: state.city ?? '',
-            //       state: state.state ?? '',
-            //       isChecked: state.isChecked,
-            //       passport: state.picture!,
-            //       resume: state.resume!,
-            //       confirmPassword: event.confirmPassword,
-            //       companyName: event.companyName,
-            //       phoneNumber: event.phoneNumber,
-            //       officeTitle: event.officeTitle,
-            //       jobType: state.jobType ?? '',
-            //       skill: state.skills ?? '',
-            //       guarantorEmail: event.guarantorEmail,
-            //       role: event.role,
-            //       guarantorName: event.guarantorName,
-            //       yearsOfExperience: event.yearsOfExperience,
-            //       describeYourRole: '',
-            //       residentialAddress: event.residentialAddress,
-            //       description: event.description,
-            //       startYear: event.startYear,
-            //       endYear: event.endYear,
-            //       educationalQualification: state.educationalQualification ?? '',
-            //       category: state.category ?? '',
-            //       certificateObtained: event.certificateObtained,
-            //       schoolName: event.schoolName,
-            //       dateOFBirth: event.dateOFBirth,
-            //       graduationYear: event.graduationYear)
-            )
-        .then((value) {
+    await _registerJobSeekerUseCase(event.param).then((value) {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
     });
@@ -370,6 +328,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       state.copyWith(
         registerEmployerRequest: event.registerEmployerRequest,
       ),
+    );
+  }
+
+  FutureOr<void> _onVerifyCode(
+      _VerifyCode event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+
+    await _verifyCodeUseCase(event.value).then((value) {
+      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(viewState: ViewState.success)));
+    });
+  }
+
+  FutureOr<void> _onUpdateRegisterJobSeekerRequest(
+      _UpdateRegisterJobSeekerRequest event, Emitter<AuthState> emit) {
+    emit(
+      state.copyWith(),
     );
   }
 }

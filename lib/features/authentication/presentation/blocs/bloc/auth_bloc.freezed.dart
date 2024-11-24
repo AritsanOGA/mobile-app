@@ -37,12 +37,15 @@ mixin _$AuthEvent {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -66,12 +69,15 @@ mixin _$AuthEvent {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -95,12 +101,15 @@ mixin _$AuthEvent {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -133,12 +142,15 @@ mixin _$AuthEvent {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -164,12 +176,15 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -195,12 +210,15 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -311,12 +329,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -343,12 +364,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -375,12 +399,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -419,12 +446,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -453,12 +483,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -487,12 +520,15 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -600,12 +636,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -632,12 +671,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -664,12 +706,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -708,12 +753,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -742,12 +790,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -776,12 +827,15 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -888,12 +942,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -920,12 +977,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -952,12 +1012,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -996,12 +1059,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -1030,12 +1096,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1064,12 +1133,15 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1176,12 +1248,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -1208,12 +1283,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1240,12 +1318,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1284,12 +1365,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -1318,12 +1402,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1352,12 +1439,15 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1466,12 +1556,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -1498,12 +1591,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1530,12 +1626,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1574,12 +1673,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -1608,12 +1710,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1642,12 +1747,15 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1754,12 +1862,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -1786,12 +1897,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1818,12 +1932,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -1862,12 +1979,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -1896,12 +2016,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -1930,12 +2053,15 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2043,12 +2169,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -2075,12 +2204,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2107,12 +2239,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2151,12 +2286,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -2185,12 +2323,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2219,12 +2360,15 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2336,12 +2480,15 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -2368,12 +2515,15 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2400,12 +2550,15 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2444,12 +2597,15 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -2478,12 +2634,15 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2512,12 +2671,15 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2627,12 +2789,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -2659,12 +2824,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2691,12 +2859,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2735,12 +2906,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -2769,12 +2943,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2803,12 +2980,15 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -2917,12 +3097,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -2949,12 +3132,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -2981,12 +3167,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3025,12 +3214,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -3059,12 +3251,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3093,12 +3288,15 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3178,12 +3376,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -3210,12 +3411,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3242,12 +3446,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3286,12 +3493,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -3320,12 +3530,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3354,12 +3567,15 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3433,12 +3649,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -3465,12 +3684,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3497,12 +3719,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3541,12 +3766,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -3575,12 +3803,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3609,12 +3840,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3688,12 +3922,15 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -3720,12 +3957,15 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3752,12 +3992,15 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -3796,12 +4039,15 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -3830,12 +4076,15 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3864,12 +4113,15 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -3972,12 +4224,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -4004,12 +4259,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4036,12 +4294,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4080,12 +4341,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -4114,12 +4378,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4148,12 +4415,15 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4262,12 +4532,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -4294,12 +4567,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4326,12 +4602,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4370,12 +4649,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -4404,12 +4686,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4438,12 +4723,15 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4551,12 +4839,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -4583,12 +4874,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4615,12 +4909,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4659,12 +4956,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -4693,12 +4993,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4727,12 +5030,15 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -4753,6 +5059,310 @@ abstract class _UpdateSelectedResume implements AuthEvent {
   @JsonKey(ignore: true)
   _$$UpdateSelectedResumeImplCopyWith<_$UpdateSelectedResumeImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyCodeImplCopyWith<$Res> {
+  factory _$$VerifyCodeImplCopyWith(
+          _$VerifyCodeImpl value, $Res Function(_$VerifyCodeImpl) then) =
+      __$$VerifyCodeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({VerifyCodeEntity value});
+}
+
+/// @nodoc
+class __$$VerifyCodeImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$VerifyCodeImpl>
+    implements _$$VerifyCodeImplCopyWith<$Res> {
+  __$$VerifyCodeImplCopyWithImpl(
+      _$VerifyCodeImpl _value, $Res Function(_$VerifyCodeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$VerifyCodeImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as VerifyCodeEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyCodeImpl implements _VerifyCode {
+  const _$VerifyCodeImpl(this.value);
+
+  @override
+  final VerifyCodeEntity value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.verifyCode(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyCodeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyCodeImplCopyWith<_$VerifyCodeImpl> get copyWith =>
+      __$$VerifyCodeImplCopyWithImpl<_$VerifyCodeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPassport,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+  }) {
+    return verifyCode(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPassport,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+  }) {
+    return verifyCode?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPassport,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (verifyCode != null) {
+      return verifyCode(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return verifyCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return verifyCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (verifyCode != null) {
+      return verifyCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyCode implements AuthEvent {
+  const factory _VerifyCode(final VerifyCodeEntity value) = _$VerifyCodeImpl;
+
+  VerifyCodeEntity get value;
+  @JsonKey(ignore: true)
+  _$$VerifyCodeImplCopyWith<_$VerifyCodeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4838,12 +5448,15 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -4870,12 +5483,15 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4902,12 +5518,15 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -4946,12 +5565,15 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -4980,12 +5602,15 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5014,12 +5639,15 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5098,12 +5726,15 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -5130,12 +5761,15 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5162,12 +5796,15 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5206,12 +5843,15 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -5240,12 +5880,15 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5274,12 +5917,15 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5379,12 +6025,15 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -5411,12 +6060,15 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5443,12 +6095,15 @@ class _$GetStateImpl implements _GetState {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5487,12 +6142,15 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -5521,12 +6179,15 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5555,12 +6216,15 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5639,12 +6303,15 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -5671,12 +6338,15 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5703,12 +6373,15 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5747,12 +6420,15 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -5781,12 +6457,15 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5815,12 +6494,15 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -5927,12 +6609,15 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -5959,12 +6644,15 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -5991,12 +6679,15 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6035,12 +6726,15 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -6069,12 +6763,15 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6103,12 +6800,15 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6130,6 +6830,320 @@ abstract class _UpdateRegisterEmployerRequest implements AuthEvent {
   @JsonKey(ignore: true)
   _$$UpdateRegisterEmployerRequestImplCopyWith<
           _$UpdateRegisterEmployerRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateRegisterJobSeekerRequestImplCopyWith<$Res> {
+  factory _$$UpdateRegisterJobSeekerRequestImplCopyWith(
+          _$UpdateRegisterJobSeekerRequestImpl value,
+          $Res Function(_$UpdateRegisterJobSeekerRequestImpl) then) =
+      __$$UpdateRegisterJobSeekerRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RegisterJobSeekerEntity registerJobSeekerRequest});
+}
+
+/// @nodoc
+class __$$UpdateRegisterJobSeekerRequestImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateRegisterJobSeekerRequestImpl>
+    implements _$$UpdateRegisterJobSeekerRequestImplCopyWith<$Res> {
+  __$$UpdateRegisterJobSeekerRequestImplCopyWithImpl(
+      _$UpdateRegisterJobSeekerRequestImpl _value,
+      $Res Function(_$UpdateRegisterJobSeekerRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registerJobSeekerRequest = null,
+  }) {
+    return _then(_$UpdateRegisterJobSeekerRequestImpl(
+      null == registerJobSeekerRequest
+          ? _value.registerJobSeekerRequest
+          : registerJobSeekerRequest // ignore: cast_nullable_to_non_nullable
+              as RegisterJobSeekerEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRegisterJobSeekerRequestImpl
+    implements _UpdateRegisterJobSeekerRequest {
+  const _$UpdateRegisterJobSeekerRequestImpl(this.registerJobSeekerRequest);
+
+  @override
+  final RegisterJobSeekerEntity registerJobSeekerRequest;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateRegisterJobSeekerRequest(registerJobSeekerRequest: $registerJobSeekerRequest)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateRegisterJobSeekerRequestImpl &&
+            (identical(
+                    other.registerJobSeekerRequest, registerJobSeekerRequest) ||
+                other.registerJobSeekerRequest == registerJobSeekerRequest));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, registerJobSeekerRequest);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateRegisterJobSeekerRequestImplCopyWith<
+          _$UpdateRegisterJobSeekerRequestImpl>
+      get copyWith => __$$UpdateRegisterJobSeekerRequestImplCopyWithImpl<
+          _$UpdateRegisterJobSeekerRequestImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPassport,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+  }) {
+    return updateRegisterJobSeekerRequest(registerJobSeekerRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPassport,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+  }) {
+    return updateRegisterJobSeekerRequest?.call(registerJobSeekerRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPassport,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateRegisterJobSeekerRequest != null) {
+      return updateRegisterJobSeekerRequest(registerJobSeekerRequest);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+  }) {
+    return updateRegisterJobSeekerRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+  }) {
+    return updateRegisterJobSeekerRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    required TResult orElse(),
+  }) {
+    if (updateRegisterJobSeekerRequest != null) {
+      return updateRegisterJobSeekerRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateRegisterJobSeekerRequest implements AuthEvent {
+  const factory _UpdateRegisterJobSeekerRequest(
+          final RegisterJobSeekerEntity registerJobSeekerRequest) =
+      _$UpdateRegisterJobSeekerRequestImpl;
+
+  RegisterJobSeekerEntity get registerJobSeekerRequest;
+  @JsonKey(ignore: true)
+  _$$UpdateRegisterJobSeekerRequestImplCopyWith<
+          _$UpdateRegisterJobSeekerRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -6216,12 +7230,15 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -6248,12 +7265,15 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6280,12 +7300,15 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6324,12 +7347,15 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -6358,12 +7384,15 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6392,12 +7421,15 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6503,12 +7535,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -6535,12 +7570,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6567,12 +7605,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6611,12 +7652,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -6645,12 +7689,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6679,12 +7726,15 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6791,12 +7841,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
     required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
     required TResult Function(LoginEntity param) loginUser,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
     required TResult Function(String id) getSkills,
     required TResult Function(RegisterEmployerEntity param) registerEmployer,
     required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
@@ -6823,12 +7876,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
     TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
     TResult? Function(LoginEntity param)? loginUser,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(String id)? getSkills,
     TResult? Function(RegisterEmployerEntity param)? registerEmployer,
     TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6855,12 +7911,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
     TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
     TResult Function(LoginEntity param)? loginUser,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
     TResult Function(String id)? getSkills,
     TResult Function(RegisterEmployerEntity param)? registerEmployer,
     TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
@@ -6899,12 +7958,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(_UpdateSelectedPassport value)
         updateSelectedPassport,
     required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
     required TResult Function(_LoginUser value) loginUser,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
     required TResult Function(_GetSkills value) getSkills,
     required TResult Function(_RegisterEmployer value) registerEmployer,
     required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
@@ -6933,12 +7995,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
     TResult? Function(_LoginUser value)? loginUser,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult? Function(_GetSkills value)? getSkills,
     TResult? Function(_RegisterEmployer value)? registerEmployer,
     TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -6967,12 +8032,15 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
     TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
     TResult Function(_LoginUser value)? loginUser,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
     TResult Function(_GetSkills value)? getSkills,
     TResult Function(_RegisterEmployer value)? registerEmployer,
     TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
@@ -7018,7 +8086,7 @@ mixin _$AuthState {
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
   SkillResponseEntity? get skills => throw _privateConstructorUsedError;
   RegisterEmployerEntity get registerEmployerRequest =>
-      throw _privateConstructorUsedError;
+      throw _privateConstructorUsedError; //RegisterJobSeekerEntity registerJobSeekerRequest,
   File? get resume => throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   List<CountryResponseEntity> get countries =>
@@ -7636,6 +8704,7 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final RegisterEmployerEntity registerEmployerRequest;
+//RegisterJobSeekerEntity registerJobSeekerRequest,
   @override
   final File? resume;
   final List<StateResponseEntity> _states;
@@ -8078,7 +9147,7 @@ abstract class _Initial implements AuthState {
   SkillResponseEntity? get skills;
   @override
   RegisterEmployerEntity get registerEmployerRequest;
-  @override
+  @override //RegisterJobSeekerEntity registerJobSeekerRequest,
   File? get resume;
   @override
   List<StateResponseEntity> get states;

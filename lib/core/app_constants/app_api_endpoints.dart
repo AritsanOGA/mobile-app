@@ -15,7 +15,7 @@ class AppApiEndpoint {
   static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
   static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
 
-  static Uri uploadUserImage = baseUri.replace(path: '/api/v1/user/image');
+  static Uri verifyCode = baseUri.replace(path: 'api/v1/verify-code');
 
   //! Team
   static Uri followTeam(String teamId) =>

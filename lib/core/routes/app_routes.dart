@@ -1,4 +1,6 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/presentation/employer_dashboard_page/employer_dashboard_page.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
@@ -45,7 +47,7 @@ import '../../presentation/update_profile_page_three_screen/update_profile_page_
 import '../../presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
-    static final navigatorKey = GlobalKey<NavigatorState>();
+  static final navigatorKey = GlobalKey<NavigatorState>();
 
   static const String welcomePageScreen = '/welcome_page_screen';
 
@@ -173,6 +175,8 @@ class AppRoutes {
       '/update_profile_page_three_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
+  static const String verifyEmployerScreen = '/verify_employer_screen';
+  static const String verifyJobSeekerScreen = '/verify_job_seeker_screen';
 
   static Map<String, WidgetBuilder> routes = {
     welcomePageScreen: (context) => WelcomePageScreen(),
@@ -229,7 +233,7 @@ class AppRoutes {
     appNavigationScreen: (context) => AppNavigationScreen()
   };
 
-    static Route<dynamic>? generateRoute(RouteSettings settings) {
+  static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case welcomePageScreen:
         return AppPageRouteBuilder(
@@ -246,21 +250,21 @@ class AppRoutes {
 
       case employerSignUppageScreen:
         return AppPageRouteBuilder(
-          navigateTo:  EmployerSignUpPageScreen(),
+          navigateTo: EmployerSignUpPageScreen(),
         );
 
       case employerSignuppageOneScreen:
         return AppPageRouteBuilder(
           navigateTo: EmployerSignuppageOneScreen(),
         );
-      // case verifyPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: VerifyScreen(),
-      //   );
-      // case newPasswordPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const NewPasswordScreen(),
-      //   );
+      case verifyEmployerScreen:
+        return AppPageRouteBuilder(
+          navigateTo: VerifyEmployerScreen(),
+        );
+      case verifyJobSeekerScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const VerifyJobSeekerScreen(),
+        );
 
       case successfulPageScreen:
         return AppPageRouteBuilder(
@@ -286,19 +290,19 @@ class AppRoutes {
         );
       case searchResultPageScreen:
         return AppPageRouteBuilder(
-          navigateTo:  SearchResultPageScreen(),
+          navigateTo: SearchResultPageScreen(),
         );
       case jSCreateAccountPageFourScreen:
         return AppPageRouteBuilder(
-          navigateTo:  JSCreateAccountPageFourScreen(),
+          navigateTo: JSCreateAccountPageFourScreen(),
         );
       case jSCreateAccountPageFiveScreen:
         return AppPageRouteBuilder(
-          navigateTo:  JSCreateAccountPageFiveScreen(),
+          navigateTo: JSCreateAccountPageFiveScreen(),
         );
       case employerDashboardPage:
         return AppPageRouteBuilder(
-          navigateTo:  EmployerDashboardPage(),
+          navigateTo: EmployerDashboardPage(),
         );
       // case paymentSuccessfulPage:
       //   return AppPageRouteBuilder(
@@ -343,5 +347,4 @@ class AppRoutes {
         );
     }
   }
-
 }

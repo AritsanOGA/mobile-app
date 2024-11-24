@@ -2,7 +2,7 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/routes/app_routes.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/theme/theme_helper.dart';
@@ -12,10 +12,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pinput/pinput.dart';
 
-import '../blocs/bloc/auth_bloc.dart';
-
-class VerifyEmployerScreen extends HookWidget {
-  const VerifyEmployerScreen({super.key});
+class VerifyJobSeekerScreen extends HookWidget {
+  const VerifyJobSeekerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class VerifyEmployerScreen extends HookWidget {
         listener: (context, state) {
           if (state.viewState == ViewState.success) {
             print('suceess');
-            Navigator.pushNamed(context, AppRoutes.employerDashboardPage);
+            Navigator.pushNamed(context, AppRoutes.dashboardScreen);
           } else if (state.viewState == ViewState.failure) {
             showDialog<Widget>(
               context: context,
@@ -47,7 +45,6 @@ class VerifyEmployerScreen extends HookWidget {
             ),
             child: Center(
               child: Column(
-                //  crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 40.v),
                   Text('Verify Code', style: theme.textTheme.headlineSmall),
@@ -113,13 +110,7 @@ class VerifyEmployerScreen extends HookWidget {
                         theme.textTheme.headlineSmall?.copyWith(fontSize: 13),
                   ),
                   SizedBox(height: 40.v),
-                  CustomElevatedButton(
-                      onPressed: () {
-                        context.read<AuthBloc>()
-                          ..add(AuthEvent.verifyCode(VerifyCodeEntity(
-                              code: otpController.text, email: '')));
-                      },
-                      text: 'Verify')
+                  CustomElevatedButton(onPressed: () {}, text: 'Verify')
                 ],
               ),
             ),

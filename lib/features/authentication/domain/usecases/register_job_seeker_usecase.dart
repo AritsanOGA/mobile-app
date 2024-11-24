@@ -10,6 +10,6 @@ class RegisterJobSeekerUseCase
   final AuthRepository repository;
   @override
   Future<Either<Failure, bool>> call(RegisterJobSeekerEntity params) {
-    return repository.RegisterJobSeeker(params);
+    return repository.registerJobSeeker(params);
   }
 }

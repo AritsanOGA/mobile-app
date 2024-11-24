@@ -12,6 +12,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_emp
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -106,12 +107,33 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> RegisterJobSeeker(
+  Future<Either<Failure, bool>> registerJobSeeker(
       RegisterJobSeekerEntity param) async {
     try {
       final result = await authRemoteDataSource.registerJobSeeker(param);
-      await localDataSource.cacheUser(result);
-      UserService().authData = result;
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
+      return const Right(true);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> verifyCode(VerifyCodeEntity param) async {
+    try {
+      final result = await authRemoteDataSource.verifyCode(param);
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
