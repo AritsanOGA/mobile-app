@@ -15,7 +15,7 @@ class UserService {
 
   Map<String, String> get authorizationHeader {
     return {
-      'Authorization': 'Bearer ${authData?.accessToken}',
+      'Authorization': 'Bearer ${authData?.user.token}',
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     };
@@ -23,13 +23,13 @@ class UserService {
 
   Future<void> setUserData(UserEntity userEntity) async {
     final authLocal = locator<AuthLocalDataSource>();
-    await authLocal.cacheUser(
-      AuthResultEntity(
-        accessToken: authData!.accessToken,
-        refreshToken: authData!.refreshToken,
-        user: userEntity,
-      ),
-    );
+    // await authLocal.cacheUser(
+    //   AuthResultEntity(
+    //     accessToken: authData!.accessToken,
+    //     refreshToken: authData!.refreshToken,
+    //     user: userEntity,
+    //   ),
+    // );
   }
 
   Future<void> getAuthResult() async {

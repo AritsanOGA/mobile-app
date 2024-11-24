@@ -11,7 +11,7 @@ abstract class ApiService {
   //? For making get request to the endpoint
   Future<dynamic> get({
     required Uri url,
-     Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   });
 
@@ -55,7 +55,8 @@ class ApiServiceImpl implements ApiService {
   ApiServiceImpl(this._dio) {
     _dio.options.baseUrl = AppApiEndpoint.baseUri.toString();
     _dio.options.sendTimeout = Duration(seconds: AppApiEndpoint.sendTimeout);
-    _dio.options.receiveTimeout =   Duration(seconds: AppApiEndpoint.receiveTimeout);
+    _dio.options.receiveTimeout =
+        Duration(seconds: AppApiEndpoint.receiveTimeout);
 
     _dio.interceptors.add(
       InterceptorsWrapper(
@@ -86,7 +87,7 @@ class ApiServiceImpl implements ApiService {
   @override
   Future<dynamic> get({
     required Uri url,
-     Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   }) async {
     _log.i(
@@ -116,26 +117,33 @@ class ApiServiceImpl implements ApiService {
     required dynamic body,
     Map<String, String>? headers,
   }) async {
-    final jsonBody = jsonEncode(body);
-    _log.i(
-      'Making Post Request to $url with the following data'
-      ' \n${jsonBody.substring(0, jsonBody.length ~/ 2)}',
-    );
+    //final jsonBody = jsonEncode(body);
+    print('hiii $body');
+    // _log.i(
+    //   'Making Post Request to $url with the following data'
+    //   ' \n${jsonBody.substring(0, jsonBody.length ~/ 2)}',
+    // );
     try {
       final response = await _dio.post<Map<String, dynamic>>(
         url.toString(),
         data: body,
         options: Options(
-          headers: headers,
-        ),
+            headers: headers,
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 500;
+            }),
+        // options: Options(
+        //   headers: headers,
+        // ),
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
     } on DioException catch (error, trace) {
-      _log.e('Error from $url', error: error.response?.data['message']);
+      _log.e('Error from ', error: error.response?.statusCode);
       throw ServerException(
         trace: trace,
-        message: error.response?.data['message'] as String?,
+        message: error.response?.data,
       );
     }
   }

@@ -62,11 +62,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> registerEmployer(RegisterEmployerEntity param) async {
+  Future<Either<Failure, bool>> registerEmployer(
+      RegisterEmployerEntity param) async {
     try {
       final result = await authRemoteDataSource.registerEmployer(param);
-      await localDataSource.cacheUser(result);
-      UserService().authData = result;
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -105,8 +106,9 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> RegisterJobSeeker(RegisterJobSeekerEntity param)  async{
-      try {
+  Future<Either<Failure, bool>> RegisterJobSeeker(
+      RegisterJobSeekerEntity param) async {
+    try {
       final result = await authRemoteDataSource.registerJobSeeker(param);
       await localDataSource.cacheUser(result);
       UserService().authData = result;
@@ -123,5 +125,5 @@ class AuthRepositoryImpl implements AuthRepository {
         ),
       );
     }
-}
+  }
 }

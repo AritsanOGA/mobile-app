@@ -26,6 +26,7 @@ class EmployerLoginPageScreen extends HookWidget {
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state.viewState == ViewState.success) {
+              print('suceess');
               Navigator.pushNamed(context, AppRoutes.employerDashboardPage);
             } else if (state.viewState == ViewState.success) {
               showDialog<Widget>(
@@ -66,8 +67,7 @@ class EmployerLoginPageScreen extends HookWidget {
                         "Login to your account as an employer",
                         style: CustomTextStyles.bodyMediumGray700_2,
                       ),
-                      SizedBox(height: 52.v),
-                      SizedBox(height: 7.v),
+                      SizedBox(height: 60.v),
                       CustomTextFormField(
                         title: 'Password',
                         controller: emailController,

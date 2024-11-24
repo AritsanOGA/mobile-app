@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
@@ -28,8 +31,10 @@ abstract class AuthRemoteDataSource {
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
-  AuthRemoteDataSourceImpl(this.api);
+  AuthRemoteDataSourceImpl(this.api, this._userService);
   final ApiService api;
+  final UserService _userService;
+
   @override
   Future<AuthResultEntity> login(LoginEntity entity) async {
     final result = await api.post(
@@ -42,10 +47,18 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<AuthResultEntity> registerEmployer(
       RegisterEmployerEntity entity) async {
+    print('bbbo ${RegisterEmployerModel.fromEntity(entity).toJson()}');
     final result = await api.post(
       url: AppApiEndpoint.signup,
       body: RegisterEmployerModel.fromEntity(entity).toJson(),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
     );
+    print(
+        'Request Body: ${jsonEncode(RegisterEmployerModel.fromEntity(entity).toJson())}');
+    print('bbbosss ${RegisterEmployerModel.fromEntity(entity).toJson()}');
 
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
   }

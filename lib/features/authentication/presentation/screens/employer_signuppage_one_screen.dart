@@ -1,9 +1,8 @@
-import 'dart:io';
-
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:artisan_oga/core/services/auth.dart';
+
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -15,7 +14,6 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerSignuppageOneScreen extends HookWidget {
@@ -171,7 +169,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                       onChanged: (value) {
                                         context.read<AuthBloc>().add(
                                               AuthEvent.updateSelectedState(
-                                                  value?.name ?? ''),
+                                                  value!),
                                             );
                                       },
                                     );
@@ -329,9 +327,33 @@ class EmployerSignuppageOneScreen extends HookWidget {
                           },
                         ),
                         SizedBox(height: 35.v),
-                        CustomElevatedButton(
-                          text: "Submit",
-                          onPressed: (() {}),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            return CustomElevatedButton(
+                              text: "Submit",
+                              onPressed: (() {
+                                debugPrint(
+                                    'state ${state.country?.name}  ${state.state?.name} ${state.file} ${fullNameController.text} ');
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.registerEmployer(
+                                        state.registerEmployerRequest.copyWith(
+                                          fullName: fullNameController.text,
+                                          officeTitle:
+                                              officeTitleController.text,
+                                          companyName:
+                                              companyNameController.text,
+                                          state: state.state?.name ?? '',
+                                          city: cityController.text,
+                                          companyLogo: state.file!,
+                                          gender: state.gender ?? '',
+                                          country: state.country?.name ?? '',
+                                          phoneNumber: phoneController.text,
+                                        ),
+                                      ),
+                                    );
+                              }),
+                            );
+                          },
                         ),
                       ]))))),
     );

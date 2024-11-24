@@ -107,8 +107,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                 itemLabel: (state) => state.name,
                                 onChanged: (value) {
                                   context.read<AuthBloc>().add(
-                                        AuthEvent.updateSelectedState(
-                                            value?.name ?? ''),
+                                        AuthEvent.updateSelectedState(value!),
                                       );
                                 },
                               );

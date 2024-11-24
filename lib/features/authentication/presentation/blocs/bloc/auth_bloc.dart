@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/category_res
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
@@ -45,6 +46,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _filePickerService = filePickerService ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
+    on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
     on<_UpdateSelectedCity>(_onUpdateSelectedCity);
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
@@ -150,12 +152,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
     emit(state.copyWith(file: File(image)));
-    //   emit(state.copyWith(file: event.value));
   }
 
   FutureOr<void> _onUpdateSelectedState(
       _UpdateSelectedState event, Emitter<AuthState> emit) {
-    // emit(state.copyWith(state: event.value));
+    emit(state.copyWith(state: event.value));
   }
 
   FutureOr<void> _onUpdateSelectedIsChecked(
@@ -167,19 +168,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _RegisterEmployer event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _registerEmployerUseCase(RegisterEmployerEntity(
-            email: event.email,
-            password: event.pasword,
-            fullName: event.fullName,
-            country: state.country?.name ?? '',
-            gender: state.gender ?? '',
-            city: state.city ?? '',
-            state: state.state?.name ?? '',
-            isChecked: state.isChecked,
-            companyLogo: state.file!,
-            companyName: event.companyName,
-            phoneNumber: event.phoneNumber,
-            officeTitle: event.officeTitle))
+    await _registerEmployerUseCase(event.param
+            // RegisterEmployerEntity(
+            //       email: event.email,
+            //       password: event.pasword,
+            //       fullName: event.fullName,
+            //       country: state.country?.name ?? '',
+            //       gender: state.gender ?? '',
+            //       city: event.city,
+            //       state: state.state?.name ?? '',
+            //       companyLogo: state.file!,
+            //       companyName: event.companyName,
+            //       phoneNumber: event.phoneNumber,
+            //       officeTitle: event.officeTitle,
+            //       confirmPassword: event.confirmPassword)
+            )
         .then((value) {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
@@ -240,42 +243,44 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _RegisterJobSeeker event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    // await _registerJobSeekerUseCase(RegisterJobSeekerEntity(
-    //         email: event.email,
-    //         password: event.password,
-    //         fullName: event.fullName,
-    //         country: state.country ?? '',
-    //         gender: state.gender ?? '',
-    //         city: state.city ?? '',
-    //         state: state.state ?? '',
-    //         isChecked: state.isChecked,
-    //         passport: state.picture!,
-    //         resume: state.resume!,
-    //         confirmPassword: event.confirmPassword,
-    //         companyName: event.companyName,
-    //         phoneNumber: event.phoneNumber,
-    //         officeTitle: event.officeTitle,
-    //         jobType: state.jobType ?? '',
-    //         skill: state.skills ?? '',
-    //         guarantorEmail: event.guarantorEmail,
-    //         role: event.role,
-    //         guarantorName: event.guarantorName,
-    //         yearsOfExperience: event.yearsOfExperience,
-    //         describeYourRole: '',
-    //         residentialAddress: event.residentialAddress,
-    //         description: event.description,
-    //         startYear: event.startYear,
-    //         endYear: event.endYear,
-    //         educationalQualification: state.educationalQualification ?? '',
-    //         category: state.category ?? '',
-    //         certificateObtained: event.certificateObtained,
-    //         schoolName: event.schoolName,
-    //         dateOFBirth: event.dateOFBirth,
-    //         graduationYear: event.graduationYear))
-    //     .then((value) {
-    //   value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-    //       (result) => emit(state.copyWith(viewState: ViewState.success)));
-    // });
+    await _registerJobSeekerUseCase(event.param
+            // RegisterJobSeekerEntity(
+            //       email: event.email,
+            //       password: event.password,
+            //       fullName: event.fullName,
+            //       country: state.country ?? '',
+            //       gender: state.gender ?? '',
+            //       city: state.city ?? '',
+            //       state: state.state ?? '',
+            //       isChecked: state.isChecked,
+            //       passport: state.picture!,
+            //       resume: state.resume!,
+            //       confirmPassword: event.confirmPassword,
+            //       companyName: event.companyName,
+            //       phoneNumber: event.phoneNumber,
+            //       officeTitle: event.officeTitle,
+            //       jobType: state.jobType ?? '',
+            //       skill: state.skills ?? '',
+            //       guarantorEmail: event.guarantorEmail,
+            //       role: event.role,
+            //       guarantorName: event.guarantorName,
+            //       yearsOfExperience: event.yearsOfExperience,
+            //       describeYourRole: '',
+            //       residentialAddress: event.residentialAddress,
+            //       description: event.description,
+            //       startYear: event.startYear,
+            //       endYear: event.endYear,
+            //       educationalQualification: state.educationalQualification ?? '',
+            //       category: state.category ?? '',
+            //       certificateObtained: event.certificateObtained,
+            //       schoolName: event.schoolName,
+            //       dateOFBirth: event.dateOFBirth,
+            //       graduationYear: event.graduationYear)
+            )
+        .then((value) {
+      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(viewState: ViewState.success)));
+    });
   }
 
   FutureOr<void> _onUpdateSelectedEducationQualification(
@@ -330,7 +335,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onUpdateSelectedSkill(
       _UpdateSelectedSkill event, Emitter<AuthState> emit) {
-    //  emit(state.copyWith(skill: event.value));
+    emit(state.copyWith(skills: event.value));
   }
 
   FutureOr<void> _onUpdateSelectedCategory(
@@ -357,5 +362,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
     emit(state.copyWith(resume: File(image)));
+  }
+
+  FutureOr<void> _onUpdateRegisterEmployerRequest(
+      _UpdateRegisterEmployerRequest event, Emitter<AuthState> emit) {
+    emit(
+      state.copyWith(
+        registerEmployerRequest: event.registerEmployerRequest,
+      ),
+    );
   }
 }

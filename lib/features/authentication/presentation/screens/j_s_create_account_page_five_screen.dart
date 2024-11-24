@@ -113,7 +113,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 onChanged: (value) {
                                   context.read<AuthBloc>().add(
                                         AuthEvent.updateSelectedSkill(
-                                            value?.name ?? ''),
+                                            value!),
                                       );
                                 },
                               );

@@ -1,4 +1,5 @@
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -50,7 +51,7 @@ class SignupOptionsPageScreen extends StatelessWidget {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: EmployerSignUpPageScreen()));
+                            child: VerifyEmployerScreen()));
                   }),
                   // height: 51.v,
                   text: "Register as an Employer",

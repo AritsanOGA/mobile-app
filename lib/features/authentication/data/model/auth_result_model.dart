@@ -36,33 +36,25 @@ import 'package:artisan_oga/features/authentication/domain/entities/auth_result_
 
 class AuthResultModel extends AuthResultEntity {
   const AuthResultModel({
-    super.success,
-    required super.accessToken,
-    required super.refreshToken,
+    // super.success,
+    required super.success,
     required UserModel user,
   }) : super(user: user);
 
   factory AuthResultModel.fromJson(Map<String, dynamic> json) =>
       AuthResultModel(
-        success: json['msg'] as bool?,
-        accessToken: json['accessToken'] as String,
-        refreshToken: json['refreshToken'] as String? ?? '',
-        user: UserModel.fromJson(json['data']['user'] as Map<String, dynamic>),
+        success: json['msg'] as String?,
+        user: UserModel.fromJson(json['data'] as Map<String, dynamic>),
       );
 
   factory AuthResultModel.fromEntity(AuthResultEntity entity) =>
       AuthResultModel(
-        accessToken: entity.accessToken,
-        refreshToken: entity.refreshToken,
         success: entity.success,
         user: UserModel.fromEntity(entity.user),
       );
 
   Map<String, dynamic> toJson() => {
-        'accessToken': accessToken,
-        'refreshToken': refreshToken,
-        'data': {
-          'user': (user as UserModel).toJson(),
-        },
+        'msg': success,
+        'data': (user as UserModel).toJson(),
       };
 }
