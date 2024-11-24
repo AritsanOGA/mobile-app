@@ -1,9 +1,12 @@
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/presentation/post_job_one_page/post_job_one_page.dart';
 import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
@@ -80,10 +83,33 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
             SizedBox(height: 19.v),
             SizedBox(height: 25.v),
             _buildFeaturedCandidatesRow(context),
-            // UserprofilelistItemWidget(
-            //   fullName: 'Anu',
-            //   phone: '09052729928',
-            // ),
+            BlocBuilder<HomeBloc, HomeState>(
+              bloc: context.read<HomeBloc>()
+                ..add(HomeEvent.getFeaturedCandidates()),
+              builder: (context, state) {
+                if (state.viewState == ViewState.loading) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                if (state.viewState == ViewState.failure) {
+                  return Center(child: Text('Error: '));
+                }
+
+                if (state.featureCandidateList.isEmpty) {
+                  return Center(child: Text('No items found.'));
+                }
+
+                return ListView.builder(
+                  itemCount: state.featureCandidateList.length,
+                  itemBuilder: (context, index) {
+                    return UserprofilelistItemWidget(
+                      fullName: state.featureCandidateList[index].fullName,
+                      phone: state.featureCandidateList[index].jobType,
+                    );
+                  },
+                );
+              },
+            ),
             SizedBox(height: 25.v),
 
             FutureBuilder<dynamic>(

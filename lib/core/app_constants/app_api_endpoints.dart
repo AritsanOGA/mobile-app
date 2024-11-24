@@ -18,8 +18,8 @@ class AppApiEndpoint {
   static Uri verifyCode = baseUri.replace(path: 'api/v1/verify-code');
 
   //! Team
-  static Uri followTeam(String teamId) =>
-      baseUri.replace(path: '/api/v1/user/teams/follow/$teamId');
+  static Uri getFeaturedCandidates =
+      baseUri.replace(path: '/api/v1/featured-candidates');
   static Uri unFollowTeam(String teamId) =>
       baseUri.replace(path: '/api/v1/user/teams/unfollow/$teamId');
 

@@ -23,13 +23,11 @@ class UserService {
 
   Future<void> setUserData(UserEntity userEntity) async {
     final authLocal = locator<AuthLocalDataSource>();
-    // await authLocal.cacheUser(
-    //   AuthResultEntity(
-    //     accessToken: authData!.accessToken,
-    //     refreshToken: authData!.refreshToken,
-    //     user: userEntity,
-    //   ),
-    // );
+    await authLocal.cacheUser(
+      AuthResultEntity(
+        user: userEntity,
+      ),
+    );
   }
 
   Future<void> getAuthResult() async {

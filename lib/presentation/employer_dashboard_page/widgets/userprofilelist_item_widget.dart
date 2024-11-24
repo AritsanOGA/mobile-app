@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -6,13 +7,15 @@ import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable
 class UserprofilelistItemWidget extends StatefulWidget {
+  //final FeaturedCandidateModel featuredCandidateModel;
   final String fullName;
   final String phone;
 
   const UserprofilelistItemWidget({
     Key? key,
     required this.fullName,
-    required this.phone,
+    required this.phone, 
+    //required this.featuredCandidateModel,
   }) : super(key: key);
 
   @override
