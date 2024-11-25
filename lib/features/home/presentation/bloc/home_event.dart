@@ -13,5 +13,7 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getAllJobs() = _GetAllJobs;
   const factory HomeEvent.getJobSeekerJobs() = _GetJobSeekerJobs;
   const factory HomeEvent.postJob(PostJobEntity param) = _PostJob;
+  const factory HomeEvent.updatePostJobRequest(PostJobEntity postJobRequest) =
+      _UpdatePostJobRequest;
   const factory HomeEvent.applyForJob(String id) = _ApplyForJob;
 }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../post_job_three_screen/post_job_three_screen.dart';

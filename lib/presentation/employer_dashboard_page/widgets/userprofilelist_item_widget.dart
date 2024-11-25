@@ -1,8 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable

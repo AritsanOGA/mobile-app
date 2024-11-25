@@ -1,4 +1,3 @@
-import 'package:artisan_oga/features/authentication/domain/entities/user_activation_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class UserEntity extends Equatable {

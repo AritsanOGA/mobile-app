@@ -1,5 +1,4 @@
 import 'package:artisan_oga/presentation/post_job_two_screen/post_job_two_screen.dart';
-import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';

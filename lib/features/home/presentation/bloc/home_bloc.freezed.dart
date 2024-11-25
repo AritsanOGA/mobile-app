@@ -25,6 +25,8 @@ mixin _$HomeEvent {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$HomeEvent {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,7 @@ mixin _$HomeEvent {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) =>
@@ -63,6 +67,7 @@ mixin _$HomeEvent {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +80,7 @@ mixin _$HomeEvent {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) =>
       throw _privateConstructorUsedError;
@@ -87,6 +93,7 @@ mixin _$HomeEvent {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) =>
@@ -155,6 +162,8 @@ class _$StartedImpl implements _Started {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return started();
@@ -170,6 +179,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return started?.call();
@@ -185,6 +195,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -205,6 +216,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return started(this);
@@ -220,6 +232,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return started?.call(this);
@@ -235,6 +248,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -295,6 +309,8 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return getFeaturedCandidates();
@@ -310,6 +326,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return getFeaturedCandidates?.call();
@@ -325,6 +342,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -345,6 +363,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getFeaturedCandidates(this);
@@ -360,6 +379,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getFeaturedCandidates?.call(this);
@@ -375,6 +395,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -434,6 +455,8 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return getFeaturedJob();
@@ -449,6 +472,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return getFeaturedJob?.call();
@@ -464,6 +488,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -484,6 +509,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getFeaturedJob(this);
@@ -499,6 +525,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getFeaturedJob?.call(this);
@@ -514,6 +541,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -573,6 +601,8 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return getEmployerJob();
@@ -588,6 +618,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return getEmployerJob?.call();
@@ -603,6 +634,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -623,6 +655,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getEmployerJob(this);
@@ -638,6 +671,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getEmployerJob?.call(this);
@@ -653,6 +687,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -712,6 +747,8 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return getAllJobs();
@@ -727,6 +764,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return getAllJobs?.call();
@@ -742,6 +780,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -762,6 +801,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getAllJobs(this);
@@ -777,6 +817,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getAllJobs?.call(this);
@@ -792,6 +833,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -851,6 +893,8 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return getJobSeekerJobs();
@@ -866,6 +910,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return getJobSeekerJobs?.call();
@@ -881,6 +926,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -901,6 +947,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getJobSeekerJobs(this);
@@ -916,6 +963,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getJobSeekerJobs?.call(this);
@@ -931,6 +979,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -1016,6 +1065,8 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return postJob(param);
@@ -1031,6 +1082,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return postJob?.call(param);
@@ -1046,6 +1098,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -1066,6 +1119,7 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return postJob(this);
@@ -1081,6 +1135,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return postJob?.call(this);
@@ -1096,6 +1151,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -1113,6 +1169,187 @@ abstract class _PostJob implements HomeEvent {
   @JsonKey(ignore: true)
   _$$PostJobImplCopyWith<_$PostJobImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdatePostJobRequestImplCopyWith<$Res> {
+  factory _$$UpdatePostJobRequestImplCopyWith(_$UpdatePostJobRequestImpl value,
+          $Res Function(_$UpdatePostJobRequestImpl) then) =
+      __$$UpdatePostJobRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostJobEntity postJobRequest});
+}
+
+/// @nodoc
+class __$$UpdatePostJobRequestImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UpdatePostJobRequestImpl>
+    implements _$$UpdatePostJobRequestImplCopyWith<$Res> {
+  __$$UpdatePostJobRequestImplCopyWithImpl(_$UpdatePostJobRequestImpl _value,
+      $Res Function(_$UpdatePostJobRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postJobRequest = null,
+  }) {
+    return _then(_$UpdatePostJobRequestImpl(
+      null == postJobRequest
+          ? _value.postJobRequest
+          : postJobRequest // ignore: cast_nullable_to_non_nullable
+              as PostJobEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
+  const _$UpdatePostJobRequestImpl(this.postJobRequest);
+
+  @override
+  final PostJobEntity postJobRequest;
+
+  @override
+  String toString() {
+    return 'HomeEvent.updatePostJobRequest(postJobRequest: $postJobRequest)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePostJobRequestImpl &&
+            (identical(other.postJobRequest, postJobRequest) ||
+                other.postJobRequest == postJobRequest));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, postJobRequest);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePostJobRequestImplCopyWith<_$UpdatePostJobRequestImpl>
+      get copyWith =>
+          __$$UpdatePostJobRequestImplCopyWithImpl<_$UpdatePostJobRequestImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return updatePostJobRequest(postJobRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return updatePostJobRequest?.call(postJobRequest);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (updatePostJobRequest != null) {
+      return updatePostJobRequest(postJobRequest);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return updatePostJobRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return updatePostJobRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (updatePostJobRequest != null) {
+      return updatePostJobRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdatePostJobRequest implements HomeEvent {
+  const factory _UpdatePostJobRequest(final PostJobEntity postJobRequest) =
+      _$UpdatePostJobRequestImpl;
+
+  PostJobEntity get postJobRequest;
+  @JsonKey(ignore: true)
+  _$$UpdatePostJobRequestImplCopyWith<_$UpdatePostJobRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1186,6 +1423,8 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
     required TResult Function(String id) applyForJob,
   }) {
     return applyForJob(id);
@@ -1201,6 +1440,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult? Function(String id)? applyForJob,
   }) {
     return applyForJob?.call(id);
@@ -1216,6 +1456,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
     TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
@@ -1236,6 +1477,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
     required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return applyForJob(this);
@@ -1251,6 +1493,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return applyForJob?.call(this);
@@ -1266,6 +1509,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
     TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
@@ -1299,6 +1543,7 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   List<JobSeekerJobResponseEntity> get jobSeekerJobList =>
       throw _privateConstructorUsedError;
+  PostJobEntity get postJobRequest => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -1308,7 +1553,8 @@ mixin _$HomeState {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -1321,7 +1567,8 @@ mixin _$HomeState {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -1334,7 +1581,8 @@ mixin _$HomeState {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)?
         initial,
     required TResult orElse(),
   }) =>
@@ -1373,7 +1621,8 @@ abstract class $HomeStateCopyWith<$Res> {
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
       List<FeaturedJobResponseEntity> featuredJobList,
-      List<JobSeekerJobResponseEntity> jobSeekerJobList});
+      List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      PostJobEntity postJobRequest});
 }
 
 /// @nodoc
@@ -1396,6 +1645,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? employerJobList = null,
     Object? featuredJobList = null,
     Object? jobSeekerJobList = null,
+    Object? postJobRequest = null,
   }) {
     return _then(_value.copyWith(
       errorMessage: freezed == errorMessage
@@ -1426,6 +1676,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.jobSeekerJobList
           : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
               as List<JobSeekerJobResponseEntity>,
+      postJobRequest: null == postJobRequest
+          ? _value.postJobRequest
+          : postJobRequest // ignore: cast_nullable_to_non_nullable
+              as PostJobEntity,
     ) as $Val);
   }
 }
@@ -1445,7 +1699,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
       List<FeaturedJobResponseEntity> featuredJobList,
-      List<JobSeekerJobResponseEntity> jobSeekerJobList});
+      List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      PostJobEntity postJobRequest});
 }
 
 /// @nodoc
@@ -1466,6 +1721,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? employerJobList = null,
     Object? featuredJobList = null,
     Object? jobSeekerJobList = null,
+    Object? postJobRequest = null,
   }) {
     return _then(_$InitialImpl(
       errorMessage: freezed == errorMessage
@@ -1496,6 +1752,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._jobSeekerJobList
           : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
               as List<JobSeekerJobResponseEntity>,
+      postJobRequest: null == postJobRequest
+          ? _value.postJobRequest
+          : postJobRequest // ignore: cast_nullable_to_non_nullable
+              as PostJobEntity,
     ));
   }
 }
@@ -1510,7 +1770,31 @@ class _$InitialImpl implements _Initial {
       final List<AllJobResponseEntity> allJobList = const [],
       final List<EmployerJobResponseEntity> employerJobList = const [],
       final List<FeaturedJobResponseEntity> featuredJobList = const [],
-      final List<JobSeekerJobResponseEntity> jobSeekerJobList = const []})
+      final List<JobSeekerJobResponseEntity> jobSeekerJobList = const [],
+      this.postJobRequest = const PostJobEntity(
+          jobTitle: '',
+          companyName: '',
+          category: '',
+          workType: '',
+          jobDescription: '',
+          skills: '',
+          position: '',
+          hireType: '',
+          categoryId: 0,
+          yearsOfExperience: 0,
+          levelOfEducation: '',
+          skillLevel: '',
+          maxAmount: 0,
+          minAmount: 0,
+          country: '',
+          state: '',
+          city: '',
+          available: '',
+          availableFor: '',
+          compensationType: '',
+          gender: '',
+          officeAddress: '',
+          applicationDeadline: '')})
       : _featureCandidateList = featureCandidateList,
         _allJobList = allJobList,
         _employerJobList = employerJobList,
@@ -1570,8 +1854,12 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  @JsonKey()
+  final PostJobEntity postJobRequest;
+
+  @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, viewState: $viewState, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList)';
+    return 'HomeState.initial(errorMessage: $errorMessage, viewState: $viewState, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, postJobRequest: $postJobRequest)';
   }
 
   @override
@@ -1592,7 +1880,9 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality()
                 .equals(other._featuredJobList, _featuredJobList) &&
             const DeepCollectionEquality()
-                .equals(other._jobSeekerJobList, _jobSeekerJobList));
+                .equals(other._jobSeekerJobList, _jobSeekerJobList) &&
+            (identical(other.postJobRequest, postJobRequest) ||
+                other.postJobRequest == postJobRequest));
   }
 
   @override
@@ -1604,7 +1894,8 @@ class _$InitialImpl implements _Initial {
       const DeepCollectionEquality().hash(_allJobList),
       const DeepCollectionEquality().hash(_employerJobList),
       const DeepCollectionEquality().hash(_featuredJobList),
-      const DeepCollectionEquality().hash(_jobSeekerJobList));
+      const DeepCollectionEquality().hash(_jobSeekerJobList),
+      postJobRequest);
 
   @JsonKey(ignore: true)
   @override
@@ -1622,11 +1913,12 @@ class _$InitialImpl implements _Initial {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)
         initial,
   }) {
     return initial(errorMessage, viewState, featureCandidateList, allJobList,
-        employerJobList, featuredJobList, jobSeekerJobList);
+        employerJobList, featuredJobList, jobSeekerJobList, postJobRequest);
   }
 
   @override
@@ -1639,11 +1931,19 @@ class _$InitialImpl implements _Initial {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)?
         initial,
   }) {
-    return initial?.call(errorMessage, viewState, featureCandidateList,
-        allJobList, employerJobList, featuredJobList, jobSeekerJobList);
+    return initial?.call(
+        errorMessage,
+        viewState,
+        featureCandidateList,
+        allJobList,
+        employerJobList,
+        featuredJobList,
+        jobSeekerJobList,
+        postJobRequest);
   }
 
   @override
@@ -1656,13 +1956,14 @@ class _$InitialImpl implements _Initial {
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
-            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
+            List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            PostJobEntity postJobRequest)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
       return initial(errorMessage, viewState, featureCandidateList, allJobList,
-          employerJobList, featuredJobList, jobSeekerJobList);
+          employerJobList, featuredJobList, jobSeekerJobList, postJobRequest);
     }
     return orElse();
   }
@@ -1704,7 +2005,8 @@ abstract class _Initial implements HomeState {
       final List<AllJobResponseEntity> allJobList,
       final List<EmployerJobResponseEntity> employerJobList,
       final List<FeaturedJobResponseEntity> featuredJobList,
-      final List<JobSeekerJobResponseEntity> jobSeekerJobList}) = _$InitialImpl;
+      final List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      final PostJobEntity postJobRequest}) = _$InitialImpl;
 
   @override
   String? get errorMessage;
@@ -1720,6 +2022,8 @@ abstract class _Initial implements HomeState {
   List<FeaturedJobResponseEntity> get featuredJobList;
   @override
   List<JobSeekerJobResponseEntity> get jobSeekerJobList;
+  @override
+  PostJobEntity get postJobRequest;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

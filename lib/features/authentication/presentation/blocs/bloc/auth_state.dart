@@ -37,6 +37,7 @@ class AuthState with _$AuthState {
       fullName: '',
       companyLogo: null,
     ))
+    RegisterEmployerEntity registerEmployerRequest,
     @Default(RegisterJobSeekerEntity(
         fullName: '',
         companyName: '',
@@ -70,8 +71,7 @@ class AuthState with _$AuthState {
         graduationYear: '',
         courseName: '',
         employmentHistory: ''))
-    RegisterEmployerEntity registerEmployerRequest,
-    //RegisterJobSeekerEntity registerJobSeekerRequest,
+    RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
     @Default([]) List<StateResponseEntity> states,
     @Default([]) List<CountryResponseEntity> countries,

@@ -10,7 +10,6 @@ import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../../core/services/default.dart';
-import '../../shared/widgets/custom_drop_down.dart';
 
 // ignore_for_file: must_be_immutable
 class UpdateProfilePageOneScreen extends StatefulWidget {

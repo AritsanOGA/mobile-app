@@ -6,7 +6,6 @@ import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../core/utils/app_formatter.dart';
 import '../../core/services/default.dart';

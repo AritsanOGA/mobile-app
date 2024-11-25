@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -6,23 +5,15 @@ import 'package:artisan_oga/features/authentication/domain/entities/category_res
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hive/hive.dart';
-import 'package:image_picker/image_picker.dart';
 
-import '../../../../core/services/auth.dart';
-import '../../../../core/services/default.dart';
 import 'j_s_create_account_page_six_screen.dart';
-import '../../../../presentation/js_account_create_success/js_account_create_success.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFiveScreen extends HookWidget {

@@ -69,7 +69,7 @@ class CustomAlertDialog extends StatelessWidget {
               ),
               TextButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
+                  padding: WidgetStateProperty.all(
                     EdgeInsets.zero,
                   ),
                 ),
@@ -93,7 +93,7 @@ class CustomAlertDialog extends StatelessWidget {
                 ),
                 TextButton(
                   style: ButtonStyle(
-                    padding: MaterialStateProperty.all(
+                    padding: WidgetStateProperty.all(
                       EdgeInsets.zero,
                     ),
                   ),

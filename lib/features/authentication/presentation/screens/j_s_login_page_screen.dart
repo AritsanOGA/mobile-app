@@ -1,16 +1,12 @@
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/presentation/dashboard_screen/dashboard_screen.dart';
-import 'package:artisan_oga/core/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 import 'j_s_create_account_page_one_screen.dart';
 

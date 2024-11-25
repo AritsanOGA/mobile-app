@@ -1,8 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/home/data/model/all_job_reponse_model.dart';
 import 'package:artisan_oga/features/home/data/model/employer_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
@@ -54,7 +52,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
         // FeaturedCandidateModel.fromEntity(entity).toJson(),
         ) as Map<String, dynamic>;
 
-    return FeaturedCandidateModel.fromJson(result as Map<String, dynamic>);
+    return FeaturedCandidateModel.fromJson(result);
   }
 
   @override
@@ -123,6 +121,6 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
         // FeaturedCandidateModel.fromEntity(entity).toJson(),
         ) as Map<String, dynamic>;
 
-    return PostJobModel.fromJson(result as Map<String, dynamic>);
+    return PostJobModel.fromJson(result);
   }
 }

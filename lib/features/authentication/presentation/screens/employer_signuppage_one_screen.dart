@@ -2,7 +2,6 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';

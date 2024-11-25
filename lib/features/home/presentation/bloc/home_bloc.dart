@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
-import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';

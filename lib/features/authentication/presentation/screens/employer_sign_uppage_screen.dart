@@ -8,12 +8,8 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../../../core/services/auth.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerSignUpPageScreen extends HookWidget {

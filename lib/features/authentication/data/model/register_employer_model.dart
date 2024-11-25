@@ -1,6 +1,5 @@
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:dio/dio.dart';
-import 'package:http/http.dart' as http;
 
 class RegisterEmployerModel extends RegisterEmployerEntity {
   const RegisterEmployerModel({

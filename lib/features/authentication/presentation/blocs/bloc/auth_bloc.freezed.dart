@@ -8086,7 +8086,9 @@ mixin _$AuthState {
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
   SkillResponseEntity? get skills => throw _privateConstructorUsedError;
   RegisterEmployerEntity get registerEmployerRequest =>
-      throw _privateConstructorUsedError; //RegisterJobSeekerEntity registerJobSeekerRequest,
+      throw _privateConstructorUsedError;
+  RegisterJobSeekerEntity get registerJobSeekerRequest =>
+      throw _privateConstructorUsedError;
   File? get resume => throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   List<CountryResponseEntity> get countries =>
@@ -8120,6 +8122,7 @@ mixin _$AuthState {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -8154,6 +8157,7 @@ mixin _$AuthState {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -8188,6 +8192,7 @@ mixin _$AuthState {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -8248,6 +8253,7 @@ abstract class $AuthStateCopyWith<$Res> {
       CategoryResponseEntity? category,
       SkillResponseEntity? skills,
       RegisterEmployerEntity registerEmployerRequest,
+      RegisterJobSeekerEntity registerJobSeekerRequest,
       File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
@@ -8291,6 +8297,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? category = freezed,
     Object? skills = freezed,
     Object? registerEmployerRequest = null,
+    Object? registerJobSeekerRequest = null,
     Object? resume = freezed,
     Object? states = null,
     Object? countries = null,
@@ -8384,6 +8391,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.registerEmployerRequest
           : registerEmployerRequest // ignore: cast_nullable_to_non_nullable
               as RegisterEmployerEntity,
+      registerJobSeekerRequest: null == registerJobSeekerRequest
+          ? _value.registerJobSeekerRequest
+          : registerJobSeekerRequest // ignore: cast_nullable_to_non_nullable
+              as RegisterJobSeekerEntity,
       resume: freezed == resume
           ? _value.resume
           : resume // ignore: cast_nullable_to_non_nullable
@@ -8446,6 +8457,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       CategoryResponseEntity? category,
       SkillResponseEntity? skills,
       RegisterEmployerEntity registerEmployerRequest,
+      RegisterJobSeekerEntity registerJobSeekerRequest,
       File? resume,
       List<StateResponseEntity> states,
       List<CountryResponseEntity> countries,
@@ -8487,6 +8499,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? category = freezed,
     Object? skills = freezed,
     Object? registerEmployerRequest = null,
+    Object? registerJobSeekerRequest = null,
     Object? resume = freezed,
     Object? states = null,
     Object? countries = null,
@@ -8580,6 +8593,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.registerEmployerRequest
           : registerEmployerRequest // ignore: cast_nullable_to_non_nullable
               as RegisterEmployerEntity,
+      registerJobSeekerRequest: null == registerJobSeekerRequest
+          ? _value.registerJobSeekerRequest
+          : registerJobSeekerRequest // ignore: cast_nullable_to_non_nullable
+              as RegisterJobSeekerEntity,
       resume: freezed == resume
           ? _value.resume
           : resume // ignore: cast_nullable_to_non_nullable
@@ -8649,6 +8666,39 @@ class _$InitialImpl implements _Initial {
           state: '',
           fullName: '',
           companyLogo: null),
+      this.registerJobSeekerRequest = const RegisterJobSeekerEntity(
+          fullName: '',
+          companyName: '',
+          state: '',
+          city: '',
+          confirmPassword: '',
+          passport: null,
+          resume: null,
+          gender: '',
+          country: '',
+          email: '',
+          password: '',
+          phoneNumber: '',
+          jobType: '',
+          guarantorName: '',
+          guarantorEmail: '',
+          residentialAddress: '',
+          streetAddress: '',
+          yearsOfExperience: '',
+          describeYourRole: '',
+          category: '',
+          dateOFBirth: '',
+          skill: '',
+          role: '',
+          description: '',
+          startYear: '',
+          endYear: '',
+          schoolName: '',
+          educationalQualification: '',
+          certificateObtained: '',
+          graduationYear: '',
+          courseName: '',
+          employmentHistory: ''),
       this.resume,
       final List<StateResponseEntity> states = const [],
       final List<CountryResponseEntity> countries = const [],
@@ -8704,7 +8754,9 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final RegisterEmployerEntity registerEmployerRequest;
-//RegisterJobSeekerEntity registerJobSeekerRequest,
+  @override
+  @JsonKey()
+  final RegisterJobSeekerEntity registerJobSeekerRequest;
   @override
   final File? resume;
   final List<StateResponseEntity> _states;
@@ -8752,7 +8804,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, resume: $resume, states: $states, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState)';
   }
 
   @override
@@ -8794,6 +8846,9 @@ class _$InitialImpl implements _Initial {
             (identical(
                     other.registerEmployerRequest, registerEmployerRequest) ||
                 other.registerEmployerRequest == registerEmployerRequest) &&
+            (identical(
+                    other.registerJobSeekerRequest, registerJobSeekerRequest) ||
+                other.registerJobSeekerRequest == registerJobSeekerRequest) &&
             (identical(other.resume, resume) || other.resume == resume) &&
             const DeepCollectionEquality().equals(other._states, _states) &&
             const DeepCollectionEquality()
@@ -8831,6 +8886,7 @@ class _$InitialImpl implements _Initial {
         category,
         skills,
         registerEmployerRequest,
+        registerJobSeekerRequest,
         resume,
         const DeepCollectionEquality().hash(_states),
         const DeepCollectionEquality().hash(_countries),
@@ -8871,6 +8927,7 @@ class _$InitialImpl implements _Initial {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -8902,6 +8959,7 @@ class _$InitialImpl implements _Initial {
         category,
         skills,
         registerEmployerRequest,
+        registerJobSeekerRequest,
         resume,
         states,
         countries,
@@ -8936,6 +8994,7 @@ class _$InitialImpl implements _Initial {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -8967,6 +9026,7 @@ class _$InitialImpl implements _Initial {
         category,
         skills,
         registerEmployerRequest,
+        registerJobSeekerRequest,
         resume,
         states,
         countries,
@@ -9001,6 +9061,7 @@ class _$InitialImpl implements _Initial {
             CategoryResponseEntity? category,
             SkillResponseEntity? skills,
             RegisterEmployerEntity registerEmployerRequest,
+            RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
             List<StateResponseEntity> states,
             List<CountryResponseEntity> countries,
@@ -9034,6 +9095,7 @@ class _$InitialImpl implements _Initial {
           category,
           skills,
           registerEmployerRequest,
+          registerJobSeekerRequest,
           resume,
           states,
           countries,
@@ -9097,6 +9159,7 @@ abstract class _Initial implements AuthState {
       final CategoryResponseEntity? category,
       final SkillResponseEntity? skills,
       final RegisterEmployerEntity registerEmployerRequest,
+      final RegisterJobSeekerEntity registerJobSeekerRequest,
       final File? resume,
       final List<StateResponseEntity> states,
       final List<CountryResponseEntity> countries,
@@ -9147,7 +9210,9 @@ abstract class _Initial implements AuthState {
   SkillResponseEntity? get skills;
   @override
   RegisterEmployerEntity get registerEmployerRequest;
-  @override //RegisterJobSeekerEntity registerJobSeekerRequest,
+  @override
+  RegisterJobSeekerEntity get registerJobSeekerRequest;
+  @override
   File? get resume;
   @override
   List<StateResponseEntity> get states;

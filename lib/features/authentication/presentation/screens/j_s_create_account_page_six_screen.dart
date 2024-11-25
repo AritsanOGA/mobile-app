@@ -1,5 +1,4 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
