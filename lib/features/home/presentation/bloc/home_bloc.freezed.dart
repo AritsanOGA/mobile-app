@@ -20,18 +20,36 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +58,36 @@ mixin _$HomeEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetFeaturedCandidate value)
         getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +150,12 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
   }) {
     return started();
   }
@@ -123,6 +165,12 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
   }) {
     return started?.call();
   }
@@ -132,6 +180,12 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -146,6 +200,12 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetFeaturedCandidate value)
         getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return started(this);
   }
@@ -155,6 +215,12 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return started?.call(this);
   }
@@ -164,6 +230,12 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -218,6 +290,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
   }) {
     return getFeaturedCandidates();
   }
@@ -227,6 +305,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
   }) {
     return getFeaturedCandidates?.call();
   }
@@ -236,6 +320,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
     required TResult orElse(),
   }) {
     if (getFeaturedCandidates != null) {
@@ -250,6 +340,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(_Started value) started,
     required TResult Function(_GetFeaturedCandidate value)
         getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
   }) {
     return getFeaturedCandidates(this);
   }
@@ -259,6 +355,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
   }) {
     return getFeaturedCandidates?.call(this);
   }
@@ -268,6 +370,12 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
     required TResult orElse(),
   }) {
     if (getFeaturedCandidates != null) {
@@ -282,29 +390,951 @@ abstract class _GetFeaturedCandidate implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetFeaturedJobImplCopyWith<$Res> {
+  factory _$$GetFeaturedJobImplCopyWith(_$GetFeaturedJobImpl value,
+          $Res Function(_$GetFeaturedJobImpl) then) =
+      __$$GetFeaturedJobImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetFeaturedJobImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetFeaturedJobImpl>
+    implements _$$GetFeaturedJobImplCopyWith<$Res> {
+  __$$GetFeaturedJobImplCopyWithImpl(
+      _$GetFeaturedJobImpl _value, $Res Function(_$GetFeaturedJobImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetFeaturedJobImpl implements _GetFeaturedJob {
+  const _$GetFeaturedJobImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getFeaturedJob()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetFeaturedJobImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return getFeaturedJob();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return getFeaturedJob?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getFeaturedJob != null) {
+      return getFeaturedJob();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return getFeaturedJob(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return getFeaturedJob?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getFeaturedJob != null) {
+      return getFeaturedJob(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetFeaturedJob implements HomeEvent {
+  const factory _GetFeaturedJob() = _$GetFeaturedJobImpl;
+}
+
+/// @nodoc
+abstract class _$$GetEmployerJobImplCopyWith<$Res> {
+  factory _$$GetEmployerJobImplCopyWith(_$GetEmployerJobImpl value,
+          $Res Function(_$GetEmployerJobImpl) then) =
+      __$$GetEmployerJobImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetEmployerJobImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetEmployerJobImpl>
+    implements _$$GetEmployerJobImplCopyWith<$Res> {
+  __$$GetEmployerJobImplCopyWithImpl(
+      _$GetEmployerJobImpl _value, $Res Function(_$GetEmployerJobImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetEmployerJobImpl implements _GetEmployerJob {
+  const _$GetEmployerJobImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getEmployerJob()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetEmployerJobImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return getEmployerJob();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return getEmployerJob?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getEmployerJob != null) {
+      return getEmployerJob();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return getEmployerJob(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return getEmployerJob?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getEmployerJob != null) {
+      return getEmployerJob(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetEmployerJob implements HomeEvent {
+  const factory _GetEmployerJob() = _$GetEmployerJobImpl;
+}
+
+/// @nodoc
+abstract class _$$GetAllJobsImplCopyWith<$Res> {
+  factory _$$GetAllJobsImplCopyWith(
+          _$GetAllJobsImpl value, $Res Function(_$GetAllJobsImpl) then) =
+      __$$GetAllJobsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAllJobsImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetAllJobsImpl>
+    implements _$$GetAllJobsImplCopyWith<$Res> {
+  __$$GetAllJobsImplCopyWithImpl(
+      _$GetAllJobsImpl _value, $Res Function(_$GetAllJobsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAllJobsImpl implements _GetAllJobs {
+  const _$GetAllJobsImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getAllJobs()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAllJobsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return getAllJobs();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return getAllJobs?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getAllJobs != null) {
+      return getAllJobs();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return getAllJobs(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return getAllJobs?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getAllJobs != null) {
+      return getAllJobs(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllJobs implements HomeEvent {
+  const factory _GetAllJobs() = _$GetAllJobsImpl;
+}
+
+/// @nodoc
+abstract class _$$GetJobSeekerJobsImplCopyWith<$Res> {
+  factory _$$GetJobSeekerJobsImplCopyWith(_$GetJobSeekerJobsImpl value,
+          $Res Function(_$GetJobSeekerJobsImpl) then) =
+      __$$GetJobSeekerJobsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetJobSeekerJobsImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$GetJobSeekerJobsImpl>
+    implements _$$GetJobSeekerJobsImplCopyWith<$Res> {
+  __$$GetJobSeekerJobsImplCopyWithImpl(_$GetJobSeekerJobsImpl _value,
+      $Res Function(_$GetJobSeekerJobsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
+  const _$GetJobSeekerJobsImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.getJobSeekerJobs()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetJobSeekerJobsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return getJobSeekerJobs();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return getJobSeekerJobs?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getJobSeekerJobs != null) {
+      return getJobSeekerJobs();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return getJobSeekerJobs(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return getJobSeekerJobs?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (getJobSeekerJobs != null) {
+      return getJobSeekerJobs(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetJobSeekerJobs implements HomeEvent {
+  const factory _GetJobSeekerJobs() = _$GetJobSeekerJobsImpl;
+}
+
+/// @nodoc
+abstract class _$$PostJobImplCopyWith<$Res> {
+  factory _$$PostJobImplCopyWith(
+          _$PostJobImpl value, $Res Function(_$PostJobImpl) then) =
+      __$$PostJobImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostJobEntity param});
+}
+
+/// @nodoc
+class __$$PostJobImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$PostJobImpl>
+    implements _$$PostJobImplCopyWith<$Res> {
+  __$$PostJobImplCopyWithImpl(
+      _$PostJobImpl _value, $Res Function(_$PostJobImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? param = null,
+  }) {
+    return _then(_$PostJobImpl(
+      null == param
+          ? _value.param
+          : param // ignore: cast_nullable_to_non_nullable
+              as PostJobEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PostJobImpl implements _PostJob {
+  const _$PostJobImpl(this.param);
+
+  @override
+  final PostJobEntity param;
+
+  @override
+  String toString() {
+    return 'HomeEvent.postJob(param: $param)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PostJobImpl &&
+            (identical(other.param, param) || other.param == param));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, param);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PostJobImplCopyWith<_$PostJobImpl> get copyWith =>
+      __$$PostJobImplCopyWithImpl<_$PostJobImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return postJob(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return postJob?.call(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (postJob != null) {
+      return postJob(param);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return postJob(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return postJob?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (postJob != null) {
+      return postJob(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PostJob implements HomeEvent {
+  const factory _PostJob(final PostJobEntity param) = _$PostJobImpl;
+
+  PostJobEntity get param;
+  @JsonKey(ignore: true)
+  _$$PostJobImplCopyWith<_$PostJobImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ApplyForJobImplCopyWith<$Res> {
+  factory _$$ApplyForJobImplCopyWith(
+          _$ApplyForJobImpl value, $Res Function(_$ApplyForJobImpl) then) =
+      __$$ApplyForJobImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$ApplyForJobImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ApplyForJobImpl>
+    implements _$$ApplyForJobImplCopyWith<$Res> {
+  __$$ApplyForJobImplCopyWithImpl(
+      _$ApplyForJobImpl _value, $Res Function(_$ApplyForJobImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$ApplyForJobImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApplyForJobImpl implements _ApplyForJob {
+  const _$ApplyForJobImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'HomeEvent.applyForJob(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApplyForJobImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ApplyForJobImplCopyWith<_$ApplyForJobImpl> get copyWith =>
+      __$$ApplyForJobImplCopyWithImpl<_$ApplyForJobImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(String id) applyForJob,
+  }) {
+    return applyForJob(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(String id)? applyForJob,
+  }) {
+    return applyForJob?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(String id)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (applyForJob != null) {
+      return applyForJob(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_ApplyForJob value) applyForJob,
+  }) {
+    return applyForJob(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+  }) {
+    return applyForJob?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    required TResult orElse(),
+  }) {
+    if (applyForJob != null) {
+      return applyForJob(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ApplyForJob implements HomeEvent {
+  const factory _ApplyForJob(final String id) = _$ApplyForJobImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$ApplyForJobImplCopyWith<_$ApplyForJobImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   String? get errorMessage => throw _privateConstructorUsedError;
   ViewState get viewState => throw _privateConstructorUsedError;
   List<FeaturedCandidatesEntity> get featureCandidateList =>
       throw _privateConstructorUsedError;
+  List<AllJobResponseEntity> get allJobList =>
+      throw _privateConstructorUsedError;
+  List<EmployerJobResponseEntity> get employerJobList =>
+      throw _privateConstructorUsedError;
+  List<FeaturedJobResponseEntity> get featuredJobList =>
+      throw _privateConstructorUsedError;
+  List<JobSeekerJobResponseEntity> get jobSeekerJobList =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)
+    required TResult Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)?
+    TResult? Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)?
+    TResult Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
         initial,
     required TResult orElse(),
   }) =>
@@ -339,7 +1369,11 @@ abstract class $HomeStateCopyWith<$Res> {
   $Res call(
       {String? errorMessage,
       ViewState viewState,
-      List<FeaturedCandidatesEntity> featureCandidateList});
+      List<FeaturedCandidatesEntity> featureCandidateList,
+      List<AllJobResponseEntity> allJobList,
+      List<EmployerJobResponseEntity> employerJobList,
+      List<FeaturedJobResponseEntity> featuredJobList,
+      List<JobSeekerJobResponseEntity> jobSeekerJobList});
 }
 
 /// @nodoc
@@ -358,6 +1392,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? errorMessage = freezed,
     Object? viewState = null,
     Object? featureCandidateList = null,
+    Object? allJobList = null,
+    Object? employerJobList = null,
+    Object? featuredJobList = null,
+    Object? jobSeekerJobList = null,
   }) {
     return _then(_value.copyWith(
       errorMessage: freezed == errorMessage
@@ -372,6 +1410,22 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
               as List<FeaturedCandidatesEntity>,
+      allJobList: null == allJobList
+          ? _value.allJobList
+          : allJobList // ignore: cast_nullable_to_non_nullable
+              as List<AllJobResponseEntity>,
+      employerJobList: null == employerJobList
+          ? _value.employerJobList
+          : employerJobList // ignore: cast_nullable_to_non_nullable
+              as List<EmployerJobResponseEntity>,
+      featuredJobList: null == featuredJobList
+          ? _value.featuredJobList
+          : featuredJobList // ignore: cast_nullable_to_non_nullable
+              as List<FeaturedJobResponseEntity>,
+      jobSeekerJobList: null == jobSeekerJobList
+          ? _value.jobSeekerJobList
+          : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
+              as List<JobSeekerJobResponseEntity>,
     ) as $Val);
   }
 }
@@ -387,7 +1441,11 @@ abstract class _$$InitialImplCopyWith<$Res>
   $Res call(
       {String? errorMessage,
       ViewState viewState,
-      List<FeaturedCandidatesEntity> featureCandidateList});
+      List<FeaturedCandidatesEntity> featureCandidateList,
+      List<AllJobResponseEntity> allJobList,
+      List<EmployerJobResponseEntity> employerJobList,
+      List<FeaturedJobResponseEntity> featuredJobList,
+      List<JobSeekerJobResponseEntity> jobSeekerJobList});
 }
 
 /// @nodoc
@@ -404,6 +1462,10 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? errorMessage = freezed,
     Object? viewState = null,
     Object? featureCandidateList = null,
+    Object? allJobList = null,
+    Object? employerJobList = null,
+    Object? featuredJobList = null,
+    Object? jobSeekerJobList = null,
   }) {
     return _then(_$InitialImpl(
       errorMessage: freezed == errorMessage
@@ -418,6 +1480,22 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
               as List<FeaturedCandidatesEntity>,
+      allJobList: null == allJobList
+          ? _value._allJobList
+          : allJobList // ignore: cast_nullable_to_non_nullable
+              as List<AllJobResponseEntity>,
+      employerJobList: null == employerJobList
+          ? _value._employerJobList
+          : employerJobList // ignore: cast_nullable_to_non_nullable
+              as List<EmployerJobResponseEntity>,
+      featuredJobList: null == featuredJobList
+          ? _value._featuredJobList
+          : featuredJobList // ignore: cast_nullable_to_non_nullable
+              as List<FeaturedJobResponseEntity>,
+      jobSeekerJobList: null == jobSeekerJobList
+          ? _value._jobSeekerJobList
+          : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
+              as List<JobSeekerJobResponseEntity>,
     ));
   }
 }
@@ -428,8 +1506,16 @@ class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.errorMessage,
       this.viewState = ViewState.idle,
-      final List<FeaturedCandidatesEntity> featureCandidateList = const []})
-      : _featureCandidateList = featureCandidateList;
+      final List<FeaturedCandidatesEntity> featureCandidateList = const [],
+      final List<AllJobResponseEntity> allJobList = const [],
+      final List<EmployerJobResponseEntity> employerJobList = const [],
+      final List<FeaturedJobResponseEntity> featuredJobList = const [],
+      final List<JobSeekerJobResponseEntity> jobSeekerJobList = const []})
+      : _featureCandidateList = featureCandidateList,
+        _allJobList = allJobList,
+        _employerJobList = employerJobList,
+        _featuredJobList = featuredJobList,
+        _jobSeekerJobList = jobSeekerJobList;
 
   @override
   final String? errorMessage;
@@ -446,9 +1532,46 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_featureCandidateList);
   }
 
+  final List<AllJobResponseEntity> _allJobList;
+  @override
+  @JsonKey()
+  List<AllJobResponseEntity> get allJobList {
+    if (_allJobList is EqualUnmodifiableListView) return _allJobList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allJobList);
+  }
+
+  final List<EmployerJobResponseEntity> _employerJobList;
+  @override
+  @JsonKey()
+  List<EmployerJobResponseEntity> get employerJobList {
+    if (_employerJobList is EqualUnmodifiableListView) return _employerJobList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_employerJobList);
+  }
+
+  final List<FeaturedJobResponseEntity> _featuredJobList;
+  @override
+  @JsonKey()
+  List<FeaturedJobResponseEntity> get featuredJobList {
+    if (_featuredJobList is EqualUnmodifiableListView) return _featuredJobList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_featuredJobList);
+  }
+
+  final List<JobSeekerJobResponseEntity> _jobSeekerJobList;
+  @override
+  @JsonKey()
+  List<JobSeekerJobResponseEntity> get jobSeekerJobList {
+    if (_jobSeekerJobList is EqualUnmodifiableListView)
+      return _jobSeekerJobList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_jobSeekerJobList);
+  }
+
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, viewState: $viewState, featureCandidateList: $featureCandidateList)';
+    return 'HomeState.initial(errorMessage: $errorMessage, viewState: $viewState, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList)';
   }
 
   @override
@@ -461,12 +1584,27 @@ class _$InitialImpl implements _Initial {
             (identical(other.viewState, viewState) ||
                 other.viewState == viewState) &&
             const DeepCollectionEquality()
-                .equals(other._featureCandidateList, _featureCandidateList));
+                .equals(other._featureCandidateList, _featureCandidateList) &&
+            const DeepCollectionEquality()
+                .equals(other._allJobList, _allJobList) &&
+            const DeepCollectionEquality()
+                .equals(other._employerJobList, _employerJobList) &&
+            const DeepCollectionEquality()
+                .equals(other._featuredJobList, _featuredJobList) &&
+            const DeepCollectionEquality()
+                .equals(other._jobSeekerJobList, _jobSeekerJobList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errorMessage, viewState,
-      const DeepCollectionEquality().hash(_featureCandidateList));
+  int get hashCode => Object.hash(
+      runtimeType,
+      errorMessage,
+      viewState,
+      const DeepCollectionEquality().hash(_featureCandidateList),
+      const DeepCollectionEquality().hash(_allJobList),
+      const DeepCollectionEquality().hash(_employerJobList),
+      const DeepCollectionEquality().hash(_featuredJobList),
+      const DeepCollectionEquality().hash(_jobSeekerJobList));
 
   @JsonKey(ignore: true)
   @override
@@ -477,33 +1615,54 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)
+    required TResult Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)
         initial,
   }) {
-    return initial(errorMessage, viewState, featureCandidateList);
+    return initial(errorMessage, viewState, featureCandidateList, allJobList,
+        employerJobList, featuredJobList, jobSeekerJobList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)?
+    TResult? Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
         initial,
   }) {
-    return initial?.call(errorMessage, viewState, featureCandidateList);
+    return initial?.call(errorMessage, viewState, featureCandidateList,
+        allJobList, employerJobList, featuredJobList, jobSeekerJobList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? errorMessage, ViewState viewState,
-            List<FeaturedCandidatesEntity> featureCandidateList)?
+    TResult Function(
+            String? errorMessage,
+            ViewState viewState,
+            List<FeaturedCandidatesEntity> featureCandidateList,
+            List<AllJobResponseEntity> allJobList,
+            List<EmployerJobResponseEntity> employerJobList,
+            List<FeaturedJobResponseEntity> featuredJobList,
+            List<JobSeekerJobResponseEntity> jobSeekerJobList)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(errorMessage, viewState, featureCandidateList);
+      return initial(errorMessage, viewState, featureCandidateList, allJobList,
+          employerJobList, featuredJobList, jobSeekerJobList);
     }
     return orElse();
   }
@@ -539,10 +1698,13 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements HomeState {
   const factory _Initial(
-          {final String? errorMessage,
-          final ViewState viewState,
-          final List<FeaturedCandidatesEntity> featureCandidateList}) =
-      _$InitialImpl;
+      {final String? errorMessage,
+      final ViewState viewState,
+      final List<FeaturedCandidatesEntity> featureCandidateList,
+      final List<AllJobResponseEntity> allJobList,
+      final List<EmployerJobResponseEntity> employerJobList,
+      final List<FeaturedJobResponseEntity> featuredJobList,
+      final List<JobSeekerJobResponseEntity> jobSeekerJobList}) = _$InitialImpl;
 
   @override
   String? get errorMessage;
@@ -550,6 +1712,14 @@ abstract class _Initial implements HomeState {
   ViewState get viewState;
   @override
   List<FeaturedCandidatesEntity> get featureCandidateList;
+  @override
+  List<AllJobResponseEntity> get allJobList;
+  @override
+  List<EmployerJobResponseEntity> get employerJobList;
+  @override
+  List<FeaturedJobResponseEntity> get featuredJobList;
+  @override
+  List<JobSeekerJobResponseEntity> get jobSeekerJobList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

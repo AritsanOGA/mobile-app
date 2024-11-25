@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/home/domain/entities/employer_job_response_
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class HomeRepositoryImpl implements HomeRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> postJob(FeaturedCandidatesEntity entity) async {
+  Future<Either<Failure, bool>> postJob(PostJobEntity entity) async {
     try {
       final result = await homeRemoteDataSource.postJob(entity);
       // await localDataSource.cacheUser(result);

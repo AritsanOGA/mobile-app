@@ -8,11 +8,13 @@ import 'package:artisan_oga/features/home/data/model/employer_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/job_seeker_job_response_model.dart';
+import 'package:artisan_oga/features/home/data/model/post_job_model.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<FeaturedCandidatesEntity>> getFeaturedCandidates();
@@ -21,7 +23,7 @@ abstract class HomeRemoteDataSource {
   Future<List<FeaturedJobResponseEntity>> getFeaturedJob();
   Future<List<AllJobResponseEntity>> getAllJobs();
   Future<FeaturedCandidatesEntity> applyForJob(String id);
-  Future<FeaturedCandidatesEntity> postJob(FeaturedCandidatesEntity entity);
+  Future<PostJobEntity> postJob(PostJobEntity entity);
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -116,12 +118,11 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<FeaturedCandidatesEntity> postJob(
-      FeaturedCandidatesEntity entity) async {
+  Future<PostJobEntity> postJob(PostJobEntity entity) async {
     final result = await api.post(url: AppApiEndpoint.postJob, body: ''
         // FeaturedCandidateModel.fromEntity(entity).toJson(),
         ) as Map<String, dynamic>;
 
-    return FeaturedCandidateModel.fromJson(result as Map<String, dynamic>);
+    return PostJobModel.fromJson(result as Map<String, dynamic>);
   }
 }
