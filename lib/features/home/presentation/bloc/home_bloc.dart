@@ -14,12 +14,12 @@ part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc({GetFeaturedCandidateseCase? getFeaturedCandidates})
+  HomeBloc({GetFeaturedCandidateUseCase? getFeaturedCandidates})
       : _getFeaturedCandidateseCase = getFeaturedCandidates ?? locator(),
         super(_Initial()) {
     on<_GetFeaturedCandidate>(_onGetFeaturedCandidate);
   }
-  final GetFeaturedCandidateseCase _getFeaturedCandidateseCase;
+  final GetFeaturedCandidateUseCase _getFeaturedCandidateseCase;
   FutureOr<void> _onGetFeaturedCandidate(event, Emitter<HomeState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
     final result = await _getFeaturedCandidateseCase(NoParams());

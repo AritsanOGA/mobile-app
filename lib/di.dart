@@ -15,7 +15,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
-import 'package:artisan_oga/features/home/data/repository/auth_repoistory_impl.dart';
+import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -48,14 +48,15 @@ Future<void> init() async {
     ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
         authRemoteDataSource: locator(), localDataSource: locator()))
     ..registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(
-        homeRemoteDataSource: locator(), ))
+          homeRemoteDataSource: locator(),
+        ))
     ..registerLazySingleton<RegisterEmployerUseCase>(
         () => RegisterEmployerUseCase(locator()))
     ..registerLazySingleton<RegisterJobSeekerUseCase>(
         () => RegisterJobSeekerUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
-    ..registerLazySingleton<GetFeaturedCandidateseCase>(
-        () => GetFeaturedCandidateseCase(locator()))
+    ..registerLazySingleton<GetFeaturedCandidateUseCase>(
+        () => GetFeaturedCandidateUseCase(locator()))
     ..registerLazySingleton<CountryUseCase>(() => CountryUseCase(locator()))
     ..registerLazySingleton<StateUseCase>(() => StateUseCase(locator()))
     ..registerLazySingleton<CategoryUseCase>(() => CategoryUseCase(locator()))

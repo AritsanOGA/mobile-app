@@ -3,15 +3,23 @@ import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
+import 'package:artisan_oga/features/home/data/model/all_job_reponse_model.dart';
+import 'package:artisan_oga/features/home/data/model/employer_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
+import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
+import 'package:artisan_oga/features/home/data/model/job_seeker_job_response_model.dart';
+import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
+import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<FeaturedCandidatesEntity>> getFeaturedCandidates();
-  Future<List<FeaturedCandidatesEntity>> getJobSeekerJobs();
-  Future<List<FeaturedCandidatesEntity>> getEmployerJob();
-  Future<List<FeaturedCandidatesEntity>> getFeaturedJob();
-  Future<List<FeaturedCandidatesEntity>> getAllJobs();
+  Future<List<JobSeekerJobResponseEntity>> getJobSeekerJobs();
+  Future<List<EmployerJobResponseEntity>> getEmployerJob();
+  Future<List<FeaturedJobResponseEntity>> getFeaturedJob();
+  Future<List<AllJobResponseEntity>> getAllJobs();
   Future<FeaturedCandidatesEntity> applyForJob(String id);
   Future<FeaturedCandidatesEntity> postJob(FeaturedCandidatesEntity entity);
 }
@@ -48,14 +56,14 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<List<FeaturedCandidatesEntity>> getAllJobs() async {
+  Future<List<AllJobResponseEntity>> getAllJobs() async {
     final result = await api.get(
       url: AppApiEndpoint.getAllJobs,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => FeaturedCandidateModel.fromJson(
+          (e) => AllJobResponseModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )
@@ -63,14 +71,14 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<List<FeaturedCandidatesEntity>> getEmployerJob() async {
+  Future<List<EmployerJobResponseEntity>> getEmployerJob() async {
     final result = await api.get(
       url: AppApiEndpoint.employerJob,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => FeaturedCandidateModel.fromJson(
+          (e) => EmployerJobResponseModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )
@@ -78,14 +86,14 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<List<FeaturedCandidatesEntity>> getFeaturedJob() async {
+  Future<List<FeaturedJobResponseEntity>> getFeaturedJob() async {
     final result = await api.get(
       url: AppApiEndpoint.featuredJob,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => FeaturedCandidateModel.fromJson(
+          (e) => FeaturedJobResponseModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )
@@ -93,14 +101,14 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<List<FeaturedCandidatesEntity>> getJobSeekerJobs() async {
+  Future<List<JobSeekerJobResponseEntity>> getJobSeekerJobs() async {
     final result = await api.get(
       url: AppApiEndpoint.jobSeekerJob,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => FeaturedCandidateModel.fromJson(
+          (e) => JobSeekerJobResponseModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )
