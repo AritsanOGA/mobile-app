@@ -7,6 +7,7 @@ class AppApiEndpoint {
 
   static Uri baseUri = Uri.parse("https://api.artisanoga.com/api/v1");
 
+//Auth
   static Uri signup = baseUri.replace(path: '/api/v1/employer/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');
   static Uri getCountry = baseUri.replace(path: '/api/v1/countries');
@@ -17,23 +18,20 @@ class AppApiEndpoint {
 
   static Uri verifyCode = baseUri.replace(path: 'api/v1/verify-code');
 
-  //! Team
+  //! Dashboard
   static Uri getFeaturedCandidates =
       baseUri.replace(path: '/api/v1/featured-candidates');
-  static Uri unFollowTeam(String teamId) =>
-      baseUri.replace(path: '/api/v1/user/teams/unfollow/$teamId');
-
-  //! League
-  static Uri unFollowLeague(String leagueId) =>
-      baseUri.replace(path: '/api/v1/user/leagues/unfollow/$leagueId');
-  static Uri followLeague(String leagueId) =>
-      baseUri.replace(path: '/api/v1/user/leagues/follow/$leagueId');
-
+  static Uri jobSeekerJob =
+      baseUri.replace(path: '/api/v1/candidate/jobs-for-you');
+  static Uri employerJob =
+      baseUri.replace(path: '/api/v1/employer/get-all-jobs');
+  static Uri featuredJob = baseUri.replace(path: '/api/v1/featured-jobs');
+  static Uri postJob = baseUri.replace(path: '/api/v1/employer/post-a-job');
+  static Uri getAllJobs = baseUri.replace(path: '/api/v1/job/get-all-jobs');
+  static Uri applyForJob = baseUri.replace(path: '/api/v1/candidate/job/apply');
   //! Payment
-  static Uri withdrawToBank = baseUri.replace(path: '/api/v1/wallet/withdraw');
-  static Uri depositToWallet = baseUri.replace(path: '/api/v1/wallet/deposit');
-  static Uri resolveBankDetails =
-      baseUri.replace(path: '/api/v1/wallet/resolve-bank-account');
+  // static Uri withdrawToBank = baseUri.replace(path: '/api/v1/wallet/withdraw');
+
   static Uri getAllNigeriaBanks =
       baseUri.replace(path: '/api/v1/wallet/all-banks-ng');
   static Uri getUserWalletBalance =

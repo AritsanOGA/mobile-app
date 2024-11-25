@@ -1,4 +1,4 @@
-import 'package:artisan_oga/features/home/domain/entities/feautures_candiddate_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 
 class FeaturedCandidateModel extends FeaturedCandidatesEntity {
   FeaturedCandidateModel({
@@ -56,6 +56,41 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
     required super.referredByWho,
     required super.employmentHistory,
   });
+  // factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
+  //     RegisterJobSeekerModel(
+  //       email: entity.email,
+  //       password: entity.password,
+  //       confirmPassword: entity.confirmPassword,
+  //       country: entity.country,
+  //       fullName: entity.fullName,
+  //       companyName: entity.companyName,
+  //       state: entity.state,
+  //       city: entity.city,
+  //       passport: entity.passport,
+  //       resume: entity.resume,
+  //       gender: entity.gender,
+  //       phoneNumber: entity.phoneNumber,
+  //       jobType: entity.jobType,
+  //       guarantorName: entity.guarantorName,
+  //       residentialAddress: entity.residentialAddress,
+  //       guarantorEmail: entity.guarantorEmail,
+  //       yearsOfExperience: entity.yearsOfExperience,
+  //       describeYourRole: entity.describeYourRole,
+  //       dateOFBirth: entity.dateOFBirth,
+  //       role: entity.role,
+  //       description: entity.description,
+  //       schoolName: entity.schoolName,
+  //       endYear: entity.endYear,
+  //       skill: entity.skill,
+  //       category: entity.category,
+  //       startYear: entity.startYear,
+  //       graduationYear: entity.graduationYear,
+  //       certificateObtained: entity.certificateObtained,
+  //       educationalQualification: entity.educationalQualification,
+  //       streetAddress: entity.streetAddress,
+  //       courseName: entity.courseName,
+  //       employmentHistory: entity.employmentHistory,
+  //     );
 
   factory FeaturedCandidateModel.fromJson(Map<String, dynamic> json) =>
       FeaturedCandidateModel(
@@ -73,7 +108,7 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
         about: json["about"] ?? null,
         identity: json["identity"] ?? '',
         phone: json["phone"] ?? '',
-        dateOfBirth: DateTime.parse(json["date_of_birth"]),
+        dateOfBirth: DateTime.parse(json["date_of_birth"] ?? null),
         streetAddress: json["street_address"] ?? '',
         city: json["city"] ?? '',
         country: json["country"] ?? 0,
@@ -111,6 +146,6 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
         featured: json["featured"] ?? 0,
         referredByLink: json["referred_by_link"] ?? 0,
         referredByWho: json["referred_by_who"] ?? '',
-        employmentHistory: json["employment_history"],
+        employmentHistory: json["employment_history"] ?? '',
       );
 }

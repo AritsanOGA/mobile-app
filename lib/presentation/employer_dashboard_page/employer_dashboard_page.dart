@@ -86,6 +86,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
             BlocBuilder<HomeBloc, HomeState>(
               bloc: context.read<HomeBloc>()
                 ..add(HomeEvent.getFeaturedCandidates()),
+              //..add(event),
               builder: (context, state) {
                 if (state.viewState == ViewState.loading) {
                   return Center(child: CircularProgressIndicator());
