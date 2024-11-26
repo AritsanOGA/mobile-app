@@ -9,11 +9,11 @@ import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../core/services/default.dart';
-import '../../shared/widgets/custom_outlined_button.dart';
-import '../dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
-import '../view_all_candidates/view_all_candidates.dart';
-import 'widgets/userprofilelist_item_widget.dart';
+import '../../../../core/services/default.dart';
+import '../../../../shared/widgets/custom_outlined_button.dart';
+import '../../../../presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
+import '../../../../presentation/view_all_candidates/view_all_candidates.dart';
+import '../widgets/userprofilelist_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerDashboardPage extends StatefulWidget {
@@ -54,111 +54,119 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
       ),
       body: SizedBox(
         width: double.maxFinite,
-        child: Column(
-          children: [
-            SizedBox(height: 5.v),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 25.h),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Welcome back, ",
-                        style: CustomTextStyles.titleLargeff3a332cSemiBold,
-                      ),
-                      TextSpan(
-                        text: '',
-                        //employer_info["data"]["full_name"],
-                        style: CustomTextStyles.titleLargefff7941e,
-                      ),
-                    ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.h),
+          child: Column(
+            children: [
+              SizedBox(height: 5.v),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 25.h),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Welcome back, ",
+                          style: CustomTextStyles.titleLargeff3a332cSemiBold,
+                        ),
+                        TextSpan(
+                          text: '',
+                          //employer_info["data"]["full_name"],
+                          style: CustomTextStyles.titleLargefff7941e,
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
-            ),
-            SizedBox(height: 19.v),
-            SizedBox(height: 25.v),
-            _buildFeaturedCandidatesRow(context),
-            BlocBuilder<HomeBloc, HomeState>(
-              bloc: context.read<HomeBloc>()
-                ..add(HomeEvent.getFeaturedCandidates()),
-              //..add(event),
-              builder: (context, state) {
-                if (state.viewState == ViewState.loading) {
-                  return Center(child: CircularProgressIndicator());
-                }
-
-                if (state.viewState == ViewState.failure) {
-                  return Center(child: Text('Error: '));
-                }
-
-                if (state.featureCandidateList.isEmpty) {
-                  return Center(child: Text('No items found.'));
-                }
-
-                return ListView.builder(
-                  itemCount: state.featureCandidateList.length,
-                  itemBuilder: (context, index) {
-                    return UserprofilelistItemWidget(
-                      fullName: state.featureCandidateList[index].fullName,
-                      phone: state.featureCandidateList[index].jobType,
-                    );
-                  },
-                );
-              },
-            ),
-            SizedBox(height: 25.v),
-
-            FutureBuilder<dynamic>(
-                future: Default().getAllJobApplicants(''
-                    //employer_info["data"]["id"].toString()
-                    ),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
+              SizedBox(height: 19.v),
+              SizedBox(height: 25.v),
+              // _buildFeaturedCandidatesRow(context),
+              BlocBuilder<HomeBloc, HomeState>(
+                bloc: context.read<HomeBloc>()
+                  ..add(HomeEvent.getFeaturedCandidates()),
+                //..add(event),
+                builder: (context, state) {
+                  if (state.viewState == ViewState.loading) {
                     return Center(child: CircularProgressIndicator());
                   }
 
-                  if (snapshot.hasData) {
-                    final data = snapshot.data!;
-
-                    return data.length > 0
-                        ? _buildUserProfileList(context, data)
-                        : Center(
-                            child: Text("No recent Candidates"),
-                          );
-                  } else {
-                    return Center(
-                      child: Text("No recent job applicants"),
-                    );
+                  if (state.viewState == ViewState.failure) {
+                    return Center(child: Text('Error: '));
                   }
-                }),
 
-            SizedBox(height: 27.v),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 25.h),
-                child: Text(
-                  "Recent Jobs",
-                  style: CustomTextStyles.titleMediumPrimaryContainer18,
+                  if (state.featureCandidateList.isEmpty) {
+                    return Center(child: Text('No items found.'));
+                  }
+
+                  return SizedBox(
+                    height: 200.h,
+                    // width: 400.v,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.featureCandidateList.length,
+                      itemBuilder: (context, index) {
+                        return UserprofilelistItemWidget(
+                          fullName: state.featureCandidateList[index].name,
+                          phone: state.featureCandidateList[index].categories,
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 25.v),
+
+              FutureBuilder<dynamic>(
+                  future: Default().getAllJobApplicants(''
+                      //employer_info["data"]["id"].toString()
+                      ),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(child: CircularProgressIndicator());
+                    }
+
+                    if (snapshot.hasData) {
+                      final data = snapshot.data!;
+
+                      return data.length > 0
+                          ? _buildUserProfileList(context, data)
+                          : Center(
+                              child: Text("No recent Candidates"),
+                            );
+                    } else {
+                      return Center(
+                        child: Text("No recent job applicants"),
+                      );
+                    }
+                  }),
+
+              SizedBox(height: 27.v),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 25.h),
+                  child: Text(
+                    "Recent Jobs",
+                    style: CustomTextStyles.titleMediumPrimaryContainer18,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            _buildJobInformation(context, 'Flutter', 'Lagos', 'Intern'
-                // data[index]["job_title"],
-                // data[index]["state"],
-                // data[index]["hire_type"]
-                ),
-            buildRecentJobs(context),
-            SizedBox(height: 20.v),
-            //_buildDashboardStack(context),
-          ],
+              SizedBox(
+                height: 18,
+              ),
+              _buildJobInformation(context, 'Flutter', 'Lagos', 'Intern'
+                  // data[index]["job_title"],
+                  // data[index]["state"],
+                  // data[index]["hire_type"]
+                  ),
+              buildRecentJobs(context),
+              SizedBox(height: 20.v),
+              //_buildDashboardStack(context),
+            ],
+          ),
         ),
       ),
     );

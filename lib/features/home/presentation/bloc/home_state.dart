@@ -34,6 +34,5 @@ class HomeState with _$HomeState {
           gender: '',
           officeAddress: '',
           applicationDeadline: ''))
-      PostJobEntity postJobRequest
-      }) = _Initial;
+      PostJobEntity postJobRequest}) = _Initial;
 }

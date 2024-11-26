@@ -17,7 +17,13 @@ import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
+import 'package:artisan_oga/features/home/domain/usecases/apply_for_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/get_all_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/get_employer_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate.dart';
+import 'package:artisan_oga/features/home/domain/usecases/get_featured_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/get_job_seeker_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/post_job_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -34,9 +40,13 @@ Future<void> init() async {
     ..registerLazySingleton<Dio>(() => Dio())
     ..registerLazySingleton(Connectivity.new)
     ..registerSingleton<Logger>(Logger())
+
+    //service
     ..registerLazySingleton<ApiService>(() => ApiServiceImpl(locator()))
     ..registerLazySingleton<FilePickerService>(() => FilePickerService())
     ..registerLazySingleton<SharedPreferences>(() => sharedPref)
+
+    //data sources
     ..registerLazySingleton<AuthRemoteDataSource>(
         () => AuthRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<HomeRemoteDataSource>(
@@ -50,6 +60,8 @@ Future<void> init() async {
     ..registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(
           homeRemoteDataSource: locator(),
         ))
+
+    //usecases
     ..registerLazySingleton<RegisterEmployerUseCase>(
         () => RegisterEmployerUseCase(locator()))
     ..registerLazySingleton<RegisterJobSeekerUseCase>(
@@ -64,5 +76,15 @@ Future<void> init() async {
     ..registerLazySingleton<VerifyCodeUseCase>(
         () => VerifyCodeUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(
-        () => GetUserDataUseCase(locator()));
+        () => GetUserDataUseCase(locator()))
+    ..registerLazySingleton<ApplyForJobUseCase>(
+        () => ApplyForJobUseCase(locator()))
+    ..registerLazySingleton<GetAllJobUseCase>(() => GetAllJobUseCase(locator()))
+    ..registerLazySingleton<GetEmployerJobUseCase>(
+        () => GetEmployerJobUseCase(locator()))
+    ..registerLazySingleton<PostJobUseCase>(() => PostJobUseCase(locator()))
+    ..registerLazySingleton<GetFeatureJobUseCase>(
+        () => GetFeatureJobUseCase(locator()))
+    ..registerLazySingleton<GetJobSeekerJobsUseCase>(
+        () => GetJobSeekerJobsUseCase(locator()));
 }

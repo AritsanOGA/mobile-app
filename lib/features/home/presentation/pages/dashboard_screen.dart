@@ -1,17 +1,20 @@
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/presentation/apply_for_jobs_screen/apply_for_jobs_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../core/utils/app_formatter.dart';
-import '../../core/services/default.dart';
-import '../../shared/widgets/custom_outlined_button.dart';
-import '../search_screen/search_screen.dart';
-import '../settings_page_two_screen/settings_page_two_screen.dart';
+import '../../../../core/utils/app_formatter.dart';
+import '../../../../core/services/default.dart';
+import '../../../../shared/widgets/custom_outlined_button.dart';
+import '../../../../presentation/search_screen/search_screen.dart';
+import '../../../../presentation/settings_page_two_screen/settings_page_two_screen.dart';
 
 //jobs seeker dashboard
 // ignore_for_file: must_be_immutable
@@ -54,37 +57,117 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
       body: Container(
         width: double.maxFinite,
-        child: Column(
-          children: [
-            SizedBox(height: 5.v),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: 25.h),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Welcome back, ",
-                        style: CustomTextStyles.titleLargeff3a332cSemiBold,
-                      ),
-                      TextSpan(
-                        text:'hi',
-                        // jobseekerInfo["data"]["full_name"],
-                        style: CustomTextStyles.titleLargefff7941e,
-                      ),
-                    ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
+          child: Column(
+            children: [
+              SizedBox(height: 5.v),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 25.h),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Welcome back, ",
+                          style: CustomTextStyles.titleLargeff3a332cSemiBold,
+                        ),
+                        TextSpan(
+                          text: 'hi',
+                          // jobseekerInfo["data"]["full_name"],
+                          style: CustomTextStyles.titleLargefff7941e,
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
-            ),
-            SizedBox(height: 19.v),
-            SizedBox(height: 25.v),
-            _jobsForYouHeader(context),
-            SizedBox(height: 25.v),
-            buildJobsForJS(context)
-          ],
+              SizedBox(height: 19.v),
+              SizedBox(height: 25.v),
+              BlocBuilder<HomeBloc, HomeState>(
+                bloc: context.read<HomeBloc>()..add(HomeEvent.getFeaturedJob()),
+                //..add(event),
+                builder: (context, state) {
+                  if (state.viewState == ViewState.loading) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  if (state.viewState == ViewState.failure) {
+                    return Center(child: Text('Error: '));
+                  }
+
+                  if (state.featuredJobList.isEmpty) {
+                    return Center(child: Text('No items found.'));
+                  }
+
+                  return SizedBox(
+                    height: 200.h,
+                    // width: 400.v,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.featuredJobList.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.h,
+                            vertical: 10.v,
+                          ),
+                          width: MediaQuery.sizeOf(context).width * 0.7,
+                          margin: EdgeInsets.only(left: 10),
+                          height: 300,
+                          decoration: BoxDecoration(
+                            color: theme.primaryColor,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 225, 225, 224)
+                                    .withOpacity(0.5),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: Offset(0, 3),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  state.featuredJobList[index].jobTitle ?? '',
+                                  style: CustomTextStyles.titleMediumOnPrimary,
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                  state.featuredJobList[index].industry ?? '',
+                                  style: CustomTextStyles.titleMediumOnPrimary,
+                                ),
+                                Row(
+                                  children: [
+                                    Text('Show All'),
+                                    Icon(
+                                      Icons.arrow_forward,
+                                    )
+                                  ],
+                                )
+                                // Text(data[index]["job_title"].toString(),
+                                //     style: TextStyle(
+                                //         fontWeight: FontWeight.bold,
+                                //         fontSize: 13))
+                              ]),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+              // _jobsForYouHeader(context),
+              // SizedBox(height: 25.v),
+              // buildJobsForJS(context)
+            ],
+          ),
         ),
       ),
     );

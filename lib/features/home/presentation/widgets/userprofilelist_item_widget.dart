@@ -12,7 +12,7 @@ class UserprofilelistItemWidget extends StatefulWidget {
   const UserprofilelistItemWidget({
     Key? key,
     required this.fullName,
-    required this.phone, 
+    required this.phone,
     //required this.featuredCandidateModel,
   }) : super(key: key);
 
@@ -26,6 +26,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 0.6,
+      padding: EdgeInsets.only(left: 10),
       child: Align(
         alignment: Alignment.centerRight,
         child: Container(
@@ -78,7 +79,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                     children: [
                       Text(
                         widget.fullName,
-                        style: CustomTextStyles.titleMediumBlack900,
+                        style: CustomTextStyles.titleMediumOnPrimary,
                       ),
                       SizedBox(height: 3.v),
                       Text(
@@ -120,20 +121,22 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                 ],
               ),
               SizedBox(height: 23.v),
-              Container(
-                  height: 50.v,
-                  width: 240.h,
-                  // margin: margin,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: theme.primaryColor),
-                  // margin: EdgeInsets.symmetric(horizontal: 3.h),
-                  child: Center(
-                    child: Text(
-                      'View',
-                      style: CustomTextStyles.titleMediumGray50_1,
-                    ),
-                  )),
+              Center(
+                child: Container(
+                    height: 40.v,
+                    width: 170.h,
+                    // margin: margin,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: theme.primaryColor),
+                    // margin: EdgeInsets.symmetric(horizontal: 3.h),
+                    child: Center(
+                      child: Text(
+                        'View',
+                        style: CustomTextStyles.titleMediumGray50_1,
+                      ),
+                    )),
+              ),
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -17,12 +18,28 @@ class JSLoginPageScreen extends HookWidget {
   Widget build(BuildContext context) {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
-    return BlocProvider(
-      create: (context) => AuthBloc(),
-      child: SafeArea(
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: SizedBox(
+    return SafeArea(
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state.viewState == ViewState.success) {
+              print('suceess');
+              Navigator.pushNamed(context, AppRoutes.dashboardScreen);
+            } else if (state.viewState == ViewState.success) {
+              showDialog<Widget>(
+                context: context,
+                builder: (ctx) => CustomAlertDialog(
+                  title: 'Error!!!',
+                  content: state.errorMessage ?? '',
+                  actionText: 'OK',
+                  onActionPressed: () => Navigator.of(ctx).pop(),
+                ),
+              );
+            }
+            ;
+          },
+          child: SizedBox(
             // width: SizeUtils.width,
             child: SingleChildScrollView(
               child: Container(

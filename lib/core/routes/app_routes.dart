@@ -1,7 +1,7 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
-import 'package:artisan_oga/presentation/employer_dashboard_page/employer_dashboard_page.dart';
+import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -31,7 +31,7 @@ import '../../features/authentication/presentation/screens/j_s_create_account_pa
 import '../../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
 import '../../presentation/verification_page_one_screen/verification_page_one_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_login_page_screen.dart';
-import '../../presentation/dashboard_screen/dashboard_screen.dart';
+import '../../features/home/presentation/pages/dashboard_screen.dart';
 import '../../presentation/search_job_result_page_screen/search_job_result_page_screen.dart';
 import '../../presentation/notification_bar_page_screen/notification_bar_page_screen.dart';
 import '../../presentation/apply_for_jobs_one_screen/apply_for_jobs_one_screen.dart';
@@ -276,10 +276,10 @@ class AppRoutes {
       //     navigateTo: const PatientDetails1Screen(),
       //   );
 
-      // case patientDetails2Page:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const PatientDetails2Screen(),
-      //   );
+      case dashboardScreen:
+        return AppPageRouteBuilder(
+          navigateTo:  DashboardPage(),
+        );
       // case patientDetails3Page:
       //   return AppPageRouteBuilder(
       //     navigateTo: const PatientDetails3Screen(),

@@ -44,6 +44,36 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
           ),
         )
         .toList();
+    // try {
+
+    //   final rawData = result['data'];
+    //   if (rawData is List<dynamic>) {
+    //     List<FeaturedCandidatesEntity> contrrr = rawData
+    //         .where((item) => item is Map<String, dynamic>)
+    //         .map(
+    //           (e) => FeaturedCandidateModel.fromJson(
+    //             e as Map<String, dynamic>,
+    //           ),
+    //         )
+    //         .toList();
+
+    //     print('Parsed Countries: $contrrr');
+    //     return contrrr;
+    //   } else {
+    //     throw Exception('Expected a list in result["data"], but got: $rawData');
+    //   }
+    // } catch (e, stackTrace) {
+    //   print('Error parsing countries: $e');
+    //   print('StackTrace: $stackTrace');
+    //   throw Exception('Failed to parse countries');
+    // }
+    // return List<dynamic>.from(result['data'] as List)
+    //     .map(
+    //       (e) => FeaturedCandidateModel.fromJson(
+    //         e as Map<String, dynamic>,
+    //       ),
+    //     )
+    //     .toList();
   }
 
   @override

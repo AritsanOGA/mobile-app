@@ -329,8 +329,8 @@ class EmployerSignuppageOneScreen extends HookWidget {
                         BlocConsumer<AuthBloc, AuthState>(
                           listener: (context, state) {
                             if (state.viewState == ViewState.success) {
-                              Navigator.pushNamed(
-                                  context, AppRoutes.verifyEmployerScreen);
+                              // Navigator.pushNamed(
+                              //     context, AppRoutes.verifyEmployerScreen);
                               // Navigator.pushReplacement(
                               //   context,
                               //   MaterialPageRoute(
@@ -350,7 +350,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                               text: "Submit",
                               onPressed: (() {
                                 debugPrint(
-                                    'state ${state.country?.name}  ${state.state?.name} ${state.file} ${fullNameController.text} ');
+                                    'state ${state.country?.name}  ${state.state?.name} ${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
                                 context.read<AuthBloc>().add(
                                       AuthEvent.registerEmployer(
                                         state.registerEmployerRequest.copyWith(

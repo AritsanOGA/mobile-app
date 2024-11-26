@@ -8,7 +8,7 @@ import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../../core/services/employers.dart';
-import '../../employer_dashboard_page/employer_dashboard_page.dart';
+import '../../../features/home/presentation/pages/employer_dashboard_page.dart';
 
 // ignore: must_be_immutable
 class ViewhierarchyItemWidget extends StatefulWidget {
