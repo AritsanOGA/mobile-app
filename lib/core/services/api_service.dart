@@ -98,7 +98,13 @@ class ApiServiceImpl implements ApiService {
       final response = await _dio.get<Map<String, dynamic>>(
         url.toString(),
         queryParameters: queryParameters,
-        options: Options(headers: headers, contentType: 'application/json'),
+        options: Options(
+            headers: headers,
+            //contentType: 'application/json',
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 500;
+            }),
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
@@ -106,7 +112,7 @@ class ApiServiceImpl implements ApiService {
       _log.e('Error from $url', error: error.message);
       throw ServerException(
         trace: trace,
-        message: error.response?.data['message'] as String?,
+        message: error.response?.data['msg'] as String?,
       );
     }
   }
@@ -143,7 +149,7 @@ class ApiServiceImpl implements ApiService {
       _log.e('Error from ', error: error.response?.statusCode);
       throw ServerException(
         trace: trace,
-        message: error.response?.data,
+        message: error.response?.data['msg'] as String?,
       );
     }
   }
@@ -173,7 +179,7 @@ class ApiServiceImpl implements ApiService {
       _log.e('Error from $url', error: error.response?.data['message']);
       throw ServerException(
         trace: trace,
-        message: error.response?.data['message'] as String?,
+        message: error.response?.data['msg'] as String?,
       );
     }
   }

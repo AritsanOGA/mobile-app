@@ -2,13 +2,37 @@ import 'package:equatable/equatable.dart';
 
 class JobSeekerJobResponseEntity extends Equatable {
   const JobSeekerJobResponseEntity({
-    required this.id,
-    required this.name,
+    this.id,
+    this.userId,
+    this.jobTitle,
+    this.jobDescription,
+    this.basicSalary,
+    this.industry,
+    this.workType,
+    this.profileImage,
+    this.status,
   });
 
-  final int id;
-  final String name;
+  final int? id;
+  final int? userId;
+  final String? jobTitle;
+  final String? jobDescription;
+  final String? basicSalary;
+  final String? industry;
+  final String? workType;
+  final dynamic? profileImage;
+  final String? status;
 
   @override
-  List<Object?> get props => [id, name];
+  List<Object?> get props => [
+        id,
+        userId,
+        jobTitle,
+        jobDescription,
+        basicSalary,
+        industry,
+        profileImage,
+        workType,
+        status,
+      ];
 }

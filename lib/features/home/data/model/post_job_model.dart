@@ -27,8 +27,7 @@ class PostJobModel extends PostJobEntity {
       required super.applicationDeadline});
 
   factory PostJobModel.fromJson(Map<String, dynamic> json) => PostJobModel(
-     
-      jobTitle: json['jobTitle'] ,
+      jobTitle: json['jobTitle'],
       companyName: json['companyName'],
       category: json['category'],
       workType: json['workType'],

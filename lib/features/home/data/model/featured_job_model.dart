@@ -91,7 +91,7 @@ class FeaturedJobResponseModel extends FeaturedJobResponseEntity {
         hiredCount: json["hired_count"],
         applicationDeadline: json["application_deadline"] == null
             ? null
-            : DateTime.parse(json["application_deadline"]),
+            : json["application_deadline"],
         officeAddress: json["office_address"],
         accommodationAvailable: json["accommodation_available"],
         accommodationFor: json["accommodation_for"],

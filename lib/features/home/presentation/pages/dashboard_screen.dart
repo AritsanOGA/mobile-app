@@ -1,6 +1,8 @@
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
+import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/presentation/apply_for_jobs_screen/apply_for_jobs_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/successful_job_application_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -37,22 +39,6 @@ class _DashboardPageState extends State<DashboardPage> {
         backgroundColor: Colors.transparent,
         leadingWidth: 52.h,
         leading: SizedBox(),
-        /*  leading: Builder(
-          builder: (BuildContext context) {
-            return GestureDetector(
-              onTap: () {
-                Scaffold.of(context).openDrawer();
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child:
-                        SvgPicture.asset("assets/images/Vectorsvg_menu.svg")),
-              ),
-            );
-          },
-        ),*/
         actions: [],
       ),
       body: Container(
@@ -85,6 +71,10 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
               SizedBox(height: 19.v),
+              Text(
+                'Featured Jobs',
+                style: CustomTextStyles.titleLargeff3a332cSemiBold,
+              ),
               SizedBox(height: 25.v),
               BlocBuilder<HomeBloc, HomeState>(
                 bloc: context.read<HomeBloc>()..add(HomeEvent.getFeaturedJob()),
@@ -109,63 +99,86 @@ class _DashboardPageState extends State<DashboardPage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: state.featuredJobList.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.h,
-                            vertical: 10.v,
-                          ),
-                          width: MediaQuery.sizeOf(context).width * 0.7,
-                          margin: EdgeInsets.only(left: 10),
-                          height: 300,
-                          decoration: BoxDecoration(
-                            color: theme.primaryColor,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(255, 225, 225, 224)
-                                    .withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  state.featuredJobList[index].jobTitle ?? '',
-                                  style: CustomTextStyles.titleMediumOnPrimary,
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Text(
-                                  state.featuredJobList[index].industry ?? '',
-                                  style: CustomTextStyles.titleMediumOnPrimary,
-                                ),
-                                Row(
-                                  children: [
-                                    Text('Show All'),
-                                    Icon(
-                                      Icons.arrow_forward,
-                                    )
-                                  ],
-                                )
-                                // Text(data[index]["job_title"].toString(),
-                                //     style: TextStyle(
-                                //         fontWeight: FontWeight.bold,
-                                //         fontSize: 13))
-                              ]),
+                        return FeaturedJobWidget(
+                          featuredJobResponseEntity:
+                              state.featuredJobList[index],
                         );
                       },
                     ),
                   );
                 },
               ),
-              // _jobsForYouHeader(context),
+              SizedBox(height: 25.v),
+              Text(
+                'Jobs for you',
+                style: CustomTextStyles.titleLargeff3a332cSemiBold,
+              ),
+              BlocBuilder<HomeBloc, HomeState>(
+                bloc: context.read<HomeBloc>()
+                  ..add(HomeEvent.getJobSeekerJobs()),
+                //..add(event),
+                builder: (context, state) {
+                  if (state.viewState == ViewState.loading) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  if (state.viewState == ViewState.failure) {
+                    return Center(child: Text('Error: '));
+                  }
+
+                  if (state.jobSeekerJobList.isEmpty) {
+                    return Center(child: Text('No items found.'));
+                  }
+
+                  return SizedBox(
+                    height: 100.h,
+                    // width: 400.v,
+                    child: ListView.builder(
+                      itemCount: state.jobSeekerJobList.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          //         leading:
+                          //          CachedNetworkImage(
+                          //   imageUrl: state.jobSeekerJobList[index].profileImage,
+                          //   fit: BoxFit.cover,
+                          //   progressIndicatorBuilder: (context, url, downloadProgress) =>
+                          //       const Center(),
+                          //   imageBuilder: (context, imageProvider) => Container(
+                          //     width: 180,
+                          //     height: 220,
+                          //     decoration: BoxDecoration(
+                          //       border: Border.all(
+                          //         width: 4,
+                          //         color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
+                          //       ),
+                          //       borderRadius: BorderRadius.circular(16),
+                          //       image: DecorationImage(
+                          //         image: CachedNetworkImageProvider(imageURL),
+                          //         fit: BoxFit.cover,
+                          //       ),
+                          //     ),
+                          //   ),
+                          //   errorWidget: (context, url, error) => const Icon(Icons.error),
+                          // ),
+                          title: Text(
+                            state.jobSeekerJobList[index].jobTitle ?? '',
+                            style: CustomTextStyles.titleMediumMedium18,
+                          ),
+                          subtitle: Text(
+                            state.jobSeekerJobList[index].workType ?? '',
+                            style:
+                                CustomTextStyles.labelLargePrimaryContainer13,
+                          ),
+                          trailing: Icon(Icons.more_vert),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+              //  _jobsForYouHeader(context),
               // SizedBox(height: 25.v),
-              // buildJobsForJS(context)
+              //  buildJobsForJS(context)
             ],
           ),
         ),
@@ -426,7 +439,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              ApplyForJobsScreen()),
+                                                              SuccessfulJobApplocationScreen()),
                                                     )
                                                   }
                                                 else
@@ -527,6 +540,73 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
       ],
       // Add additional properties as needed, such as currentIndex, onTap, etc.
+    );
+  }
+}
+
+class FeaturedJobWidget extends StatelessWidget {
+  final FeaturedJobResponseEntity featuredJobResponseEntity;
+  const FeaturedJobWidget({
+    super.key,
+    required this.featuredJobResponseEntity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.h,
+        vertical: 10.v,
+      ),
+      width: MediaQuery.sizeOf(context).width * 0.7,
+      margin: EdgeInsets.only(left: 10),
+      height: 300,
+      decoration: BoxDecoration(
+        color: theme.primaryColor,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromARGB(255, 225, 225, 224).withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(
+          featuredJobResponseEntity.jobTitle ?? '',
+          style: CustomTextStyles.titleMediumOnPrimary,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          featuredJobResponseEntity.industry ?? '',
+          style: CustomTextStyles.titleMediumOnPrimary,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              AppRoutes.feauredJobDetails,
+              arguments: featuredJobResponseEntity,
+            );
+          },
+          child: Row(
+            children: [
+              Text('Show All'),
+              Icon(
+                Icons.arrow_forward,
+              )
+            ],
+          ),
+        )
+        // Text(data[index]["job_title"].toString(),
+        //     style: TextStyle(
+        //         fontWeight: FontWeight.bold,
+        //         fontSize: 13))
+      ]),
     );
   }
 }

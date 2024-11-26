@@ -87,7 +87,7 @@ class FeaturedJobResponseEntity extends Equatable {
     final String? state;
     final String? city;
     final int? hiredCount;
-    final DateTime? applicationDeadline;
+    final   String? applicationDeadline;
     final String? officeAddress;
     final String? accommodationAvailable;
     final String? accommodationFor;

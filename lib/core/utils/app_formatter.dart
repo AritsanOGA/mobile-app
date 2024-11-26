@@ -20,7 +20,7 @@ class AppFormatter {
   static final monthYearFormatter = DateFormat('MM-yyyy');
   static final dateFormatterYMD = DateFormat('yyyy-MM-dd');
   static final dateFormatterMonth = DateFormat('MMM');
-
+  static final dateTimeFormatter = DateFormat('dd-MM-yyyy hh:mm a');
   static final kNumberFormat = NumberFormat.compactCurrency(
     decimalDigits: 0,
     symbol: '',

@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
+import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
+import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -35,7 +37,7 @@ import '../../features/home/presentation/pages/dashboard_screen.dart';
 import '../../presentation/search_job_result_page_screen/search_job_result_page_screen.dart';
 import '../../presentation/notification_bar_page_screen/notification_bar_page_screen.dart';
 import '../../presentation/apply_for_jobs_one_screen/apply_for_jobs_one_screen.dart';
-import '../../presentation/apply_for_jobs_screen/apply_for_jobs_screen.dart';
+import '../../features/home/presentation/pages/successful_job_application_screen.dart';
 import '../../presentation/activities_tab_container_screen/activities_tab_container_screen.dart';
 import '../../presentation/message_page_one_screen/message_page_one_screen.dart';
 import '../../presentation/message_page_chatting_screen/message_page_chatting_screen.dart';
@@ -93,7 +95,7 @@ class AppRoutes {
   static const String formTransferPageScreen = '/form_transfer_page_screen';
 
   static const String manageJobsPage = '/manage_jobs_page';
-
+  static const String successfulJobApplicationPage = '/successful-job-applicaion_page';
   static const String viewCandidatesPageScreen = '/view_candidates_page_screen';
 
   static const String acceptRejectPageScreen = '/accept_reject_page_screen';
@@ -151,6 +153,7 @@ class AppRoutes {
   static const String applyForJobsScreen = '/apply_for_jobs_screen';
 
   static const String activitiesPage = '/activities_page';
+  static const String feauredJobDetails = '/featured-job-details';
 
   static const String activitiesTabContainerScreen =
       '/activities_tab_container_screen';
@@ -221,7 +224,7 @@ class AppRoutes {
     searchJobResultPageScreen: (context) => SearchJobResultPageScreen(),
     notificationBarPageScreen: (context) => NotificationBarPageScreen(),
     applyForJobsOneScreen: (context) => ApplyForJobsOneScreen(),
-    applyForJobsScreen: (context) => ApplyForJobsScreen(),
+    applyForJobsScreen: (context) => SuccessfulJobApplocationScreen(),
     activitiesTabContainerScreen: (context) => ActivitiesTabContainerScreen(),
     messagePageOneScreen: (context) => MessagePageOneScreen(),
     messagePageChattingScreen: (context) => MessagePageChattingScreen(),
@@ -270,15 +273,17 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulPageScreen(),
         );
-      // case patientDetails1Page:
-      //   return AppPageRouteBuilder(
-      //     setting: settings,
-      //     navigateTo: const PatientDetails1Screen(),
-      //   );
+      case feauredJobDetails:
+        final model = settings.arguments as FeaturedJobResponseEntity;
+        return AppPageRouteBuilder(
+          navigateTo: FeaturedJobDetailsScreen(
+            featuredJobResponseEntity: model,
+          ),
+        );
 
       case dashboardScreen:
         return AppPageRouteBuilder(
-          navigateTo:  DashboardPage(),
+          navigateTo: DashboardPage(),
         );
       // case patientDetails3Page:
       //   return AppPageRouteBuilder(
@@ -304,10 +309,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerDashboardPage(),
         );
-      // case paymentSuccessfulPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const PaymentSuccessfulScreen(),
-      //   );
+      case successfulJobApplicationPage:
+        return AppPageRouteBuilder(
+          navigateTo: const SuccessfulJobApplocationScreen(),
+        );
 
       // case reviewSummaryPage:
       //   return AppPageRouteBuilder(

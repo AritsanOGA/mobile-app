@@ -20,7 +20,7 @@ abstract class HomeRemoteDataSource {
   Future<List<EmployerJobResponseEntity>> getEmployerJob();
   Future<List<FeaturedJobResponseEntity>> getFeaturedJob();
   Future<List<AllJobResponseEntity>> getAllJobs();
-  Future<FeaturedCandidatesEntity> applyForJob(String id);
+  Future<bool> applyForJob(String id);
   Future<PostJobEntity> postJob(PostJobEntity entity);
 }
 
@@ -44,51 +44,25 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
           ),
         )
         .toList();
-    // try {
-
-    //   final rawData = result['data'];
-    //   if (rawData is List<dynamic>) {
-    //     List<FeaturedCandidatesEntity> contrrr = rawData
-    //         .where((item) => item is Map<String, dynamic>)
-    //         .map(
-    //           (e) => FeaturedCandidateModel.fromJson(
-    //             e as Map<String, dynamic>,
-    //           ),
-    //         )
-    //         .toList();
-
-    //     print('Parsed Countries: $contrrr');
-    //     return contrrr;
-    //   } else {
-    //     throw Exception('Expected a list in result["data"], but got: $rawData');
-    //   }
-    // } catch (e, stackTrace) {
-    //   print('Error parsing countries: $e');
-    //   print('StackTrace: $stackTrace');
-    //   throw Exception('Failed to parse countries');
-    // }
-    // return List<dynamic>.from(result['data'] as List)
-    //     .map(
-    //       (e) => FeaturedCandidateModel.fromJson(
-    //         e as Map<String, dynamic>,
-    //       ),
-    //     )
-    //     .toList();
   }
 
   @override
-  Future<FeaturedCandidatesEntity> applyForJob(String id) async {
-    final result = await api.post(url: AppApiEndpoint.postJob, body: ''
-        // FeaturedCandidateModel.fromEntity(entity).toJson(),
-        ) as Map<String, dynamic>;
+  Future<bool> applyForJob(String id) async {
+    await api.post(
+        url: AppApiEndpoint.applyForJob,
+        headers: userService.authorizationHeader,
+        body: {"job_id": id}) as Map<String, dynamic>;
 
-    return FeaturedCandidateModel.fromJson(result);
+    // FeaturedCandidateModel.fromEntity(entity).toJson(),
+
+    return true;
   }
 
   @override
   Future<List<AllJobResponseEntity>> getAllJobs() async {
     final result = await api.get(
       url: AppApiEndpoint.getAllJobs,
+      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
@@ -119,6 +93,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<FeaturedJobResponseEntity>> getFeaturedJob() async {
     final result = await api.get(
       url: AppApiEndpoint.featuredJob,
+      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
@@ -134,6 +109,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<JobSeekerJobResponseEntity>> getJobSeekerJobs() async {
     final result = await api.get(
       url: AppApiEndpoint.jobSeekerJob,
+      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
@@ -147,7 +123,10 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
   @override
   Future<PostJobEntity> postJob(PostJobEntity entity) async {
-    final result = await api.post(url: AppApiEndpoint.postJob, body: ''
+    final result = await api.post(
+        url: AppApiEndpoint.postJob,
+        headers: userService.authorizationHeader,
+        body: ''
         // FeaturedCandidateModel.fromEntity(entity).toJson(),
         ) as Map<String, dynamic>;
 

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class ApplyForJobsScreen extends StatelessWidget {
-  const ApplyForJobsScreen({Key? key})
+class SuccessfulJobApplocationScreen extends StatelessWidget {
+  const SuccessfulJobApplocationScreen({Key? key})
       : super(
           key: key,
         );
@@ -23,11 +24,7 @@ class ApplyForJobsScreen extends StatelessWidget {
               Spacer(
                 flex: 43,
               ),
-              CustomImageView(
-                imagePath: ImageConstant.imgVectorPrimary,
-                height: 132.adaptSize,
-                width: 132.adaptSize,
-              ),
+              SvgPicture.asset(ImageConstant.imgVectorPrimary),
               SizedBox(height: 23.v),
               Text(
                 "Application Sent",
@@ -49,8 +46,8 @@ class ApplyForJobsScreen extends StatelessWidget {
                 flex: 56,
               ),
               CustomElevatedButton(
-                text: "Back to Home", onPressed: () {  },
-               // buttonTextStyle: CustomTextStyles.titleMediumGray5001,
+                text: "Back to Home", onPressed: () {},
+                // buttonTextStyle: CustomTextStyles.titleMediumGray5001,
               ),
               SizedBox(height: 34.v),
               SizedBox(
