@@ -47,6 +47,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetJobSeekerJobs>(_onGetJobSeekerJobs);
     on<_PostJob>(_onPostJob);
     on<_ApplyForJob>(_onApplyForJob);
+    on<_UpdatePostJobRequest>(_onUpdatePostJobRequest);
   }
   final GetFeaturedCandidateUseCase _getFeaturedCandidateseCase;
   final GetEmployerJobUseCase _getEmployerJobUseCase;
@@ -173,5 +174,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
     });
+  }
+
+  FutureOr<void> _onUpdatePostJobRequest(
+      _UpdatePostJobRequest event, Emitter<HomeState> emit) {
+    emit(
+      state.copyWith(
+        postJobRequest: event.postJobRequest,
+      ),
+    );
   }
 }

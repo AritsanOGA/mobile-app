@@ -291,7 +291,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onUpdateRegisterJobSeekerRequest(
       _UpdateRegisterJobSeekerRequest event, Emitter<AuthState> emit) {
     emit(
-      state.copyWith(),
+      state.copyWith(registerJobSeekerRequest: event.registerJobSeekerRequest),
     );
   }
 }

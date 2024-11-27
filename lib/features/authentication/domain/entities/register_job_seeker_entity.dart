@@ -17,6 +17,7 @@ class RegisterJobSeekerEntity extends Equatable {
       required this.password,
       required this.phoneNumber,
       required this.jobType,
+      required this.guarantorPhoneNumber, 
       required this.guarantorName,
       required this.guarantorEmail,
       required this.residentialAddress,
@@ -41,7 +42,7 @@ class RegisterJobSeekerEntity extends Equatable {
   final String password;
   final String fullName;
   final String jobType;
-
+ final String guarantorPhoneNumber;
   final String guarantorName;
   final String guarantorEmail;
   final String residentialAddress;
@@ -104,8 +105,10 @@ class RegisterJobSeekerEntity extends Equatable {
     String? gender,
     String? courseName,
     String? employmentHistory,
+    String? guarantorPhoneNumber,
   }) {
     return RegisterJobSeekerEntity(
+      guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
         fullName: fullName ?? this.fullName,
         companyName: companyName ?? this.companyName,
         state: state ?? this.state,

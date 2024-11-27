@@ -51,6 +51,57 @@ class PostJobEntity extends Equatable {
   final String officeAddress;
   final String applicationDeadline;
 
+  PostJobEntity copyWith({
+    String? jobTitle,
+    String? companyName,
+    String? category,
+    String? workType,
+    String? jobDescription,
+    String? skills,
+    String? position,
+    String? hireType,
+    int? categoryId,
+    int? yearsOfExperience,
+    String? levelOfEducation,
+    String? skillLevel,
+    int? maxAmount,
+    int? minAmount,
+    String? country,
+    String? state,
+    String? city,
+    String? available,
+    String? availableFor,
+    String? compensationType,
+    String? gender,
+    String? officeAddress,
+    String? applicationDeadline,
+  }) {
+    return PostJobEntity(
+        jobTitle: jobTitle ?? this.jobTitle,
+        companyName: companyName ?? this.companyName,
+        category: category ?? this.category,
+        workType: workType ?? this.workType,
+        jobDescription: jobDescription ?? this.jobDescription,
+        skills: skills ?? this.skills,
+        position: position ?? this.position,
+        hireType: hireType ?? this.hireType,
+        categoryId: categoryId ?? this.categoryId,
+        yearsOfExperience: yearsOfExperience ?? this.yearsOfExperience,
+        levelOfEducation: levelOfEducation ?? this.levelOfEducation,
+        skillLevel: skillLevel ?? this.skillLevel,
+        maxAmount: maxAmount ?? this.maxAmount,
+        minAmount: minAmount ?? this.minAmount,
+        country: country ?? this.country,
+        state: state ?? this.state,
+        city: city ?? this.city,
+        available: available ?? this.available,
+        availableFor: availableFor ?? this.availableFor,
+        compensationType: compensationType ?? this.compensationType,
+        gender: gender ?? this.gender,
+        officeAddress: officeAddress ?? this.officeAddress,
+        applicationDeadline: applicationDeadline ?? this.applicationDeadline);
+  }
+
   @override
   List<Object?> get props => [
         jobTitle,

@@ -1,3 +1,5 @@
+import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/presentation/post_job_two_screen/post_job_two_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -6,14 +8,14 @@ import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hive/hive.dart';
+
 import 'package:page_transition/page_transition.dart';
 
 import '../../core/services/default.dart';
 import '../../shared/widgets/custom_elevated_button.dart';
 
-// ignore_for_file: must_be_immutable
 class PostJobOnePage extends StatefulWidget {
   @override
   _PostJobOnePageState createState() => _PostJobOnePageState();
@@ -68,111 +70,120 @@ class _PostJobOnePageState extends State<PostJobOnePage> {
     return SafeArea(
         child: Scaffold(
             appBar: _buildAppBar(context),
-            body: Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 24.h),
-                child: SingleChildScrollView(
-                    child: Column(children: [
-                  SizedBox(height: 3.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 1.h),
-                          child: Text("Fields for Job Creation",
-                              style: CustomTextStyles
-                                  .titleMediumPrimaryContainerMedium))),
-                  SizedBox(height: 23.v),
-                  Text("Job Title",
-                      style: CustomTextStyles.titleMediumMedium18),
-                  SizedBox(height: 10.v),
-                  CustomTextFormField(
-                    title: 'Job title*',
-                    titleStyle: CustomTextStyles.titleMediumMedium18,
-                    hintText: 'Add job title',
-                    isBorderNone: true,
-                  ),
-                  SizedBox(height: 22.v),
-                  // CustomDropDown(
-                  //   title: 'Select a Category',
-                  //   titleStyle: CustomTextStyles.titleMediumMedium18,
-                  //   items: [],
-                  //   selectedItem: '',
-                  //   isBorderNone: true,
-                  // ),
-                  // SizedBox(height: 23.v),
-                  // CustomDropDown(
-                  //   title: 'Select Required Skill',
-                  //   titleStyle: CustomTextStyles.titleMediumMedium18,
-                  //   items: [],
-                  //   selectedItem: '',
-                  //   isBorderNone: true,
-                  // ),
-                  SizedBox(height: 23.v),
-                  CustomTextFormField(
-                    title: 'Job Description',
-                    titleStyle: CustomTextStyles.titleMediumMedium18,
-                    hintText: 'Add a Job Description',
-                    isBorderNone: true,
-                  ),
-                  SizedBox(height: 27.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 1.h),
-                          child: Text("Work Type",
-                              style: CustomTextStyles.titleMediumMedium18))),
-                  SizedBox(height: 18.v),
-                  _buildWorkTypeRadioGroup(context),
-                  SizedBox(height: 27.v),
-                  Divider(),
-                  SizedBox(height: 23.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 1.h),
-                          child: Text("Job Type",
-                              style: CustomTextStyles.titleMediumMedium18))),
-                  SizedBox(height: 18.v),
-                  _buildJobTypeRadioGroup(context),
-                  SizedBox(height: 27.v),
-                  CustomElevatedButton(
-                    onPressed: (() {
-                      var newJobData = [
-                        {"job_title": jobTitleController.text},
-                        {"position": jobPositionController.text},
-                        {"job_description": jobDescriptionController.text},
-                        {"business_category_id": selectedCategory},
-                        //  {"slected_skills": selectedSkills},
-                        {"work_type": workTypeRadioGroup},
-                        {"hire_type": jobTypeRadioGroup1}
-                      ];
-
-                      print(newJobData.toString());
-
-                      Hive.box("artisan").put("new_job_data", newJobData);
-
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              duration: Durations.long1,
-                              child: PostJobTwoScreen()));
-                    }),
-                    // height: 41.v,
-                    // width: 110.h,
-                    text: "Next",
-                    // margin: EdgeInsets.only(right: 2.h),
-                    // buttonStyle:
-                    //     CustomButtonStyles.fillSecondaryContainerTL20,
-                    // buttonTextStyle:
-                    //     CustomTextStyles.titleMediumOnPrimaryContainer18,
-                    // alignment: Alignment.centerRight
-                  ),
-                  SizedBox(
+            body: BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                return Container(
                     width: double.maxFinite,
-                    height: 20,
-                  ),
-                ])))));
+                    padding: EdgeInsets.symmetric(horizontal: 24.h),
+                    child: SingleChildScrollView(
+                        child: Column(children: [
+                      SizedBox(height: 3.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 1.h),
+                              child: Text("Fields for Job Creation",
+                                  style: CustomTextStyles
+                                      .titleMediumPrimaryContainerMedium))),
+                      SizedBox(height: 23.v),
+                      Text("Job Title",
+                          style: CustomTextStyles.titleMediumMedium18),
+                      SizedBox(height: 10.v),
+                      CustomTextFormField(
+                        title: 'Job title*',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Add job title',
+                        isBorderNone: true,
+                      ),
+                      SizedBox(height: 22.v),
+                      // CustomDropDown(
+                      //   title: 'Select a Category',
+                      //   titleStyle: CustomTextStyles.titleMediumMedium18,
+                      //   items: [],
+                      //   selectedItem: '',
+                      //   isBorderNone: true,
+                      // ),
+                      // SizedBox(height: 23.v),
+                      // CustomDropDown(
+                      //   title: 'Select Required Skill',
+                      //   titleStyle: CustomTextStyles.titleMediumMedium18,
+                      //   items: [],
+                      //   selectedItem: '',
+                      //   isBorderNone: true,
+                      // ),
+                      SizedBox(height: 23.v),
+                      CustomTextFormField(
+                        title: 'Job Description',
+                        titleStyle: CustomTextStyles.titleMediumMedium18,
+                        hintText: 'Add a Job Description',
+                        isBorderNone: true,
+                      ),
+                      SizedBox(height: 27.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 1.h),
+                              child: Text("Work Type",
+                                  style:
+                                      CustomTextStyles.titleMediumMedium18))),
+                      SizedBox(height: 18.v),
+                      _buildWorkTypeRadioGroup(context),
+                      SizedBox(height: 27.v),
+                      Divider(),
+                      SizedBox(height: 23.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 1.h),
+                              child: Text("Job Type",
+                                  style:
+                                      CustomTextStyles.titleMediumMedium18))),
+                      SizedBox(height: 18.v),
+                      _buildJobTypeRadioGroup(context),
+                      SizedBox(height: 27.v),
+                      BlocSelector<HomeBloc, HomeState, PostJobEntity>(
+                        selector: (state) {
+                          return state.postJobRequest;
+                        },
+                        builder: (context, postJobRequest) {
+                          return CustomElevatedButton(
+                            onPressed: (() {
+                              context.read<HomeBloc>().add(
+                                    HomeEvent.updatePostJobRequest(
+                                      postJobRequest.copyWith(
+                                        jobTitle: jobTitleController.text,
+
+                                        ///workType: state.
+                                      ),
+                                    ),
+                                  );
+
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Durations.long1,
+                                      child: PostJobTwoScreen()));
+                            }),
+                            // height: 41.v,
+                            // width: 110.h,
+                            text: "Next",
+                            // margin: EdgeInsets.only(right: 2.h),
+                            // buttonStyle:
+                            //     CustomButtonStyles.fillSecondaryContainerTL20,
+                            // buttonTextStyle:
+                            //     CustomTextStyles.titleMediumOnPrimaryContainer18,
+                            // alignment: Alignment.centerRight
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        width: double.maxFinite,
+                        height: 20,
+                      ),
+                    ])));
+              },
+            )));
   }
 
   /// Section Widget

@@ -70,7 +70,8 @@ class AuthState with _$AuthState {
         certificateObtained: '',
         graduationYear: '',
         courseName: '',
-        employmentHistory: ''))
+        employmentHistory: '',
+        guarantorPhoneNumber: ''))
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
     @Default([]) List<StateResponseEntity> states,

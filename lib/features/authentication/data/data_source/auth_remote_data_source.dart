@@ -24,7 +24,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/verify_code_
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
-  Future<AuthResultEntity> registerEmployer(RegisterEmployerEntity entity);
+  Future<bool> registerEmployer(RegisterEmployerEntity entity);
   Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity);
 
   Future<List<CountryResponseEntity>> getCountries();
@@ -49,8 +49,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> registerEmployer(
-      RegisterEmployerEntity entity) async {
+  Future<bool> registerEmployer(RegisterEmployerEntity entity) async {
     print('bbbo ${RegisterEmployerModel.fromEntity(entity).toJson()}');
     final result = await api.post(
       url: AppApiEndpoint.signup,
@@ -60,10 +59,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'Accept': 'application/json',
       },
     );
+    // if (result['msg'] == 'Success') {
+    //   return true;
+    // }
 
+    return true;
 
-
-    return AuthResultModel.fromJson(result as Map<String, dynamic>);
+    //success;
+    //AuthResultModel.fromJson(result as Map<String, dynamic>);
   }
 
   @override
@@ -168,6 +171,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       },
     );
 
-    return result;
+    return true;
   }
 }

@@ -32,7 +32,7 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
           gender: entity.gender,
           phoneNumber: entity.phoneNumber);
 
-  Future<FormData> toJson() async =>  FormData.fromMap({
+  Future<FormData> toJson() async => FormData.fromMap({
         'logo': await MultipartFile.fromFile(
           "${companyLogo?.path}",
           filename: "${companyLogo?.path.split('/').last}",
@@ -47,7 +47,6 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
         'city': city,
         'gender': gender,
         'phone': phoneNumber,
-        'business_name': companyName,
         'title': officeTitle,
       });
   @override
@@ -55,6 +54,4 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
     // TODO: implement toString
     return toJson().toString();
   }
-
-
 }

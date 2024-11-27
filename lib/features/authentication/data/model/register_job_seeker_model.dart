@@ -35,6 +35,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
     required super.streetAddress,
     required super.courseName,
     required super.employmentHistory,
+    required super.guarantorPhoneNumber
   });
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
@@ -70,7 +71,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         educationalQualification: entity.educationalQualification,
         streetAddress: entity.streetAddress,
         courseName: entity.courseName,
-        employmentHistory: entity.employmentHistory,
+        employmentHistory: entity.employmentHistory, guarantorPhoneNumber: entity.guarantorPhoneNumber,
+        
       );
 
   FormData toJson() => FormData.fromMap({
@@ -112,5 +114,6 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'StreetAddress': streetAddress,
         'job_description': describeYourRole,
         'service_description': description,
+        'guarantor_phone':guarantorPhoneNumber
       });
 }
