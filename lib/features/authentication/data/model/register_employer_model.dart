@@ -32,8 +32,8 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
           gender: entity.gender,
           phoneNumber: entity.phoneNumber);
 
-  FormData toJson() => FormData.fromMap({
-        'logo': MultipartFile.fromFile(
+  Future<FormData> toJson() async =>  FormData.fromMap({
+        'logo': await MultipartFile.fromFile(
           "${companyLogo?.path}",
           filename: "${companyLogo?.path.split('/').last}",
         ),
@@ -41,7 +41,7 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
         'password': password,
         'confirm_password': password,
         'country': country,
-        'fullName': fullName,
+        'fullname': fullName,
         'company_name': companyName,
         'state': state,
         'city': city,

@@ -134,11 +134,13 @@ class ApiServiceImpl implements ApiService {
         url.toString(),
         data: body,
         options: Options(
-            headers: headers,
-            followRedirects: false,
-            validateStatus: (status) {
-              return status! < 500;
-            }),
+          headers: headers,
+          followRedirects: false,
+          validateStatus: (status) => true,
+          // validateStatus: (status) {
+          //   return status! < 500;
+          // }
+        ),
         // options: Options(
         //   headers: headers,
         // ),

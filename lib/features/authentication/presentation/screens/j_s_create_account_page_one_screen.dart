@@ -1,4 +1,3 @@
-
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
@@ -10,7 +9,6 @@ import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageOneScreen extends HookWidget {
   @override
@@ -21,7 +19,6 @@ class JSCreateAccountPageOneScreen extends HookWidget {
     final emailController = useTextEditingController();
     final confirmEmailController = useTextEditingController();
 
-    final authBloc = BlocProvider.of<AuthBloc>(context);
     return BlocProvider(
       create: (context) => AuthBloc(),
       child: SafeArea(
@@ -177,20 +174,20 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                     ],
                                   ),
                                 ),
-                                Expanded(
-                                  child: CustomDropDown<String>(
-                                    title: 'Gender',
-                                    items: authBloc.genders,
-                                    selectedItem: authBloc.genders.first,
-                                    itemLabel: (gender) => gender,
-                                    onChanged: (value) {
-                                      context.read<AuthBloc>().add(
-                                            AuthEvent.updateSelectedGender(
-                                                value ?? ''),
-                                          );
-                                    },
-                                  ),
-                                ),
+                                // Expanded(
+                                //   child: CustomDropDown<String>(
+                                //     title: 'Gender',
+                                //     items: authBloc.genders,
+                                //     selectedItem: authBloc.genders.first,
+                                //     itemLabel: (gender) => gender,
+                                //     onChanged: (value) {
+                                //       context.read<AuthBloc>().add(
+                                //             AuthEvent.updateSelectedGender(
+                                //                 value ?? ''),
+                                //           );
+                                //     },
+                                //   ),
+                                // ),
                               ],
                             ),
 

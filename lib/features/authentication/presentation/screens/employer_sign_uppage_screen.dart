@@ -99,7 +99,7 @@ class EmployerSignUpPageScreen extends HookWidget {
                                                   email: emailController.text,
                                                   password:
                                                       passwordController.text,
-                                                  comfirmPassword:
+                                                  confirmPassword:
                                                       passwordController.text,
                                                 ),
                                               ),

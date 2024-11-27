@@ -3,7 +3,7 @@ part of 'auth_bloc.dart';
 @freezed
 class AuthState with _$AuthState {
   const factory AuthState.initial({
-    String? gender,
+    @Default('--Selected--') String gender,
     CountryResponseEntity? country,
     StateResponseEntity? state,
     String? jsCountry,
@@ -12,15 +12,15 @@ class AuthState with _$AuthState {
     String? confirmPassword,
     String? countryId,
     String? jsGender,
-    String? jobType,
+    @Default('--Selected--') String jobType,
     String? jsState,
     String? city,
     File? picture,
-    String? educationalQualification,
+    @Default('--Selected--') String educationalQualification,
     String? dateOFBirth,
     String? startYear,
     String? endYear,
-    String? employmentHistory,
+    @Default('--Selected--') String employmentHistory,
     CategoryResponseEntity? category,
     SkillResponseEntity? skills,
     @Default(RegisterEmployerEntity(
@@ -74,6 +74,23 @@ class AuthState with _$AuthState {
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
     @Default([]) List<StateResponseEntity> states,
+    @Default(['--Selected--', 'Male', 'Female', 'Other']) List<String> genders,
+    @Default([
+      'No Education',
+      'FLSC',
+      'WAEC',
+      'NECO',
+      'GCE',
+      'B.sc',
+      'M.sc',
+      'Phd',
+      'B. Tech'
+    ])
+    List<String> levelOfEducation,
+    @Default(['Employment History', 'No Employment History'])
+    List<String> employmentHistoryType,
+    @Default(["--Select--", "Full Time", "Tempoary", "Contract", "Part Time"])
+    List<String> workMode,
     @Default([]) List<CountryResponseEntity> countries,
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,

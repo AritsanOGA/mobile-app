@@ -20,7 +20,6 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
     final awardYearController = useTextEditingController();
     final courseNameController = useTextEditingController();
 
-    final authBloc = BlocProvider.of<AuthBloc>(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -39,26 +38,26 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                             horizontal: 22.h, vertical: 12.v),
                         child: Column(children: [
                           SizedBox(height: 10.v),
-                          BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, state) {
-                              return CustomDropDown<String>(
-                                title: "Educational Qualification",
-                                items: authBloc.educationalQualification,
-                                selectedItem: state.educationalQualification ??
-                                    'No Education',
-                                //  state.gender ?? "--Select--",
-                                itemLabel: (gender) => gender,
-                                onChanged: (value) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent
-                                            .updateSelectedEducationQualification(
-                                                value ?? ''),
-                                      );
-                                  print('ssss ${value}');
-                                },
-                              );
-                            },
-                          ),
+                          // BlocBuilder<AuthBloc, AuthState>(
+                          //   builder: (context, state) {
+                          //     return CustomDropDown<String>(
+                          //       title: "Educational Qualification",
+                          //       items: authBloc.educationalQualification,
+                          //       selectedItem: state.educationalQualification ??
+                          //           'No Education',
+                          //       //  state.gender ?? "--Select--",
+                          //       itemLabel: (gender) => gender,
+                          //       onChanged: (value) {
+                          //         context.read<AuthBloc>().add(
+                          //               AuthEvent
+                          //                   .updateSelectedEducationQualification(
+                          //                       value ?? ''),
+                          //             );
+                          //         print('ssss ${value}');
+                          //       },
+                          //     );
+                          //   },
+                          // ),
                           BlocBuilder<AuthBloc, AuthState>(
                             builder: (context, state) {
                               if (state.educationalQualification ==

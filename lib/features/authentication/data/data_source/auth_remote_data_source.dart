@@ -54,15 +54,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     print('bbbo ${RegisterEmployerModel.fromEntity(entity).toJson()}');
     final result = await api.post(
       url: AppApiEndpoint.signup,
-      body: RegisterEmployerModel.fromEntity(entity).toJson(),
+      body: await RegisterEmployerModel.fromEntity(entity).toJson(),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
     );
-    print(
-        'Request Body: ${jsonEncode(RegisterEmployerModel.fromEntity(entity).toJson())}');
-    print('bbbosss ${RegisterEmployerModel.fromEntity(entity).toJson()}');
+
+
 
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
   }

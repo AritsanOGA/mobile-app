@@ -26,28 +26,68 @@ class PostJobModel extends PostJobEntity {
       required super.officeAddress,
       required super.applicationDeadline});
 
-  factory PostJobModel.fromJson(Map<String, dynamic> json) => PostJobModel(
-      jobTitle: json['jobTitle'],
-      companyName: json['companyName'],
-      category: json['category'],
-      workType: json['workType'],
-      jobDescription: json['jobDescription'],
-      skills: json['skill'],
-      position: json['position'],
-      hireType: json['hireType'],
-      categoryId: json['categoryId'],
-      yearsOfExperience: json['yearsOfExperience'],
-      levelOfEducation: json['levelOfEducation'],
-      skillLevel: json['skillLevel'],
-      maxAmount: json['maxAmount'],
-      minAmount: json['minAmount'],
-      country: json['country'],
-      state: json['state'],
-      city: json['city'],
-      available: json['available'],
-      availableFor: json['availableFor'],
-      compensationType: json['compensationType'],
-      gender: json['gender'],
-      officeAddress: json['officeAddress'],
-      applicationDeadline: json['applicationDeadline']);
+  factory PostJobModel.fromEntity(PostJobEntity entity) => PostJobModel(
+      jobTitle: entity.jobTitle,
+      companyName: entity.companyName,
+      category: entity.category,
+      workType: entity.workType,
+      jobDescription: entity.jobDescription,
+      skills: entity.skills,
+      position: entity.position,
+      hireType: entity.hireType,
+      categoryId: entity.categoryId,
+      yearsOfExperience: entity.yearsOfExperience,
+      levelOfEducation: entity.levelOfEducation,
+      skillLevel: entity.skillLevel,
+      maxAmount: entity.maxAmount,
+      minAmount: entity.minAmount,
+      country: entity.country,
+      state: entity.state,
+      city: entity.city,
+      available: entity.available,
+      availableFor: entity.availableFor,
+      compensationType: entity.compensationType,
+      gender: entity.gender,
+      officeAddress: entity.officeAddress,
+      applicationDeadline: entity.applicationDeadline);
+
+  Map<String, dynamic> toJson() => {
+        "job_title": jobTitle,
+        "company_name": companyName,
+        "category": category,
+        "work_type": workType,
+        "job_description": jobDescription,
+        "industry": category,
+        "position": position,
+        "hire_type": hireType,
+        "business_category_id": categoryId,
+        "gender": gender,
+        "experience": yearsOfExperience,
+        "level_of_education": levelOfEducation,
+        "skill_level": skillLevel,
+        "min_amount": minAmount,
+        "max_amount": maxAmount,
+        "state": state,
+        "city": city,
+        "application_deadline": applicationDeadline,
+        "office_address": officeAddress,
+        "accommodation_available": available,
+        "accommodation_for": availableFor,
+        // "payment_method": paymentMethod,
+        // "currency": currency,
+        "compensation_type": compensationType,
+        "country": country,
+        "artisan_skills": skills,
+        "commute_type": workType,
+      };
+
+ 
+
+  //static Future<PostJobEntity> fromJson(Map<String, dynamic> result) {}
 }
+
+//   Map<String, String> toJson() => {
+//         'options': email,
+//         'password': password,
+//       };
+// }

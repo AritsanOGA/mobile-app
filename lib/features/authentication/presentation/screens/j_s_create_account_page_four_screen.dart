@@ -1,8 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
-import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -24,7 +23,6 @@ class JSCreateAccountPageFourScreen extends HookWidget {
     final startYearController = useTextEditingController();
     final endYearController = useTextEditingController();
 
-    final authBloc = BlocProvider.of<AuthBloc>(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -43,25 +41,25 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                             horizontal: 22.h, vertical: 12.v),
                         child: Column(children: [
                           SizedBox(height: 10.v),
-                          BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, state) {
-                              return CustomDropDown<String>(
-                                title: "Employment History",
-                                items: authBloc.employmentHistory,
-                                selectedItem: state.employmentHistory ??
-                                    'No Employment History',
-                                //  state.gender ?? "--Select--",
-                                itemLabel: (history) => history,
-                                onChanged: (value) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.updateEmploymentHistory(
-                                            value ?? ''),
-                                      );
-                                  print('ssss ${value}');
-                                },
-                              );
-                            },
-                          ),
+                          // BlocBuilder<AuthBloc, AuthState>(
+                          //   builder: (context, state) {
+                          //     return CustomDropDown<String>(
+                          //       title: "Employment History",
+                          //       items: authBloc.employmentHistory,
+                          //       selectedItem: state.employmentHistory ??
+                          //           'No Employment History',
+                          //       //  state.gender ?? "--Select--",
+                          //       itemLabel: (history) => history,
+                          //       onChanged: (value) {
+                          //         context.read<AuthBloc>().add(
+                          //               AuthEvent.updateEmploymentHistory(
+                          //                   value ?? ''),
+                          //             );
+                          //         print('ssss ${value}');
+                          //       },
+                          //     );
+                          //   },
+                          // ),
                           BlocBuilder<AuthBloc, AuthState>(
                             builder: (context, state) {
                               if (state.employmentHistory ==
@@ -93,20 +91,18 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                             textInputAction:
                                                 TextInputAction.done)),
                                     SizedBox(height: 30.v),
-                                    CustomDateFormField(
-                                      hint: authBloc.dateField.text,
-                                      onTap: () {
-                                        authBloc.datePicker(context);
-                                      },
-                                      label: 'Start Year',
+                                    CustomTextFormField(
+                                      hintText: 'MM/DD/YYYY',
+                                      title: 'Start Year',
+                                      inputFormatters: [DateInputFormatter()],
+                                      controller: startYearController,
                                     ),
                                     SizedBox(height: 30.v),
-                                    CustomDateFormField(
-                                      hint: authBloc.dateField.text,
-                                      onTap: () {
-                                        authBloc.datePicker(context);
-                                      },
-                                      label: 'End Year',
+                                    CustomTextFormField(
+                                      hintText: 'MM/DD/YYYY',
+                                      title: 'End Year',
+                                      inputFormatters: [DateInputFormatter()],
+                                      controller: endYearController,
                                     ),
                                     SizedBox(height: 27.v),
                                     Padding(

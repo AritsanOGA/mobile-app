@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
@@ -23,7 +24,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
     final cityController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
     final phoneController = useTextEditingController();
-    final authBloc = BlocProvider.of<AuthBloc>(context);
+
     return BlocProvider(
       create: (context) => AuthBloc()
         ..add(
@@ -114,34 +115,34 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                           },
                         ),
                         SizedBox(height: 30.v),
-                        BlocBuilder<AuthBloc, AuthState>(
-                          builder: (context, state) {
-                            return CustomDropDown<String>(
-                              title: 'Job Type',
-                              items: authBloc.dropdownItemJobType,
-                              selectedItem: authBloc.selectedJobType,
-                              //  state.gender ?? "--Select--",
-                              itemLabel: (gender) => gender,
-                              onChanged: (value) {
-                                context.read<AuthBloc>().add(
-                                      AuthEvent.updateSelectedJobType(
-                                          value ?? ''),
-                                    );
-                              },
-                            );
-                          },
-                        ),
+                        // BlocBuilder<AuthBloc, AuthState>(
+                        //   builder: (context, state) {
+                        //     return CustomDropDown<String>(
+                        //       title: 'Job Type',
+                        //       items: authBloc.dropdownItemJobType,
+                        //       selectedItem: authBloc.selectedJobType,
+                        //       //  state.gender ?? "--Select--",
+                        //       itemLabel: (gender) => gender,
+                        //       onChanged: (value) {
+                        //         context.read<AuthBloc>().add(
+                        //               AuthEvent.updateSelectedJobType(
+                        //                   value ?? ''),
+                        //             );
+                        //       },
+                        //     );
+                        //   },
+                        // ),
                         SizedBox(height: 30.v),
                         Row(
                           children: [
                             Expanded(
-                                child: CustomDateFormField(
-                              hint: authBloc.dateField.text,
-                              onTap: () {
-                                authBloc.datePicker(context);
-                              },
-                              label: 'Date of Birth',
-                            )),
+                              child: CustomTextFormField(
+                                hintText: 'MM/DD/YYYY',
+                                title: 'Date of Birth',
+                                inputFormatters: [DateInputFormatter()],
+                                controller: dateOfBirthController,
+                              ),
+                            ),
                             SizedBox(
                               width: 20.h,
                             ),

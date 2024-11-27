@@ -1,6 +1,8 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
+import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/home/data/model/all_job_reponse_model.dart';
 import 'package:artisan_oga/features/home/data/model/employer_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
@@ -21,7 +23,7 @@ abstract class HomeRemoteDataSource {
   Future<List<FeaturedJobResponseEntity>> getFeaturedJob();
   Future<List<AllJobResponseEntity>> getAllJobs();
   Future<bool> applyForJob(String id);
-  Future<PostJobEntity> postJob(PostJobEntity entity);
+  Future<AuthResultEntity> postJob(PostJobEntity entity);
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -52,8 +54,6 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
         url: AppApiEndpoint.applyForJob,
         headers: userService.authorizationHeader,
         body: {"job_id": id}) as Map<String, dynamic>;
-
-    // FeaturedCandidateModel.fromEntity(entity).toJson(),
 
     return true;
   }
@@ -122,14 +122,13 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<PostJobEntity> postJob(PostJobEntity entity) async {
+  Future<AuthResultEntity> postJob(PostJobEntity entity) async {
     final result = await api.post(
-        url: AppApiEndpoint.postJob,
-        headers: userService.authorizationHeader,
-        body: ''
-        // FeaturedCandidateModel.fromEntity(entity).toJson(),
-        ) as Map<String, dynamic>;
+      url: AppApiEndpoint.postJob,
+      headers: userService.authorizationHeader,
+      body: PostJobModel.fromEntity(entity).toJson(),
+    ) as Map<String, dynamic>;
 
-    return PostJobModel.fromJson(result);
+    return AuthResultModel.fromJson(result);
   }
 }

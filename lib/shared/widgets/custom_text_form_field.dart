@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../core/app_export.dart';
 
 class CustomTextFormField extends StatefulWidget {
@@ -29,12 +30,14 @@ class CustomTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.isObscure = false,
     this.isBorderNone = false,
+    this.inputFormatters,
     required this.title,
   }) : super(
           key: key,
         );
 
   final Alignment? alignment;
+  final List<TextInputFormatter>? inputFormatters;
 
   final double? width;
   final bool? isBorderNone;
@@ -99,6 +102,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           width: widget.width ?? double.maxFinite,
           child: TextFormField(
             readOnly: widget.readOnly!,
+            inputFormatters: widget.inputFormatters,
             scrollPadding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
             controller: widget.controller,
