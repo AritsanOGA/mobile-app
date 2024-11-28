@@ -104,21 +104,17 @@ class EmployerSignUpPageScreen extends HookWidget {
                                                 ),
                                               ),
                                             );
-                                        Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            child:
-                                                EmployerSignuppageOneScreen(),
-                                          ),
-                                        );
+                                        Navigator.pushNamed(
+                                            context,
+                                            AppRoutes
+                                                .employerSignuppageOneScreen,
+                                            arguments: emailController.text);
                                       }
                                     },
                                   );
                                 },
                               ),
-                              //_buildNextButton(context),
+                            
                               SizedBox(height: 27.v),
                               Align(
                                   alignment: Alignment.center,

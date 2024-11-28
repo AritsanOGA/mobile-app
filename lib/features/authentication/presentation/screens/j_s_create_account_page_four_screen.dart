@@ -14,7 +14,8 @@ import 'j_s_create_account_page_five_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFourScreen extends HookWidget {
-  JSCreateAccountPageFourScreen({Key? key}) : super(key: key);
+  final String email;
+  JSCreateAccountPageFourScreen( {required this.email,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +161,9 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                JSCreateAccountPageFiveScreen()),
+                                                JSCreateAccountPageFiveScreen(
+                                                  email: email,
+                                                )),
                                       );
                                     }),
                                     text: "Next",

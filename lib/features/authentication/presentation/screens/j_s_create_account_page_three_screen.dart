@@ -14,6 +14,9 @@ import 'j_s_create_account_page_four_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPagetThreeScreen extends HookWidget {
+  final String email;
+  JSCreateAccountPagetThreeScreen({required this.email, Key? key})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final awardTitleController = useTextEditingController();
@@ -41,26 +44,25 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                                 horizontal: 22.h, vertical: 12.v),
                             child: Column(children: [
                               SizedBox(height: 10.v),
-                              // BlocBuilder<AuthBloc, AuthState>(
-                              //   builder: (context, state) {
-                              //     return CustomDropDown<String>(
-                              //       title: "Educational Qualification",
-                              //       items: authBloc.educationalQualification,
-                              //       selectedItem: state.educationalQualification ??
-                              //           'No Education',
-                              //       //  state.gender ?? "--Select--",
-                              //       itemLabel: (gender) => gender,
-                              //       onChanged: (value) {
-                              //         context.read<AuthBloc>().add(
-                              //               AuthEvent
-                              //                   .updateSelectedEducationQualification(
-                              //                       value ?? ''),
-                              //             );
-                              //         print('ssss ${value}');
-                              //       },
-                              //     );
-                              //   },
-                              // ),
+                              BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: "Educational Qualification",
+                                    items: state.levelOfEducationList,
+                                    selectedItem:
+                                        state.educationalQualification,
+                                    itemLabel: (gender) => gender,
+                                    onChanged: (value) {
+                                      context.read<AuthBloc>().add(
+                                            AuthEvent
+                                                .updateSelectedEducationQualification(
+                                                    value ?? ''),
+                                          );
+                                      print('ssss ${value}');
+                                    },
+                                  );
+                                },
+                              ),
                               BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
                                   if (state.educationalQualification ==
@@ -141,12 +143,11 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                                                   graduationYear:
                                                       awardYearController
                                                           .text)));
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                JSCreateAccountPageFourScreen()),
-                                      );
+                                      Navigator.pushNamed(
+                                          context,
+                                          AppRoutes
+                                              .jSCreateAccountPageFourScreen,
+                                          arguments: email);
                                     }),
                                     text: "Next",
                                   );

@@ -13,15 +13,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageSixScreen extends HookWidget {
-  JSCreateAccountPageSixScreen({Key? key}) : super(key: key);
-
-  TextEditingController nameController = TextEditingController();
-
-  TextEditingController enterRoleController = TextEditingController();
-
-  TextEditingController mmddyyController = TextEditingController();
-
-  TextEditingController inputHereController = TextEditingController();
+  final String email;
+  JSCreateAccountPageSixScreen({required this.email, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +31,11 @@ class JSCreateAccountPageSixScreen extends HookWidget {
             ),
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
-                if (state.viewState == ViewState.success) {
+                if (state.viewState == ViewState.success &&
+                    state.successType == SuccessType.registration) {
                   print('suceess');
-                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen);
+                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
+                      arguments: email);
                 } else if (state.viewState == ViewState.success) {
                   showDialog<Widget>(
                     context: context,
@@ -80,6 +76,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                                   controller: guaranterEmailController,
                                   hintText: "Enter Guarantor’s Email",
                                   hintStyle: theme.textTheme.titleSmall!),
+                              SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Phone Number',
                                   controller: guaranterEmailController,
@@ -101,7 +98,6 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                                           AuthEvent.registerJobSeeker(state
                                               .registerJobSeekerRequest
                                               .copyWith(
-                                                
                                                   guarantorName:
                                                       guaranterNameController
                                                           .text,

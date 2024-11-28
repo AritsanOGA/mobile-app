@@ -17,7 +17,7 @@ class RegisterJobSeekerEntity extends Equatable {
       required this.password,
       required this.phoneNumber,
       required this.jobType,
-      required this.guarantorPhoneNumber, 
+      required this.guarantorPhoneNumber,
       required this.guarantorName,
       required this.guarantorEmail,
       required this.residentialAddress,
@@ -42,7 +42,7 @@ class RegisterJobSeekerEntity extends Equatable {
   final String password;
   final String fullName;
   final String jobType;
- final String guarantorPhoneNumber;
+  final String guarantorPhoneNumber;
   final String guarantorName;
   final String guarantorEmail;
   final String residentialAddress;
@@ -108,7 +108,7 @@ class RegisterJobSeekerEntity extends Equatable {
     String? guarantorPhoneNumber,
   }) {
     return RegisterJobSeekerEntity(
-      guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
+        guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
         fullName: fullName ?? this.fullName,
         companyName: companyName ?? this.companyName,
         state: state ?? this.state,
@@ -145,7 +145,7 @@ class RegisterJobSeekerEntity extends Equatable {
   }
 
   @override
-  List<Object> get props => [
+  List<Object?> get props => [
         email,
         password,
         fullName,
@@ -173,8 +173,8 @@ class RegisterJobSeekerEntity extends Equatable {
         state,
         city,
         confirmPassword,
-        passport!,
-        resume!,
+        passport,
+        resume,
         gender,
         courseName,
         employmentHistory

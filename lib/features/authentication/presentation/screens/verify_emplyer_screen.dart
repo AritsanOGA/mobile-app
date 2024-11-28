@@ -15,7 +15,11 @@ import 'package:pinput/pinput.dart';
 import '../blocs/bloc/auth_bloc.dart';
 
 class VerifyEmployerScreen extends HookWidget {
-  const VerifyEmployerScreen({super.key});
+  final String email;
+  const VerifyEmployerScreen({
+    super.key,
+    required this.email,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +60,8 @@ class VerifyEmployerScreen extends HookWidget {
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                          text: 'Please enter the code we just sent to email\n',
+                          text:
+                              'Please enter the code we just sent to email\n$email',
                           style: theme.textTheme.headlineSmall
                               ?.copyWith(fontSize: 13),
                           children: [
@@ -116,11 +121,11 @@ class VerifyEmployerScreen extends HookWidget {
                     ),
                     SizedBox(height: 40.v),
                     CustomElevatedButton(
+                        isBusy: state.viewState == ViewState.loading,
                         onPressed: () {
                           context.read<AuthBloc>()
                             ..add(AuthEvent.verifyCode(VerifyCodeEntity(
-                                code: otpController.text,
-                                email: 'esthyy@yopmail.com')));
+                                code: otpController.text, email: email)));
                         },
                         text: 'Verify')
                   ],

@@ -106,76 +106,67 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                         Text("Upload Company Logo",
                                             style: theme.textTheme.bodyMedium),
                                         SizedBox(height: 5.v),
-                                        BlocBuilder<AuthBloc, AuthState>(
-                                          builder: (context, state) {
-                                            return Container(
-                                                margin: EdgeInsets.only(
-                                                    right: 10.h),
-                                                padding: EdgeInsets.symmetric(
-                                                    vertical: 8.v,
-                                                    horizontal: 5.v),
-                                                decoration: AppDecoration
-                                                    .outlineBlueGray
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder7),
-                                                child: Row(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      InkWell(
-                                                          onTap: () {
-                                                            context
-                                                                .read<
-                                                                    AuthBloc>()
-                                                                .add(const AuthEvent
-                                                                    .selectPassport());
-                                                          },
-                                                          child: Container(
-                                                              height: 30,
-                                                              decoration: BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              5),
-                                                                  color: ColorSchemes
-                                                                      .primaryColorScheme
-                                                                      .primary),
-                                                              child: Center(
-                                                                child: Padding(
-                                                                  padding: const EdgeInsets
+                                        Container(
+                                            margin:
+                                                EdgeInsets.only(right: 10.h),
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 8.v, horizontal: 5.v),
+                                            decoration: AppDecoration
+                                                .outlineBlueGray
+                                                .copyWith(
+                                                    borderRadius:
+                                                        BorderRadiusStyle
+                                                            .roundedBorder7),
+                                            child: Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  InkWell(
+                                                      onTap: () {
+                                                        context
+                                                            .read<AuthBloc>()
+                                                            .add(const AuthEvent
+                                                                .selectPassport());
+                                                      },
+                                                      child: Container(
+                                                          height: 30,
+                                                          decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5),
+                                                              color: ColorSchemes
+                                                                  .primaryColorScheme
+                                                                  .primary),
+                                                          child: Center(
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsets
                                                                       .symmetric(
                                                                       horizontal:
                                                                           5),
-                                                                  child: Text(
-                                                                      'choose file',
-                                                                      style: theme
-                                                                          .textTheme
-                                                                          .labelMedium
-                                                                          ?.copyWith(
-                                                                              color: Colors.white)),
-                                                                ),
-                                                              ))),
-                                                      SizedBox(width: 5.v),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                top: 5.v,
-                                                                right: 5.v),
-                                                        child: Text(
-                                                            state.picture ==
-                                                                    null
-                                                                ? "No file chosen"
-                                                                : "Image selected",
-                                                            style: theme
-                                                                .textTheme
-                                                                .labelLarge),
-                                                      )
-                                                    ]));
-                                          },
-                                        ),
+                                                              child: Text(
+                                                                  'choose file',
+                                                                  style: theme
+                                                                      .textTheme
+                                                                      .labelMedium
+                                                                      ?.copyWith(
+                                                                          color:
+                                                                              Colors.white)),
+                                                            ),
+                                                          ))),
+                                                  SizedBox(width: 5.v),
+                                                  Padding(
+                                                    padding: EdgeInsets.only(
+                                                        top: 5.v, right: 5.v),
+                                                    child: Text(
+                                                        state.picture == null
+                                                            ? "No file chosen"
+                                                            : "Image selected",
+                                                        style: theme.textTheme
+                                                            .labelLarge),
+                                                  )
+                                                ]))
                                       ],
                                     ),
                                   ),
@@ -204,6 +195,8 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                 builder: (context, registerJobSeekerRequest) {
                                   return CustomElevatedButton(
                                     onPressed: (() {
+                                      print(
+                                          '${state.picture}  ${state.gender}');
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(
@@ -217,12 +210,11 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                   passport: state.picture,
                                                   password: passwordController
                                                       .text)));
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                JSCreateAccountPagetTwoScreen()),
-                                      );
+                                      Navigator.pushNamed(
+                                          context,
+                                          AppRoutes
+                                              .jSCreateAccountPageTwoScreen,
+                                          arguments: emailController.text);
                                     }),
                                     text: "Next",
                                   );

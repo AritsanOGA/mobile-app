@@ -123,8 +123,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(viewState: ViewState.loading));
 
     await _registerEmployerUseCase(event.param).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
+      value.fold(
+          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+              viewState: ViewState.success,
+              successType: SuccessType.registration)));
     });
   }
 
@@ -235,7 +238,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       ),
     );
-    print('state ${state.states}');
+    print('skill ${state.states}');
   }
 
   FutureOr<void> _onUpdateSelectedSkill(
@@ -264,9 +267,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onSelectResume(
       _SelectResume event, Emitter<AuthState> emit) async {
-    final image = await _filePickerService.pickImage();
-    if (image == null) return;
-    emit(state.copyWith(resume: File(image)));
+    final resumeFile = await _filePickerService.pickFiles(['pdf']);
+    print('fileeee $resumeFile');
+    if (resumeFile == null) return;
+    emit(state.copyWith(resume: File(resumeFile)));
   }
 
   FutureOr<void> _onUpdateRegisterEmployerRequest(

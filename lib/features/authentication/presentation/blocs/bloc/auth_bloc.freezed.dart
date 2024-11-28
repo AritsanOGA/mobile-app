@@ -8092,9 +8092,9 @@ mixin _$AuthState {
   File? get resume => throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   List<String> get genders => throw _privateConstructorUsedError;
-  List<String> get levelOfEducation => throw _privateConstructorUsedError;
-  List<String> get employmentHistoryType => throw _privateConstructorUsedError;
-  List<String> get workMode => throw _privateConstructorUsedError;
+  List<String> get levelOfEducationList => throw _privateConstructorUsedError;
+  List<String> get employmentHistoryList => throw _privateConstructorUsedError;
+  List<String> get jobTypeList => throw _privateConstructorUsedError;
   List<CountryResponseEntity> get countries =>
       throw _privateConstructorUsedError;
   List<CategoryResponseEntity> get categoryList =>
@@ -8102,6 +8102,7 @@ mixin _$AuthState {
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
   ViewState get viewState => throw _privateConstructorUsedError;
+  SuccessType get successType => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -8130,14 +8131,15 @@ mixin _$AuthState {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)
+            ViewState viewState,
+            SuccessType successType)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -8169,14 +8171,15 @@ mixin _$AuthState {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)?
+            ViewState viewState,
+            SuccessType successType)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -8208,14 +8211,15 @@ mixin _$AuthState {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)?
+            ViewState viewState,
+            SuccessType successType)?
         initial,
     required TResult orElse(),
   }) =>
@@ -8273,14 +8277,15 @@ abstract class $AuthStateCopyWith<$Res> {
       File? resume,
       List<StateResponseEntity> states,
       List<String> genders,
-      List<String> levelOfEducation,
-      List<String> employmentHistoryType,
-      List<String> workMode,
+      List<String> levelOfEducationList,
+      List<String> employmentHistoryList,
+      List<String> jobTypeList,
       List<CountryResponseEntity> countries,
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      ViewState viewState});
+      ViewState viewState,
+      SuccessType successType});
 }
 
 /// @nodoc
@@ -8321,14 +8326,15 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? resume = freezed,
     Object? states = null,
     Object? genders = null,
-    Object? levelOfEducation = null,
-    Object? employmentHistoryType = null,
-    Object? workMode = null,
+    Object? levelOfEducationList = null,
+    Object? employmentHistoryList = null,
+    Object? jobTypeList = null,
     Object? countries = null,
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
     Object? viewState = null,
+    Object? successType = null,
   }) {
     return _then(_value.copyWith(
       gender: null == gender
@@ -8431,17 +8437,17 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.genders
           : genders // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      levelOfEducation: null == levelOfEducation
-          ? _value.levelOfEducation
-          : levelOfEducation // ignore: cast_nullable_to_non_nullable
+      levelOfEducationList: null == levelOfEducationList
+          ? _value.levelOfEducationList
+          : levelOfEducationList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      employmentHistoryType: null == employmentHistoryType
-          ? _value.employmentHistoryType
-          : employmentHistoryType // ignore: cast_nullable_to_non_nullable
+      employmentHistoryList: null == employmentHistoryList
+          ? _value.employmentHistoryList
+          : employmentHistoryList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      workMode: null == workMode
-          ? _value.workMode
-          : workMode // ignore: cast_nullable_to_non_nullable
+      jobTypeList: null == jobTypeList
+          ? _value.jobTypeList
+          : jobTypeList // ignore: cast_nullable_to_non_nullable
               as List<String>,
       countries: null == countries
           ? _value.countries
@@ -8463,6 +8469,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.viewState
           : viewState // ignore: cast_nullable_to_non_nullable
               as ViewState,
+      successType: null == successType
+          ? _value.successType
+          : successType // ignore: cast_nullable_to_non_nullable
+              as SuccessType,
     ) as $Val);
   }
 }
@@ -8501,14 +8511,15 @@ abstract class _$$InitialImplCopyWith<$Res>
       File? resume,
       List<StateResponseEntity> states,
       List<String> genders,
-      List<String> levelOfEducation,
-      List<String> employmentHistoryType,
-      List<String> workMode,
+      List<String> levelOfEducationList,
+      List<String> employmentHistoryList,
+      List<String> jobTypeList,
       List<CountryResponseEntity> countries,
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      ViewState viewState});
+      ViewState viewState,
+      SuccessType successType});
 }
 
 /// @nodoc
@@ -8547,14 +8558,15 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? resume = freezed,
     Object? states = null,
     Object? genders = null,
-    Object? levelOfEducation = null,
-    Object? employmentHistoryType = null,
-    Object? workMode = null,
+    Object? levelOfEducationList = null,
+    Object? employmentHistoryList = null,
+    Object? jobTypeList = null,
     Object? countries = null,
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
     Object? viewState = null,
+    Object? successType = null,
   }) {
     return _then(_$InitialImpl(
       gender: null == gender
@@ -8657,17 +8669,17 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._genders
           : genders // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      levelOfEducation: null == levelOfEducation
-          ? _value._levelOfEducation
-          : levelOfEducation // ignore: cast_nullable_to_non_nullable
+      levelOfEducationList: null == levelOfEducationList
+          ? _value._levelOfEducationList
+          : levelOfEducationList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      employmentHistoryType: null == employmentHistoryType
-          ? _value._employmentHistoryType
-          : employmentHistoryType // ignore: cast_nullable_to_non_nullable
+      employmentHistoryList: null == employmentHistoryList
+          ? _value._employmentHistoryList
+          : employmentHistoryList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      workMode: null == workMode
-          ? _value._workMode
-          : workMode // ignore: cast_nullable_to_non_nullable
+      jobTypeList: null == jobTypeList
+          ? _value._jobTypeList
+          : jobTypeList // ignore: cast_nullable_to_non_nullable
               as List<String>,
       countries: null == countries
           ? _value._countries
@@ -8689,6 +8701,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.viewState
           : viewState // ignore: cast_nullable_to_non_nullable
               as ViewState,
+      successType: null == successType
+          ? _value.successType
+          : successType // ignore: cast_nullable_to_non_nullable
+              as SuccessType,
     ));
   }
 }
@@ -8697,7 +8713,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {this.gender = '--Selected--',
+      {this.gender = '--Select--',
       this.country,
       this.state,
       this.jsCountry,
@@ -8706,15 +8722,15 @@ class _$InitialImpl implements _Initial {
       this.confirmPassword,
       this.countryId,
       this.jsGender,
-      this.jobType = '--Selected--',
+      this.jobType = '--Select--',
       this.jsState,
       this.city,
       this.picture,
-      this.educationalQualification = '--Selected--',
+      this.educationalQualification = '--Select--',
       this.dateOFBirth,
       this.startYear,
       this.endYear,
-      this.employmentHistory = '--Selected--',
+      this.employmentHistory = '--Select--',
       this.category,
       this.skills,
       this.registerEmployerRequest = const RegisterEmployerEntity(
@@ -8767,12 +8783,13 @@ class _$InitialImpl implements _Initial {
       this.resume,
       final List<StateResponseEntity> states = const [],
       final List<String> genders = const [
-        '--Selected--',
+        '--Select--',
         'Male',
         'Female',
         'Other'
       ],
-      final List<String> levelOfEducation = const [
+      final List<String> levelOfEducationList = const [
+        '--Select--',
         'No Education',
         'FLSC',
         'WAEC',
@@ -8783,14 +8800,15 @@ class _$InitialImpl implements _Initial {
         'Phd',
         'B. Tech'
       ],
-      final List<String> employmentHistoryType = const [
+      final List<String> employmentHistoryList = const [
+        '--Select--',
         'Employment History',
         'No Employment History'
       ],
-      final List<String> workMode = const [
+      final List<String> jobTypeList = const [
         "--Select--",
         "Full Time",
-        "Tempoary",
+        "Temporary",
         "Contract",
         "Part Time"
       ],
@@ -8798,12 +8816,13 @@ class _$InitialImpl implements _Initial {
       final List<CategoryResponseEntity> categoryList = const [],
       final List<SkillResponseEntity> skill = const [],
       this.isChecked = false,
-      this.viewState = ViewState.idle})
+      this.viewState = ViewState.idle,
+      this.successType = SuccessType.none})
       : _states = states,
         _genders = genders,
-        _levelOfEducation = levelOfEducation,
-        _employmentHistoryType = employmentHistoryType,
-        _workMode = workMode,
+        _levelOfEducationList = levelOfEducationList,
+        _employmentHistoryList = employmentHistoryList,
+        _jobTypeList = jobTypeList,
         _countries = countries,
         _categoryList = categoryList,
         _skill = skill;
@@ -8878,33 +8897,33 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_genders);
   }
 
-  final List<String> _levelOfEducation;
+  final List<String> _levelOfEducationList;
   @override
   @JsonKey()
-  List<String> get levelOfEducation {
-    if (_levelOfEducation is EqualUnmodifiableListView)
-      return _levelOfEducation;
+  List<String> get levelOfEducationList {
+    if (_levelOfEducationList is EqualUnmodifiableListView)
+      return _levelOfEducationList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_levelOfEducation);
+    return EqualUnmodifiableListView(_levelOfEducationList);
   }
 
-  final List<String> _employmentHistoryType;
+  final List<String> _employmentHistoryList;
   @override
   @JsonKey()
-  List<String> get employmentHistoryType {
-    if (_employmentHistoryType is EqualUnmodifiableListView)
-      return _employmentHistoryType;
+  List<String> get employmentHistoryList {
+    if (_employmentHistoryList is EqualUnmodifiableListView)
+      return _employmentHistoryList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_employmentHistoryType);
+    return EqualUnmodifiableListView(_employmentHistoryList);
   }
 
-  final List<String> _workMode;
+  final List<String> _jobTypeList;
   @override
   @JsonKey()
-  List<String> get workMode {
-    if (_workMode is EqualUnmodifiableListView) return _workMode;
+  List<String> get jobTypeList {
+    if (_jobTypeList is EqualUnmodifiableListView) return _jobTypeList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_workMode);
+    return EqualUnmodifiableListView(_jobTypeList);
   }
 
   final List<CountryResponseEntity> _countries;
@@ -8940,10 +8959,13 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final ViewState viewState;
+  @override
+  @JsonKey()
+  final SuccessType successType;
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducation: $levelOfEducation, employmentHistoryType: $employmentHistoryType, workMode: $workMode, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState, successType: $successType)';
   }
 
   @override
@@ -8992,10 +9014,11 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._states, _states) &&
             const DeepCollectionEquality().equals(other._genders, _genders) &&
             const DeepCollectionEquality()
-                .equals(other._levelOfEducation, _levelOfEducation) &&
+                .equals(other._levelOfEducationList, _levelOfEducationList) &&
             const DeepCollectionEquality()
-                .equals(other._employmentHistoryType, _employmentHistoryType) &&
-            const DeepCollectionEquality().equals(other._workMode, _workMode) &&
+                .equals(other._employmentHistoryList, _employmentHistoryList) &&
+            const DeepCollectionEquality()
+                .equals(other._jobTypeList, _jobTypeList) &&
             const DeepCollectionEquality()
                 .equals(other._countries, _countries) &&
             const DeepCollectionEquality()
@@ -9004,7 +9027,9 @@ class _$InitialImpl implements _Initial {
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
             (identical(other.viewState, viewState) ||
-                other.viewState == viewState));
+                other.viewState == viewState) &&
+            (identical(other.successType, successType) ||
+                other.successType == successType));
   }
 
   @override
@@ -9035,14 +9060,15 @@ class _$InitialImpl implements _Initial {
         resume,
         const DeepCollectionEquality().hash(_states),
         const DeepCollectionEquality().hash(_genders),
-        const DeepCollectionEquality().hash(_levelOfEducation),
-        const DeepCollectionEquality().hash(_employmentHistoryType),
-        const DeepCollectionEquality().hash(_workMode),
+        const DeepCollectionEquality().hash(_levelOfEducationList),
+        const DeepCollectionEquality().hash(_employmentHistoryList),
+        const DeepCollectionEquality().hash(_jobTypeList),
         const DeepCollectionEquality().hash(_countries),
         const DeepCollectionEquality().hash(_categoryList),
         const DeepCollectionEquality().hash(_skill),
         isChecked,
-        viewState
+        viewState,
+        successType
       ]);
 
   @JsonKey(ignore: true)
@@ -9080,14 +9106,15 @@ class _$InitialImpl implements _Initial {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)
+            ViewState viewState,
+            SuccessType successType)
         initial,
   }) {
     return initial(
@@ -9116,14 +9143,15 @@ class _$InitialImpl implements _Initial {
         resume,
         states,
         genders,
-        levelOfEducation,
-        employmentHistoryType,
-        workMode,
+        levelOfEducationList,
+        employmentHistoryList,
+        jobTypeList,
         countries,
         categoryList,
         skill,
         isChecked,
-        viewState);
+        viewState,
+        successType);
   }
 
   @override
@@ -9155,14 +9183,15 @@ class _$InitialImpl implements _Initial {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)?
+            ViewState viewState,
+            SuccessType successType)?
         initial,
   }) {
     return initial?.call(
@@ -9191,14 +9220,15 @@ class _$InitialImpl implements _Initial {
         resume,
         states,
         genders,
-        levelOfEducation,
-        employmentHistoryType,
-        workMode,
+        levelOfEducationList,
+        employmentHistoryList,
+        jobTypeList,
         countries,
         categoryList,
         skill,
         isChecked,
-        viewState);
+        viewState,
+        successType);
   }
 
   @override
@@ -9230,14 +9260,15 @@ class _$InitialImpl implements _Initial {
             File? resume,
             List<StateResponseEntity> states,
             List<String> genders,
-            List<String> levelOfEducation,
-            List<String> employmentHistoryType,
-            List<String> workMode,
+            List<String> levelOfEducationList,
+            List<String> employmentHistoryList,
+            List<String> jobTypeList,
             List<CountryResponseEntity> countries,
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState)?
+            ViewState viewState,
+            SuccessType successType)?
         initial,
     required TResult orElse(),
   }) {
@@ -9268,14 +9299,15 @@ class _$InitialImpl implements _Initial {
           resume,
           states,
           genders,
-          levelOfEducation,
-          employmentHistoryType,
-          workMode,
+          levelOfEducationList,
+          employmentHistoryList,
+          jobTypeList,
           countries,
           categoryList,
           skill,
           isChecked,
-          viewState);
+          viewState,
+          successType);
     }
     return orElse();
   }
@@ -9336,14 +9368,15 @@ abstract class _Initial implements AuthState {
       final File? resume,
       final List<StateResponseEntity> states,
       final List<String> genders,
-      final List<String> levelOfEducation,
-      final List<String> employmentHistoryType,
-      final List<String> workMode,
+      final List<String> levelOfEducationList,
+      final List<String> employmentHistoryList,
+      final List<String> jobTypeList,
       final List<CountryResponseEntity> countries,
       final List<CategoryResponseEntity> categoryList,
       final List<SkillResponseEntity> skill,
       final bool isChecked,
-      final ViewState viewState}) = _$InitialImpl;
+      final ViewState viewState,
+      final SuccessType successType}) = _$InitialImpl;
 
   @override
   String get gender;
@@ -9396,11 +9429,11 @@ abstract class _Initial implements AuthState {
   @override
   List<String> get genders;
   @override
-  List<String> get levelOfEducation;
+  List<String> get levelOfEducationList;
   @override
-  List<String> get employmentHistoryType;
+  List<String> get employmentHistoryList;
   @override
-  List<String> get workMode;
+  List<String> get jobTypeList;
   @override
   List<CountryResponseEntity> get countries;
   @override
@@ -9411,6 +9444,8 @@ abstract class _Initial implements AuthState {
   bool get isChecked;
   @override
   ViewState get viewState;
+  @override
+  SuccessType get successType;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

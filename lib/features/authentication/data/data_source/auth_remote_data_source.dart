@@ -135,7 +135,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final result = await api.get(
         url: AppApiEndpoint.getSkills,
         queryParameters: {"category_id": categoryId}) as Map<String, dynamic>;
-
+    print('categ ${categoryId}');
     return List<dynamic>.from(result['data'] as List)
         .map(
           (e) => SkillResponseModel.fromJson(

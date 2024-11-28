@@ -15,8 +15,10 @@ import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-
 class EmployerSignuppageOneScreen extends HookWidget {
+  final String email;
+
+  EmployerSignuppageOneScreen({super.key, required this.email});
   @override
   Widget build(BuildContext context) {
     final fullNameController = useTextEditingController();
@@ -37,10 +39,13 @@ class EmployerSignuppageOneScreen extends HookWidget {
             ),
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
-                if (state.viewState == ViewState.success) {
+                if (state.viewState == ViewState.success &&
+                    state.successType == SuccessType.registration) {
                   print('suceess');
-                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen);
-                } else if (state.viewState == ViewState.success) {
+
+                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
+                      arguments: email);
+                } else if (state.viewState == ViewState.failure) {
                   showDialog<Widget>(
                     context: context,
                     builder: (ctx) => CustomAlertDialog(
@@ -116,7 +121,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                               AuthEvent.updateSelectedCountry(
                                                   value!),
                                             );
-                                        print('iddd${value.id.toString()}');
+
                                         context.read<AuthBloc>().add(
                                               AuthEvent.getState(
                                                   value.id.toString()),
@@ -329,54 +334,29 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             },
                           ),
                           SizedBox(height: 35.v),
-                          BlocConsumer<AuthBloc, AuthState>(
-                            listener: (context, state) {
-                              if (state.viewState == ViewState.success) {
-                                // Navigator.pushNamed(
-                                //     context, AppRoutes.verifyEmployerScreen);
-                                // Navigator.pushReplacement(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => HomeScreen(),
-                                //   ),
-                                // );
-                              } else if (state.viewState == ViewState.failure) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      content: Text(state.errorMessage ??
-                                          'Login failed')),
-                                );
-                              }
-                            },
-                            builder: (context, state) {
-                              return CustomElevatedButton(
-                                text: "Submit",
-                                onPressed: (() {
-                                  debugPrint(
-                                      'state ${state.country?.id}  ${state.state?.name} ${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.registerEmployer(
-                                          state.registerEmployerRequest
-                                              .copyWith(
-                                            fullName: fullNameController.text,
-                                            officeTitle:
-                                                officeTitleController.text,
-                                            companyName:
-                                                companyNameController.text,
-                                            state: state.state?.name,
-                                            city: cityController.text,
-                                            companyLogo: state.file!,
-                                            gender: state.gender,
-                                            country:
-                                                state.country?.id.toString(),
-                                            phoneNumber: phoneController.text,
-                                          ),
-                                        ),
-                                      );
-                                }),
-                              );
-                            },
-                          ),
+                          CustomElevatedButton(
+                            isBusy: state.viewState == ViewState.loading,
+                            text: "Submit",
+                            onPressed: (() {
+                              debugPrint(
+                                  'state ${state.country?.id}  ${state.state?.name} ${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
+                              context.read<AuthBloc>().add(
+                                    AuthEvent.registerEmployer(
+                                      state.registerEmployerRequest.copyWith(
+                                        fullName: fullNameController.text,
+                                        officeTitle: officeTitleController.text,
+                                        companyName: companyNameController.text,
+                                        state: state.state?.name,
+                                        city: cityController.text,
+                                        companyLogo: state.file!,
+                                        gender: state.gender,
+                                        country: state.country?.id.toString(),
+                                        phoneNumber: phoneController.text,
+                                      ),
+                                    ),
+                                  );
+                            }),
+                          )
                         ])));
               },
             )));

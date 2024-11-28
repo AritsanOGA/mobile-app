@@ -1,4 +1,7 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -95,7 +98,8 @@ class AppRoutes {
   static const String formTransferPageScreen = '/form_transfer_page_screen';
 
   static const String manageJobsPage = '/manage_jobs_page';
-  static const String successfulJobApplicationPage = '/successful-job-applicaion_page';
+  static const String successfulJobApplicationPage =
+      '/successful-job-applicaion_page';
   static const String viewCandidatesPageScreen = '/view_candidates_page_screen';
 
   static const String acceptRejectPageScreen = '/accept_reject_page_screen';
@@ -186,7 +190,7 @@ class AppRoutes {
     signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
     loginOptionsPageScreen: (context) => LoginOptionsPageScreen(),
     employerSignUppageScreen: (context) => EmployerSignUpPageScreen(),
-    employerSignuppageOneScreen: (context) => EmployerSignuppageOneScreen(),
+    //employerSignuppageOneScreen: (context) => EmployerSignuppageOneScreen(),
     successfulPageScreen: (context) => SuccessfulPageScreen(),
     employerLoginPageScreen: (context) => EmployerLoginPageScreen(),
     searchResultPageScreen: (context) => SearchResultPageScreen(),
@@ -214,9 +218,9 @@ class AppRoutes {
     //     JSCreateAccountPageThreeScreen(),
     // jSCreateAccountPageFourScreen: (context) => JSCreateAccountPageFourScreen(),
     // jSCreateAccountPageFiveScreen: (context) => JSCreateAccountPageFiveScreen(),
-    jSCreateAccountPageSixScreen: (context) => JSCreateAccountPageFourScreen(),
-    jSCreateAccountPageScreen: (context) => JSCreateAccountPageFiveScreen(),
-    jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageFiveScreen(),
+    // jSCreateAccountPageSixScreen: (context) => JSCreateAccountPageFourScreen(),
+    // jSCreateAccountPageScreen: (context) => JSCreateAccountPageFiveScreen(),
+    // jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageFiveScreen(),
     // jSCreateAccountPageOneScreen: (context) => JSCreateAccountPageOneScreen(),
     verificationPageOneScreen: (context) => VerificationPageOneScreen(),
     jSLoginPageScreen: (context) => JSLoginPageScreen(),
@@ -258,11 +262,15 @@ class AppRoutes {
 
       case employerSignuppageOneScreen:
         return AppPageRouteBuilder(
-          navigateTo: EmployerSignuppageOneScreen(),
+          navigateTo: EmployerSignuppageOneScreen(
+            email: settings.arguments as String,
+          ),
         );
       case verifyEmployerScreen:
         return AppPageRouteBuilder(
-          navigateTo: VerifyEmployerScreen(),
+          navigateTo: VerifyEmployerScreen(
+            email: settings.arguments as String,
+          ),
         );
       case verifyJobSeekerScreen:
         return AppPageRouteBuilder(
@@ -285,10 +293,24 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: DashboardPage(),
         );
-      // case patientDetails3Page:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const PatientDetails3Screen(),
-      //   );
+      case jSCreateAccountPageTwoScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JSCreateAccountPagetTwoScreen(
+            email: settings.arguments as String,
+          ),
+        );
+      case jSCreateAccountPageThreeScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JSCreateAccountPagetThreeScreen(
+            email: settings.arguments as String,
+          ),
+        );
+      case jSCreateAccountPageSixScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JSCreateAccountPageSixScreen(
+            email: settings.arguments as String,
+          ),
+        );
       case employerLoginPageScreen:
         return AppPageRouteBuilder(
           navigateTo: const EmployerLoginPageScreen(),
@@ -299,11 +321,15 @@ class AppRoutes {
         );
       case jSCreateAccountPageFourScreen:
         return AppPageRouteBuilder(
-          navigateTo: JSCreateAccountPageFourScreen(),
+          navigateTo: JSCreateAccountPageFourScreen(
+            email: settings.arguments as String,
+          ),
         );
       case jSCreateAccountPageFiveScreen:
         return AppPageRouteBuilder(
-          navigateTo: JSCreateAccountPageFiveScreen(),
+          navigateTo: JSCreateAccountPageFiveScreen(
+            email: settings.arguments as String,
+          ),
         );
       case employerDashboardPage:
         return AppPageRouteBuilder(

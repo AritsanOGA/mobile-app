@@ -19,13 +19,18 @@ import 'j_s_create_account_page_three_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPagetTwoScreen extends HookWidget {
+  final String email;
+  JSCreateAccountPagetTwoScreen({required this.email, Key? key})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final streetaddressController = useTextEditingController();
     final cityController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
     final phoneController = useTextEditingController();
-
+    useEffect(() {
+      context.read<AuthBloc>().add(AuthEvent.getCountries());
+    }, []);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -55,83 +60,66 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               hintStyle: theme.textTheme.titleSmall!),
                           SizedBox(height: 30.v),
                           BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, state) {
-                              if (state.viewState == ViewState.loading) {
-                                return CircularProgressIndicator();
-                              } else if (state.viewState == ViewState.success) {
-                                return CustomDropDown<CountryResponseEntity>(
-                                  title: 'Country',
-                                  items: state.countries,
-                                  selectedItem: state.countries.firstWhere(
-                                    (country) =>
-                                        country.id == (state.country?.id ?? 4),
-                                    orElse: () => CountryResponseEntity(
-                                        id: 4, name: 'ALgeria'),
-                                  ),
-                                  itemLabel: (country) => country.name,
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedCountry(
-                                              value!),
-                                        );
+                              builder: (context, state) {
+                            return CustomDropDown<CountryResponseEntity>(
+                              title: 'Country',
+                              items: state.countries,
+                              selectedItem: state.countries.firstWhere(
+                                (country) =>
+                                    country.id == (state.country?.id ?? 4),
+                                orElse: () => CountryResponseEntity(
+                                    id: 4, name: 'ALgeria'),
+                              ),
+                              itemLabel: (country) => country.name,
+                              onChanged: (value) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.updateSelectedCountry(value!),
+                                    );
 
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.getState(
-                                              value.id.toString()),
-                                        );
-                                  },
-                                );
-                              }
-                              return Center(
-                                child: Text('Unexpected state encountered'),
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.getState(value.id.toString()),
+                                    );
+                              },
+                            );
+                          }),
+                          SizedBox(height: 30.v),
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                              return CustomDropDown<StateResponseEntity>(
+                                title: 'State of Residence',
+                                items: state.states,
+                                selectedItem: state.states.firstWhere(
+                                  (state) => state.id == (state.id ?? 4),
+                                  orElse: () => StateResponseEntity(
+                                      id: 4, name: 'ALgeria'),
+                                ),
+                                itemLabel: (state) => state.name,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateSelectedState(value!),
+                                      );
+                                },
                               );
                             },
                           ),
                           SizedBox(height: 30.v),
                           BlocBuilder<AuthBloc, AuthState>(
                             builder: (context, state) {
-                              if (state.viewState == ViewState.loading) {
-                                return CircularProgressIndicator();
-                              } else if (state.viewState == ViewState.success) {
-                                return CustomDropDown<StateResponseEntity>(
-                                  title: 'State of Residence',
-                                  items: state.states,
-                                  selectedItem: state.states.firstWhere(
-                                    (state) => state.id == (state.id ?? 4),
-                                    orElse: () => StateResponseEntity(
-                                        id: 4, name: 'ALgeria'),
-                                  ),
-                                  itemLabel: (state) => state.name,
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedState(value!),
-                                        );
-                                  },
-                                );
-                              }
-                              return Center(
-                                child: Text('Unexpected state encountered'),
+                              return CustomDropDown<String>(
+                                title: 'Job Type',
+                                items: state.jobTypeList,
+                                selectedItem: state.jobType,
+                               
+                                itemLabel: (gender) => gender,
+                                onChanged: (value) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.updateSelectedJobType(
+                                            value ?? ''),
+                                      );
+                                },
                               );
                             },
                           ),
-                          SizedBox(height: 30.v),
-                          // BlocBuilder<AuthBloc, AuthState>(
-                          //   builder: (context, state) {
-                          //     return CustomDropDown<String>(
-                          //       title: 'Job Type',
-                          //       items: authBloc.dropdownItemJobType,
-                          //       selectedItem: authBloc.selectedJobType,
-                          //       //  state.gender ?? "--Select--",
-                          //       itemLabel: (gender) => gender,
-                          //       onChanged: (value) {
-                          //         context.read<AuthBloc>().add(
-                          //               AuthEvent.updateSelectedJobType(
-                          //                   value ?? ''),
-                          //             );
-                          //       },
-                          //     );
-                          //   },
-                          // ),
                           SizedBox(height: 30.v),
                           Row(
                             children: [
@@ -174,12 +162,9 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                               jobType: state.jobType,
                                               city: cityController.text,
                                               dateOFBirth: state.dateOFBirth)));
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            JSCreateAccountPagetThreeScreen()),
-                                  );
+                                  Navigator.pushNamed(context,
+                                      AppRoutes.jSCreateAccountPageThreeScreen,
+                                      arguments: email);
                                 }),
                                 text: "Next",
                               );

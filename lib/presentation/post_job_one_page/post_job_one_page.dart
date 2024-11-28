@@ -10,9 +10,7 @@ import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:page_transition/page_transition.dart';
-
 import '../../core/services/default.dart';
 import '../../shared/widgets/custom_elevated_button.dart';
 

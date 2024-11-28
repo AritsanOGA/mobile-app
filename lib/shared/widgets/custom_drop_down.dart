@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app_export.dart';
@@ -89,6 +90,7 @@ class CustomDropDown<T> extends StatelessWidget {
           child: DropdownButtonFormField(
             value: selectedItem,
             isExpanded: true,
+            focusColor: AppColors.kwhite,
             focusNode: focusNode ?? FocusNode(),
             icon: Padding(
               padding: const EdgeInsets.only(right: 5.0),

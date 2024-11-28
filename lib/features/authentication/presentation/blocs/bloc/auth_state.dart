@@ -3,7 +3,7 @@ part of 'auth_bloc.dart';
 @freezed
 class AuthState with _$AuthState {
   const factory AuthState.initial({
-    @Default('--Selected--') String gender,
+    @Default('--Select--') String gender,
     CountryResponseEntity? country,
     StateResponseEntity? state,
     String? jsCountry,
@@ -12,15 +12,15 @@ class AuthState with _$AuthState {
     String? confirmPassword,
     String? countryId,
     String? jsGender,
-    @Default('--Selected--') String jobType,
+    @Default('--Select--') String jobType,
     String? jsState,
     String? city,
     File? picture,
-    @Default('--Selected--') String educationalQualification,
+    @Default('--Select--') String educationalQualification,
     String? dateOFBirth,
     String? startYear,
     String? endYear,
-    @Default('--Selected--') String employmentHistory,
+    @Default('--Select--') String employmentHistory,
     CategoryResponseEntity? category,
     SkillResponseEntity? skills,
     @Default(RegisterEmployerEntity(
@@ -75,8 +75,9 @@ class AuthState with _$AuthState {
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
     @Default([]) List<StateResponseEntity> states,
-    @Default(['--Selected--', 'Male', 'Female', 'Other']) List<String> genders,
+    @Default(['--Select--', 'Male', 'Female', 'Other']) List<String> genders,
     @Default([
+      '--Select--',
       'No Education',
       'FLSC',
       'WAEC',
@@ -87,15 +88,16 @@ class AuthState with _$AuthState {
       'Phd',
       'B. Tech'
     ])
-    List<String> levelOfEducation,
-    @Default(['Employment History', 'No Employment History'])
-    List<String> employmentHistoryType,
-    @Default(["--Select--", "Full Time", "Tempoary", "Contract", "Part Time"])
-    List<String> workMode,
+    List<String> levelOfEducationList,
+    @Default(['--Select--', 'Employment History', 'No Employment History'])
+    List<String> employmentHistoryList,
+    @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
+    List<String> jobTypeList,
     @Default([]) List<CountryResponseEntity> countries,
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
     @Default(ViewState.idle) ViewState viewState,
+    @Default(SuccessType.none) SuccessType successType,
   }) = _Initial;
 }

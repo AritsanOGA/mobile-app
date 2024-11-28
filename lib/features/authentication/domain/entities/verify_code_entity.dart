@@ -16,5 +16,4 @@ class VerifyCodeEntity extends Equatable {
         code,
       ];
 
-  static fromEntity(VerifyCodeEntity entity) {}
 }
