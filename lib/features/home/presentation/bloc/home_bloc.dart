@@ -65,6 +65,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
+
+    on<_UpdateCountry>(_onUpdateCountry);
+    on<_UpdateState>(_onUpdateState);
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
     on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
@@ -324,5 +327,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       ),
     );
     print('cou${state.countries}');
+  }
+
+  FutureOr<void> _onUpdateState(_UpdateState event, Emitter<HomeState> emit) {
+    emit(state.copyWith(state: event.value));
+  }
+
+  FutureOr<void> _onUpdateCountry(
+      _UpdateCountry event, Emitter<HomeState> emit) {
+    emit(state.copyWith(country: event.value));
   }
 }

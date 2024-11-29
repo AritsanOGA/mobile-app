@@ -63,6 +63,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
     on<_SelectPassport>(_onSelectPassport);
     on<_SelectResume>(_onSelectResume);
+    
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);

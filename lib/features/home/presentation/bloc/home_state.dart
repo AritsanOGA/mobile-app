@@ -8,6 +8,10 @@ class HomeState with _$HomeState {
     String? workMode,
     String? gender,
     String? skillLevel,
+    String? educationLevel,
+    String? compensationType,
+    String? package,
+    String? availablity,
     @Default(ViewState.idle) ViewState viewState,
     @Default([]) List<FeaturedCandidatesEntity> featureCandidateList,
     @Default([]) List<AllJobResponseEntity> allJobList,
@@ -49,17 +53,23 @@ class HomeState with _$HomeState {
     PostJobEntity postJobRequest,
     @Default(["Contract", "Full time", "Part_time", "Temporary"])
     List<String> jobtypeList,
-    @Default(["Onsite", "Hybrid", "Remote"]) List<String> workModeList,
     @Default([
-      "Primary school",
-      "Junior secondary",
-      "High school",
-      "University",
-      "Masters",
-      "Post Graduate Edu"
+      "Salary",
+      "Pay per job",
     ])
+    List<String> compensationTypeList,
+    @Default(["Onsite", "Hybrid", "Remote"]) List<String> workModeList,
+    @Default(["BSC", "BA", "MSC", "OND", "HND", "SSCE", "NONE"])
     List<String> levelOfEducationList,
     @Default(["Male", "Female", "No preferences"]) List<String> genderList,
+    @Default([
+      "Package (Free(0.00)",
+      "Silver (25,000.00)",
+      "Gold(35,000.00)",
+      "Platinum(50,000.00)"
+    ])
+    List<String> packageList,
+    @Default(["Yes", "No"]) List<String> availabilityList,
     @Default(
         ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
     List<String> skillLevelList,
