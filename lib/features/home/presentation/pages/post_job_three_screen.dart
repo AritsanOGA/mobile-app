@@ -1,4 +1,4 @@
-import 'package:artisan_oga/presentation/post_job_four_screen/post_job_four_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/post_job_four_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../core/services/default.dart';
+import '../../../../core/services/default.dart';
 
 class PostJobThreeScreen extends StatefulWidget {
   @override
@@ -148,7 +148,7 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                       //             child: Text("Application Deadline Date",
                       //                 style: CustomTextStyles
                       //                     .titleMediumMedium18)))),
-                       Padding(
+                      Padding(
                           padding: EdgeInsets.only(left: 3.h, right: 2.h),
                           child: _buildEnterApplicationDeadline(
                             context,
@@ -175,8 +175,7 @@ class _PostJobThreeScreenState extends State<PostJobThreeScreen> {
                               inputFields: "Input Fields")),
                       Divider(),
                       SizedBox(height: 30.v),
-                      
-                      
+
                       SizedBox(height: 56.v),
                       CustomElevatedButton(
                         onPressed: (() {

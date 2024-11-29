@@ -8,12 +8,14 @@ class UserprofilelistItemWidget extends StatefulWidget {
   //final FeaturedCandidateModel featuredCandidateModel;
   final String fullName;
   final String phone;
+  final String availability;
+  final String city;
 
   const UserprofilelistItemWidget({
     Key? key,
     required this.fullName,
-    required this.phone,
-    //required this.featuredCandidateModel,
+    required this.phone, required this.availability, required this.city,
+  
   }) : super(key: key);
 
   @override
@@ -101,7 +103,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                         borderRadius: BorderRadius.circular(20)),
                   ),
                   SizedBox(width: 11.v),
-                  Text('Semi-Skilled',
+                  Text( widget.availability,
                       style: CustomTextStyles.labelLargePrimaryContainer_2)
                 ],
               ),
@@ -116,7 +118,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                         borderRadius: BorderRadius.circular(20)),
                   ),
                   SizedBox(width: 11.v),
-                  Text('Semi-Skilled',
+                  Text(widget.city,
                       style: CustomTextStyles.labelLargePrimaryContainer_2)
                 ],
               ),

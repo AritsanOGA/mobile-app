@@ -3,6 +3,14 @@ import 'dart:async';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -32,6 +40,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     PostJobUseCase? postJobUseCase,
     ApplyForJobUseCase? applyForJobUseCase,
     GetAllJobUseCase? getAllJobUseCase,
+    CountryUseCase? countryUseCase,
+    CategoryUseCase? categoryUseCase,
+    SkillUseCase? skillUseCase,
+    StateUseCase? stateUseCase,
   })  : _getFeaturedCandidateseCase = getFeaturedCandidates ?? locator(),
         _getEmployerJobUseCase = getEmployerJobUseCase ?? locator(),
         _jobSeekerJobsUseCase = getJobSeekerJobsUseCase ?? locator(),
@@ -39,6 +51,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         _getFeatureJobUseCase = getFeatureJobUseCase ?? locator(),
         _postJobUseCase = postJobUseCase ?? locator(),
         _applyForJobUseCase = applyForJobUseCase ?? locator(),
+        _countryUseCase = countryUseCase ?? locator(),
+        _stateUseCase = stateUseCase ?? locator(),
+        _categoryUseCase = categoryUseCase ?? locator(),
+        _skillUseCase = skillUseCase ?? locator(),
         super(_Initial()) {
     on<_GetFeaturedCandidate>(_onGetFeaturedCandidate);
     on<_GetFeaturedJob>(_onGetFeaturedJob);
@@ -46,8 +62,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetAllJobs>(_onGetAllJobs);
     on<_GetJobSeekerJobs>(_onGetJobSeekerJobs);
     on<_PostJob>(_onPostJob);
+    on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
+    on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
+    on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
+    on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
+    on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
+    on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
     on<_ApplyForJob>(_onApplyForJob);
     on<_UpdatePostJobRequest>(_onUpdatePostJobRequest);
+    on<_GetCountries>(_onGetCountries);
+    on<_GetState>(_onGetState);
+    on<_GetCategory>(_onGetCategory);
+    on<_GetSkills>(_onGetSkill);
   }
   final GetFeaturedCandidateUseCase _getFeaturedCandidateseCase;
   final GetEmployerJobUseCase _getEmployerJobUseCase;
@@ -56,6 +82,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetFeatureJobUseCase _getFeatureJobUseCase;
   final PostJobUseCase _postJobUseCase;
   final ApplyForJobUseCase _applyForJobUseCase;
+  final CountryUseCase _countryUseCase;
+  final CategoryUseCase _categoryUseCase;
+  final SkillUseCase _skillUseCase;
+  final StateUseCase _stateUseCase;
 
   FutureOr<void> _onGetFeaturedCandidate(event, Emitter<HomeState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
@@ -183,5 +213,116 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         postJobRequest: event.postJobRequest,
       ),
     );
+  }
+
+  FutureOr<void> _onUpdateSelectedJobType(
+      _UpdateSelectedJobType event, Emitter<HomeState> emit) {
+    emit(state.copyWith(jobType: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedEducationLevel(
+      _UpdateSelectedEducationLevel event, Emitter<HomeState> emit) {
+    emit(state.copyWith(gender: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedSkillLevel(
+      _UpdateSelectedSkillLevel event, Emitter<HomeState> emit) {
+    emit(state.copyWith(skillLevel: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedWorkMode(
+      _UpdateSelectedWorkMode event, Emitter<HomeState> emit) {
+    emit(state.copyWith(workMode: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedSkill(
+      _UpdateSelectedSkill event, Emitter<HomeState> emit) {
+    emit(state.copyWith(skills: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedCategory(
+      _UpdateSelectedCategory event, Emitter<HomeState> emit) {
+    emit(state.copyWith(category: event.value));
+  }
+
+  FutureOr<void> _onGetCategory(event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+    final result = await _categoryUseCase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          viewState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (category) => emit(
+        state.copyWith(
+          categoryList: category,
+          viewState: ViewState.success,
+        ),
+      ),
+    );
+    print('state ${state.states}');
+  }
+
+  FutureOr<void> _onGetSkill(event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+    final result = await _skillUseCase(event.id);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          viewState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (skills) => emit(
+        state.copyWith(
+          skill: skills,
+          viewState: ViewState.success,
+        ),
+      ),
+    );
+    print('skill ${state.states}');
+  }
+
+  FutureOr<void> _onGetState(_GetState event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+    final result = await _stateUseCase(event.id);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          viewState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (states) => emit(
+        state.copyWith(
+          states: states,
+          viewState: ViewState.success,
+        ),
+      ),
+    );
+    print('state ${state.states}');
+  }
+
+  FutureOr<void> _onGetCountries(
+      _GetCountries event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
+    final result = await _countryUseCase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          viewState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (countries) => emit(
+        state.copyWith(
+          countries: countries,
+          viewState: ViewState.success,
+        ),
+      ),
+    );
+    print('cou${state.countries}');
   }
 }

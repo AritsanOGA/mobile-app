@@ -58,6 +58,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedEducationQualification>(
         _onUpdateSelectedEducationQualification);
     on<_UpdateSelectedGender>(_onUpdateSelectedGender);
+    on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
     on<_SelectPassport>(_onSelectPassport);
@@ -297,5 +298,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(
       state.copyWith(registerJobSeekerRequest: event.registerJobSeekerRequest),
     );
+  }
+
+  FutureOr<void> _onUpdateSelectedJobType(
+      _UpdateSelectedJobType event, Emitter<AuthState> emit) {
+    emit(state.copyWith(jobType: event.value));
   }
 }

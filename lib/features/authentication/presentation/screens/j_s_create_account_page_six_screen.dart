@@ -22,7 +22,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
     final guaranterNameController = useTextEditingController();
     final guaranterEmailController = useTextEditingController();
     final guaranterAddressController = useTextEditingController();
-
+    final guaranterPhoneNumberController = useTextEditingController();
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -34,9 +34,9 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                 if (state.viewState == ViewState.success &&
                     state.successType == SuccessType.registration) {
                   print('suceess');
-                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
+                  Navigator.pushNamed(context, AppRoutes.verifyJobSeekerScreen,
                       arguments: email);
-                } else if (state.viewState == ViewState.success) {
+                } else if (state.viewState == ViewState.failure) {
                   showDialog<Widget>(
                     context: context,
                     builder: (ctx) => CustomAlertDialog(
@@ -79,7 +79,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Phone Number',
-                                  controller: guaranterEmailController,
+                                  controller: guaranterPhoneNumberController,
                                   hintText: "Enter Guarantor’s Phone Number",
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 30.v),
@@ -92,12 +92,17 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                               BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
                                   return CustomElevatedButton(
+                                    isBusy:
+                                        state.viewState == ViewState.loading,
                                     text: "Submit",
                                     onPressed: (() {
                                       context.read<AuthBloc>().add(
                                           AuthEvent.registerJobSeeker(state
                                               .registerJobSeekerRequest
                                               .copyWith(
+                                                  guarantorPhoneNumber:
+                                                      guaranterPhoneNumberController
+                                                          .text,
                                                   guarantorName:
                                                       guaranterNameController
                                                           .text,

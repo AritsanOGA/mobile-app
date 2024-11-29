@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -15,7 +16,8 @@ import 'j_s_create_account_page_five_screen.dart';
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFourScreen extends HookWidget {
   final String email;
-  JSCreateAccountPageFourScreen( {required this.email,Key? key}) : super(key: key);
+  JSCreateAccountPageFourScreen({required this.email, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,25 +47,23 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                 horizontal: 22.h, vertical: 12.v),
                             child: Column(children: [
                               SizedBox(height: 10.v),
-                              // BlocBuilder<AuthBloc, AuthState>(
-                              //   builder: (context, state) {
-                              //     return CustomDropDown<String>(
-                              //       title: "Employment History",
-                              //       items: authBloc.employmentHistory,
-                              //       selectedItem: state.employmentHistory ??
-                              //           'No Employment History',
-                              //       //  state.gender ?? "--Select--",
-                              //       itemLabel: (history) => history,
-                              //       onChanged: (value) {
-                              //         context.read<AuthBloc>().add(
-                              //               AuthEvent.updateEmploymentHistory(
-                              //                   value ?? ''),
-                              //             );
-                              //         print('ssss ${value}');
-                              //       },
-                              //     );
-                              //   },
-                              // ),
+                              BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: "Employment History",
+                                    items: state.employmentHistoryList,
+                                    selectedItem: state.employmentHistory,
+                                    itemLabel: (history) => history,
+                                    onChanged: (value) {
+                                      context.read<AuthBloc>().add(
+                                            AuthEvent.updateEmploymentHistory(
+                                                value ?? ''),
+                                          );
+                                      print('ssss ${value}');
+                                    },
+                                  );
+                                },
+                              ),
                               BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
                                   if (state.employmentHistory ==
@@ -99,18 +99,18 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                         CustomTextFormField(
                                           hintText: 'MM/DD/YYYY',
                                           title: 'Start Year',
-                                          inputFormatters: [
-                                            DateInputFormatter()
-                                          ],
+                                          // inputFormatters: [
+                                          //   DateInputFormatter()
+                                          // ],
                                           controller: startYearController,
                                         ),
                                         SizedBox(height: 30.v),
                                         CustomTextFormField(
                                           hintText: 'MM/DD/YYYY',
                                           title: 'End Year',
-                                          inputFormatters: [
-                                            DateInputFormatter()
-                                          ],
+                                          // inputFormatters: [
+                                          //   DateInputFormatter()
+                                          // ],
                                           controller: endYearController,
                                         ),
                                         SizedBox(height: 27.v),
@@ -152,8 +152,10 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                                       companyNameController
                                                           .text,
                                                   role: roleController.text,
-                                                  startYear: state.startYear,
-                                                  endYear: state.endYear,
+                                                  startYear:
+                                                      startYearController.text,
+                                                  endYear:
+                                                      endYearController.text,
                                                   description:
                                                       descriptionController
                                                           .text)));
@@ -170,7 +172,6 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                   );
                                 },
                               ),
-
                               SizedBox(height: 40.v),
                             ]))));
               },

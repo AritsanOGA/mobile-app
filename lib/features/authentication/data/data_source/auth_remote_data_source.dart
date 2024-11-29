@@ -25,7 +25,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/verify_code_
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
   Future<bool> registerEmployer(RegisterEmployerEntity entity);
-  Future<AuthResultEntity> registerJobSeeker(RegisterJobSeekerEntity entity);
+  Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity);
 
   Future<List<CountryResponseEntity>> getCountries();
   Future<List<StateResponseEntity>> getState(String countryId);
@@ -52,7 +52,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<bool> registerEmployer(RegisterEmployerEntity entity) async {
     print('bbbo ${RegisterEmployerModel.fromEntity(entity).toJson()}');
     final result = await api.post(
-      url: AppApiEndpoint.signup,
+      url: AppApiEndpoint.employerSignup,
       body: await RegisterEmployerModel.fromEntity(entity).toJson(),
       headers: {
         'Content-Type': 'application/json',
@@ -146,18 +146,17 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> registerJobSeeker(
-      RegisterJobSeekerEntity entity) async {
+  Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
     final result = await api.post(
-      url: AppApiEndpoint.signup,
-      body: RegisterJobSeekerModel.fromEntity(entity).toJson(),
+      url: AppApiEndpoint.candidateSignup,
+      body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
     );
 
-    return AuthResultModel.fromJson(result as Map<String, dynamic>);
+    return true;
   }
 
   @override

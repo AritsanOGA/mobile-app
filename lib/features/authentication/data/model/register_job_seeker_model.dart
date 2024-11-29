@@ -2,41 +2,40 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_job
 import 'package:dio/dio.dart';
 
 class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
-  const RegisterJobSeekerModel({
-    required super.email,
-    required super.password,
-    required super.confirmPassword,
-    required super.country,
-    required super.fullName,
-    required super.companyName,
-    required super.state,
-    required super.city,
-    required super.passport,
-    required super.resume,
-    required super.gender,
-    required super.phoneNumber,
-    required super.jobType,
-    required super.guarantorName,
-    required super.guarantorEmail,
-    required super.residentialAddress,
-    required super.yearsOfExperience,
-    required super.describeYourRole,
-    required super.category,
-    required super.dateOFBirth,
-    required super.skill,
-    required super.role,
-    required super.description,
-    required super.startYear,
-    required super.endYear,
-    required super.schoolName,
-    required super.educationalQualification,
-    required super.certificateObtained,
-    required super.graduationYear,
-    required super.streetAddress,
-    required super.courseName,
-    required super.employmentHistory,
-    required super.guarantorPhoneNumber
-  });
+  const RegisterJobSeekerModel(
+      {required super.email,
+      required super.password,
+      required super.confirmPassword,
+      required super.country,
+      required super.fullName,
+      required super.companyName,
+      required super.state,
+      required super.city,
+      required super.passport,
+      required super.resume,
+      required super.gender,
+      required super.phoneNumber,
+      required super.jobType,
+      required super.guarantorName,
+      required super.guarantorEmail,
+      required super.residentialAddress,
+      required super.yearsOfExperience,
+      required super.describeYourRole,
+      required super.category,
+      required super.dateOFBirth,
+      required super.skill,
+      required super.role,
+      required super.description,
+      required super.startYear,
+      required super.endYear,
+      required super.schoolName,
+      required super.educationalQualification,
+      required super.certificateObtained,
+      required super.graduationYear,
+      required super.streetAddress,
+      required super.courseName,
+      required super.employmentHistory,
+      required super.guarantorPhoneNumber});
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
       RegisterJobSeekerModel(
@@ -71,11 +70,11 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         educationalQualification: entity.educationalQualification,
         streetAddress: entity.streetAddress,
         courseName: entity.courseName,
-        employmentHistory: entity.employmentHistory, guarantorPhoneNumber: entity.guarantorPhoneNumber,
-        
+        employmentHistory: entity.employmentHistory,
+        guarantorPhoneNumber: entity.guarantorPhoneNumber,
       );
 
-  FormData toJson() => FormData.fromMap({
+  Future<FormData> toJson() async => FormData.fromMap({
         'email': email,
         'password': password,
         'password_confirmation': confirmPassword,
@@ -85,14 +84,16 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'states': state,
         'employment_history': employmentHistory,
         'city': city,
-        'passport': MultipartFile.fromFile(
+        'passport': await MultipartFile.fromFile(
           "${passport?.path}",
           filename: "${passport?.path.split('/').last}",
         ),
-        'resume': MultipartFile.fromFile(
-          "${resume?.path}",
-          filename: "${resume?.path.split('/').last}",
-        ),
+        'resume': resume?.path != null
+            ? await MultipartFile.fromFile(
+                "${resume?.path}",
+                filename: "${resume?.path.split('/').last}",
+              )
+            : 'i am null',
         'gender': gender,
         'phone': phoneNumber,
         'DateOfBirth': dateOFBirth,
@@ -114,6 +115,6 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'StreetAddress': streetAddress,
         'job_description': describeYourRole,
         'service_description': description,
-        'guarantor_phone':guarantorPhoneNumber
+        'guarantor_phone': guarantorPhoneNumber
       });
 }

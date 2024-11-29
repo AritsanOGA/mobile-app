@@ -2,6 +2,10 @@ import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/extensions/extention.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
@@ -85,5 +89,27 @@ class HomeRepositoryImpl implements HomeRepository {
         ),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, List<CountryResponseEntity>>> getCountries() {
+    return homeRemoteDataSource.getCountries().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<StateResponseEntity>>> getState(
+      String countryId) {
+    return homeRemoteDataSource.getState(countryId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<CategoryResponseEntity>>> getCategory() {
+    return homeRemoteDataSource.getCategory().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<SkillResponseEntity>>> getSkill(
+      String categoryId) {
+    return homeRemoteDataSource.getSkill(categoryId).makeRequest();
   }
 }

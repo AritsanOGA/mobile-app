@@ -8,7 +8,8 @@ class AppApiEndpoint {
   static Uri baseUri = Uri.parse("https://api.artisanoga.com/api/v1");
 
 //Auth
-  static Uri signup = baseUri.replace(path: '/api/v1/employer/signup');
+  static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup');
+    static Uri candidateSignup = baseUri.replace(path: '/api/v1/candidate/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');
   static Uri getCountry = baseUri.replace(path: '/api/v1/countries');
   static Uri getState = baseUri.replace(path: '/api/v1/countries/states');

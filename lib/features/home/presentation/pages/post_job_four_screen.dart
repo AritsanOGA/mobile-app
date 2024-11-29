@@ -7,7 +7,7 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../payment_page_screen/payment_page_screen.dart';
+import '../../../../presentation/payment_page_screen/payment_page_screen.dart';
 
 class PostJobFourScreen extends StatefulWidget {
   @override

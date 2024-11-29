@@ -1,11 +1,14 @@
+import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../post_job_three_screen/post_job_three_screen.dart';
+import 'post_job_three_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class PostJobTwoScreen extends StatefulWidget {
@@ -53,133 +56,135 @@ class _PostJobTwoScreenState extends State<PostJobTwoScreen> {
         child: Scaffold(
             backgroundColor:
                 theme.colorScheme.onPrimaryContainer.withOpacity(1),
-            body: Container(
-                width: double.maxFinite,
-                height: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
-                child: SingleChildScrollView(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                      SizedBox(height: 26.v),
-                      Row(children: [
-                        CustomImageView(
-                            imagePath: ImageConstant.imgArrowLeftOnprimary,
-                            height: 16.adaptSize,
-                            width: 16.adaptSize,
-                            margin: EdgeInsets.symmetric(vertical: 2.v),
-                            onTap: () {
-                              onTapImgArrowLeft(context);
-                            }),
-                        Padding(
-                            padding: EdgeInsets.only(left: 7.h),
-                            child: Text("Back",
-                                style: CustomTextStyles.titleMediumOnPrimary))
-                      ]),
-                      SizedBox(height: 25.v),
-                      Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Skill Level",
-                              style: CustomTextStyles.titleMediumMedium18)),
-                      SizedBox(height: 20.v),
-                      _buildSkillLevelRadioGroup(context),
-                      SizedBox(height: 37.v),
+            body: BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                return Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
+                    child: SingleChildScrollView(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                          SizedBox(height: 26.v),
+                          Row(children: [
+                            CustomImageView(
+                                imagePath: ImageConstant.imgArrowLeftOnprimary,
+                                height: 16.adaptSize,
+                                width: 16.adaptSize,
+                                margin: EdgeInsets.symmetric(vertical: 2.v),
+                                onTap: () {
+                                  onTapImgArrowLeft(context);
+                                }),
+                            Padding(
+                                padding: EdgeInsets.only(left: 7.h),
+                                child: Text("Back",
+                                    style:
+                                        CustomTextStyles.titleMediumOnPrimary))
+                          ]),
+                          SizedBox(height: 25.v),
+                          Padding(
+                              padding: EdgeInsets.only(left: 3.h),
+                              child: Text("Skill Level",
+                                  style: CustomTextStyles.titleMediumMedium18)),
+                          SizedBox(height: 20.v),
+                          _buildSkillLevelRadioGroup(context),
+                          SizedBox(height: 37.v),
 
-                      CustomTextFormField(
-                        title: 'Academic Qualification',
-                        titleStyle: CustomTextStyles.titleMediumMedium18,
-                        hintText: 'Enter Academic Qualification',
-                        isBorderNone: true,
-                      ),
-                      // Align(
-                      //     alignment: Alignment.centerLeft,
-                      //     child: Padding(
-                      //         padding: EdgeInsets.only(left: 1.h),
-                      //         child: Text("Educational Level",
-                      //             style:
-                      //                 CustomTextStyles.titleMediumMedium18))),
-                      // SizedBox(height: 19.v),
-                      // _buildAcademicRadioGroup(context),
-                      // SizedBox(height: 1.v),
-                      // SizedBox(height: 24.v),
-                      // Divider(indent: 3.h, endIndent: 2.h),
-                      SizedBox(height: 22.v),
+                          CustomTextFormField(
+                            title: 'Academic Qualification',
+                            titleStyle: CustomTextStyles.titleMediumMedium18,
+                            hintText: 'Enter Academic Qualification',
+                            isBorderNone: true,
+                          ),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 1.h),
+                          //         child: Text("Educational Level",
+                          //             style:
+                          //                 CustomTextStyles.titleMediumMedium18))),
+                          // SizedBox(height: 19.v),
+                          // _buildAcademicRadioGroup(context),
+                          // SizedBox(height: 1.v),
+                          // SizedBox(height: 24.v),
+                          // Divider(indent: 3.h, endIndent: 2.h),
+                          SizedBox(height: 22.v),
 
-                      CustomTextFormField(
-                        title: 'How many Hirees?',
-                        titleStyle: CustomTextStyles.titleMediumMedium18,
-                        hintText: 'Enter number hires for this opening',
-                        isBorderNone: true,
-                      ),
-                      // Padding(
-                      //     padding: EdgeInsets.only(left: 3.h, right: 2.h),
-                      //     child: _buildEnterNumberHiresRow(context,
-                      //         enterNumberHires: hireesNumberController.text,
-                      //         inputFields: "Select")),
-                      SizedBox(height: 23.v),
+                          CustomTextFormField(
+                            title: 'How many Hirees?',
+                            titleStyle: CustomTextStyles.titleMediumMedium18,
+                            hintText: 'Enter number hires for this opening',
+                            isBorderNone: true,
+                          ),
+                          // Padding(
+                          //     padding: EdgeInsets.only(left: 3.h, right: 2.h),
+                          //     child: _buildEnterNumberHiresRow(context,
+                          //         enterNumberHires: hireesNumberController.text,
+                          //         inputFields: "Select")),
+                          SizedBox(height: 23.v),
 
-                      Padding(
-                          padding: EdgeInsets.only(left: 3.h),
-                          child: Text("Gender",
-                              style: CustomTextStyles.titleMediumMedium18)),
-                      SizedBox(height: 20.v),
-                      _buildGenderRadioGroup(context),
-                      SizedBox(height: 22.v),
+                          Padding(
+                              padding: EdgeInsets.only(left: 3.h),
+                              child: Text("Gender",
+                                  style: CustomTextStyles.titleMediumMedium18)),
+                          SizedBox(height: 20.v),
+                          _buildGenderRadioGroup(context),
+                          SizedBox(height: 22.v),
 
-                      CustomTextFormField(
-                        title: 'Company Name',
-                        titleStyle: CustomTextStyles.titleMediumMedium18,
-                        hintText: 'Enter your Company’s Name',
-                        isBorderNone: true,
-                      ),
+                          CustomTextFormField(
+                            title: 'Company Name',
+                            titleStyle: CustomTextStyles.titleMediumMedium18,
+                            hintText: 'Enter your Company’s Name',
+                            isBorderNone: true,
+                          ),
 
-                      SizedBox(height: 23.v),
-                      _buildGenderRadioGroup(context),
-                      SizedBox(height: 23.v),
+                          SizedBox(height: 23.v),
+                          _buildGenderRadioGroup(context),
+                          SizedBox(height: 23.v),
 
-                      //  _buildCompensationTypeRadioGroup(context),
-                      //  SizedBox(height: 19.v),
-                      CustomElevatedButton(
-                        onPressed: (() {
-                          // var newJobData =
-                          //     Hive.box("artisan").get("new_job_data");
-                          // newJobData
-                          //     .add({"industry": companyNameController.text});
-                          // newJobData.add(
-                          //     {"no_of_applicant": hireesNumberController.text});
-                          // /* newJobData.add({
-                          //     "compensation_type": compensationTypeRadioGroup
-                          //   });*/
-                          // newJobData.add({"gender": genderRadioGroup});
+                          //  _buildCompensationTypeRadioGroup(context),
+                          //  SizedBox(height: 19.v),
+                          BlocSelector<HomeBloc, HomeState, PostJobEntity>(
+                            selector: (state) {
+                              return state.postJobRequest;
+                            },
+                            builder: (context, postJobRequest) {
+                              return CustomElevatedButton(
+                                onPressed: (() {
+                                  print(
+                                      '${state.workMode} ${state.jobType} ${jobTitleController.text}');
+                                  context.read<HomeBloc>().add(
+                                        HomeEvent.updatePostJobRequest(
+                                          postJobRequest.copyWith(
+                                              skillLevel: state.skillLevel,
+                                              levelOfEducation:
+                                                  state.errorMessage,
+                                              position:
+                                                  hireesNumberController.text,
+                                              gender: state.gender,
+                                              companyName:
+                                                  companyNameController.text),
+                                        ),
+                                      );
 
-                          // newJobData.add({"skill_level": skillLevelRadioGroup});
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          type: PageTransitionType.rightToLeft,
+                                          duration: Durations.long1,
+                                          child: PostJobThreeScreen()));
+                                }),
+                                text: "Next",
+                              );
+                            },
+                          ),
 
-                          // newJobData
-                          //     .add({"level_of_education": academicRadioGroup});
-
-                          // Hive.box("artisan").put("new_job_data", newJobData);
-
-                          // print(newJobData);
-
-                          Navigator.push(
-                              context,
-                              PageTransition(
-                                  type: PageTransitionType.rightToLeft,
-                                  duration: Durations.long1,
-                                  child: PostJobThreeScreen()));
-                        }),
-                        // height: 41.v,
-                        // width: 110.h,
-                        text: "Next",
-                        // margin: EdgeInsets.only(right: 2.h),
-                        // buttonStyle:
-                        //     CustomButtonStyles.fillSecondaryContainerTL20,
-                        // buttonTextStyle:
-                        //     CustomTextStyles.titleMediumOnPrimaryContainer18,
-                        // alignment: Alignment.centerRight
-                      ),
-                      SizedBox(height: 17.v),
-                    ])))));
+                          SizedBox(height: 17.v),
+                        ])));
+              },
+            )));
   }
 
   /// Section Widget

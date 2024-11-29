@@ -109,7 +109,6 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                 title: 'Job Type',
                                 items: state.jobTypeList,
                                 selectedItem: state.jobType,
-                               
                                 itemLabel: (gender) => gender,
                                 onChanged: (value) {
                                   context.read<AuthBloc>().add(
@@ -155,13 +154,16 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                   context.read<AuthBloc>().add(
                                       AuthEvent.updateRegisterJobSeekerRequest(
                                           registerJobSeekerRequest.copyWith(
+                                              phoneNumber: phoneController.text,
                                               streetAddress:
                                                   streetaddressController.text,
-                                              country: state.country?.name,
+                                              country:
+                                                  state.country?.id.toString(),
                                               state: state.state?.name,
                                               jobType: state.jobType,
                                               city: cityController.text,
-                                              dateOFBirth: state.dateOFBirth)));
+                                              dateOFBirth:
+                                                  dateOfBirthController.text)));
                                   Navigator.pushNamed(context,
                                       AppRoutes.jSCreateAccountPageThreeScreen,
                                       arguments: email);

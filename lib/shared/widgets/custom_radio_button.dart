@@ -68,8 +68,7 @@ class CustomRadioButton extends StatelessWidget {
         },
         child: Container(
           decoration: decoration,
-          color: groupValue == value ? Colors.orange : backgroundColor,
-          width: width,
+       
           padding: padding,
           child: (isRightCheck ?? false)
               ? rightSideRadioButton
@@ -104,6 +103,8 @@ class CustomRadioButton extends StatelessWidget {
         height: iconSize ?? 18.h,
         width: iconSize ?? 18.h,
         child: Radio<String>(
+          //  fillColor: ,
+          activeColor: theme.primaryColor,
           visualDensity: VisualDensity(
             vertical: -4,
             horizontal: -4,

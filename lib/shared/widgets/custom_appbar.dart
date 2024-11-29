@@ -9,6 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Function()? onTap;
   final Color? backgroundColor;
 
+
   final Color? contentColor;
   const CustomAppBar({
     super.key,
@@ -20,12 +21,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.isClose = false,
     this.backgroundColor,
     this.contentColor,
+    
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 200,
+  
       backgroundColor: Colors.white,
       leading: hasBackButton && !isClose
           ? IconButton(

@@ -1,6 +1,6 @@
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/presentation/post_job_one_page/post_job_one_page.dart';
+import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
 import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:flutter/material.dart';
@@ -111,6 +111,9 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                         return UserprofilelistItemWidget(
                           fullName: state.featureCandidateList[index].name,
                           phone: state.featureCandidateList[index].categories,
+                          availability:
+                              state.featureCandidateList[index].availability,
+                          city: state.featureCandidateList[index].availability,
                         );
                       },
                     ),
@@ -502,9 +505,9 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
           },
           itemCount: data.length,
           itemBuilder: (context, index) {
-            return UserprofilelistItemWidget(
-                fullName: data[index]["full_name"],
-                phone: data[index]["phone"]);
+            // return UserprofilelistItemWidget(
+            //     fullName: data[index]["full_name"],
+            //     phone: data[index]["phone"]);
           },
         ),
       ),
