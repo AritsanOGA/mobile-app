@@ -1,6 +1,7 @@
 class ImageConstant {
   // Image folder path
   static String imagePath = 'assets/images';
+  static String svgPath = 'assets/svgs';
 
   // Welcome Page images
   static String imgRectangle1 = '$imagePath/img_rectangle_1.png';
@@ -26,7 +27,8 @@ class ImageConstant {
   static String imgVector = '$imagePath/img_vector.svg';
 
   static String imgMapPin = '$imagePath/img_map_pin.svg';
-
+  static String jobType = '$svgPath/job-type.svg';
+  static String location = '$svgPath/location.svg';
   static String imgVectorPrimarycontainer =
       '$imagePath/img_vector_primarycontainer.svg';
 

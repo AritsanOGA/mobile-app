@@ -9,8 +9,10 @@ class AppApiEndpoint {
 
 //Auth
   static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup');
-    static Uri candidateSignup = baseUri.replace(path: '/api/v1/candidate/signup');
+  static Uri candidateSignup =
+      baseUri.replace(path: '/api/v1/candidate/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');
+  static Uri refreshToken = baseUri.replace(path: '/api/v1/refresh-token');
   static Uri getCountry = baseUri.replace(path: '/api/v1/countries');
   static Uri getState = baseUri.replace(path: '/api/v1/countries/states');
 

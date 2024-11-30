@@ -1,6 +1,8 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
+import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +13,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../../../core/services/default.dart';
 import '../../../../shared/widgets/custom_outlined_button.dart';
-import '../../../../presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import '../../../../presentation/view_all_candidates/view_all_candidates.dart';
 import '../widgets/userprofilelist_item_widget.dart';
 
-// ignore_for_file: must_be_immutable
 class EmployerDashboardPage extends StatefulWidget {
   @override
   _EmployerDashboardPageState createState() => _EmployerDashboardPageState();
@@ -24,13 +24,11 @@ class EmployerDashboardPage extends StatefulWidget {
 class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
   TextEditingController searchController = TextEditingController();
 
-  //var employer_info = Hive.box("artisan").get("employer_user_data");
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DashboardMenuPageDraweritem(),
-      bottomNavigationBar: bottomNav(context),
+      // bottomNavigationBar: bottomNav(context),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: 52.h,
@@ -57,6 +55,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.h),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5.v),
               Align(
@@ -83,7 +82,10 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
               ),
               SizedBox(height: 19.v),
               SizedBox(height: 25.v),
-              // _buildFeaturedCandidatesRow(context),
+              Text(
+                "Featured Candidates",
+                style: CustomTextStyles.titleMediumPrimaryContainer18,
+              ),
               BlocBuilder<HomeBloc, HomeState>(
                 bloc: context.read<HomeBloc>()
                   ..add(HomeEvent.getFeaturedCandidates()),
@@ -121,53 +123,122 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                 },
               ),
               SizedBox(height: 25.v),
-
-              FutureBuilder<dynamic>(
-                  future: Default().getAllJobApplicants(''
-                      //employer_info["data"]["id"].toString()
-                      ),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(child: CircularProgressIndicator());
-                    }
-
-                    if (snapshot.hasData) {
-                      final data = snapshot.data!;
-
-                      return data.length > 0
-                          ? _buildUserProfileList(context, data)
-                          : Center(
-                              child: Text("No recent Candidates"),
-                            );
-                    } else {
-                      return Center(
-                        child: Text("No recent job applicants"),
-                      );
-                    }
-                  }),
-
               SizedBox(height: 27.v),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 25.h),
-                  child: Text(
-                    "Recent Jobs",
-                    style: CustomTextStyles.titleMediumPrimaryContainer18,
-                  ),
+              Padding(
+                padding: EdgeInsets.only(left: 25.h),
+                child: Text(
+                  "Recent Jobs",
+                  style: CustomTextStyles.titleMediumPrimaryContainer18,
                 ),
               ),
               SizedBox(
                 height: 18,
               ),
-              _buildJobInformation(context, 'Flutter', 'Lagos', 'Intern'
-                  // data[index]["job_title"],
-                  // data[index]["state"],
-                  // data[index]["hire_type"]
-                  ),
-              buildRecentJobs(context),
-              SizedBox(height: 20.v),
-              //_buildDashboardStack(context),
+              Padding(
+                  padding: EdgeInsets.only(left: 4.h, right: 6.h),
+                  child: Column(
+                    children: [
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                                height: 57.v,
+                                width: 56.h,
+                                margin: EdgeInsets.only(bottom: 6.v),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 6.h, vertical: 8.v),
+                                decoration: BoxDecoration(),
+                                child: CustomImageView(
+                                    imagePath:
+                                        "assets/images/job-info-svgrepo-com.png",
+                                    height: 39.v,
+                                    width: 42.h,
+                                    alignment: Alignment.center)),
+                            Padding(
+                                padding: EdgeInsets.only(left: 16.h, top: 5.v),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Flutter',
+                                          style: CustomTextStyles
+                                              .titleMediumSecondaryContainer),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Text('Intern',
+                                              style: CustomTextStyles
+                                                  .titleSmallGray50001),
+                                          Text("2500/Mo",
+                                              style: CustomTextStyles
+                                                  .titleSmallSecondaryContainer)
+                                        ],
+                                      ),
+                                      // SizedBox(height: 1.v),
+                                      // SizedBox(
+                                      //     width: 201.h,
+                                      //     child: Row(
+                                      //         mainAxisAlignment:
+                                      //             MainAxisAlignment
+                                      //                 .spaceBetween,
+                                      //         crossAxisAlignment:
+                                      //             CrossAxisAlignment.start,
+                                      //         children: [
+                                      //           Text("Active",
+                                      //               style: TextStyle(
+                                      //                   color: Colors.green)),
+                                      //           Text("2500/Mo",
+                                      //               style: CustomTextStyles
+                                      //                   .titleSmallSecondaryContainer)
+                                      //         ]))
+                                    ])),
+                          ]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              SvgPicture.asset(ImageConstant.location),
+                              SizedBox(
+                                width: 5.v,
+                              ),
+                              Text('Cipayung',
+                                  style: CustomTextStyles.titleSmallGray50001),
+                              SizedBox(
+                                width: 20.v,
+                              ),
+                              SvgPicture.asset(ImageConstant.jobType),
+                              SizedBox(
+                                width: 5.v,
+                              ),
+                              Text('Internship',
+                                  style: CustomTextStyles.titleSmallGray50001)
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 10,
+                                width: 10,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: AppColors.kblack),
+                              ),
+                              SizedBox(
+                                width: 5.v,
+                              ),
+                              Text(
+                                '2d',
+                                style: CustomTextStyles
+                                    .titleMediumPrimaryContainer,
+                              )
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  )),
             ],
           ),
         ),

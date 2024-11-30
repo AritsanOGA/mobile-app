@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // drawer: DashboardMenuPageDraweritem(),
-      bottomNavigationBar: bottomNav(context),
+      // bottomNavigationBar: bottomNav(context),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: 52.h,

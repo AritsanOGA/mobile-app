@@ -24,6 +24,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/verify_code_
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
+  Future<AuthResultEntity> refreshToken(LoginEntity entity);
   Future<bool> registerEmployer(RegisterEmployerEntity entity);
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity);
 
@@ -171,5 +172,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     );
 
     return true;
+  }
+
+  @override
+  Future<AuthResultEntity> refreshToken(LoginEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.refreshToken,
+      body: LoginModel.fromEntity(entity).toJson(),
+    );
+    return AuthResultModel.fromJson(result as Map<String, dynamic>);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:artisan_oga/presentation/welcome_page_screen/welcome_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:page_transition/page_transition.dart';
@@ -228,24 +229,33 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
             SizedBox(height: 39.v),
 
             // SizedBox(height: 39.v),
-            Row(
-              children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgThumbsUp,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 9.h,
-                    top: 3.v,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: WelcomePageScreen()));
+              },
+              child: Row(
+                children: [
+                  CustomImageView(
+                    imagePath: ImageConstant.imgThumbsUp,
+                    height: 24.adaptSize,
+                    width: 24.adaptSize,
                   ),
-                  child: Text(
-                    "Logout",
-                    style: CustomTextStyles.titleSmall15,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 9.h,
+                      top: 3.v,
+                    ),
+                    child: Text(
+                      "Logout",
+                      style: CustomTextStyles.titleSmall15,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 39.v),
           ],

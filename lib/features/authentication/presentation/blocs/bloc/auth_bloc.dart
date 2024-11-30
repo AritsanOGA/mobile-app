@@ -66,7 +66,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
     on<_SelectPassport>(_onSelectPassport);
     on<_SelectResume>(_onSelectResume);
-
+    on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);
@@ -316,5 +316,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     await _getUserDataUseCase(NoParams());
+  }
+
+  FutureOr<void> _onSelectTabEvent(
+      _SelectTabEvent event, Emitter<AuthState> emit) {
+    emit(state.copyWith(selectedIndex: event.index));
   }
 }

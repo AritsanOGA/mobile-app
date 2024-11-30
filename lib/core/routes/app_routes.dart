@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_nav_bar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/splash_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
@@ -56,7 +58,8 @@ class AppRoutes {
   static final navigatorKey = GlobalKey<NavigatorState>();
   static const String splashScreen = '/splash_page_screen';
   static const String welcomePageScreen = '/welcome_page_screen';
-
+  static const String employerNavBarScreen = '/employer_navbar_screen';
+  static const String jobSeekerNavBarScreen = '/job_seeker_navbar_screen';
   static const String signupOptionsPageScreen = '/signup_options_page_screen';
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
@@ -250,6 +253,14 @@ class AppRoutes {
       case welcomePageScreen:
         return AppPageRouteBuilder(
           navigateTo: WelcomePageScreen(),
+        );
+      case jobSeekerNavBarScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JobSeekerNavBarPage(),
+        );
+      case employerNavBarScreen:
+        return AppPageRouteBuilder(
+          navigateTo: EmployerNavBarPage(),
         );
       case signupOptionsPageScreen:
         return AppPageRouteBuilder(

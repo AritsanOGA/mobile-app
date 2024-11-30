@@ -44,14 +44,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, _) {
-        print('is data here ${UserService().authData}');
         Future.delayed(const Duration(seconds: 3), () {
           if (UserService().authData == null) {
             Navigator.pushNamed(context, AppRoutes.welcomePageScreen);
           } else if (UserService().authData!.user.role == 'Employer') {
-            Navigator.pushNamed(context, AppRoutes.employerDashboardPage);
+            Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
           } else {
-            Navigator.pushNamed(context, AppRoutes.dashboardScreen);
+            Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
           }
         });
         return Scaffold(
