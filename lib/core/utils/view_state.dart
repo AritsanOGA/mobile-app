@@ -5,7 +5,7 @@ enum SuccessType {
   none,
   registration,
   postJob,
-  passwordReset,
+  applyForJob,
   profileUpdate,
   // Add other success types as needed
 }

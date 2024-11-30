@@ -1,9 +1,11 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/successful_job_application_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
+import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
@@ -33,19 +35,12 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: DashboardMenuPageDraweritem(),
-      // bottomNavigationBar: bottomNav(context),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leadingWidth: 52.h,
-        leading: SizedBox(),
-        actions: [],
-      ),
       body: Container(
         width: double.maxFinite,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.h),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5.v),
               Align(
@@ -555,7 +550,7 @@ class FeaturedJobWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: 10.h,
+        horizontal: 15.h,
         vertical: 10.v,
       ),
       width: MediaQuery.sizeOf(context).width * 0.7,
@@ -576,14 +571,23 @@ class FeaturedJobWidget extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(
           featuredJobResponseEntity.jobTitle ?? '',
-          style: CustomTextStyles.titleMediumOnPrimary,
+          style: CustomTextStyles.titleLargeGray50Bold,
         ),
-        SizedBox(
-          height: 8,
-        ),
+        // SizedBox(
+        //   height: 8,
+        // ),
+        Align(
+            alignment: Alignment.centerRight,
+            child: SvgPicture.asset(
+              ImageConstant.star,
+              width: 15,
+            )),
         Text(
           featuredJobResponseEntity.industry ?? '',
-          style: CustomTextStyles.titleMediumOnPrimary,
+          style: CustomTextStyles.titleMediumGray50,
+        ),
+        SizedBox(
+          height: 80.h,
         ),
         GestureDetector(
           onTap: () {
@@ -595,9 +599,16 @@ class FeaturedJobWidget extends StatelessWidget {
           },
           child: Row(
             children: [
-              Text('Show All'),
+              Text(
+                'Show All',
+                style: CustomTextStyles.titleMediumGray50,
+              ),
+              SizedBox(
+                width: 10.h,
+              ),
               Icon(
                 Icons.arrow_forward,
+                color: AppColors.kwhite,
               )
             ],
           ),

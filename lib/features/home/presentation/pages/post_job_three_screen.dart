@@ -1,7 +1,6 @@
 import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
-import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_four_screen.dart';
@@ -14,8 +13,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'package:page_transition/page_transition.dart';
-
-import '../../../../core/services/default.dart';
 
 class PostJobThreeScreen extends HookWidget {
   @override
@@ -84,9 +81,14 @@ class PostJobThreeScreen extends HookWidget {
                       isBorderNone: true,
                       titleStyle: CustomTextStyles.titleMediumMedium18,
                       items: state.countries,
-                      selectedItem: state.countries.firstWhere(
-                          (country) => country.id == (state.country?.id ?? 0),
-                          orElse: () => state.countries.first),
+                      selectedItem: state.countries.isNotEmpty
+                          ? state.countries.firstWhere(
+                              (country) => country.id == (state.country?.id),
+                              orElse: () => state.countries.first)
+                          : CountryResponseEntity(
+                              id: 4,
+                              name: 'Algeria',
+                            ),
                       itemLabel: (country) => country.name,
                       onChanged: (value) {
                         context.read<HomeBloc>().add(
@@ -111,9 +113,11 @@ class PostJobThreeScreen extends HookWidget {
                         isBorderNone: true,
                         titleStyle: CustomTextStyles.titleMediumMedium18,
                         items: state.states,
-                        selectedItem: state.states.firstWhere(
-                            (state) => state.id == (state.id),
-                            orElse: () => state.states.first),
+                        selectedItem: state.states.isNotEmpty
+                            ? state.states.firstWhere(
+                                (state) => state.id == (state.id),
+                                orElse: () => state.states.first)
+                            : StateResponseEntity(id: 1098, name: 'Djelfa'),
                         itemLabel: (state) => state.name,
                         onChanged: (value) {
                           context.read<HomeBloc>().add(

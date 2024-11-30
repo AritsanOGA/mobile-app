@@ -66,7 +66,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedGender>(_onUpdateSelectedGender);
-      on<_UpdateSelectedPackage>(_onUpdateSelectedPackage);
+    on<_UpdateSelectedPackage>(_onUpdateSelectedPackage);
     on<_UpdateCountry>(_onUpdateCountry);
     on<_UpdateState>(_onUpdateState);
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
@@ -197,6 +197,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   FutureOr<void> _onPostJob(_PostJob event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
     await _postJobUseCase(event.param).then((value) {
       value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(viewState: ViewState.success)));
@@ -205,9 +206,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onApplyForJob(
       _ApplyForJob event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(viewState: ViewState.loading));
     await _applyForJobUseCase(event.id).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
+      value.fold(
+          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+              viewState: ViewState.success,
+              successType: SuccessType.applyForJob)));
     });
   }
 
@@ -350,7 +355,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(compensationType: event.value));
   }
 
-  FutureOr<void> _onUpdateSelectedPackage(_UpdateSelectedPackage event, Emitter<HomeState> emit) {
-        emit(state.copyWith(package: event.value));
+  FutureOr<void> _onUpdateSelectedPackage(
+      _UpdateSelectedPackage event, Emitter<HomeState> emit) {
+    emit(state.copyWith(package: event.value));
   }
 }

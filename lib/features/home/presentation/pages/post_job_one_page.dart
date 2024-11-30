@@ -65,7 +65,7 @@ class PostJobOnePage extends HookWidget {
                                     CustomTextStyles.titleMediumMedium18,
                                 title: 'Select Job Category',
                                 items: state.categoryList,
-                                selectedItem: state.skill.isNotEmpty
+                                selectedItem: state.categoryList.isNotEmpty
                                     ? state.categoryList.firstWhere(
                                         (category) =>
                                             category.id == (state.category?.id),

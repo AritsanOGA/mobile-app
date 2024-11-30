@@ -29,6 +29,7 @@ class ImageConstant {
   static String imgMapPin = '$imagePath/img_map_pin.svg';
   static String jobType = '$svgPath/job-type.svg';
   static String location = '$svgPath/location.svg';
+  static String star = '$svgPath/star.svg';
   static String imgVectorPrimarycontainer =
       '$imagePath/img_vector_primarycontainer.svg';
 

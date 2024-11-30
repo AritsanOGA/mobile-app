@@ -46,7 +46,10 @@ class SuccessfulJobApplocationScreen extends StatelessWidget {
                 flex: 56,
               ),
               CustomElevatedButton(
-                text: "Back to Home", onPressed: () {},
+                text: "Back to Home",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
+                },
                 // buttonTextStyle: CustomTextStyles.titleMediumGray5001,
               ),
               SizedBox(height: 34.v),

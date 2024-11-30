@@ -29,7 +29,7 @@ class _SearchScreenState extends State<SearchScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // drawer: DashboardMenuPageDraweritem(),
-      bottomNavigationBar: bottomNav(context),
+      // bottomNavigationBar: bottomNav(context),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: SizedBox(),
