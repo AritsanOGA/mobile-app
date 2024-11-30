@@ -14,6 +14,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/state_respon
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
@@ -37,7 +38,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       SkillUseCase? skillUseCase,
       FilePickerService? filePickerService,
       StateUseCase? stateUseCase,
-      VerifyCodeUseCase? verifyCodeUseCase})
+      VerifyCodeUseCase? verifyCodeUseCase,
+      GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
         _loginUseCase = loginUseCase ?? locator(),
@@ -47,6 +49,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _skillUseCase = skillUseCase ?? locator(),
         _filePickerService = filePickerService ?? locator(),
         _verifyCodeUseCase = verifyCodeUseCase ?? locator(),
+        _getUserDataUseCase = getUserUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
@@ -63,7 +66,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
     on<_SelectPassport>(_onSelectPassport);
     on<_SelectResume>(_onSelectResume);
-    
+
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);
@@ -74,6 +77,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetCategory>(_onGetCategory);
     on<_GetSkills>(_onGetSkill);
     on<_VerifyCode>(_onVerifyCode);
+    on<_GetUserData>(_onGetUserData);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -85,6 +89,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final StateUseCase _stateUseCase;
   final FilePickerService _filePickerService;
   final VerifyCodeUseCase _verifyCodeUseCase;
+  final GetUserDataUseCase _getUserDataUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -304,5 +309,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onUpdateSelectedJobType(
       _UpdateSelectedJobType event, Emitter<AuthState> emit) {
     emit(state.copyWith(jobType: event.value));
+  }
+
+  FutureOr<void> _onGetUserData(
+    _GetUserData event,
+    Emitter<AuthState> emit,
+  ) async {
+    await _getUserDataUseCase(NoParams());
   }
 }

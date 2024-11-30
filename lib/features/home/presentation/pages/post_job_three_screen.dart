@@ -85,19 +85,17 @@ class PostJobThreeScreen extends HookWidget {
                       titleStyle: CustomTextStyles.titleMediumMedium18,
                       items: state.countries,
                       selectedItem: state.countries.firstWhere(
-                        (country) => country.id == (state.country?.id ?? 4),
-                        orElse: () =>
-                            CountryResponseEntity(id: 4, name: 'ALgeria'),
-                      ),
+                          (country) => country.id == (state.country?.id ?? 0),
+                          orElse: () => state.countries.first),
                       itemLabel: (country) => country.name,
                       onChanged: (value) {
-                        // context.read<AuthBloc>().add(
-                        //       HomeEvent.updateSelectedCountry(value!),
-                        //     );
+                        context.read<HomeBloc>().add(
+                              HomeEvent.updateCountry(value!),
+                            );
 
-                        // context.read<AuthBloc>().add(
-                        //       AuthEvent.getState(value.id.toString()),
-                        //     );
+                        context.read<HomeBloc>().add(
+                              HomeEvent.getState(value.id.toString()),
+                            );
                       },
                     );
                   }),
@@ -114,14 +112,12 @@ class PostJobThreeScreen extends HookWidget {
                         titleStyle: CustomTextStyles.titleMediumMedium18,
                         items: state.states,
                         selectedItem: state.states.firstWhere(
-                          (state) => state.id == (state.id ?? 4),
-                          orElse: () =>
-                              StateResponseEntity(id: 4, name: 'ALgeria'),
-                        ),
+                            (state) => state.id == (state.id),
+                            orElse: () => state.states.first),
                         itemLabel: (state) => state.name,
                         onChanged: (value) {
-                          context.read<AuthBloc>().add(
-                                AuthEvent.updateSelectedState(value!),
+                          context.read<HomeBloc>().add(
+                                HomeEvent.updateState(value!),
                               );
                         },
                       );
@@ -142,10 +138,11 @@ class PostJobThreeScreen extends HookWidget {
                           context.read<HomeBloc>().add(
                                 HomeEvent.updatePostJobRequest(
                                   postJobRequest.copyWith(
-                                      maxAmount:
-                                          int.parse(maxSalaryController.text),
-                                      minAmount:
-                                          int.parse(minSalaryController.text),
+                                      maxAmount: 100,
+                                      //  int.parse(maxSalaryController.text),
+                                      minAmount: 200,
+                                      //  int.parse(minSalaryController.text),
+                                      applicationDeadline: '2024-11-31',
                                       country: state.country?.name,
                                       state: state.state?.name),
                                 ),

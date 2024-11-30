@@ -9,6 +9,7 @@ class PaymentPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(),
             body: Container(
                 width: double.maxFinite,
                 height: double.maxFinite,

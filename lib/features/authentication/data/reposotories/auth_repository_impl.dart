@@ -47,6 +47,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.login(param);
       await localDataSource.cacheUser(result);
       UserService().authData = result;
+      print('detail ${UserService().authData}');
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));

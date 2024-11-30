@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/routes/app_page_routes.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/splash_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -53,7 +54,7 @@ import '../../presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
   static final navigatorKey = GlobalKey<NavigatorState>();
-
+  static const String splashScreen = '/splash_page_screen';
   static const String welcomePageScreen = '/welcome_page_screen';
 
   static const String signupOptionsPageScreen = '/signup_options_page_screen';
@@ -242,6 +243,10 @@ class AppRoutes {
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case splashScreen:
+        return AppPageRouteBuilder(
+          navigateTo: SplashPage(),
+        );
       case welcomePageScreen:
         return AppPageRouteBuilder(
           navigateTo: WelcomePageScreen(),

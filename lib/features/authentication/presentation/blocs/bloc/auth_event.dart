@@ -47,4 +47,5 @@ class AuthEvent with _$AuthEvent {
       _RegisterEmployer;
   const factory AuthEvent.registerJobSeeker(RegisterJobSeekerEntity param) =
       _RegisterJobSeeker;
+        const factory AuthEvent.getUserData() = _GetUserData;
 }

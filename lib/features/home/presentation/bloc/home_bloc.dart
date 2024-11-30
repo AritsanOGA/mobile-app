@@ -65,10 +65,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
-
+    on<_UpdateSelectedGender>(_onUpdateSelectedGender);
+      on<_UpdateSelectedPackage>(_onUpdateSelectedPackage);
     on<_UpdateCountry>(_onUpdateCountry);
     on<_UpdateState>(_onUpdateState);
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
+    on<_UpdateSelectedCompensationType>(_onUpdateSelectedCompensationType);
     on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
     on<_ApplyForJob>(_onApplyForJob);
@@ -225,7 +227,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onUpdateSelectedEducationLevel(
       _UpdateSelectedEducationLevel event, Emitter<HomeState> emit) {
-    emit(state.copyWith(gender: event.value));
+    emit(state.copyWith(educationLevel: event.value));
   }
 
   FutureOr<void> _onUpdateSelectedSkillLevel(
@@ -336,5 +338,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onUpdateCountry(
       _UpdateCountry event, Emitter<HomeState> emit) {
     emit(state.copyWith(country: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedGender(
+      _UpdateSelectedGender event, Emitter<HomeState> emit) {
+    emit(state.copyWith(gender: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedCompensationType(
+      _UpdateSelectedCompensationType event, Emitter<HomeState> emit) {
+    emit(state.copyWith(compensationType: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedPackage(_UpdateSelectedPackage event, Emitter<HomeState> emit) {
+        emit(state.copyWith(package: event.value));
   }
 }

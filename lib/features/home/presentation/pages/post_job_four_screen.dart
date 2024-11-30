@@ -9,8 +9,6 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../../../presentation/payment_page_screen/payment_page_screen.dart';
@@ -24,10 +22,11 @@ class PostJobFourScreen extends HookWidget {
         child: Scaffold(
             body: BlocConsumer<HomeBloc, HomeState>(
       listener: (context, state) {
-        if (state.viewState == ViewState.success) {
+        if (state.viewState == ViewState.success &&
+            state.successType == SuccessType.postJob) {
           print('suceess');
           Navigator.pushNamed(context, AppRoutes.successfulJobApplicationPage);
-        } else if (state.viewState == ViewState.success) {
+        } else if (state.viewState == ViewState.failure) {
           showDialog<Widget>(
             context: context,
             builder: (ctx) => CustomAlertDialog(
@@ -90,37 +89,75 @@ class PostJobFourScreen extends HookWidget {
                       padding: EdgeInsets.only(left: 2.h),
                       child: Text("Is Accommodation Available?",
                           style: CustomTextStyles.titleMediumMedium18))),
-              SizedBox(height: 1.v),
+              SizedBox(height: 5.v),
               Padding(
                   padding: EdgeInsets.only(right: 74.h),
                   child: CustomRadioButton(
-                      text: "BSC",
-                      value: state.levelOfEducationList[0],
-                      groupValue: state.educationLevel,
+                      text: "Yes",
+                      value: state.packageList[0],
+                      groupValue: state.package,
                       padding: EdgeInsets.symmetric(vertical: 1.v),
                       onChange: (value) {
-                        context.read<HomeBloc>().add(
-                              HomeEvent.updateSelectedEducationlevel(value),
-                            );
+                        // context.read<HomeBloc>().add(
+                        //       HomeEvent.updateSE(value),
+                        //     );
                       })),
               Padding(
                   padding: EdgeInsets.only(top: 11.v, right: 58.h),
                   child: CustomRadioButton(
-                      text: "BA",
-                      value: state.levelOfEducationList[1],
-                      groupValue: state.educationLevel,
+                      text: "No",
+                      value: state.packageList[1],
+                      groupValue: state.package,
                       padding: EdgeInsets.symmetric(vertical: 1.v),
                       onChange: (value) {
                         context.read<HomeBloc>().add(
                               HomeEvent.updateSelectedEducationlevel(value!),
                             );
                       })),
-              CustomTextFormField(
-                title: 'Package',
-                titleStyle: CustomTextStyles.titleMediumMedium18,
-                hintText: 'Enter Package',
-                isBorderNone: true,
-              ),
+              SizedBox(height: 25.v),
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                      padding: EdgeInsets.only(left: 2.h),
+                      child: Text("Package",
+                          style: CustomTextStyles.titleMediumMedium18))),
+              SizedBox(height: 5.v),
+              Padding(
+                  padding: EdgeInsets.only(right: 74.h),
+                  child: CustomRadioButton(
+                      text: "Male",
+                      value: state.packageList[0],
+                      groupValue: state.package,
+                      padding: EdgeInsets.symmetric(vertical: 1.v),
+                      onChange: (value) {
+                        context.read<HomeBloc>().add(
+                              HomeEvent.updateSelectedPackage(value),
+                            );
+                      })),
+              Padding(
+                  padding: EdgeInsets.only(top: 11.v, right: 58.h),
+                  child: CustomRadioButton(
+                      text: "Female",
+                      value: state.packageList[1],
+                      groupValue: state.package,
+                      padding: EdgeInsets.symmetric(vertical: 1.v),
+                      onChange: (value) {
+                        context.read<HomeBloc>().add(
+                              HomeEvent.updateSelectedEducationlevel(value!),
+                            );
+                      })),
+              Padding(
+                  padding: EdgeInsets.only(top: 11.v, right: 58.h),
+                  child: CustomRadioButton(
+                      text: "Both",
+                      value: state.packageList[2],
+                      groupValue: state.package,
+                      padding: EdgeInsets.symmetric(vertical: 1.v),
+                      onChange: (value) {
+                        context.read<HomeBloc>().add(
+                              HomeEvent.updateSelectedEducationlevel(value!),
+                            );
+                      })),
               SizedBox(height: 44.v),
               Align(
                   alignment: Alignment.centerLeft,
@@ -155,9 +192,10 @@ class PostJobFourScreen extends HookWidget {
                 },
                 builder: (context, postJobRequest) {
                   return CustomElevatedButton(
+                    isBusy: state.viewState == ViewState.loading,
                     onPressed: (() {
                       context.read<HomeBloc>().add(
-                            HomeEvent.updatePostJobRequest(
+                            HomeEvent.postJob(
                               postJobRequest.copyWith(
                                   city: cityController.text,
                                   officeAddress: officeAddressController.text,
@@ -166,12 +204,12 @@ class PostJobFourScreen extends HookWidget {
                             ),
                           );
 
-                      Navigator.push(
-                          context,
-                          PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              duration: Durations.long1,
-                              child: PaymentPageScreen()));
+                      // Navigator.push(
+                      //     context,
+                      //     PageTransition(
+                      //         type: PageTransitionType.rightToLeft,
+                      //         duration: Durations.long1,
+                      //         child: PaymentPageScreen()));
                     }),
                     text: "Next",
                   );

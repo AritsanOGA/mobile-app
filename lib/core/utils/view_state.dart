@@ -4,7 +4,7 @@ idle,  loading, success, failure
 enum SuccessType {
   none,
   registration,
-  login,
+  postJob,
   passwordReset,
   profileUpdate,
   // Add other success types as needed

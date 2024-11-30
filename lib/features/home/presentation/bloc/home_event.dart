@@ -28,15 +28,17 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.updateSelectedWorkMode(String value) =
       _UpdateSelectedWorkMode;
   const factory HomeEvent.updateSelectedGender(String value) =
-      _UpdateSelectedJobType;
+      _UpdateSelectedGender;
   const factory HomeEvent.updateSelectedCompensationType(String value) =
-      _UpdateSelectedWorkMode;
+      _UpdateSelectedCompensationType;
   const factory HomeEvent.updateSelectedSkillLevel(String value) =
       _UpdateSelectedSkillLevel;
   const factory HomeEvent.updateSelectedEducationlevel(String value) =
       _UpdateSelectedEducationLevel;
   const factory HomeEvent.updateSelectedSkill(SkillResponseEntity value) =
       _UpdateSelectedSkill;
+  const factory HomeEvent.updateSelectedPackage(String value) =
+      _UpdateSelectedPackage;
   const factory HomeEvent.updateCountry(CountryResponseEntity value) =
       _UpdateCountry;
 

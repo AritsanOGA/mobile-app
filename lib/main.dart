@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => AuthBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (_) => HomeBloc(),
         ),
       ],
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: AppRoutes.navigatorKey,
             onGenerateRoute: AppRoutes.generateRoute,
-            initialRoute: AppRoutes.welcomePageScreen,
+            initialRoute: AppRoutes.splashScreen,
             // routes: AppRoutes.routes,
             // builder: EasyLoading.init(),
           );
