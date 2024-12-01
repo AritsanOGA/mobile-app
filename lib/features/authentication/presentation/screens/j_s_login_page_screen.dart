@@ -1,3 +1,5 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -18,8 +20,10 @@ class JSLoginPageScreen extends HookWidget {
   Widget build(BuildContext context) {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
+    final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
+         backgroundColor: AppColors.kwhite,
         resizeToAvoidBottomInset: false,
         body: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
@@ -66,6 +70,7 @@ class JSLoginPageScreen extends HookWidget {
                       title: 'Email',
                       controller: emailController,
                       hintText: "example@gmail.com",
+                      validator: FormValidation.emailValidation,
                       hintStyle: theme.textTheme.titleSmall!,
                       textInputType: TextInputType.emailAddress,
                     ),
@@ -77,22 +82,11 @@ class JSLoginPageScreen extends HookWidget {
                       hintStyle: theme.textTheme.titleSmall!,
                       textInputAction: TextInputAction.done,
                       textInputType: TextInputType.visiblePassword,
-                      suffix: Container(
-                          margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-                          child: GestureDetector(
-                              // onTap: (() {
-                              //   setState(() {
-                              //     obscure = !obscure;
-                              //   });
-                              // }),
-                              // child: obscure == true
-                              //     ? Icon(Icons.visibility)
-                              //     : Icon(Icons.visibility_off),
-                              )),
+                      isPassword: true,
+                      isObscure: true,
                       suffixConstraints: BoxConstraints(
                         maxHeight: 48.v,
                       ),
-                      //obscureText: obscure,
                       contentPadding: EdgeInsets.only(
                         left: 20.h,
                         top: 15.v,

@@ -290,7 +290,9 @@ class AppRoutes {
         );
       case verifyJobSeekerScreen:
         return AppPageRouteBuilder(
-          navigateTo: const VerifyJobSeekerScreen(),
+          navigateTo: VerifyJobSeekerScreen(
+            email: settings.arguments as String,
+          ),
         );
 
       case successfulPageScreen:

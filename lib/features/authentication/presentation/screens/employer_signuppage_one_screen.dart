@@ -42,7 +42,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state.viewState == ViewState.success &&
-                    state.successType == SuccessType.registration) {
+                    state.successType == SuccessType.employerRegistration) {
                   print('suceess');
 
                   Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
@@ -83,6 +83,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             title: 'First Name',
                             controller: fullNameController,
                             hintText: "eg: Kingsley ",
+                            textInputType: TextInputType.name,
                             validator: FormValidation.stringValidation,
                             hintStyle: theme.textTheme.titleSmall!),
                         SizedBox(height: 30.v),
@@ -93,12 +94,14 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                 title: 'Office Title',
                                 width: 180.h,
                                 controller: officeTitleController,
+                                textInputType: TextInputType.name,
                                 hintText: "e.g CEO",
                                 validator: FormValidation.stringValidation,
                                 hintStyle: theme.textTheme.titleSmall!),
                             CustomTextFormField(
                                 title: 'Company Name',
                                 width: 180.h,
+                                textInputType: TextInputType.name,
                                 controller: companyNameController,
                                 validator: FormValidation.stringValidation,
                                 hintText: "e.g ArtisanOga",
@@ -164,13 +167,14 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             Expanded(
                               child: CustomTextFormField(
                                   title: 'Phone no',
+                                  textInputType: TextInputType.phone,
                                   controller: phoneController,
-                                     inputFormatters: [
-                                  LengthLimitingTextInputFormatter(11),
-                                  FilteringTextInputFormatter.digitsOnly,
-                                ],
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(11),
+                                    FilteringTextInputFormatter.digitsOnly,
+                                  ],
                                   validator: FormValidation.phoneValidation,
-                                  hintText: "eg  09033447788",
+                                  hintText: "eg 09033447788",
                                   hintStyle: theme.textTheme.titleSmall!),
                             ),
                             SizedBox(width: 20.v),
@@ -282,6 +286,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                   CustomTextFormField(
                                       title: 'City',
                                       controller: cityController,
+                                      textInputType: TextInputType.name,
                                       validator:
                                           FormValidation.stringValidation,
                                       hintText: "eg  Leo",
@@ -299,7 +304,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                 child: Row(children: [
                                   GestureDetector(
                                     onTap: () {
-                                      print('state ${state.isChecked}');
                                       context.read<AuthBloc>()
                                         ..add(AuthEvent.updateSelectedIsChecked(
                                             state.isChecked));
@@ -323,7 +327,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                               child: Icon(
                                                 Icons.check,
                                                 color: Colors.white,
-                                                size: 20,
+                                                size: 15,
                                               ),
                                             )
                                           : null,

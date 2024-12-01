@@ -22,6 +22,8 @@ class JSCreateAccountPageOneScreen extends HookWidget {
     final confirmEmailController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
 
+    final isObscure = useState(true);
+
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -56,6 +58,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                     controller: fullNameController,
                                     validator: FormValidation.stringValidation,
                                     hintText: "Enter Full Name",
+                                    textInputType: TextInputType.name,
                                     hintStyle: theme.textTheme.titleSmall!),
                                 SizedBox(height: 30.v),
                                 CustomTextFormField(
@@ -85,6 +88,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                             hintText: "************",
                                             hintStyle:
                                                 theme.textTheme.titleSmall!,
+                                            isPassword: true,
                                             validator:
                                                 FormValidation.stringValidation,
                                             textInputType:
@@ -96,11 +100,20 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                           width: 180.h,
                                           controller: confirmPasswordController,
                                           hintText: "************",
-                                          validator:
-                                              FormValidation.stringValidation,
+                                          isPassword: true,
+                                          validator: (value) {
+                                            if (value == null ||
+                                                value.isEmpty) {
+                                              return 'Please confirm your password';
+                                            }
+                                            if (value !=
+                                                passwordController.text) {
+                                              return 'Passwords do not match';
+                                            }
+                                            return null;
+                                          },
                                           hintStyle:
                                               theme.textTheme.titleSmall!,
-                                          textInputAction: TextInputAction.done,
                                           textInputType:
                                               TextInputType.visiblePassword,
                                           obscureText: true)
@@ -206,29 +219,32 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                   builder: (context, registerJobSeekerRequest) {
                                     return CustomElevatedButton(
                                       onPressed: (() {
-                                        // if (formKey.currentState?.validate() ??
-                                        //     false) {
-                                        print(
-                                            '${state.picture}  ${state.gender}');
-                                        context.read<AuthBloc>().add(AuthEvent
-                                            .updateRegisterJobSeekerRequest(
-                                                registerJobSeekerRequest.copyWith(
-                                                    fullName:
-                                                        fullNameController.text,
-                                                    email: emailController.text,
-                                                    confirmPassword:
-                                                        confirmPasswordController
-                                                            .text,
-                                                    gender: state.gender,
-                                                    passport: state.picture,
-                                                    password: passwordController
-                                                        .text)));
-                                        Navigator.pushNamed(
-                                            context,
-                                            AppRoutes
-                                                .jSCreateAccountPageTwoScreen,
-                                            arguments: emailController.text);
-                                        // }
+                                        if (formKey.currentState?.validate() ??
+                                            false) {
+                                          print(
+                                              '${state.picture}  ${state.gender}');
+                                          context.read<AuthBloc>().add(AuthEvent
+                                              .updateRegisterJobSeekerRequest(
+                                                  registerJobSeekerRequest.copyWith(
+                                                      fullName:
+                                                          fullNameController
+                                                              .text,
+                                                      email:
+                                                          emailController.text,
+                                                      confirmPassword:
+                                                          confirmPasswordController
+                                                              .text,
+                                                      gender: state.gender,
+                                                      passport: state.picture,
+                                                      password:
+                                                          passwordController
+                                                              .text)));
+                                          Navigator.pushNamed(
+                                              context,
+                                              AppRoutes
+                                                  .jSCreateAccountPageTwoScreen,
+                                              arguments: emailController.text);
+                                        }
                                       }),
                                       text: "Next",
                                     );

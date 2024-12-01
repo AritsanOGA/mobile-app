@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/routes/app_routes.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/image_constant.dart';
@@ -54,6 +55,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           // }
         });
         return Scaffold(
+           backgroundColor: AppColors.kwhite,
           body: Column(
             children: [
               SizedBox(

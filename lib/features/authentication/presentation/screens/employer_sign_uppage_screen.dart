@@ -1,8 +1,10 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -20,6 +22,7 @@ class EmployerSignUpPageScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
             //resizeToAvoidBottomInset: false,
             appBar: CustomAppBar(
               title: 'Sign Up',
@@ -48,6 +51,7 @@ class EmployerSignUpPageScreen extends HookWidget {
                                   title: 'Email',
                                   hintText: 'example@gmail.com',
                                   controller: emailController,
+                                  textInputType: TextInputType.emailAddress,
                                   validator: FormValidation.emailValidation),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
@@ -55,14 +59,25 @@ class EmployerSignUpPageScreen extends HookWidget {
                                   hintText: '*************',
                                   isPassword: true,
                                   controller: passwordController,
+                                  textInputType: TextInputType.visiblePassword,
                                   validator: FormValidation.stringValidation),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
-                                  title: 'Confirm Password',
-                                  hintText: '*************',
-                                  isPassword: true,
-                                  controller: confirmPasswordController,
-                                  validator: FormValidation.stringValidation),
+                                title: 'Confirm Password',
+                                hintText: '*************',
+                                isPassword: true,
+                                controller: confirmPasswordController,
+                                textInputType: TextInputType.visiblePassword,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please confirm your password';
+                                  }
+                                  if (value != passwordController.text) {
+                                    return 'Passwords do not match';
+                                  }
+                                  return null;
+                                },
+                              ),
                               SizedBox(height: 45.v),
                               BlocSelector<AuthBloc, AuthState,
                                   RegisterEmployerEntity>(

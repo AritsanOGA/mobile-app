@@ -5,6 +5,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/theme/custom_text_style.dart';
 import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ class VerifyEmployerScreen extends HookWidget {
                       textAlign: TextAlign.center,
                       text: TextSpan(
                           text:
-                              'Please enter the code we just sent to email\n$email',
+                              'Please enter the code we just sent to email\n',
                           style: theme.textTheme.headlineSmall
                               ?.copyWith(fontSize: 13),
                           children: [
@@ -71,11 +72,9 @@ class VerifyEmployerScreen extends HookWidget {
                                     // Navigator.pushNamed(
                                     //     context, AppRoute.signupPage);
                                   },
-                                text: '',
-                                style: const TextStyle(
-                                    color: AppColors.kblack,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16))
+                                text: email,
+                                style: CustomTextStyles
+                                              .titleSmallfff7941e)
                           ]),
                     ),
                     SizedBox(height: 40.v),

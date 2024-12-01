@@ -134,7 +134,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           (error) => emit(state.copyWith(viewState: ViewState.failure)),
           (result) => emit(state.copyWith(
               viewState: ViewState.success,
-              successType: SuccessType.registration)));
+              successType: SuccessType.employerRegistration)));
     });
   }
 
@@ -151,7 +151,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+   // emit(state.copyWith(viewState: ViewState.loading));
     final result = await _stateUseCase(event.id);
     result.fold(
       (error) => emit(
@@ -172,7 +172,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onGetCountries(
       _GetCountries event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    //emit(state.copyWith(viewState: ViewState.loading));
     final result = await _countryUseCase(NoParams());
     result.fold(
       (error) => emit(
@@ -196,8 +196,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(viewState: ViewState.loading));
 
     await _registerJobSeekerUseCase(event.param).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
+      value.fold(
+          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+              viewState: ViewState.success,
+              successType: SuccessType.jsRegistration)));
     });
   }
 

@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/dashboard_screen.dart';
@@ -23,8 +24,8 @@ class JobSeekerNavBarPage extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return Scaffold(
+           backgroundColor: AppColors.kwhite,
           drawer: DashboardMenuPageDraweritem(),
-          
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             leadingWidth: 52.h,
@@ -46,9 +47,9 @@ class JobSeekerNavBarPage extends StatelessWidget {
             ),
             actions: [],
           ),
-          body: pages[state.selectedIndex ?? 0],
+          body: pages[state.selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: state.selectedIndex ?? 0,
+            currentIndex: state.selectedIndex,
             onTap: (index) {
               context.read<AuthBloc>().add(AuthEvent.selectTab(index));
             },

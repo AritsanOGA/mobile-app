@@ -1,13 +1,11 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/text_formatter.dart';
-import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
@@ -17,9 +15,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import 'j_s_create_account_page_three_screen.dart';
-
-// ignore_for_file: must_be_immutable
 class JSCreateAccountPagetTwoScreen extends HookWidget {
   final String email;
   JSCreateAccountPagetTwoScreen({required this.email, Key? key})
@@ -56,6 +51,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                             title: 'Phone Number',
                             controller: phoneController,
                             hintText: "e.g 703 345 1345",
+                            textInputType: TextInputType.phone,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(11),
                               FilteringTextInputFormatter.digitsOnly,
@@ -65,55 +61,56 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                         SizedBox(height: 30.v),
                         CustomTextFormField(
                             title: 'Street Address',
+                            textInputType: TextInputType.name,
                             controller: streetaddressController,
                             validator: FormValidation.stringValidation,
                             hintText: "Enter Street Address",
                             hintStyle: theme.textTheme.titleSmall!),
                         SizedBox(height: 30.v),
-                        // BlocBuilder<AuthBloc, AuthState>(
-                        //     builder: (context, state) {
-                        //   return CustomDropDown<CountryResponseEntity>(
-                        //     title: 'Country',
-                        //     items: state.countries,
-                        //     selectedItem: state.countries.isNotEmpty
-                        //         ? state.countries.firstWhere(
-                        //             (country) =>
-                        //                 country.id == (state.country?.id),
-                        //             orElse: () => state.countries.first)
-                        //         : CountryResponseEntity(id: 4, name: 'ALgeria'),
-                        //     itemLabel: (country) => country.name,
-                        //     onChanged: (value) {
-                        //       context.read<AuthBloc>().add(
-                        //             AuthEvent.updateSelectedCountry(value!),
-                        //           );
+                        BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, state) {
+                          return CustomDropDown<CountryResponseEntity>(
+                            title: 'Country',
+                            items: state.countries,
+                            selectedItem: state.countries.isNotEmpty
+                                ? state.countries.firstWhere(
+                                    (country) =>
+                                        country.id == (state.country?.id),
+                                    orElse: () => state.countries.first)
+                                : CountryResponseEntity(id: 4, name: 'ALgeria'),
+                            itemLabel: (country) => country.name,
+                            onChanged: (value) {
+                              context.read<AuthBloc>().add(
+                                    AuthEvent.updateSelectedCountry(value!),
+                                  );
 
-                        //       context.read<AuthBloc>().add(
-                        //             AuthEvent.getState(value.id.toString()),
-                        //           );
-                        //     },
-                        //   );
-                        // }),
+                              context.read<AuthBloc>().add(
+                                    AuthEvent.getState(value.id.toString()),
+                                  );
+                            },
+                          );
+                        }),
                         SizedBox(height: 30.v),
-                        // BlocBuilder<AuthBloc, AuthState>(
-                        //   builder: (context, state) {
-                        //     return CustomDropDown<StateResponseEntity>(
-                        //       title: 'State of Residence',
-                        //       items: state.states,
-                        //       selectedItem: state.states.isNotEmpty
-                        //           ? state.states.firstWhere(
-                        //               (state) => state.id == (state.id),
-                        //               orElse: () => state.states.first)
-                        //           : StateResponseEntity(
-                        //               id: 1098, name: 'Djelfa'),
-                        //       itemLabel: (state) => state.name,
-                        //       onChanged: (value) {
-                        //         context.read<AuthBloc>().add(
-                        //               AuthEvent.updateSelectedState(value!),
-                        //             );
-                        //       },
-                        //     );
-                        //   },
-                        // ),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            return CustomDropDown<StateResponseEntity>(
+                              title: 'State of Residence',
+                              items: state.states,
+                              selectedItem: state.states.isNotEmpty
+                                  ? state.states.firstWhere(
+                                      (state) => state.id == (state.id),
+                                      orElse: () => state.states.first)
+                                  : StateResponseEntity(
+                                      id: 1098, name: 'Djelfa'),
+                              itemLabel: (state) => state.name,
+                              onChanged: (value) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.updateSelectedState(value!),
+                                    );
+                              },
+                            );
+                          },
+                        ),
                         SizedBox(height: 30.v),
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
@@ -138,6 +135,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               child: CustomTextFormField(
                                 hintText: 'MM/DD/YYYY',
                                 title: 'Date of Birth',
+                                textInputType: TextInputType.number,
                                 inputFormatters: [DateInputFormatter()],
                                 controller: dateOfBirthController,
                                 validator: FormValidation.stringValidation,
@@ -150,6 +148,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               child: CustomTextFormField(
                                   title: 'City',
                                   controller: cityController,
+                                  textInputType: TextInputType.name,
                                   validator: FormValidation.stringValidation,
                                   hintText: "Enter City",
                                   hintStyle: theme.textTheme.titleSmall!),
@@ -165,29 +164,30 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                           builder: (context, registerJobSeekerRequest) {
                             return CustomElevatedButton(
                               onPressed: (() {
-                                //  if (formKey.currentState?.validate() ?? false) {
-                                context.read<AuthBloc>().add(
-                                    AuthEvent.updateRegisterJobSeekerRequest(
-                                        registerJobSeekerRequest.copyWith(
-                                            phoneNumber: phoneController.text,
-                                            streetAddress:
-                                                streetaddressController.text,
-                                            country:
-                                                state.country?.id.toString(),
-                                            state: state.state?.name,
-                                            jobType: state.jobType,
-                                            city: cityController.text,
-                                            dateOFBirth:
-                                                dateOfBirthController.text)));
-                                Navigator.pushNamed(context,
-                                    AppRoutes.jSCreateAccountPageThreeScreen,
-                                    arguments: email);
-                                // }
+                                if (formKey.currentState?.validate() ?? false) {
+                                  context.read<AuthBloc>().add(
+                                      AuthEvent.updateRegisterJobSeekerRequest(
+                                          registerJobSeekerRequest.copyWith(
+                                              phoneNumber: phoneController.text,
+                                              streetAddress:
+                                                  streetaddressController.text,
+                                              country:
+                                                  state.country?.id.toString(),
+                                              state: state.state?.name,
+                                              jobType: state.jobType,
+                                              city: cityController.text,
+                                              dateOFBirth:
+                                                  dateOfBirthController.text)));
+                                  Navigator.pushNamed(context,
+                                      AppRoutes.jSCreateAccountPageThreeScreen,
+                                      arguments: email);
+                                }
                               }),
                               text: "Next",
                             );
                           },
                         ),
+                        SizedBox(height: 40.v),
                       ])),
                 ));
               },

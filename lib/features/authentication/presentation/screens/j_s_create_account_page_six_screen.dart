@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -24,6 +25,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
     final guaranterEmailController = useTextEditingController();
     final guaranterAddressController = useTextEditingController();
     final guaranterPhoneNumberController = useTextEditingController();
+    final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -33,7 +35,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state.viewState == ViewState.success &&
-                    state.successType == SuccessType.registration) {
+                    state.successType == SuccessType.jsRegistration) {
                   print('suceess');
                   Navigator.pushNamed(context, AppRoutes.verifyJobSeekerScreen,
                       arguments: email);
@@ -69,28 +71,35 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                               CustomTextFormField(
                                   title: 'Name',
                                   controller: guaranterNameController,
+                                  textInputType: TextInputType.name,
+                                  validator: FormValidation.stringValidation,
                                   hintText: "Enter Guarantor’s Name",
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Email',
                                   controller: guaranterEmailController,
+                                  textInputType: TextInputType.emailAddress,
                                   hintText: "Enter Guarantor’s Email",
+                                  validator: FormValidation.emailValidation,
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Phone Number',
+                                  textInputType: TextInputType.phone,
                                   controller: guaranterPhoneNumberController,
-                                     inputFormatters: [
-                                  LengthLimitingTextInputFormatter(11),
-                                  FilteringTextInputFormatter.digitsOnly,
-                                ],
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(11),
+                                    FilteringTextInputFormatter.digitsOnly,
+                                  ],
                                   hintText: "Enter Guarantor’s Phone Number",
+                                  validator: FormValidation.phoneValidation,
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Residential Address',
                                   controller: guaranterAddressController,
+                                  textInputType: TextInputType.streetAddress,
                                   hintText: "Enter Residential Address",
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 40.v),
@@ -101,26 +110,30 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                                         state.viewState == ViewState.loading,
                                     text: "Submit",
                                     onPressed: (() {
-                                      context.read<AuthBloc>().add(
-                                          AuthEvent.registerJobSeeker(state
-                                              .registerJobSeekerRequest
-                                              .copyWith(
-                                                  guarantorPhoneNumber:
-                                                      guaranterPhoneNumberController
-                                                          .text,
-                                                  guarantorName:
-                                                      guaranterNameController
-                                                          .text,
-                                                  guarantorEmail:
-                                                      guaranterEmailController
-                                                          .text,
-                                                  residentialAddress:
-                                                      guaranterAddressController
-                                                          .text)));
+                                      if (formKey.currentState?.validate() ??
+                                          false) {
+                                        context.read<AuthBloc>().add(
+                                            AuthEvent.registerJobSeeker(state
+                                                .registerJobSeekerRequest
+                                                .copyWith(
+                                                    guarantorPhoneNumber:
+                                                        guaranterPhoneNumberController
+                                                            .text,
+                                                    guarantorName:
+                                                        guaranterNameController
+                                                            .text,
+                                                    guarantorEmail:
+                                                        guaranterEmailController
+                                                            .text,
+                                                    residentialAddress:
+                                                        guaranterAddressController
+                                                            .text)));
+                                      }
                                     }),
                                   );
                                 },
                               ),
+                              SizedBox(height: 40.v),
                             ])));
               },
             )));

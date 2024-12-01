@@ -31,6 +31,16 @@ class FormValidation {
     return null;
   }
 
+static  String? confirmPasswordValidator(String? confirmPassword, String? password) {
+  if (confirmPassword == null || confirmPassword.isEmpty) {
+    return 'Please confirm your password';
+  }
+  if (confirmPassword != password) {
+    return 'Passwords do not match';
+  }
+  return null; // Valid
+}
+
   static String? phoneValidation(String? phone) {
     if (phone == null || phone.isEmpty) {
       return 'Please enter a phone number';

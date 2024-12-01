@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
@@ -22,23 +23,24 @@ class EmployerLoginPageScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
+         backgroundColor: AppColors.kwhite,
         // resizeToAvoidBottomInset: false,
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state.viewState == ViewState.success) {
-              print('suceess');
-              Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
-            } else if (state.viewState == ViewState.failure) {
-              showDialog<Widget>(
-                context: context,
-                builder: (ctx) => CustomAlertDialog(
-                  title: 'Error!!!',
-                  content: state.errorMessage ?? '',
-                  actionText: 'OK',
-                  onActionPressed: () => Navigator.of(ctx).pop(),
-                ),
-              );
-            }
+            // if (state.viewState == ViewState.success) {
+            //   print('suceess');
+            //   Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+            // } else if (state.viewState == ViewState.failure) {
+            //   showDialog<Widget>(
+            //     context: context,
+            //     builder: (ctx) => CustomAlertDialog(
+            //       title: 'Error!!!',
+            //       content: state.errorMessage ?? '',
+            //       actionText: 'OK',
+            //       onActionPressed: () => Navigator.of(ctx).pop(),
+            //     ),
+            //   );
+            // }
           },
           builder: (context, state) {
             return Form(
@@ -87,18 +89,8 @@ class EmployerLoginPageScreen extends HookWidget {
                           textInputAction: TextInputAction.done,
                           textInputType: TextInputType.visiblePassword,
                           validator: FormValidation.stringValidation,
-                          // suffix: Container(
-                          //     margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-                          //     child: GestureDetector(
-                          //       onTap: (() {
-                          //         setState(() {
-                          //           obscure = !obscure;
-                          //         });
-                          //       }),
-                          //       child: obscure == true
-                          //           ? Icon(Icons.visibility)
-                          //           : Icon(Icons.visibility_off),
-                          //     )),
+                          isPassword: true,
+                          isObscure: true,
                           suffixConstraints: BoxConstraints(
                             maxHeight: 48.v,
                           ),
@@ -137,11 +129,7 @@ class EmployerLoginPageScreen extends HookWidget {
                                         ),
                                       );
                                 }
-                                // Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //         builder: (context) =>
-                                //             EmployerDashboardPage()));
+                            
                               },
                               text: "Log in",
                             );

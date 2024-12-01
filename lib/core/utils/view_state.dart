@@ -1,9 +1,11 @@
-enum ViewState{
-idle,  loading, success, failure
-}
+enum ViewState { idle, loading, success, failure }
+
 enum SuccessType {
   none,
-  registration,
+  jsRegistration,
+  employerRegistration,
+  jsLogin,
+  employerLogin,
   postJob,
   applyForJob,
   profileUpdate,
