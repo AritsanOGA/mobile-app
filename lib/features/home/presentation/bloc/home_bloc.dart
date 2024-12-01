@@ -70,6 +70,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateCountry>(_onUpdateCountry);
     on<_UpdateState>(_onUpdateState);
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
+    on<_UpdateSelectedAvailability>(_onUpdateSelectedAvailability);
     on<_UpdateSelectedCompensationType>(_onUpdateSelectedCompensationType);
     on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
@@ -199,8 +200,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onPostJob(_PostJob event, Emitter<HomeState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
     await _postJobUseCase(event.param).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
+      value.fold(
+          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+              viewState: ViewState.success, successType: SuccessType.postJob)));
     });
   }
 
@@ -358,5 +361,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onUpdateSelectedPackage(
       _UpdateSelectedPackage event, Emitter<HomeState> emit) {
     emit(state.copyWith(package: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedAvailability(
+      _UpdateSelectedAvailability event, Emitter<HomeState> emit) {
+    emit(state.copyWith(availablity: event.value));
   }
 }

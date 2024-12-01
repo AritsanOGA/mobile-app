@@ -25,9 +25,9 @@ class EmployerNavBarPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           drawer: DashboardMenuPageDraweritem(),
-          body: pages[state.selectedIndex ?? 0],
+          body: pages[state.selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: state.selectedIndex ?? 0,
+            currentIndex: state.selectedIndex,
             onTap: (index) {
               print('in${index}');
               context.read<AuthBloc>().add(AuthEvent.selectTab(index));
@@ -37,7 +37,6 @@ class EmployerNavBarPage extends StatelessWidget {
             unselectedItemColor: Colors.grey,
             backgroundColor: Colors.brown,
             items: <BottomNavigationBarItem>[
-
               BottomNavigationBarItem(
                 backgroundColor: Color(0xFF3A332C),
                 icon: SvgPicture.asset(
@@ -45,16 +44,19 @@ class EmployerNavBarPage extends StatelessWidget {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF3A332C),
                 icon: SvgPicture.asset(
                     "assets/images/material-symbols-light_fit-screencandidates.svg"),
                 label: 'Candidates',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF3A332C),
                 icon: SvgPicture.asset(
                     "assets/images/basil_bag-outlinepost_job.svg"),
                 label: 'Post Job',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF3A332C),
                 icon: SvgPicture.asset("assets/images/Groupsettings.svg"),
                 label: 'Settings',
               ),

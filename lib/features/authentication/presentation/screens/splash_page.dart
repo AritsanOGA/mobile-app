@@ -45,13 +45,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, _) {
         Future.delayed(const Duration(seconds: 3), () {
-          if (UserService().authData == null) {
-            Navigator.pushNamed(context, AppRoutes.welcomePageScreen);
-          } else if (UserService().authData!.user.role == 'Employer') {
-            Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
-          } else {
-            Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
-          }
+          // if (UserService().authData == null) {
+          //   Navigator.pushNamed(context, AppRoutes.welcomePageScreen);
+          // } else if (UserService().authData!.user.role == 'Employer') {
+          //   Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+          // } else {
+          //   Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
+          // }
         });
         return Scaffold(
           body: Column(

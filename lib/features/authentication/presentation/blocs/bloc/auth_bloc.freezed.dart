@@ -9000,7 +9000,7 @@ mixin _$AuthState {
   String? get confirmPassword => throw _privateConstructorUsedError;
   String? get countryId => throw _privateConstructorUsedError;
   String? get jsGender => throw _privateConstructorUsedError;
-  int? get selectedIndex => throw _privateConstructorUsedError;
+  int get selectedIndex => throw _privateConstructorUsedError;
   String get jobType => throw _privateConstructorUsedError;
   String? get jsState => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
@@ -9042,7 +9042,7 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -9083,7 +9083,7 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -9124,7 +9124,7 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -9191,7 +9191,7 @@ abstract class $AuthStateCopyWith<$Res> {
       String? confirmPassword,
       String? countryId,
       String? jsGender,
-      int? selectedIndex,
+      int selectedIndex,
       String jobType,
       String? jsState,
       String? city,
@@ -9241,7 +9241,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? confirmPassword = freezed,
     Object? countryId = freezed,
     Object? jsGender = freezed,
-    Object? selectedIndex = freezed,
+    Object? selectedIndex = null,
     Object? jobType = null,
     Object? jsState = freezed,
     Object? city = freezed,
@@ -9305,10 +9305,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.jsGender
           : jsGender // ignore: cast_nullable_to_non_nullable
               as String?,
-      selectedIndex: freezed == selectedIndex
+      selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       jobType: null == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
@@ -9431,7 +9431,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? confirmPassword,
       String? countryId,
       String? jsGender,
-      int? selectedIndex,
+      int selectedIndex,
       String jobType,
       String? jsState,
       String? city,
@@ -9479,7 +9479,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? confirmPassword = freezed,
     Object? countryId = freezed,
     Object? jsGender = freezed,
-    Object? selectedIndex = freezed,
+    Object? selectedIndex = null,
     Object? jobType = null,
     Object? jsState = freezed,
     Object? city = freezed,
@@ -9543,10 +9543,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.jsGender
           : jsGender // ignore: cast_nullable_to_non_nullable
               as String?,
-      selectedIndex: freezed == selectedIndex
+      selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       jobType: null == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
@@ -9664,7 +9664,7 @@ class _$InitialImpl implements _Initial {
       this.confirmPassword,
       this.countryId,
       this.jsGender,
-      this.selectedIndex,
+      this.selectedIndex = 0,
       this.jobType = '--Select--',
       this.jsState,
       this.city,
@@ -9790,7 +9790,8 @@ class _$InitialImpl implements _Initial {
   @override
   final String? jsGender;
   @override
-  final int? selectedIndex;
+  @JsonKey()
+  final int selectedIndex;
   @override
   @JsonKey()
   final String jobType;
@@ -10038,7 +10039,7 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -10117,7 +10118,7 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -10196,7 +10197,7 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            int? selectedIndex,
+            int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
@@ -10306,7 +10307,7 @@ abstract class _Initial implements AuthState {
       final String? confirmPassword,
       final String? countryId,
       final String? jsGender,
-      final int? selectedIndex,
+      final int selectedIndex,
       final String jobType,
       final String? jsState,
       final String? city,
@@ -10352,7 +10353,7 @@ abstract class _Initial implements AuthState {
   @override
   String? get jsGender;
   @override
-  int? get selectedIndex;
+  int get selectedIndex;
   @override
   String get jobType;
   @override

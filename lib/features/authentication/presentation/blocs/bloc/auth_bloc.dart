@@ -141,10 +141,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onLoginUser(_LoginUser event, Emitter<AuthState> emit) async {
     emit(state.copyWith(viewState: ViewState.loading));
 
-    await _loginUseCase(event.param).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
-    });
+    final result = await _loginUseCase(event.param);
+
+    result.fold(
+        (error) => emit(state.copyWith(
+            viewState: ViewState.failure, errorMessage: error.message)),
+        (result) => emit(state.copyWith(viewState: ViewState.success)));
+    print('mess ${state.errorMessage}');
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {

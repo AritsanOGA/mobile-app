@@ -25,6 +25,7 @@ class PostJobEntity extends Equatable {
     required this.gender,
     required this.officeAddress,
     required this.applicationDeadline,
+    required this.currency,
   });
 
   final String jobTitle;
@@ -50,6 +51,7 @@ class PostJobEntity extends Equatable {
   final String gender;
   final String officeAddress;
   final String applicationDeadline;
+  final String currency;
 
   PostJobEntity copyWith({
     String? jobTitle,
@@ -75,8 +77,10 @@ class PostJobEntity extends Equatable {
     String? gender,
     String? officeAddress,
     String? applicationDeadline,
+    String? currency
   }) {
     return PostJobEntity(
+        currency: currency ?? this.currency,
         jobTitle: jobTitle ?? this.jobTitle,
         companyName: companyName ?? this.companyName,
         category: category ?? this.category,

@@ -1,23 +1,14 @@
 import 'package:equatable/equatable.dart';
-import 'package:equatable/equatable.dart';
 
-class EmployerJobResponseEntity extends Equatable {
-  final int? id;
-  final String? commuteType;
-  final dynamic invoiceId;
-  final int? recruiterId;
-  final int? closed;
-  final String? identity;
-  final String? status;
-  final int? featured;
-  final String? compensationType;
-  final String? jobStatus;
+class PostJobResponseEntity extends Equatable {
   final int? userId;
+  final String? identity;
+  final String? workType;
   final String? jobTitle;
-  final String? jobDescription;
+  final String? jobStatus;
   final String? url;
+  final String? jobDescription;
   final String? firstname;
-  final dynamic lastname;
   final String? email;
   final String? phone;
   final String? industry;
@@ -25,46 +16,42 @@ class EmployerJobResponseEntity extends Equatable {
   final String? hireType;
   final dynamic quantity;
   final dynamic businessCategoryName;
-  final String? businessCategoryId;
+  final int? businessCategoryId;
   final dynamic ageRange;
+  final int? minSalary;
+  final int? maxSalary;
   final String? gender;
-  final String? experience;
+  final int? experience;
   final String? levelOfEducation;
   final String? itSkills;
   final String? basicSalary;
-  final int? minSalary;
-  final int? maxSalary;
   final dynamic allowances;
   final String? state;
   final String? city;
-  final int? hiredCount;
+  final int? status;
   final String? applicationDeadline;
   final String? officeAddress;
   final String? accommodationAvailable;
   final dynamic accommodationFor;
-  final DateTime? createdAt;
+  final String? compensationType;
+  final String? country;
+  final int? recruiterId;
+  final int? featured;
+  final int? hiredCount;
+  final String? commuteType;
   final DateTime? updatedAt;
-  final dynamic topJobs;
-  final String? workType;
-  final int? country;
+  final DateTime? createdAt;
+  final int? id;
 
-  const EmployerJobResponseEntity({
-    this.id,
-    this.commuteType,
-    this.invoiceId,
-    this.recruiterId,
-    this.closed,
-    this.identity,
-    this.status,
-    this.featured,
-    this.compensationType,
-    this.jobStatus,
+  PostJobResponseEntity({
     this.userId,
+    this.identity,
+    this.workType,
     this.jobTitle,
-    this.jobDescription,
+    this.jobStatus,
     this.url,
+    this.jobDescription,
     this.firstname,
-    this.lastname,
     this.email,
     this.phone,
     this.industry,
@@ -74,46 +61,43 @@ class EmployerJobResponseEntity extends Equatable {
     this.businessCategoryName,
     this.businessCategoryId,
     this.ageRange,
+    this.minSalary,
+    this.maxSalary,
     this.gender,
     this.experience,
     this.levelOfEducation,
     this.itSkills,
     this.basicSalary,
-    this.minSalary,
-    this.maxSalary,
     this.allowances,
     this.state,
     this.city,
-    this.hiredCount,
+    this.status,
     this.applicationDeadline,
     this.officeAddress,
     this.accommodationAvailable,
     this.accommodationFor,
-    this.createdAt,
-    this.updatedAt,
-    this.topJobs,
-    this.workType,
+    this.compensationType,
     this.country,
+    this.recruiterId,
+    this.featured,
+    this.hiredCount,
+    this.commuteType,
+    this.updatedAt,
+    this.createdAt,
+    this.id,
   });
 
   @override
+  // TODO: implement props
   List<Object?> get props => [
-        id,
-        commuteType,
-        invoiceId,
-        recruiterId,
-        closed,
-        identity,
-        status,
-        featured,
-        compensationType,
-        jobStatus,
         userId,
+        identity,
+        workType,
         jobTitle,
-        jobDescription,
+        jobStatus,
         url,
+        jobDescription,
         firstname,
-        lastname,
         email,
         phone,
         industry,
@@ -123,25 +107,29 @@ class EmployerJobResponseEntity extends Equatable {
         businessCategoryName,
         businessCategoryId,
         ageRange,
+        minSalary,
+        maxSalary,
         gender,
         experience,
         levelOfEducation,
         itSkills,
         basicSalary,
-        minSalary,
-        maxSalary,
         allowances,
         state,
         city,
-        hiredCount,
+        status,
         applicationDeadline,
         officeAddress,
         accommodationAvailable,
         accommodationFor,
-        createdAt,
-        updatedAt,
-        topJobs,
-        workType,
+        compensationType,
         country,
+        recruiterId,
+        featured,
+        hiredCount,
+        commuteType,
+        updatedAt,
+        createdAt,
+        id,
       ];
 }

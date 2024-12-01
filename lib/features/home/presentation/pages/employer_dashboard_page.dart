@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
+import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
 import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
@@ -28,7 +30,6 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DashboardMenuPageDraweritem(),
-      // bottomNavigationBar: bottomNav(context),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: 52.h,
@@ -53,7 +54,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
       body: SizedBox(
         width: double.maxFinite,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -123,122 +124,48 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                 },
               ),
               SizedBox(height: 25.v),
-              SizedBox(height: 27.v),
-              Padding(
-                padding: EdgeInsets.only(left: 25.h),
-                child: Text(
-                  "Recent Jobs",
-                  style: CustomTextStyles.titleMediumPrimaryContainer18,
-                ),
+              Text(
+                "Recent Jobs",
+                style: CustomTextStyles.titleMediumPrimaryContainer18,
               ),
-              SizedBox(
-                height: 18,
+              BlocBuilder<HomeBloc, HomeState>(
+                bloc: context.read<HomeBloc>()..add(HomeEvent.getEmployerJob()),
+                //..add(event),
+                builder: (context, state) {
+                  if (state.viewState == ViewState.loading) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  if (state.viewState == ViewState.failure) {
+                    return Center(child: Text('Error: '));
+                  }
+
+                  if (state.employerJobList.isEmpty) {
+                    return Center(child: Text('No items found.'));
+                  }
+
+                  return Expanded(
+                    //   height: 200.h,
+                    // width: 400.v,
+                    child: ListView.builder(
+                      // scrollDirection: Axis.horizontal,
+                      itemCount: state.employerJobList.length,
+                      itemBuilder: (context, index) {
+                        return EmployerJobWidget(
+                            jobTitle:
+                                state.employerJobList[index].jobTitle ?? '',
+                            hireType:
+                                state.employerJobList[index].hireType ?? '',
+                            location: state.employerJobList[index].city ?? '',
+                            amount: state.employerJobList[index].minSalary
+                                .toString(),
+                            dateCreated: AppFormatter.timeFormatter.format(
+                                state.employerJobList[index].createdAt!));
+                      },
+                    ),
+                  );
+                },
               ),
-              Padding(
-                  padding: EdgeInsets.only(left: 4.h, right: 6.h),
-                  child: Column(
-                    children: [
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                                height: 57.v,
-                                width: 56.h,
-                                margin: EdgeInsets.only(bottom: 6.v),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 6.h, vertical: 8.v),
-                                decoration: BoxDecoration(),
-                                child: CustomImageView(
-                                    imagePath:
-                                        "assets/images/job-info-svgrepo-com.png",
-                                    height: 39.v,
-                                    width: 42.h,
-                                    alignment: Alignment.center)),
-                            Padding(
-                                padding: EdgeInsets.only(left: 16.h, top: 5.v),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Flutter',
-                                          style: CustomTextStyles
-                                              .titleMediumSecondaryContainer),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text('Intern',
-                                              style: CustomTextStyles
-                                                  .titleSmallGray50001),
-                                          Text("2500/Mo",
-                                              style: CustomTextStyles
-                                                  .titleSmallSecondaryContainer)
-                                        ],
-                                      ),
-                                      // SizedBox(height: 1.v),
-                                      // SizedBox(
-                                      //     width: 201.h,
-                                      //     child: Row(
-                                      //         mainAxisAlignment:
-                                      //             MainAxisAlignment
-                                      //                 .spaceBetween,
-                                      //         crossAxisAlignment:
-                                      //             CrossAxisAlignment.start,
-                                      //         children: [
-                                      //           Text("Active",
-                                      //               style: TextStyle(
-                                      //                   color: Colors.green)),
-                                      //           Text("2500/Mo",
-                                      //               style: CustomTextStyles
-                                      //                   .titleSmallSecondaryContainer)
-                                      //         ]))
-                                    ])),
-                          ]),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(ImageConstant.location),
-                              SizedBox(
-                                width: 5.v,
-                              ),
-                              Text('Cipayung',
-                                  style: CustomTextStyles.titleSmallGray50001),
-                              SizedBox(
-                                width: 20.v,
-                              ),
-                              SvgPicture.asset(ImageConstant.jobType),
-                              SizedBox(
-                                width: 5.v,
-                              ),
-                              Text('Internship',
-                                  style: CustomTextStyles.titleSmallGray50001)
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                height: 10,
-                                width: 10,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: AppColors.kblack),
-                              ),
-                              SizedBox(
-                                width: 5.v,
-                              ),
-                              Text(
-                                '2d',
-                                style: CustomTextStyles
-                                    .titleMediumPrimaryContainer,
-                              )
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
             ],
           ),
         ),
@@ -582,67 +509,6 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
           },
         ),
       ),
-    );
-  }
-
-  Widget bottomNav(context) {
-    return BottomNavigationBar(
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      unselectedItemColor: Colors.grey,
-      backgroundColor: Colors.brown,
-
-      onTap: ((index) {
-        if (index == 2) {
-          Navigator.push(
-              context,
-              PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: PostJobOnePage()));
-        }
-
-        if (index == 1) {
-          Navigator.push(
-              context,
-              PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: ViewAllCandidatesPageScreen(
-                      //  job_id: "",
-                      )));
-        }
-
-        if (index == 3) {
-          Navigator.push(
-              context,
-              PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: SettingsPageOneScreen()));
-        }
-      }),
-      items: <BottomNavigationBarItem>[
-        //  mainAxisSize: MainAxisSize.max,
-        //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        BottomNavigationBarItem(
-          backgroundColor: Color(0xFF3A332C),
-          icon: SvgPicture.asset(
-              "assets/images/solar_home-angle-2-outlinehome_icon.svg"),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-              "assets/images/material-symbols-light_fit-screencandidates.svg"),
-          label: 'Candidates',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset("assets/images/basil_bag-outlinepost_job.svg"),
-          label: 'Post Job',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset("assets/images/Groupsettings.svg"),
-          label: 'Settings',
-        ),
-      ],
-      // Add additional properties as needed, such as currentIndex, onTap, etc.
     );
   }
 }

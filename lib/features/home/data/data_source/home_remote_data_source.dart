@@ -31,8 +31,8 @@ abstract class HomeRemoteDataSource {
   Future<List<FeaturedJobResponseEntity>> getFeaturedJob();
   Future<List<AllJobResponseEntity>> getAllJobs();
   Future<bool> applyForJob(String id);
-  Future<AuthResultEntity> postJob(PostJobEntity entity);
-   Future<List<CountryResponseEntity>> getCountries();
+  Future<bool> postJob(PostJobEntity entity);
+  Future<List<CountryResponseEntity>> getCountries();
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
   Future<List<SkillResponseEntity>> getSkill(String categoryId);
@@ -90,6 +90,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<EmployerJobResponseEntity>> getEmployerJob() async {
     final result = await api.get(
       url: AppApiEndpoint.employerJob,
+      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
@@ -134,15 +135,16 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   }
 
   @override
-  Future<AuthResultEntity> postJob(PostJobEntity entity) async {
+  Future<bool> postJob(PostJobEntity entity) async {
     final result = await api.post(
       url: AppApiEndpoint.postJob,
       headers: userService.authorizationHeader,
       body: PostJobModel.fromEntity(entity).toJson(),
     ) as Map<String, dynamic>;
 
-    return AuthResultModel.fromJson(result);
+    return true;
   }
+
   @override
   Future<List<CountryResponseEntity>> getCountries() async {
     final result = await api.get(

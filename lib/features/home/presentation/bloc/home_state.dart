@@ -48,6 +48,7 @@ class HomeState with _$HomeState {
         availableFor: '',
         compensationType: '',
         gender: '',
+        currency: '',
         officeAddress: '',
         applicationDeadline: ''))
     PostJobEntity postJobRequest,

@@ -24,7 +24,8 @@ class PostJobModel extends PostJobEntity {
       required super.compensationType,
       required super.gender,
       required super.officeAddress,
-      required super.applicationDeadline});
+      required super.applicationDeadline,
+      required super.currency});
 
   factory PostJobModel.fromEntity(PostJobEntity entity) => PostJobModel(
       jobTitle: entity.jobTitle,
@@ -49,7 +50,8 @@ class PostJobModel extends PostJobEntity {
       compensationType: entity.compensationType,
       gender: entity.gender,
       officeAddress: entity.officeAddress,
-      applicationDeadline: entity.applicationDeadline);
+      applicationDeadline: entity.applicationDeadline,
+      currency: entity.currency);
 
   Map<String, dynamic> toJson() => {
         "job_title": jobTitle,
@@ -57,7 +59,7 @@ class PostJobModel extends PostJobEntity {
         "category": category,
         "work_type": workType,
         "job_description": jobDescription,
-        "industry": category,
+        "industry": companyName,
         "position": position,
         "hire_type": hireType,
         "business_category_id": categoryId,
@@ -74,14 +76,12 @@ class PostJobModel extends PostJobEntity {
         "accommodation_available": available,
         "accommodation_for": availableFor,
         // "payment_method": paymentMethod,
-        // "currency": currency,
+        "currency": 'N',
         "compensation_type": compensationType,
         "country": country,
         "artisan_skills": skills,
         "commute_type": workType,
       };
-
- 
 
   //static Future<PostJobEntity> fromJson(Map<String, dynamic> result) {}
 }

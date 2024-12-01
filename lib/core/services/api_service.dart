@@ -146,12 +146,14 @@ class ApiServiceImpl implements ApiService {
         // ),
       );
       _log.i('Response from $url \n${response.data}');
+
       return response.data;
     } on DioException catch (error, trace) {
-      _log.e('Error from ', error: error.response?.statusCode);
+      _log.e('Error from ', error: error.message);
+      print('errrpr ni ${error.response?.data['data']}');
       throw ServerException(
         trace: trace,
-        message: error.response?.data['msg'] as String?,
+        message: error.response?.data['data'] as String?,
       );
     }
   }

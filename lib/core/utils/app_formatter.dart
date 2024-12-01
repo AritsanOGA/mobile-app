@@ -5,9 +5,6 @@ String removeHtmlTags(String htmlString) {
   return htmlString.replaceAll(htmlRegExp, '');
 }
 
-
-
-
 class AppFormatter {
   static final formatCurrency =
       NumberFormat.currency(locale: 'en_US', symbol: '₦');
@@ -21,6 +18,7 @@ class AppFormatter {
   static final dateFormatterYMD = DateFormat('yyyy-MM-dd');
   static final dateFormatterMonth = DateFormat('MMM');
   static final dateTimeFormatter = DateFormat('dd-MM-yyyy hh:mm a');
+  static final timeFormatter = DateFormat('hh:mm a');
   static final kNumberFormat = NumberFormat.compactCurrency(
     decimalDigits: 0,
     symbol: '',

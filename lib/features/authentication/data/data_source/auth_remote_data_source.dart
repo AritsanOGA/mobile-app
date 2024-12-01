@@ -46,6 +46,18 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       url: AppApiEndpoint.login,
       body: LoginModel.fromEntity(entity).toJson(),
     );
+
+    //   if (result['msg'] == 'Success') {
+    //     return AuthResultModel.fromJson(result.data as Map<String, dynamic>);
+    //   } else {
+    //     //result.data['data'] ?? 'Login failed';
+    //     throw Exception(result['data'] ?? 'Login failed');
+    //   }
+    // }
+    // //  catch (e) {
+    // //   throw Exception('An error occurred during login: $e');
+    // // }
+
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
   }
 

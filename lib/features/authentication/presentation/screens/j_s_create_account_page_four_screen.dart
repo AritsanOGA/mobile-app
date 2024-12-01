@@ -108,9 +108,9 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                         CustomTextFormField(
                                           hintText: 'MM/DD/YYYY',
                                           title: 'End Year',
-                                          // inputFormatters: [
-                                          //   DateInputFormatter()
-                                          // ],
+                                          inputFormatters: [
+                                            DateInputFormatter()
+                                          ],
                                           controller: endYearController,
                                         ),
                                         SizedBox(height: 27.v),

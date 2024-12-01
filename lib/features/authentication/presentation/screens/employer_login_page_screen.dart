@@ -25,8 +25,8 @@ class EmployerLoginPageScreen extends HookWidget {
           listener: (context, state) {
             if (state.viewState == ViewState.success) {
               print('suceess');
-              Navigator.pushNamed(context, AppRoutes.employerDashboardPage);
-            } else if (state.viewState == ViewState.success) {
+              Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+            } else if (state.viewState == ViewState.failure) {
               showDialog<Widget>(
                 context: context,
                 builder: (ctx) => CustomAlertDialog(

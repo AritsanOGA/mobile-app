@@ -24,7 +24,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           drawer: DashboardMenuPageDraweritem(),
-          // bottomNavigationBar: bottomNav(context),
+          
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             leadingWidth: 52.h,

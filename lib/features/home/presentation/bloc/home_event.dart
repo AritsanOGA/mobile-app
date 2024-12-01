@@ -39,6 +39,8 @@ class HomeEvent with _$HomeEvent {
       _UpdateSelectedSkill;
   const factory HomeEvent.updateSelectedPackage(String value) =
       _UpdateSelectedPackage;
+  const factory HomeEvent.updateSelectedAvailability(String value) =
+      _UpdateSelectedAvailability;
   const factory HomeEvent.updateCountry(CountryResponseEntity value) =
       _UpdateCountry;
 

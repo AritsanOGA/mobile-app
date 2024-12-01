@@ -29,7 +29,7 @@ class _SearchScreenState extends State<SearchScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // drawer: DashboardMenuPageDraweritem(),
-      // bottomNavigationBar: bottomNav(context),
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: SizedBox(),
@@ -282,52 +282,5 @@ class _SearchScreenState extends State<SearchScreenPage> {
     ));
   }
 
-  Widget bottomNav(context) {
-    return BottomNavigationBar(
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      unselectedItemColor: Colors.grey,
-      backgroundColor: Color.fromARGB(255, 65, 44, 37),
-      onTap: ((index) {
-        if (index == 1) {
-          Navigator.push(
-              context,
-              PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: SearchScreenPage(
-                      //  job_id: "",
-                      )));
-        }
-
-        if (index == 2) {
-          Navigator.push(
-              context,
-              PageTransition(
-                  type: PageTransitionType.bottomToTop,
-                  child: SettingsPageTwoScreen()));
-        }
-      }),
-      items: <BottomNavigationBarItem>[
-        //  mainAxisSize: MainAxisSize.max,
-        //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        BottomNavigationBarItem(
-          backgroundColor: Color(0xFF3A332C),
-          icon: SvgPicture.asset(
-              "assets/images/solar_home-angle-2-outlinehome_icon.svg"),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-              "assets/images/search-alt-1-svgrepo-com (1).svg"),
-          label: 'Search',
-        ),
-
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset("assets/images/Groupsettings.svg"),
-          label: 'Settings',
-        ),
-      ],
-      // Add additional properties as needed, such as currentIndex, onTap, etc.
-    );
-  }
+ 
 }
