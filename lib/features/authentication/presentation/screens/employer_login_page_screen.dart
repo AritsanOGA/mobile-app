@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -18,6 +19,7 @@ class EmployerLoginPageScreen extends HookWidget {
     bool obscure = true;
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
+    final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
         // resizeToAvoidBottomInset: false,
@@ -39,135 +41,142 @@ class EmployerLoginPageScreen extends HookWidget {
             }
           },
           builder: (context, state) {
-            return SizedBox(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              child: SingleChildScrollView(
-                padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).viewInsets.bottom,
-                ),
-                child: Container(
-                  width: double.maxFinite,
-                  height: double.maxFinite,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 25.h,
-                    vertical: 12.v,
+            return Form(
+              key: formKey,
+              child: SizedBox(
+                width: double.maxFinite,
+                height: double.maxFinite,
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 59.v),
-                      Text(
-                        "Log in",
-                        style: theme.textTheme.headlineSmall,
-                      ),
-                      SizedBox(height: 17.v),
-                      Text(
-                        "Login to your account as an employer",
-                        style: CustomTextStyles.bodyMediumGray700_2,
-                      ),
-                      SizedBox(height: 60.v),
-                      CustomTextFormField(
-                        title: 'Password',
-                        controller: emailController,
-                        hintText: "example@gmail.com",
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.emailAddress,
-                      ),
-                      SizedBox(height: 28.v),
-                      SizedBox(height: 6.v),
-                      CustomTextFormField(
-                        title: 'Password',
-                        controller: passwordController,
-                        hintText: "*************",
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.visiblePassword,
-                        // suffix: Container(
-                        //     margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-                        //     child: GestureDetector(
-                        //       onTap: (() {
-                        //         setState(() {
-                        //           obscure = !obscure;
-                        //         });
-                        //       }),
-                        //       child: obscure == true
-                        //           ? Icon(Icons.visibility)
-                        //           : Icon(Icons.visibility_off),
-                        //     )),
-                        suffixConstraints: BoxConstraints(
-                          maxHeight: 48.v,
+                  child: Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 25.h,
+                      vertical: 12.v,
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 59.v),
+                        Text(
+                          "Log in",
+                          style: theme.textTheme.headlineSmall,
                         ),
-                        obscureText: obscure,
-                        contentPadding: EdgeInsets.only(
-                          left: 20.h,
-                          top: 15.v,
-                          bottom: 15.v,
+                        SizedBox(height: 17.v),
+                        Text(
+                          "Login to your account as an employer",
+                          style: CustomTextStyles.bodyMediumGray700_2,
                         ),
-                      ),
-                      SizedBox(height: 19.v),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          "Forgot Password?",
-                          style: CustomTextStyles.titleSmallPrimary_1.copyWith(
-                            decoration: TextDecoration.underline,
+                        SizedBox(height: 60.v),
+                        CustomTextFormField(
+                          title: 'Email',
+                          controller: emailController,
+                          hintText: "example@gmail.com",
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputType: TextInputType.emailAddress,
+                          validator: FormValidation.emailValidation,
+                        ),
+                        SizedBox(height: 25.v),
+                        CustomTextFormField(
+                          title: 'Password',
+                          controller: passwordController,
+                          hintText: "*************",
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputAction: TextInputAction.done,
+                          textInputType: TextInputType.visiblePassword,
+                          validator: FormValidation.stringValidation,
+                          // suffix: Container(
+                          //     margin: EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
+                          //     child: GestureDetector(
+                          //       onTap: (() {
+                          //         setState(() {
+                          //           obscure = !obscure;
+                          //         });
+                          //       }),
+                          //       child: obscure == true
+                          //           ? Icon(Icons.visibility)
+                          //           : Icon(Icons.visibility_off),
+                          //     )),
+                          suffixConstraints: BoxConstraints(
+                            maxHeight: 48.v,
+                          ),
+                          obscureText: obscure,
+                          contentPadding: EdgeInsets.only(
+                            left: 20.h,
+                            top: 15.v,
+                            bottom: 15.v,
                           ),
                         ),
-                      ),
-                      SizedBox(height: 41.v),
-                      BlocBuilder<AuthBloc, AuthState>(
-                        builder: (context, state) {
-                          return CustomElevatedButton(
-                            isBusy: state.viewState == ViewState.loading,
-                            onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) =>
-                              //             EmployerDashboardPage()));
-                              context.read<AuthBloc>().add(
-                                    AuthEvent.loginUser(
-                                      LoginEntity(
-                                        email: emailController.text.trim(),
-                                        password:
-                                            passwordController.text.trim(),
-                                      ),
-                                    ),
-                                  );
-                            },
-                            text: "Log in",
-                          );
-                        },
-                      ),
-                      SizedBox(height: 27.v),
-                      GestureDetector(
-                          child: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Don’t have an account?",
-                                  style: CustomTextStyles.titleSmallff666666,
-                                ),
-                                TextSpan(
-                                  text: " ",
-                                ),
-                                TextSpan(
-                                  text: "Sign Up",
-                                  style: CustomTextStyles.titleSmallfff7941e,
-                                ),
-                              ],
+                        SizedBox(height: 19.v),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Forgot Password?",
+                            style:
+                                CustomTextStyles.titleSmallPrimary_1.copyWith(
+                              decoration: TextDecoration.underline,
                             ),
-                            textAlign: TextAlign.left,
                           ),
-                          onTap: (() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      EmployerSignUpPageScreen()),
+                        ),
+                        SizedBox(height: 41.v),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            return CustomElevatedButton(
+                              isBusy: state.viewState == ViewState.loading,
+                              onPressed: () {
+                                if (formKey.currentState?.validate() ?? false) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.loginUser(
+                                          LoginEntity(
+                                            email: emailController.text.trim(),
+                                            password:
+                                                passwordController.text.trim(),
+                                          ),
+                                        ),
+                                      );
+                                }
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) =>
+                                //             EmployerDashboardPage()));
+                              },
+                              text: "Log in",
                             );
-                          }))
-                    ],
+                          },
+                        ),
+                        SizedBox(height: 27.v),
+                        GestureDetector(
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Don’t have an account?",
+                                    style: CustomTextStyles.titleSmallff666666,
+                                  ),
+                                  TextSpan(
+                                    text: " ",
+                                  ),
+                                  TextSpan(
+                                    text: "Sign Up",
+                                    style: CustomTextStyles.titleSmallfff7941e,
+                                  ),
+                                ],
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                            onTap: (() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        EmployerSignUpPageScreen()),
+                              );
+                            }))
+                      ],
+                    ),
                   ),
                 ),
               ),

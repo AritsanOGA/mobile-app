@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -80,6 +81,10 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                               CustomTextFormField(
                                   title: 'Phone Number',
                                   controller: guaranterPhoneNumberController,
+                                     inputFormatters: [
+                                  LengthLimitingTextInputFormatter(11),
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
                                   hintText: "Enter Guarantor’s Phone Number",
                                   hintStyle: theme.textTheme.titleSmall!),
                               SizedBox(height: 30.v),

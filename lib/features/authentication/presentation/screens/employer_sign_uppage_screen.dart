@@ -1,7 +1,7 @@
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -11,7 +11,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
 
-// ignore_for_file: must_be_immutable
 class EmployerSignUpPageScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
@@ -46,37 +45,24 @@ class EmployerSignUpPageScreen extends HookWidget {
                                       style: theme.textTheme.bodyMedium)),
                               SizedBox(height: 35.v),
                               CustomTextFormField(
-                                title: 'Email',
-                                hintText: 'example@gmail.com',
-                                controller: emailController,
-                                validator: (value) {
-                                  return null;
-                                },
-                              ),
-
+                                  title: 'Email',
+                                  hintText: 'example@gmail.com',
+                                  controller: emailController,
+                                  validator: FormValidation.emailValidation),
                               SizedBox(height: 30.v),
-
                               CustomTextFormField(
-                                title: 'Password',
-                                hintText: '*************',
-                                isPassword: true,
-                                controller: passwordController,
-                                validator: (value) {
-                                  return null;
-                                },
-                              ),
-
+                                  title: 'Password',
+                                  hintText: '*************',
+                                  isPassword: true,
+                                  controller: passwordController,
+                                  validator: FormValidation.stringValidation),
                               SizedBox(height: 30.v),
-
                               CustomTextFormField(
-                                title: 'Confirm Password',
-                                hintText: '*************',
-                                isPassword: true,
-                                controller: confirmPasswordController,
-                                validator: (value) {
-                                  return null;
-                                },
-                              ),
+                                  title: 'Confirm Password',
+                                  hintText: '*************',
+                                  isPassword: true,
+                                  controller: confirmPasswordController,
+                                  validator: FormValidation.stringValidation),
                               SizedBox(height: 45.v),
                               BlocSelector<AuthBloc, AuthState,
                                   RegisterEmployerEntity>(
@@ -100,7 +86,8 @@ class EmployerSignUpPageScreen extends HookWidget {
                                                   password:
                                                       passwordController.text,
                                                   confirmPassword:
-                                                      passwordController.text,
+                                                      confirmPasswordController
+                                                          .text,
                                                 ),
                                               ),
                                             );
@@ -114,7 +101,6 @@ class EmployerSignUpPageScreen extends HookWidget {
                                   );
                                 },
                               ),
-                            
                               SizedBox(height: 27.v),
                               Align(
                                   alignment: Alignment.center,

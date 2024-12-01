@@ -51,12 +51,14 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                               return CustomDropDown<CategoryResponseEntity>(
                                 title: 'Select Job Category',
                                 items: state.categoryList,
-                                selectedItem: state.categoryList.firstWhere(
-                                  (category) =>
-                                      category.id == (state.category?.id ?? 1),
-                                  orElse: () => CategoryResponseEntity(
-                                      id: 1, name: 'Fashion'),
-                                ),
+                                selectedItem: state.categoryList.isNotEmpty
+                                    ? state.categoryList.firstWhere(
+                                        (category) =>
+                                            category.id ==
+                                            (state.category?.id ?? 1),
+                                        orElse: () => state.categoryList.first)
+                                    : CategoryResponseEntity(
+                                        id: 1, name: 'Fashion'),
                                 itemLabel: (category) => category.name,
                                 onChanged: (value) {
                                   context.read<AuthBloc>().add(
@@ -87,12 +89,13 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                             return CustomDropDown<SkillResponseEntity>(
                               title: 'Select Skill',
                               items: state.skill,
-                              selectedItem: state.skill.firstWhere(
-                                (skills) =>
-                                    skills.id == (state.skills?.id ?? 29),
-                                orElse: () => SkillResponseEntity(
-                                    id: 1, name: 'Corset', categoryId: 1),
-                              ),
+                              selectedItem: state.skill.isNotEmpty
+                                  ? state.skill.firstWhere(
+                                      (skills) =>
+                                          skills.id == (state.skills?.id ?? 29),
+                                      orElse: () => state.skill.first)
+                                  : SkillResponseEntity(
+                                      id: 1, name: 'Corset', categoryId: 1),
                               itemLabel: (skill) => skill.name,
                               onChanged: (value) {
                                 context.read<AuthBloc>().add(

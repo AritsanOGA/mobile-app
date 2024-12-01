@@ -55,7 +55,6 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
               ],
             ),
             SizedBox(height: 39.v),
-
             GestureDetector(
               onTap: (() {
                 Navigator.pop(context);
@@ -227,15 +226,15 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
                   ],
                 )),
             SizedBox(height: 39.v),
-
-            // SizedBox(height: 39.v),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: WelcomePageScreen()));
+                Navigator.pushReplacementNamed(
+                    context, AppRoutes.welcomePageScreen);
+                // Navigator.push(
+                //     context,
+                //     PageTransition(
+                //         type: PageTransitionType.rightToLeft,
+                //         child: WelcomePageScreen()));
               },
               child: Row(
                 children: [

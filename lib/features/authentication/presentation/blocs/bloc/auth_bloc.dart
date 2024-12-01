@@ -122,7 +122,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onUpdateSelectedIsChecked(
       _UpdateSelectedIsChecked event, Emitter<AuthState> emit) {
-    emit(state.copyWith(isChecked: event.value));
+    emit(state.copyWith(isChecked: !event.value));
   }
 
   FutureOr<void> _onRegisterEmployer(
@@ -147,7 +147,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         (error) => emit(state.copyWith(
             viewState: ViewState.failure, errorMessage: error.message)),
         (result) => emit(state.copyWith(viewState: ViewState.success)));
-    print('mess ${state.errorMessage}');
+    print(' ${state.errorMessage}');
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {

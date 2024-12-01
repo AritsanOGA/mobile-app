@@ -88,6 +88,12 @@ class CustomDropDown<T> extends StatelessWidget {
         SizedBox(
           height: 50.v,
           child: DropdownButtonFormField(
+            validator: (value) {
+              if (value == null || value == '') {
+                return 'Please select an option';
+              }
+              return null; // Valid value
+            },
             value: selectedItem,
             isExpanded: true,
             focusColor: AppColors.kwhite,

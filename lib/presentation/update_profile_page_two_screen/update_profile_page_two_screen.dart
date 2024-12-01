@@ -6,6 +6,7 @@ import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/services.dart';
 
 // ignore_for_file: must_be_immutable
 class UpdateProfilePageTwoScreen extends StatelessWidget {
@@ -199,6 +200,10 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
             title: 'Password',
             controller: phoneNumberEditTextController,
             hintText: "Enter Phone Number",
+               inputFormatters: [
+                                  LengthLimitingTextInputFormatter(11),
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
             hintStyle: CustomTextStyles.bodyMediumGray700,
             textInputAction: TextInputAction.done,
             textInputType: TextInputType.phone,
