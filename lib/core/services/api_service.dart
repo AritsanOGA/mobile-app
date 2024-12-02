@@ -153,7 +153,7 @@ class ApiServiceImpl implements ApiService {
       print('errrpr ni ${error.response?.data['data']}');
       throw ServerException(
         trace: trace,
-        message: error.response?.data['data'] as String?,
+        message: error.response?.data['errors']['categories'][0] as String?,
       );
     }
   }

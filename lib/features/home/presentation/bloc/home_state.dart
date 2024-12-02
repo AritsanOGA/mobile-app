@@ -12,7 +12,6 @@ class HomeState with _$HomeState {
     String? compensationType,
     String? package,
     String? availablity,
-    @Default(ViewState.idle) ViewState viewState,
     @Default([]) List<FeaturedCandidatesEntity> featureCandidateList,
     @Default([]) List<AllJobResponseEntity> allJobList,
     @Default([]) List<EmployerJobResponseEntity> employerJobList,
@@ -75,6 +74,19 @@ class HomeState with _$HomeState {
     @Default(
         ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
     List<String> skillLevelList,
+    @Default(GetFeaturedJobState.idle) GetFeaturedJobState getFeaturedJobState,
+    @Default(GetFeaturedCandidateState.idle)
+    GetFeaturedCandidateState getFeaturedCandidateState,
+    @Default(GetJobSeekerJobState.idle)
+    GetJobSeekerJobState getJobSeekerJobState,
+    @Default(GetEmployerJobState.idle) GetEmployerJobState getEmployerJobState,
+    @Default(PostJobState.idle) PostJobState postJobState,
+    @Default(ApplyForJobState.idle) ApplyForJobState applyForJobState,
+    @Default(GetCategoryState.idle) GetCategoryState getCategoryState,
+    @Default(GetSkillState.idle) GetSkillState getSkillState,
+    @Default(GetCountryState.idle) GetCountryState getCountryState,
+    @Default(GetStateState.idle) GetStateState getStateState,
+    @Default(ViewState.idle) ViewState viewState,
     @Default(SuccessType.none) SuccessType successType,
   }) = _Initial;
 }

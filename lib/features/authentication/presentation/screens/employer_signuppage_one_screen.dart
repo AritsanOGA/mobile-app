@@ -43,8 +43,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
               listener: (context, state) {
                 if (state.viewState == ViewState.success &&
                     state.successType == SuccessType.employerRegistration) {
-                  
-
                   Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
                       arguments: email);
                 } else if (state.viewState == ViewState.failure) {

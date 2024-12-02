@@ -94,19 +94,20 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final StateUseCase _stateUseCase;
 
   FutureOr<void> _onGetFeaturedCandidate(event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(
+        getFeaturedCandidateState: GetFeaturedCandidateState.loading));
     final result = await _getFeaturedCandidateseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getFeaturedCandidateState: GetFeaturedCandidateState.failure,
           errorMessage: error.message,
         ),
       ),
       (candidateList) => emit(
         state.copyWith(
           featureCandidateList: candidateList,
-          viewState: ViewState.success,
+          getFeaturedCandidateState: GetFeaturedCandidateState.success,
         ),
       ),
     );
@@ -115,19 +116,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetJobSeekerJobs(
       _GetJobSeekerJobs event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getJobSeekerJobState: GetJobSeekerJobState.loading));
     final result = await _jobSeekerJobsUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getJobSeekerJobState: GetJobSeekerJobState.failure,
           errorMessage: error.message,
         ),
       ),
       (jobSeekerJob) => emit(
         state.copyWith(
           jobSeekerJobList: jobSeekerJob,
-          viewState: ViewState.success,
+          getJobSeekerJobState: GetJobSeekerJobState.success,
         ),
       ),
     );
@@ -136,19 +137,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetFeaturedJob(
       _GetFeaturedJob event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getFeaturedJobState: GetFeaturedJobState.loading));
     final result = await _getFeatureJobUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getFeaturedJobState: GetFeaturedJobState.failure,
           errorMessage: error.message,
         ),
       ),
       (featuredJob) => emit(
         state.copyWith(
           featuredJobList: featuredJob,
-          viewState: ViewState.success,
+          getFeaturedJobState: GetFeaturedJobState.success,
         ),
       ),
     );
@@ -157,19 +158,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetEmployerJob(
       _GetEmployerJob event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getEmployerJobState: GetEmployerJobState.loading));
     final result = await _getEmployerJobUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getEmployerJobState: GetEmployerJobState.failure,
           errorMessage: error.message,
         ),
       ),
       (employerJob) => emit(
         state.copyWith(
           employerJobList: employerJob,
-          viewState: ViewState.success,
+          getEmployerJobState: GetEmployerJobState.success,
         ),
       ),
     );
@@ -198,25 +199,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   FutureOr<void> _onPostJob(_PostJob event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(postJobState: PostJobState.loading));
     await _postJobUseCase(event.param).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (error) => emit(state.copyWith(postJobState: PostJobState.failure)),
           (result) => emit(state.copyWith(
-              viewState: ViewState.success, successType: SuccessType.postJob)));
+              postJobState: PostJobState.success, )));
     });
-    emit(state.copyWith(viewState: ViewState.idle));
+    emit(state.copyWith(postJobState: ViewState.idle));
   }
 
   FutureOr<void> _onApplyForJob(
       _ApplyForJob event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(applyForJobState: ApplyForJobState.loading));
     await _applyForJobUseCase(event.id).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (error) => emit(state.copyWith(applyForJobState: ApplyForJobState.failure)),
           (result) => emit(state.copyWith(
-              viewState: ViewState.success,
-              successType: SuccessType.applyForJob)));
+              applyForJobState: ApplyForJobState.success,
+            )));
     });
   }
 

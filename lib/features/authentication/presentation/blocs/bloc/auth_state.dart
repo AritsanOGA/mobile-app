@@ -98,7 +98,20 @@ class AuthState with _$AuthState {
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
-    @Default(ViewState.idle) ViewState viewState,
-    @Default(SuccessType.none) SuccessType successType,
+
+    @Default(EmployerLoginState.idle) EmployerLoginState employerLoginState,
+    @Default(JobSeekerLoginState.idle) JobSeekerLoginState jobSeekerLoginState,
+    @Default(EmployerSignUpState.idle) EmployerSignUpState employerSignUpState,
+    @Default(JobSeekerSignUpState.idle)
+    JobSeekerSignUpState jobSeekerSignUpState,
+    @Default(GetCategoryState.idle) GetCategoryState getCategoryState,
+    @Default(GetSkillState.idle) GetSkillState getSkillState,
+    @Default(GetCountryState.idle) GetCountryState getCountryState,
+    @Default(GetStateState.idle) GetStateState getStateState,
+    @Default(EmployerVerifyCodeState.idle)
+    EmployerVerifyCodeState employerVerifyCodeState,
+    @Default(JobSeekerVerifyCodeState.idle)
+    JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+   
   }) = _Initial;
 }

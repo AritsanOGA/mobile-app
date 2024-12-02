@@ -7265,7 +7265,6 @@ mixin _$HomeState {
   String? get compensationType => throw _privateConstructorUsedError;
   String? get package => throw _privateConstructorUsedError;
   String? get availablity => throw _privateConstructorUsedError;
-  ViewState get viewState => throw _privateConstructorUsedError;
   List<FeaturedCandidatesEntity> get featureCandidateList =>
       throw _privateConstructorUsedError;
   List<AllJobResponseEntity> get allJobList =>
@@ -7295,6 +7294,21 @@ mixin _$HomeState {
   List<String> get packageList => throw _privateConstructorUsedError;
   List<String> get availabilityList => throw _privateConstructorUsedError;
   List<String> get skillLevelList => throw _privateConstructorUsedError;
+  GetFeaturedJobState get getFeaturedJobState =>
+      throw _privateConstructorUsedError;
+  GetFeaturedCandidateState get getFeaturedCandidateState =>
+      throw _privateConstructorUsedError;
+  GetJobSeekerJobState get getJobSeekerJobState =>
+      throw _privateConstructorUsedError;
+  GetEmployerJobState get getEmployerJobState =>
+      throw _privateConstructorUsedError;
+  PostJobState get postJobState => throw _privateConstructorUsedError;
+  ApplyForJobState get applyForJobState => throw _privateConstructorUsedError;
+  GetCategoryState get getCategoryState => throw _privateConstructorUsedError;
+  GetSkillState get getSkillState => throw _privateConstructorUsedError;
+  GetCountryState get getCountryState => throw _privateConstructorUsedError;
+  GetStateState get getStateState => throw _privateConstructorUsedError;
+  ViewState get viewState => throw _privateConstructorUsedError;
   SuccessType get successType => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -7308,7 +7322,6 @@ mixin _$HomeState {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -7331,6 +7344,17 @@ mixin _$HomeState {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)
         initial,
   }) =>
@@ -7347,7 +7371,6 @@ mixin _$HomeState {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -7370,6 +7393,17 @@ mixin _$HomeState {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)?
         initial,
   }) =>
@@ -7386,7 +7420,6 @@ mixin _$HomeState {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -7409,6 +7442,17 @@ mixin _$HomeState {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)?
         initial,
     required TResult orElse(),
@@ -7451,7 +7495,6 @@ abstract class $HomeStateCopyWith<$Res> {
       String? compensationType,
       String? package,
       String? availablity,
-      ViewState viewState,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
@@ -7474,6 +7517,17 @@ abstract class $HomeStateCopyWith<$Res> {
       List<String> packageList,
       List<String> availabilityList,
       List<String> skillLevelList,
+      GetFeaturedJobState getFeaturedJobState,
+      GetFeaturedCandidateState getFeaturedCandidateState,
+      GetJobSeekerJobState getJobSeekerJobState,
+      GetEmployerJobState getEmployerJobState,
+      PostJobState postJobState,
+      ApplyForJobState applyForJobState,
+      GetCategoryState getCategoryState,
+      GetSkillState getSkillState,
+      GetCountryState getCountryState,
+      GetStateState getStateState,
+      ViewState viewState,
       SuccessType successType});
 }
 
@@ -7499,7 +7553,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? compensationType = freezed,
     Object? package = freezed,
     Object? availablity = freezed,
-    Object? viewState = null,
     Object? featureCandidateList = null,
     Object? allJobList = null,
     Object? employerJobList = null,
@@ -7522,6 +7575,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? packageList = null,
     Object? availabilityList = null,
     Object? skillLevelList = null,
+    Object? getFeaturedJobState = null,
+    Object? getFeaturedCandidateState = null,
+    Object? getJobSeekerJobState = null,
+    Object? getEmployerJobState = null,
+    Object? postJobState = null,
+    Object? applyForJobState = null,
+    Object? getCategoryState = null,
+    Object? getSkillState = null,
+    Object? getCountryState = null,
+    Object? getStateState = null,
+    Object? viewState = null,
     Object? successType = null,
   }) {
     return _then(_value.copyWith(
@@ -7561,10 +7625,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
               as String?,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
       featureCandidateList: null == featureCandidateList
           ? _value.featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
@@ -7653,6 +7713,50 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      getFeaturedJobState: null == getFeaturedJobState
+          ? _value.getFeaturedJobState
+          : getFeaturedJobState // ignore: cast_nullable_to_non_nullable
+              as GetFeaturedJobState,
+      getFeaturedCandidateState: null == getFeaturedCandidateState
+          ? _value.getFeaturedCandidateState
+          : getFeaturedCandidateState // ignore: cast_nullable_to_non_nullable
+              as GetFeaturedCandidateState,
+      getJobSeekerJobState: null == getJobSeekerJobState
+          ? _value.getJobSeekerJobState
+          : getJobSeekerJobState // ignore: cast_nullable_to_non_nullable
+              as GetJobSeekerJobState,
+      getEmployerJobState: null == getEmployerJobState
+          ? _value.getEmployerJobState
+          : getEmployerJobState // ignore: cast_nullable_to_non_nullable
+              as GetEmployerJobState,
+      postJobState: null == postJobState
+          ? _value.postJobState
+          : postJobState // ignore: cast_nullable_to_non_nullable
+              as PostJobState,
+      applyForJobState: null == applyForJobState
+          ? _value.applyForJobState
+          : applyForJobState // ignore: cast_nullable_to_non_nullable
+              as ApplyForJobState,
+      getCategoryState: null == getCategoryState
+          ? _value.getCategoryState
+          : getCategoryState // ignore: cast_nullable_to_non_nullable
+              as GetCategoryState,
+      getSkillState: null == getSkillState
+          ? _value.getSkillState
+          : getSkillState // ignore: cast_nullable_to_non_nullable
+              as GetSkillState,
+      getCountryState: null == getCountryState
+          ? _value.getCountryState
+          : getCountryState // ignore: cast_nullable_to_non_nullable
+              as GetCountryState,
+      getStateState: null == getStateState
+          ? _value.getStateState
+          : getStateState // ignore: cast_nullable_to_non_nullable
+              as GetStateState,
+      viewState: null == viewState
+          ? _value.viewState
+          : viewState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       successType: null == successType
           ? _value.successType
           : successType // ignore: cast_nullable_to_non_nullable
@@ -7679,7 +7783,6 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? compensationType,
       String? package,
       String? availablity,
-      ViewState viewState,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
@@ -7702,6 +7805,17 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<String> packageList,
       List<String> availabilityList,
       List<String> skillLevelList,
+      GetFeaturedJobState getFeaturedJobState,
+      GetFeaturedCandidateState getFeaturedCandidateState,
+      GetJobSeekerJobState getJobSeekerJobState,
+      GetEmployerJobState getEmployerJobState,
+      PostJobState postJobState,
+      ApplyForJobState applyForJobState,
+      GetCategoryState getCategoryState,
+      GetSkillState getSkillState,
+      GetCountryState getCountryState,
+      GetStateState getStateState,
+      ViewState viewState,
       SuccessType successType});
 }
 
@@ -7725,7 +7839,6 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? compensationType = freezed,
     Object? package = freezed,
     Object? availablity = freezed,
-    Object? viewState = null,
     Object? featureCandidateList = null,
     Object? allJobList = null,
     Object? employerJobList = null,
@@ -7748,6 +7861,17 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? packageList = null,
     Object? availabilityList = null,
     Object? skillLevelList = null,
+    Object? getFeaturedJobState = null,
+    Object? getFeaturedCandidateState = null,
+    Object? getJobSeekerJobState = null,
+    Object? getEmployerJobState = null,
+    Object? postJobState = null,
+    Object? applyForJobState = null,
+    Object? getCategoryState = null,
+    Object? getSkillState = null,
+    Object? getCountryState = null,
+    Object? getStateState = null,
+    Object? viewState = null,
     Object? successType = null,
   }) {
     return _then(_$InitialImpl(
@@ -7787,10 +7911,6 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
               as String?,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
       featureCandidateList: null == featureCandidateList
           ? _value._featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
@@ -7879,6 +7999,50 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      getFeaturedJobState: null == getFeaturedJobState
+          ? _value.getFeaturedJobState
+          : getFeaturedJobState // ignore: cast_nullable_to_non_nullable
+              as GetFeaturedJobState,
+      getFeaturedCandidateState: null == getFeaturedCandidateState
+          ? _value.getFeaturedCandidateState
+          : getFeaturedCandidateState // ignore: cast_nullable_to_non_nullable
+              as GetFeaturedCandidateState,
+      getJobSeekerJobState: null == getJobSeekerJobState
+          ? _value.getJobSeekerJobState
+          : getJobSeekerJobState // ignore: cast_nullable_to_non_nullable
+              as GetJobSeekerJobState,
+      getEmployerJobState: null == getEmployerJobState
+          ? _value.getEmployerJobState
+          : getEmployerJobState // ignore: cast_nullable_to_non_nullable
+              as GetEmployerJobState,
+      postJobState: null == postJobState
+          ? _value.postJobState
+          : postJobState // ignore: cast_nullable_to_non_nullable
+              as PostJobState,
+      applyForJobState: null == applyForJobState
+          ? _value.applyForJobState
+          : applyForJobState // ignore: cast_nullable_to_non_nullable
+              as ApplyForJobState,
+      getCategoryState: null == getCategoryState
+          ? _value.getCategoryState
+          : getCategoryState // ignore: cast_nullable_to_non_nullable
+              as GetCategoryState,
+      getSkillState: null == getSkillState
+          ? _value.getSkillState
+          : getSkillState // ignore: cast_nullable_to_non_nullable
+              as GetSkillState,
+      getCountryState: null == getCountryState
+          ? _value.getCountryState
+          : getCountryState // ignore: cast_nullable_to_non_nullable
+              as GetCountryState,
+      getStateState: null == getStateState
+          ? _value.getStateState
+          : getStateState // ignore: cast_nullable_to_non_nullable
+              as GetStateState,
+      viewState: null == viewState
+          ? _value.viewState
+          : viewState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       successType: null == successType
           ? _value.successType
           : successType // ignore: cast_nullable_to_non_nullable
@@ -7900,7 +8064,6 @@ class _$InitialImpl implements _Initial {
       this.compensationType,
       this.package,
       this.availablity,
-      this.viewState = ViewState.idle,
       final List<FeaturedCandidatesEntity> featureCandidateList = const [],
       final List<AllJobResponseEntity> allJobList = const [],
       final List<EmployerJobResponseEntity> employerJobList = const [],
@@ -7968,6 +8131,17 @@ class _$InitialImpl implements _Initial {
         "Semi-Skilled",
         "Skilled/Unskilled"
       ],
+      this.getFeaturedJobState = GetFeaturedJobState.idle,
+      this.getFeaturedCandidateState = GetFeaturedCandidateState.idle,
+      this.getJobSeekerJobState = GetJobSeekerJobState.idle,
+      this.getEmployerJobState = GetEmployerJobState.idle,
+      this.postJobState = PostJobState.idle,
+      this.applyForJobState = ApplyForJobState.idle,
+      this.getCategoryState = GetCategoryState.idle,
+      this.getSkillState = GetSkillState.idle,
+      this.getCountryState = GetCountryState.idle,
+      this.getStateState = GetStateState.idle,
+      this.viewState = ViewState.idle,
       this.successType = SuccessType.none})
       : _featureCandidateList = featureCandidateList,
         _allJobList = allJobList,
@@ -8005,9 +8179,6 @@ class _$InitialImpl implements _Initial {
   final String? package;
   @override
   final String? availablity;
-  @override
-  @JsonKey()
-  final ViewState viewState;
   final List<FeaturedCandidatesEntity> _featureCandidateList;
   @override
   @JsonKey()
@@ -8179,11 +8350,44 @@ class _$InitialImpl implements _Initial {
 
   @override
   @JsonKey()
+  final GetFeaturedJobState getFeaturedJobState;
+  @override
+  @JsonKey()
+  final GetFeaturedCandidateState getFeaturedCandidateState;
+  @override
+  @JsonKey()
+  final GetJobSeekerJobState getJobSeekerJobState;
+  @override
+  @JsonKey()
+  final GetEmployerJobState getEmployerJobState;
+  @override
+  @JsonKey()
+  final PostJobState postJobState;
+  @override
+  @JsonKey()
+  final ApplyForJobState applyForJobState;
+  @override
+  @JsonKey()
+  final GetCategoryState getCategoryState;
+  @override
+  @JsonKey()
+  final GetSkillState getSkillState;
+  @override
+  @JsonKey()
+  final GetCountryState getCountryState;
+  @override
+  @JsonKey()
+  final GetStateState getStateState;
+  @override
+  @JsonKey()
+  final ViewState viewState;
+  @override
+  @JsonKey()
   final SuccessType successType;
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, availablity: $availablity, viewState: $viewState, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, successType: $successType)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, viewState: $viewState, successType: $successType)';
   }
 
   @override
@@ -8206,8 +8410,6 @@ class _$InitialImpl implements _Initial {
             (identical(other.package, package) || other.package == package) &&
             (identical(other.availablity, availablity) ||
                 other.availablity == availablity) &&
-            (identical(other.viewState, viewState) ||
-                other.viewState == viewState) &&
             const DeepCollectionEquality()
                 .equals(other._featureCandidateList, _featureCandidateList) &&
             const DeepCollectionEquality()
@@ -8247,6 +8449,29 @@ class _$InitialImpl implements _Initial {
                 .equals(other._availabilityList, _availabilityList) &&
             const DeepCollectionEquality()
                 .equals(other._skillLevelList, _skillLevelList) &&
+            (identical(other.getFeaturedJobState, getFeaturedJobState) ||
+                other.getFeaturedJobState == getFeaturedJobState) &&
+            (identical(other.getFeaturedCandidateState,
+                    getFeaturedCandidateState) ||
+                other.getFeaturedCandidateState == getFeaturedCandidateState) &&
+            (identical(other.getJobSeekerJobState, getJobSeekerJobState) ||
+                other.getJobSeekerJobState == getJobSeekerJobState) &&
+            (identical(other.getEmployerJobState, getEmployerJobState) ||
+                other.getEmployerJobState == getEmployerJobState) &&
+            (identical(other.postJobState, postJobState) ||
+                other.postJobState == postJobState) &&
+            (identical(other.applyForJobState, applyForJobState) ||
+                other.applyForJobState == applyForJobState) &&
+            (identical(other.getCategoryState, getCategoryState) ||
+                other.getCategoryState == getCategoryState) &&
+            (identical(other.getSkillState, getSkillState) ||
+                other.getSkillState == getSkillState) &&
+            (identical(other.getCountryState, getCountryState) ||
+                other.getCountryState == getCountryState) &&
+            (identical(other.getStateState, getStateState) ||
+                other.getStateState == getStateState) &&
+            (identical(other.viewState, viewState) ||
+                other.viewState == viewState) &&
             (identical(other.successType, successType) ||
                 other.successType == successType));
   }
@@ -8263,7 +8488,6 @@ class _$InitialImpl implements _Initial {
         compensationType,
         package,
         availablity,
-        viewState,
         const DeepCollectionEquality().hash(_featureCandidateList),
         const DeepCollectionEquality().hash(_allJobList),
         const DeepCollectionEquality().hash(_employerJobList),
@@ -8286,6 +8510,17 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_packageList),
         const DeepCollectionEquality().hash(_availabilityList),
         const DeepCollectionEquality().hash(_skillLevelList),
+        getFeaturedJobState,
+        getFeaturedCandidateState,
+        getJobSeekerJobState,
+        getEmployerJobState,
+        postJobState,
+        applyForJobState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        viewState,
         successType
       ]);
 
@@ -8308,7 +8543,6 @@ class _$InitialImpl implements _Initial {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -8331,6 +8565,17 @@ class _$InitialImpl implements _Initial {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)
         initial,
   }) {
@@ -8344,7 +8589,6 @@ class _$InitialImpl implements _Initial {
         compensationType,
         package,
         availablity,
-        viewState,
         featureCandidateList,
         allJobList,
         employerJobList,
@@ -8367,6 +8611,17 @@ class _$InitialImpl implements _Initial {
         packageList,
         availabilityList,
         skillLevelList,
+        getFeaturedJobState,
+        getFeaturedCandidateState,
+        getJobSeekerJobState,
+        getEmployerJobState,
+        postJobState,
+        applyForJobState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        viewState,
         successType);
   }
 
@@ -8383,7 +8638,6 @@ class _$InitialImpl implements _Initial {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -8406,6 +8660,17 @@ class _$InitialImpl implements _Initial {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)?
         initial,
   }) {
@@ -8419,7 +8684,6 @@ class _$InitialImpl implements _Initial {
         compensationType,
         package,
         availablity,
-        viewState,
         featureCandidateList,
         allJobList,
         employerJobList,
@@ -8442,6 +8706,17 @@ class _$InitialImpl implements _Initial {
         packageList,
         availabilityList,
         skillLevelList,
+        getFeaturedJobState,
+        getFeaturedCandidateState,
+        getJobSeekerJobState,
+        getEmployerJobState,
+        postJobState,
+        applyForJobState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        viewState,
         successType);
   }
 
@@ -8458,7 +8733,6 @@ class _$InitialImpl implements _Initial {
             String? compensationType,
             String? package,
             String? availablity,
-            ViewState viewState,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -8481,6 +8755,17 @@ class _$InitialImpl implements _Initial {
             List<String> packageList,
             List<String> availabilityList,
             List<String> skillLevelList,
+            GetFeaturedJobState getFeaturedJobState,
+            GetFeaturedCandidateState getFeaturedCandidateState,
+            GetJobSeekerJobState getJobSeekerJobState,
+            GetEmployerJobState getEmployerJobState,
+            PostJobState postJobState,
+            ApplyForJobState applyForJobState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            ViewState viewState,
             SuccessType successType)?
         initial,
     required TResult orElse(),
@@ -8496,7 +8781,6 @@ class _$InitialImpl implements _Initial {
           compensationType,
           package,
           availablity,
-          viewState,
           featureCandidateList,
           allJobList,
           employerJobList,
@@ -8519,6 +8803,17 @@ class _$InitialImpl implements _Initial {
           packageList,
           availabilityList,
           skillLevelList,
+          getFeaturedJobState,
+          getFeaturedCandidateState,
+          getJobSeekerJobState,
+          getEmployerJobState,
+          postJobState,
+          applyForJobState,
+          getCategoryState,
+          getSkillState,
+          getCountryState,
+          getStateState,
+          viewState,
           successType);
     }
     return orElse();
@@ -8564,7 +8859,6 @@ abstract class _Initial implements HomeState {
       final String? compensationType,
       final String? package,
       final String? availablity,
-      final ViewState viewState,
       final List<FeaturedCandidatesEntity> featureCandidateList,
       final List<AllJobResponseEntity> allJobList,
       final List<EmployerJobResponseEntity> employerJobList,
@@ -8587,6 +8881,17 @@ abstract class _Initial implements HomeState {
       final List<String> packageList,
       final List<String> availabilityList,
       final List<String> skillLevelList,
+      final GetFeaturedJobState getFeaturedJobState,
+      final GetFeaturedCandidateState getFeaturedCandidateState,
+      final GetJobSeekerJobState getJobSeekerJobState,
+      final GetEmployerJobState getEmployerJobState,
+      final PostJobState postJobState,
+      final ApplyForJobState applyForJobState,
+      final GetCategoryState getCategoryState,
+      final GetSkillState getSkillState,
+      final GetCountryState getCountryState,
+      final GetStateState getStateState,
+      final ViewState viewState,
       final SuccessType successType}) = _$InitialImpl;
 
   @override
@@ -8607,8 +8912,6 @@ abstract class _Initial implements HomeState {
   String? get package;
   @override
   String? get availablity;
-  @override
-  ViewState get viewState;
   @override
   List<FeaturedCandidatesEntity> get featureCandidateList;
   @override
@@ -8653,6 +8956,28 @@ abstract class _Initial implements HomeState {
   List<String> get availabilityList;
   @override
   List<String> get skillLevelList;
+  @override
+  GetFeaturedJobState get getFeaturedJobState;
+  @override
+  GetFeaturedCandidateState get getFeaturedCandidateState;
+  @override
+  GetJobSeekerJobState get getJobSeekerJobState;
+  @override
+  GetEmployerJobState get getEmployerJobState;
+  @override
+  PostJobState get postJobState;
+  @override
+  ApplyForJobState get applyForJobState;
+  @override
+  GetCategoryState get getCategoryState;
+  @override
+  GetSkillState get getSkillState;
+  @override
+  GetCountryState get getCountryState;
+  @override
+  GetStateState get getStateState;
+  @override
+  ViewState get viewState;
   @override
   SuccessType get successType;
   @override

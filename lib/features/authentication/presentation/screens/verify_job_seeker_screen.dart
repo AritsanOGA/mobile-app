@@ -22,6 +22,7 @@ class VerifyJobSeekerScreen extends HookWidget {
   Widget build(BuildContext context) {
     final otpController = useTextEditingController();
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: AppColors.kwhite,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {

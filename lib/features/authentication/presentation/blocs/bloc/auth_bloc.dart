@@ -64,7 +64,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
-    on<_SelectPassport>(_onSelectPassport);
+
     on<_SelectResume>(_onSelectResume);
     on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
@@ -127,81 +127,88 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onRegisterEmployer(
       _RegisterEmployer event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(employerSignUpState: EmployerSignUpState.loading));
 
     await _registerEmployerUseCase(event.param).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (error) => emit(
+              state.copyWith(employerSignUpState: EmployerSignUpState.failure)),
           (result) => emit(state.copyWith(
-              viewState: ViewState.success,
-              successType: SuccessType.employerRegistration)));
+              employerSignUpState: EmployerSignUpState.success)));
     });
+    emit(state.copyWith(employerSignUpState: EmployerSignUpState.idle));
   }
 
   FutureOr<void> _onLoginUser(_LoginUser event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(employerLoginState: EmployerLoginState.loading));
 
     final result = await _loginUseCase(event.param);
 
     result.fold(
         (error) => emit(state.copyWith(
-            viewState: ViewState.failure, errorMessage: error.message)),
-        (result) => emit(state.copyWith(viewState: ViewState.success)));
+            employerLoginState: EmployerLoginState.failure,
+            errorMessage: error.message)),
+        (result) => emit(
+            state.copyWith(employerLoginState: EmployerLoginState.success)));
     print(' ${state.errorMessage}');
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {
-    // emit(state.copyWith(viewState: ViewState.loading));
+    // emit(state.copyWith(getStateState: GetStateState.loading));
     final result = await _stateUseCase(event.id);
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getStateState: GetStateState.failure,
           errorMessage: error.message,
         ),
       ),
       (states) => emit(
         state.copyWith(
           states: states,
-          viewState: ViewState.success,
+          getStateState: GetStateState.success,
         ),
       ),
     );
+    emit(state.copyWith(getStateState: GetStateState.idle));
     print('state ${state.states}');
   }
 
   FutureOr<void> _onGetCountries(
       _GetCountries event, Emitter<AuthState> emit) async {
-    //emit(state.copyWith(viewState: ViewState.loading));
+    //emit(state.copyWith(getCountryState: GetCountryState.loading));
     final result = await _countryUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getCountryState: GetCountryState.failure,
           errorMessage: error.message,
         ),
       ),
       (countries) => emit(
         state.copyWith(
           countries: countries,
-          viewState: ViewState.success,
+          getCountryState: GetCountryState.success,
         ),
       ),
     );
+    emit(state.copyWith(getCountryState: GetCountryState.idle));
     print('cou${state.countries}');
   }
 
   FutureOr<void> _onRegisterJobSeeker(
       _RegisterJobSeeker event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(jobSeekerSignUpState: JobSeekerSignUpState.loading));
 
     await _registerJobSeekerUseCase(event.param).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(viewState: ViewState.failure)),
+          (error) => emit(state.copyWith(
+              jobSeekerSignUpState: JobSeekerSignUpState.failure)),
           (result) => emit(state.copyWith(
-              viewState: ViewState.success,
-              successType: SuccessType.jsRegistration)));
+                jobSeekerSignUpState: JobSeekerSignUpState.success,
+              )));
     });
+    emit(state.copyWith(jobSeekerSignUpState: JobSeekerSignUpState.idle));
   }
 
   FutureOr<void> _onUpdateSelectedEducationQualification(
@@ -215,42 +222,44 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetCategory(event, Emitter<AuthState> emit) async {
-    //emit(state.copyWith(viewState: ViewState.loading));
+    //emit(state.copyWith(getCategoryState: GetCategoryState.loading));
     final result = await _categoryUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getCategoryState: GetCategoryState.failure,
           errorMessage: error.message,
         ),
       ),
       (category) => emit(
         state.copyWith(
           categoryList: category,
-          viewState: ViewState.success,
+          getCategoryState: GetCategoryState.success,
         ),
       ),
     );
+    emit(state.copyWith(getCategoryState: GetCategoryState.idle));
     print('state ${state.states}');
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<AuthState> emit) async {
-    // emit(state.copyWith(viewState: ViewState.loading));
+    // emit(state.copyWith(getSkillState: GetSkillState.loading));
     final result = await _skillUseCase(event.id);
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getSkillState: GetSkillState.failure,
           errorMessage: error.message,
         ),
       ),
       (skills) => emit(
         state.copyWith(
           skill: skills,
-          viewState: ViewState.success,
+          getSkillState: GetSkillState.success,
         ),
       ),
     );
+    emit(state.copyWith(getSkillState: GetSkillState.idle));
     print('skill ${state.states}');
   }
 
@@ -269,13 +278,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
     emit(state.copyWith(file: File(image)));
-  }
-
-  FutureOr<void> _onSelectPassport(
-      _SelectPassport event, Emitter<AuthState> emit) async {
-    final image = await _filePickerService.pickImage();
-    if (image == null) return;
-    emit(state.copyWith(picture: File(image)));
   }
 
   FutureOr<void> _onSelectResume(
@@ -297,12 +299,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onVerifyCode(
       _VerifyCode event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(
+        employerVerifyCodeState: EmployerVerifyCodeState.loading));
 
     await _verifyCodeUseCase(event.value).then((value) {
-      value.fold((error) => emit(state.copyWith(viewState: ViewState.failure)),
-          (result) => emit(state.copyWith(viewState: ViewState.success)));
+      value.fold(
+          (error) => emit(state.copyWith(
+              employerVerifyCodeState: EmployerVerifyCodeState.failure)),
+          (result) => emit(state.copyWith(
+              employerVerifyCodeState: EmployerVerifyCodeState.success)));
     });
+    emit(state.copyWith(employerVerifyCodeState: EmployerVerifyCodeState.idle));
   }
 
   FutureOr<void> _onUpdateRegisterJobSeekerRequest(

@@ -9028,8 +9028,22 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
-  ViewState get viewState => throw _privateConstructorUsedError;
-  SuccessType get successType => throw _privateConstructorUsedError;
+  EmployerLoginState get employerLoginState =>
+      throw _privateConstructorUsedError;
+  JobSeekerLoginState get jobSeekerLoginState =>
+      throw _privateConstructorUsedError;
+  EmployerSignUpState get employerSignUpState =>
+      throw _privateConstructorUsedError;
+  JobSeekerSignUpState get jobSeekerSignUpState =>
+      throw _privateConstructorUsedError;
+  GetCategoryState get getCategoryState => throw _privateConstructorUsedError;
+  GetSkillState get getSkillState => throw _privateConstructorUsedError;
+  GetCountryState get getCountryState => throw _privateConstructorUsedError;
+  GetStateState get getStateState => throw _privateConstructorUsedError;
+  EmployerVerifyCodeState get employerVerifyCodeState =>
+      throw _privateConstructorUsedError;
+  JobSeekerVerifyCodeState get jobSeekerVerifyCodeState =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -9066,8 +9080,16 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -9107,8 +9129,16 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)?
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -9148,8 +9178,16 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)?
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
         initial,
     required TResult orElse(),
   }) =>
@@ -9215,8 +9253,16 @@ abstract class $AuthStateCopyWith<$Res> {
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      ViewState viewState,
-      SuccessType successType});
+      EmployerLoginState employerLoginState,
+      JobSeekerLoginState jobSeekerLoginState,
+      EmployerSignUpState employerSignUpState,
+      JobSeekerSignUpState jobSeekerSignUpState,
+      GetCategoryState getCategoryState,
+      GetSkillState getSkillState,
+      GetCountryState getCountryState,
+      GetStateState getStateState,
+      EmployerVerifyCodeState employerVerifyCodeState,
+      JobSeekerVerifyCodeState jobSeekerVerifyCodeState});
 }
 
 /// @nodoc
@@ -9265,8 +9311,16 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
-    Object? viewState = null,
-    Object? successType = null,
+    Object? employerLoginState = null,
+    Object? jobSeekerLoginState = null,
+    Object? employerSignUpState = null,
+    Object? jobSeekerSignUpState = null,
+    Object? getCategoryState = null,
+    Object? getSkillState = null,
+    Object? getCountryState = null,
+    Object? getStateState = null,
+    Object? employerVerifyCodeState = null,
+    Object? jobSeekerVerifyCodeState = null,
   }) {
     return _then(_value.copyWith(
       gender: null == gender
@@ -9401,14 +9455,46 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
               as bool,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
-      successType: null == successType
-          ? _value.successType
-          : successType // ignore: cast_nullable_to_non_nullable
-              as SuccessType,
+      employerLoginState: null == employerLoginState
+          ? _value.employerLoginState
+          : employerLoginState // ignore: cast_nullable_to_non_nullable
+              as EmployerLoginState,
+      jobSeekerLoginState: null == jobSeekerLoginState
+          ? _value.jobSeekerLoginState
+          : jobSeekerLoginState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerLoginState,
+      employerSignUpState: null == employerSignUpState
+          ? _value.employerSignUpState
+          : employerSignUpState // ignore: cast_nullable_to_non_nullable
+              as EmployerSignUpState,
+      jobSeekerSignUpState: null == jobSeekerSignUpState
+          ? _value.jobSeekerSignUpState
+          : jobSeekerSignUpState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerSignUpState,
+      getCategoryState: null == getCategoryState
+          ? _value.getCategoryState
+          : getCategoryState // ignore: cast_nullable_to_non_nullable
+              as GetCategoryState,
+      getSkillState: null == getSkillState
+          ? _value.getSkillState
+          : getSkillState // ignore: cast_nullable_to_non_nullable
+              as GetSkillState,
+      getCountryState: null == getCountryState
+          ? _value.getCountryState
+          : getCountryState // ignore: cast_nullable_to_non_nullable
+              as GetCountryState,
+      getStateState: null == getStateState
+          ? _value.getStateState
+          : getStateState // ignore: cast_nullable_to_non_nullable
+              as GetStateState,
+      employerVerifyCodeState: null == employerVerifyCodeState
+          ? _value.employerVerifyCodeState
+          : employerVerifyCodeState // ignore: cast_nullable_to_non_nullable
+              as EmployerVerifyCodeState,
+      jobSeekerVerifyCodeState: null == jobSeekerVerifyCodeState
+          ? _value.jobSeekerVerifyCodeState
+          : jobSeekerVerifyCodeState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerVerifyCodeState,
     ) as $Val);
   }
 }
@@ -9455,8 +9541,16 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      ViewState viewState,
-      SuccessType successType});
+      EmployerLoginState employerLoginState,
+      JobSeekerLoginState jobSeekerLoginState,
+      EmployerSignUpState employerSignUpState,
+      JobSeekerSignUpState jobSeekerSignUpState,
+      GetCategoryState getCategoryState,
+      GetSkillState getSkillState,
+      GetCountryState getCountryState,
+      GetStateState getStateState,
+      EmployerVerifyCodeState employerVerifyCodeState,
+      JobSeekerVerifyCodeState jobSeekerVerifyCodeState});
 }
 
 /// @nodoc
@@ -9503,8 +9597,16 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
-    Object? viewState = null,
-    Object? successType = null,
+    Object? employerLoginState = null,
+    Object? jobSeekerLoginState = null,
+    Object? employerSignUpState = null,
+    Object? jobSeekerSignUpState = null,
+    Object? getCategoryState = null,
+    Object? getSkillState = null,
+    Object? getCountryState = null,
+    Object? getStateState = null,
+    Object? employerVerifyCodeState = null,
+    Object? jobSeekerVerifyCodeState = null,
   }) {
     return _then(_$InitialImpl(
       gender: null == gender
@@ -9639,14 +9741,46 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
               as bool,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
-      successType: null == successType
-          ? _value.successType
-          : successType // ignore: cast_nullable_to_non_nullable
-              as SuccessType,
+      employerLoginState: null == employerLoginState
+          ? _value.employerLoginState
+          : employerLoginState // ignore: cast_nullable_to_non_nullable
+              as EmployerLoginState,
+      jobSeekerLoginState: null == jobSeekerLoginState
+          ? _value.jobSeekerLoginState
+          : jobSeekerLoginState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerLoginState,
+      employerSignUpState: null == employerSignUpState
+          ? _value.employerSignUpState
+          : employerSignUpState // ignore: cast_nullable_to_non_nullable
+              as EmployerSignUpState,
+      jobSeekerSignUpState: null == jobSeekerSignUpState
+          ? _value.jobSeekerSignUpState
+          : jobSeekerSignUpState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerSignUpState,
+      getCategoryState: null == getCategoryState
+          ? _value.getCategoryState
+          : getCategoryState // ignore: cast_nullable_to_non_nullable
+              as GetCategoryState,
+      getSkillState: null == getSkillState
+          ? _value.getSkillState
+          : getSkillState // ignore: cast_nullable_to_non_nullable
+              as GetSkillState,
+      getCountryState: null == getCountryState
+          ? _value.getCountryState
+          : getCountryState // ignore: cast_nullable_to_non_nullable
+              as GetCountryState,
+      getStateState: null == getStateState
+          ? _value.getStateState
+          : getStateState // ignore: cast_nullable_to_non_nullable
+              as GetStateState,
+      employerVerifyCodeState: null == employerVerifyCodeState
+          ? _value.employerVerifyCodeState
+          : employerVerifyCodeState // ignore: cast_nullable_to_non_nullable
+              as EmployerVerifyCodeState,
+      jobSeekerVerifyCodeState: null == jobSeekerVerifyCodeState
+          ? _value.jobSeekerVerifyCodeState
+          : jobSeekerVerifyCodeState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerVerifyCodeState,
     ));
   }
 }
@@ -9759,8 +9893,16 @@ class _$InitialImpl implements _Initial {
       final List<CategoryResponseEntity> categoryList = const [],
       final List<SkillResponseEntity> skill = const [],
       this.isChecked = false,
-      this.viewState = ViewState.idle,
-      this.successType = SuccessType.none})
+      this.employerLoginState = EmployerLoginState.idle,
+      this.jobSeekerLoginState = JobSeekerLoginState.idle,
+      this.employerSignUpState = EmployerSignUpState.idle,
+      this.jobSeekerSignUpState = JobSeekerSignUpState.idle,
+      this.getCategoryState = GetCategoryState.idle,
+      this.getSkillState = GetSkillState.idle,
+      this.getCountryState = GetCountryState.idle,
+      this.getStateState = GetStateState.idle,
+      this.employerVerifyCodeState = EmployerVerifyCodeState.idle,
+      this.jobSeekerVerifyCodeState = JobSeekerVerifyCodeState.idle})
       : _states = states,
         _genders = genders,
         _levelOfEducationList = levelOfEducationList,
@@ -9904,14 +10046,38 @@ class _$InitialImpl implements _Initial {
   final bool isChecked;
   @override
   @JsonKey()
-  final ViewState viewState;
+  final EmployerLoginState employerLoginState;
   @override
   @JsonKey()
-  final SuccessType successType;
+  final JobSeekerLoginState jobSeekerLoginState;
+  @override
+  @JsonKey()
+  final EmployerSignUpState employerSignUpState;
+  @override
+  @JsonKey()
+  final JobSeekerSignUpState jobSeekerSignUpState;
+  @override
+  @JsonKey()
+  final GetCategoryState getCategoryState;
+  @override
+  @JsonKey()
+  final GetSkillState getSkillState;
+  @override
+  @JsonKey()
+  final GetCountryState getCountryState;
+  @override
+  @JsonKey()
+  final GetStateState getStateState;
+  @override
+  @JsonKey()
+  final EmployerVerifyCodeState employerVerifyCodeState;
+  @override
+  @JsonKey()
+  final JobSeekerVerifyCodeState jobSeekerVerifyCodeState;
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, viewState: $viewState, successType: $successType)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, category: $category, skills: $skills, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState)';
   }
 
   @override
@@ -9939,8 +10105,7 @@ class _$InitialImpl implements _Initial {
             (identical(other.jsState, jsState) || other.jsState == jsState) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.picture, picture) || other.picture == picture) &&
-            (identical(
-                    other.educationalQualification, educationalQualification) ||
+            (identical(other.educationalQualification, educationalQualification) ||
                 other.educationalQualification == educationalQualification) &&
             (identical(other.dateOFBirth, dateOFBirth) ||
                 other.dateOFBirth == dateOFBirth) &&
@@ -9952,11 +10117,9 @@ class _$InitialImpl implements _Initial {
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.skills, skills) || other.skills == skills) &&
-            (identical(
-                    other.registerEmployerRequest, registerEmployerRequest) ||
+            (identical(other.registerEmployerRequest, registerEmployerRequest) ||
                 other.registerEmployerRequest == registerEmployerRequest) &&
-            (identical(
-                    other.registerJobSeekerRequest, registerJobSeekerRequest) ||
+            (identical(other.registerJobSeekerRequest, registerJobSeekerRequest) ||
                 other.registerJobSeekerRequest == registerJobSeekerRequest) &&
             (identical(other.resume, resume) || other.resume == resume) &&
             const DeepCollectionEquality().equals(other._states, _states) &&
@@ -9974,10 +10137,24 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._skill, _skill) &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
-            (identical(other.viewState, viewState) ||
-                other.viewState == viewState) &&
-            (identical(other.successType, successType) ||
-                other.successType == successType));
+            (identical(other.employerLoginState, employerLoginState) ||
+                other.employerLoginState == employerLoginState) &&
+            (identical(other.jobSeekerLoginState, jobSeekerLoginState) ||
+                other.jobSeekerLoginState == jobSeekerLoginState) &&
+            (identical(other.employerSignUpState, employerSignUpState) ||
+                other.employerSignUpState == employerSignUpState) &&
+            (identical(other.jobSeekerSignUpState, jobSeekerSignUpState) ||
+                other.jobSeekerSignUpState == jobSeekerSignUpState) &&
+            (identical(other.getCategoryState, getCategoryState) ||
+                other.getCategoryState == getCategoryState) &&
+            (identical(other.getSkillState, getSkillState) ||
+                other.getSkillState == getSkillState) &&
+            (identical(other.getCountryState, getCountryState) ||
+                other.getCountryState == getCountryState) &&
+            (identical(other.getStateState, getStateState) ||
+                other.getStateState == getStateState) &&
+            (identical(other.employerVerifyCodeState, employerVerifyCodeState) || other.employerVerifyCodeState == employerVerifyCodeState) &&
+            (identical(other.jobSeekerVerifyCodeState, jobSeekerVerifyCodeState) || other.jobSeekerVerifyCodeState == jobSeekerVerifyCodeState));
   }
 
   @override
@@ -10016,8 +10193,16 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_categoryList),
         const DeepCollectionEquality().hash(_skill),
         isChecked,
-        viewState,
-        successType
+        employerLoginState,
+        jobSeekerLoginState,
+        employerSignUpState,
+        jobSeekerSignUpState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        employerVerifyCodeState,
+        jobSeekerVerifyCodeState
       ]);
 
   @JsonKey(ignore: true)
@@ -10063,8 +10248,16 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)
         initial,
   }) {
     return initial(
@@ -10101,8 +10294,16 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         isChecked,
-        viewState,
-        successType);
+        employerLoginState,
+        jobSeekerLoginState,
+        employerSignUpState,
+        jobSeekerSignUpState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        employerVerifyCodeState,
+        jobSeekerVerifyCodeState);
   }
 
   @override
@@ -10142,8 +10343,16 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)?
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
         initial,
   }) {
     return initial?.call(
@@ -10180,8 +10389,16 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         isChecked,
-        viewState,
-        successType);
+        employerLoginState,
+        jobSeekerLoginState,
+        employerSignUpState,
+        jobSeekerSignUpState,
+        getCategoryState,
+        getSkillState,
+        getCountryState,
+        getStateState,
+        employerVerifyCodeState,
+        jobSeekerVerifyCodeState);
   }
 
   @override
@@ -10221,8 +10438,16 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            ViewState viewState,
-            SuccessType successType)?
+            EmployerLoginState employerLoginState,
+            JobSeekerLoginState jobSeekerLoginState,
+            EmployerSignUpState employerSignUpState,
+            JobSeekerSignUpState jobSeekerSignUpState,
+            GetCategoryState getCategoryState,
+            GetSkillState getSkillState,
+            GetCountryState getCountryState,
+            GetStateState getStateState,
+            EmployerVerifyCodeState employerVerifyCodeState,
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
         initial,
     required TResult orElse(),
   }) {
@@ -10261,8 +10486,16 @@ class _$InitialImpl implements _Initial {
           categoryList,
           skill,
           isChecked,
-          viewState,
-          successType);
+          employerLoginState,
+          jobSeekerLoginState,
+          employerSignUpState,
+          jobSeekerSignUpState,
+          getCategoryState,
+          getSkillState,
+          getCountryState,
+          getStateState,
+          employerVerifyCodeState,
+          jobSeekerVerifyCodeState);
     }
     return orElse();
   }
@@ -10331,8 +10564,16 @@ abstract class _Initial implements AuthState {
       final List<CategoryResponseEntity> categoryList,
       final List<SkillResponseEntity> skill,
       final bool isChecked,
-      final ViewState viewState,
-      final SuccessType successType}) = _$InitialImpl;
+      final EmployerLoginState employerLoginState,
+      final JobSeekerLoginState jobSeekerLoginState,
+      final EmployerSignUpState employerSignUpState,
+      final JobSeekerSignUpState jobSeekerSignUpState,
+      final GetCategoryState getCategoryState,
+      final GetSkillState getSkillState,
+      final GetCountryState getCountryState,
+      final GetStateState getStateState,
+      final EmployerVerifyCodeState employerVerifyCodeState,
+      final JobSeekerVerifyCodeState jobSeekerVerifyCodeState}) = _$InitialImpl;
 
   @override
   String get gender;
@@ -10401,9 +10642,25 @@ abstract class _Initial implements AuthState {
   @override
   bool get isChecked;
   @override
-  ViewState get viewState;
+  EmployerLoginState get employerLoginState;
   @override
-  SuccessType get successType;
+  JobSeekerLoginState get jobSeekerLoginState;
+  @override
+  EmployerSignUpState get employerSignUpState;
+  @override
+  JobSeekerSignUpState get jobSeekerSignUpState;
+  @override
+  GetCategoryState get getCategoryState;
+  @override
+  GetSkillState get getSkillState;
+  @override
+  GetCountryState get getCountryState;
+  @override
+  GetStateState get getStateState;
+  @override
+  EmployerVerifyCodeState get employerVerifyCodeState;
+  @override
+  JobSeekerVerifyCodeState get jobSeekerVerifyCodeState;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
