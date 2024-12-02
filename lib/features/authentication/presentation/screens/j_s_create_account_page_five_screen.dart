@@ -28,7 +28,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
     final whatYouDoController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
-      // context.read<AuthBloc>().add(AuthEvent.getCategory());
+      context.read<AuthBloc>().add(AuthEvent.getCategory());
     }, []);
     return SafeArea(
         child: Scaffold(
@@ -49,7 +49,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                             SizedBox(height: 10.v),
-
                             BlocBuilder<AuthBloc, AuthState>(
                               builder: (context, state) {
                                 return CustomDropDown<CategoryResponseEntity>(
@@ -86,11 +85,9 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                     title: 'Years of Experience',
                                     controller: yearsController,
                                     hintText: "e.g 3+ years",
-                                    textInputType: TextInputType.number,
                                     validator: FormValidation.stringValidation,
                                     hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 27.v),
-
                             BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
                               return CustomDropDown<SkillResponseEntity>(
@@ -112,7 +109,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 },
                               );
                             }),
-
                             SizedBox(height: 30.v),
                             Align(
                                 alignment: Alignment.centerLeft,
@@ -121,7 +117,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                     child: Text("Upload Your CV",
                                         style: theme.textTheme.bodyMedium))),
                             SizedBox(height: 10.v),
-                         
                             BlocBuilder<AuthBloc, AuthState>(
                               builder: (context, state) {
                                 return Container(
@@ -182,9 +177,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                         ]));
                               },
                             ),
-
                             SizedBox(height: 30.v),
-
                             Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 3.h),
                                 child: CustomTextFormField(
@@ -229,7 +222,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 );
                               },
                             ),
-
                             SizedBox(height: 40.v),
                           ]))),
                 );

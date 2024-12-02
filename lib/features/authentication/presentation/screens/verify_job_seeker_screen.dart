@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/routes/app_routes.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -22,12 +23,12 @@ class VerifyJobSeekerScreen extends HookWidget {
     final otpController = useTextEditingController();
     return Scaffold(
       backgroundColor: AppColors.kwhite,
-      body: BlocListener<AuthBloc, AuthState>(
+      body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state.viewState == ViewState.success &&
               state.successType == SuccessType.jsRegistration) {
             print('suceess');
-            Navigator.pushNamed(context, AppRoutes.dashboardScreen);
+            Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
           } else if (state.viewState == ViewState.failure) {
             showDialog<Widget>(
               context: context,
@@ -40,82 +41,92 @@ class VerifyJobSeekerScreen extends HookWidget {
             );
           }
         },
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 25.h,
-              vertical: 12.v,
-            ),
-            child: Center(
-              child: Column(
-                children: [
-                  SizedBox(height: 40.v),
-                  Text('Verify Code', style: theme.textTheme.headlineSmall),
-                  SizedBox(height: 17.v),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                        text: 'Please enter the code we just sent to email\n',
-                        style: theme.textTheme.headlineSmall
-                            ?.copyWith(fontSize: 13),
-                        children: [
-                          TextSpan(
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  // Navigator.pushNamed(
-                                  //     context, AppRoute.signupPage);
-                                },
-                              text: '',
-                              style: CustomTextStyles.titleSmallfff7941e)
-                        ]),
-                  ),
-                  SizedBox(height: 40.v),
-                  Pinput(
-                    defaultPinTheme: PinTheme(
-                      width: 56,
-                      height: 56,
-                      textStyle: theme.textTheme.headlineSmall,
-                      decoration: BoxDecoration(
-                        color: AppColors.kwhite,
-                        border: Border.all(color: theme.primaryColor, width: 1),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+        builder: (context, state) {
+          return SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 25.h,
+                vertical: 12.v,
+              ),
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 40.v),
+                    Text('Verify Code', style: theme.textTheme.headlineSmall),
+                    SizedBox(height: 17.v),
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                          text: 'Please enter the code we just sent to email\n',
+                          style: theme.textTheme.headlineSmall
+                              ?.copyWith(fontSize: 13),
+                          children: [
+                            TextSpan(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    // Navigator.pushNamed(
+                                    //     context, AppRoute.signupPage);
+                                  },
+                                text: email,
+                                style: CustomTextStyles.titleSmallfff7941e)
+                          ]),
                     ),
-                    length: 6,
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //focusNode: _pinPutFocusNode,
-                    controller: otpController,
-                    textInputAction: TextInputAction.done,
-                    // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    //separator: const XMargin(3),
-                    onChanged: (pin) {
-                      // setState(() {
-                      //   proceedWithPin = pin.length == inputLength;
-                      // });
-                      // if (pin.length == inputLength) {
-                      //   resetTimer();
-                      // }
-                    },
-                  ),
-                  SizedBox(height: 40.v),
-                  Text(
-                    'Didn’t receive OTP?',
-                    style:
-                        theme.textTheme.headlineSmall?.copyWith(fontSize: 13),
-                  ),
-                  SizedBox(height: 10.v),
-                  Text(
-                    'Resend code',
-                    style:
-                        theme.textTheme.headlineSmall?.copyWith(fontSize: 13),
-                  ),
-                  SizedBox(height: 40.v),
-                  CustomElevatedButton(onPressed: () {}, text: 'Verify')
-                ],
+                    SizedBox(height: 40.v),
+                    Pinput(
+                      defaultPinTheme: PinTheme(
+                        width: 56,
+                        height: 56,
+                        textStyle: theme.textTheme.headlineSmall,
+                        decoration: BoxDecoration(
+                          color: AppColors.kwhite,
+                          border:
+                              Border.all(color: theme.primaryColor, width: 1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      length: 6,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //focusNode: _pinPutFocusNode,
+                      controller: otpController,
+                      textInputAction: TextInputAction.done,
+                      // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      //separator: const XMargin(3),
+                      onChanged: (pin) {
+                        // setState(() {
+                        //   proceedWithPin = pin.length == inputLength;
+                        // });
+                        // if (pin.length == inputLength) {
+                        //   resetTimer();
+                        // }
+                      },
+                    ),
+                    SizedBox(height: 40.v),
+                    Text(
+                      'Didn’t receive OTP?',
+                      style:
+                          theme.textTheme.headlineSmall?.copyWith(fontSize: 13),
+                    ),
+                    SizedBox(height: 10.v),
+                    Text(
+                      'Resend code',
+                      style:
+                          theme.textTheme.headlineSmall?.copyWith(fontSize: 13),
+                    ),
+                    SizedBox(height: 40.v),
+                    CustomElevatedButton(
+                        isBusy: state.viewState == ViewState.loading,
+                        onPressed: () {
+                          context.read<AuthBloc>()
+                            ..add(AuthEvent.verifyCode(VerifyCodeEntity(
+                                code: otpController.text, email: email)));
+                        },
+                        text: 'Verify')
+                  ],
+                ),
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

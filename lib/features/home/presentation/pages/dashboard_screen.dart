@@ -6,6 +6,7 @@ import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/successful_job_application_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
@@ -30,11 +31,31 @@ class DashboardPage extends StatefulWidget {
 class _DashboardPageState extends State<DashboardPage> {
   TextEditingController searchController = TextEditingController();
 
-  //var jobseekerInfo = Hive.box("artisan").get("jobseeker_user_data");
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DashboardMenuPageDraweritem(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leadingWidth: 52.h,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return GestureDetector(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child:
+                        SvgPicture.asset("assets/images/Vectorsvg_menu.svg")),
+              ),
+            );
+          },
+        ),
+        actions: [],
+      ),
       body: Container(
         width: double.maxFinite,
         child: Padding(
@@ -46,7 +67,7 @@ class _DashboardPageState extends State<DashboardPage> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 25.h),
+                  padding: EdgeInsets.only(left: 10.h),
                   child: RichText(
                     text: TextSpan(
                       children: [
@@ -66,9 +87,12 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
               SizedBox(height: 19.v),
-              Text(
-                'Featured Jobs',
-                style: CustomTextStyles.titleLargeff3a332cSemiBold,
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  'Featured Jobs',
+                  style: CustomTextStyles.titleLargeff3a332cSemiBold,
+                ),
               ),
               SizedBox(height: 25.v),
               BlocBuilder<HomeBloc, HomeState>(
@@ -91,7 +115,9 @@ class _DashboardPageState extends State<DashboardPage> {
                     height: 200.h,
                     // width: 400.v,
                     child: ListView.builder(
+                      // padding: EdgeInsets.only(left: 10),
                       scrollDirection: Axis.horizontal,
+
                       itemCount: state.featuredJobList.length,
                       itemBuilder: (context, index) {
                         return FeaturedJobWidget(
@@ -104,9 +130,12 @@ class _DashboardPageState extends State<DashboardPage> {
                 },
               ),
               SizedBox(height: 25.v),
-              Text(
-                'Jobs for you',
-                style: CustomTextStyles.titleLargeff3a332cSemiBold,
+              Padding(
+                padding:const EdgeInsets.only(left: 10),
+                child: Text(
+                  'Jobs for you',
+                  style: CustomTextStyles.titleLargeff3a332cSemiBold,
+                ),
               ),
               BlocBuilder<HomeBloc, HomeState>(
                 bloc: context.read<HomeBloc>()
@@ -122,39 +151,52 @@ class _DashboardPageState extends State<DashboardPage> {
                   }
 
                   if (state.jobSeekerJobList.isEmpty) {
-                    return Center(child: Text('No items found.'));
+                    return Center(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 150.h,
+                          ),
+                          Text(
+                            'No Job History',
+                            style: CustomTextStyles.titleMediumPrimaryContainer18,
+                          ),
+                        ],
+                      ),
+                    );
                   }
 
                   return SizedBox(
-                    height: 100.h,
+                    height: 400.h,
                     // width: 400.v,
                     child: ListView.builder(
                       itemCount: state.jobSeekerJobList.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          //         leading:
-                          //          CachedNetworkImage(
-                          //   imageUrl: state.jobSeekerJobList[index].profileImage,
-                          //   fit: BoxFit.cover,
-                          //   progressIndicatorBuilder: (context, url, downloadProgress) =>
-                          //       const Center(),
-                          //   imageBuilder: (context, imageProvider) => Container(
-                          //     width: 180,
-                          //     height: 220,
-                          //     decoration: BoxDecoration(
-                          //       border: Border.all(
-                          //         width: 4,
-                          //         color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
-                          //       ),
-                          //       borderRadius: BorderRadius.circular(16),
-                          //       image: DecorationImage(
-                          //         image: CachedNetworkImageProvider(imageURL),
-                          //         fit: BoxFit.cover,
-                          //       ),
-                          //     ),
-                          //   ),
-                          //   errorWidget: (context, url, error) => const Icon(Icons.error),
-                          // ),
+                          leading: CachedNetworkImage(
+                            imageUrl: 'https://picsum.photos/250?image=9',
+
+                            //  state.jobSeekerJobList[index].profileImage,
+                            fit: BoxFit.cover,
+                            progressIndicatorBuilder:
+                                (context, url, downloadProgress) =>
+                                    const Center(),
+                            imageBuilder: (context, imageProvider) => Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                // borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: CachedNetworkImageProvider(
+                                      'https://picsum.photos/250?image=9'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                          ),
                           title: Text(
                             state.jobSeekerJobList[index].jobTitle ?? '',
                             style: CustomTextStyles.titleMediumMedium18,
@@ -487,8 +529,6 @@ class _DashboardPageState extends State<DashboardPage> {
               }
             }));
   }
-
-
 }
 
 class FeaturedJobWidget extends StatelessWidget {

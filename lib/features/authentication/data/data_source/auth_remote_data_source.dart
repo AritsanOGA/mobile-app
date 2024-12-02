@@ -63,7 +63,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<bool> registerEmployer(RegisterEmployerEntity entity) async {
-    print('bbbo ${RegisterEmployerModel.fromEntity(entity).toJson()}');
+
     final result = await api.post(
       url: AppApiEndpoint.employerSignup,
       body: await RegisterEmployerModel.fromEntity(entity).toJson(),
@@ -160,6 +160,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
+        print('bbbo ${RegisterJobSeekerModel.fromEntity(entity).toJson()}');
     final result = await api.post(
       url: AppApiEndpoint.candidateSignup,
       body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),

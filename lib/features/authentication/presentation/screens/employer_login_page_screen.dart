@@ -23,24 +23,24 @@ class EmployerLoginPageScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
-         backgroundColor: AppColors.kwhite,
+        backgroundColor: AppColors.kwhite,
         // resizeToAvoidBottomInset: false,
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            // if (state.viewState == ViewState.success) {
-            //   print('suceess');
-            //   Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
-            // } else if (state.viewState == ViewState.failure) {
-            //   showDialog<Widget>(
-            //     context: context,
-            //     builder: (ctx) => CustomAlertDialog(
-            //       title: 'Error!!!',
-            //       content: state.errorMessage ?? '',
-            //       actionText: 'OK',
-            //       onActionPressed: () => Navigator.of(ctx).pop(),
-            //     ),
-            //   );
-            // }
+            if (state.viewState == ViewState.success) {
+              print('suceess');
+              Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+            } else if (state.viewState == ViewState.failure) {
+              showDialog<Widget>(
+                context: context,
+                builder: (ctx) => CustomAlertDialog(
+                  title: 'Error!!!',
+                  content: state.errorMessage ?? '',
+                  actionText: 'OK',
+                  onActionPressed: () => Navigator.of(ctx).pop(),
+                ),
+              );
+            }
           },
           builder: (context, state) {
             return Form(
@@ -129,7 +129,6 @@ class EmployerLoginPageScreen extends HookWidget {
                                         ),
                                       );
                                 }
-                            
                               },
                               text: "Log in",
                             );

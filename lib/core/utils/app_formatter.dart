@@ -25,6 +25,23 @@ class AppFormatter {
   );
 }
 
+String getTimeAgo(DateTime timestamp) {
+  final now = DateTime.now();
+  final difference = now.difference(timestamp);
+
+  if (difference.inDays == 0) {
+    return 'Today';
+  } else if (difference.inDays == 1) {
+    return 'Yesterday';
+  } else if (difference.inDays == 2) {
+    return 'Two days ago';
+  } else if (difference.inDays < 7) {
+    return '${difference.inDays} days ago';
+  } else {
+    return DateFormat.yMMMMd().format(timestamp); // Example: November 30, 2024
+  }
+}
+
 extension StringExtension on String {
   String capitalize() {
     return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';

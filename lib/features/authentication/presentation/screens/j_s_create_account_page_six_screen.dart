@@ -53,88 +53,91 @@ class JSCreateAccountPageSixScreen extends HookWidget {
               },
               builder: (context, state) {
                 return SingleChildScrollView(
-                    child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 22.h, vertical: 12.v),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10.v,
-                              ),
-                              Padding(
-                                  padding: EdgeInsets.only(left: 3.h),
-                                  child: Text("Add Guarantor",
-                                      style: CustomTextStyles
-                                          .titleMediumOnPrimaryMedium)),
-                              SizedBox(height: 30.v),
-                              CustomTextFormField(
-                                  title: 'Name',
-                                  controller: guaranterNameController,
-                                  textInputType: TextInputType.name,
-                                  validator: FormValidation.stringValidation,
-                                  hintText: "Enter Guarantor’s Name",
-                                  hintStyle: theme.textTheme.titleSmall!),
-                              SizedBox(height: 30.v),
-                              CustomTextFormField(
-                                  title: 'Email',
-                                  controller: guaranterEmailController,
-                                  textInputType: TextInputType.emailAddress,
-                                  hintText: "Enter Guarantor’s Email",
-                                  validator: FormValidation.emailValidation,
-                                  hintStyle: theme.textTheme.titleSmall!),
-                              SizedBox(height: 30.v),
-                              CustomTextFormField(
-                                  title: 'Phone Number',
-                                  textInputType: TextInputType.phone,
-                                  controller: guaranterPhoneNumberController,
-                                  inputFormatters: [
-                                    LengthLimitingTextInputFormatter(11),
-                                    FilteringTextInputFormatter.digitsOnly,
-                                  ],
-                                  hintText: "Enter Guarantor’s Phone Number",
-                                  validator: FormValidation.phoneValidation,
-                                  hintStyle: theme.textTheme.titleSmall!),
-                              SizedBox(height: 30.v),
-                              CustomTextFormField(
-                                  title: 'Residential Address',
-                                  controller: guaranterAddressController,
-                                  textInputType: TextInputType.streetAddress,
-                                  hintText: "Enter Residential Address",
-                                  hintStyle: theme.textTheme.titleSmall!),
-                              SizedBox(height: 40.v),
-                              BlocBuilder<AuthBloc, AuthState>(
-                                builder: (context, state) {
-                                  return CustomElevatedButton(
-                                    isBusy:
-                                        state.viewState == ViewState.loading,
-                                    text: "Submit",
-                                    onPressed: (() {
-                                      if (formKey.currentState?.validate() ??
-                                          false) {
-                                        context.read<AuthBloc>().add(
-                                            AuthEvent.registerJobSeeker(state
-                                                .registerJobSeekerRequest
-                                                .copyWith(
-                                                    guarantorPhoneNumber:
-                                                        guaranterPhoneNumberController
-                                                            .text,
-                                                    guarantorName:
-                                                        guaranterNameController
-                                                            .text,
-                                                    guarantorEmail:
-                                                        guaranterEmailController
-                                                            .text,
-                                                    residentialAddress:
-                                                        guaranterAddressController
-                                                            .text)));
-                                      }
-                                    }),
-                                  );
-                                },
-                              ),
-                              SizedBox(height: 40.v),
-                            ])));
+                    child: Form(
+                  key: formKey,
+                  child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 22.h, vertical: 12.v),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 10.v,
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 3.h),
+                                child: Text("Add Guarantor",
+                                    style: CustomTextStyles
+                                        .titleMediumOnPrimaryMedium)),
+                            SizedBox(height: 30.v),
+                            CustomTextFormField(
+                                title: 'Name',
+                                controller: guaranterNameController,
+                                textInputType: TextInputType.name,
+                                validator: FormValidation.stringValidation,
+                                hintText: "Enter Guarantor’s Name",
+                                hintStyle: theme.textTheme.titleSmall!),
+                            SizedBox(height: 30.v),
+                            CustomTextFormField(
+                                title: 'Email',
+                                controller: guaranterEmailController,
+                                textInputType: TextInputType.emailAddress,
+                                hintText: "Enter Guarantor’s Email",
+                                validator: FormValidation.emailValidation,
+                                hintStyle: theme.textTheme.titleSmall!),
+                            SizedBox(height: 30.v),
+                            CustomTextFormField(
+                                title: 'Phone Number',
+                                textInputType: TextInputType.phone,
+                                controller: guaranterPhoneNumberController,
+                                inputFormatters: [
+                                  LengthLimitingTextInputFormatter(11),
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
+                                hintText: "Enter Guarantor’s Phone Number",
+                                validator: FormValidation.phoneValidation,
+                                hintStyle: theme.textTheme.titleSmall!),
+                            SizedBox(height: 30.v),
+                            CustomTextFormField(
+                                title: 'Residential Address',
+                                controller: guaranterAddressController,
+                                textInputType: TextInputType.streetAddress,
+                                hintText: "Enter Residential Address",
+                                validator: FormValidation.stringValidation,
+                                hintStyle: theme.textTheme.titleSmall!),
+                            SizedBox(height: 40.v),
+                            BlocBuilder<AuthBloc, AuthState>(
+                              builder: (context, state) {
+                                return CustomElevatedButton(
+                                  isBusy: state.viewState == ViewState.loading,
+                                  text: "Submit",
+                                  onPressed: (() {
+                                    if (formKey.currentState?.validate() ??
+                                        false) {
+                                      context.read<AuthBloc>().add(
+                                          AuthEvent.registerJobSeeker(state
+                                              .registerJobSeekerRequest
+                                              .copyWith(
+                                                  guarantorPhoneNumber:
+                                                      guaranterPhoneNumberController
+                                                          .text,
+                                                  guarantorName:
+                                                      guaranterNameController
+                                                          .text,
+                                                  guarantorEmail:
+                                                      guaranterEmailController
+                                                          .text,
+                                                  residentialAddress:
+                                                      guaranterAddressController
+                                                          .text)));
+                                    }
+                                  }),
+                                );
+                              },
+                            ),
+                            SizedBox(height: 40.v),
+                          ])),
+                ));
               },
             )));
   }

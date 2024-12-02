@@ -27,7 +27,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
     final phoneController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
-      //context.read<AuthBloc>().add(AuthEvent.getCountries());
+      context.read<AuthBloc>().add(AuthEvent.getCountries());
     }, []);
     return SafeArea(
         child: Scaffold(

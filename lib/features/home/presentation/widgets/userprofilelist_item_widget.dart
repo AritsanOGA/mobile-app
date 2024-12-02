@@ -14,8 +14,9 @@ class UserprofilelistItemWidget extends StatefulWidget {
   const UserprofilelistItemWidget({
     Key? key,
     required this.fullName,
-    required this.phone, required this.availability, required this.city,
-  
+    required this.phone,
+    required this.availability,
+    required this.city,
   }) : super(key: key);
 
   @override
@@ -79,9 +80,17 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.fullName,
-                        style: CustomTextStyles.titleMediumOnPrimary,
+                      Container(
+                        width: 180.h,
+                        child: Text(
+                          softWrap: false,
+                          widget.fullName,
+                          style: theme.textTheme.titleMedium!.copyWith(
+                            color: theme.colorScheme.onPrimary,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: 17.fSize,
+                          ),
+                        ),
                       ),
                       SizedBox(height: 3.v),
                       Text(
@@ -103,7 +112,7 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                         borderRadius: BorderRadius.circular(20)),
                   ),
                   SizedBox(width: 11.v),
-                  Text( widget.availability,
+                  Text(widget.availability,
                       style: CustomTextStyles.labelLargePrimaryContainer_2)
                 ],
               ),

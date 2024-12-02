@@ -205,6 +205,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           (result) => emit(state.copyWith(
               viewState: ViewState.success, successType: SuccessType.postJob)));
     });
+    emit(state.copyWith(viewState: ViewState.idle));
   }
 
   FutureOr<void> _onApplyForJob(

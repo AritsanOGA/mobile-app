@@ -50,7 +50,6 @@ class SuccessfulJobApplocationScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
                 },
-                // buttonTextStyle: CustomTextStyles.titleMediumGray5001,
               ),
               SizedBox(height: 34.v),
               SizedBox(

@@ -31,7 +31,7 @@ class VerifyEmployerScreen extends HookWidget {
         listener: (context, state) {
           if (state.viewState == ViewState.success) {
             print('suceess');
-            Navigator.pushNamed(context, AppRoutes.employerDashboardPage);
+            Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
           } else if (state.viewState == ViewState.failure) {
             showDialog<Widget>(
               context: context,

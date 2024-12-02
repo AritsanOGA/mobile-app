@@ -22,8 +22,6 @@ class JSCreateAccountPageOneScreen extends HookWidget {
     final confirmEmailController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
 
-    final isObscure = useState(true);
-
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,

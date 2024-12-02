@@ -12,6 +12,7 @@ class EmployerJobWidget extends StatelessWidget {
   final String location;
   final String amount;
   final String dateCreated;
+  final String applicationDeadline;
 
   const EmployerJobWidget(
       {super.key,
@@ -19,7 +20,8 @@ class EmployerJobWidget extends StatelessWidget {
       required this.hireType,
       required this.location,
       required this.amount,
-      required this.dateCreated});
+      required this.dateCreated,
+      required this.applicationDeadline});
 
   @override
   Widget build(BuildContext context) {
@@ -45,17 +47,16 @@ class EmployerJobWidget extends StatelessWidget {
                     style: CustomTextStyles.titleMediumSecondaryContainer),
                 // SizedBox(height: 5.h,),
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Intern', style: CustomTextStyles.titleSmallGray50001),
+                    Text(applicationDeadline,
+                        style: CustomTextStyles.titleSmallGray50001),
                     SizedBox(
-                      width: 100,
+                      width: 175,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      //   crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('${amount}',
+                        Text('₦${amount}',
                             style:
                                 CustomTextStyles.titleSmallSecondaryContainer),
                       ],
@@ -90,8 +91,8 @@ class EmployerJobWidget extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: 5,
+                      width: 5,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: AppColors.kblack),
                     ),

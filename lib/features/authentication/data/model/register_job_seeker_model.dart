@@ -73,6 +73,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         employmentHistory: entity.employmentHistory,
         guarantorPhoneNumber: entity.guarantorPhoneNumber,
       );
+  // Map<String, dynamic> toJson() => {'email': email, 'code': code};
 
   Future<FormData> toJson() async => FormData.fromMap({
         'email': email,
@@ -80,9 +81,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'password_confirmation': confirmPassword,
         'country': country,
         'fullname': fullName,
-        'company_name': companyName,
         'states': state,
-        'employment_history': employmentHistory,
         'city': city,
         'passport': await MultipartFile.fromFile(
           "${passport?.path}",
@@ -97,12 +96,32 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'gender': gender,
         'phone': phoneNumber,
         'DateOfBirth': dateOFBirth,
-        'end_year': endYear,
-        'start_year': startYear,
+        'employment_history': employmentHistory,
+        'company_name':
+            employmentHistory == 'No Employment History' ? '' : companyName,
+        'end_year': employmentHistory == 'No Employment History' ? '' : endYear,
+        'start_year':
+            employmentHistory == 'No Employment History' ? '' : startYear,
+        'job_title': employmentHistory == 'No Employment History' ? '' : role,
+        'job_description':
+            employmentHistory == 'No Employment History' ? '' : description,
         'education_qualification': educationalQualification,
-        'school_name': schoolName,
-        'award_year': graduationYear,
-        'award_title': certificateObtained,
+        'school_name':
+            educationalQualification == 'No Education' ? '' : schoolName,
+        'award_year':
+            educationalQualification == 'No Education' ? '' : graduationYear,
+        'award_title': educationalQualification == 'No Education' ||
+                educationalQualification == 'GCE' ||
+                educationalQualification == 'NECO' ||
+                educationalQualification == 'WAEC'
+            ? ''
+            : certificateObtained,
+        'course_name': educationalQualification == 'No Education' ||
+                educationalQualification == 'GCE' ||
+                educationalQualification == 'NECO' ||
+                educationalQualification == 'WAEC'
+            ? ''
+            : courseName,
         'categories': category,
         'artisan_skills': skill,
         'guarantor_name': guarantorName,
@@ -110,11 +129,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'guarantor_address': residentialAddress,
         'job_type': jobType,
         'years_of_experience': yearsOfExperience,
-        'job_title': role,
-        'course_name': courseName,
         'StreetAddress': streetAddress,
-        'job_description': describeYourRole,
-        'service_description': description,
+        'service_description': describeYourRole,
         'guarantor_phone': guarantorPhoneNumber
       });
 }

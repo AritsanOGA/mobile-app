@@ -62,7 +62,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 25.h),
+                  padding: EdgeInsets.only(left: 10.h),
                   child: RichText(
                     text: TextSpan(
                       children: [
@@ -83,9 +83,12 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
               ),
               SizedBox(height: 19.v),
               SizedBox(height: 25.v),
-              Text(
-                "Featured Candidates",
-                style: CustomTextStyles.titleMediumPrimaryContainer18,
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  "Featured Candidates",
+                  style: CustomTextStyles.titleMediumPrimaryContainer18,
+                ),
               ),
               BlocBuilder<HomeBloc, HomeState>(
                 bloc: context.read<HomeBloc>()
@@ -112,11 +115,11 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                       itemCount: state.featureCandidateList.length,
                       itemBuilder: (context, index) {
                         return UserprofilelistItemWidget(
-                          fullName: state.featureCandidateList[index].name,
-                          phone: state.featureCandidateList[index].categories,
+                          fullName: state.featureCandidateList[index].fullName,
+                          phone: state.featureCandidateList[index].role,
                           availability:
                               state.featureCandidateList[index].availability,
-                          city: state.featureCandidateList[index].availability,
+                          city: state.featureCandidateList[index].city,
                         );
                       },
                     ),
@@ -124,9 +127,12 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                 },
               ),
               SizedBox(height: 25.v),
-              Text(
-                "Recent Jobs",
-                style: CustomTextStyles.titleMediumPrimaryContainer18,
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  "Job History",
+                  style: CustomTextStyles.titleMediumPrimaryContainer18,
+                ),
               ),
               BlocBuilder<HomeBloc, HomeState>(
                 bloc: context.read<HomeBloc>()..add(HomeEvent.getEmployerJob()),
@@ -141,7 +147,21 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                   }
 
                   if (state.employerJobList.isEmpty) {
-                    return Center(child: Text('No items found.'));
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 150.h,
+                          ),
+                          Text(
+                            'No Job History',
+                            style:
+                                CustomTextStyles.titleMediumPrimaryContainer18,
+                          ),
+                        ],
+                      ),
+                    );
                   }
 
                   return Expanded(
@@ -157,9 +177,12 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                             hireType:
                                 state.employerJobList[index].hireType ?? '',
                             location: state.employerJobList[index].city ?? '',
+                            applicationDeadline: state.employerJobList[index]
+                                    .applicationDeadline ??
+                                '',
                             amount: state.employerJobList[index].minSalary
                                 .toString(),
-                            dateCreated: AppFormatter.timeFormatter.format(
+                            dateCreated: getTimeAgo(
                                 state.employerJobList[index].createdAt!));
                       },
                     ),

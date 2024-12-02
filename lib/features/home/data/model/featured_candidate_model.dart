@@ -3,21 +3,12 @@ import 'package:artisan_oga/features/home/domain/entities/features_candiddate_en
 class FeaturedCandidateModel extends FeaturedCandidatesEntity {
   FeaturedCandidateModel({
     required super.id,
-    required super.name,
-    required super.email,
+    required super.role,
+    required super.fullName,
     required super.availability,
-    required super.resumes,
-    required super.phone,
-    super.dateOfBirth,
-    required super.serviceDescription,
-    required super.country,
-    required super.state,
-    required super.streetAddress,
-    super.compensationType,
-    required super.categories,
-    required super.yearsOfWorkExperience,
-    required super.createdAt,
-    required super.updatedAt,
+    required super.workExperience,
+    required super.profileImage,
+    required super.city,
   });
   // factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
   //     RegisterJobSeekerModel(
@@ -58,20 +49,11 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
   factory FeaturedCandidateModel.fromJson(Map<String, dynamic> json) =>
       FeaturedCandidateModel(
         id: json["id"] ?? 0,
-        name: json["name"] ?? '',
-        email: json["email"] ?? '',
+        role: json["role"] ?? '',
+        fullName: json["full_name"] ?? '',
         availability: json["availability"] ?? '',
-        resumes: json["resumes"] ?? null,
-        phone: json["phone"] ?? '',
-        dateOfBirth: json["date_of_birth"] ?? '',
-        serviceDescription: json["service_description"] ?? '',
-        country: json["country"] ?? 0,
-        state: json["state"] ?? '',
-        streetAddress: json["street_address"] ?? '',
-        compensationType: json["compensation_type"] ?? '',
-        categories: json["categories"] ?? '',
-        yearsOfWorkExperience: json["years_of_work_experience"],
-        createdAt: DateTime.parse(json["created_at"] ?? null),
-        updatedAt: DateTime.parse(json["updated_at"] ?? null),
+        workExperience: json["work_experience"] ?? '',
+        profileImage: json["profile_image"] ?? '',
+        city: json["city"] ?? '',
       );
 }

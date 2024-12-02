@@ -151,7 +151,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {
-   // emit(state.copyWith(viewState: ViewState.loading));
+    // emit(state.copyWith(viewState: ViewState.loading));
     final result = await _stateUseCase(event.id);
     result.fold(
       (error) => emit(
@@ -215,7 +215,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetCategory(event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    //emit(state.copyWith(viewState: ViewState.loading));
     final result = await _categoryUseCase(NoParams());
     result.fold(
       (error) => emit(
@@ -235,7 +235,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    // emit(state.copyWith(viewState: ViewState.loading));
     final result = await _skillUseCase(event.id);
     result.fold(
       (error) => emit(
