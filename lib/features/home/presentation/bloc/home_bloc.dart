@@ -179,19 +179,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetAllJobs(
       _GetAllJobs event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getAllJobState: GetAllJobState.loading));
     final result = await _getAllJobUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getAllJobState: GetAllJobState.failure,
           errorMessage: error.message,
         ),
       ),
       (allJob) => emit(
         state.copyWith(
           allJobList: allJob,
-          viewState: ViewState.success,
+          getAllJobState: GetAllJobState.success,
         ),
       ),
     );
@@ -204,9 +204,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       value.fold(
           (error) => emit(state.copyWith(postJobState: PostJobState.failure)),
           (result) => emit(state.copyWith(
-              postJobState: PostJobState.success, )));
+                postJobState: PostJobState.success,
+              )));
     });
-    emit(state.copyWith(postJobState: ViewState.idle));
+    emit(state.copyWith(postJobState: PostJobState.idle));
   }
 
   FutureOr<void> _onApplyForJob(
@@ -214,10 +215,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(applyForJobState: ApplyForJobState.loading));
     await _applyForJobUseCase(event.id).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(applyForJobState: ApplyForJobState.failure)),
+          (error) =>
+              emit(state.copyWith(applyForJobState: ApplyForJobState.failure)),
           (result) => emit(state.copyWith(
-              applyForJobState: ApplyForJobState.success,
-            )));
+                applyForJobState: ApplyForJobState.success,
+              )));
     });
   }
 
@@ -261,19 +263,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   FutureOr<void> _onGetCategory(event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getCategoryState: GetCategoryState.loading));
     final result = await _categoryUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getCategoryState: GetCategoryState.failure,
           errorMessage: error.message,
         ),
       ),
       (category) => emit(
         state.copyWith(
           categoryList: category,
-          viewState: ViewState.success,
+          getCategoryState: GetCategoryState.success,
         ),
       ),
     );
@@ -281,19 +283,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getSkillState: GetSkillState.loading));
     final result = await _skillUseCase(event.id);
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getSkillState: GetSkillState.failure,
           errorMessage: error.message,
         ),
       ),
       (skills) => emit(
         state.copyWith(
           skill: skills,
-          viewState: ViewState.success,
+          getSkillState: GetSkillState.success,
         ),
       ),
     );
@@ -301,19 +303,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getStateState: GetStateState.loading));
     final result = await _stateUseCase(event.id);
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getStateState: GetStateState.failure,
           errorMessage: error.message,
         ),
       ),
       (states) => emit(
         state.copyWith(
           states: states,
-          viewState: ViewState.success,
+          getStateState: GetStateState.success,
         ),
       ),
     );
@@ -322,19 +324,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> _onGetCountries(
       _GetCountries event, Emitter<HomeState> emit) async {
-    emit(state.copyWith(viewState: ViewState.loading));
+    emit(state.copyWith(getCountryState: GetCountryState.loading));
     final result = await _countryUseCase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(
-          viewState: ViewState.failure,
+          getCountryState: GetCountryState.failure,
           errorMessage: error.message,
         ),
       ),
       (countries) => emit(
         state.copyWith(
           countries: countries,
-          viewState: ViewState.success,
+          getCountryState: GetCountryState.success,
         ),
       ),
     );

@@ -98,7 +98,6 @@ class AuthState with _$AuthState {
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
-
     @Default(EmployerLoginState.idle) EmployerLoginState employerLoginState,
     @Default(JobSeekerLoginState.idle) JobSeekerLoginState jobSeekerLoginState,
     @Default(EmployerSignUpState.idle) EmployerSignUpState employerSignUpState,
@@ -112,6 +111,5 @@ class AuthState with _$AuthState {
     EmployerVerifyCodeState employerVerifyCodeState,
     @Default(JobSeekerVerifyCodeState.idle)
     JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-   
   }) = _Initial;
 }

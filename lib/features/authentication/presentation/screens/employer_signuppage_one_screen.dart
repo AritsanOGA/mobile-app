@@ -41,11 +41,11 @@ class EmployerSignuppageOneScreen extends HookWidget {
             ),
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
-                if (state.viewState == ViewState.success &&
-                    state.successType == SuccessType.employerRegistration) {
+                if (state.employerSignUpState == EmployerSignUpState.success) {
                   Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
                       arguments: email);
-                } else if (state.viewState == ViewState.failure) {
+                } else if (state.employerSignUpState ==
+                    EmployerSignUpState.failure) {
                   showDialog<Widget>(
                     context: context,
                     builder: (ctx) => CustomAlertDialog(
@@ -352,7 +352,8 @@ class EmployerSignuppageOneScreen extends HookWidget {
                         ),
                         SizedBox(height: 35.v),
                         CustomElevatedButton(
-                          isBusy: state.viewState == ViewState.loading,
+                          isBusy: state.employerSignUpState ==
+                              EmployerSignUpState.loading,
                           text: "Submit",
                           onPressed: (() {
                             if (formKey.currentState?.validate() ?? false) {

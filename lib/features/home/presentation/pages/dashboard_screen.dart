@@ -99,11 +99,11 @@ class _DashboardPageState extends State<DashboardPage> {
                 bloc: context.read<HomeBloc>()..add(HomeEvent.getFeaturedJob()),
                 //..add(event),
                 builder: (context, state) {
-                  if (state.viewState == ViewState.loading) {
+                  if (state.getFeaturedJobState == GetFeaturedJobState.loading) {
                     return Center(child: CircularProgressIndicator());
                   }
 
-                  if (state.viewState == ViewState.failure) {
+                  if (state.getFeaturedJobState == GetFeaturedJobState.failure) {
                     return Center(child: Text('Error: '));
                   }
 
@@ -142,11 +142,11 @@ class _DashboardPageState extends State<DashboardPage> {
                   ..add(HomeEvent.getJobSeekerJobs()),
                 //..add(event),
                 builder: (context, state) {
-                  if (state.viewState == ViewState.loading) {
+                  if (state.getJobSeekerJobState == GetJobSeekerJobState.loading) {
                     return Center(child: CircularProgressIndicator());
                   }
 
-                  if (state.viewState == ViewState.failure) {
+                  if (state.getJobSeekerJobState == GetJobSeekerJobState.failure) {
                     return Center(child: Text('Error: '));
                   }
 

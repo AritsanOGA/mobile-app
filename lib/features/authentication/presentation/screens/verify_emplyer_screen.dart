@@ -29,10 +29,12 @@ class VerifyEmployerScreen extends HookWidget {
       backgroundColor: AppColors.kwhite,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state.viewState == ViewState.success) {
+          if (state.employerVerifyCodeState ==
+              EmployerVerifyCodeState.success) {
             print('suceess');
             Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
-          } else if (state.viewState == ViewState.failure) {
+          } else if (state.employerVerifyCodeState ==
+              EmployerVerifyCodeState.failure) {
             showDialog<Widget>(
               context: context,
               builder: (ctx) => CustomAlertDialog(
@@ -61,8 +63,7 @@ class VerifyEmployerScreen extends HookWidget {
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                          text:
-                              'Please enter the code we just sent to email\n',
+                          text: 'Please enter the code we just sent to email\n',
                           style: theme.textTheme.headlineSmall
                               ?.copyWith(fontSize: 13),
                           children: [
@@ -73,8 +74,7 @@ class VerifyEmployerScreen extends HookWidget {
                                     //     context, AppRoute.signupPage);
                                   },
                                 text: email,
-                                style: CustomTextStyles
-                                              .titleSmallfff7941e)
+                                style: CustomTextStyles.titleSmallfff7941e)
                           ]),
                     ),
                     SizedBox(height: 40.v),
@@ -120,7 +120,8 @@ class VerifyEmployerScreen extends HookWidget {
                     ),
                     SizedBox(height: 40.v),
                     CustomElevatedButton(
-                        isBusy: state.viewState == ViewState.loading,
+                        isBusy: state.employerVerifyCodeState ==
+                            EmployerVerifyCodeState.loading,
                         onPressed: () {
                           context.read<AuthBloc>()
                             ..add(AuthEvent.verifyCode(VerifyCodeEntity(

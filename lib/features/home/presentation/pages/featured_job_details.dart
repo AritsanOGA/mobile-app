@@ -25,11 +25,10 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
       ),
       body: BlocListener<HomeBloc, HomeState>(
         listener: (context, state) {
-          if (state.viewState == ViewState.success &&
-              state.successType == SuccessType.applyForJob) {
+          if (state.applyForJobState == ApplyForJobState.success) {
             Navigator.pushNamed(
                 context, AppRoutes.successfulJobApplicationPage);
-          } else if (state.viewState == ViewState.failure) {
+          } else if (state.applyForJobState == ApplyForJobState.failure) {
             showDialog<Widget>(
               context: context,
               builder: (ctx) => CustomAlertDialog(
@@ -254,7 +253,8 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
               BlocBuilder<HomeBloc, HomeState>(
                 builder: (context, state) {
                   return CustomElevatedButton(
-                      isBusy: state.viewState == ViewState.loading,
+                      isBusy:
+                          state.applyForJobState == ApplyForJobState.loading,
                       text: 'Apply Now',
                       onPressed: () {
                         context.read<HomeBloc>()
