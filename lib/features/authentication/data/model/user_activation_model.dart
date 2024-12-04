@@ -1,6 +1,5 @@
 import 'package:artisan_oga/features/authentication/domain/entities/user_activation_entity.dart';
 
-
 class UserActivationModel extends UserActivationEntity {
   const UserActivationModel({super.token, super.expiresAt});
 

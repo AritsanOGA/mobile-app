@@ -55,7 +55,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           // }
         });
         return Scaffold(
-           backgroundColor: AppColors.kwhite,
+          backgroundColor: AppColors.kwhite,
           body: Column(
             children: [
               SizedBox(

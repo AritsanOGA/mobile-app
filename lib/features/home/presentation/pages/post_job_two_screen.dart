@@ -202,8 +202,8 @@ class PostJobTwoScreen extends HookWidget {
                                   })),
                           SizedBox(height: 25.v),
 
-                      Divider(),
-                      SizedBox(height: 23.v),
+                          Divider(),
+                          SizedBox(height: 23.v),
                           CustomTextFormField(
                             title: 'How many Hirees?',
                             titleStyle: CustomTextStyles.titleMediumMedium18,

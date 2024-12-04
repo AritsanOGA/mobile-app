@@ -102,7 +102,7 @@ class JoblistingItemWidget extends StatelessWidget {
       // text: "View Job",
       // buttonStyle: CustomButtonStyles.fillPrimaryTL8,
       // buttonTextStyle: CustomTextStyles.titleSmallGray50,
-       text: '', onPressed: () {  },
+      text: '', onPressed: () {},
     );
   }
 }

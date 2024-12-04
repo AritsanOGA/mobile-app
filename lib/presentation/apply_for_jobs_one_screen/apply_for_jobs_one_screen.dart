@@ -182,8 +182,8 @@ class ApplyForJobsOneScreen extends StatelessWidget {
               ),
               SizedBox(height: 9.v),
               CustomElevatedButton(
-                text: "Apply Now", onPressed: () {  },
-      
+                text: "Apply Now", onPressed: () {},
+
                 // buttonTextStyle:
                 //     CustomTextStyles.titleLargeOnPrimaryContainerSemiBold,
               ),

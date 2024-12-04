@@ -15,6 +15,7 @@ enum PostJobState { idle, loading, success, failure }
 enum ApplyForJobState { idle, loading, success, failure }
 
 enum GetAllJobState { idle, loading, success, failure }
+
 enum GetFeaturedCandidateState { idle, loading, success, failure }
 
 enum GetFeaturedJobState { idle, loading, success, failure }

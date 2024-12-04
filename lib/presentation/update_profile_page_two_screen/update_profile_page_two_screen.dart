@@ -200,10 +200,10 @@ class UpdateProfilePageTwoScreen extends StatelessWidget {
             title: 'Password',
             controller: phoneNumberEditTextController,
             hintText: "Enter Phone Number",
-               inputFormatters: [
-                                  LengthLimitingTextInputFormatter(11),
-                                  FilteringTextInputFormatter.digitsOnly,
-                                ],
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(11),
+              FilteringTextInputFormatter.digitsOnly,
+            ],
             hintStyle: CustomTextStyles.bodyMediumGray700,
             textInputAction: TextInputAction.done,
             textInputType: TextInputType.phone,

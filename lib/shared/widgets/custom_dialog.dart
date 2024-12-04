@@ -2,7 +2,6 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/shared/widgets/app_back_drop_filter.dart';
 import 'package:flutter/material.dart';
 
-
 class CustomAlertDialog extends StatelessWidget {
   const CustomAlertDialog({
     super.key,
@@ -49,7 +48,7 @@ class CustomAlertDialog extends StatelessWidget {
                   // ),
                 ),
               ),
-             // AppSpacing.setVerticalSpace(10),
+              // AppSpacing.setVerticalSpace(10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
@@ -62,7 +61,7 @@ class CustomAlertDialog extends StatelessWidget {
                 ),
               ),
               //AppSpacing.setVerticalSpace(12),
-               Divider(
+              Divider(
                 color: AppColors.kblack,
                 endIndent: 0,
                 indent: 0,
@@ -85,7 +84,7 @@ class CustomAlertDialog extends StatelessWidget {
               ),
               if (secondaryActionText != null &&
                   onSecondaryActionPressed != null) ...[
-               // AppSpacing.setVerticalSpace(12),
+                // AppSpacing.setVerticalSpace(12),
                 const Divider(
                   color: AppColors.kblack,
                   endIndent: 0,

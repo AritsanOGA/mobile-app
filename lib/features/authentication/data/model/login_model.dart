@@ -1,6 +1,5 @@
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 
-
 class LoginModel extends LoginEntity {
   const LoginModel({
     required super.email,

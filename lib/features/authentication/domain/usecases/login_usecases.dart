@@ -4,7 +4,6 @@ import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 
-
 class LoginUseCase implements UseCase<bool, LoginEntity> {
   LoginUseCase(this.repository);
   final AuthRepository repository;

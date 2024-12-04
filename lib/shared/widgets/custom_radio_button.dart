@@ -68,7 +68,6 @@ class CustomRadioButton extends StatelessWidget {
         },
         child: Container(
           decoration: decoration,
-       
           padding: padding,
           child: (isRightCheck ?? false)
               ? rightSideRadioButton

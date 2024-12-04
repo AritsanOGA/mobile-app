@@ -59,4 +59,3 @@ class DateInputFormatter2 extends TextInputFormatter {
     );
   }
 }
-

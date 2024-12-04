@@ -1,4 +1,3 @@
-
 import 'package:artisan_oga/features/authentication/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {

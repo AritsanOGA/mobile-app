@@ -25,12 +25,11 @@ class MessagePageChattingOneScreen extends StatelessWidget {
                       style: CustomTextStyles.titleSmallOnPrimarySemiBold),
                   Spacer(),
                   CustomElevatedButton(
-                  
-                      text: "Start Conversation with Chloe", onPressed: () {  },
-                      // buttonStyle: CustomButtonStyles.fillPrimaryContainer,
-                      // buttonTextStyle:
-                      //     CustomTextStyles.labelLargeOnPrimaryContainer
-                          ),
+                    text: "Start Conversation with Chloe", onPressed: () {},
+                    // buttonStyle: CustomButtonStyles.fillPrimaryContainer,
+                    // buttonTextStyle:
+                    //     CustomTextStyles.labelLargeOnPrimaryContainer
+                  ),
                   SizedBox(height: 33.v),
                   Align(
                       alignment: Alignment.centerRight,
@@ -125,7 +124,7 @@ class MessagePageChattingOneScreen extends StatelessWidget {
                         children: [
                           Expanded(
                               child: CustomTextFormField(
-                                title:'Password' ,
+                                  title: 'Password',
                                   controller: messageController,
                                   hintText: "Message",
                                   textInputAction: TextInputAction.done,

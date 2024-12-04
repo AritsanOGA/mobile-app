@@ -24,7 +24,7 @@ class PostJobFourScreen extends HookWidget {
             backgroundColor: AppColors.kwhite,
             body: BlocConsumer<HomeBloc, HomeState>(
               listener: (context, state) {
-                if (state.postJobState == PostJobState.success ) {
+                if (state.postJobState == PostJobState.success) {
                   print('suceess');
                   Navigator.pushNamed(
                       context, AppRoutes.successfulJobApplicationPage);

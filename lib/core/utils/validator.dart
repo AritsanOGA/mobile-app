@@ -35,11 +35,11 @@ extension ValidationExtension on BuildContext {
     if (!RegExp(pattern).hasMatch(value)) return 'Invalid Password';
     return null;
   }
-  static String? dropdownValidator(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Please select an option';
-  }
-  return null; // Valid value
-}
 
+  static String? dropdownValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please select an option';
+    }
+    return null; // Valid value
+  }
 }

@@ -34,11 +34,13 @@ class JSCreateAccountPageSixScreen extends HookWidget {
             ),
             body: BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
-                if (state.jobSeekerSignUpState == JobSeekerSignUpState.success) {
+                if (state.jobSeekerSignUpState ==
+                    JobSeekerSignUpState.success) {
                   print('suceess');
                   Navigator.pushNamed(context, AppRoutes.verifyJobSeekerScreen,
                       arguments: email);
-                } else if (state.jobSeekerSignUpState == JobSeekerSignUpState.failure) {
+                } else if (state.jobSeekerSignUpState ==
+                    JobSeekerSignUpState.failure) {
                   showDialog<Widget>(
                     context: context,
                     builder: (ctx) => CustomAlertDialog(
@@ -108,7 +110,8 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                             BlocBuilder<AuthBloc, AuthState>(
                               builder: (context, state) {
                                 return CustomElevatedButton(
-                                  isBusy: state.jobSeekerSignUpState == JobSeekerSignUpState.loading,
+                                  isBusy: state.jobSeekerSignUpState ==
+                                      JobSeekerSignUpState.loading,
                                   text: "Submit",
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??

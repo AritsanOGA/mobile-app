@@ -112,10 +112,9 @@ class ActivitiesTabContainerScreenState
                           overflow: TextOverflow.ellipsis,
                           style: CustomTextStyles.titleMediumGray50Bold17))),
               CustomElevatedButton(
-                
-                  text: "Apply Now", onPressed: () {  },
-               
-                  ),
+                text: "Apply Now",
+                onPressed: () {},
+              ),
               CustomImageView(
                   imagePath: ImageConstant.img9ebdc45a3e7a600,
                   height: 197.v,

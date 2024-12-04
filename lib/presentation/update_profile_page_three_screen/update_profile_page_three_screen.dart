@@ -35,7 +35,7 @@ class UpdateProfilePageThreeScreen extends StatelessWidget {
                       Padding(
                           padding: EdgeInsets.only(left: 1.h),
                           child: CustomTextFormField(
-                            title:'Password' ,
+                              title: 'Password',
                               controller: amountController,
                               hintText: "Enter Minimum Amount",
                               hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -85,7 +85,7 @@ class UpdateProfilePageThreeScreen extends StatelessWidget {
                       Padding(
                           padding: EdgeInsets.only(left: 1.h),
                           child: CustomTextFormField(
-                            title:'Password' ,
+                              title: 'Password',
                               controller: inputHereController,
                               hintText: "Input here",
                               hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -94,13 +94,14 @@ class UpdateProfilePageThreeScreen extends StatelessWidget {
                                   .underLinePrimaryContainer)),
                       Spacer(),
                       CustomElevatedButton(
-                          text: "Save",
-                          // margin: EdgeInsets.only(left: 1.h),
-                          // buttonStyle:
-                          //     CustomButtonStyles.fillSecondaryContainerTL24,
-                          // buttonTextStyle: CustomTextStyles
-                          //     .titleLargeOnPrimaryContainerSemiBold, 
-                              onPressed: () {  },),
+                        text: "Save",
+                        // margin: EdgeInsets.only(left: 1.h),
+                        // buttonStyle:
+                        //     CustomButtonStyles.fillSecondaryContainerTL24,
+                        // buttonTextStyle: CustomTextStyles
+                        //     .titleLargeOnPrimaryContainerSemiBold,
+                        onPressed: () {},
+                      ),
                       SizedBox(height: 25.v),
                       Align(
                           alignment: Alignment.center,

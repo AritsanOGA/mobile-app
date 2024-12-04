@@ -49,7 +49,8 @@ class FormTransferPageScreen extends StatelessWidget {
                 flex: 44,
               ),
               CustomElevatedButton(
-                text: "Continue", onPressed: () {  },
+                text: "Continue",
+                onPressed: () {},
               ),
               SizedBox(height: 68.v),
               SizedBox(

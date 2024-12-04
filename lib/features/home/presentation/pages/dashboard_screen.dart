@@ -99,11 +99,13 @@ class _DashboardPageState extends State<DashboardPage> {
                 bloc: context.read<HomeBloc>()..add(HomeEvent.getFeaturedJob()),
                 //..add(event),
                 builder: (context, state) {
-                  if (state.getFeaturedJobState == GetFeaturedJobState.loading) {
+                  if (state.getFeaturedJobState ==
+                      GetFeaturedJobState.loading) {
                     return Center(child: CircularProgressIndicator());
                   }
 
-                  if (state.getFeaturedJobState == GetFeaturedJobState.failure) {
+                  if (state.getFeaturedJobState ==
+                      GetFeaturedJobState.failure) {
                     return Center(child: Text('Error: '));
                   }
 
@@ -131,7 +133,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
               SizedBox(height: 25.v),
               Padding(
-                padding:const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(left: 10),
                 child: Text(
                   'Jobs for you',
                   style: CustomTextStyles.titleLargeff3a332cSemiBold,
@@ -142,11 +144,13 @@ class _DashboardPageState extends State<DashboardPage> {
                   ..add(HomeEvent.getJobSeekerJobs()),
                 //..add(event),
                 builder: (context, state) {
-                  if (state.getJobSeekerJobState == GetJobSeekerJobState.loading) {
+                  if (state.getJobSeekerJobState ==
+                      GetJobSeekerJobState.loading) {
                     return Center(child: CircularProgressIndicator());
                   }
 
-                  if (state.getJobSeekerJobState == GetJobSeekerJobState.failure) {
+                  if (state.getJobSeekerJobState ==
+                      GetJobSeekerJobState.failure) {
                     return Center(child: Text('Error: '));
                   }
 
@@ -159,7 +163,8 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                           Text(
                             'No Job History',
-                            style: CustomTextStyles.titleMediumPrimaryContainer18,
+                            style:
+                                CustomTextStyles.titleMediumPrimaryContainer18,
                           ),
                         ],
                       ),

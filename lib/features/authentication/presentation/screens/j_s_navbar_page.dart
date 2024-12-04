@@ -24,7 +24,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return Scaffold(
-           backgroundColor: AppColors.kwhite,
+          backgroundColor: AppColors.kwhite,
           drawer: DashboardMenuPageDraweritem(),
           appBar: AppBar(
             backgroundColor: Colors.transparent,

@@ -281,6 +281,4 @@ class _SearchScreenState extends State<SearchScreenPage> {
       },
     ));
   }
-
- 
 }

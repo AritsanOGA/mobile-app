@@ -51,7 +51,7 @@ class LoginOptionsPageScreen extends StatelessWidget {
                           builder: (context) => EmployerLoginPageScreen()),
                     );
                   }),
-             
+
                   text: "Login as an Employer",
                   // buttonStyle: CustomButtonStyles.outlineGray,
                   // buttonTextStyle:
@@ -66,9 +66,7 @@ class LoginOptionsPageScreen extends StatelessWidget {
                           builder: (context) => JSLoginPageScreen()),
                     );
                   }),
-                  
                   text: "Login as a job seeker",
-               
                 ),
                 SizedBox(height: 63.v),
                 SizedBox(

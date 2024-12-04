@@ -53,4 +53,3 @@ class UserEntity extends Equatable {
         role,
       ];
 }
-

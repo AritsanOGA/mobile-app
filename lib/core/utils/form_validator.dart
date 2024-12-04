@@ -9,7 +9,6 @@ class FormValidation {
     return validateEmail ? null : 'Enter valid email';
   }
 
-
   static String? passwordValidation(String? password) {
     // Ensure password is not null
     if (password == null || password.isEmpty) {
@@ -31,15 +30,16 @@ class FormValidation {
     return null;
   }
 
-static  String? confirmPasswordValidator(String? confirmPassword, String? password) {
-  if (confirmPassword == null || confirmPassword.isEmpty) {
-    return 'Please confirm your password';
+  static String? confirmPasswordValidator(
+      String? confirmPassword, String? password) {
+    if (confirmPassword == null || confirmPassword.isEmpty) {
+      return 'Please confirm your password';
+    }
+    if (confirmPassword != password) {
+      return 'Passwords do not match';
+    }
+    return null; // Valid
   }
-  if (confirmPassword != password) {
-    return 'Passwords do not match';
-  }
-  return null; // Valid
-}
 
   static String? phoneValidation(String? phone) {
     if (phone == null || phone.isEmpty) {
@@ -49,11 +49,11 @@ static  String? confirmPasswordValidator(String? confirmPassword, String? passwo
     }
     return null;
   }
-  static String? dropdownValidator(String? value) {
-  if (value == null || value.isEmpty) {
-    return 'Please select an option';
-  }
-  return null; // Valid value
-}
 
+  static String? dropdownValidator(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please select an option';
+    }
+    return null; // Valid value
+  }
 }

@@ -8,12 +8,11 @@ class VerifyCodeEntity extends Equatable {
 
   final String email;
 
-  final String  code;
+  final String code;
 
   @override
   List<Object?> get props => [
         email,
         code,
       ];
-
 }

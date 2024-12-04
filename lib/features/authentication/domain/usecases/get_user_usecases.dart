@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 
-
 class GetUserDataUseCase implements UseCase<bool, NoParams> {
   GetUserDataUseCase(this.repository);
   final AuthRepository repository;

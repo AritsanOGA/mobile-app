@@ -108,7 +108,10 @@ class PayWithTransferPageScreen extends StatelessWidget {
                           ]),
                           textAlign: TextAlign.left),
                       Spacer(flex: 24),
-                      CustomElevatedButton(text: "Proceed", onPressed: () {  },),
+                      CustomElevatedButton(
+                        text: "Proceed",
+                        onPressed: () {},
+                      ),
                       Spacer(flex: 75),
                       SizedBox(height: 5.v),
                       Align(

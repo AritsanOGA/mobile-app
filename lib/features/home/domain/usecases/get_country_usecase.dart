@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 
 class CountryUseCase implements UseCase<List<CountryResponseEntity>, NoParams> {
   CountryUseCase(this.repository);
-  final  HomeRepository repository;
+  final HomeRepository repository;
   @override
   Future<Either<Failure, List<CountryResponseEntity>>> call(NoParams params) {
     return repository.getCountries();

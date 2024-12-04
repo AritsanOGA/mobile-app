@@ -26,10 +26,12 @@ class VerifyJobSeekerScreen extends HookWidget {
       backgroundColor: AppColors.kwhite,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state.jobSeekerVerifyCodeState == JobSeekerVerifyCodeState.success ) {
+          if (state.jobSeekerVerifyCodeState ==
+              JobSeekerVerifyCodeState.success) {
             print('suceess');
             Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
-          } else if (state.jobSeekerVerifyCodeState == JobSeekerVerifyCodeState.failure) {
+          } else if (state.jobSeekerVerifyCodeState ==
+              JobSeekerVerifyCodeState.failure) {
             showDialog<Widget>(
               context: context,
               builder: (ctx) => CustomAlertDialog(
@@ -114,7 +116,8 @@ class VerifyJobSeekerScreen extends HookWidget {
                     ),
                     SizedBox(height: 40.v),
                     CustomElevatedButton(
-                        isBusy: state.jobSeekerVerifyCodeState == JobSeekerVerifyCodeState.loading,
+                        isBusy: state.jobSeekerVerifyCodeState ==
+                            JobSeekerVerifyCodeState.loading,
                         onPressed: () {
                           context.read<AuthBloc>()
                             ..add(AuthEvent.verifyCode(VerifyCodeEntity(

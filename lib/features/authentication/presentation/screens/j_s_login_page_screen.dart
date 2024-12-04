@@ -109,7 +109,8 @@ class JSLoginPageScreen extends HookWidget {
                       BlocBuilder<AuthBloc, AuthState>(
                         builder: (context, state) {
                           return CustomElevatedButton(
-                            isBusy: state.employerLoginState == EmployerLoginState.loading,
+                            isBusy: state.employerLoginState ==
+                                EmployerLoginState.loading,
                             onPressed: () {
                               // Navigator.push(
                               //     context,

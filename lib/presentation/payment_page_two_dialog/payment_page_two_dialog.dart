@@ -30,7 +30,7 @@ class PaymentPageTwoDialog extends StatelessWidget {
           SizedBox(height: 25.v),
           CustomElevatedButton(
             // height: 44.v,
-            text: "Pay with Card", onPressed: () {  },
+            text: "Pay with Card", onPressed: () {},
             // margin: EdgeInsets.symmetric(horizontal: 24.h),
             // buttonStyle: CustomButtonStyles.fillPrimaryTL8,
             // buttonTextStyle: CustomTextStyles.titleMediumGray50Bold17,
@@ -42,7 +42,7 @@ class PaymentPageTwoDialog extends StatelessWidget {
             text: "Transfer",
             // buttonStyle: CustomButtonStyles.fillPrimaryTL8,
             // buttonTextStyle: CustomTextStyles.titleMediumGray50Bold17,
-             onPressed: () {  },
+            onPressed: () {},
           ),
           SizedBox(height: 33.v),
         ],

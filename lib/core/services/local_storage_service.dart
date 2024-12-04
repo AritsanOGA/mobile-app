@@ -49,8 +49,6 @@ class MyPref {
     box().put('user', user);
   }
 
- 
-
   static Future<void> clearBoxes() async {
     await box().clear();
   }
