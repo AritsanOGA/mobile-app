@@ -204,7 +204,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       value.fold(
           (error) => emit(state.copyWith(postJobState: PostJobState.failure)),
           (result) => emit(state.copyWith(
-              postJobState: PostJobState.success, )));
+                postJobState: PostJobState.success,
+              )));
     });
     emit(state.copyWith(postJobState: ViewState.idle));
   }
@@ -214,10 +215,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(applyForJobState: ApplyForJobState.loading));
     await _applyForJobUseCase(event.id).then((value) {
       value.fold(
-          (error) => emit(state.copyWith(applyForJobState: ApplyForJobState.failure)),
+          (error) =>
+              emit(state.copyWith(applyForJobState: ApplyForJobState.failure)),
           (result) => emit(state.copyWith(
-              applyForJobState: ApplyForJobState.success,
-            )));
+                applyForJobState: ApplyForJobState.success,
+              )));
     });
   }
 
