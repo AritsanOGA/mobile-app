@@ -24,12 +24,11 @@ class PostJobFourScreen extends HookWidget {
             backgroundColor: AppColors.kwhite,
             body: BlocConsumer<HomeBloc, HomeState>(
               listener: (context, state) {
-                if (state.viewState == ViewState.success &&
-                    state.successType == SuccessType.postJob) {
+                if (state.postJobState == PostJobState.success ) {
                   print('suceess');
                   Navigator.pushNamed(
                       context, AppRoutes.successfulJobApplicationPage);
-                } else if (state.viewState == ViewState.failure) {
+                } else if (state.postJobState == PostJobState.failure) {
                   showDialog<Widget>(
                     context: context,
                     builder: (ctx) => CustomAlertDialog(
@@ -208,7 +207,7 @@ class PostJobFourScreen extends HookWidget {
                         },
                         builder: (context, postJobRequest) {
                           return CustomElevatedButton(
-                            isBusy: state.viewState == ViewState.loading,
+                            isBusy: state.postJobState == PostJobState.loading,
                             onPressed: (() {
                               context.read<HomeBloc>().add(
                                     HomeEvent.postJob(

@@ -7308,8 +7308,7 @@ mixin _$HomeState {
   GetSkillState get getSkillState => throw _privateConstructorUsedError;
   GetCountryState get getCountryState => throw _privateConstructorUsedError;
   GetStateState get getStateState => throw _privateConstructorUsedError;
-  ViewState get viewState => throw _privateConstructorUsedError;
-  SuccessType get successType => throw _privateConstructorUsedError;
+  GetAllJobState get getAllJobState => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -7354,8 +7353,7 @@ mixin _$HomeState {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)
+            GetAllJobState getAllJobState)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -7403,8 +7401,7 @@ mixin _$HomeState {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)?
+            GetAllJobState getAllJobState)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -7452,8 +7449,7 @@ mixin _$HomeState {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)?
+            GetAllJobState getAllJobState)?
         initial,
     required TResult orElse(),
   }) =>
@@ -7527,8 +7523,7 @@ abstract class $HomeStateCopyWith<$Res> {
       GetSkillState getSkillState,
       GetCountryState getCountryState,
       GetStateState getStateState,
-      ViewState viewState,
-      SuccessType successType});
+      GetAllJobState getAllJobState});
 }
 
 /// @nodoc
@@ -7585,8 +7580,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getSkillState = null,
     Object? getCountryState = null,
     Object? getStateState = null,
-    Object? viewState = null,
-    Object? successType = null,
+    Object? getAllJobState = null,
   }) {
     return _then(_value.copyWith(
       errorMessage: freezed == errorMessage
@@ -7753,14 +7747,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.getStateState
           : getStateState // ignore: cast_nullable_to_non_nullable
               as GetStateState,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
-      successType: null == successType
-          ? _value.successType
-          : successType // ignore: cast_nullable_to_non_nullable
-              as SuccessType,
+      getAllJobState: null == getAllJobState
+          ? _value.getAllJobState
+          : getAllJobState // ignore: cast_nullable_to_non_nullable
+              as GetAllJobState,
     ) as $Val);
   }
 }
@@ -7815,8 +7805,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetSkillState getSkillState,
       GetCountryState getCountryState,
       GetStateState getStateState,
-      ViewState viewState,
-      SuccessType successType});
+      GetAllJobState getAllJobState});
 }
 
 /// @nodoc
@@ -7871,8 +7860,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getSkillState = null,
     Object? getCountryState = null,
     Object? getStateState = null,
-    Object? viewState = null,
-    Object? successType = null,
+    Object? getAllJobState = null,
   }) {
     return _then(_$InitialImpl(
       errorMessage: freezed == errorMessage
@@ -8039,14 +8027,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getStateState
           : getStateState // ignore: cast_nullable_to_non_nullable
               as GetStateState,
-      viewState: null == viewState
-          ? _value.viewState
-          : viewState // ignore: cast_nullable_to_non_nullable
-              as ViewState,
-      successType: null == successType
-          ? _value.successType
-          : successType // ignore: cast_nullable_to_non_nullable
-              as SuccessType,
+      getAllJobState: null == getAllJobState
+          ? _value.getAllJobState
+          : getAllJobState // ignore: cast_nullable_to_non_nullable
+              as GetAllJobState,
     ));
   }
 }
@@ -8141,8 +8125,7 @@ class _$InitialImpl implements _Initial {
       this.getSkillState = GetSkillState.idle,
       this.getCountryState = GetCountryState.idle,
       this.getStateState = GetStateState.idle,
-      this.viewState = ViewState.idle,
-      this.successType = SuccessType.none})
+      this.getAllJobState = GetAllJobState.idle})
       : _featureCandidateList = featureCandidateList,
         _allJobList = allJobList,
         _employerJobList = employerJobList,
@@ -8380,14 +8363,11 @@ class _$InitialImpl implements _Initial {
   final GetStateState getStateState;
   @override
   @JsonKey()
-  final ViewState viewState;
-  @override
-  @JsonKey()
-  final SuccessType successType;
+  final GetAllJobState getAllJobState;
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, viewState: $viewState, successType: $successType)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -8470,10 +8450,8 @@ class _$InitialImpl implements _Initial {
                 other.getCountryState == getCountryState) &&
             (identical(other.getStateState, getStateState) ||
                 other.getStateState == getStateState) &&
-            (identical(other.viewState, viewState) ||
-                other.viewState == viewState) &&
-            (identical(other.successType, successType) ||
-                other.successType == successType));
+            (identical(other.getAllJobState, getAllJobState) ||
+                other.getAllJobState == getAllJobState));
   }
 
   @override
@@ -8520,8 +8498,7 @@ class _$InitialImpl implements _Initial {
         getSkillState,
         getCountryState,
         getStateState,
-        viewState,
-        successType
+        getAllJobState
       ]);
 
   @JsonKey(ignore: true)
@@ -8575,8 +8552,7 @@ class _$InitialImpl implements _Initial {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)
+            GetAllJobState getAllJobState)
         initial,
   }) {
     return initial(
@@ -8621,8 +8597,7 @@ class _$InitialImpl implements _Initial {
         getSkillState,
         getCountryState,
         getStateState,
-        viewState,
-        successType);
+        getAllJobState);
   }
 
   @override
@@ -8670,8 +8645,7 @@ class _$InitialImpl implements _Initial {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)?
+            GetAllJobState getAllJobState)?
         initial,
   }) {
     return initial?.call(
@@ -8716,8 +8690,7 @@ class _$InitialImpl implements _Initial {
         getSkillState,
         getCountryState,
         getStateState,
-        viewState,
-        successType);
+        getAllJobState);
   }
 
   @override
@@ -8765,8 +8738,7 @@ class _$InitialImpl implements _Initial {
             GetSkillState getSkillState,
             GetCountryState getCountryState,
             GetStateState getStateState,
-            ViewState viewState,
-            SuccessType successType)?
+            GetAllJobState getAllJobState)?
         initial,
     required TResult orElse(),
   }) {
@@ -8813,8 +8785,7 @@ class _$InitialImpl implements _Initial {
           getSkillState,
           getCountryState,
           getStateState,
-          viewState,
-          successType);
+          getAllJobState);
     }
     return orElse();
   }
@@ -8891,8 +8862,7 @@ abstract class _Initial implements HomeState {
       final GetSkillState getSkillState,
       final GetCountryState getCountryState,
       final GetStateState getStateState,
-      final ViewState viewState,
-      final SuccessType successType}) = _$InitialImpl;
+      final GetAllJobState getAllJobState}) = _$InitialImpl;
 
   @override
   String? get errorMessage;
@@ -8977,9 +8947,7 @@ abstract class _Initial implements HomeState {
   @override
   GetStateState get getStateState;
   @override
-  ViewState get viewState;
-  @override
-  SuccessType get successType;
+  GetAllJobState get getAllJobState;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

@@ -86,7 +86,9 @@ class HomeState with _$HomeState {
     @Default(GetSkillState.idle) GetSkillState getSkillState,
     @Default(GetCountryState.idle) GetCountryState getCountryState,
     @Default(GetStateState.idle) GetStateState getStateState,
-    @Default(ViewState.idle) ViewState viewState,
-    @Default(SuccessType.none) SuccessType successType,
+    @Default(GetAllJobState.idle) GetAllJobState getAllJobState
+
+
+  
   }) = _Initial;
 }

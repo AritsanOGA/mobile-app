@@ -27,10 +27,10 @@ class EmployerLoginPageScreen extends HookWidget {
         // resizeToAvoidBottomInset: false,
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
-            if (state.viewState == ViewState.success) {
+            if (state.employerLoginState == EmployerLoginState.success) {
               print('suceess');
               Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
-            } else if (state.viewState == ViewState.failure) {
+            } else if (state.employerLoginState == EmployerLoginState.failure) {
               showDialog<Widget>(
                 context: context,
                 builder: (ctx) => CustomAlertDialog(
@@ -116,7 +116,8 @@ class EmployerLoginPageScreen extends HookWidget {
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return CustomElevatedButton(
-                              isBusy: state.viewState == ViewState.loading,
+                              isBusy: state.employerLoginState ==
+                                  EmployerLoginState.loading,
                               onPressed: () {
                                 if (formKey.currentState?.validate() ?? false) {
                                   context.read<AuthBloc>().add(
