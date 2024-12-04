@@ -47,17 +47,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       body: LoginModel.fromEntity(entity).toJson(),
     );
 
-    //   if (result['msg'] == 'Success') {
-    //     return AuthResultModel.fromJson(result.data as Map<String, dynamic>);
-    //   } else {
-    //     //result.data['data'] ?? 'Login failed';
-    //     throw Exception(result['data'] ?? 'Login failed');
-    //   }
-    // }
-    // //  catch (e) {
-    // //   throw Exception('An error occurred during login: $e');
-    // // }
-
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
   }
 
@@ -71,14 +60,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'Accept': 'application/json',
       },
     );
-    // if (result['msg'] == 'Success') {
-    //   return true;
-    // }
-
-    return result;
-
-    //success;
-    //AuthResultModel.fromJson(result as Map<String, dynamic>);
+    return true;
   }
 
   @override

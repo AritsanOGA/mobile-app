@@ -1,3 +1,4 @@
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -27,28 +28,32 @@ class SuccessfulJobApplocationScreen extends StatelessWidget {
               SvgPicture.asset(ImageConstant.imgVectorPrimary),
               SizedBox(height: 23.v),
               Text(
-                "Application Sent",
-                style: CustomTextStyles.titleLargePrimaryBold,
+                "Job posted successfully",
+                style: CustomTextStyles.titleMediumPrimaryContainer18,
               ),
               SizedBox(height: 15.v),
-              Container(
-                width: 347.h,
-                margin: EdgeInsets.symmetric(horizontal: 16.h),
-                child: Text(
-                  "You will be notified once the employer checks your application.",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyLarge,
-                ),
-              ),
+              // Container(
+              //   width: 347.h,
+              //   margin: EdgeInsets.symmetric(horizontal: 16.h),
+              //   child: Text(
+              //     "You will be notified once the employer checks your application.",
+              //     maxLines: 2,
+              //     overflow: TextOverflow.ellipsis,
+              //     textAlign: TextAlign.center,
+              //     style: theme.textTheme.bodyLarge,
+              //   ),
+              // ),
               Spacer(
                 flex: 56,
               ),
               CustomElevatedButton(
                 text: "Back to Home",
                 onPressed: () {
-                  Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => JobSeekerNavBarPage()));
+                  //  Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
                 },
               ),
               SizedBox(height: 34.v),

@@ -5,6 +5,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/j_s_cre
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/splash_page.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -63,7 +64,7 @@ class AppRoutes {
   static const String signupOptionsPageScreen = '/signup_options_page_screen';
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
-
+  static const String successScreen = '/success_page_screen';
   static const String employerSignUppageScreen = '/employer_sign_uppage_screen';
 
   static const String employerSignuppageOneScreen =
@@ -262,6 +263,15 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerNavBarPage(),
         );
+      case successScreen:
+        final args = settings.arguments as Map<String, dynamic>; // Cast to Map
+
+        return AppPageRouteBuilder(
+          navigateTo: SuccessScreen(
+            message: args['message'] as String, // Extract 'message'
+            onTap: args['onTap'] as VoidCallback, // Extract 'onTap'
+          ),
+        );
       case signupOptionsPageScreen:
         return AppPageRouteBuilder(
           navigateTo: const SignupOptionsPageScreen(),
@@ -274,6 +284,10 @@ class AppRoutes {
       case employerSignUppageScreen:
         return AppPageRouteBuilder(
           navigateTo: EmployerSignUpPageScreen(),
+        );
+      case jSLoginPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JSLoginPageScreen(),
         );
 
       case employerSignuppageOneScreen:

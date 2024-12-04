@@ -172,8 +172,8 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                               streetAddress:
                                                   streetaddressController.text,
                                               country:
-                                                  state.country?.id.toString(),
-                                              state: state.state?.name,
+                                                  state.country?.id.toString() ?? '',
+                                              state: state.state?.name ?? '',
                                               jobType: state.jobType,
                                               city: cityController.text,
                                               dateOFBirth:

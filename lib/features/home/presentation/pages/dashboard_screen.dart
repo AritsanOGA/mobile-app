@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -72,12 +73,12 @@ class _DashboardPageState extends State<DashboardPage> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Welcome back, ",
+                          text: "Welcome back,  ",
                           style: CustomTextStyles.titleLargeff3a332cSemiBold,
                         ),
                         TextSpan(
-                          text: 'hi',
-                          // jobseekerInfo["data"]["full_name"],
+                          text:
+                              '${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
                           style: CustomTextStyles.titleLargefff7941e,
                         ),
                       ],
@@ -87,6 +88,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
               SizedBox(height: 19.v),
+              SizedBox(height: 25.v),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
@@ -178,29 +180,35 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemCount: state.jobSeekerJobList.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          leading: CachedNetworkImage(
-                            imageUrl: 'https://picsum.photos/250?image=9',
+                          leading: SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: CachedNetworkImage(
+                              imageUrl: 'https://picsum.photos/250?image=9',
 
-                            //  state.jobSeekerJobList[index].profileImage,
-                            fit: BoxFit.cover,
-                            progressIndicatorBuilder:
-                                (context, url, downloadProgress) =>
-                                    const Center(),
-                            imageBuilder: (context, imageProvider) => Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                // borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: CachedNetworkImageProvider(
-                                      'https://picsum.photos/250?image=9'),
-                                  fit: BoxFit.cover,
+                              //  state.jobSeekerJobList[index].profileImage,
+                              fit: BoxFit.cover,
+
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) =>
+                                      const Center(),
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                // width: 50,
+                                // height: 50,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  // borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image:
+                                        imageProvider, // Use the provided imageProvider
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
                             ),
-                            errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
                           ),
                           title: Text(
                             state.jobSeekerJobList[index].jobTitle ?? '',
@@ -566,13 +574,19 @@ class FeaturedJobWidget extends StatelessWidget {
         ],
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(
-          featuredJobResponseEntity.industry ?? '',
-          style: CustomTextStyles.titleLargeGray50Bold,
+        Container(
+          width: 260.h,
+          child: Text(
+            softWrap: false,
+            featuredJobResponseEntity.industry ?? '',
+            style: theme.textTheme.titleLarge!.copyWith(
+                color: appTheme.gray50,
+                fontSize: 23.fSize,
+                fontWeight: FontWeight.w700,
+                overflow: TextOverflow.ellipsis),
+          ),
         ),
-        // SizedBox(
-        //   height: 8,
-        // ),
+
         Align(
             alignment: Alignment.centerRight,
             child: SvgPicture.asset(

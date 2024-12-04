@@ -202,11 +202,13 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(
-                                                  category:
-                                                      state.category?.name,
+                                                  category: state.category?.id
+                                                          .toString() ??
+                                                      '',
                                                   yearsOfExperience:
                                                       yearsController.text,
-                                                  skill: state.skills?.name,
+                                                  skill:
+                                                      state.skills?.name ?? '',
                                                   resume: state.resume,
                                                   describeYourRole:
                                                       whatYouDoController

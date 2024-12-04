@@ -50,24 +50,15 @@ class AuthRepositoryImpl implements AuthRepository {
       print('detail ${UserService().authData}');
       return const Right(true);
     } on ServerException catch (e) {
-      print('Caught serverexception: ${e.toString()}');
-      return Left(ServerFailure(message: e.toString()));
-    } on CachedException catch (e) {
-      print('Caught cascheexception: ${e.toString()}');
       return Left(ServerFailure(message: e.message));
-    } catch (e, s) {
-      String errorMessage = e.toString();
-      if (errorMessage.startsWith('Exception:')) {
-        errorMessage = errorMessage.replaceFirst('Exception: ', '');
-      }
-
-      debugPrint(s.toString());
-      print('Caught exception: ${e.toString()}');
-      return Left(
-        ServerFailure(message: errorMessage
-            //'hello',
-            //AppStrings.genericErrorMessage,
-            ),
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
       );
     }
   }

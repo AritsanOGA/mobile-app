@@ -64,7 +64,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
-
+    on<_SelectPassport>(_onSelectPassport);
     on<_SelectResume>(_onSelectResume);
     on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
@@ -131,11 +131,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     await _registerEmployerUseCase(event.param).then((value) {
       value.fold(
-          (error) => emit(
-              state.copyWith(employerSignUpState: EmployerSignUpState.failure)),
+          (error) => emit(state.copyWith(
+              employerSignUpState: EmployerSignUpState.failure,
+              errorMessage: error.message)),
           (result) => emit(state.copyWith(
               employerSignUpState: EmployerSignUpState.success)));
     });
+
     emit(state.copyWith(employerSignUpState: EmployerSignUpState.idle));
   }
 
@@ -150,11 +152,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             errorMessage: error.message)),
         (result) => emit(
             state.copyWith(employerLoginState: EmployerLoginState.success)));
-    print(' ${state.errorMessage}');
+    emit(state.copyWith(employerLoginState: EmployerLoginState.idle));
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<AuthState> emit) async {
-    // emit(state.copyWith(getStateState: GetStateState.loading));
+    emit(state.copyWith(getStateState: GetStateState.loading));
     final result = await _stateUseCase(event.id);
     result.fold(
       (error) => emit(
@@ -176,7 +178,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onGetCountries(
       _GetCountries event, Emitter<AuthState> emit) async {
-    //emit(state.copyWith(getCountryState: GetCountryState.loading));
+    emit(state.copyWith(getCountryState: GetCountryState.loading));
     final result = await _countryUseCase(NoParams());
     result.fold(
       (error) => emit(
@@ -203,7 +205,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await _registerJobSeekerUseCase(event.param).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
-              jobSeekerSignUpState: JobSeekerSignUpState.failure)),
+              jobSeekerSignUpState: JobSeekerSignUpState.failure,
+              errorMessage: error.message)),
           (result) => emit(state.copyWith(
                 jobSeekerSignUpState: JobSeekerSignUpState.success,
               )));
@@ -222,7 +225,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetCategory(event, Emitter<AuthState> emit) async {
-    //emit(state.copyWith(getCategoryState: GetCategoryState.loading));
+    emit(state.copyWith(getCategoryState: GetCategoryState.loading));
     final result = await _categoryUseCase(NoParams());
     result.fold(
       (error) => emit(
@@ -243,7 +246,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<AuthState> emit) async {
-    // emit(state.copyWith(getSkillState: GetSkillState.loading));
+    emit(state.copyWith(getSkillState: GetSkillState.loading));
     final result = await _skillUseCase(event.id);
     result.fold(
       (error) => emit(
@@ -260,7 +263,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(getSkillState: GetSkillState.idle));
-    print('skill ${state.states}');
   }
 
   FutureOr<void> _onUpdateSelectedSkill(
@@ -280,10 +282,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(file: File(image)));
   }
 
+  FutureOr<void> _onSelectPassport(
+      _SelectPassport event, Emitter<AuthState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    emit(state.copyWith(picture: File(image)));
+  }
+
   FutureOr<void> _onSelectResume(
       _SelectResume event, Emitter<AuthState> emit) async {
     final resumeFile = await _filePickerService.pickFiles(['pdf']);
-    print('fileeee $resumeFile');
+
     if (resumeFile == null) return;
     emit(state.copyWith(resume: File(resumeFile)));
   }
@@ -305,7 +314,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await _verifyCodeUseCase(event.value).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
-              employerVerifyCodeState: EmployerVerifyCodeState.failure)),
+              employerVerifyCodeState: EmployerVerifyCodeState.failure,
+              errorMessage: error.message)),
           (result) => emit(state.copyWith(
               employerVerifyCodeState: EmployerVerifyCodeState.success)));
     });

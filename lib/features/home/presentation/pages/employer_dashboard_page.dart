@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
@@ -67,12 +68,12 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Welcome back, ",
+                          text: "Welcome back,",
                           style: CustomTextStyles.titleLargeff3a332cSemiBold,
                         ),
                         TextSpan(
-                          text: '',
-                          //employer_info["data"]["full_name"],
+                          text:
+                              ' ${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
                           style: CustomTextStyles.titleLargefff7941e,
                         ),
                       ],

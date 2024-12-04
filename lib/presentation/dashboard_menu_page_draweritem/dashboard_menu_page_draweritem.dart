@@ -228,8 +228,8 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
             SizedBox(height: 39.v),
             GestureDetector(
               onTap: () {
-                Navigator.pushReplacementNamed(
-                    context, AppRoutes.welcomePageScreen);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, AppRoutes.welcomePageScreen, (route) => false);
                 // Navigator.push(
                 //     context,
                 //     PageTransition(

@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -134,12 +135,17 @@ class JSLoginPageScreen extends HookWidget {
                       SizedBox(height: 27.v),
                       GestureDetector(
                         onTap: (() {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    JSCreateAccountPageOneScreen()),
-                          );
+
+                          print('omo');
+                
+                          //            Navigator.pushNamed(context, AppRoutes.successScreen,
+                          // arguments: email);
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) =>
+                          //           SuccessScreen()),
+                          // );
                         }),
                         child: RichText(
                           text: TextSpan(

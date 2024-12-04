@@ -32,7 +32,19 @@ class VerifyEmployerScreen extends HookWidget {
           if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.success) {
             print('suceess');
-            Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
+            Navigator.pushNamed(
+              context,
+              AppRoutes.successScreen,
+              arguments: {
+                'message': 'Account Created',
+                'onTap': () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.employerLoginPageScreen,
+                  );
+                },
+              },
+            );
           } else if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.failure) {
             showDialog<Widget>(

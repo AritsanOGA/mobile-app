@@ -135,8 +135,16 @@ class ApiServiceImpl implements ApiService {
         data: body,
         options: Options(
           headers: headers,
+          // validateStatus: (status) => status != null && status < 400,
+
           followRedirects: false,
           validateStatus: (status) => true,
+          //  validateStatus: (status) => status != null && status < 400,
+
+          // validateStatus: (status) =>
+          //     status != null && status >= 200 && status < 300
+          // validateStatus: (status) => status != null && status < 500,
+
           // validateStatus: (status) {
           //   return status! < 500;
           // }
@@ -145,15 +153,27 @@ class ApiServiceImpl implements ApiService {
         //   headers: headers,
         // ),
       );
+      if (response.data?['msg'] == 'Error') {
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          message: response.data?['data'],
+        );
+      }
       _log.i('Response from $url \n${response.data}');
 
       return response.data;
     } on DioException catch (error, trace) {
+      if (error.response?.statusCode == 422) {
+        // Handle 422 errors specifically
+        final errorDetails = error.response?.data['data'] ?? 'Validation error';
+        throw Exception('Validation failed: $errorDetails');
+      }
       _log.e('Error from ', error: error.message);
       print('errrpr ni ${error.response?.data['data']}');
       throw ServerException(
         trace: trace,
-        message: error.response?.data['errors']['categories'][0] as String?,
+        message: error.response?.data['data'] as String?,
       );
     }
   }
