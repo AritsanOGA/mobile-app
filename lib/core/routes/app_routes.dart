@@ -36,7 +36,7 @@ import '../../presentation/accept_reject_page_screen/accept_reject_page_screen.d
 import '../../presentation/candidates_profile_accept_page_screen/candidates_profile_accept_page_screen.dart';
 import '../../presentation/message_page_screen/message_page_screen.dart';
 import '../../presentation/message_page_chatting_one_screen/message_page_chatting_one_screen.dart';
-import '../../presentation/change_password_page_screen/change_password_page_screen.dart';
+import '../../features/settings/presentation/pages/change_password_page_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
 import '../../presentation/verification_page_one_screen/verification_page_one_screen.dart';
