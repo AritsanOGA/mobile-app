@@ -11,6 +11,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
+import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -65,6 +66,8 @@ class AppRoutes {
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
   static const String successScreen = '/success_page_screen';
+  static const String successfulApplicationScreen =
+      '/success_application_screen';
   static const String employerSignUppageScreen = '/employer_sign_uppage_screen';
 
   static const String employerSignuppageOneScreen =
@@ -103,6 +106,7 @@ class AppRoutes {
   static const String formTransferPageScreen = '/form_transfer_page_screen';
 
   static const String manageJobsPage = '/manage_jobs_page';
+  static const String successfulJobPostedPage = '/successful-job-posted_page';
   static const String successfulJobApplicationPage =
       '/successful-job-applicaion_page';
   static const String viewCandidatesPageScreen = '/view_candidates_page_screen';
@@ -151,6 +155,7 @@ class AppRoutes {
 
   static const String dashboardScreen = '/dashboard_screen';
 
+  // static const String successfulJobPostedPage = '/successful_job_posted_screen';
   static const String searchJobResultPageScreen =
       '/search_job_result_page_screen';
 
@@ -191,33 +196,33 @@ class AppRoutes {
   static const String verifyJobSeekerScreen = '/verify_job_seeker_screen';
 
   static Map<String, WidgetBuilder> routes = {
-    welcomePageScreen: (context) => WelcomePageScreen(),
-    signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
-    loginOptionsPageScreen: (context) => LoginOptionsPageScreen(),
-    employerSignUppageScreen: (context) => EmployerSignUpPageScreen(),
-    //employerSignuppageOneScreen: (context) => EmployerSignuppageOneScreen(),
-    successfulPageScreen: (context) => SuccessfulPageScreen(),
-    employerLoginPageScreen: (context) => EmployerLoginPageScreen(),
-    searchResultPageScreen: (context) => SearchResultPageScreen(),
-    paymentsMadePageScreen: (context) => PaymentsMadePageScreen(),
-    postJobTwoScreen: (context) => PostJobTwoScreen(),
-    postJobThreeScreen: (context) => PostJobThreeScreen(),
-    postJobFourScreen: (context) => PostJobFourScreen(),
-    paymentPageScreen: (context) => PaymentPageScreen(),
-    payWithCardPageScreen: (context) => PayWithCardPageScreen(),
-    paymentSuccessfulScreen: (context) => PaymentSuccessfulScreen(),
-    payWithTransferPageScreen: (context) => PayWithTransferPageScreen(),
-    formTransferPageOneScreen: (context) => FormTransferPageOneScreen(),
-    formTransferPageScreen: (context) => FormTransferPageScreen(),
-    viewCandidatesPageScreen: (context) => ViewCandidatesPageScreen(
-          job_id: "",
-        ),
-    acceptRejectPageScreen: (context) => AcceptRejectPageScreen(),
-    candidatesProfileAcceptPageScreen: (context) =>
-        CandidatesProfileAcceptPageScreen(),
-    messagePageScreen: (context) => MessagePageScreen(),
-    messagePageChattingOneScreen: (context) => MessagePageChattingOneScreen(),
-    changePasswordPageScreen: (context) => ChangePasswordPageScreen(),
+    // welcomePageScreen: (context) => WelcomePageScreen(),
+    // signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
+    // loginOptionsPageScreen: (context) => LoginOptionsPageScreen(),
+    // employerSignUppageScreen: (context) => EmployerSignUpPageScreen(),
+    // //employerSignuppageOneScreen: (context) => EmployerSignuppageOneScreen(),
+    // successfulPageScreen: (context) => SuccessfulPageScreen(),
+    // employerLoginPageScreen: (context) => EmployerLoginPageScreen(),
+    // searchResultPageScreen: (context) => SearchResultPageScreen(),
+    // paymentsMadePageScreen: (context) => PaymentsMadePageScreen(),
+    // postJobTwoScreen: (context) => PostJobTwoScreen(),
+    // postJobThreeScreen: (context) => PostJobThreeScreen(),
+    // postJobFourScreen: (context) => PostJobFourScreen(),
+    // paymentPageScreen: (context) => PaymentPageScreen(),
+    // payWithCardPageScreen: (context) => PayWithCardPageScreen(),
+    // paymentSuccessfulScreen: (context) => PaymentSuccessfulScreen(),
+    // payWithTransferPageScreen: (context) => PayWithTransferPageScreen(),
+    // formTransferPageOneScreen: (context) => FormTransferPageOneScreen(),
+    // formTransferPageScreen: (context) => FormTransferPageScreen(),
+    // viewCandidatesPageScreen: (context) => ViewCandidatesPageScreen(
+    //       job_id: "",
+    //     ),
+    // acceptRejectPageScreen: (context) => AcceptRejectPageScreen(),
+    // candidatesProfileAcceptPageScreen: (context) =>
+    //     CandidatesProfileAcceptPageScreen(),
+    // messagePageScreen: (context) => MessagePageScreen(),
+    // messagePageChattingOneScreen: (context) => MessagePageChattingOneScreen(),
+    // changePasswordPageScreen: (context) => ChangePasswordPageScreen(),
     //updateProfilePageScreen: (context) => UpdateProfilePageScreen(),
     // jSCreateAccountPageThreeScreen: (context) =>
     //     JSCreateAccountPageThreeScreen(),
@@ -227,22 +232,22 @@ class AppRoutes {
     // jSCreateAccountPageScreen: (context) => JSCreateAccountPageFiveScreen(),
     // jSCreateAccountPageTwoScreen: (context) => JSCreateAccountPageFiveScreen(),
     // jSCreateAccountPageOneScreen: (context) => JSCreateAccountPageOneScreen(),
-    verificationPageOneScreen: (context) => VerificationPageOneScreen(),
-    jSLoginPageScreen: (context) => JSLoginPageScreen(),
-    dashboardScreen: (context) => DashboardPage(),
-    searchJobResultPageScreen: (context) => SearchJobResultPageScreen(),
-    notificationBarPageScreen: (context) => NotificationBarPageScreen(),
-    applyForJobsOneScreen: (context) => ApplyForJobsOneScreen(),
-    applyForJobsScreen: (context) => SuccessfulJobApplocationScreen(),
-    activitiesTabContainerScreen: (context) => ActivitiesTabContainerScreen(),
-    messagePageOneScreen: (context) => MessagePageOneScreen(),
-    messagePageChattingScreen: (context) => MessagePageChattingScreen(),
-    settingsPageOneScreen: (context) => SettingsPageOneScreen(),
-    changePasswordPageOneScreen: (context) => ChangePasswordPageOneScreen(),
-    updateProfilePageTwoScreen: (context) => UpdateProfilePageTwoScreen(),
-    updateProfilePageOneScreen: (context) => UpdateProfilePageOneScreen(),
-    updateProfilePageThreeScreen: (context) => UpdateProfilePageThreeScreen(),
-    appNavigationScreen: (context) => AppNavigationScreen()
+    // verificationPageOneScreen: (context) => VerificationPageOneScreen(),
+    // jSLoginPageScreen: (context) => JSLoginPageScreen(),
+    // dashboardScreen: (context) => DashboardPage(),
+    // searchJobResultPageScreen: (context) => SearchJobResultPageScreen(),
+    // notificationBarPageScreen: (context) => NotificationBarPageScreen(),
+    // applyForJobsOneScreen: (context) => ApplyForJobsOneScreen(),
+    // applyForJobsScreen: (context) => SuccessfulJobApplocationScreen(),
+    // activitiesTabContainerScreen: (context) => ActivitiesTabContainerScreen(),
+    // messagePageOneScreen: (context) => MessagePageOneScreen(),
+    // messagePageChattingScreen: (context) => MessagePageChattingScreen(),
+    // settingsPageOneScreen: (context) => SettingsPageOneScreen(),
+    // changePasswordPageOneScreen: (context) => ChangePasswordPageOneScreen(),
+    // updateProfilePageTwoScreen: (context) => UpdateProfilePageTwoScreen(),
+    // updateProfilePageOneScreen: (context) => UpdateProfilePageOneScreen(),
+    // updateProfilePageThreeScreen: (context) => UpdateProfilePageThreeScreen(),
+    // appNavigationScreen: (context) => AppNavigationScreen()
   };
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -268,8 +273,8 @@ class AppRoutes {
 
         return AppPageRouteBuilder(
           navigateTo: SuccessScreen(
-            message: args['message'] as String, // Extract 'message'
-            onTap: args['onTap'] as VoidCallback, // Extract 'onTap'
+            message: args['message'] as String,
+            onTap: args['onTap'] as VoidCallback,
           ),
         );
       case signupOptionsPageScreen:
@@ -313,6 +318,7 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulPageScreen(),
         );
+
       case feauredJobDetails:
         final model = settings.arguments as FeaturedJobResponseEntity;
         return AppPageRouteBuilder(
@@ -367,11 +373,15 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerDashboardPage(),
         );
+
+      case successfulJobPostedPage:
+        return AppPageRouteBuilder(
+          navigateTo: const SuccessfulJobPostedPage(),
+        );
       case successfulJobApplicationPage:
         return AppPageRouteBuilder(
-          navigateTo: const SuccessfulJobApplocationScreen(),
+          navigateTo: const SuccessfulJobApplicationPage(),
         );
-
       // case reviewSummaryPage:
       //   return AppPageRouteBuilder(
       //     navigateTo: const ReviewSummary(),

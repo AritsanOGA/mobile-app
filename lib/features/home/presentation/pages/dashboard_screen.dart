@@ -46,7 +46,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 Scaffold.of(context).openDrawer();
               },
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 20),
                 child: CircleAvatar(
                     backgroundColor: Colors.white,
                     child:
@@ -73,7 +73,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Welcome back,  ",
+                          text: "Welcome back, ",
                           style: CustomTextStyles.titleLargeff3a332cSemiBold,
                         ),
                         TextSpan(
@@ -173,8 +173,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     );
                   }
 
-                  return SizedBox(
-                    height: 400.h,
+                  return Expanded(
+                
                     // width: 400.v,
                     child: ListView.builder(
                       itemCount: state.jobSeekerJobList.length,
@@ -485,12 +485,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                                                     0.6),
                                                         textColor: Colors.white,
                                                         fontSize: 16.0),
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              SuccessfulJobApplocationScreen()),
-                                                    )
+                                                    // Navigator.push(
+                                                    //   context,
+                                                    //   MaterialPageRoute(
+                                                    //       builder: (context) =>
+                                                    //           SuccessfulJobApplocationScreen()),
+                                                    // )
                                                   }
                                                 else
                                                   {

@@ -13,10 +13,10 @@ class EmployerNavBarPage extends StatelessWidget {
   EmployerNavBarPage({super.key});
   final List<Widget> pages = [
     EmployerDashboardPage(),
-    const Center(child: Text('Profile Page')),
+    const Center(child: Text('Candidate Page')),
     //ViewAllCandidatesPageScreen(),
     PostJobOnePage(),
-    const Center(child: Text('Profile Page')),
+    const Center(child: Text('Setting Page')),
     //   SettingsPageOneScreen()
   ];
 

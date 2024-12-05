@@ -28,7 +28,7 @@ class PostJobFourScreen extends HookWidget {
               listener: (context, state) {
                 if (state.postJobState == PostJobState.success) {
                   Navigator.pushNamed(
-                      context, AppRoutes.successfulJobApplicationPage);
+                      context, AppRoutes.successfulJobPostedPage);
                 } else if (state.postJobState == PostJobState.failure) {
                   showDialog<Widget>(
                     context: context,

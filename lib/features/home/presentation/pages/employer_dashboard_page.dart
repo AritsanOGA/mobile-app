@@ -41,7 +41,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                 Scaffold.of(context).openDrawer();
               },
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 20),
                 child: CircleAvatar(
                     backgroundColor: Colors.white,
                     child:
@@ -68,12 +68,12 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Welcome back,",
+                          text: "Welcome back, ",
                           style: CustomTextStyles.titleLargeff3a332cSemiBold,
                         ),
                         TextSpan(
                           text:
-                              ' ${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
+                              '${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
                           style: CustomTextStyles.titleLargefff7941e,
                         ),
                       ],

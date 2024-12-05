@@ -3,6 +3,10 @@
 import 'dart:convert';
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
+import 'package:artisan_oga/core/routes/app_routes.dart';
+import 'package:artisan_oga/core/services/local_storage.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
+import 'package:artisan_oga/presentation/welcome_page_screen/welcome_page_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -52,7 +56,7 @@ abstract class ApiService {
 }
 
 class ApiServiceImpl implements ApiService {
-  ApiServiceImpl(this._dio) {
+  ApiServiceImpl(this._dio, this.localStorage) {
     _dio.options.baseUrl = AppApiEndpoint.baseUri.toString();
     _dio.options.sendTimeout = Duration(seconds: AppApiEndpoint.sendTimeout);
     _dio.options.receiveTimeout =
@@ -60,20 +64,25 @@ class ApiServiceImpl implements ApiService {
 
     _dio.interceptors.add(
       InterceptorsWrapper(
-        onError: (e, handler) {
-          debugPrint('Error: ${e.message}');
-          // if (e.message.contains('403')) {
-          //   debugPrint('${AppRouter().navigatorKey.currentContext}');
-          //   MyApp.appRouter.navigatorKey.currentContext?.navigator.replaceNamed(
-          //     LoginSignupPage.routeName,
-          //   );
-          // }
-          handler.next(e);
+        onError: (e, handler) async {
+          if (e.response!.data['message'] == 'Unauthenticated') {
+            await refreshToken();
+
+            String refreshTokens =
+                localStorage.getFromDisk('refreshToken').toString();
+            print('neereftoken$refreshTokens');
+            e.requestOptions.headers['Authorization'] = 'Bearer $refreshTokens';
+
+            return handler.resolve(await _retry(e.requestOptions));
+          }
+          return handler.next(e);
         },
         onRequest: (r, handler) {
+          print('hoohh');
           handler.next(r);
         },
         onResponse: (r, handler) {
+          print('redddd');
           handler.next(r);
         },
       ),
@@ -83,6 +92,7 @@ class ApiServiceImpl implements ApiService {
   }
   final _log = Logger();
   final Dio _dio;
+  final LocalStorageService localStorage;
 
   @override
   Future<dynamic> get({
@@ -285,5 +295,51 @@ class ApiServiceImpl implements ApiService {
         message: error.response?.data['message'] as String?,
       );
     }
+  }
+
+  Future<void> refreshToken() async {
+    final response = await _dio.post(
+      AppApiEndpoint.refreshToken.toString(),
+      data: {'rtoken': '${UserService().authData?.user.refreshToken}'},
+      options: Options(
+        headers: {
+          'Authorization': 'Bearer ${UserService().authData?.user.token}',
+          'Content-Type': 'application/json',
+        },
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      final newRefreshToken = response.data['data']['token'];
+      print('hello${response.data['data']['token']}');
+      localStorage.saveToDisk('refreshToken', newRefreshToken);
+      print('new ref${localStorage.getFromDisk('refreshToken')}');
+    } else {
+      await Navigator.pushAndRemoveUntil(
+        AppRoutes.navigatorKey.currentContext!,
+        MaterialPageRoute<Widget>(
+          builder: (_) => WelcomePageScreen(
+            key: UniqueKey(),
+          ),
+        ),
+        (route) => false,
+      );
+    }
+  }
+
+  Future<Response<dynamic>> _retry(RequestOptions requestOption) {
+    final option = Options(
+      method: requestOption.method,
+      headers: requestOption.headers,
+      sendTimeout: const Duration(seconds: 5),
+    );
+    print('christ on RETRY ${requestOption.path}');
+    print('christ on HEADER ${option.headers}');
+    return _dio.request(
+      requestOption.path,
+      data: requestOption.data,
+      queryParameters: requestOption.queryParameters,
+      options: option,
+    );
   }
 }

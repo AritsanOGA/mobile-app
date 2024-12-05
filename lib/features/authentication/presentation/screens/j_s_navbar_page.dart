@@ -26,27 +26,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
         return Scaffold(
           backgroundColor: AppColors.kwhite,
           drawer: DashboardMenuPageDraweritem(),
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            leadingWidth: 52.h,
-            leading: Builder(
-              builder: (BuildContext context) {
-                return GestureDetector(
-                  onTap: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        child: SvgPicture.asset(
-                            "assets/images/Vectorsvg_menu.svg")),
-                  ),
-                );
-              },
-            ),
-            actions: [],
-          ),
+
           body: pages[state.selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,

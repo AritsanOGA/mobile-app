@@ -42,7 +42,8 @@ Future<void> init() async {
     ..registerSingleton<Logger>(Logger())
 
     //service
-    ..registerLazySingleton<ApiService>(() => ApiServiceImpl(locator()))
+    ..registerLazySingleton<ApiService>(
+        () => ApiServiceImpl(locator(), locator()))
     ..registerLazySingleton<FilePickerService>(() => FilePickerService())
     ..registerLazySingleton<SharedPreferences>(() => sharedPref)
 

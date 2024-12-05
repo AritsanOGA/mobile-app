@@ -4,8 +4,8 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SuccessfulJobApplocationScreen extends StatelessWidget {
-  const SuccessfulJobApplocationScreen({Key? key})
+class SuccessfulJobPostedPage extends StatelessWidget {
+  const SuccessfulJobPostedPage({Key? key})
       : super(
           key: key,
         );

@@ -30,7 +30,7 @@ class JSLoginPageScreen extends HookWidget {
           listener: (context, state) {
             if (state.employerLoginState == EmployerLoginState.success) {
               print('suceess');
-              Navigator.pushNamed(context, AppRoutes.dashboardScreen);
+              Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
             } else if (state.employerLoginState == EmployerLoginState.success) {
               showDialog<Widget>(
                 context: context,
@@ -135,17 +135,12 @@ class JSLoginPageScreen extends HookWidget {
                       SizedBox(height: 27.v),
                       GestureDetector(
                         onTap: (() {
-
-                          print('omo');
-                
-                          //            Navigator.pushNamed(context, AppRoutes.successScreen,
-                          // arguments: email);
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) =>
-                          //           SuccessScreen()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    JSCreateAccountPageOneScreen()),
+                          );
                         }),
                         child: RichText(
                           text: TextSpan(
