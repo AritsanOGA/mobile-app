@@ -173,7 +173,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(getStateState: GetStateState.idle));
-    print('state ${state.states}');
   }
 
   FutureOr<void> _onGetCountries(
@@ -195,7 +194,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(getCountryState: GetCountryState.idle));
-    print('cou${state.countries}');
   }
 
   FutureOr<void> _onRegisterJobSeeker(
@@ -242,7 +240,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(getCategoryState: GetCategoryState.idle));
-    print('state ${state.states}');
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<AuthState> emit) async {

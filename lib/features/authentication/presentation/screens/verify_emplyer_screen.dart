@@ -5,6 +5,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:artisan_oga/theme/custom_text_style.dart';
 import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/gestures.dart';
@@ -47,15 +48,7 @@ class VerifyEmployerScreen extends HookWidget {
             );
           } else if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.failure) {
-            showDialog<Widget>(
-              context: context,
-              builder: (ctx) => CustomAlertDialog(
-                title: 'Error!!!',
-                content: state.errorMessage ?? '',
-                actionText: 'OK',
-                onActionPressed: () => Navigator.of(ctx).pop(),
-              ),
-            );
+            ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
         builder: (context, state) {

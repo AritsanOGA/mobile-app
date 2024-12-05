@@ -5,7 +5,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../manage_jobs_page/manage_jobs_page.dart';
 import '../payments_made_page_screen/payments_made_page_screen.dart';
-import '../update_profile_page_screen/update_profile_page_screen.dart';
+import '../../features/settings/presentation/pages/update_profile_page_screen.dart';
 import '../view_all_candidates/view_all_candidates.dart';
 
 // ignore_for_file: must_be_immutable

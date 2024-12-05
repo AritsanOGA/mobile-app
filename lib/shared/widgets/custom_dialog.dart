@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/shared/widgets/app_back_drop_filter.dart';
+import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {
@@ -42,21 +43,21 @@ class CustomAlertDialog extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   title,
-                  // style: context.textTheme.displayLarge?.copyWith(
-                  //   fontWeight: FontWeight.w600,
-                  //   fontSize: 17.fontSize,
-                  // ),
+                  style: theme.textTheme.displayLarge?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                  ),
                 ),
               ),
               // AppSpacing.setVerticalSpace(10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   content,
-                  // style: context.textTheme.displayLarge?.copyWith(
-                  //   fontWeight: FontWeight.w400,
-                  //   fontSize: 13.fontSize,
-                  // ),
+                  style: theme.textTheme.displayLarge?.copyWith(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 17,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -75,11 +76,11 @@ class CustomAlertDialog extends StatelessWidget {
                 onPressed: onActionPressed,
                 child: Text(
                   actionText,
-                  // style: context.textTheme.displayLarge?.copyWith(
-                  //   fontWeight: FontWeight.w700,
-                  //   fontSize: 16.fontSize,
-                  //   color: AppColors.systemBlue,
-                  // ),
+                  style: theme.textTheme.displayLarge?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                    //color: AppColors.systemBlue,
+                  ),
                 ),
               ),
               if (secondaryActionText != null &&

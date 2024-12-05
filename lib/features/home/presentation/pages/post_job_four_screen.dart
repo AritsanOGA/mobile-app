@@ -6,6 +6,7 @@ import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -30,15 +31,7 @@ class PostJobFourScreen extends HookWidget {
                   Navigator.pushNamed(
                       context, AppRoutes.successfulJobPostedPage);
                 } else if (state.postJobState == PostJobState.failure) {
-                  showDialog<Widget>(
-                    context: context,
-                    builder: (ctx) => CustomAlertDialog(
-                      title: 'Error!!!',
-                      content: state.errorMessage ?? '',
-                      actionText: 'OK',
-                      onActionPressed: () => Navigator.of(ctx).pop(),
-                    ),
-                  );
+                     ToastUtils.showRedToast(state.errorMessage ?? '');
                 }
               },
               builder: (context, state) {

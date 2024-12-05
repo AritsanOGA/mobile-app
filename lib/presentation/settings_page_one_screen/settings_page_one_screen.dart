@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../update_profile_page_screen/update_profile_page_screen.dart';
+import '../../features/settings/presentation/pages/update_profile_page_screen.dart';
 
 class SettingsPageOneScreen extends StatefulWidget {
   SettingsPageOneScreen({Key? key}) : super(key: key);

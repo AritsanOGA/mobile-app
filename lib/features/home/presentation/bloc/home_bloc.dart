@@ -27,9 +27,9 @@ import 'package:artisan_oga/features/home/domain/usecases/post_job_usecase.dart'
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'home_bloc.freezed.dart';
 part 'home_event.dart';
 part 'home_state.dart';
-part 'home_bloc.freezed.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc({
@@ -111,7 +111,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.featureCandidateList}');
+    emit(state.copyWith(
+        getFeaturedCandidateState: GetFeaturedCandidateState.idle));
   }
 
   FutureOr<void> _onGetJobSeekerJobs(
@@ -132,7 +133,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.featureCandidateList}');
+    emit(state.copyWith(getJobSeekerJobState: GetJobSeekerJobState.idle));
   }
 
   FutureOr<void> _onGetFeaturedJob(
@@ -153,7 +154,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.featureCandidateList}');
+    emit(state.copyWith(getFeaturedJobState: GetFeaturedJobState.idle));
   }
 
   FutureOr<void> _onGetEmployerJob(
@@ -174,7 +175,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.featureCandidateList}');
+    emit(state.copyWith(getEmployerJobState: GetEmployerJobState.idle));
   }
 
   FutureOr<void> _onGetAllJobs(
@@ -195,7 +196,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.featureCandidateList}');
+    emit(state.copyWith(getAllJobState: GetAllJobState.idle));
   }
 
   FutureOr<void> _onPostJob(_PostJob event, Emitter<HomeState> emit) async {
@@ -221,6 +222,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
                 applyForJobState: ApplyForJobState.success,
               )));
     });
+    emit(state.copyWith(applyForJobState: ApplyForJobState.idle));
   }
 
   FutureOr<void> _onUpdatePostJobRequest(
@@ -279,7 +281,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('state ${state.states}');
+    emit(state.copyWith(getCategoryState: GetCategoryState.idle));
   }
 
   FutureOr<void> _onGetSkill(event, Emitter<HomeState> emit) async {
@@ -299,7 +301,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('skill ${state.states}');
+    emit(state.copyWith(getSkillState: GetSkillState.idle));
   }
 
   FutureOr<void> _onGetState(_GetState event, Emitter<HomeState> emit) async {
@@ -319,7 +321,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('state ${state.states}');
+    emit(state.copyWith(getStateState: GetStateState.idle));
   }
 
   FutureOr<void> _onGetCountries(
@@ -340,7 +342,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         ),
       ),
     );
-    print('cou${state.countries}');
+    emit(state.copyWith(getCountryState: GetCountryState.idle));
   }
 
   FutureOr<void> _onUpdateState(_UpdateState event, Emitter<HomeState> emit) {

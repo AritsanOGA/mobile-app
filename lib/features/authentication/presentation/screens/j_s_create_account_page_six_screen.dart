@@ -5,6 +5,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_job
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -41,15 +42,8 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                       arguments: email);
                 } else if (state.jobSeekerSignUpState ==
                     JobSeekerSignUpState.failure) {
-                  showDialog<Widget>(
-                    context: context,
-                    builder: (ctx) => CustomAlertDialog(
-                      title: 'Error!!!',
-                      content: state.errorMessage ?? '',
-                      actionText: 'OK',
-                      onActionPressed: () => Navigator.of(ctx).pop(),
-                    ),
-                  );
+                               ToastUtils.showRedToast(state.errorMessage ?? '');
+             
                 }
               },
               builder: (context, state) {
