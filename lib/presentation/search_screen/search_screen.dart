@@ -3,12 +3,9 @@ import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../core/utils/app_formatter.dart';
 import '../../shared/widgets/custom_outlined_button.dart';
-import '../settings_page_two_screen/settings_page_two_screen.dart';
 
 //jobs seeker dashboard
 // ignore_for_file: must_be_immutable

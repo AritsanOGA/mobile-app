@@ -5,7 +5,6 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:cached_network_image/cached_network_image.dart';

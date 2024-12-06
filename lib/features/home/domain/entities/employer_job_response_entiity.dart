@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:equatable/equatable.dart';
 
 class EmployerJobResponseEntity extends Equatable {
   final int? id;

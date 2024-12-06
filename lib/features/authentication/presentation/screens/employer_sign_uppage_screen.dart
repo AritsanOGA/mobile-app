@@ -4,7 +4,6 @@ import 'package:artisan_oga/features/authentication/domain/entities/register_emp
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';

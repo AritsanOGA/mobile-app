@@ -1,4 +1,3 @@
-import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -6,7 +5,6 @@ import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
 import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
-import 'package:artisan_oga/presentation/settings_page_one_screen/settings_page_one_screen.dart';
 import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -16,7 +14,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../../../core/services/default.dart';
 import '../../../../shared/widgets/custom_outlined_button.dart';
-import '../../../../presentation/view_all_candidates/view_all_candidates.dart';
 import '../widgets/userprofilelist_item_widget.dart';
 
 class EmployerDashboardPage extends StatefulWidget {
@@ -531,6 +528,8 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
           },
           itemCount: data.length,
           itemBuilder: (context, index) {
+            return null;
+          
             // return UserprofilelistItemWidget(
             //     fullName: data[index]["full_name"],
             //     phone: data[index]["phone"]);

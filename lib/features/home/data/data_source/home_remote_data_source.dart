@@ -1,12 +1,10 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
-import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';

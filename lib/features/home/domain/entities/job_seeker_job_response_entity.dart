@@ -20,7 +20,7 @@ class JobSeekerJobResponseEntity extends Equatable {
   final String? basicSalary;
   final String? industry;
   final String? workType;
-  final dynamic? profileImage;
+  final dynamic profileImage;
   final String? status;
 
   @override

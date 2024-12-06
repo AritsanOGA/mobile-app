@@ -139,7 +139,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             Padding(
@@ -154,7 +154,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             Padding(
@@ -169,7 +169,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             Padding(
@@ -184,7 +184,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             Padding(
@@ -199,7 +199,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             Padding(
@@ -214,7 +214,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedEducationlevel(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             SizedBox(height: 25.v),
@@ -248,7 +248,7 @@ class PostJobTwoScreen extends HookWidget {
                                     onChange: (value) {
                                       context.read<HomeBloc>().add(
                                             HomeEvent.updateSelectedGender(
-                                                value!),
+                                                value),
                                           );
                                     })),
                             Padding(
@@ -263,7 +263,7 @@ class PostJobTwoScreen extends HookWidget {
                                     onChange: (value) {
                                       context.read<HomeBloc>().add(
                                             HomeEvent.updateSelectedGender(
-                                                value!),
+                                                value),
                                           );
                                     })),
                             Padding(
@@ -277,7 +277,7 @@ class PostJobTwoScreen extends HookWidget {
                                     onChange: (value) {
                                       context.read<HomeBloc>().add(
                                             HomeEvent.updateSelectedGender(
-                                                value!),
+                                                value),
                                           );
                                     })),
 
@@ -322,7 +322,7 @@ class PostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent
                                                 .updateSelectedCompensationType(
-                                                    value!),
+                                                    value),
                                           );
                                     })),
                             SizedBox(height: 40.v),

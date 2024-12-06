@@ -1,10 +1,8 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/dashboard_screen.dart';
 import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import 'package:artisan_oga/presentation/search_screen/search_screen.dart';
-import 'package:artisan_oga/presentation/settings_page_two_screen/settings_page_two_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -3,7 +3,6 @@ import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/shared/widgets/custom_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -12,9 +11,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:page_transition/page_transition.dart';
 
-import '../../../../presentation/payment_page_screen/payment_page_screen.dart';
 
 class PostJobFourScreen extends HookWidget {
   @override
@@ -152,7 +149,7 @@ class PostJobFourScreen extends HookWidget {
                                 onChange: (value) {
                                   context.read<HomeBloc>().add(
                                         HomeEvent.updateSelectedEducationlevel(
-                                            value!),
+                                            value),
                                       );
                                 })),
                         Padding(
@@ -165,7 +162,7 @@ class PostJobFourScreen extends HookWidget {
                                 onChange: (value) {
                                   context.read<HomeBloc>().add(
                                         HomeEvent.updateSelectedEducationlevel(
-                                            value!),
+                                            value),
                                       );
                                 })),
                         SizedBox(height: 44.v),

@@ -1,6 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_js_profile_model.dart';
@@ -11,7 +10,6 @@ import 'package:artisan_oga/features/settings/domain/entities/get_employer_respo
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 abstract class SettingsRemoteDataSource {
   Future<List<GetEmployerResponseEntity>> getEmployerProfile();

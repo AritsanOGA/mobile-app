@@ -26,6 +26,7 @@ class PostJobThreeScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<HomeBloc>().add(HomeEvent.getCountries());
+      return null;
     }, []);
     return SafeArea(
         child: Scaffold(

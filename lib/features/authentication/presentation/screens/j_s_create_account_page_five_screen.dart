@@ -1,6 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
-import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
@@ -14,7 +13,6 @@ import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import 'j_s_create_account_page_six_screen.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFiveScreen extends HookWidget {
@@ -29,6 +27,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
+      return null;
     }, []);
     return SafeArea(
         child: Scaffold(

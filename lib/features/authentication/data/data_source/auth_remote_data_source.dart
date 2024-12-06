@@ -1,8 +1,6 @@
-import 'dart:convert';
 
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
-import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';

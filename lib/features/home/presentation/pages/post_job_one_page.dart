@@ -25,6 +25,7 @@ class PostJobOnePage extends HookWidget {
     useEffect(() {
       context.read<HomeBloc>().add(HomeEvent.getCategory());
       context.read<HomeBloc>().add(HomeEvent.getSkills('1'));
+      return null;
     }, []);
     return Scaffold(
         backgroundColor: AppColors.kwhite,
