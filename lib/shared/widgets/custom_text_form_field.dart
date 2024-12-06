@@ -88,7 +88,6 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-
   @override
   Widget build(BuildContext context) {
     return Column(

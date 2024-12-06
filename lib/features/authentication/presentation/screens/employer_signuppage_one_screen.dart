@@ -47,8 +47,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                       arguments: email);
                 } else if (state.employerSignUpState ==
                     EmployerSignUpState.failure) {
-                               ToastUtils.showRedToast(state.errorMessage ?? '');
-          
+                  ToastUtils.showRedToast(state.errorMessage ?? '');
                 }
               },
               builder: (context, state) {
@@ -361,7 +360,8 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                         city: cityController.text,
                                         companyLogo: state.file!,
                                         gender: state.gender,
-                                        country: state.country?.id.toString() ?? '',
+                                        country:
+                                            state.country?.id.toString() ?? '',
                                         phoneNumber: phoneController.text,
                                       ),
                                     ),

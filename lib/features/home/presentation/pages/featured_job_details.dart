@@ -31,7 +31,7 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
             Navigator.pushNamed(
                 context, AppRoutes.successfulJobApplicationPage);
           } else if (state.applyForJobState == ApplyForJobState.failure) {
-                ToastUtils.showRedToast(state.errorMessage ?? '');
+            ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
         child: SingleChildScrollView(

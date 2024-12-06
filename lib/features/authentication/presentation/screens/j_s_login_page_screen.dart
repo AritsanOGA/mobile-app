@@ -32,7 +32,6 @@ class JSLoginPageScreen extends HookWidget {
               Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
             } else if (state.employerLoginState == EmployerLoginState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
-           
             }
             ;
           },

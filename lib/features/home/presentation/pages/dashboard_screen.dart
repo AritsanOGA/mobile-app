@@ -174,7 +174,6 @@ class _DashboardPageState extends State<DashboardPage> {
                   }
 
                   return Expanded(
-                
                     // width: 400.v,
                     child: ListView.builder(
                       itemCount: state.jobSeekerJobList.length,

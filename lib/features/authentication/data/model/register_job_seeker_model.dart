@@ -74,7 +74,6 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         guarantorPhoneNumber: entity.guarantorPhoneNumber,
       );
 
-
   Future<FormData> toJson() async => FormData.fromMap({
         'email': email,
         'password': password,

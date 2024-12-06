@@ -44,7 +44,7 @@ class VerifyJobSeekerScreen extends HookWidget {
             );
           } else if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.failure) {
-                ToastUtils.showRedToast(state.errorMessage ?? '');
+            ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
         builder: (context, state) {

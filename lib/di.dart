@@ -49,7 +49,9 @@ Future<void> init() async {
 
     //data sources
     ..registerLazySingleton<AuthRemoteDataSource>(
-        () => AuthRemoteDataSourceImpl(locator(),))
+        () => AuthRemoteDataSourceImpl(
+              locator(),
+            ))
     ..registerLazySingleton<HomeRemoteDataSource>(
         () => HomeRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<AuthLocalDataSource>(

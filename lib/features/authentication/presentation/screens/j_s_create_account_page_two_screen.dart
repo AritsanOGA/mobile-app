@@ -171,8 +171,9 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                               phoneNumber: phoneController.text,
                                               streetAddress:
                                                   streetaddressController.text,
-                                              country:
-                                                  state.country?.id.toString() ?? '',
+                                              country: state.country?.id
+                                                      .toString() ??
+                                                  '',
                                               state: state.state?.name ?? '',
                                               jobType: state.jobType,
                                               city: cityController.text,

@@ -31,7 +31,7 @@ class PostJobFourScreen extends HookWidget {
                   Navigator.pushNamed(
                       context, AppRoutes.successfulJobPostedPage);
                 } else if (state.postJobState == PostJobState.failure) {
-                     ToastUtils.showRedToast(state.errorMessage ?? '');
+                  ToastUtils.showRedToast(state.errorMessage ?? '');
                 }
               },
               builder: (context, state) {

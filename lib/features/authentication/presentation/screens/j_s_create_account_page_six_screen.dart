@@ -42,8 +42,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                       arguments: email);
                 } else if (state.jobSeekerSignUpState ==
                     JobSeekerSignUpState.failure) {
-                               ToastUtils.showRedToast(state.errorMessage ?? '');
-             
+                  ToastUtils.showRedToast(state.errorMessage ?? '');
                 }
               },
               builder: (context, state) {

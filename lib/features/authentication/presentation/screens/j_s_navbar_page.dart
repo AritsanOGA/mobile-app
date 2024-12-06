@@ -26,7 +26,6 @@ class JobSeekerNavBarPage extends StatelessWidget {
         return Scaffold(
           backgroundColor: AppColors.kwhite,
           drawer: DashboardMenuPageDraweritem(),
-
           body: pages[state.selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,
