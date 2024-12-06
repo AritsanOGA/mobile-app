@@ -32,16 +32,12 @@ enum GetCountryState { idle, loading, success, failure }
 
 enum GetStateState { idle, loading, success, failure }
 
-//enum ViewState { idle, loading, success, failure }
+enum GetJobSeekerProfileState { idle, loading, success, failure }
 
-// enum SuccessType {
-//   none,
-//   jsRegistration,
-//   employerRegistration,
-//   jsLogin,
-//   employerLogin,
-//   postJob,
-//   applyForJob,
-//   profileUpdate,
-//   // Add other success types as needed
-// }
+enum GetEmployerProfileState { idle, loading, success, failure }
+
+enum UpdateEmployerProfileState { idle, loading, success, failure }
+
+enum UpdateJobSeekerProfileState { idle, loading, success, failure }
+
+enum UpdatePasswordState { idle, loading, success, failure }

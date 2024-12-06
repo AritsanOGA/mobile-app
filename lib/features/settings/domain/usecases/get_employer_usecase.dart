@@ -4,9 +4,9 @@ import 'package:artisan_oga/features/settings/domain/entities/get_employer_respo
 import 'package:artisan_oga/features/settings/domain/repositories/settings_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class GetEmployerProfilerUsecase
+class GetEmployerProfileUsecase
     implements UseCase<List<GetEmployerResponseEntity>, NoParams> {
-  GetEmployerProfilerUsecase(this.repository);
+  GetEmployerProfileUsecase(this.repository);
   final SettingsRepository repository;
   @override
   Future<Either<Failure, List<GetEmployerResponseEntity>>> call(

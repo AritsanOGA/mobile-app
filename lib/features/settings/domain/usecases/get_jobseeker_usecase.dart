@@ -5,9 +5,9 @@ import 'package:dartz/dartz.dart';
 
 import '../entities/get_js_resonse_entities.dart';
 
-class GetJobSeekeProfilerUsecase
+class GetJobSeekeProfileUsecase
     implements UseCase<List<GetJobSeekerResponseEntity>, NoParams> {
-  GetJobSeekeProfilerUsecase(this.repository);
+  GetJobSeekeProfileUsecase(this.repository);
   final SettingsRepository repository;
   @override
   Future<Either<Failure, List<GetJobSeekerResponseEntity>>> call(
