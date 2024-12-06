@@ -36,9 +36,9 @@ abstract class AuthRemoteDataSource {
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
-  AuthRemoteDataSourceImpl(this.api, this._userService);
+  AuthRemoteDataSourceImpl(this.api,);
   final ApiService api;
-  final UserService _userService;
+
 
   @override
   Future<AuthResultEntity> login(LoginEntity entity) async {

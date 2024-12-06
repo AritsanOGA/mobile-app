@@ -32,20 +32,21 @@ class AppApiEndpoint {
   static Uri postJob = baseUri.replace(path: '/api/v1/employer/post-a-job');
   static Uri getAllJobs = baseUri.replace(path: '/api/v1/job/get-all-jobs');
   static Uri applyForJob = baseUri.replace(path: '/api/v1/candidate/job/apply');
-  //! Payment
-  // static Uri withdrawToBank = baseUri.replace(path: '/api/v1/wallet/withdraw');
 
-  static Uri getAllNigeriaBanks =
-      baseUri.replace(path: '/api/v1/wallet/all-banks-ng');
-  static Uri getUserWalletBalance =
-      baseUri.replace(path: '/api/v1/wallet/balance');
-  static Uri getTransaction = baseUri.replace(path: '/api/v1/transaction');
+  //! Settings
+
+  static Uri updateCandidateProfile =
+      baseUri.replace(path: '/api/v1/candidate/update-profile');
+  static Uri updateEmployerProfile =
+      baseUri.replace(path: '/api/v1/employer/update-profile');
+  static Uri updatePassword = baseUri.replace(path: '/api/v1/update-password');
 
   //! News
-  static Uri trendingNews = baseUri.replace(path: '/api/v1/news');
+  static Uri getEmployerProfile =
+      baseUri.replace(path: '/api/v1/employer/profile');
 
-  static Uri relatedNews(String id) =>
-      baseUri.replace(path: '/api/v1/news/single/$id');
+  static Uri getJobSeekerProfile =
+      baseUri.replace(path: '/api/v1/candidate/profile');
 
   static Uri newsComment(String id) =>
       baseUri.replace(path: '/api/v1/comments/$id');

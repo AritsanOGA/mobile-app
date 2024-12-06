@@ -73,7 +73,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         employmentHistory: entity.employmentHistory,
         guarantorPhoneNumber: entity.guarantorPhoneNumber,
       );
-  // Map<String, dynamic> toJson() => {'email': email, 'code': code};
+
 
   Future<FormData> toJson() async => FormData.fromMap({
         'email': email,
