@@ -1,6 +1,7 @@
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => HomeBloc(),
+        ),
+           BlocProvider(
+          create: (_) => SettingBloc(),
         ),
       ],
       child: Sizer(

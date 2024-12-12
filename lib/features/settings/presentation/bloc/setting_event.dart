@@ -10,8 +10,8 @@ class SettingEvent with _$SettingEvent {
   const factory SettingEvent.updateEmployerProfile(
       UpdateEmployerProfileEntity entity) = _UpdateEmployerProfile;
   const factory SettingEvent.updatePassword(
-      UpdateJobSeekerProfileEntity entity) = _UpdatePassword;
+      ChangePasswordEntity entity) = _UpdatePassword;
   const factory SettingEvent.updateJobSeekerRequest(
           UpdateJobSeekerProfileEntity updateJobSeekerprofile) =
-      _UpdateJobSeekerProfileEntity;
+        _UpdateJobSeekerRequest;
 }

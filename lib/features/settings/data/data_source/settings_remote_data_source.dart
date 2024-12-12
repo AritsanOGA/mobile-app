@@ -12,8 +12,8 @@ import 'package:artisan_oga/features/settings/domain/entities/update_employer_pr
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 
 abstract class SettingsRemoteDataSource {
-  Future<List<GetEmployerResponseEntity>> getEmployerProfile();
-  Future<List<GetJobSeekerResponseEntity>> getJobSeekerProfile();
+  Future<GetEmployerResponseEntity> getEmployerProfile();
+  Future<GetJobSeekerResponseEntity> getJobSeekerProfile();
   Future<bool> updateJobSeekerProfile(UpdateJobSeekerProfileEntity entity);
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity);
   Future<bool> changePassword(ChangePasswordEntity entit);
@@ -39,33 +39,25 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   }
 
   @override
-  Future<List<GetEmployerResponseEntity>> getEmployerProfile() async {
+  Future<GetEmployerResponseEntity> getEmployerProfile() async {
     final result = await api.get(
       url: AppApiEndpoint.getEmployerProfile,
     ) as Map<String, dynamic>;
 
-    return List<dynamic>.from(result['data'] as List)
-        .map(
-          (e) => GetEmployerResponseModel.fromJson(
-            e as Map<String, dynamic>,
-          ),
-        )
-        .toList();
+    return GetEmployerResponseModel.fromJson(
+      result['data'] as Map<String, dynamic>,
+    );
   }
 
   @override
-  Future<List<GetJobSeekerResponseEntity>> getJobSeekerProfile() async {
+  Future<GetJobSeekerResponseEntity> getJobSeekerProfile() async {
     final result = await api.get(
       url: AppApiEndpoint.getJobSeekerProfile,
     ) as Map<String, dynamic>;
 
-    return List<dynamic>.from(result['data'] as List)
-        .map(
-          (e) => GetJobSeekerResponseModel.fromJson(
-            e as Map<String, dynamic>,
-          ),
-        )
-        .toList();
+    return GetJobSeekerResponseModel.fromJson(
+      result['data'] as Map<String, dynamic>,
+    );
   }
 
   @override

@@ -11,12 +11,18 @@ class SettingState with _$SettingState {
     GetJobSeekerProfileState getJobSeekerProfileState,
     @Default(UpdateEmployerProfileState.idle)
     UpdateEmployerProfileState updateEmployerProfileState,
-    String? errorMessage;
+    String? errorMessage,
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
-    @Default([]) List<GetEmployerResponseEntity>  getEmployerResponseEntity,
-    @Default([]) List<GetJobSeekerResponseEntity> getJobSeekerResponseEntity,
-    // @Default(UpdateJobSeekerProfileEntity(userId: 2, fullName: fullName,
-    //  businessName: businessName, phoneNo: phoneNo, city: city, country: country,
-    //   state: state))  UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+    GetEmployerResponseEntity? getEmployerResponseEntity,
+    GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+    // @Default(UpdateJobSeekerProfileEntity(
+    //     userId: 0,
+    //     fullName: '',
+    //     businessName: '',
+    //     phoneNo: '',
+    //     city: '',
+    //     country: '',
+    //     state: ''))
+    // UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
   }) = _Initial;
 }

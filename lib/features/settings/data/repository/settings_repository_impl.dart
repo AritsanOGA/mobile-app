@@ -40,14 +40,12 @@ class SettingsRepositoryImpl implements SettingsRepository {
   }
 
   @override
-  Future<Either<Failure, List<GetEmployerResponseEntity>>>
-      getEmployerProfile() {
+  Future<Either<Failure, GetEmployerResponseEntity>> getEmployerProfile() {
     return settingsRemoteDataSource.getEmployerProfile().makeRequest();
   }
 
   @override
-  Future<Either<Failure, List<GetJobSeekerResponseEntity>>>
-      getJobSeekerProfile() {
+  Future<Either<Failure, GetJobSeekerResponseEntity>> getJobSeekerProfile() {
     return settingsRemoteDataSource.getJobSeekerProfile().makeRequest();
   }
 

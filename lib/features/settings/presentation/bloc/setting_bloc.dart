@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
-import 'package:artisan_oga/features/home/domain/usecases/get_employer_job_usecase.dart';
+import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
@@ -89,7 +89,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     emit(state.copyWith(
         updateJobSeekerProfileState: UpdateJobSeekerProfileState.loading));
 
-    await _updateJobSeekerUseCase(event.param).then((value) {
+    await _updateJobSeekerUseCase(event.entity).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
               updateJobSeekerProfileState: UpdateJobSeekerProfileState.failure,
@@ -108,7 +108,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     emit(state.copyWith(
         updateEmployerProfileState: UpdateEmployerProfileState.loading));
 
-    await _updateEmployerProfileUseCase(event.param).then((value) {
+    await _updateEmployerProfileUseCase(event.entity).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
               updateEmployerProfileState: UpdateEmployerProfileState.failure,
@@ -125,7 +125,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
       _UpdatePassword event, Emitter<SettingState> emit) async {
     emit(state.copyWith(updatePasswordState: UpdatePasswordState.loading));
 
-    await _updatePasswordUseCase(event.param).then((value) {
+    await _updatePasswordUseCase(event.entity).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
               updatePasswordState: UpdatePasswordState.failure,
@@ -135,5 +135,12 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     });
 
     emit(state.copyWith(updatePasswordState: UpdatePasswordState.idle));
+  }
+
+  FutureOr<void> _onUpdateJobSeekerRequest(
+      _UpdateJobSeekerRequest event, Emitter<SettingState> emit) {
+    //  emit(
+    //     state.copyWith(updateJobSeekerRequest: event.registerJobSeekerRequest),
+    //   );
   }
 }

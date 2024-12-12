@@ -6,12 +6,11 @@ import 'package:dartz/dartz.dart';
 import '../entities/get_js_resonse_entities.dart';
 
 class GetJobSeekeProfileUsecase
-    implements UseCase<List<GetJobSeekerResponseEntity>, NoParams> {
+    implements UseCase<GetJobSeekerResponseEntity, NoParams> {
   GetJobSeekeProfileUsecase(this.repository);
   final SettingsRepository repository;
   @override
-  Future<Either<Failure, List<GetJobSeekerResponseEntity>>> call(
-      NoParams params) {
+  Future<Either<Failure, GetJobSeekerResponseEntity>> call(NoParams params) {
     return repository.getJobSeekerProfile();
   }
 }

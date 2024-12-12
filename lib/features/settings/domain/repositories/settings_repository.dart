@@ -7,8 +7,8 @@ import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_
 import 'package:dartz/dartz.dart';
 
 abstract class SettingsRepository {
-  Future<Either<Failure, List<GetEmployerResponseEntity>>> getEmployerProfile();
-  Future<Either<Failure, List<GetJobSeekerResponseEntity>>>
+  Future<Either<Failure, GetEmployerResponseEntity>> getEmployerProfile();
+  Future<Either<Failure, GetJobSeekerResponseEntity>>
       getJobSeekerProfile();
   Future<Either<Failure, bool>> updateJobSeekerProfile(
       UpdateJobSeekerProfileEntity entity);
