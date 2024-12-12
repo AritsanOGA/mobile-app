@@ -1,13 +1,13 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -137,7 +137,8 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                                       .stringValidation,
                                                   controller:
                                                       descriptionController,
-                                                  hintText: "Input here",
+                                                  hintText:
+                                                      "Enter role description",
                                                   hintStyle: theme
                                                       .textTheme.titleSmall!,
                                                   textInputAction:

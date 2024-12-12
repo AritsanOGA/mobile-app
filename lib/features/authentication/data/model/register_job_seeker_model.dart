@@ -118,7 +118,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'course_name': educationalQualification == 'No Education' ||
                 educationalQualification == 'GCE' ||
                 educationalQualification == 'NECO' ||
-                educationalQualification == 'WAEC'
+                educationalQualification == 'WAEC' ||
+                educationalQualification == 'FLSC'
             ? ''
             : courseName,
         'categories': category,

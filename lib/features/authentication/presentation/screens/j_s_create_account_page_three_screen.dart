@@ -1,16 +1,15 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPagetThreeScreen extends HookWidget {
@@ -89,21 +88,40 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                                                   hintStyle: theme
                                                       .textTheme.titleSmall!)),
                                           SizedBox(height: 30.v),
-                                          Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 3.h),
-                                              child: CustomTextFormField(
-                                                  title: 'Course Name',
-                                                  textInputType:
-                                                      TextInputType.name,
-                                                  controller:
-                                                      courseNameController,
-                                                  validator: FormValidation
-                                                      .stringValidation,
-                                                  hintText: "Enter Course Name",
-                                                  hintStyle: theme
-                                                      .textTheme.titleSmall!)),
-                                          SizedBox(height: 30.v),
+                                          state.educationalQualification ==
+                                                      'FLSC' ||
+                                                  state.educationalQualification ==
+                                                      'GCE' ||
+                                                  state.educationalQualification ==
+                                                      'NECO' ||
+                                                  state.educationalQualification ==
+                                                      'WAEC'
+                                              ? SizedBox()
+                                              : Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: 3.h),
+                                                  child: CustomTextFormField(
+                                                      title: 'Course Name',
+                                                      textInputType:
+                                                          TextInputType.name,
+                                                      controller:
+                                                          courseNameController,
+                                                      validator: FormValidation
+                                                          .stringValidation,
+                                                      hintText:
+                                                          "Enter Course Name",
+                                                      hintStyle: theme.textTheme
+                                                          .titleSmall!)),
+                                          state.educationalQualification ==
+                                                      'FLSC' ||
+                                                  state.educationalQualification ==
+                                                      'GCE' ||
+                                                  state.educationalQualification ==
+                                                      'NECO' ||
+                                                  state.educationalQualification ==
+                                                      'WAEC'
+                                              ? SizedBox()
+                                              : SizedBox(height: 30.v),
                                           Padding(
                                               padding: EdgeInsets.symmetric(
                                                   horizontal: 3.h),
