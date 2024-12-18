@@ -67,7 +67,9 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                                 BlocBuilder<AuthBloc, AuthState>(
                                   builder: (context, state) {
                                     if (state.educationalQualification ==
-                                        "No Education") {
+                                            "No Education" ||
+                                        state.educationalQualification ==
+                                            "--Select--") {
                                       return SizedBox();
                                     } else {
                                       return Column(
@@ -139,18 +141,18 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
                                                       .textTheme.titleSmall!,
                                                   textInputAction:
                                                       TextInputAction.done)),
-                                          SizedBox(height: 30.v),
-                                          CustomTextFormField(
-                                              title: 'Certificate Obtained',
-                                              controller: awardTitleController,
-                                              hintText: "Enter Certificate",
-                                              textInputType: TextInputType.name,
-                                              validator: FormValidation
-                                                  .stringValidation,
-                                              hintStyle:
-                                                  theme.textTheme.titleSmall!,
-                                              textInputAction:
-                                                  TextInputAction.done),
+                                          // SizedBox(height: 30.v),
+                                          // CustomTextFormField(
+                                          //     title: 'Certificate Obtained',
+                                          //     controller: awardTitleController,
+                                          //     hintText: "Enter Certificate",
+                                          //     textInputType: TextInputType.name,
+                                          //     validator: FormValidation
+                                          //         .stringValidation,
+                                          //     hintStyle:
+                                          //         theme.textTheme.titleSmall!,
+                                          //     textInputAction:
+                                          //         TextInputAction.done),
                                         ],
                                       );
                                     }

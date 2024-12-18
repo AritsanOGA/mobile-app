@@ -27,6 +27,7 @@ mixin _$HomeEvent {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -57,6 +58,7 @@ mixin _$HomeEvent {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -86,6 +88,7 @@ mixin _$HomeEvent {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -117,6 +120,7 @@ mixin _$HomeEvent {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -154,6 +158,7 @@ mixin _$HomeEvent {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -187,6 +192,7 @@ mixin _$HomeEvent {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -276,6 +282,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -309,6 +316,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -341,6 +349,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -378,6 +387,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -418,6 +428,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -454,6 +465,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -535,6 +547,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -568,6 +581,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -600,6 +614,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -637,6 +652,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -677,6 +693,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -713,6 +730,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -793,6 +811,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -826,6 +845,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -858,6 +878,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -895,6 +916,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -935,6 +957,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -971,6 +994,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -1051,6 +1075,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -1084,6 +1109,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -1116,6 +1142,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -1153,6 +1180,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -1193,6 +1221,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -1229,6 +1258,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -1309,6 +1339,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -1342,6 +1373,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -1374,6 +1406,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -1411,6 +1444,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -1451,6 +1485,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -1487,6 +1522,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -1567,6 +1603,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -1600,6 +1637,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -1632,6 +1670,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -1669,6 +1708,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -1709,6 +1749,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -1745,6 +1786,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -1851,6 +1893,7 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -1884,6 +1927,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -1916,6 +1960,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -1953,6 +1998,7 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -1993,6 +2039,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -2029,6 +2076,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -2143,6 +2191,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -2176,6 +2225,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -2208,6 +2258,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -2245,6 +2296,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -2285,6 +2337,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -2321,6 +2374,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -2358,6 +2412,303 @@ abstract class _UpdatePostJobRequest implements HomeEvent {
   @JsonKey(ignore: true)
   _$$UpdatePostJobRequestImplCopyWith<_$UpdatePostJobRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedDateImplCopyWith<$Res> {
+  factory _$$UpdateSelectedDateImplCopyWith(_$UpdateSelectedDateImpl value,
+          $Res Function(_$UpdateSelectedDateImpl) then) =
+      __$$UpdateSelectedDateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedDateImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UpdateSelectedDateImpl>
+    implements _$$UpdateSelectedDateImplCopyWith<$Res> {
+  __$$UpdateSelectedDateImplCopyWithImpl(_$UpdateSelectedDateImpl _value,
+      $Res Function(_$UpdateSelectedDateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedDateImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
+  const _$UpdateSelectedDateImpl(this.value);
+
+  @override
+  final DateTime value;
+
+  @override
+  String toString() {
+    return 'HomeEvent.updateSelectedDate(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedDateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedDateImplCopyWith<_$UpdateSelectedDateImpl> get copyWith =>
+      __$$UpdateSelectedDateImplCopyWithImpl<_$UpdateSelectedDateImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(String id) applyForJob,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value) updateSelectedWorkMode,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedSkillLevel,
+    required TResult Function(String value) updateSelectedEducationlevel,
+    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(String value) updateSelectedPackage,
+    required TResult Function(String value) updateSelectedAvailability,
+    required TResult Function(CountryResponseEntity value) updateCountry,
+    required TResult Function(StateResponseEntity value) updateState,
+  }) {
+    return updateSelectedDate(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(String id)? applyForJob,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedWorkMode,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedSkillLevel,
+    TResult? Function(String value)? updateSelectedEducationlevel,
+    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedPackage,
+    TResult? Function(String value)? updateSelectedAvailability,
+    TResult? Function(CountryResponseEntity value)? updateCountry,
+    TResult? Function(StateResponseEntity value)? updateState,
+  }) {
+    return updateSelectedDate?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(String id)? applyForJob,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedWorkMode,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedSkillLevel,
+    TResult Function(String value)? updateSelectedEducationlevel,
+    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedPackage,
+    TResult Function(String value)? updateSelectedAvailability,
+    TResult Function(CountryResponseEntity value)? updateCountry,
+    TResult Function(StateResponseEntity value)? updateState,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedDate != null) {
+      return updateSelectedDate(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_ApplyForJob value) applyForJob,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedWorkMode value)
+        updateSelectedWorkMode,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedSkillLevel value)
+        updateSelectedSkillLevel,
+    required TResult Function(_UpdateSelectedEducationLevel value)
+        updateSelectedEducationlevel,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedPackage value)
+        updateSelectedPackage,
+    required TResult Function(_UpdateSelectedAvailability value)
+        updateSelectedAvailability,
+    required TResult Function(_UpdateCountry value) updateCountry,
+    required TResult Function(_UpdateState value) updateState,
+  }) {
+    return updateSelectedDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedSkillLevel value)?
+        updateSelectedSkillLevel,
+    TResult? Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult? Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult? Function(_UpdateCountry value)? updateCountry,
+    TResult? Function(_UpdateState value)? updateState,
+  }) {
+    return updateSelectedDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
+    TResult Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult Function(_UpdateCountry value)? updateCountry,
+    TResult Function(_UpdateState value)? updateState,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedDate != null) {
+      return updateSelectedDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedDate implements HomeEvent {
+  const factory _UpdateSelectedDate(final DateTime value) =
+      _$UpdateSelectedDateImpl;
+
+  DateTime get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedDateImplCopyWith<_$UpdateSelectedDateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2433,6 +2784,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -2466,6 +2818,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -2498,6 +2851,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -2535,6 +2889,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -2575,6 +2930,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -2611,6 +2967,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -2696,6 +3053,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -2729,6 +3087,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -2761,6 +3120,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -2798,6 +3158,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -2838,6 +3199,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -2874,6 +3236,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -2980,6 +3343,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -3013,6 +3377,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -3045,6 +3410,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -3082,6 +3448,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -3122,6 +3489,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -3158,6 +3526,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -3243,6 +3612,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -3276,6 +3646,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -3308,6 +3679,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -3345,6 +3717,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -3385,6 +3758,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -3421,6 +3795,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -3527,6 +3902,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -3560,6 +3936,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -3592,6 +3969,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -3629,6 +4007,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -3669,6 +4048,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -3705,6 +4085,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -3819,6 +4200,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -3852,6 +4234,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -3884,6 +4267,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -3921,6 +4305,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -3961,6 +4346,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -3997,6 +4383,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -4111,6 +4498,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -4144,6 +4532,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -4176,6 +4565,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -4213,6 +4603,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -4253,6 +4644,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -4289,6 +4681,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -4404,6 +4797,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -4437,6 +4831,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -4469,6 +4864,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -4506,6 +4902,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -4546,6 +4943,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -4582,6 +4980,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -4696,6 +5095,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -4729,6 +5129,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -4761,6 +5162,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -4798,6 +5200,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -4838,6 +5241,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -4874,6 +5278,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -4991,6 +5396,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -5024,6 +5430,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -5056,6 +5463,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -5093,6 +5501,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -5133,6 +5542,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -5169,6 +5579,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -5285,6 +5696,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -5318,6 +5730,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -5350,6 +5763,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -5387,6 +5801,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -5427,6 +5842,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -5463,6 +5879,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -5580,6 +5997,7 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -5613,6 +6031,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -5645,6 +6064,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -5682,6 +6102,7 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -5722,6 +6143,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -5758,6 +6180,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -5872,6 +6295,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -5905,6 +6329,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -5937,6 +6362,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -5974,6 +6400,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -6014,6 +6441,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -6050,6 +6478,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -6164,6 +6593,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -6197,6 +6627,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -6229,6 +6660,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -6266,6 +6698,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -6306,6 +6739,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -6342,6 +6776,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -6457,6 +6892,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -6490,6 +6926,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -6522,6 +6959,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -6559,6 +6997,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -6599,6 +7038,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -6635,6 +7075,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -6747,6 +7188,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -6780,6 +7222,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -6812,6 +7255,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -6849,6 +7293,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -6889,6 +7334,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -6925,6 +7371,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -7037,6 +7484,7 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(PostJobEntity param) postJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
     required TResult Function(String id) applyForJob,
     required TResult Function() getCategory,
     required TResult Function(String id) getSkills,
@@ -7070,6 +7518,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
     TResult? Function()? getCategory,
     TResult? Function(String id)? getSkills,
@@ -7102,6 +7551,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
     TResult Function()? getCategory,
     TResult Function(String id)? getSkills,
@@ -7139,6 +7589,7 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_GetSkills value) getSkills,
@@ -7179,6 +7630,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_GetSkills value)? getSkills,
@@ -7215,6 +7667,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_GetSkills value)? getSkills,
@@ -7264,6 +7717,7 @@ mixin _$HomeState {
   String? get educationLevel => throw _privateConstructorUsedError;
   String? get compensationType => throw _privateConstructorUsedError;
   String? get package => throw _privateConstructorUsedError;
+  DateTime? get applicationTime => throw _privateConstructorUsedError;
   String? get availablity => throw _privateConstructorUsedError;
   List<FeaturedCandidatesEntity> get featureCandidateList =>
       throw _privateConstructorUsedError;
@@ -7320,6 +7774,7 @@ mixin _$HomeState {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -7368,6 +7823,7 @@ mixin _$HomeState {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -7416,6 +7872,7 @@ mixin _$HomeState {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -7490,6 +7947,7 @@ abstract class $HomeStateCopyWith<$Res> {
       String? educationLevel,
       String? compensationType,
       String? package,
+      DateTime? applicationTime,
       String? availablity,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
@@ -7547,6 +8005,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? educationLevel = freezed,
     Object? compensationType = freezed,
     Object? package = freezed,
+    Object? applicationTime = freezed,
     Object? availablity = freezed,
     Object? featureCandidateList = null,
     Object? allJobList = null,
@@ -7615,6 +8074,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String?,
+      applicationTime: freezed == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       availablity: freezed == availablity
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
@@ -7772,6 +8235,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? educationLevel,
       String? compensationType,
       String? package,
+      DateTime? applicationTime,
       String? availablity,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
@@ -7827,6 +8291,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? educationLevel = freezed,
     Object? compensationType = freezed,
     Object? package = freezed,
+    Object? applicationTime = freezed,
     Object? availablity = freezed,
     Object? featureCandidateList = null,
     Object? allJobList = null,
@@ -7895,6 +8360,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.package
           : package // ignore: cast_nullable_to_non_nullable
               as String?,
+      applicationTime: freezed == applicationTime
+          ? _value.applicationTime
+          : applicationTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       availablity: freezed == availablity
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
@@ -8047,6 +8516,7 @@ class _$InitialImpl implements _Initial {
       this.educationLevel,
       this.compensationType,
       this.package,
+      this.applicationTime,
       this.availablity,
       final List<FeaturedCandidatesEntity> featureCandidateList = const [],
       final List<AllJobResponseEntity> allJobList = const [],
@@ -8160,6 +8630,8 @@ class _$InitialImpl implements _Initial {
   final String? compensationType;
   @override
   final String? package;
+  @override
+  final DateTime? applicationTime;
   @override
   final String? availablity;
   final List<FeaturedCandidatesEntity> _featureCandidateList;
@@ -8367,7 +8839,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -8388,6 +8860,8 @@ class _$InitialImpl implements _Initial {
             (identical(other.compensationType, compensationType) ||
                 other.compensationType == compensationType) &&
             (identical(other.package, package) || other.package == package) &&
+            (identical(other.applicationTime, applicationTime) ||
+                other.applicationTime == applicationTime) &&
             (identical(other.availablity, availablity) ||
                 other.availablity == availablity) &&
             const DeepCollectionEquality()
@@ -8465,6 +8939,7 @@ class _$InitialImpl implements _Initial {
         educationLevel,
         compensationType,
         package,
+        applicationTime,
         availablity,
         const DeepCollectionEquality().hash(_featureCandidateList),
         const DeepCollectionEquality().hash(_allJobList),
@@ -8519,6 +8994,7 @@ class _$InitialImpl implements _Initial {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -8564,6 +9040,7 @@ class _$InitialImpl implements _Initial {
         educationLevel,
         compensationType,
         package,
+        applicationTime,
         availablity,
         featureCandidateList,
         allJobList,
@@ -8612,6 +9089,7 @@ class _$InitialImpl implements _Initial {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -8657,6 +9135,7 @@ class _$InitialImpl implements _Initial {
         educationLevel,
         compensationType,
         package,
+        applicationTime,
         availablity,
         featureCandidateList,
         allJobList,
@@ -8705,6 +9184,7 @@ class _$InitialImpl implements _Initial {
             String? educationLevel,
             String? compensationType,
             String? package,
+            DateTime? applicationTime,
             String? availablity,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
@@ -8752,6 +9232,7 @@ class _$InitialImpl implements _Initial {
           educationLevel,
           compensationType,
           package,
+          applicationTime,
           availablity,
           featureCandidateList,
           allJobList,
@@ -8829,6 +9310,7 @@ abstract class _Initial implements HomeState {
       final String? educationLevel,
       final String? compensationType,
       final String? package,
+      final DateTime? applicationTime,
       final String? availablity,
       final List<FeaturedCandidatesEntity> featureCandidateList,
       final List<AllJobResponseEntity> allJobList,
@@ -8880,6 +9362,8 @@ abstract class _Initial implements HomeState {
   String? get compensationType;
   @override
   String? get package;
+  @override
+  DateTime? get applicationTime;
   @override
   String? get availablity;
   @override

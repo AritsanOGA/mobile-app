@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import '../../core/app_export.dart';
 
 class CustomTextFormField extends StatefulWidget {
@@ -32,6 +33,7 @@ class CustomTextFormField extends StatefulWidget {
     this.isBorderNone = false,
     this.inputFormatters,
     required this.title,
+    this.ontap,
   }) : super(
           key: key,
         );
@@ -78,6 +80,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color? fillColor;
 
   final bool? filled;
+  final Function()? ontap;
 
   final FormFieldValidator<String>? validator;
 
@@ -100,6 +103,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         SizedBox(
           width: widget.width ?? double.maxFinite,
           child: TextFormField(
+            onTap: widget.ontap,
             readOnly: widget.readOnly!,
             inputFormatters: widget.inputFormatters,
             scrollPadding: EdgeInsets.only(

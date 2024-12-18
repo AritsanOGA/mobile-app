@@ -68,6 +68,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectResume>(_onSelectResume);
     on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
+
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);
     on<_RegisterJobSeeker>(_onRegisterJobSeeker);
@@ -342,4 +343,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _SelectTabEvent event, Emitter<AuthState> emit) {
     emit(state.copyWith(selectedIndex: event.index));
   }
+
+
 }

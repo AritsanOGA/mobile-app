@@ -1,13 +1,13 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
@@ -27,7 +27,7 @@ class PostJobTwoScreen extends HookWidget {
               titleStatus: false,
               //hasBackButton: false,
 
-              title: 'Back',
+              title: '',
             ),
             backgroundColor: AppColors.kwhite,
             body: BlocBuilder<HomeBloc, HomeState>(

@@ -62,7 +62,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
           (result) => emit(state.copyWith(
               getEmployerProfileState: GetEmployerProfileState.success)));
     });
-
+    
     emit(state.copyWith(getEmployerProfileState: GetEmployerProfileState.idle));
   }
 

@@ -12,7 +12,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedCity;
   const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
-  const factory AuthEvent.updateSelectedSkill(SkillResponseEntity value) =
+  const factory AuthEvent.updateSelectedSkill(List<SkillResponseEntity> value) =
       _UpdateSelectedSkill;
   const factory AuthEvent.updateSelectedJobType(String value) =
       _UpdateSelectedJobType;
@@ -20,6 +20,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedEducationQualification;
   const factory AuthEvent.updateEmploymentHistory(String value) =
       _UpdateEmploymentHistory;
+ 
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
   const factory AuthEvent.selectCompanyLogo() = _SelectCompanyLogo;

@@ -69,7 +69,9 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                 BlocBuilder<AuthBloc, AuthState>(
                                   builder: (context, state) {
                                     if (state.employmentHistory ==
-                                        "No Employment History") {
+                                            "No Employment History" ||
+                                        state.employmentHistory ==
+                                            "--Select--") {
                                       return SizedBox();
                                     } else {
                                       return Column(

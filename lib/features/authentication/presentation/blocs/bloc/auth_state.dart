@@ -16,14 +16,15 @@ class AuthState with _$AuthState {
     @Default('--Select--') String jobType,
     String? jsState,
     String? city,
+
     File? picture,
     @Default('--Select--') String educationalQualification,
     String? dateOFBirth,
     String? startYear,
     String? endYear,
     @Default('--Select--') String employmentHistory,
+    @Default([]) List<SkillResponseEntity> skills,
     CategoryResponseEntity? category,
-    SkillResponseEntity? skills,
     @Default(RegisterEmployerEntity(
       email: '',
       password: '',

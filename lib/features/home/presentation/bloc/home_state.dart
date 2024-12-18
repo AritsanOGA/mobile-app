@@ -11,6 +11,7 @@ class HomeState with _$HomeState {
       String? educationLevel,
       String? compensationType,
       String? package,
+          DateTime? applicationTime,
       String? availablity,
       @Default([]) List<FeaturedCandidatesEntity> featureCandidateList,
       @Default([]) List<AllJobResponseEntity> allJobList,

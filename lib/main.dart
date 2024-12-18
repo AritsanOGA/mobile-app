@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
 import 'core/app_export.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => HomeBloc(),
         ),
-           BlocProvider(
+        BlocProvider(
           create: (_) => SettingBloc(),
         ),
       ],

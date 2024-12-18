@@ -15,6 +15,8 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.postJob(PostJobEntity param) = _PostJob;
   const factory HomeEvent.updatePostJobRequest(PostJobEntity postJobRequest) =
       _UpdatePostJobRequest;
+  const factory HomeEvent.updateSelectedDate(DateTime value) =
+      _UpdateSelectedDate;
   const factory HomeEvent.applyForJob(String id) = _ApplyForJob;
   const factory HomeEvent.getCategory() = _GetCategory;
   const factory HomeEvent.getSkills(String id) = _GetSkills;

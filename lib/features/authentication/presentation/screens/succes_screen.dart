@@ -16,7 +16,7 @@ class SuccessScreen extends StatelessWidget {
           children: [
             Spacer(),
             SvgPicture.asset('assets/svgs/success_check.svg'),
-            SizedBox(height: 20.v),
+            SizedBox(height: 50.v),
             Text(
               message,
               style: CustomTextStyles.titleMediumPrimaryContainer18,

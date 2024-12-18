@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
@@ -6,14 +7,13 @@ import 'package:artisan_oga/features/authentication/domain/entities/state_respon
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_four_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
 import 'package:page_transition/page_transition.dart';
 
 class PostJobThreeScreen extends HookWidget {
@@ -30,9 +30,22 @@ class PostJobThreeScreen extends HookWidget {
     }, []);
     return SafeArea(
         child: Scaffold(
+            appBar: CustomAppBar(
+              titleStatus: false,
+              //hasBackButton: false,
+
+              title: '',
+            ),
             backgroundColor: AppColors.kwhite,
             body: BlocBuilder<HomeBloc, HomeState>(
               builder: (context, state) {
+                // String displayedDate = "No date selected";
+
+                // if (state is DateSelectedState) {
+                //   applicationDeadlineController.text = state.applicationTime,
+
+                // }
+
                 return Form(
                   key: formKey,
                   child: Container(
@@ -43,26 +56,6 @@ class PostJobThreeScreen extends HookWidget {
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            Align(
-                                alignment: Alignment.centerLeft,
-                                child: Row(children: [
-                                  CustomImageView(
-                                      imagePath:
-                                          ImageConstant.imgArrowLeftOnprimary,
-                                      height: 16.adaptSize,
-                                      width: 16.adaptSize,
-                                      margin:
-                                          EdgeInsets.symmetric(vertical: 2.v),
-                                      onTap: () {
-                                        onTapImgArrowLeft(context);
-                                      }),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 7.h),
-                                      child: Text("Back",
-                                          style: CustomTextStyles
-                                              .titleMediumOnPrimary))
-                                ])),
-                            SizedBox(height: 40.v),
                             CustomTextFormField(
                               title: 'Proposed Minimum Salary',
                               textInputType: TextInputType.number,
@@ -84,12 +77,26 @@ class PostJobThreeScreen extends HookWidget {
                             ),
                             SizedBox(height: 30.v),
                             CustomTextFormField(
+                              ontap: () async {
+                                DateTime? pickedDate = await showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime(2024),
+                                  lastDate: DateTime(2100),
+                                );
+                                if (pickedDate != null) {
+                                  applicationDeadlineController.text =
+                                      "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
+
+                                  context.read<HomeBloc>().add(
+                                      HomeEvent.updateSelectedDate(pickedDate));
+                                }
+                              },
                               hintText: 'YYYY-MM-DD',
                               titleStyle: CustomTextStyles.titleMediumMedium18,
                               validator: FormValidation.stringValidation,
                               isBorderNone: true,
                               title: 'Application Deadline Date',
-                              inputFormatters: [DateInputFormatter2()],
                               controller: applicationDeadlineController,
                             ),
                             SizedBox(height: 30.v),

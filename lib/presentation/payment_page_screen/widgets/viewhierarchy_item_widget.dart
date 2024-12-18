@@ -3,7 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutterwave_standard/flutterwave.dart';
+//import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -284,21 +284,21 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
 
     String valueWithoutComma = price.replaceAll(",", "");
 
-    final Customer customer = Customer(email: "customer@customer.com");
+   // final Customer customer = Customer(email: "customer@customer.com");
 
-    final Flutterwave flutterwave = Flutterwave(
-        context: context,
-        publicKey: "FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X",
-        currency: "NGN",
-        redirectUrl: 'https://artisanoga.com',
-        txRef: "9382839283923",
-        amount: valueWithoutComma,
-        customer: customer,
-        paymentOptions: "card, payattitude, barter, bank transfer, ussd",
-        customization: Customization(title: "Test Payment"),
-        isTestMode: false);
-    final ChargeResponse response = await flutterwave.charge();
-    // this.showLoading(response.toString());
-    print("${response.toJson()}");
-  }
+  //   final Flutterwave flutterwave = Flutterwave(
+  //       context: context,
+  //       publicKey: "FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X",
+  //       currency: "NGN",
+  //       redirectUrl: 'https://artisanoga.com',
+  //       txRef: "9382839283923",
+  //       amount: valueWithoutComma,
+  //       customer: customer,
+  //       paymentOptions: "card, payattitude, barter, bank transfer, ussd",
+  //       customization: Customization(title: "Test Payment"),
+  //       isTestMode: false);
+  //   final ChargeResponse response = await flutterwave.charge();
+  //   // this.showLoading(response.toString());
+  //   print("${response.toJson()}");
+   }
 }

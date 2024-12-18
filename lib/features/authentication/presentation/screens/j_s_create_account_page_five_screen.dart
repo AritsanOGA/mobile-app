@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
@@ -9,15 +10,21 @@ import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore_for_file: must_be_immutable
 class JSCreateAccountPageFiveScreen extends HookWidget {
   final String email;
   JSCreateAccountPageFiveScreen({required this.email, Key? key})
       : super(key: key);
+  void _onSkillsChanged(List<SkillResponseEntity> selectedSkills) {
+    print("Selected Skills: ${selectedSkills.map((e) => e.name).join(', ')}");
+    // Additional logic can be implemented here
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +33,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
+      context.read<AuthBloc>().add(AuthEvent.getState('1'));
       return null;
     }, []);
     return SafeArea(
@@ -82,31 +90,142 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 child: CustomTextFormField(
                                     title: 'Years of Experience',
                                     controller: yearsController,
-                                    hintText: "3",
+                                    hintText: "Enter number of years",
                                     validator: FormValidation.stringValidation,
                                     hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 27.v),
-                            BlocBuilder<AuthBloc, AuthState>(
-                                builder: (context, state) {
-                              return CustomDropDown<SkillResponseEntity>(
-                                title: 'Select Skill',
-                                items: state.skill,
-                                selectedItem: state.skill.isNotEmpty
-                                    ? state.skill.firstWhere(
-                                        (skills) =>
-                                            skills.id ==
-                                            (state.skills?.id ?? 29),
-                                        orElse: () => state.skill.first)
-                                    : SkillResponseEntity(
-                                        id: 1, name: 'Corset', categoryId: 1),
-                                itemLabel: (skill) => skill.name,
-                                onChanged: (value) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.updateSelectedSkill(value!),
-                                      );
-                                },
-                              );
-                            }),
+                            Container(
+                                width: MediaQuery.of(context).size.width,
+                                padding:
+                                    const EdgeInsets.only(left: 20, right: 5),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: appTheme.gray500, width: 0.8),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Theme(
+                                        data: Theme.of(context).copyWith(
+                                          primaryColor: Colors.purple,
+                                          elevatedButtonTheme:
+                                              ElevatedButtonThemeData(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Colors.orange, // Button color
+                                              foregroundColor: Colors
+                                                  .white, // Button text color
+                                            ),
+                                          ),
+                                          textButtonTheme: TextButtonThemeData(
+                                            style: TextButton.styleFrom(
+                                              foregroundColor:
+                                                  Colors.blue, // Text color
+                                            ),
+                                          ),
+                                        ),
+                                        child: DropdownSearch<
+                                            SkillResponseEntity>.multiSelection(
+                                          mode: Mode.form,
+                                          items:
+                                              (filter, infiniteScrollProps) =>
+                                                  state.skill,
+                                          itemAsString:
+                                              (SkillResponseEntity state) =>
+                                                  state.name,
+                                          decoratorProps:
+                                              const DropDownDecoratorProps(
+                                                  decoration: InputDecoration(
+                                            enabled: false,
+                                            border: InputBorder.none,
+                                          )),
+                                          onChanged: (List<SkillResponseEntity>?
+                                              newValue) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.updateSelectedSkill(
+                                                      newValue!),
+                                                );
+                                          },
+                                          filterFn: (item, filter) {
+                                            return item.name
+                                                .toLowerCase()
+                                                .contains(filter.toLowerCase());
+                                          },
+                                          suffixProps: DropdownSuffixProps(
+                                            dropdownButtonProps:
+                                                DropdownButtonProps(
+                                              selectedIcon: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 20.0),
+                                                child: SvgPicture.asset(
+                                                    AppAsset.dropdown),
+                                              ),
+                                            ),
+                                          ),
+                                          dropdownBuilder:
+                                              (context, selectedItems) {
+                                            return Wrap(
+                                              spacing: 8.0,
+                                              children: selectedItems
+                                                  .map((item) => Chip(
+                                                        label: Text(item.name ??
+                                                            'kjjkerkjerg'),
+                                                        onDeleted: () {
+                                                          selectedItems
+                                                              .remove(item);
+                                                          context
+                                                              .read<AuthBloc>()
+                                                              .add(
+                                                                AuthEvent
+                                                                    .updateSelectedSkill(
+                                                                        selectedItems),
+                                                              );
+                                                        },
+                                                      ))
+                                                  .toList(),
+                                            );
+                                          },
+                                          compareFn: (item, selectedItem) {
+                                            return item.id == selectedItem.id;
+                                          },
+                                          popupProps:
+                                              PopupPropsMultiSelection.menu(
+                                            checkBoxBuilder: (context, item,
+                                                isDisabled, isSelected) {
+                                              return Checkbox(
+                                                value: isSelected,
+                                                onChanged: isDisabled
+                                                    ? null
+                                                    : (value) {},
+                                                activeColor: theme.primaryColor,
+                                                fillColor: WidgetStateProperty
+                                                    .resolveWith((states) {
+                                                  if (states.contains(
+                                                      WidgetState.selected)) {
+                                                    return theme.primaryColor;
+                                                  }
+                                                  return Colors.white;
+                                                }),
+                                                checkColor: Colors.white,
+                                                side: BorderSide(
+                                                  color: isDisabled
+                                                      ? Colors.grey
+                                                      : Colors.orange,
+                                                  width: 2,
+                                                ),
+                                              );
+                                            },
+                                            searchFieldProps: TextFieldProps(
+                                              decoration: InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                hintText: 'Search...',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ])),
                             SizedBox(height: 30.v),
                             Align(
                                 alignment: Alignment.centerLeft,
@@ -197,6 +316,13 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??
                                         false) {
+                                      List<SkillResponseEntity> countries =
+                                          state.skills;
+                                      String result = countries
+                                          .map((country) => country.name)
+                                          .where((name) => name != null)
+                                          .join(', ');
+                                      print('resey ${result}');
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(
@@ -205,8 +331,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                                       '',
                                                   yearsOfExperience:
                                                       yearsController.text,
-                                                  skill:
-                                                      state.skills?.name ?? '',
+                                                  skill: result,
                                                   resume: state.resume,
                                                   describeYourRole:
                                                       whatYouDoController

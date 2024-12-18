@@ -1,17 +1,16 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
 
 class PostJobFourScreen extends HookWidget {
   @override
@@ -119,83 +118,100 @@ class PostJobFourScreen extends HookWidget {
                                       );
                                 })),
                         SizedBox(height: 25.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 2.h),
-                                child: Text("Package",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18))),
-                        SizedBox(height: 15.v),
-                        Padding(
-                            padding: EdgeInsets.only(right: 74.h),
-                            child: CustomRadioButton(
-                                text: "Male",
-                                value: state.packageList[0],
-                                groupValue: state.package,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedPackage(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v, right: 58.h),
-                            child: CustomRadioButton(
-                                text: "Female",
-                                value: state.packageList[1],
-                                groupValue: state.package,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedEducationlevel(
-                                            value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v, right: 58.h),
-                            child: CustomRadioButton(
-                                text: "Both",
-                                value: state.packageList[2],
-                                groupValue: state.package,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedEducationlevel(
-                                            value),
-                                      );
-                                })),
-                        SizedBox(height: 44.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Container(
-                                width: 350.h,
-                                margin: EdgeInsets.only(left: 2.h, right: 12.h),
-                                child: RichText(
-                                    text: TextSpan(children: [
-                                      TextSpan(
-                                          text:
-                                              "By continuing, you agree to ArtisanOga’s",
-                                          style: CustomTextStyles
-                                              .bodyMediumff3a332c),
-                                      TextSpan(text: " "),
-                                      TextSpan(
-                                          text: "Jobs Terms\nand Conditions",
-                                          style: CustomTextStyles
-                                              .titleSmallfff7941e_1),
-                                      TextSpan(text: " "),
-                                      TextSpan(
-                                          text: "including our",
-                                          style: CustomTextStyles
-                                              .bodyMediumff3a332c),
-                                      TextSpan(text: " "),
-                                      TextSpan(
-                                          text:
-                                              "policies prohibiting\ndiscriminatory job posts.",
-                                          style: CustomTextStyles
-                                              .titleSmallfff7941e_1)
-                                    ]),
-                                    textAlign: TextAlign.left))),
+                        state.availablity == "No"
+                            ? SizedBox()
+                            : Column(
+                                children: [
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                          padding: EdgeInsets.only(left: 2.h),
+                                          child: Text("Accommodation",
+                                              style: CustomTextStyles
+                                                  .titleMediumMedium18))),
+                                  SizedBox(height: 15.v),
+                                  Padding(
+                                      padding: EdgeInsets.only(right: 74.h),
+                                      child: CustomRadioButton(
+                                          text: "Male",
+                                          value: state.packageList[0],
+                                          groupValue: state.package,
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 1.v),
+                                          onChange: (value) {
+                                            context.read<HomeBloc>().add(
+                                                  HomeEvent
+                                                      .updateSelectedPackage(
+                                                          value),
+                                                );
+                                          })),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          top: 11.v, right: 58.h),
+                                      child: CustomRadioButton(
+                                          text: "Female",
+                                          value: state.packageList[1],
+                                          groupValue: state.package,
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 1.v),
+                                          onChange: (value) {
+                                            context.read<HomeBloc>().add(
+                                                  HomeEvent
+                                                      .updateSelectedEducationlevel(
+                                                          value),
+                                                );
+                                          })),
+                                  Padding(
+                                      padding: EdgeInsets.only(
+                                          top: 11.v, right: 58.h),
+                                      child: CustomRadioButton(
+                                          text: "Both",
+                                          value: state.packageList[2],
+                                          groupValue: state.package,
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 1.v),
+                                          onChange: (value) {
+                                            context.read<HomeBloc>().add(
+                                                  HomeEvent
+                                                      .updateSelectedEducationlevel(
+                                                          value),
+                                                );
+                                          })),
+                                  SizedBox(height: 44.v),
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Container(
+                                          width: 350.h,
+                                          margin: EdgeInsets.only(
+                                              left: 2.h, right: 12.h),
+                                          child: RichText(
+                                              text: TextSpan(children: [
+                                                TextSpan(
+                                                    text:
+                                                        "By continuing, you agree to ArtisanOga’s",
+                                                    style: CustomTextStyles
+                                                        .bodyMediumff3a332c),
+                                                TextSpan(text: " "),
+                                                TextSpan(
+                                                    text:
+                                                        "Jobs Terms\nand Conditions",
+                                                    style: CustomTextStyles
+                                                        .titleSmallfff7941e_1),
+                                                TextSpan(text: " "),
+                                                TextSpan(
+                                                    text: "including our",
+                                                    style: CustomTextStyles
+                                                        .bodyMediumff3a332c),
+                                                TextSpan(text: " "),
+                                                TextSpan(
+                                                    text:
+                                                        "policies prohibiting\ndiscriminatory job posts.",
+                                                    style: CustomTextStyles
+                                                        .titleSmallfff7941e_1)
+                                              ]),
+                                              textAlign: TextAlign.left))),
+                                ],
+                              ),
                         SizedBox(height: 40.v),
                         BlocSelector<HomeBloc, HomeState, PostJobEntity>(
                           selector: (state) {

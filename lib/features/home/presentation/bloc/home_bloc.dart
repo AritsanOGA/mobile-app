@@ -69,6 +69,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedPackage>(_onUpdateSelectedPackage);
     on<_UpdateCountry>(_onUpdateCountry);
     on<_UpdateState>(_onUpdateState);
+    on<_UpdateSelectedDate>(_onUpdateSelectedDate);
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
     on<_UpdateSelectedAvailability>(_onUpdateSelectedAvailability);
     on<_UpdateSelectedCompensationType>(_onUpdateSelectedCompensationType);
@@ -372,5 +373,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onUpdateSelectedAvailability(
       _UpdateSelectedAvailability event, Emitter<HomeState> emit) {
     emit(state.copyWith(availablity: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedDate(
+      _UpdateSelectedDate event, Emitter<HomeState> emit) {
+    emit(state.copyWith(applicationTime: event.value));
   }
 }

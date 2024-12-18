@@ -7,7 +7,7 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+//import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../../core/services/default.dart';
 
@@ -606,10 +606,10 @@ class _UpdateProfilePageOneScreenState
           height: 400, // Adjust the height as needed
           child: Column(
             children: [
-              SfDateRangePicker(
-                onSelectionChanged: _onSelectionChanged,
-                selectionMode: DateRangePickerSelectionMode.single,
-              ),
+              // SfDateRangePicker(
+              //   onSelectionChanged: _onSelectionChanged,
+              //   selectionMode: DateRangePickerSelectionMode.single,
+              // ),
               Container(
                   width: double.maxFinite,
                   child: Center(
@@ -688,13 +688,13 @@ class _UpdateProfilePageOneScreenState
     Navigator.pop(context);
   }
 
-  void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
-    final pickedDate = DateFormat('yyyy-MM-dd').format(args.value);
+  // void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
+  //   final pickedDate = DateFormat('yyyy-MM-dd').format(args.value);
 
-    setState(() {
-      selectedDate = pickedDate;
-    });
+  //   setState(() {
+  //     selectedDate = pickedDate;
+  //   });
 
-    print(args.value);
-  }
+  //   print(args.value);
+  // }
 }

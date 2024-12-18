@@ -114,7 +114,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
                 educationalQualification == 'NECO' ||
                 educationalQualification == 'WAEC'
             ? ''
-            : certificateObtained,
+            : '',
         'course_name': educationalQualification == 'No Education' ||
                 educationalQualification == 'GCE' ||
                 educationalQualification == 'NECO' ||

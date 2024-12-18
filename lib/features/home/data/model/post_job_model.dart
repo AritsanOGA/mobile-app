@@ -74,7 +74,7 @@ class PostJobModel extends PostJobEntity {
         "application_deadline": applicationDeadline,
         "office_address": officeAddress,
         "accommodation_available": available,
-        "accommodation_for": availableFor,
+        "accommodation_for": available == 'No' ? '' : availableFor,
         // "payment_method": paymentMethod,
         "currency": 'N',
         "compensation_type": compensationType,
@@ -82,12 +82,4 @@ class PostJobModel extends PostJobEntity {
         "artisan_skills": skills,
         "commute_type": workType,
       };
-
-  //static Future<PostJobEntity> fromJson(Map<String, dynamic> result) {}
 }
-
-//   Map<String, String> toJson() => {
-//         'options': email,
-//         'password': password,
-//       };
-// }
