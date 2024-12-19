@@ -12,6 +12,7 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -327,6 +328,10 @@ class AppRoutes {
       case searchResultPageScreen:
         return AppPageRouteBuilder(
           navigateTo: SearchResultPageScreen(),
+        );
+          case candidatesProfileAcceptPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: CandidatesProfileAcceptPageScreen(),
         );
       case jSCreateAccountPageFourScreen:
         return AppPageRouteBuilder(

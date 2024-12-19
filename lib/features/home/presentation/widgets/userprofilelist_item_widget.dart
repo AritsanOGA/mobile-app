@@ -133,20 +133,26 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               ),
               SizedBox(height: 23.v),
               Center(
-                child: Container(
-                    height: 40.v,
-                    width: 170.h,
-                    // margin: margin,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: theme.primaryColor),
-                    // margin: EdgeInsets.symmetric(horizontal: 3.h),
-                    child: Center(
-                      child: Text(
-                        'View',
-                        style: CustomTextStyles.titleMediumGray50_1,
-                      ),
-                    )),
+                child: GestureDetector(
+                  onTap: (){
+                     Navigator.pushNamed(context,
+                                AppRoutes.candidatesProfileAcceptPageScreen);
+                  },
+                  child: Container(
+                      height: 40.v,
+                      width: 170.h,
+                      // margin: margin,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: theme.primaryColor),
+                      // margin: EdgeInsets.symmetric(horizontal: 3.h),
+                      child: Center(
+                        child: Text(
+                          'View',
+                          style: CustomTextStyles.titleMediumGray50_1,
+                        ),
+                      )),
+                ),
               ),
             ],
           ),

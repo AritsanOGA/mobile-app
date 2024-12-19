@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:hive/hive.dart';
-import '../../core/services/default.dart';
-import '../candidates_profile_accept_page_screen/candidates_profile_accept_page_screen.dart';
-import 'widgets/userprofilegrid_item_widget.dart';
+import '../../../../core/services/default.dart';
+import 'candidates_profile_accept_page_screen.dart';
+import '../../../../presentation/view_candidates_page_screen/widgets/userprofilegrid_item_widget.dart';
 
 class ViewCandidatesPageScreen extends StatefulWidget {
   final dynamic job_id; // Replace 'dynamic' with the appropriate data type

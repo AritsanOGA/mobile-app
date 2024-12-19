@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import '../candidates_profile_accept_page_screen/widgets/waitering_item_widget.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../presentation/candidates_profile_accept_page_screen/widgets/waitering_item_widget.dart';
 
 class CandidatesProfileAcceptPageScreen extends StatelessWidget {
   const CandidatesProfileAcceptPageScreen({Key? key}) : super(key: key);
@@ -9,6 +11,9 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: CustomAppBar(
+              title: '',
+            ),
             body: SingleChildScrollView(
                 child: Container(
                     width: double.maxFinite,
@@ -16,28 +21,8 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                     child: Column(children: [
                       SizedBox(height: 26.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(right: 109.h),
-                              child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomImageView(
-                                        imagePath:
-                                            ImageConstant.imgArrowLeftOnprimary,
-                                        height: 16.adaptSize,
-                                        width: 16.adaptSize,
-                                        margin: EdgeInsets.only(
-                                            top: 3.v, bottom: 5.v),
-                                        onTap: () {
-                                          onTapImgArrowLeft(context);
-                                        }),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 93.h),
-                                        child: Text("Applicants Profile",
-                                            style: theme.textTheme.titleLarge))
-                                  ]))),
+                      Text("Applicants Profile",
+                          style: theme.textTheme.titleLarge),
                       SizedBox(height: 21.v),
                       SizedBox(
                           height: 75.adaptSize,

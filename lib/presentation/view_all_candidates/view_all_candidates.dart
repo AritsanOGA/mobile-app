@@ -3,7 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../core/services/default.dart';
-import '../candidates_profile_accept_page_screen/candidates_profile_accept_page_screen.dart';
+import '../../features/home/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'widgets/userprofilegrid_item_widget.dart';
 
 class ViewAllCandidatesPageScreen extends StatefulWidget {

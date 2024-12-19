@@ -1,4 +1,4 @@
-import 'package:artisan_oga/presentation/view_candidates_page_screen/view_candidates_page_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
