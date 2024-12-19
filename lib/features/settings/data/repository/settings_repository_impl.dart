@@ -1,6 +1,6 @@
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
-import 'package:artisan_oga/core/extensions/extention.dart';
+import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/features/settings/data/data_source/settings_remote_data_source.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';

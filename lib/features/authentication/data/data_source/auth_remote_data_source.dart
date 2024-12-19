@@ -1,4 +1,3 @@
-
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
@@ -140,16 +139,24 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
-    print('bbbo ${RegisterJobSeekerModel.fromEntity(entity).toJson()}');
-    final result = await api.post(
-      url: AppApiEndpoint.candidateSignup,
-      body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    );
+    print('bbbo ${await RegisterJobSeekerModel.fromEntity(entity).toJson()}');
+    try {
+      final result = await api.post(
+        url: AppApiEndpoint.candidateSignup,
+        body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      );
+      //  print('hh${body}')
+    } catch (e, stackTrace) {
+      print('Error parsing countries: $e');
+      print('StackTrace: $stackTrace');
+      throw Exception('Failed to parse countries');
+    }
 
+    // print('hhhh$body');
     return true;
   }
 

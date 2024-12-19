@@ -1,7 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
-import 'package:artisan_oga/core/extensions/extention.dart';
+import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';

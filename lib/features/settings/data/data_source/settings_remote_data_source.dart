@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
+import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_js_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_employer_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_js_model.dart';
@@ -39,14 +40,28 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
 
   @override
   Future<GetEmployerResponseEntity> getEmployerProfile() async {
+    //try {
     final result = await api.get(
       url: AppApiEndpoint.getEmployerProfile,
     ) as Map<String, dynamic>;
-    print('resultni$result');
-    return result['data'];
-    // GetEmployerResponseModel.fromJson(
-    //   result['data'] as Map<String, dynamic>,
-    // );
+
+    print('API Response: $result');
+    return GetEmployerResponseModel.fromJson(
+      result['data'] as Map<String, dynamic>,
+    );
+    // Ensure 'data' exists and is a Map
+    //   if (result['data'] is Map<String, dynamic>) {
+    //     return GetEmployerResponseModel.fromJson(
+    //       result['data'] as Map<String, dynamic>,
+    //     );
+    //   } else {
+    //     throw Exception('Invalid data format received from API.');
+    //   }
+    // } catch (e, stackTrace) {
+    //   print('Error fetching employer profile: $e');
+    //   print('StackTrace: $stackTrace');
+    //   throw Exception(
+    //       'Failed to fetch employer profile. Please try again later.');
   }
 
   @override

@@ -185,7 +185,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                       padding: EdgeInsets.only(
                                                           top: 5.v, right: 5.v),
                                                       child: Text(
-                                                          state.picture == null
+                                                          state.file == null
                                                               ? "No file chosen"
                                                               : "Image selected",
                                                           style: theme.textTheme
@@ -236,7 +236,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                           confirmPasswordController
                                                               .text,
                                                       gender: state.gender,
-                                                      passport: state.picture,
+                                                      passport: state.file,
                                                       password:
                                                           passwordController
                                                               .text)));

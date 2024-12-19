@@ -37,7 +37,7 @@ class HomeEvent with _$HomeEvent {
       _UpdateSelectedSkillLevel;
   const factory HomeEvent.updateSelectedEducationlevel(String value) =
       _UpdateSelectedEducationLevel;
-  const factory HomeEvent.updateSelectedSkill(SkillResponseEntity value) =
+  const factory HomeEvent.updateSelectedSkill(List<SkillResponseEntity> value) =
       _UpdateSelectedSkill;
   const factory HomeEvent.updateSelectedPackage(String value) =
       _UpdateSelectedPackage;

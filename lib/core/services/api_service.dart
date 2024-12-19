@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_dynamic_calls
 
 import 'dart:convert';
+
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/routes/app_routes.dart';
@@ -65,16 +66,16 @@ class ApiServiceImpl implements ApiService {
     _dio.interceptors.add(
       InterceptorsWrapper(
         onError: (e, handler) async {
-          if (e.response!.data['message'] == 'Unauthenticated') {
-            await refreshToken();
+          //if (e.response!.data['message'] == 'Unauthenticated') {
+          //   await refreshToken();
 
-            String refreshTokens =
-                localStorage.getFromDisk('refreshToken').toString();
-            print('neereftoken$refreshTokens');
-            e.requestOptions.headers['Authorization'] = 'Bearer $refreshTokens';
+          //   String refreshTokens =
+          //       localStorage.getFromDisk('refreshToken').toString();
+          //   print('neereftoken$refreshTokens');
+          //   e.requestOptions.headers['Authorization'] = 'Bearer $refreshTokens';
 
-            return handler.resolve(await _retry(e.requestOptions));
-          }
+          //   return handler.resolve(await _retry(e.requestOptions));
+          // }
           return handler.next(e);
         },
         onRequest: (r, handler) {
@@ -110,19 +111,27 @@ class ApiServiceImpl implements ApiService {
         queryParameters: queryParameters,
         options: Options(
             headers: headers,
-            //contentType: 'application/json',
+            //  contentType: 'application/json',
             followRedirects: false,
             validateStatus: (status) {
-              return status! < 500;
+              return status != null &&
+                  (status < 400 || status == 400 || status == 500);
             }),
       );
       _log.i('Response from $url \n${response.data}');
       return response.data;
     } on DioException catch (error, trace) {
-      _log.e('Error from $url', error: error.message);
+      // if (error.response?.statusCode == 500) {
+      //   _log.e('Server error occurred: $error.response.data}');
+      //   throw ServerException(
+      //       message: 'Internal Server Error: ${error.response?.data}');
+      // }
+      _log.e('Error from $url', error: error.response?.statusCode);
       throw ServerException(
         trace: trace,
-        message: error.response?.data['msg'] as String?,
+        message:
+            //error.response?.data['msg'] as String? ??
+            'An unknown error occurred',
       );
     }
   }
@@ -148,7 +157,10 @@ class ApiServiceImpl implements ApiService {
           // validateStatus: (status) => status != null && status < 400,
 
           followRedirects: false,
-          validateStatus: (status) => true,
+          validateStatus: (status) {
+            return status != null && status >= 200 && status < 300;
+          },
+          //  validateStatus: (status) => true,
           //  validateStatus: (status) => status != null && status < 400,
 
           // validateStatus: (status) =>
@@ -171,12 +183,14 @@ class ApiServiceImpl implements ApiService {
         );
       }
       _log.i('Response from $url \n${response.data}');
-
+      print('statys${response.statusCode}');
       return response.data;
     } on DioException catch (error, trace) {
       if (error.response?.statusCode == 422) {
         // Handle 422 errors specifically
-        final errorDetails = error.response?.data['data'] ?? 'Validation error';
+        // final errorDetails = error.response?.data['data'] ?? 'Validation error';
+        final errorDetails =
+            error.response?.data['errors'] ?? 'Validation error';
         throw Exception('Validation failed: $errorDetails');
       }
       _log.e('Error from ', error: error.message);

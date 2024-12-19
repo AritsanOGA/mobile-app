@@ -94,6 +94,10 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                     validator: FormValidation.stringValidation,
                                     hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 27.v),
+                            Text('Select Skill',
+                                style: CustomTextStyles
+                                    .bodyMediumPrimaryContainer_1),
+                            SizedBox(height: 7.v),
                             Container(
                                 width: MediaQuery.of(context).size.width,
                                 padding:
@@ -169,8 +173,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                               spacing: 8.0,
                                               children: selectedItems
                                                   .map((item) => Chip(
-                                                        label: Text(item.name ??
-                                                            'kjjkerkjerg'),
+                                                        label: Text(item.name),
                                                         onDeleted: () {
                                                           selectedItems
                                                               .remove(item);

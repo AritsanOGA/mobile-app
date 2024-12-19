@@ -77,164 +77,176 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                 style: CustomTextStyles
                                     .bodyMediumPrimaryContainer_1),
                             SizedBox(height: 7.v),
-                            // BlocBuilder<AuthBloc, AuthState>(
-                            //     builder: (context, state) {
-                            //   return Container(
-                            //       width: MediaQuery.of(context).size.width,
-                            //       padding:
-                            //           const EdgeInsets.only(left: 20, right: 5),
-                            //       decoration: BoxDecoration(
-                            //           border: Border.all(
-                            //               color: appTheme.gray500, width: 0.8),
-                            //           borderRadius: BorderRadius.circular(8)),
-                            //       child: Column(
-                            //           crossAxisAlignment:
-                            //               CrossAxisAlignment.start,
-                            //           children: [
-                            //             DropdownSearch<CountryResponseEntity>(
-                            //               items: state.countries,
-                            //               itemAsString:
-                            //                   (CountryResponseEntity state) =>
-                            //                       state.name ?? '',
-                            //               dropdownDecoratorProps:
-                            //                   const DropDownDecoratorProps(
-                            //                       dropdownSearchDecoration:
-                            //                           InputDecoration(
-                            //                 border: InputBorder.none,
-                            //               )),
-                            //               onChanged: (CountryResponseEntity?
-                            //                   newValue) {
-                            //                 context.read<AuthBloc>().add(
-                            //                       AuthEvent
-                            //                           .updateSelectedCountry(
-                            //                               newValue!),
-                            //                     );
-                            //                 context.read<AuthBloc>().add(
-                            //                       AuthEvent.getState(
-                            //                           newValue.id.toString()),
-                            //                     );
-                            //               },
-                            //               filterFn: (item, filter) {
-                            //                 return item.name
-                            //                     .toLowerCase()
-                            //                     .contains(filter.toLowerCase());
-                            //               },
-                            //               dropdownButtonProps:
-                            //                   DropdownButtonProps(
-                            //                 icon: Padding(
-                            //                   padding: const EdgeInsets.only(
-                            //                       left: 20.0),
-                            //                   child: SvgPicture.asset(
-                            //                       AppAsset.dropdown),
-                            //                 ),
-                            //               ),
-                            //               dropdownBuilder:
-                            //                   (context, selectedItem) {
-                            //                 return Padding(
-                            //                   padding: const EdgeInsets.only(
-                            //                       top: 10),
-                            //                   child: Text(
-                            //                     state.country?.name ??
-                            //                         'Select Country',
-                            //                     style: selectedItem == null
-                            //                         ? CustomTextStyles
-                            //                             .titleSmallPrimaryContainer_1
-                            //                         : CustomTextStyles
-                            //                             .titleSmallPrimaryContainer_1,
-                            //                   ),
-                            //                 );
-                            //               },
-                            //               popupProps: const PopupProps.menu(
-                            //                 showSearchBox: true,
-                            //                 searchFieldProps: TextFieldProps(
-                            //                   decoration: InputDecoration(
-                            //                     border: OutlineInputBorder(),
-                            //                     hintText: 'Search...',
-                            //                   ),
-                            //                 ),
-                            //               ),
-                            //             ),
-                            //           ]));
-                            // }),
+                            BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                              return Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  padding:
+                                      const EdgeInsets.only(left: 20, right: 5),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: appTheme.gray500, width: 0.8),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        DropdownSearch<CountryResponseEntity>(
+                                          items:
+                                              (filter, infiniteScrollProps) =>
+                                                  state.countries,
+                                          itemAsString:
+                                              (CountryResponseEntity state) =>
+                                                  state.name ?? '',
+                                          decoratorProps:
+                                              const DropDownDecoratorProps(
+                                                  decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                          )),
+                                          onChanged: (CountryResponseEntity?
+                                              newValue) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent
+                                                      .updateSelectedCountry(
+                                                          newValue!),
+                                                );
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.getState(
+                                                      newValue.id.toString()),
+                                                );
+                                          },
+                                          filterFn: (item, filter) {
+                                            return item.name
+                                                .toLowerCase()
+                                                .contains(filter.toLowerCase());
+                                          },
+                                          suffixProps: DropdownSuffixProps(
+                                            dropdownButtonProps:
+                                                DropdownButtonProps(
+                                              selectedIcon: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 20.0),
+                                                child: SvgPicture.asset(
+                                                    AppAsset.dropdown),
+                                              ),
+                                            ),
+                                          ),
+                                          compareFn: (item, selectedItem) {
+                                            return item.id == selectedItem.id;
+                                          },
+                                          dropdownBuilder:
+                                              (context, selectedItem) {
+                                            return Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10),
+                                              child: Text(
+                                                state.country?.name ??
+                                                    'Select Country',
+                                                style: selectedItem == null
+                                                    ? CustomTextStyles
+                                                        .titleSmallPrimaryContainer_1
+                                                    : CustomTextStyles
+                                                        .titleSmallPrimaryContainer_1,
+                                              ),
+                                            );
+                                          },
+                                          popupProps: const PopupProps.menu(
+                                            showSearchBox: true,
+                                            searchFieldProps: TextFieldProps(
+                                              decoration: InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                hintText: 'Search...',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ]));
+                            }),
                             SizedBox(height: 30.v),
                             Text('State of Residence',
                                 style: CustomTextStyles
                                     .bodyMediumPrimaryContainer_1),
                             SizedBox(height: 7.v),
-                            // BlocBuilder<AuthBloc, AuthState>(
-                            //     builder: (context, state) {
-                            //   return Container(
-                            //       width: MediaQuery.of(context).size.width,
-                            //       padding:
-                            //           const EdgeInsets.only(left: 20, right: 5),
-                            //       decoration: BoxDecoration(
-                            //           border: Border.all(
-                            //               color: appTheme.gray500, width: 0.8),
-                            //           borderRadius: BorderRadius.circular(8)),
-                            //       child: Column(
-                            //           crossAxisAlignment:
-                            //               CrossAxisAlignment.start,
-                            //           children: [
-                            //             DropdownSearch<StateResponseEntity>(
-                            //               items: state.states,
-                            //               itemAsString:
-                            //                   (StateResponseEntity state) =>
-                            //                       state.name ?? '',
-                            //               dropdownDecoratorProps:
-                            //                   const DropDownDecoratorProps(
-                            //                       dropdownSearchDecoration:
-                            //                           InputDecoration(
-                            //                 border: InputBorder.none,
-                            //               )),
-                            //               onChanged:
-                            //                   (StateResponseEntity? newValue) {
-                            //                 context.read<AuthBloc>().add(
-                            //                       AuthEvent.updateSelectedState(
-                            //                           newValue!),
-                            //                     );
-                            //               },
-                            //               filterFn: (item, filter) {
-                            //                 return item.name
-                            //                     .toLowerCase()
-                            //                     .contains(filter.toLowerCase());
-                            //               },
-                            //               dropdownButtonProps:
-                            //                   DropdownButtonProps(
-                            //                 icon: Padding(
-                            //                   padding: const EdgeInsets.only(
-                            //                       left: 20.0),
-                            //                   child: SvgPicture.asset(
-                            //                       AppAsset.dropdown),
-                            //                 ),
-                            //               ),
-                            //               dropdownBuilder:
-                            //                   (context, selectedItem) {
-                            //                 return Padding(
-                            //                   padding: const EdgeInsets.only(
-                            //                       top: 10),
-                            //                   child: Text(
-                            //                     state.state?.name ??
-                            //                         'Select State',
-                            //                     style: selectedItem == null
-                            //                         ? CustomTextStyles
-                            //                             .titleSmallPrimaryContainer_1
-                            //                         : CustomTextStyles
-                            //                             .titleSmallPrimaryContainer_1,
-                            //                   ),
-                            //                 );
-                            //               },
-                            //               popupProps: const PopupProps.menu(
-                            //                 showSearchBox: true,
-                            //                 searchFieldProps: TextFieldProps(
-                            //                   decoration: InputDecoration(
-                            //                     border: OutlineInputBorder(),
-                            //                     hintText: 'Search...',
-                            //                   ),
-                            //                 ),
-                            //               ),
-                            //             ),
-                            //           ]));
-                            // }),
+                            BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                              return Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  padding:
+                                      const EdgeInsets.only(left: 20, right: 5),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: appTheme.gray500, width: 0.8),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        DropdownSearch<StateResponseEntity>(
+                                          items:
+                                              (filter, infiniteScrollProps) =>
+                                                  state.states,
+                                          itemAsString:
+                                              (StateResponseEntity state) =>
+                                                  state.name ?? '',
+                                          decoratorProps:
+                                              const DropDownDecoratorProps(
+                                                  decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                          )),
+                                          onChanged:
+                                              (StateResponseEntity? newValue) {
+                                            context.read<AuthBloc>().add(
+                                                  AuthEvent.updateSelectedState(
+                                                      newValue!),
+                                                );
+                                          },
+                                          compareFn: (item, selectedItem) {
+                                            return item.id == selectedItem.id;
+                                          },
+                                          filterFn: (item, filter) {
+                                            return item.name
+                                                .toLowerCase()
+                                                .contains(filter.toLowerCase());
+                                          },
+                                          suffixProps: DropdownSuffixProps(
+                                            dropdownButtonProps:
+                                                DropdownButtonProps(
+                                              selectedIcon: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 20.0),
+                                                child: SvgPicture.asset(
+                                                    AppAsset.dropdown),
+                                              ),
+                                            ),
+                                          ),
+                                          dropdownBuilder:
+                                              (context, selectedItem) {
+                                            return Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10),
+                                              child: Text(
+                                                state.state?.name ??
+                                                    'Select State',
+                                                style: selectedItem == null
+                                                    ? CustomTextStyles
+                                                        .titleSmallPrimaryContainer_1
+                                                    : CustomTextStyles
+                                                        .titleSmallPrimaryContainer_1,
+                                              ),
+                                            );
+                                          },
+                                          popupProps: const PopupProps.menu(
+                                            showSearchBox: true,
+                                            searchFieldProps: TextFieldProps(
+                                              decoration: InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                hintText: 'Search...',
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ]));
+                            }),
                             SizedBox(height: 30.v),
                             BlocBuilder<AuthBloc, AuthState>(
                               builder: (context, state) {

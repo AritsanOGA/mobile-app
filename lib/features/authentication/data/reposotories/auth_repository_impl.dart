@@ -1,7 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
-import 'package:artisan_oga/core/extensions/extention.dart';
+import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_local_datasource.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';

@@ -18,12 +18,13 @@ class HomeState with _$HomeState {
       @Default([]) List<EmployerJobResponseEntity> employerJobList,
       @Default([]) List<FeaturedJobResponseEntity> featuredJobList,
       @Default([]) List<JobSeekerJobResponseEntity> jobSeekerJobList,
-      @Default([]) List<SkillResponseEntity> skill,
+      @Default([]) List<SkillResponseEntity> skills,
+         @Default([]) List<SkillResponseEntity> skill,
       @Default([]) List<CategoryResponseEntity> categoryList,
       @Default([]) List<CountryResponseEntity> countries,
       @Default([]) List<StateResponseEntity> states,
       CategoryResponseEntity? category,
-      SkillResponseEntity? skills,
+    
       CountryResponseEntity? country,
       StateResponseEntity? state,
       @Default(PostJobEntity(

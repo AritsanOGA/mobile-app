@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -21,12 +22,13 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_job
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
-part 'auth_bloc.freezed.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(
@@ -284,7 +286,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _SelectPassport event, Emitter<AuthState> emit) async {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
-    emit(state.copyWith(picture: File(image)));
+    if (image.endsWith('.png') || image.endsWith('.jpg')) {
+      emit(state.copyWith(file: File(image)));
+
+      print('Selected file: ${image}');
+    } else {
+      print('extension $image');
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('onavlid tyoe');
+    }
   }
 
   FutureOr<void> _onSelectResume(
@@ -343,6 +353,4 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       _SelectTabEvent event, Emitter<AuthState> emit) {
     emit(state.copyWith(selectedIndex: event.index));
   }
-
-
 }

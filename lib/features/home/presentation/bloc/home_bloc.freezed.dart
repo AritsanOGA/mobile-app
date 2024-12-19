@@ -41,7 +41,8 @@ mixin _$HomeEvent {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -71,7 +72,7 @@ mixin _$HomeEvent {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -101,7 +102,7 @@ mixin _$HomeEvent {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -296,7 +297,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -329,7 +331,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -362,7 +364,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -561,7 +563,8 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -594,7 +597,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -627,7 +630,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -825,7 +828,8 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -858,7 +862,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -891,7 +895,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -1089,7 +1093,8 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -1122,7 +1127,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -1155,7 +1160,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -1353,7 +1358,8 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -1386,7 +1392,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -1419,7 +1425,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -1617,7 +1623,8 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -1650,7 +1657,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -1683,7 +1690,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -1907,7 +1914,8 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -1940,7 +1948,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -1973,7 +1981,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -2205,7 +2213,8 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -2238,7 +2247,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -2271,7 +2280,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -2502,7 +2511,8 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -2535,7 +2545,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -2568,7 +2578,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -2798,7 +2808,8 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -2831,7 +2842,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -2864,7 +2875,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -3067,7 +3078,8 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -3100,7 +3112,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -3133,7 +3145,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -3357,7 +3369,8 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -3390,7 +3403,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -3423,7 +3436,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -3626,7 +3639,8 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -3659,7 +3673,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -3692,7 +3706,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -3916,7 +3930,8 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -3949,7 +3964,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -3982,7 +3997,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -4214,7 +4229,8 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -4247,7 +4263,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -4280,7 +4296,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -4512,7 +4528,8 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -4545,7 +4562,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -4578,7 +4595,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -4811,7 +4828,8 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -4844,7 +4862,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -4877,7 +4895,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -5109,7 +5127,8 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -5142,7 +5161,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -5175,7 +5194,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -5410,7 +5429,8 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -5443,7 +5463,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -5476,7 +5496,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -5710,7 +5730,8 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -5743,7 +5764,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -5776,7 +5797,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -6011,7 +6032,8 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -6044,7 +6066,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -6077,7 +6099,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -6227,7 +6249,7 @@ abstract class _$$UpdateSelectedSkillImplCopyWith<$Res> {
           $Res Function(_$UpdateSelectedSkillImpl) then) =
       __$$UpdateSelectedSkillImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({SkillResponseEntity value});
+  $Res call({List<SkillResponseEntity> value});
 }
 
 /// @nodoc
@@ -6245,9 +6267,9 @@ class __$$UpdateSelectedSkillImplCopyWithImpl<$Res>
   }) {
     return _then(_$UpdateSelectedSkillImpl(
       null == value
-          ? _value.value
+          ? _value._value
           : value // ignore: cast_nullable_to_non_nullable
-              as SkillResponseEntity,
+              as List<SkillResponseEntity>,
     ));
   }
 }
@@ -6255,10 +6277,16 @@ class __$$UpdateSelectedSkillImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
-  const _$UpdateSelectedSkillImpl(this.value);
+  const _$UpdateSelectedSkillImpl(final List<SkillResponseEntity> value)
+      : _value = value;
 
+  final List<SkillResponseEntity> _value;
   @override
-  final SkillResponseEntity value;
+  List<SkillResponseEntity> get value {
+    if (_value is EqualUnmodifiableListView) return _value;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_value);
+  }
 
   @override
   String toString() {
@@ -6270,11 +6298,12 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateSelectedSkillImpl &&
-            (identical(other.value, value) || other.value == value));
+            const DeepCollectionEquality().equals(other._value, _value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_value));
 
   @JsonKey(ignore: true)
   @override
@@ -6309,7 +6338,8 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -6342,7 +6372,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -6375,7 +6405,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -6509,10 +6539,10 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
 }
 
 abstract class _UpdateSelectedSkill implements HomeEvent {
-  const factory _UpdateSelectedSkill(final SkillResponseEntity value) =
+  const factory _UpdateSelectedSkill(final List<SkillResponseEntity> value) =
       _$UpdateSelectedSkillImpl;
 
-  SkillResponseEntity get value;
+  List<SkillResponseEntity> get value;
   @JsonKey(ignore: true)
   _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -6607,7 +6637,8 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -6640,7 +6671,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -6673,7 +6704,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -6906,7 +6937,8 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -6939,7 +6971,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -6972,7 +7004,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -7202,7 +7234,8 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -7235,7 +7268,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -7268,7 +7301,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -7498,7 +7531,8 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(String value) updateSelectedCompensationType,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
-    required TResult Function(SkillResponseEntity value) updateSelectedSkill,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
     required TResult Function(String value) updateSelectedPackage,
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
@@ -7531,7 +7565,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(String value)? updateSelectedCompensationType,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
-    TResult? Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult? Function(String value)? updateSelectedPackage,
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
@@ -7564,7 +7598,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(String value)? updateSelectedCompensationType,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
-    TResult Function(SkillResponseEntity value)? updateSelectedSkill,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
     TResult Function(String value)? updateSelectedPackage,
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
@@ -7729,6 +7763,7 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   List<JobSeekerJobResponseEntity> get jobSeekerJobList =>
       throw _privateConstructorUsedError;
+  List<SkillResponseEntity> get skills => throw _privateConstructorUsedError;
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   List<CategoryResponseEntity> get categoryList =>
       throw _privateConstructorUsedError;
@@ -7736,7 +7771,6 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   List<StateResponseEntity> get states => throw _privateConstructorUsedError;
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
-  SkillResponseEntity? get skills => throw _privateConstructorUsedError;
   CountryResponseEntity? get country => throw _privateConstructorUsedError;
   StateResponseEntity? get state => throw _privateConstructorUsedError;
   PostJobEntity get postJobRequest => throw _privateConstructorUsedError;
@@ -7781,12 +7815,12 @@ mixin _$HomeState {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -7830,12 +7864,12 @@ mixin _$HomeState {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -7879,12 +7913,12 @@ mixin _$HomeState {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -7954,12 +7988,12 @@ abstract class $HomeStateCopyWith<$Res> {
       List<EmployerJobResponseEntity> employerJobList,
       List<FeaturedJobResponseEntity> featuredJobList,
       List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      List<SkillResponseEntity> skills,
       List<SkillResponseEntity> skill,
       List<CategoryResponseEntity> categoryList,
       List<CountryResponseEntity> countries,
       List<StateResponseEntity> states,
       CategoryResponseEntity? category,
-      SkillResponseEntity? skills,
       CountryResponseEntity? country,
       StateResponseEntity? state,
       PostJobEntity postJobRequest,
@@ -8012,12 +8046,12 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? employerJobList = null,
     Object? featuredJobList = null,
     Object? jobSeekerJobList = null,
+    Object? skills = null,
     Object? skill = null,
     Object? categoryList = null,
     Object? countries = null,
     Object? states = null,
     Object? category = freezed,
-    Object? skills = freezed,
     Object? country = freezed,
     Object? state = freezed,
     Object? postJobRequest = null,
@@ -8102,6 +8136,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.jobSeekerJobList
           : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
               as List<JobSeekerJobResponseEntity>,
+      skills: null == skills
+          ? _value.skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
       skill: null == skill
           ? _value.skill
           : skill // ignore: cast_nullable_to_non_nullable
@@ -8122,10 +8160,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
-      skills: freezed == skills
-          ? _value.skills
-          : skills // ignore: cast_nullable_to_non_nullable
-              as SkillResponseEntity?,
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -8242,12 +8276,12 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<EmployerJobResponseEntity> employerJobList,
       List<FeaturedJobResponseEntity> featuredJobList,
       List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      List<SkillResponseEntity> skills,
       List<SkillResponseEntity> skill,
       List<CategoryResponseEntity> categoryList,
       List<CountryResponseEntity> countries,
       List<StateResponseEntity> states,
       CategoryResponseEntity? category,
-      SkillResponseEntity? skills,
       CountryResponseEntity? country,
       StateResponseEntity? state,
       PostJobEntity postJobRequest,
@@ -8298,12 +8332,12 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? employerJobList = null,
     Object? featuredJobList = null,
     Object? jobSeekerJobList = null,
+    Object? skills = null,
     Object? skill = null,
     Object? categoryList = null,
     Object? countries = null,
     Object? states = null,
     Object? category = freezed,
-    Object? skills = freezed,
     Object? country = freezed,
     Object? state = freezed,
     Object? postJobRequest = null,
@@ -8388,6 +8422,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._jobSeekerJobList
           : jobSeekerJobList // ignore: cast_nullable_to_non_nullable
               as List<JobSeekerJobResponseEntity>,
+      skills: null == skills
+          ? _value._skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
       skill: null == skill
           ? _value._skill
           : skill // ignore: cast_nullable_to_non_nullable
@@ -8408,10 +8446,6 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
-      skills: freezed == skills
-          ? _value.skills
-          : skills // ignore: cast_nullable_to_non_nullable
-              as SkillResponseEntity?,
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -8523,12 +8557,12 @@ class _$InitialImpl implements _Initial {
       final List<EmployerJobResponseEntity> employerJobList = const [],
       final List<FeaturedJobResponseEntity> featuredJobList = const [],
       final List<JobSeekerJobResponseEntity> jobSeekerJobList = const [],
+      final List<SkillResponseEntity> skills = const [],
       final List<SkillResponseEntity> skill = const [],
       final List<CategoryResponseEntity> categoryList = const [],
       final List<CountryResponseEntity> countries = const [],
       final List<StateResponseEntity> states = const [],
       this.category,
-      this.skills,
       this.country,
       this.state,
       this.postJobRequest = const PostJobEntity(
@@ -8601,6 +8635,7 @@ class _$InitialImpl implements _Initial {
         _employerJobList = employerJobList,
         _featuredJobList = featuredJobList,
         _jobSeekerJobList = jobSeekerJobList,
+        _skills = skills,
         _skill = skill,
         _categoryList = categoryList,
         _countries = countries,
@@ -8681,6 +8716,15 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_jobSeekerJobList);
   }
 
+  final List<SkillResponseEntity> _skills;
+  @override
+  @JsonKey()
+  List<SkillResponseEntity> get skills {
+    if (_skills is EqualUnmodifiableListView) return _skills;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skills);
+  }
+
   final List<SkillResponseEntity> _skill;
   @override
   @JsonKey()
@@ -8719,8 +8763,6 @@ class _$InitialImpl implements _Initial {
 
   @override
   final CategoryResponseEntity? category;
-  @override
-  final SkillResponseEntity? skills;
   @override
   final CountryResponseEntity? country;
   @override
@@ -8839,7 +8881,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, skills: $skills, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -8874,6 +8916,7 @@ class _$InitialImpl implements _Initial {
                 .equals(other._featuredJobList, _featuredJobList) &&
             const DeepCollectionEquality()
                 .equals(other._jobSeekerJobList, _jobSeekerJobList) &&
+            const DeepCollectionEquality().equals(other._skills, _skills) &&
             const DeepCollectionEquality().equals(other._skill, _skill) &&
             const DeepCollectionEquality()
                 .equals(other._categoryList, _categoryList) &&
@@ -8882,7 +8925,6 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._states, _states) &&
             (identical(other.category, category) ||
                 other.category == category) &&
-            (identical(other.skills, skills) || other.skills == skills) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.postJobRequest, postJobRequest) ||
@@ -8946,12 +8988,12 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_employerJobList),
         const DeepCollectionEquality().hash(_featuredJobList),
         const DeepCollectionEquality().hash(_jobSeekerJobList),
+        const DeepCollectionEquality().hash(_skills),
         const DeepCollectionEquality().hash(_skill),
         const DeepCollectionEquality().hash(_categoryList),
         const DeepCollectionEquality().hash(_countries),
         const DeepCollectionEquality().hash(_states),
         category,
-        skills,
         country,
         state,
         postJobRequest,
@@ -9001,12 +9043,12 @@ class _$InitialImpl implements _Initial {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -9047,12 +9089,12 @@ class _$InitialImpl implements _Initial {
         employerJobList,
         featuredJobList,
         jobSeekerJobList,
+        skills,
         skill,
         categoryList,
         countries,
         states,
         category,
-        skills,
         country,
         state,
         postJobRequest,
@@ -9096,12 +9138,12 @@ class _$InitialImpl implements _Initial {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -9142,12 +9184,12 @@ class _$InitialImpl implements _Initial {
         employerJobList,
         featuredJobList,
         jobSeekerJobList,
+        skills,
         skill,
         categoryList,
         countries,
         states,
         category,
-        skills,
         country,
         state,
         postJobRequest,
@@ -9191,12 +9233,12 @@ class _$InitialImpl implements _Initial {
             List<EmployerJobResponseEntity> employerJobList,
             List<FeaturedJobResponseEntity> featuredJobList,
             List<JobSeekerJobResponseEntity> jobSeekerJobList,
+            List<SkillResponseEntity> skills,
             List<SkillResponseEntity> skill,
             List<CategoryResponseEntity> categoryList,
             List<CountryResponseEntity> countries,
             List<StateResponseEntity> states,
             CategoryResponseEntity? category,
-            SkillResponseEntity? skills,
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
@@ -9239,12 +9281,12 @@ class _$InitialImpl implements _Initial {
           employerJobList,
           featuredJobList,
           jobSeekerJobList,
+          skills,
           skill,
           categoryList,
           countries,
           states,
           category,
-          skills,
           country,
           state,
           postJobRequest,
@@ -9317,12 +9359,12 @@ abstract class _Initial implements HomeState {
       final List<EmployerJobResponseEntity> employerJobList,
       final List<FeaturedJobResponseEntity> featuredJobList,
       final List<JobSeekerJobResponseEntity> jobSeekerJobList,
+      final List<SkillResponseEntity> skills,
       final List<SkillResponseEntity> skill,
       final List<CategoryResponseEntity> categoryList,
       final List<CountryResponseEntity> countries,
       final List<StateResponseEntity> states,
       final CategoryResponseEntity? category,
-      final SkillResponseEntity? skills,
       final CountryResponseEntity? country,
       final StateResponseEntity? state,
       final PostJobEntity postJobRequest,
@@ -9377,6 +9419,8 @@ abstract class _Initial implements HomeState {
   @override
   List<JobSeekerJobResponseEntity> get jobSeekerJobList;
   @override
+  List<SkillResponseEntity> get skills;
+  @override
   List<SkillResponseEntity> get skill;
   @override
   List<CategoryResponseEntity> get categoryList;
@@ -9386,8 +9430,6 @@ abstract class _Initial implements HomeState {
   List<StateResponseEntity> get states;
   @override
   CategoryResponseEntity? get category;
-  @override
-  SkillResponseEntity? get skills;
   @override
   CountryResponseEntity? get country;
   @override
