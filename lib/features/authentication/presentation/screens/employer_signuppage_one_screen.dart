@@ -1,18 +1,16 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
-
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_toast.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -71,7 +69,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                 style: theme.textTheme.bodyMedium)),
                         SizedBox(height: 35.v),
                         CustomTextFormField(
-                            title: 'First Name',
+                            title: 'Full Name',
                             controller: fullNameController,
                             hintText: "eg: Kingsley ",
                             textInputType: TextInputType.name,
@@ -135,15 +133,19 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             Expanded(
                               child: BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
-                                  return CustomDropDown<String>(
-                                    title: 'Gender',
-                                    items: state.genders,
-                                    selectedItem: state.gender,
-                                    itemLabel: (gender) => gender,
+                                  return CustomDropDown<StateResponseEntity>(
+                                    title: 'State',
+                                    items: state.states,
+                                    selectedItem: state.states.firstWhere(
+                                      (state) => state.id == (state.id),
+                                      orElse: () => StateResponseEntity(
+                                          id: 4, name: 'ALgeria'),
+                                    ),
+                                    itemLabel: (state) => state.name,
                                     onChanged: (value) {
                                       context.read<AuthBloc>().add(
-                                            AuthEvent.updateSelectedGender(
-                                                value ?? ''),
+                                            AuthEvent.updateSelectedState(
+                                                value!),
                                           );
                                     },
                                   );
@@ -172,19 +174,15 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             Expanded(
                               child: BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
-                                  return CustomDropDown<StateResponseEntity>(
-                                    title: 'State',
-                                    items: state.states,
-                                    selectedItem: state.states.firstWhere(
-                                      (state) => state.id == (state.id),
-                                      orElse: () => StateResponseEntity(
-                                          id: 4, name: 'ALgeria'),
-                                    ),
-                                    itemLabel: (state) => state.name,
+                                  return CustomDropDown<String>(
+                                    title: 'Gender',
+                                    items: state.genders,
+                                    selectedItem: state.gender,
+                                    itemLabel: (gender) => gender,
                                     onChanged: (value) {
                                       context.read<AuthBloc>().add(
-                                            AuthEvent.updateSelectedState(
-                                                value!),
+                                            AuthEvent.updateSelectedGender(
+                                                value ?? ''),
                                           );
                                     },
                                   );

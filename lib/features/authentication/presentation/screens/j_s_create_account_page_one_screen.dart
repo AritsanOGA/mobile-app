@@ -127,7 +127,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text("Upload Company Logo",
+                                          Text("Upload Picture",
                                               style:
                                                   theme.textTheme.bodyMedium),
                                           SizedBox(height: 5.v),

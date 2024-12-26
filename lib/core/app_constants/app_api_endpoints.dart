@@ -8,7 +8,7 @@ class AppApiEndpoint {
   static Uri baseUri = Uri.parse("http://77.37.124.68:8050/api/v1");
 
 //Auth
-  static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup');
+  static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup/');
   static Uri candidateSignup =
       baseUri.replace(path: '/api/v1/candidate/signup');
   static Uri login = baseUri.replace(path: '/api/v1/login');

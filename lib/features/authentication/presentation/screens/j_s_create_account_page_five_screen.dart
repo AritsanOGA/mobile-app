@@ -91,6 +91,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                     title: 'Years of Experience',
                                     controller: yearsController,
                                     hintText: "Enter number of years",
+                                    textInputType: TextInputType.number,
                                     validator: FormValidation.stringValidation,
                                     hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 27.v),

@@ -54,7 +54,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       url: AppApiEndpoint.employerSignup,
       body: await RegisterEmployerModel.fromEntity(entity).toJson(),
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
+        // 'application/json',
         'Accept': 'application/json',
       },
     );
@@ -140,21 +141,21 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
     print('bbbo ${await RegisterJobSeekerModel.fromEntity(entity).toJson()}');
-    try {
-      final result = await api.post(
-        url: AppApiEndpoint.candidateSignup,
-        body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-      );
-      //  print('hh${body}')
-    } catch (e, stackTrace) {
-      print('Error parsing countries: $e');
-      print('StackTrace: $stackTrace');
-      throw Exception('Failed to parse countries');
-    }
+    // try {
+    final result = await api.post(
+      url: AppApiEndpoint.candidateSignup,
+      body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Accept': 'application/json',
+      },
+    );
+    //  print('hh${body}')
+    // } catch (e, stackTrace) {
+    //   print('Error when registering: $e');
+    //   print('StackTrace: $stackTrace');
+    //   throw Exception('Failed to register');
+    // }
 
     // print('hhhh$body');
     return true;
