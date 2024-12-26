@@ -33,7 +33,7 @@ mixin _$AuthEvent {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -67,7 +67,7 @@ mixin _$AuthEvent {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -101,7 +101,7 @@ mixin _$AuthEvent {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -142,7 +142,7 @@ mixin _$AuthEvent {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -180,7 +180,7 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -216,7 +216,7 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -338,7 +338,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -375,7 +375,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -412,7 +412,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -459,7 +459,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -500,7 +500,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -539,7 +539,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -658,7 +658,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -695,7 +695,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -732,7 +732,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -779,7 +779,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -820,7 +820,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -859,7 +859,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -977,7 +977,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -1014,7 +1014,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -1051,7 +1051,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -1098,7 +1098,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -1139,7 +1139,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1178,7 +1178,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1296,7 +1296,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -1333,7 +1333,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -1370,7 +1370,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -1417,7 +1417,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -1458,7 +1458,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1497,7 +1497,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1617,7 +1617,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -1654,7 +1654,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -1691,7 +1691,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -1738,7 +1738,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -1779,7 +1779,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1818,7 +1818,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -1943,7 +1943,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -1980,7 +1980,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -2017,7 +2017,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -2064,7 +2064,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -2105,7 +2105,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2144,7 +2144,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2263,7 +2263,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -2300,7 +2300,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -2337,7 +2337,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -2384,7 +2384,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -2425,7 +2425,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2464,7 +2464,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2587,7 +2587,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -2624,7 +2624,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -2661,7 +2661,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -2708,7 +2708,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -2749,7 +2749,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2788,7 +2788,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -2909,7 +2909,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -2946,7 +2946,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -2983,7 +2983,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -3030,7 +3030,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -3071,7 +3071,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3110,7 +3110,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3230,7 +3230,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -3267,7 +3267,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -3304,7 +3304,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -3351,7 +3351,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -3392,7 +3392,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3431,7 +3431,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3522,7 +3522,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -3559,7 +3559,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -3596,7 +3596,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -3643,7 +3643,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -3684,7 +3684,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3723,7 +3723,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3756,35 +3756,35 @@ abstract class _SelectCompanyLogo implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$SelectPassportImplCopyWith<$Res> {
-  factory _$$SelectPassportImplCopyWith(_$SelectPassportImpl value,
-          $Res Function(_$SelectPassportImpl) then) =
-      __$$SelectPassportImplCopyWithImpl<$Res>;
+abstract class _$$SelectPictureImplCopyWith<$Res> {
+  factory _$$SelectPictureImplCopyWith(
+          _$SelectPictureImpl value, $Res Function(_$SelectPictureImpl) then) =
+      __$$SelectPictureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SelectPassportImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$SelectPassportImpl>
-    implements _$$SelectPassportImplCopyWith<$Res> {
-  __$$SelectPassportImplCopyWithImpl(
-      _$SelectPassportImpl _value, $Res Function(_$SelectPassportImpl) _then)
+class __$$SelectPictureImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SelectPictureImpl>
+    implements _$$SelectPictureImplCopyWith<$Res> {
+  __$$SelectPictureImplCopyWithImpl(
+      _$SelectPictureImpl _value, $Res Function(_$SelectPictureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SelectPassportImpl implements _SelectPassport {
-  const _$SelectPassportImpl();
+class _$SelectPictureImpl implements _SelectPicture {
+  const _$SelectPictureImpl();
 
   @override
   String toString() {
-    return 'AuthEvent.selectPassport()';
+    return 'AuthEvent.selectPicture()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SelectPassportImpl);
+        (other.runtimeType == runtimeType && other is _$SelectPictureImpl);
   }
 
   @override
@@ -3808,7 +3808,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -3828,7 +3828,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function() getUserData,
     required TResult Function(int index) selectTab,
   }) {
-    return selectPassport();
+    return selectPicture();
   }
 
   @override
@@ -3845,7 +3845,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -3865,7 +3865,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function()? getUserData,
     TResult? Function(int index)? selectTab,
   }) {
-    return selectPassport?.call();
+    return selectPicture?.call();
   }
 
   @override
@@ -3882,7 +3882,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -3903,8 +3903,8 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(int index)? selectTab,
     required TResult orElse(),
   }) {
-    if (selectPassport != null) {
-      return selectPassport();
+    if (selectPicture != null) {
+      return selectPicture();
     }
     return orElse();
   }
@@ -3929,7 +3929,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -3951,7 +3951,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
   }) {
-    return selectPassport(this);
+    return selectPicture(this);
   }
 
   @override
@@ -3970,7 +3970,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -3990,7 +3990,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
   }) {
-    return selectPassport?.call(this);
+    return selectPicture?.call(this);
   }
 
   @override
@@ -4009,7 +4009,7 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4030,15 +4030,15 @@ class _$SelectPassportImpl implements _SelectPassport {
     TResult Function(_SelectTabEvent value)? selectTab,
     required TResult orElse(),
   }) {
-    if (selectPassport != null) {
-      return selectPassport(this);
+    if (selectPicture != null) {
+      return selectPicture(this);
     }
     return orElse();
   }
 }
 
-abstract class _SelectPassport implements AuthEvent {
-  const factory _SelectPassport() = _$SelectPassportImpl;
+abstract class _SelectPicture implements AuthEvent {
+  const factory _SelectPicture() = _$SelectPictureImpl;
 }
 
 /// @nodoc
@@ -4094,7 +4094,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -4131,7 +4131,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -4168,7 +4168,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -4215,7 +4215,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -4256,7 +4256,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4295,7 +4295,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4409,7 +4409,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -4446,7 +4446,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -4483,7 +4483,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -4530,7 +4530,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -4571,7 +4571,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4610,7 +4610,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4730,7 +4730,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -4767,7 +4767,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -4804,7 +4804,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -4851,7 +4851,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -4892,7 +4892,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -4931,7 +4931,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5050,7 +5050,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -5087,7 +5087,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -5124,7 +5124,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -5171,7 +5171,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -5212,7 +5212,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5251,7 +5251,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5368,7 +5368,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -5405,7 +5405,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -5442,7 +5442,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -5489,7 +5489,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -5530,7 +5530,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5569,7 +5569,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5685,7 +5685,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -5722,7 +5722,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -5759,7 +5759,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -5806,7 +5806,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -5847,7 +5847,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5886,7 +5886,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -5976,7 +5976,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -6013,7 +6013,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -6050,7 +6050,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -6097,7 +6097,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -6138,7 +6138,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6177,7 +6177,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6288,7 +6288,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -6325,7 +6325,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -6362,7 +6362,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -6409,7 +6409,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -6450,7 +6450,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6489,7 +6489,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6579,7 +6579,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -6616,7 +6616,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -6653,7 +6653,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -6700,7 +6700,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -6741,7 +6741,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6780,7 +6780,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -6898,7 +6898,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -6935,7 +6935,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -6972,7 +6972,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -7019,7 +7019,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -7060,7 +7060,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7099,7 +7099,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7225,7 +7225,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -7262,7 +7262,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -7299,7 +7299,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -7346,7 +7346,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -7387,7 +7387,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7426,7 +7426,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7545,7 +7545,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -7582,7 +7582,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -7619,7 +7619,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -7666,7 +7666,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -7707,7 +7707,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7746,7 +7746,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -7863,7 +7863,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -7900,7 +7900,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -7937,7 +7937,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -7984,7 +7984,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -8025,7 +8025,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8064,7 +8064,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8182,7 +8182,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -8219,7 +8219,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -8256,7 +8256,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -8303,7 +8303,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -8344,7 +8344,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8383,7 +8383,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8474,7 +8474,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -8511,7 +8511,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -8548,7 +8548,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -8595,7 +8595,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -8636,7 +8636,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8675,7 +8675,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8787,7 +8787,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(String value) updateEmploymentHistory,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
-    required TResult Function() selectPassport,
+    required TResult Function() selectPicture,
     required TResult Function() selectResume,
     required TResult Function(bool value) updateSelectedIsChecked,
     required TResult Function(File value) updateSelectedPassport,
@@ -8824,7 +8824,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(String value)? updateEmploymentHistory,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
-    TResult? Function()? selectPassport,
+    TResult? Function()? selectPicture,
     TResult? Function()? selectResume,
     TResult? Function(bool value)? updateSelectedIsChecked,
     TResult? Function(File value)? updateSelectedPassport,
@@ -8861,7 +8861,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(String value)? updateEmploymentHistory,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
-    TResult Function()? selectPassport,
+    TResult Function()? selectPicture,
     TResult Function()? selectResume,
     TResult Function(bool value)? updateSelectedIsChecked,
     TResult Function(File value)? updateSelectedPassport,
@@ -8908,7 +8908,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
-    required TResult Function(_SelectPassport value) selectPassport,
+    required TResult Function(_SelectPicture value) selectPicture,
     required TResult Function(_SelectResume value) selectResume,
     required TResult Function(_UpdateSelectedIsChecked value)
         updateSelectedIsChecked,
@@ -8949,7 +8949,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult? Function(_SelectPassport value)? selectPassport,
+    TResult? Function(_SelectPicture value)? selectPicture,
     TResult? Function(_SelectResume value)? selectResume,
     TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
@@ -8988,7 +8988,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
-    TResult Function(_SelectPassport value)? selectPassport,
+    TResult Function(_SelectPicture value)? selectPicture,
     TResult Function(_SelectResume value)? selectResume,
     TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
     TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,

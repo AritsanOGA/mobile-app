@@ -1,6 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable
@@ -134,9 +134,9 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               SizedBox(height: 23.v),
               Center(
                 child: GestureDetector(
-                  onTap: (){
-                     Navigator.pushNamed(context,
-                                AppRoutes.candidatesProfileAcceptPageScreen);
+                  onTap: () {
+                    //  Navigator.pushNamed(context,
+                    //             AppRoutes.candidatesProfileAcceptPageScreen);
                   },
                   child: Container(
                       height: 40.v,

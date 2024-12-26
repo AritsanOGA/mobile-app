@@ -41,7 +41,7 @@ class SuccessfulJobPostedPage extends StatelessWidget {
                   //     context,
                   //     MaterialPageRoute(
                   //         builder: (context) => JobSeekerNavBarPage()));
-                  Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
+                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
                 },
               ),
               SizedBox(height: 34.v),

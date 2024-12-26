@@ -24,7 +24,7 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
   const factory AuthEvent.selectCompanyLogo() = _SelectCompanyLogo;
-  const factory AuthEvent.selectPassport() = _SelectPassport;
+  const factory AuthEvent.selectPicture() = _SelectPicture;
   const factory AuthEvent.selectResume() = _SelectResume;
   const factory AuthEvent.updateSelectedIsChecked(bool value) =
       _UpdateSelectedIsChecked;

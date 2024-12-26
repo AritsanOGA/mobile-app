@@ -152,7 +152,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                           context
                                                               .read<AuthBloc>()
                                                               .add(const AuthEvent
-                                                                  .selectPassport());
+                                                                  .selectPicture());
                                                         },
                                                         child: Container(
                                                             height: 30,
@@ -185,7 +185,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                       padding: EdgeInsets.only(
                                                           top: 5.v, right: 5.v),
                                                       child: Text(
-                                                          state.file == null
+                                                          state.picture == null
                                                               ? "No file chosen"
                                                               : "Image selected",
                                                           style: theme.textTheme
@@ -236,7 +236,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                           confirmPasswordController
                                                               .text,
                                                       gender: state.gender,
-                                                      passport: state.file,
+                                                      passport: state.picture,
                                                       password:
                                                           passwordController
                                                               .text)));

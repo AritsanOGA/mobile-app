@@ -291,7 +291,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                             child: Text(
                                                 state.resume == null
                                                     ? "No file chosen"
-                                                    : "Image selected",
+                                                    : "File selected",
                                                 style:
                                                     theme.textTheme.labelLarge),
                                           )

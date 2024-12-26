@@ -38,7 +38,7 @@ String getTimeAgo(DateTime timestamp) {
   } else if (difference.inDays < 7) {
     return '${difference.inDays} days ago';
   } else {
-    return DateFormat.yMMMMd().format(timestamp); // Example: November 30, 2024
+    return DateFormat.yMMMMd().format(timestamp);
   }
 }
 

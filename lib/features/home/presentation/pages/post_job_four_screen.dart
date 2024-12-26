@@ -157,7 +157,7 @@ class PostJobFourScreen extends HookWidget {
                                           onChange: (value) {
                                             context.read<HomeBloc>().add(
                                                   HomeEvent
-                                                      .updateSelectedEducationlevel(
+                                                      .updateSelectedPackage(
                                                           value),
                                                 );
                                           })),
@@ -173,7 +173,7 @@ class PostJobFourScreen extends HookWidget {
                                           onChange: (value) {
                                             context.read<HomeBloc>().add(
                                                   HomeEvent
-                                                      .updateSelectedEducationlevel(
+                                                      .updateSelectedPackage(
                                                           value),
                                                 );
                                           })),
