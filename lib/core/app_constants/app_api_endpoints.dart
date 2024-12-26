@@ -41,6 +41,10 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/employer/update-profile');
   static Uri updatePassword = baseUri.replace(path: '/api/v1/update-password');
 
+
+
+
+
   //! News
   static Uri getEmployerProfile =
       baseUri.replace(path: '/api/v1/employer/profile');
