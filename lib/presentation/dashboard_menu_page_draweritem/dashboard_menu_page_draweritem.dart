@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../features/home/presentation/pages/manage_jobs_page.dart';
+import '../../features/candidate/presentation/pages/manage_jobs_page.dart';
 import '../payments_made_page_screen/payments_made_page_screen.dart';
 import '../../features/settings/presentation/pages/update_profile_page_screen.dart';
 import '../view_all_candidates/view_all_candidates.dart';

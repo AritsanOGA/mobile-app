@@ -1,4 +1,4 @@
-import 'package:artisan_oga/features/home/presentation/pages/view_candidates_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
@@ -261,13 +261,13 @@ class _SearchScreenState extends State<SearchScreenPage> {
                       SizedBox(height: 23.v),
                       CustomOutlinedButton(
                           onPressed: (() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      ViewCandidatesPageScreen(
-                                          job_id: data["id"].toString())),
-                            );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) =>
+                            //           ViewCandidatesPageScreen(
+                            //               job_id: data["id"].toString())),
+                            // );
                           }),
                           width: 153.h,
                           text: "Apply",

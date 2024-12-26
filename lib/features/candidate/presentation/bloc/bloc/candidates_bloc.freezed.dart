@@ -16,23 +16,25 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CandidatesEvent {
-  AcceptCandidateEntity get param => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
+    required TResult Function(String jobId) getAssignedCandidate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult? Function(String jobId)? getAssignedCandidate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult Function(String jobId)? getAssignedCandidate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,24 +42,23 @@ mixin _$CandidatesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $CandidatesEventCopyWith<CandidatesEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -66,8 +67,6 @@ abstract class $CandidatesEventCopyWith<$Res> {
   factory $CandidatesEventCopyWith(
           CandidatesEvent value, $Res Function(CandidatesEvent) then) =
       _$CandidatesEventCopyWithImpl<$Res, CandidatesEvent>;
-  @useResult
-  $Res call({AcceptCandidateEntity param});
 }
 
 /// @nodoc
@@ -79,28 +78,13 @@ class _$CandidatesEventCopyWithImpl<$Res, $Val extends CandidatesEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? param = null,
-  }) {
-    return _then(_value.copyWith(
-      param: null == param
-          ? _value.param
-          : param // ignore: cast_nullable_to_non_nullable
-              as AcceptCandidateEntity,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$AcceptCandidateImplCopyWith<$Res>
-    implements $CandidatesEventCopyWith<$Res> {
+abstract class _$$AcceptCandidateImplCopyWith<$Res> {
   factory _$$AcceptCandidateImplCopyWith(_$AcceptCandidateImpl value,
           $Res Function(_$AcceptCandidateImpl) then) =
       __$$AcceptCandidateImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({AcceptCandidateEntity param});
 }
@@ -163,6 +147,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
+    required TResult Function(String jobId) getAssignedCandidate,
   }) {
     return acceptCandidate(param);
   }
@@ -172,6 +157,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult? Function(String jobId)? getAssignedCandidate,
   }) {
     return acceptCandidate?.call(param);
   }
@@ -181,6 +167,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult Function(String jobId)? getAssignedCandidate,
     required TResult orElse(),
   }) {
     if (acceptCandidate != null) {
@@ -194,6 +181,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
   }) {
     return acceptCandidate(this);
   }
@@ -203,6 +191,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
   }) {
     return acceptCandidate?.call(this);
   }
@@ -212,6 +201,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     required TResult orElse(),
   }) {
     if (acceptCandidate != null) {
@@ -225,21 +215,17 @@ abstract class _AcceptCandidate implements CandidatesEvent {
   const factory _AcceptCandidate(final AcceptCandidateEntity param) =
       _$AcceptCandidateImpl;
 
-  @override
   AcceptCandidateEntity get param;
-  @override
   @JsonKey(ignore: true)
   _$$AcceptCandidateImplCopyWith<_$AcceptCandidateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RejectCandidateImplCopyWith<$Res>
-    implements $CandidatesEventCopyWith<$Res> {
+abstract class _$$RejectCandidateImplCopyWith<$Res> {
   factory _$$RejectCandidateImplCopyWith(_$RejectCandidateImpl value,
           $Res Function(_$RejectCandidateImpl) then) =
       __$$RejectCandidateImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({AcceptCandidateEntity param});
 }
@@ -302,6 +288,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
+    required TResult Function(String jobId) getAssignedCandidate,
   }) {
     return rejectCandidate(param);
   }
@@ -311,6 +298,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult? Function(String jobId)? getAssignedCandidate,
   }) {
     return rejectCandidate?.call(param);
   }
@@ -320,6 +308,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult Function(String jobId)? getAssignedCandidate,
     required TResult orElse(),
   }) {
     if (rejectCandidate != null) {
@@ -333,6 +322,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
   }) {
     return rejectCandidate(this);
   }
@@ -342,6 +332,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
   }) {
     return rejectCandidate?.call(this);
   }
@@ -351,6 +342,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     required TResult orElse(),
   }) {
     if (rejectCandidate != null) {
@@ -364,32 +356,205 @@ abstract class _RejectCandidate implements CandidatesEvent {
   const factory _RejectCandidate(final AcceptCandidateEntity param) =
       _$RejectCandidateImpl;
 
-  @override
   AcceptCandidateEntity get param;
-  @override
   @JsonKey(ignore: true)
   _$$RejectCandidateImplCopyWith<_$RejectCandidateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$GetAssignedCandidateImplCopyWith<$Res> {
+  factory _$$GetAssignedCandidateImplCopyWith(_$GetAssignedCandidateImpl value,
+          $Res Function(_$GetAssignedCandidateImpl) then) =
+      __$$GetAssignedCandidateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String jobId});
+}
+
+/// @nodoc
+class __$$GetAssignedCandidateImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$GetAssignedCandidateImpl>
+    implements _$$GetAssignedCandidateImplCopyWith<$Res> {
+  __$$GetAssignedCandidateImplCopyWithImpl(_$GetAssignedCandidateImpl _value,
+      $Res Function(_$GetAssignedCandidateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? jobId = null,
+  }) {
+    return _then(_$GetAssignedCandidateImpl(
+      null == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
+  const _$GetAssignedCandidateImpl(this.jobId);
+
+  @override
+  final String jobId;
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.getAssignedCandidate(jobId: $jobId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAssignedCandidateImpl &&
+            (identical(other.jobId, jobId) || other.jobId == jobId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, jobId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAssignedCandidateImplCopyWith<_$GetAssignedCandidateImpl>
+      get copyWith =>
+          __$$GetAssignedCandidateImplCopyWithImpl<_$GetAssignedCandidateImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(AcceptCandidateEntity param) rejectCandidate,
+    required TResult Function(String jobId) getAssignedCandidate,
+  }) {
+    return getAssignedCandidate(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult? Function(String jobId)? getAssignedCandidate,
+  }) {
+    return getAssignedCandidate?.call(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(AcceptCandidateEntity param)? rejectCandidate,
+    TResult Function(String jobId)? getAssignedCandidate,
+    required TResult orElse(),
+  }) {
+    if (getAssignedCandidate != null) {
+      return getAssignedCandidate(jobId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+  }) {
+    return getAssignedCandidate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+  }) {
+    return getAssignedCandidate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    required TResult orElse(),
+  }) {
+    if (getAssignedCandidate != null) {
+      return getAssignedCandidate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAssignedCandidate implements CandidatesEvent {
+  const factory _GetAssignedCandidate(final String jobId) =
+      _$GetAssignedCandidateImpl;
+
+  String get jobId;
+  @JsonKey(ignore: true)
+  _$$GetAssignedCandidateImplCopyWith<_$GetAssignedCandidateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CandidatesState {
   AcceptCandidateEntity? get acceptCandidateEntity =>
       throw _privateConstructorUsedError;
+  AcceptCandidateState get acceptCandidateState =>
+      throw _privateConstructorUsedError;
+  RejectCandidateState get rejectCandidateState =>
+      throw _privateConstructorUsedError;
+  GetAssignedCandidateState get getAssignedCandidateState =>
+      throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get jobId => throw _privateConstructorUsedError;
+  List<GetJobSeekerResponseEntity> get getAssignedCandidateList =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AcceptCandidateEntity? acceptCandidateEntity)
+    required TResult Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AcceptCandidateEntity? acceptCandidateEntity)? initial,
+    TResult? Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AcceptCandidateEntity? acceptCandidateEntity)? initial,
+    TResult Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -421,7 +586,14 @@ abstract class $CandidatesStateCopyWith<$Res> {
           CandidatesState value, $Res Function(CandidatesState) then) =
       _$CandidatesStateCopyWithImpl<$Res, CandidatesState>;
   @useResult
-  $Res call({AcceptCandidateEntity? acceptCandidateEntity});
+  $Res call(
+      {AcceptCandidateEntity? acceptCandidateEntity,
+      AcceptCandidateState acceptCandidateState,
+      RejectCandidateState rejectCandidateState,
+      GetAssignedCandidateState getAssignedCandidateState,
+      String? errorMessage,
+      String? jobId,
+      List<GetJobSeekerResponseEntity> getAssignedCandidateList});
 }
 
 /// @nodoc
@@ -438,12 +610,42 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
   @override
   $Res call({
     Object? acceptCandidateEntity = freezed,
+    Object? acceptCandidateState = null,
+    Object? rejectCandidateState = null,
+    Object? getAssignedCandidateState = null,
+    Object? errorMessage = freezed,
+    Object? jobId = freezed,
+    Object? getAssignedCandidateList = null,
   }) {
     return _then(_value.copyWith(
       acceptCandidateEntity: freezed == acceptCandidateEntity
           ? _value.acceptCandidateEntity
           : acceptCandidateEntity // ignore: cast_nullable_to_non_nullable
               as AcceptCandidateEntity?,
+      acceptCandidateState: null == acceptCandidateState
+          ? _value.acceptCandidateState
+          : acceptCandidateState // ignore: cast_nullable_to_non_nullable
+              as AcceptCandidateState,
+      rejectCandidateState: null == rejectCandidateState
+          ? _value.rejectCandidateState
+          : rejectCandidateState // ignore: cast_nullable_to_non_nullable
+              as RejectCandidateState,
+      getAssignedCandidateState: null == getAssignedCandidateState
+          ? _value.getAssignedCandidateState
+          : getAssignedCandidateState // ignore: cast_nullable_to_non_nullable
+              as GetAssignedCandidateState,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jobId: freezed == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      getAssignedCandidateList: null == getAssignedCandidateList
+          ? _value.getAssignedCandidateList
+          : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
+              as List<GetJobSeekerResponseEntity>,
     ) as $Val);
   }
 }
@@ -456,7 +658,14 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AcceptCandidateEntity? acceptCandidateEntity});
+  $Res call(
+      {AcceptCandidateEntity? acceptCandidateEntity,
+      AcceptCandidateState acceptCandidateState,
+      RejectCandidateState rejectCandidateState,
+      GetAssignedCandidateState getAssignedCandidateState,
+      String? errorMessage,
+      String? jobId,
+      List<GetJobSeekerResponseEntity> getAssignedCandidateList});
 }
 
 /// @nodoc
@@ -471,12 +680,42 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? acceptCandidateEntity = freezed,
+    Object? acceptCandidateState = null,
+    Object? rejectCandidateState = null,
+    Object? getAssignedCandidateState = null,
+    Object? errorMessage = freezed,
+    Object? jobId = freezed,
+    Object? getAssignedCandidateList = null,
   }) {
     return _then(_$InitialImpl(
       acceptCandidateEntity: freezed == acceptCandidateEntity
           ? _value.acceptCandidateEntity
           : acceptCandidateEntity // ignore: cast_nullable_to_non_nullable
               as AcceptCandidateEntity?,
+      acceptCandidateState: null == acceptCandidateState
+          ? _value.acceptCandidateState
+          : acceptCandidateState // ignore: cast_nullable_to_non_nullable
+              as AcceptCandidateState,
+      rejectCandidateState: null == rejectCandidateState
+          ? _value.rejectCandidateState
+          : rejectCandidateState // ignore: cast_nullable_to_non_nullable
+              as RejectCandidateState,
+      getAssignedCandidateState: null == getAssignedCandidateState
+          ? _value.getAssignedCandidateState
+          : getAssignedCandidateState // ignore: cast_nullable_to_non_nullable
+              as GetAssignedCandidateState,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      jobId: freezed == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      getAssignedCandidateList: null == getAssignedCandidateList
+          ? _value._getAssignedCandidateList
+          : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
+              as List<GetJobSeekerResponseEntity>,
     ));
   }
 }
@@ -484,14 +723,45 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl({this.acceptCandidateEntity});
+  const _$InitialImpl(
+      {this.acceptCandidateEntity,
+      this.acceptCandidateState = AcceptCandidateState.idle,
+      this.rejectCandidateState = RejectCandidateState.idle,
+      this.getAssignedCandidateState = GetAssignedCandidateState.idle,
+      this.errorMessage,
+      this.jobId,
+      final List<GetJobSeekerResponseEntity> getAssignedCandidateList =
+          const []})
+      : _getAssignedCandidateList = getAssignedCandidateList;
 
   @override
   final AcceptCandidateEntity? acceptCandidateEntity;
+  @override
+  @JsonKey()
+  final AcceptCandidateState acceptCandidateState;
+  @override
+  @JsonKey()
+  final RejectCandidateState rejectCandidateState;
+  @override
+  @JsonKey()
+  final GetAssignedCandidateState getAssignedCandidateState;
+  @override
+  final String? errorMessage;
+  @override
+  final String? jobId;
+  final List<GetJobSeekerResponseEntity> _getAssignedCandidateList;
+  @override
+  @JsonKey()
+  List<GetJobSeekerResponseEntity> get getAssignedCandidateList {
+    if (_getAssignedCandidateList is EqualUnmodifiableListView)
+      return _getAssignedCandidateList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_getAssignedCandidateList);
+  }
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, errorMessage: $errorMessage, jobId: $jobId, getAssignedCandidateList: $getAssignedCandidateList)';
   }
 
   @override
@@ -500,11 +770,31 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             (identical(other.acceptCandidateEntity, acceptCandidateEntity) ||
-                other.acceptCandidateEntity == acceptCandidateEntity));
+                other.acceptCandidateEntity == acceptCandidateEntity) &&
+            (identical(other.acceptCandidateState, acceptCandidateState) ||
+                other.acceptCandidateState == acceptCandidateState) &&
+            (identical(other.rejectCandidateState, rejectCandidateState) ||
+                other.rejectCandidateState == rejectCandidateState) &&
+            (identical(other.getAssignedCandidateState,
+                    getAssignedCandidateState) ||
+                other.getAssignedCandidateState == getAssignedCandidateState) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            (identical(other.jobId, jobId) || other.jobId == jobId) &&
+            const DeepCollectionEquality().equals(
+                other._getAssignedCandidateList, _getAssignedCandidateList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, acceptCandidateEntity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      acceptCandidateEntity,
+      acceptCandidateState,
+      rejectCandidateState,
+      getAssignedCandidateState,
+      errorMessage,
+      jobId,
+      const DeepCollectionEquality().hash(_getAssignedCandidateList));
 
   @JsonKey(ignore: true)
   @override
@@ -515,28 +805,72 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AcceptCandidateEntity? acceptCandidateEntity)
+    required TResult Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)
         initial,
   }) {
-    return initial(acceptCandidateEntity);
+    return initial(
+        acceptCandidateEntity,
+        acceptCandidateState,
+        rejectCandidateState,
+        getAssignedCandidateState,
+        errorMessage,
+        jobId,
+        getAssignedCandidateList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AcceptCandidateEntity? acceptCandidateEntity)? initial,
+    TResult? Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+        initial,
   }) {
-    return initial?.call(acceptCandidateEntity);
+    return initial?.call(
+        acceptCandidateEntity,
+        acceptCandidateState,
+        rejectCandidateState,
+        getAssignedCandidateState,
+        errorMessage,
+        jobId,
+        getAssignedCandidateList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AcceptCandidateEntity? acceptCandidateEntity)? initial,
+    TResult Function(
+            AcceptCandidateEntity? acceptCandidateEntity,
+            AcceptCandidateState acceptCandidateState,
+            RejectCandidateState rejectCandidateState,
+            GetAssignedCandidateState getAssignedCandidateState,
+            String? errorMessage,
+            String? jobId,
+            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(acceptCandidateEntity);
+      return initial(
+          acceptCandidateEntity,
+          acceptCandidateState,
+          rejectCandidateState,
+          getAssignedCandidateState,
+          errorMessage,
+          jobId,
+          getAssignedCandidateList);
     }
     return orElse();
   }
@@ -571,11 +905,30 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements CandidatesState {
-  const factory _Initial({final AcceptCandidateEntity? acceptCandidateEntity}) =
+  const factory _Initial(
+          {final AcceptCandidateEntity? acceptCandidateEntity,
+          final AcceptCandidateState acceptCandidateState,
+          final RejectCandidateState rejectCandidateState,
+          final GetAssignedCandidateState getAssignedCandidateState,
+          final String? errorMessage,
+          final String? jobId,
+          final List<GetJobSeekerResponseEntity> getAssignedCandidateList}) =
       _$InitialImpl;
 
   @override
   AcceptCandidateEntity? get acceptCandidateEntity;
+  @override
+  AcceptCandidateState get acceptCandidateState;
+  @override
+  RejectCandidateState get rejectCandidateState;
+  @override
+  GetAssignedCandidateState get getAssignedCandidateState;
+  @override
+  String? get errorMessage;
+  @override
+  String? get jobId;
+  @override
+  List<GetJobSeekerResponseEntity> get getAssignedCandidateList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

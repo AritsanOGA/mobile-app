@@ -38,8 +38,8 @@ class CandidateRepositoryImpl implements CandidateRepository {
 
   @override
   Future<Either<Failure, List<GetJobSeekerResponseEntity>>>
-      getAssignedCandidate() async {
-    return candidateRemoteSource.getAssignedCandidate().makeRequest();
+      getAssignedCandidate(String jobId) async {
+    return candidateRemoteSource.getAssignedCandidate(jobId).makeRequest();
   }
 
   @override

@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class CandidateRepository {
   Future<Either<Failure, List<GetJobSeekerResponseEntity>>>
-      getAssignedCandidate();
+      getAssignedCandidate(String jobId);
   Future<Either<Failure, bool>> acceptCandidate(AcceptCandidateEntity entity);
   Future<Either<Failure, bool>> rejectCandidate(AcceptCandidateEntity entity);
 }

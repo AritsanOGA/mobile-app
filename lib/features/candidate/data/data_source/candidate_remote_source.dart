@@ -5,7 +5,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 
 abstract class CandidateRemoteSource {
-  Future<List<GetJobSeekerResponseEntity>> getAssignedCandidate();
+  Future<List<GetJobSeekerResponseEntity>> getAssignedCandidate(String jobId);
   Future<bool> rejectCandidate(AcceptCandidateEntity entity);
   Future<bool> acceptCandidate(AcceptCandidateEntity entity);
 }

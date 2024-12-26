@@ -4,7 +4,7 @@ import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
-import 'package:artisan_oga/features/home/presentation/pages/view_candidates_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
 import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
@@ -301,16 +301,16 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                                     children: [
                                       CustomOutlinedButton(
                                           onPressed: (() {
-                                            Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                    type: PageTransitionType
-                                                        .topToBottom,
-                                                    child:
-                                                        ViewCandidatesPageScreen(
-                                                            job_id: data[index]
-                                                                    ["id"]
-                                                                .toString())));
+                                            // Navigator.push(
+                                            //     context,
+                                            //     PageTransition(
+                                            //         type: PageTransitionType
+                                            //             .topToBottom,
+                                            //         child:
+                                            //             ViewCandidatesPageScreen(
+                                            //                 job_id: data[index]
+                                            //                         ["id"]
+                                            //                     .toString())));
                                           }),
                                           width: 153.h,
                                           text: "View Applicants",
@@ -320,16 +320,16 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                                       ),
                                       CustomOutlinedButton(
                                           onPressed: (() {
-                                            Navigator.push(
-                                                context,
-                                                PageTransition(
-                                                    type: PageTransitionType
-                                                        .topToBottom,
-                                                    child:
-                                                        ViewCandidatesPageScreen(
-                                                            job_id: data[index]
-                                                                    ["id"]
-                                                                .toString())));
+                                            // Navigator.push(
+                                            //     context,
+                                            //     PageTransition(
+                                            //         type: PageTransitionType
+                                            //             .topToBottom,
+                                            //         child:
+                                            //             ViewCandidatesPageScreen(
+                                            //                 job_id: data[index]
+                                            //                         ["id"]
+                                            //                     .toString())));
                                           }),
                                           width: 153.h,
                                           text: "Edit Job",
