@@ -135,8 +135,8 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    //  Navigator.pushNamed(context,
-                    //             AppRoutes.candidatesProfileAcceptPageScreen);
+                    Navigator.pushNamed(
+                        context, AppRoutes.candidatesProfileAcceptPageScreen);
                   },
                   child: Container(
                       height: 40.v,

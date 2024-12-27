@@ -108,6 +108,9 @@ class ManageJobWidget extends StatelessWidget {
           SizedBox(height: 20.v),
           CustomOutlinedButton(
               onPressed: (() {
+                print('jobid ${employerJobResponseEntity.id}');
+                Navigator.pushNamed(context, AppRoutes.viewCandidatesPageScreen,
+                    arguments: employerJobResponseEntity.id.toString());
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(

@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';

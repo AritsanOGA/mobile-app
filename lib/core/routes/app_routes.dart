@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/splash_
 import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
@@ -271,6 +272,12 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerSignuppageOneScreen(
             email: settings.arguments as String,
+          ),
+        );
+          case viewCandidatesPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: ViewCandidatesPageScreen(
+            jobId: settings.arguments as String,
           ),
         );
       case verifyEmployerScreen:

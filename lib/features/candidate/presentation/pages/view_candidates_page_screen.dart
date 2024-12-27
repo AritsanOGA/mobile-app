@@ -37,7 +37,7 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                   BlocBuilder<CandidatesBloc, CandidatesState>(
                     bloc: context.read<CandidatesBloc>()
                       ..add(CandidatesEvent.getAssignedCandidate(jobId)),
-                    //..add(event),
+                  
                     builder: (context, state) {
                       if (state.getAssignedCandidateState ==
                           GetAssignedCandidateState.loading) {
@@ -69,7 +69,7 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return UserprofilegridItemWidget(
                               fullName: state.getAssignedCandidateList[index]
-                                      .availability ??
+                                      .users.fullName ??
                                   '');
                         },
                       );

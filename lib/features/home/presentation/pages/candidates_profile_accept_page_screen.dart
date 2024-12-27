@@ -1,6 +1,9 @@
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../presentation/candidates_profile_accept_page_screen/widgets/waitering_item_widget.dart';
 
@@ -19,142 +22,150 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                     width: double.maxFinite,
                     padding:
                         EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
-                    child: Column(children: [
-                      SizedBox(height: 26.v),
-                      Text("Applicants Profile",
-                          style: theme.textTheme.titleLarge),
-                      SizedBox(height: 21.v),
-                      SizedBox(
-                          height: 75.adaptSize,
-                          width: 75.adaptSize,
-                          child: Stack(
-                              alignment: Alignment.bottomRight,
+                    child: BlocBuilder<SettingBloc, SettingState>(
+                      builder: (context, state) {
+                        return Column(children: [
+                          SizedBox(height: 26.v),
+                          Text("Applicants Profile",
+                              style: theme.textTheme.titleLarge),
+                          SizedBox(height: 21.v),
+                          SizedBox(
+                              height: 75.adaptSize,
+                              width: 75.adaptSize,
+                              child: Stack(
+                                  alignment: Alignment.bottomRight,
+                                  children: [
+                                    CustomImageView(
+                                        imagePath: ImageConstant.imgEllipse5,
+                                        height: 75.adaptSize,
+                                        width: 75.adaptSize,
+                                        radius: BorderRadius.circular(37.h),
+                                        alignment: Alignment.center),
+                                    Align(
+                                        alignment: Alignment.bottomRight,
+                                        child: Container(
+                                            height: 12.adaptSize,
+                                            width: 12.adaptSize,
+                                            margin: EdgeInsets.only(
+                                                right: 6.h, bottom: 1.v),
+                                            decoration: BoxDecoration(
+                                                color:
+                                                    theme.colorScheme.primary,
+                                                borderRadius:
+                                                    BorderRadius.circular(6.h),
+                                                border: Border.all(
+                                                    color: appTheme.gray5001,
+                                                    width: 2.h,
+                                                    strokeAlign:
+                                                        strokeAlignOutside))))
+                                  ])),
+                          SizedBox(height: 8.v),
+                          Text("Chloé Scarlett",
+                              style:
+                                  CustomTextStyles.titleLargePrimarySemiBold),
+                          SizedBox(height: 10.v),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomImageView(
-                                    imagePath: ImageConstant.imgEllipse5,
-                                    height: 75.adaptSize,
-                                    width: 75.adaptSize,
-                                    radius: BorderRadius.circular(37.h),
-                                    alignment: Alignment.center),
-                                Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Container(
-                                        height: 12.adaptSize,
-                                        width: 12.adaptSize,
-                                        margin: EdgeInsets.only(
-                                            right: 6.h, bottom: 1.v),
-                                        decoration: BoxDecoration(
-                                            color: theme.colorScheme.primary,
-                                            borderRadius:
-                                                BorderRadius.circular(6.h),
-                                            border: Border.all(
-                                                color: appTheme.gray5001,
-                                                width: 2.h,
-                                                strokeAlign:
-                                                    strokeAlignOutside))))
-                              ])),
-                      SizedBox(height: 8.v),
-                      Text("Chloé Scarlett",
-                          style: CustomTextStyles.titleLargePrimarySemiBold),
-                      SizedBox(height: 10.v),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgMdiLocation,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 4.h, top: 2.v, bottom: 2.v),
-                                child: Text("Ikeja",
-                                    style: CustomTextStyles.titleSmall15))
-                          ]),
-                      SizedBox(height: 12.v),
-                      Text("Job Preference: Full_time",
-                          style: CustomTextStyles.titleMediumGray700Medium17),
-                      SizedBox(height: 14.v),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomImageView(
-                                imagePath: ImageConstant.imgCall,
-                                height: 17.adaptSize,
-                                width: 17.adaptSize,
-                                margin: EdgeInsets.only(top: 1.v)),
-                            Padding(
-                                padding: EdgeInsets.only(left: 9.h),
-                                child: Text("+323 546 967 231 69",
-                                    style: CustomTextStyles
-                                        .titleSmallPrimarySemiBold))
-                          ]),
-                      SizedBox(height: 20.v),
-                      Container(
-                          width: 303.h,
-                          margin: EdgeInsets.only(left: 41.h, right: 40.h),
-                          child: RichText(
-                              text: TextSpan(children: [
-                                TextSpan(
-                                    text:
-                                        "Chloé Scarlett is a freelance expertise with ",
-                                    style: CustomTextStyles.bodyMediumff666666),
-                                TextSpan(
-                                    text:
-                                        "3 years of experience helping her target clients achieve their goals.",
-                                    style: CustomTextStyles
-                                        .titleSmallfff7941eSemiBold15)
+                                    imagePath: ImageConstant.imgMdiLocation,
+                                    height: 24.adaptSize,
+                                    width: 24.adaptSize),
+                                Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 4.h, top: 2.v, bottom: 2.v),
+                                    child: Text("Ikeja",
+                                        style: CustomTextStyles.titleSmall15))
                               ]),
-                              textAlign: TextAlign.center)),
-                      SizedBox(height: 22.v),
-                      Divider(indent: 24.h, endIndent: 24.h),
-                      SizedBox(height: 41.v),
-                      _buildEducation(context),
-                      SizedBox(height: 1.v),
-                      Container(
-                          height: 14.v,
-                          width: 380.h,
-                          decoration: BoxDecoration(
-                              color: appTheme.gray700.withOpacity(0.18),
-                              borderRadius: BorderRadius.circular(2.h))),
-                      SizedBox(height: 7.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Supervising",
-                                  style: CustomTextStyles
-                                      .bodyMediumPrimaryContainer))),
-                      SizedBox(height: 1.v),
-                      Container(
-                          height: 14.v,
-                          width: 380.h,
-                          decoration: BoxDecoration(
-                              color: appTheme.gray700.withOpacity(0.18),
-                              borderRadius: BorderRadius.circular(2.h))),
-                      SizedBox(height: 7.v),
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 3.h),
-                              child: Text("Receptionist",
-                                  style: CustomTextStyles
-                                      .bodyMediumPrimaryContainer))),
-                      SizedBox(height: 1.v),
-                      Container(
-                          height: 14.v,
-                          width: 380.h,
-                          decoration: BoxDecoration(
-                              color: appTheme.gray700.withOpacity(0.18),
-                              borderRadius: BorderRadius.circular(2.h))),
-                      SizedBox(height: 17.v),
-                      _buildReviews(context),
-                      SizedBox(height: 20.v),
-                      SizedBox(
-                          width: 130.h,
-                          child: Divider(
-                              color: theme.colorScheme.primaryContainer
-                                  .withOpacity(1)))
-                    ])))));
+                          SizedBox(height: 12.v),
+                          Text("Job Preference: Full_time",
+                              style:
+                                  CustomTextStyles.titleMediumGray700Medium17),
+                          SizedBox(height: 14.v),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgCall,
+                                    height: 17.adaptSize,
+                                    width: 17.adaptSize,
+                                    margin: EdgeInsets.only(top: 1.v)),
+                                Padding(
+                                    padding: EdgeInsets.only(left: 9.h),
+                                    child: Text("+323 546 967 231 69",
+                                        style: CustomTextStyles
+                                            .titleSmallPrimarySemiBold))
+                              ]),
+                          SizedBox(height: 20.v),
+                          Container(
+                              width: 303.h,
+                              margin: EdgeInsets.only(left: 41.h, right: 40.h),
+                              child: RichText(
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                        text:
+                                            "Chloé Scarlett is a freelance expertise with ",
+                                        style: CustomTextStyles
+                                            .bodyMediumff666666),
+                                    TextSpan(
+                                        text:
+                                            "3 years of experience helping her target clients achieve their goals.",
+                                        style: CustomTextStyles
+                                            .titleSmallfff7941eSemiBold15)
+                                  ]),
+                                  textAlign: TextAlign.center)),
+                          SizedBox(height: 22.v),
+                          Divider(indent: 24.h, endIndent: 24.h),
+                          SizedBox(height: 41.v),
+                          _buildEducation(context),
+                          SizedBox(height: 1.v),
+                          Container(
+                              height: 14.v,
+                              width: 380.h,
+                              decoration: BoxDecoration(
+                                  color: appTheme.gray700.withOpacity(0.18),
+                                  borderRadius: BorderRadius.circular(2.h))),
+                          SizedBox(height: 7.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                  padding: EdgeInsets.only(left: 3.h),
+                                  child: Text("Supervising",
+                                      style: CustomTextStyles
+                                          .bodyMediumPrimaryContainer))),
+                          SizedBox(height: 1.v),
+                          Container(
+                              height: 14.v,
+                              width: 380.h,
+                              decoration: BoxDecoration(
+                                  color: appTheme.gray700.withOpacity(0.18),
+                                  borderRadius: BorderRadius.circular(2.h))),
+                          SizedBox(height: 7.v),
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                  padding: EdgeInsets.only(left: 3.h),
+                                  child: Text("Receptionist",
+                                      style: CustomTextStyles
+                                          .bodyMediumPrimaryContainer))),
+                          SizedBox(height: 1.v),
+                          Container(
+                              height: 14.v,
+                              width: 380.h,
+                              decoration: BoxDecoration(
+                                  color: appTheme.gray700.withOpacity(0.18),
+                                  borderRadius: BorderRadius.circular(2.h))),
+                          SizedBox(height: 17.v),
+                          _buildReviews(context),
+                          SizedBox(height: 20.v),
+                          SizedBox(
+                              width: 130.h,
+                              child: Divider(
+                                  color: theme.colorScheme.primaryContainer
+                                      .withOpacity(1)))
+                        ]);
+                      },
+                    )))));
   }
 
   /// Section Widget

@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_js_profile_model.dart';
@@ -22,8 +23,10 @@ abstract class SettingsRemoteDataSource {
 class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   SettingsRemoteDataSourceImpl(
     this.api,
+    this.userService,
   );
   final ApiService api;
+  final UserService userService;
   @override
   Future<bool> changePassword(ChangePasswordEntity entity) async {
     final result = await api.patch(
@@ -42,6 +45,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   Future<GetEmployerResponseEntity> getEmployerProfile() async {
     //try {
     final result = await api.get(
+      headers: userService.authorizationHeader,
       url: AppApiEndpoint.getEmployerProfile,
     ) as Map<String, dynamic>;
 
@@ -54,6 +58,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     //     return GetEmployerResponseModel.fromJson(
     //       result['data'] as Map<String, dynamic>,
     //     );
+
     //   } else {
     //     throw Exception('Invalid data format received from API.');
     //   }
@@ -68,6 +73,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   Future<GetJobSeekerResponseEntity> getJobSeekerProfile() async {
     final result = await api.get(
       url: AppApiEndpoint.getJobSeekerProfile,
+      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return GetJobSeekerResponseModel.fromJson(
@@ -79,11 +85,8 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity) async {
     final result = await api.patch(
       url: AppApiEndpoint.updateEmployerProfile,
+      headers: userService.authorizationHeader,
       body: UpdateEmployerProfileModel.fromEntity(entity).toJson(),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
     );
 
     return true;
@@ -94,11 +97,8 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
       UpdateJobSeekerProfileEntity entity) async {
     final result = await api.patch(
       url: AppApiEndpoint.updateCandidateProfile,
+      headers: userService.authorizationHeader,
       body: UpdateJobSeekerProfileModel.fromEntity(entity).toJson(),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
     );
 
     return true;

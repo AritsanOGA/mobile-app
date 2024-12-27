@@ -14,6 +14,8 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_job
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
+import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote_source.dart';
+import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
@@ -60,9 +62,13 @@ Future<void> init() async {
         () => AuthRemoteDataSourceImpl(
               locator(),
             ))
+              ..registerLazySingleton<CandidateRemoteSource>(
+        () => CandidateRemoteSource(
+              locator(),
+            ))
     ..registerLazySingleton<SettingsRemoteDataSource>(
         () => SettingsRemoteDataSourceImpl(
-              locator(),
+              locator(),UserService()
             ))
     ..registerLazySingleton<HomeRemoteDataSource>(
         () => HomeRemoteDataSourceImpl(locator(), UserService()))

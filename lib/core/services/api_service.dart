@@ -112,10 +112,12 @@ class ApiServiceImpl implements ApiService {
         options: Options(
             headers: headers,
             followRedirects: false,
-            validateStatus: (status) {
-              return status != null &&
-                  (status < 400 || status == 400 || status == 500);
-            }),
+            validateStatus: (status)=> true,
+            // validateStatus: (status) {
+            //   return status != null &&
+            //       (status < 400 || status == 400 || status == 500);
+            // }
+            ),
       );
       //    if (response.statusCode != null &&
       //     response.statusCode! >= 300 &&
@@ -179,24 +181,9 @@ class ApiServiceImpl implements ApiService {
           // validateStatus: (status) => status != null && status < 400,
 
           validateStatus: (status) => true,
-          // followRedirects: false,
-          // validateStatus: (status) {
-          //   return status != null && status >= 200 && status < 300;
-          // },
-          //  validateStatus: (status) => true,
-          //  validateStatus: (status) => status != null && status < 400,
 
-          // validateStatus: (status) =>
-          //     status != null && status >= 200 && status < 300
-          // validateStatus: (status) => status != null && status < 500,
-
-          // validateStatus: (status) {
-          //   return status! < 500;
-          // }
         ),
-        // options: Options(
-        //   headers: headers,
-        // ),
+    
       );
       // Manually check the status code
       if (response.statusCode != null &&

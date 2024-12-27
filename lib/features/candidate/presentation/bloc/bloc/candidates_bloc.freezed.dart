@@ -516,7 +516,7 @@ mixin _$CandidatesState {
       throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get jobId => throw _privateConstructorUsedError;
-  List<GetJobSeekerResponseEntity> get getAssignedCandidateList =>
+  List<GetAssignedApplicantsEntity> get getAssignedCandidateList =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -527,7 +527,7 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -540,7 +540,7 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -553,7 +553,7 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)?
         initial,
     required TResult orElse(),
   }) =>
@@ -593,7 +593,7 @@ abstract class $CandidatesStateCopyWith<$Res> {
       GetAssignedCandidateState getAssignedCandidateState,
       String? errorMessage,
       String? jobId,
-      List<GetJobSeekerResponseEntity> getAssignedCandidateList});
+      List<GetAssignedApplicantsEntity> getAssignedCandidateList});
 }
 
 /// @nodoc
@@ -645,7 +645,7 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
       getAssignedCandidateList: null == getAssignedCandidateList
           ? _value.getAssignedCandidateList
           : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
-              as List<GetJobSeekerResponseEntity>,
+              as List<GetAssignedApplicantsEntity>,
     ) as $Val);
   }
 }
@@ -665,7 +665,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetAssignedCandidateState getAssignedCandidateState,
       String? errorMessage,
       String? jobId,
-      List<GetJobSeekerResponseEntity> getAssignedCandidateList});
+      List<GetAssignedApplicantsEntity> getAssignedCandidateList});
 }
 
 /// @nodoc
@@ -715,7 +715,7 @@ class __$$InitialImplCopyWithImpl<$Res>
       getAssignedCandidateList: null == getAssignedCandidateList
           ? _value._getAssignedCandidateList
           : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
-              as List<GetJobSeekerResponseEntity>,
+              as List<GetAssignedApplicantsEntity>,
     ));
   }
 }
@@ -730,7 +730,7 @@ class _$InitialImpl implements _Initial {
       this.getAssignedCandidateState = GetAssignedCandidateState.idle,
       this.errorMessage,
       this.jobId,
-      final List<GetJobSeekerResponseEntity> getAssignedCandidateList =
+      final List<GetAssignedApplicantsEntity> getAssignedCandidateList =
           const []})
       : _getAssignedCandidateList = getAssignedCandidateList;
 
@@ -749,10 +749,10 @@ class _$InitialImpl implements _Initial {
   final String? errorMessage;
   @override
   final String? jobId;
-  final List<GetJobSeekerResponseEntity> _getAssignedCandidateList;
+  final List<GetAssignedApplicantsEntity> _getAssignedCandidateList;
   @override
   @JsonKey()
-  List<GetJobSeekerResponseEntity> get getAssignedCandidateList {
+  List<GetAssignedApplicantsEntity> get getAssignedCandidateList {
     if (_getAssignedCandidateList is EqualUnmodifiableListView)
       return _getAssignedCandidateList;
     // ignore: implicit_dynamic_type
@@ -812,7 +812,7 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)
         initial,
   }) {
     return initial(
@@ -835,7 +835,7 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)?
         initial,
   }) {
     return initial?.call(
@@ -858,7 +858,7 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             String? errorMessage,
             String? jobId,
-            List<GetJobSeekerResponseEntity> getAssignedCandidateList)?
+            List<GetAssignedApplicantsEntity> getAssignedCandidateList)?
         initial,
     required TResult orElse(),
   }) {
@@ -912,7 +912,7 @@ abstract class _Initial implements CandidatesState {
           final GetAssignedCandidateState getAssignedCandidateState,
           final String? errorMessage,
           final String? jobId,
-          final List<GetJobSeekerResponseEntity> getAssignedCandidateList}) =
+          final List<GetAssignedApplicantsEntity> getAssignedCandidateList}) =
       _$InitialImpl;
 
   @override
@@ -928,7 +928,7 @@ abstract class _Initial implements CandidatesState {
   @override
   String? get jobId;
   @override
-  List<GetJobSeekerResponseEntity> get getAssignedCandidateList;
+  List<GetAssignedApplicantsEntity> get getAssignedCandidateList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

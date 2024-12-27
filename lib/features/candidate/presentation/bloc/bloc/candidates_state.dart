@@ -12,6 +12,6 @@ class CandidatesState with _$CandidatesState {
     GetAssignedCandidateState getAssignedCandidateState,
     String? errorMessage,
     String? jobId,
-     @Default([]) List<GetJobSeekerResponseEntity> getAssignedCandidateList,
+     @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,
   }) = _Initial;
 }

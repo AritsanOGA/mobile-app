@@ -40,17 +40,23 @@ class AppApiEndpoint {
   static Uri updateEmployerProfile =
       baseUri.replace(path: '/api/v1/employer/update-profile');
   static Uri updatePassword = baseUri.replace(path: '/api/v1/update-password');
-
-
-
-
-
-  //! News
   static Uri getEmployerProfile =
       baseUri.replace(path: '/api/v1/employer/profile');
 
   static Uri getJobSeekerProfile =
       baseUri.replace(path: '/api/v1/candidate/profile');
+
+//! Candidates
+  static Uri getAssignedCandidate =
+      baseUri.replace(path: '/api/v1/candidate/update-profile');
+  static Uri acceptCandidate =
+      baseUri.replace(path: '/api/v1/candidate/update-profile');
+  static Uri rejectCandidate =
+      baseUri.replace(path: '/api/v1/candidate/update-profile');
+  static Uri getCandidateSkill =
+      baseUri.replace(path: 'api/v1/employer/candidate/technical-skills');
+
+  //! News
 
   static Uri newsComment(String id) =>
       baseUri.replace(path: '/api/v1/comments/$id');
