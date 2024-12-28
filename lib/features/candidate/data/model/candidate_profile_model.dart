@@ -58,16 +58,36 @@ class CandidateProfileModel extends CandidateProfileEntity {
     required super.guarantorEmail,
     required super.referredByLink,
     required super.referredByWho,
-    required super.awardsAndCertificates,
-    required super.artisanAssignedSkills,
-    required super.education,
-    required super.experience,
+    required List<AwardsAndCertificateModel> super.awardsAndCertificates,
+    required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
+    required List<AwardsAndCertificateModel> super.education,
+    required List<ExperienceModel>  super.experience,
     required super.customerRating,
     required super.skillAssessmentAverage,
   });
 
-  factory CandidateProfileModel.fromJson(Map<String, dynamic> json) =>
-      CandidateProfileModel(
+  factory CandidateProfileModel.fromJson(Map<String, dynamic> json) {
+    final awardList = json['awards_and_certificates'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['awards_and_certificates'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final skillList = json['artisan_assigned_skills'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['artisan_assigned_skills'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final educationList = json['education'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['education'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final experienceList = json['experience'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['experience'] as List,
+          )
+        : <Map<String, dynamic>>[];
+    return CandidateProfileModel(
         id: json["id"],
         hired: json["hired"],
         hiredDate: json["hired_date"] == null
@@ -130,18 +150,10 @@ class CandidateProfileModel extends CandidateProfileEntity {
         guarantorEmail: json["guarantor_email"],
         referredByLink: json["referred_by_link"],
         referredByWho: json["referred_by_who"],
-        awardsAndCertificates: json["awards_and_certificates"] == null
-            ? []
-            : List<dynamic>.from(json["awards_and_certificates"]),
-        artisanAssignedSkills: json["artisan_assigned_skills"] == null
-            ? []
-            : List<dynamic>.from(json["artisan_assigned_skills"]),
-        education: json["education"] == null
-            ? []
-            : List<dynamic>.from(json["education"]),
-        experience: json["experience"] == null
-            ? []
-            : List<dynamic>.from(json["experience"]),
+        awardsAndCertificates: awardList.map(AwardsAndCertificateModel.fromJson).toList().cast(),
+        artisanAssignedSkills: skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast(),
+        education: educationList.map(AwardsAndCertificateModel.fromJson).toList().cast(),
+        experience: experienceList.map(ExperienceModel.fromJson).toList().cast(),
         customerRating: json["customer_rating"] == null
             ? []
             : List<dynamic>.from(json["customer_rating"]),
@@ -149,4 +161,65 @@ class CandidateProfileModel extends CandidateProfileEntity {
             ? []
             : List<dynamic>.from(json["skill_assessment_average"]),
       );
+  }
+}
+
+class AwardsAndCertificateModel extends AwardsAndCertificateEntity {
+  AwardsAndCertificateModel({
+    required super.title,
+    required super.desc,
+  });
+
+  factory AwardsAndCertificateModel.fromEntity(
+          AwardsAndCertificateEntity entity) =>
+      AwardsAndCertificateModel(title: entity.title, desc: entity.desc);
+  factory AwardsAndCertificateModel.fromJson(Map<String, dynamic> json) =>
+      AwardsAndCertificateModel(
+        title: json["title"],
+        desc: json["desc"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "title": title,
+        "desc": desc,
+      };
+}
+
+class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
+  ArtisanAssignedSkillModel({
+    required super.skill,
+  });
+
+  factory ArtisanAssignedSkillModel.fromEntity(
+          ArtisanAssignedSkillEntity entity) =>
+      ArtisanAssignedSkillModel(
+        skill: entity.skill,
+      );
+  factory ArtisanAssignedSkillModel.fromJson(Map<String, dynamic> json) =>
+      ArtisanAssignedSkillModel(
+        skill: json["skill"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "skills": skill,
+      };
+}
+
+class ExperienceModel extends ExperienceEntity {
+  ExperienceModel({
+    required super.purpose,
+  });
+
+  factory ExperienceModel.fromEntity(ExperienceEntity entity) =>
+      ExperienceModel(
+        purpose: entity.purpose,
+      );
+  factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
+      ExperienceModel(
+        purpose: json["purpose"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "purpose": purpose,
+      };
 }

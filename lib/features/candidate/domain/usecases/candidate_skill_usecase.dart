@@ -5,11 +5,11 @@ import 'package:artisan_oga/features/candidate/domain/repositories/candidate_rep
 import 'package:dartz/dartz.dart';
 
 class CandidateSkillUseCase
-    implements UseCase<List<CandidateSkillEntity>, String> {
+    implements UseCase<List<CandidateSkillEntity>, NoParams> {
   CandidateSkillUseCase(this.repository);
   final CandidateRepository repository;
   @override
-  Future<Either<Failure, List<CandidateSkillEntity>>> call(NoParams) {
+  Future<Either<Failure, List<CandidateSkillEntity>>> call(NoParams params) {
     return repository.getCandidateSkills();
   }
 }

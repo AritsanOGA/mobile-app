@@ -8,9 +8,10 @@ import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
-import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -22,21 +23,27 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   CandidatesBloc(
       {AcceptCandidateUseCase? acceptCandidateUsecase,
       RejectCandidateUseCase? rejectCandidateUseCase,
-      GetAssignedCandidateUseCase? getAssignedCandidateUseCase})
+      GetAssignedCandidateUseCase? getAssignedCandidateUseCase,
+      CandidateProfileUseCase? candidateProfileUseCase,
+      CandidateSkillUseCase? candidateSkillUseCase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
         _getAssignedCandidateUseCase = getAssignedCandidateUseCase ?? locator(),
+        _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
+        _candidateSkillUseCase = candidateSkillUseCase ?? locator(),
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
     on<_GetAssignedCandidate>(_onGetAssignedCandidate);
-        on<_RejectCandidate>(_onRejectCandidate);
-            on<_RejectCandidate>(_onRejectCandidate);
+    on<_GetCandidateProfile>(_onGetCandidateProfile);
+    on<_GetCandidateSkill>(_onGetCandidateSkill);
   }
 
   final AcceptCandidateUseCase _acceptCandidateUsecase;
   final RejectCandidateUseCase _rejectCandidateUsecase;
   final GetAssignedCandidateUseCase _getAssignedCandidateUseCase;
+  final CandidateSkillUseCase _candidateSkillUseCase;
+  final CandidateProfileUseCase _candidateProfileUseCase;
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -87,5 +94,50 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     );
     emit(state.copyWith(
         getAssignedCandidateState: GetAssignedCandidateState.idle));
+  }
+
+  FutureOr<void> _onGetCandidateProfile(
+      _GetCandidateProfile event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(
+        getCandidateProfileState: GetCandidateProfileState.loading));
+    final result = await _candidateProfileUseCase(event.jobId);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getCandidateProfileState: GetCandidateProfileState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateProfileEntity) => emit(
+        state.copyWith(
+          candidateProfileEntity: candidateProfileEntity,
+          getCandidateProfileState: GetCandidateProfileState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(
+        getCandidateProfileState: GetCandidateProfileState.idle));
+  }
+
+  FutureOr<void> _onGetCandidateSkill(
+      _GetCandidateSkill event, Emitter<CandidatesState> emit) async {
+    emit(
+        state.copyWith(getCandidateSkillState: GetCandidateSkillState.loading));
+    final result = await _candidateSkillUseCase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getCandidateSkillState: GetCandidateSkillState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateSkillList) => emit(
+        state.copyWith(
+          candidateSkillList: candidateSkillList,
+          getCandidateSkillState: GetCandidateSkillState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getCandidateSkillState: GetCandidateSkillState.idle));
   }
 }

@@ -1,9 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/candidate/data/model/accept_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_profile_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
@@ -12,7 +9,6 @@ import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
-import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
@@ -86,10 +82,12 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
 
   @override
   Future<CandidateProfileEntity> getCandidateProfile(String identityId) async {
-    final result = await api.get(
-        url: AppApiEndpoint.getAssignedCandidate,
+    final result = await api.post(
+        url: AppApiEndpoint.candidateProfile,
         headers: userService.authorizationHeader,
-        queryParameters: {"user_identity": identityId}) as Map<String, dynamic>;
+        body:{"user_identity": identityId} ,
+         ) as Map<String, dynamic>;
+    print('my cadi ${result}');
     return CandidateProfileModel.fromJson(
       result['data'] as Map<String, dynamic>,
     );

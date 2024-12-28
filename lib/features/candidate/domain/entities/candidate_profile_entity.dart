@@ -55,10 +55,10 @@ class CandidateProfileEntity extends Equatable {
   final String? guarantorEmail;
   final int? referredByLink;
   final String? referredByWho;
-  final List<dynamic>? awardsAndCertificates;
-  final List<dynamic>? artisanAssignedSkills;
-  final List<dynamic>? education;
-  final List<dynamic>? experience;
+  final List<AwardsAndCertificateEntity>? awardsAndCertificates;
+  final List<ArtisanAssignedSkillEntity>? artisanAssignedSkills;
+  final List<AwardsAndCertificateEntity>? education;
+  final List<ExperienceEntity>? experience;
   final List<dynamic>? customerRating;
   final List<dynamic>? skillAssessmentAverage;
 
@@ -188,4 +188,48 @@ class CandidateProfileEntity extends Equatable {
         customerRating,
         skillAssessmentAverage,
       ];
+}
+
+class AwardsAndCertificateEntity extends Equatable {
+  final String? title;
+  final String? desc;
+
+  const AwardsAndCertificateEntity({
+    this.title,
+    this.desc,
+  });
+
+  @override
+  List<Object?> get props => [title, desc];
+}
+
+class ArtisanAssignedSkillEntity extends Equatable {
+  final String? skill;
+
+  const ArtisanAssignedSkillEntity({this.skill});
+
+  @override
+  List<Object?> get props => [skill];
+}
+
+class ExperienceEntity extends Equatable {
+  final String? purpose;
+
+  const ExperienceEntity({this.purpose});
+
+  @override
+  List<Object?> get props => [purpose];
+}
+
+class EducationEntity extends Equatable {
+  final String? title;
+  final String? desc;
+
+  const EducationEntity({
+    this.title,
+    this.desc,
+  });
+
+  @override
+  List<Object?> get props => [title, desc];
 }

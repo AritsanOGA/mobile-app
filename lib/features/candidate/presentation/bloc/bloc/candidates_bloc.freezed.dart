@@ -835,6 +835,10 @@ mixin _$CandidatesState {
       throw _privateConstructorUsedError;
   GetAssignedCandidateState get getAssignedCandidateState =>
       throw _privateConstructorUsedError;
+  GetCandidateProfileState get getCandidateProfileState =>
+      throw _privateConstructorUsedError;
+  GetCandidateSkillState get getCandidateSkillState =>
+      throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get jobId => throw _privateConstructorUsedError;
   List<GetAssignedApplicantsEntity> get getAssignedCandidateList =>
@@ -850,6 +854,8 @@ mixin _$CandidatesState {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -865,6 +871,8 @@ mixin _$CandidatesState {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -880,6 +888,8 @@ mixin _$CandidatesState {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -922,6 +932,8 @@ abstract class $CandidatesStateCopyWith<$Res> {
       AcceptCandidateState acceptCandidateState,
       RejectCandidateState rejectCandidateState,
       GetAssignedCandidateState getAssignedCandidateState,
+      GetCandidateProfileState getCandidateProfileState,
+      GetCandidateSkillState getCandidateSkillState,
       String? errorMessage,
       String? jobId,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -946,6 +958,8 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? acceptCandidateState = null,
     Object? rejectCandidateState = null,
     Object? getAssignedCandidateState = null,
+    Object? getCandidateProfileState = null,
+    Object? getCandidateSkillState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? getAssignedCandidateList = null,
@@ -969,6 +983,14 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.getAssignedCandidateState
           : getAssignedCandidateState // ignore: cast_nullable_to_non_nullable
               as GetAssignedCandidateState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as GetCandidateProfileState,
+      getCandidateSkillState: null == getCandidateSkillState
+          ? _value.getCandidateSkillState
+          : getCandidateSkillState // ignore: cast_nullable_to_non_nullable
+              as GetCandidateSkillState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1006,6 +1028,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       AcceptCandidateState acceptCandidateState,
       RejectCandidateState rejectCandidateState,
       GetAssignedCandidateState getAssignedCandidateState,
+      GetCandidateProfileState getCandidateProfileState,
+      GetCandidateSkillState getCandidateSkillState,
       String? errorMessage,
       String? jobId,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -1028,6 +1052,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? acceptCandidateState = null,
     Object? rejectCandidateState = null,
     Object? getAssignedCandidateState = null,
+    Object? getCandidateProfileState = null,
+    Object? getCandidateSkillState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? getAssignedCandidateList = null,
@@ -1051,6 +1077,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getAssignedCandidateState
           : getAssignedCandidateState // ignore: cast_nullable_to_non_nullable
               as GetAssignedCandidateState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as GetCandidateProfileState,
+      getCandidateSkillState: null == getCandidateSkillState
+          ? _value.getCandidateSkillState
+          : getCandidateSkillState // ignore: cast_nullable_to_non_nullable
+              as GetCandidateSkillState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1083,6 +1117,8 @@ class _$InitialImpl implements _Initial {
       this.acceptCandidateState = AcceptCandidateState.idle,
       this.rejectCandidateState = RejectCandidateState.idle,
       this.getAssignedCandidateState = GetAssignedCandidateState.idle,
+      this.getCandidateProfileState = GetCandidateProfileState.idle,
+      this.getCandidateSkillState = GetCandidateSkillState.idle,
       this.errorMessage,
       this.jobId,
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList =
@@ -1103,6 +1139,12 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final GetAssignedCandidateState getAssignedCandidateState;
+  @override
+  @JsonKey()
+  final GetCandidateProfileState getCandidateProfileState;
+  @override
+  @JsonKey()
+  final GetCandidateSkillState getCandidateSkillState;
   @override
   final String? errorMessage;
   @override
@@ -1132,7 +1174,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, errorMessage: $errorMessage, jobId: $jobId, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, errorMessage: $errorMessage, jobId: $jobId, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -1149,6 +1191,11 @@ class _$InitialImpl implements _Initial {
             (identical(other.getAssignedCandidateState,
                     getAssignedCandidateState) ||
                 other.getAssignedCandidateState == getAssignedCandidateState) &&
+            (identical(
+                    other.getCandidateProfileState, getCandidateProfileState) ||
+                other.getCandidateProfileState == getCandidateProfileState) &&
+            (identical(other.getCandidateSkillState, getCandidateSkillState) ||
+                other.getCandidateSkillState == getCandidateSkillState) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.jobId, jobId) || other.jobId == jobId) &&
@@ -1167,6 +1214,8 @@ class _$InitialImpl implements _Initial {
       acceptCandidateState,
       rejectCandidateState,
       getAssignedCandidateState,
+      getCandidateProfileState,
+      getCandidateSkillState,
       errorMessage,
       jobId,
       const DeepCollectionEquality().hash(_getAssignedCandidateList),
@@ -1187,6 +1236,8 @@ class _$InitialImpl implements _Initial {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -1199,6 +1250,8 @@ class _$InitialImpl implements _Initial {
         acceptCandidateState,
         rejectCandidateState,
         getAssignedCandidateState,
+        getCandidateProfileState,
+        getCandidateSkillState,
         errorMessage,
         jobId,
         getAssignedCandidateList,
@@ -1214,6 +1267,8 @@ class _$InitialImpl implements _Initial {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -1226,6 +1281,8 @@ class _$InitialImpl implements _Initial {
         acceptCandidateState,
         rejectCandidateState,
         getAssignedCandidateState,
+        getCandidateProfileState,
+        getCandidateSkillState,
         errorMessage,
         jobId,
         getAssignedCandidateList,
@@ -1241,6 +1298,8 @@ class _$InitialImpl implements _Initial {
             AcceptCandidateState acceptCandidateState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
+            GetCandidateProfileState getCandidateProfileState,
+            GetCandidateSkillState getCandidateSkillState,
             String? errorMessage,
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -1255,6 +1314,8 @@ class _$InitialImpl implements _Initial {
           acceptCandidateState,
           rejectCandidateState,
           getAssignedCandidateState,
+          getCandidateProfileState,
+          getCandidateSkillState,
           errorMessage,
           jobId,
           getAssignedCandidateList,
@@ -1299,6 +1360,8 @@ abstract class _Initial implements CandidatesState {
       final AcceptCandidateState acceptCandidateState,
       final RejectCandidateState rejectCandidateState,
       final GetAssignedCandidateState getAssignedCandidateState,
+      final GetCandidateProfileState getCandidateProfileState,
+      final GetCandidateSkillState getCandidateSkillState,
       final String? errorMessage,
       final String? jobId,
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList,
@@ -1313,6 +1376,10 @@ abstract class _Initial implements CandidatesState {
   RejectCandidateState get rejectCandidateState;
   @override
   GetAssignedCandidateState get getAssignedCandidateState;
+  @override
+  GetCandidateProfileState get getCandidateProfileState;
+  @override
+  GetCandidateSkillState get getCandidateSkillState;
   @override
   String? get errorMessage;
   @override

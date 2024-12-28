@@ -8,6 +8,7 @@ class FeaturedCandidatesEntity extends Equatable {
   final String workExperience;
   final String profileImage;
   final String city;
+  final String identity;
   FeaturedCandidatesEntity({
     required this.id,
     required this.role,
@@ -16,6 +17,7 @@ class FeaturedCandidatesEntity extends Equatable {
     required this.workExperience,
     required this.profileImage,
     required this.city,
+    required this.identity
   });
   @override
   List<Object?> get props => [
@@ -25,6 +27,6 @@ class FeaturedCandidatesEntity extends Equatable {
         availability,
         workExperience,
         profileImage,
-        city,
+        city,identity
       ];
 }

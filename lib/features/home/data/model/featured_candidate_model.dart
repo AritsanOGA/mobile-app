@@ -9,6 +9,7 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
     required super.workExperience,
     required super.profileImage,
     required super.city,
+    required super.identity,
   });
   // factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
   //     RegisterJobSeekerModel(
@@ -48,12 +49,12 @@ class FeaturedCandidateModel extends FeaturedCandidatesEntity {
 
   factory FeaturedCandidateModel.fromJson(Map<String, dynamic> json) =>
       FeaturedCandidateModel(
-        id: json["id"] ?? 0,
-        role: json["role"] ?? '',
-        fullName: json["full_name"] ?? '',
-        availability: json["availability"] ?? '',
-        workExperience: json["work_experience"] ?? '',
-        profileImage: json["profile_image"] ?? '',
-        city: json["city"] ?? '',
-      );
+          id: json["id"] ?? 0,
+          role: json["role"] ?? '',
+          fullName: json["full_name"] ?? '',
+          availability: json["availability"] ?? '',
+          workExperience: json["work_experience"] ?? '',
+          profileImage: json["profile_image"] ?? '',
+          city: json["city"] ?? '',
+          identity: json["identity"] ?? '');
 }

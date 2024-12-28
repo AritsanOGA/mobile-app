@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class WaiteringItemWidget extends StatelessWidget {
-  const WaiteringItemWidget({Key? key})
+  final String skill;
+  const WaiteringItemWidget({Key? key, required this.skill})
       : super(
           key: key,
         );
@@ -18,7 +19,7 @@ class WaiteringItemWidget extends StatelessWidget {
       showCheckmark: false,
       labelPadding: EdgeInsets.zero,
       label: Text(
-        "Waitering",
+        skill,
         style: TextStyle(
           color: appTheme.gray50,
           fontSize: 13.fSize,

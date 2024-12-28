@@ -18,6 +18,8 @@ import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote
 import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
@@ -100,6 +102,10 @@ Future<void> init() async {
         () => GetAssignedCandidateUseCase(locator()))
     ..registerLazySingleton<RegisterJobSeekerUseCase>(
         () => RegisterJobSeekerUseCase(locator()))
+    ..registerLazySingleton<CandidateProfileUseCase>(
+        () => CandidateProfileUseCase(locator()))
+    ..registerLazySingleton<CandidateSkillUseCase>(
+        () => CandidateSkillUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
     ..registerLazySingleton<GetFeaturedCandidateUseCase>(
         () => GetFeaturedCandidateUseCase(locator()))

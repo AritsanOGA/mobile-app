@@ -10,6 +10,10 @@ class CandidatesState with _$CandidatesState {
       RejectCandidateState rejectCandidateState,
       @Default(GetAssignedCandidateState.idle)
       GetAssignedCandidateState getAssignedCandidateState,
+      @Default(GetCandidateProfileState.idle)
+      GetCandidateProfileState getCandidateProfileState,
+      @Default(GetCandidateSkillState.idle)
+      GetCandidateSkillState getCandidateSkillState,
       String? errorMessage,
       String? jobId,
       @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,

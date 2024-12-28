@@ -121,7 +121,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                           availability:
                               state.featureCandidateList[index].availability,
                           city: state.featureCandidateList[index].city,
-                          identityId: state.featureCandidateList[index].fullName,
+                          identityId: state.featureCandidateList[index].identity,
                         );
                       },
                     ),
