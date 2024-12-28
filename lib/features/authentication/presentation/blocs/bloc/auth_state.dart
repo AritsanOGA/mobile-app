@@ -16,7 +16,6 @@ class AuthState with _$AuthState {
     @Default('--Select--') String jobType,
     String? jsState,
     String? city,
-
     File? picture,
     @Default('--Select--') String educationalQualification,
     String? dateOFBirth,

@@ -12,7 +12,7 @@ abstract class CandidateRepository {
       getAssignedCandidate(String jobId);
   Future<Either<Failure, CandidateProfileEntity>> getCandidateProfile(
       String identityId);
-  Future<Either<Failure, List<CandidateSkillEntity>>> getCandidateSkills();
+  Future<Either<Failure, List<CandidateSkillEntity>>> getCandidateSkills(String identityId);
   Future<Either<Failure, bool>> acceptCandidate(AcceptCandidateEntity entity);
   Future<Either<Failure, bool>> rejectCandidate(AcceptCandidateEntity entity);
 }

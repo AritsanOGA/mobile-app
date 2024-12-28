@@ -12,7 +12,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
-  Future<List<CandidateSkillEntity>> getCandidateSkills();
+  Future<List<CandidateSkillEntity>> getCandidateSkills(String identityId);
   Future<CandidateProfileEntity> getCandidateProfile(String identityId);
   Future<bool> rejectCandidate(AcceptCandidateEntity entity);
   Future<bool> acceptCandidate(AcceptCandidateEntity entity);
@@ -65,9 +65,11 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<List<CandidateSkillEntity>> getCandidateSkills() async {
-    final result = await api.get(
-      url: AppApiEndpoint.getAssignedCandidate,
+  Future<List<CandidateSkillEntity>> getCandidateSkills(
+      String identityId) async {
+    final result = await api.post(
+      url: AppApiEndpoint.getCandidateSkill,
+      body: {"user_identity": identityId},
       headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
@@ -83,10 +85,10 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   @override
   Future<CandidateProfileEntity> getCandidateProfile(String identityId) async {
     final result = await api.post(
-        url: AppApiEndpoint.candidateProfile,
-        headers: userService.authorizationHeader,
-        body:{"user_identity": identityId} ,
-         ) as Map<String, dynamic>;
+      url: AppApiEndpoint.candidateProfile,
+      headers: userService.authorizationHeader,
+      body: {"user_identity": identityId},
+    ) as Map<String, dynamic>;
     print('my cadi ${result}');
     return CandidateProfileModel.fromJson(
       result['data'] as Map<String, dynamic>,

@@ -18,5 +18,8 @@ class CandidatesState with _$CandidatesState {
       String? jobId,
       @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       @Default([]) List<CandidateSkillEntity> candidateSkillList,
+      @Default('1') String dropdownValue,
+      @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
+      List<String> dropdownList,
       CandidateProfileEntity? candidateProfileEntity}) = _Initial;
 }

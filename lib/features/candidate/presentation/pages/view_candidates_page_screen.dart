@@ -1,25 +1,30 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../presentation/view_candidates_page_screen/widgets/userprofilegrid_item_widget.dart';
+import '../widgets/userprofilegrid_item_widget.dart';
 
 class ViewCandidatesPageScreen extends StatelessWidget {
   final String jobId;
+  final String jobIdentity;
 
   ViewCandidatesPageScreen({
     Key? key,
     required this.jobId,
+    required this.jobIdentity,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: AppBar(
-              title: Text("Applicants"),
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Applicants',
             ),
             body: Container(
                 width: double.maxFinite,
@@ -74,8 +79,11 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                               onTap: () {
                                 Navigator.pushNamed(
                                     context, AppRoutes.acceptRejectPageScreen,
-                                    arguments:
-                                        state.getAssignedCandidateList[index]);
+                                    arguments: {
+                                      "jobIdentity": jobIdentity,
+                                      "applicantEntity":
+                                          state.getAssignedCandidateList[index]
+                                    });
                               },
                               child: UserprofilegridItemWidget(
                                   getAssignedApplicantsEntity:

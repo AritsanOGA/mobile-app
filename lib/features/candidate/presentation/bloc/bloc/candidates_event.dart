@@ -10,7 +10,8 @@ class CandidatesEvent with _$CandidatesEvent {
       _RejectCandidate;
   const factory CandidatesEvent.getAssignedCandidate(String jobId) =
       _GetAssignedCandidate;
-  const factory CandidatesEvent.getCandidateSkill() = _GetCandidateSkill;
+  const factory CandidatesEvent.getCandidateSkill(String identityId) =
+      _GetCandidateSkill;
   const factory CandidatesEvent.getCandidateProfile(String jobId) =
       _GetCandidateProfile;
 }

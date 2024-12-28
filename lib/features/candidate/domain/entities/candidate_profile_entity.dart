@@ -55,9 +55,9 @@ class CandidateProfileEntity extends Equatable {
   final String? guarantorEmail;
   final int? referredByLink;
   final String? referredByWho;
-  final List<AwardsAndCertificateEntity>? awardsAndCertificates;
-  final List<ArtisanAssignedSkillEntity>? artisanAssignedSkills;
-  final List<AwardsAndCertificateEntity>? education;
+  final List<AwardsAndCertificateEntity> awardsAndCertificates;
+  final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
+  final List<AwardsAndCertificateEntity> education;
   final List<ExperienceEntity>? experience;
   final List<dynamic>? customerRating;
   final List<dynamic>? skillAssessmentAverage;
@@ -117,9 +117,9 @@ class CandidateProfileEntity extends Equatable {
     this.guarantorEmail,
     this.referredByLink,
     this.referredByWho,
-    this.awardsAndCertificates,
-    this.artisanAssignedSkills,
-    this.education,
+    required this.awardsAndCertificates,
+    required this.artisanAssignedSkills,
+    required this.education,
     this.experience,
     this.customerRating,
     this.skillAssessmentAverage,

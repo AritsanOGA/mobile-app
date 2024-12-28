@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
@@ -16,6 +17,7 @@ class _ManageJobsPageState extends State<ManageJobsPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+               backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
               title: 'Manage Job Post',
               hasBackButton: false,

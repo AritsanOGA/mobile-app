@@ -73,7 +73,7 @@ class CandidateRepositoryImpl implements CandidateRepository {
   }
 
   @override
-  Future<Either<Failure, List<CandidateSkillEntity>>> getCandidateSkills() async {
-       return candidateRemoteSource.getCandidateSkills().makeRequest();
+  Future<Either<Failure, List<CandidateSkillEntity>>> getCandidateSkills(String identityId) async {
+       return candidateRemoteSource.getCandidateSkills( identityId).makeRequest();
   }
 }

@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
@@ -6,18 +7,18 @@ import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CandidatesProfileAcceptPageScreen extends StatelessWidget {
+class CandidatesProfilePage extends StatelessWidget {
   final String id;
 
-  const CandidatesProfileAcceptPageScreen({Key? key, required this.id})
-      : super(key: key);
+  const CandidatesProfilePage({Key? key, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: '',
+              title: 'Applicants',
             ),
             body: SingleChildScrollView(
                 child: Container(

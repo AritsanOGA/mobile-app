@@ -10,6 +10,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidate_profile_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
@@ -90,7 +91,7 @@ class AppRoutes {
 
   static const String candidatesProfileAcceptPageScreen =
       '/candidates_profile_accept_page_screen';
-
+  static const String candidatesProfilePage = '/candidates_profile_page';
   static const String messagePageScreen = '/message_page_screen';
 
   static const String messagePageChattingOneScreen =
@@ -244,7 +245,7 @@ class AppRoutes {
           navigateTo: EmployerNavBarPage(),
         );
       case successScreen:
-        final args = settings.arguments as Map<String, dynamic>; // Cast to Map
+        final args = settings.arguments as Map<String, dynamic>;
 
         return AppPageRouteBuilder(
           navigateTo: SuccessScreen(
@@ -277,9 +278,12 @@ class AppRoutes {
           ),
         );
       case viewCandidatesPageScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
         return AppPageRouteBuilder(
           navigateTo: ViewCandidatesPageScreen(
-            jobId: settings.arguments as String,
+            jobId: args['id'] as String,
+            jobIdentity: args['identity'] as String,
           ),
         );
       case verifyEmployerScreen:
@@ -335,21 +339,30 @@ class AppRoutes {
           navigateTo: const EmployerLoginPageScreen(),
         );
       case acceptRejectPageScreen:
+        final args = settings.arguments as Map<String, dynamic>;
+
         return AppPageRouteBuilder(
           navigateTo: AcceptRejectPageScreen(
+            jobIdentity: args['jobIdentity'] as String,
             getAssignedApplicantsEntity:
-                settings.arguments as GetAssignedApplicantsEntity,
+                args['applicantEntity'] as GetAssignedApplicantsEntity,
           ),
         );
       case searchResultPageScreen:
         return AppPageRouteBuilder(
           navigateTo: SearchResultPageScreen(),
         );
-      case candidatesProfileAcceptPageScreen:
+      case candidatesProfilePage:
         return AppPageRouteBuilder(
           navigateTo: CandidatesProfileAcceptPageScreen(
             id: settings.arguments as String,
+          ),
+        );
 
+      case candidatesProfileAcceptPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: CandidatesProfilePage(
+            id: settings.arguments as String,
           ),
         );
       case jSCreateAccountPageFourScreen:

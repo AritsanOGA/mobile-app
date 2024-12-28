@@ -123,7 +123,7 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       _GetCandidateSkill event, Emitter<CandidatesState> emit) async {
     emit(
         state.copyWith(getCandidateSkillState: GetCandidateSkillState.loading));
-    final result = await _candidateSkillUseCase(NoParams());
+    final result = await _candidateSkillUseCase(event.identityId);
     result.fold(
       (error) => emit(
         state.copyWith(

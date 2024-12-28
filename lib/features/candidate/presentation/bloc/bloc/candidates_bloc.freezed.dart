@@ -21,7 +21,7 @@ mixin _$CandidatesEvent {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$CandidatesEvent {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$CandidatesEvent {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) =>
@@ -160,7 +160,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) {
     return acceptCandidate(param);
@@ -172,7 +172,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return acceptCandidate?.call(param);
@@ -184,7 +184,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
@@ -313,7 +313,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) {
     return rejectCandidate(param);
@@ -325,7 +325,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return rejectCandidate?.call(param);
@@ -337,7 +337,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
@@ -467,7 +467,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getAssignedCandidate(jobId);
@@ -479,7 +479,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getAssignedCandidate?.call(jobId);
@@ -491,7 +491,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
@@ -557,6 +557,8 @@ abstract class _$$GetCandidateSkillImplCopyWith<$Res> {
   factory _$$GetCandidateSkillImplCopyWith(_$GetCandidateSkillImpl value,
           $Res Function(_$GetCandidateSkillImpl) then) =
       __$$GetCandidateSkillImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String identityId});
 }
 
 /// @nodoc
@@ -566,26 +568,52 @@ class __$$GetCandidateSkillImplCopyWithImpl<$Res>
   __$$GetCandidateSkillImplCopyWithImpl(_$GetCandidateSkillImpl _value,
       $Res Function(_$GetCandidateSkillImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? identityId = null,
+  }) {
+    return _then(_$GetCandidateSkillImpl(
+      null == identityId
+          ? _value.identityId
+          : identityId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetCandidateSkillImpl implements _GetCandidateSkill {
-  const _$GetCandidateSkillImpl();
+  const _$GetCandidateSkillImpl(this.identityId);
+
+  @override
+  final String identityId;
 
   @override
   String toString() {
-    return 'CandidatesEvent.getCandidateSkill()';
+    return 'CandidatesEvent.getCandidateSkill(identityId: $identityId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetCandidateSkillImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetCandidateSkillImpl &&
+            (identical(other.identityId, identityId) ||
+                other.identityId == identityId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, identityId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCandidateSkillImplCopyWith<_$GetCandidateSkillImpl> get copyWith =>
+      __$$GetCandidateSkillImplCopyWithImpl<_$GetCandidateSkillImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -593,10 +621,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) {
-    return getCandidateSkill();
+    return getCandidateSkill(identityId);
   }
 
   @override
@@ -605,10 +633,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) {
-    return getCandidateSkill?.call();
+    return getCandidateSkill?.call(identityId);
   }
 
   @override
@@ -617,12 +645,12 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getCandidateSkill != null) {
-      return getCandidateSkill();
+      return getCandidateSkill(identityId);
     }
     return orElse();
   }
@@ -669,7 +697,13 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
 }
 
 abstract class _GetCandidateSkill implements CandidatesEvent {
-  const factory _GetCandidateSkill() = _$GetCandidateSkillImpl;
+  const factory _GetCandidateSkill(final String identityId) =
+      _$GetCandidateSkillImpl;
+
+  String get identityId;
+  @JsonKey(ignore: true)
+  _$$GetCandidateSkillImplCopyWith<_$GetCandidateSkillImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -740,7 +774,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(AcceptCandidateEntity param) rejectCandidate,
     required TResult Function(String jobId) getAssignedCandidate,
-    required TResult Function() getCandidateSkill,
+    required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getCandidateProfile(jobId);
@@ -752,7 +786,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult? Function(String jobId)? getAssignedCandidate,
-    TResult? Function()? getCandidateSkill,
+    TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getCandidateProfile?.call(jobId);
@@ -764,7 +798,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(AcceptCandidateEntity param)? rejectCandidate,
     TResult Function(String jobId)? getAssignedCandidate,
-    TResult Function()? getCandidateSkill,
+    TResult Function(String identityId)? getCandidateSkill,
     TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
@@ -845,6 +879,8 @@ mixin _$CandidatesState {
       throw _privateConstructorUsedError;
   List<CandidateSkillEntity> get candidateSkillList =>
       throw _privateConstructorUsedError;
+  String get dropdownValue => throw _privateConstructorUsedError;
+  List<String> get dropdownList => throw _privateConstructorUsedError;
   CandidateProfileEntity? get candidateProfileEntity =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -860,6 +896,8 @@ mixin _$CandidatesState {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)
         initial,
   }) =>
@@ -877,6 +915,8 @@ mixin _$CandidatesState {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
         initial,
   }) =>
@@ -894,6 +934,8 @@ mixin _$CandidatesState {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
         initial,
     required TResult orElse(),
@@ -938,6 +980,8 @@ abstract class $CandidatesStateCopyWith<$Res> {
       String? jobId,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       List<CandidateSkillEntity> candidateSkillList,
+      String dropdownValue,
+      List<String> dropdownList,
       CandidateProfileEntity? candidateProfileEntity});
 }
 
@@ -964,6 +1008,8 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? jobId = freezed,
     Object? getAssignedCandidateList = null,
     Object? candidateSkillList = null,
+    Object? dropdownValue = null,
+    Object? dropdownList = null,
     Object? candidateProfileEntity = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1007,6 +1053,14 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.candidateSkillList
           : candidateSkillList // ignore: cast_nullable_to_non_nullable
               as List<CandidateSkillEntity>,
+      dropdownValue: null == dropdownValue
+          ? _value.dropdownValue
+          : dropdownValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      dropdownList: null == dropdownList
+          ? _value.dropdownList
+          : dropdownList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       candidateProfileEntity: freezed == candidateProfileEntity
           ? _value.candidateProfileEntity
           : candidateProfileEntity // ignore: cast_nullable_to_non_nullable
@@ -1034,6 +1088,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? jobId,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       List<CandidateSkillEntity> candidateSkillList,
+      String dropdownValue,
+      List<String> dropdownList,
       CandidateProfileEntity? candidateProfileEntity});
 }
 
@@ -1058,6 +1114,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? jobId = freezed,
     Object? getAssignedCandidateList = null,
     Object? candidateSkillList = null,
+    Object? dropdownValue = null,
+    Object? dropdownList = null,
     Object? candidateProfileEntity = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -1101,6 +1159,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._candidateSkillList
           : candidateSkillList // ignore: cast_nullable_to_non_nullable
               as List<CandidateSkillEntity>,
+      dropdownValue: null == dropdownValue
+          ? _value.dropdownValue
+          : dropdownValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      dropdownList: null == dropdownList
+          ? _value._dropdownList
+          : dropdownList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       candidateProfileEntity: freezed == candidateProfileEntity
           ? _value.candidateProfileEntity
           : candidateProfileEntity // ignore: cast_nullable_to_non_nullable
@@ -1124,9 +1190,23 @@ class _$InitialImpl implements _Initial {
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList =
           const [],
       final List<CandidateSkillEntity> candidateSkillList = const [],
+      this.dropdownValue = '1',
+      final List<String> dropdownList = const [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10'
+      ],
       this.candidateProfileEntity})
       : _getAssignedCandidateList = getAssignedCandidateList,
-        _candidateSkillList = candidateSkillList;
+        _candidateSkillList = candidateSkillList,
+        _dropdownList = dropdownList;
 
   @override
   final AcceptCandidateEntity? acceptCandidateEntity;
@@ -1170,11 +1250,23 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  @JsonKey()
+  final String dropdownValue;
+  final List<String> _dropdownList;
+  @override
+  @JsonKey()
+  List<String> get dropdownList {
+    if (_dropdownList is EqualUnmodifiableListView) return _dropdownList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dropdownList);
+  }
+
+  @override
   final CandidateProfileEntity? candidateProfileEntity;
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, errorMessage: $errorMessage, jobId: $jobId, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, errorMessage: $errorMessage, jobId: $jobId, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -1203,6 +1295,10 @@ class _$InitialImpl implements _Initial {
                 other._getAssignedCandidateList, _getAssignedCandidateList) &&
             const DeepCollectionEquality()
                 .equals(other._candidateSkillList, _candidateSkillList) &&
+            (identical(other.dropdownValue, dropdownValue) ||
+                other.dropdownValue == dropdownValue) &&
+            const DeepCollectionEquality()
+                .equals(other._dropdownList, _dropdownList) &&
             (identical(other.candidateProfileEntity, candidateProfileEntity) ||
                 other.candidateProfileEntity == candidateProfileEntity));
   }
@@ -1220,6 +1316,8 @@ class _$InitialImpl implements _Initial {
       jobId,
       const DeepCollectionEquality().hash(_getAssignedCandidateList),
       const DeepCollectionEquality().hash(_candidateSkillList),
+      dropdownValue,
+      const DeepCollectionEquality().hash(_dropdownList),
       candidateProfileEntity);
 
   @JsonKey(ignore: true)
@@ -1242,6 +1340,8 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)
         initial,
   }) {
@@ -1256,6 +1356,8 @@ class _$InitialImpl implements _Initial {
         jobId,
         getAssignedCandidateList,
         candidateSkillList,
+        dropdownValue,
+        dropdownList,
         candidateProfileEntity);
   }
 
@@ -1273,6 +1375,8 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
         initial,
   }) {
@@ -1287,6 +1391,8 @@ class _$InitialImpl implements _Initial {
         jobId,
         getAssignedCandidateList,
         candidateSkillList,
+        dropdownValue,
+        dropdownList,
         candidateProfileEntity);
   }
 
@@ -1304,6 +1410,8 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
+            String dropdownValue,
+            List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
         initial,
     required TResult orElse(),
@@ -1320,6 +1428,8 @@ class _$InitialImpl implements _Initial {
           jobId,
           getAssignedCandidateList,
           candidateSkillList,
+          dropdownValue,
+          dropdownList,
           candidateProfileEntity);
     }
     return orElse();
@@ -1366,6 +1476,8 @@ abstract class _Initial implements CandidatesState {
       final String? jobId,
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       final List<CandidateSkillEntity> candidateSkillList,
+      final String dropdownValue,
+      final List<String> dropdownList,
       final CandidateProfileEntity? candidateProfileEntity}) = _$InitialImpl;
 
   @override
@@ -1388,6 +1500,10 @@ abstract class _Initial implements CandidatesState {
   List<GetAssignedApplicantsEntity> get getAssignedCandidateList;
   @override
   List<CandidateSkillEntity> get candidateSkillList;
+  @override
+  String get dropdownValue;
+  @override
+  List<String> get dropdownList;
   @override
   CandidateProfileEntity? get candidateProfileEntity;
   @override

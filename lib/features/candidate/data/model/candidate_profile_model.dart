@@ -197,7 +197,7 @@ class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
       );
   factory ArtisanAssignedSkillModel.fromJson(Map<String, dynamic> json) =>
       ArtisanAssignedSkillModel(
-        skill: json["skill"],
+        skill: json["skills"],
       );
 
   Map<String, dynamic> toJson() => {
