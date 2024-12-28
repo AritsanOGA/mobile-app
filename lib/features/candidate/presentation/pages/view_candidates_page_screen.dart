@@ -1,8 +1,9 @@
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../presentation/view_candidates_page_screen/widgets/userprofilegrid_item_widget.dart';
 
 class ViewCandidatesPageScreen extends StatelessWidget {
@@ -37,7 +38,6 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                   BlocBuilder<CandidatesBloc, CandidatesState>(
                     bloc: context.read<CandidatesBloc>()
                       ..add(CandidatesEvent.getAssignedCandidate(jobId)),
-                  
                     builder: (context, state) {
                       if (state.getAssignedCandidateState ==
                           GetAssignedCandidateState.loading) {
@@ -56,22 +56,33 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                         ));
                       }
 
-                      return GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 6.h,
-                          crossAxisSpacing: 6.h,
+                      return SizedBox(
+                        height: 200.h,
+                        child: GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 6.h,
+                            crossAxisSpacing: 6.h,
+                          ),
+
+                          scrollDirection: Axis.vertical, // Remove this line
+
+                          itemCount: state.getAssignedCandidateList.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.acceptRejectPageScreen,
+                                    arguments:
+                                        state.getAssignedCandidateList[index]);
+                              },
+                              child: UserprofilegridItemWidget(
+                                  getAssignedApplicantsEntity:
+                                      state.getAssignedCandidateList[index]),
+                            );
+                          },
                         ),
-
-                        scrollDirection: Axis.vertical, // Remove this line
-
-                        itemCount: state.getAssignedCandidateList.length,
-                        itemBuilder: (context, index) {
-                          return UserprofilegridItemWidget(
-                              fullName: state.getAssignedCandidateList[index]
-                                      .users.fullName ??
-                                  '');
-                        },
                       );
                     },
                   ),

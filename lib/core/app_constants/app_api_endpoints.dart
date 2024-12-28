@@ -48,11 +48,11 @@ class AppApiEndpoint {
 
 //! Candidates
   static Uri getAssignedCandidate =
-      baseUri.replace(path: '/api/v1/candidate/update-profile');
+      baseUri.replace(path: '/api/v1/employer/assigned-applicants');
   static Uri acceptCandidate =
-      baseUri.replace(path: '/api/v1/candidate/update-profile');
+      baseUri.replace(path: '/api/v1/employer/accept-candidate');
   static Uri rejectCandidate =
-      baseUri.replace(path: '/api/v1/candidate/update-profile');
+      baseUri.replace(path: '/api/v1/employer/reject-candidate');
   static Uri getCandidateSkill =
       baseUri.replace(path: 'api/v1/employer/candidate/technical-skills');
 

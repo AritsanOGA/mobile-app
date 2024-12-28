@@ -16,6 +16,10 @@ import 'package:artisan_oga/features/authentication/domain/usecases/state_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote_source.dart';
 import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
+import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
@@ -36,6 +40,7 @@ import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -62,14 +67,10 @@ Future<void> init() async {
         () => AuthRemoteDataSourceImpl(
               locator(),
             ))
-              ..registerLazySingleton<CandidateRemoteSource>(
-        () => CandidateRemoteSource(
-              locator(),
-            ))
+    ..registerLazySingleton<CandidateRemoteSource>(
+        () => CandidateRemoteSourceImpl(locator(), UserService()))
     ..registerLazySingleton<SettingsRemoteDataSource>(
-        () => SettingsRemoteDataSourceImpl(
-              locator(),UserService()
-            ))
+        () => SettingsRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<HomeRemoteDataSource>(
         () => HomeRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<AuthLocalDataSource>(
@@ -84,10 +85,19 @@ Future<void> init() async {
     ..registerLazySingleton<SettingsRepository>(() => SettingsRepositoryImpl(
           settingsRemoteDataSource: locator(),
         ))
+    ..registerLazySingleton<CandidateRepository>(() => CandidateRepositoryImpl(
+          candidateRemoteSource: locator(),
+        ))
 
     //usecases
     ..registerLazySingleton<RegisterEmployerUseCase>(
         () => RegisterEmployerUseCase(locator()))
+    ..registerLazySingleton<AcceptCandidateUseCase>(
+        () => AcceptCandidateUseCase(locator()))
+    ..registerLazySingleton<RejectCandidateUseCase>(
+        () => RejectCandidateUseCase(locator()))
+    ..registerLazySingleton<GetAssignedCandidateUseCase>(
+        () => GetAssignedCandidateUseCase(locator()))
     ..registerLazySingleton<RegisterJobSeekerUseCase>(
         () => RegisterJobSeekerUseCase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))

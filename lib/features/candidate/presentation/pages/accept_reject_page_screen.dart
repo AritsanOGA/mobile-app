@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
+import 'package:flutter/material.dart';
 
 class AcceptRejectPageScreen extends StatelessWidget {
-  const AcceptRejectPageScreen({Key? key}) : super(key: key);
+  final GetAssignedApplicantsEntity getAssignedApplicantsEntity;
+  const AcceptRejectPageScreen(
+      {Key? key, required this.getAssignedApplicantsEntity})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class AcceptRejectPageScreen extends StatelessWidget {
                                 width: 16.adaptSize,
                                 margin: EdgeInsets.only(top: 3.v, bottom: 5.v),
                                 onTap: () {
-                                  onTapImgArrowLeft(context);
+                                  // onTapImgArrowLeft(context);
                                 }),
                             Padding(
                                 padding: EdgeInsets.only(left: 126.h),
@@ -40,11 +44,32 @@ class AcceptRejectPageScreen extends StatelessWidget {
                       width: 75.adaptSize,
                       radius: BorderRadius.circular(37.h)),
                   SizedBox(height: 8.v),
-                  Text("Chloé Scarlett",
+                  Text(getAssignedApplicantsEntity.users.fullName,
                       style: CustomTextStyles.titleLargePrimarySemiBold),
                   SizedBox(height: 5.v),
-                  Text("Freelancer", style: CustomTextStyles.bodyLarge18),
+                  Text(getAssignedApplicantsEntity.users.availability,
+                      style: CustomTextStyles.bodyLarge18),
                   SizedBox(height: 56.v),
+                  CustomElevatedButton(
+                      text: 'Accept',
+                      onPressed: () {
+                        // showDialog(
+                        //     context: context,
+                        //     builder: (
+                        //       context,
+                        //     ) {
+                        //       return
+                        //       // Text('hh');
+                        //     /AcceptRejectPageModalBoxDialog();
+                        //     });
+                      }),
+                  CustomOutlinedButton(
+                      height: 46.v,
+                      width: 135.h,
+                      text: "Reject",
+                      margin: EdgeInsets.only(left: 22.h),
+                      buttonStyle: CustomButtonStyles.outlinePrimary,
+                      buttonTextStyle: CustomTextStyles.titleMediumBold),
                   Padding(
                       padding: EdgeInsets.symmetric(horizontal: 47.h),
                       child: Row(
@@ -54,19 +79,14 @@ class AcceptRejectPageScreen extends StatelessWidget {
                               text: "Accept",
                               onPressed: () {},
                             ),
-                            CustomOutlinedButton(
-                                height: 46.v,
-                                width: 135.h,
-                                text: "Reject",
-                                margin: EdgeInsets.only(left: 22.h),
-                                buttonStyle: CustomButtonStyles.outlinePrimary,
-                                buttonTextStyle:
-                                    CustomTextStyles.titleMediumBold)
                           ])),
                   Spacer(),
                   CustomElevatedButton(
                     text: "View Candidates",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, AppRoutes.candidatesProfileAcceptPageScreen);
+                    },
                   ),
                   SizedBox(height: 49.v),
                   SizedBox(
@@ -75,10 +95,5 @@ class AcceptRejectPageScreen extends StatelessWidget {
                           color: theme.colorScheme.primaryContainer
                               .withOpacity(1)))
                 ]))));
-  }
-
-  /// Navigates back to the previous screen.
-  onTapImgArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }

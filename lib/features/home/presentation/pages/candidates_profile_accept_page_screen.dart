@@ -8,7 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../presentation/candidates_profile_accept_page_screen/widgets/waitering_item_widget.dart';
 
 class CandidatesProfileAcceptPageScreen extends StatelessWidget {
-  const CandidatesProfileAcceptPageScreen({Key? key}) : super(key: key);
+  final String id;
+
+  const CandidatesProfileAcceptPageScreen({Key? key, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

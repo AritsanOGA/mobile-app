@@ -8,6 +8,8 @@ import 'package:artisan_oga/features/authentication/presentation/screens/splash_
 import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
@@ -274,7 +276,7 @@ class AppRoutes {
             email: settings.arguments as String,
           ),
         );
-          case viewCandidatesPageScreen:
+      case viewCandidatesPageScreen:
         return AppPageRouteBuilder(
           navigateTo: ViewCandidatesPageScreen(
             jobId: settings.arguments as String,
@@ -332,13 +334,23 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const EmployerLoginPageScreen(),
         );
+      case acceptRejectPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: AcceptRejectPageScreen(
+            getAssignedApplicantsEntity:
+                settings.arguments as GetAssignedApplicantsEntity,
+          ),
+        );
       case searchResultPageScreen:
         return AppPageRouteBuilder(
           navigateTo: SearchResultPageScreen(),
         );
-          case candidatesProfileAcceptPageScreen:
+      case candidatesProfileAcceptPageScreen:
         return AppPageRouteBuilder(
-          navigateTo: CandidatesProfileAcceptPageScreen(),
+          navigateTo: CandidatesProfileAcceptPageScreen(
+            id: settings.arguments as String,
+
+          ),
         );
       case jSCreateAccountPageFourScreen:
         return AppPageRouteBuilder(

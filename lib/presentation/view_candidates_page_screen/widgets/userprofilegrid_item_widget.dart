@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:flutter/material.dart';
 
 class UserprofilegridItemWidget extends StatefulWidget {
-  final String fullName;
+  final GetAssignedApplicantsEntity getAssignedApplicantsEntity;
 
-  UserprofilegridItemWidget({required this.fullName});
+  UserprofilegridItemWidget({required this.getAssignedApplicantsEntity});
 
   @override
   _UserprofilegridItemWidgetState createState() =>
@@ -37,16 +38,49 @@ class _UserprofilegridItemWidgetState extends State<UserprofilegridItemWidget> {
                 children: [
                   SizedBox(height: 12.v),
                   Text(
-                    widget.fullName,
+                    widget.getAssignedApplicantsEntity.users.fullName,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: CustomTextStyles.titleMediumSecondaryContainer12,
                   ),
                   SizedBox(height: 7.v),
+                  Text(
+                    widget.getAssignedApplicantsEntity.users.availability,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: CustomTextStyles.titleMediumSecondaryContainer12,
+                  ),
                 ],
               ),
             ),
           ),
+          //  CachedNetworkImage(
+          //                     imageUrl:  widget.getAssignedApplicantsEntity.users.,
+
+          //                     //  state.jobSeekerJobList[index].profileImage,
+          //                     fit: BoxFit.cover,
+
+          //                     progressIndicatorBuilder:
+          //                         (context, url, downloadProgress) =>
+          //                             const Center(),
+          //                     imageBuilder: (context, imageProvider) =>
+          //                         Container(
+          //                       // width: 50,
+          //                       // height: 50,
+          //                       decoration: BoxDecoration(
+          //                         shape: BoxShape.circle,
+          //                         // borderRadius: BorderRadius.circular(10),
+          //                         image: DecorationImage(
+          //                           image:
+          //                               imageProvider, // Use the provided imageProvider
+          //                           fit: BoxFit.cover,
+          //                         ),
+          //                       ),
+          //                     ),
+          //                     errorWidget: (context, url, error) =>
+          //                         const Icon(Icons.error),
+          //                   ),
+          //                 ),
           CustomImageView(
             imagePath: ImageConstant.imgEllipse68,
             height: 60.adaptSize,

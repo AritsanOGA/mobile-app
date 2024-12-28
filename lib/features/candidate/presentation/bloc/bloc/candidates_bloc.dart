@@ -4,6 +4,8 @@ import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
@@ -28,6 +30,8 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
     on<_GetAssignedCandidate>(_onGetAssignedCandidate);
+        on<_RejectCandidate>(_onRejectCandidate);
+            on<_RejectCandidate>(_onRejectCandidate);
   }
 
   final AcceptCandidateUseCase _acceptCandidateUsecase;

@@ -10,6 +10,7 @@ class UserprofilelistItemWidget extends StatefulWidget {
   final String phone;
   final String availability;
   final String city;
+  final String identityId;
 
   const UserprofilelistItemWidget({
     Key? key,
@@ -17,6 +18,7 @@ class UserprofilelistItemWidget extends StatefulWidget {
     required this.phone,
     required this.availability,
     required this.city,
+    required this.identityId,
   }) : super(key: key);
 
   @override
@@ -136,7 +138,8 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, AppRoutes.candidatesProfileAcceptPageScreen);
+                        context, AppRoutes.candidatesProfileAcceptPageScreen,
+                        arguments: widget.identityId);
                   },
                   child: Container(
                       height: 40.v,

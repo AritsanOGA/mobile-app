@@ -77,13 +77,13 @@ class _ViewAllCandidatesPageScreenState
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     onTap: (() {
-                                      Navigator.push(
-                                          context,
-                                          PageTransition(
-                                              type: PageTransitionType
-                                                  .rightToLeft,
-                                              child:
-                                                  CandidatesProfileAcceptPageScreen()));
+                                      // Navigator.push(
+                                      //     context,
+                                      //     PageTransition(
+                                      //         type: PageTransitionType
+                                      //             .rightToLeft,
+                                      //         child:
+                                      //             CandidatesProfileAcceptPageScreen()));
                                     }),
                                     child: UserprofilegridItemWidget(
                                         fullName: data[index]["full_name"]));

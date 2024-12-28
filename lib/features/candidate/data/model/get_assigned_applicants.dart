@@ -29,28 +29,22 @@ class GetAssignedApplicantsModel extends GetAssignedApplicantsEntity {
         users: entity.users,
       );
 
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "user_id": userId,
-        "identity": identity,
-        "job_id": jobId,
-        "employer_id": employerId,
-        "status": status,
-        "approved": approved,
-        "created_at": createdAt,
-        "updated_at": updatedAt,
-        "users": users,
-      };
+  factory GetAssignedApplicantsModel.fromJson(Map<String, dynamic> json) =>
+      GetAssignedApplicantsModel(
+        id: json["id"],
+        userId: json["user_id"],
+        identity: json["identity"],
+        jobId: json["job_id"],
+        employerId: json["employer_id"],
+        status: json["status"],
+        approved: json["approved"],
+        createdAt: DateTime.parse(json["created_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]),
+        users: UserModel.fromJson(json["users"]),
+      );
 }
 
 class UserModel extends UserEntity {
-  // final int? id;
-  // final String? fullName;
-  // final String? availability;
-  // final String? phone;
-  // final String? workExperience;
-  // final String? identity;
-
   UserModel({
     required super.id,
     required super.fullName,
@@ -60,13 +54,21 @@ class UserModel extends UserEntity {
     required super.identity,
   });
 
-  factory UserModel.fromJson(UserEntity entity) => UserModel(
+  factory UserModel.fromEntity(UserEntity entity) => UserModel(
         id: entity.id,
         fullName: entity.fullName,
         availability: entity.availability,
         phone: entity.phone,
         workExperience: entity.workExperience,
         identity: entity.identity,
+      );
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+        id: json["id"],
+        fullName: json["full_name"],
+        availability: json["availability"],
+        phone: json["phone"],
+        workExperience: json["work_experience"],
+        identity: json["identity"],
       );
 
   Map<String, dynamic> toJson() => {

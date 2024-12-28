@@ -8,6 +8,9 @@ class CandidatesEvent with _$CandidatesEvent {
       _AcceptCandidate;
   const factory CandidatesEvent.rejectCandidate(AcceptCandidateEntity param) =
       _RejectCandidate;
-        const factory CandidatesEvent.getAssignedCandidate(String  jobId) =
+  const factory CandidatesEvent.getAssignedCandidate(String jobId) =
       _GetAssignedCandidate;
+  const factory CandidatesEvent.getCandidateSkill() = _GetCandidateSkill;
+  const factory CandidatesEvent.getCandidateProfile(String jobId) =
+      _GetCandidateProfile;
 }
