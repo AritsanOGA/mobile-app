@@ -18,10 +18,7 @@ class EmployerNavBarPage extends StatelessWidget {
     ManageJobsPage(),
 
     PostJobOnePage(),
-    SettingsPage()
-    //SettingsPageTwoScreen(),
-    //const Center(child: Text('Settings Page')),
-    // const Center(child: Text('Profile Page')),
+    EmployerSettingsPage()
   ];
   @override
   Widget build(BuildContext context) {

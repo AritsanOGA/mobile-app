@@ -54,15 +54,21 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     emit(state.copyWith(
         getEmployerProfileState: GetEmployerProfileState.loading));
 
-    await _getEmployerProfileUseCase(NoParams()).then((value) {
-      value.fold(
-          (error) => emit(state.copyWith(
-              getEmployerProfileState: GetEmployerProfileState.failure,
-              errorMessage: error.message)),
-          (result) => emit(state.copyWith(
-              getEmployerProfileState: GetEmployerProfileState.success)));
-    });
-    
+    final result = await _getEmployerProfileUseCase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getEmployerProfileState: GetEmployerProfileState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (employerResponse) => emit(
+        state.copyWith(
+          getEmployerResponseEntity: employerResponse,
+          getEmployerProfileState: GetEmployerProfileState.success,
+        ),
+      ),
+    );
     emit(state.copyWith(getEmployerProfileState: GetEmployerProfileState.idle));
   }
 
@@ -71,14 +77,21 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     emit(state.copyWith(
         getJobSeekerProfileState: GetJobSeekerProfileState.loading));
 
-    await _getJobSeekerProfileUseCase(NoParams()).then((value) {
-      value.fold(
-          (error) => emit(state.copyWith(
-              getJobSeekerProfileState: GetJobSeekerProfileState.failure,
-              errorMessage: error.message)),
-          (result) => emit(state.copyWith(
-              getJobSeekerProfileState: GetJobSeekerProfileState.success)));
-    });
+  final result =  await _getJobSeekerProfileUseCase(NoParams());
+        result.fold(
+      (error) => emit(
+        state.copyWith(
+          getJobSeekerProfileState: GetJobSeekerProfileState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (jsResponse) => emit(
+        state.copyWith(
+          getJobSeekerResponseEntity: jsResponse,
+          getJobSeekerProfileState: GetJobSeekerProfileState.success,
+        ),
+      ),
+    );
 
     emit(state.copyWith(
         getJobSeekerProfileState: GetJobSeekerProfileState.idle));

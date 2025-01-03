@@ -1,14 +1,12 @@
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/presentation/awards/view.dart';
 import 'package:artisan_oga/presentation/education/view.dart';
 import 'package:artisan_oga/presentation/experience/view.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/presentation/update_profile_page_one_screen/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SettingsPageTwoScreen extends StatefulWidget {
@@ -19,12 +17,6 @@ class SettingsPageTwoScreen extends StatefulWidget {
 }
 
 class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
-  var employer_info = Hive.box("artisan").get("employer_user_data");
-
-  var js_info = Hive.box("artisan").get("jobseeker_user_data");
-
-  var userRole = Hive.box("artisan").get("user_role");
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -166,7 +158,7 @@ class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
                           .add(const AuthEvent.removeUserData());
 
                       Navigator.pushNamedAndRemoveUntil(context,
-                          AppRoutes.welcomePageScreen, (route) => false);
+                          AppRoutes.jSLoginPageScreen, (route) => false);
                     }),
                     child: Padding(
                         padding: EdgeInsets.only(left: 3.h),
@@ -204,11 +196,11 @@ class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                  userRole == "Employer"
-                                      ? employer_info["data"]["name"].toString()
-                                      : js_info["data"]["full_name"].toString(),
-                                  style: CustomTextStyles.titleLargePrimary),
+                              // Text(
+                              //     userRole == "Employer"
+                              //         ? employer_info["data"]["name"].toString()
+                              //         : js_info["data"]["full_name"].toString(),
+                              //     style: CustomTextStyles.titleLargePrimary),
                             ]))
                   ])),
           CustomImageView(

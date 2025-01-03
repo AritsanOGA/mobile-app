@@ -142,10 +142,11 @@ class NavDraweritem extends StatelessWidget {
                   onTap: () {
                     context
                         .read<AuthBloc>()
-                        .add(const AuthEvent.removeUserData());
+                        .
+                        add(const AuthEvent.removeUserData());
 
                     Navigator.pushNamedAndRemoveUntil(
-                        context, AppRoutes.welcomePageScreen, (route) => false);
+                        context, AppRoutes.jSLoginPageScreen, (route) => false);
                   },
                   child: Row(
                     children: [

@@ -231,13 +231,13 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
               builder: (context, state) {
                 return GestureDetector(
                   onTap: () {
+                    print('ghh');
                     context
                         .read<AuthBloc>()
                         .add(const AuthEvent.removeUserData());
 
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, AppRoutes.welcomePageScreen, (route) => false);
-                 
+                    Navigator.pushNamedAndRemoveUntil(context,
+                        AppRoutes.employerLoginPageScreen, (route) => false);
                   },
                   child: Row(
                     children: [
