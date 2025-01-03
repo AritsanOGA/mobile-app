@@ -3,6 +3,7 @@ import 'package:artisan_oga/features/home/domain/entities/employer_job_response_
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class ManageJobWidget extends StatelessWidget {
   final EmployerJobResponseEntity employerJobResponseEntity;
@@ -34,35 +35,40 @@ class ManageJobWidget extends StatelessWidget {
                           "${employerJobResponseEntity.city} (${employerJobResponseEntity.commuteType})",
                           style: CustomTextStyles.titleSmallGray50001),
                       SizedBox(height: 1.v),
-                      SizedBox(
-                          width: 201.h,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Active",
-                                    style: CustomTextStyles
-                                        .titleSmallLightgreen900),
-                                SvgPicture.asset(
-                                  ImageConstant.imgMingcuteQuestionFill,
-                                ),
-                                SizedBox(
-                                  width: 5.h,
-                                ),
-                                Container(
-                                    height: 4.adaptSize,
-                                    width: 4.adaptSize,
-                                    margin: EdgeInsets.symmetric(vertical: 7.v),
-                                    decoration: BoxDecoration(
-                                        color: theme
-                                            .colorScheme.secondaryContainer
-                                            .withOpacity(1),
-                                        borderRadius:
-                                            BorderRadius.circular(2.h))),
-                                Text("Posted 3mins ago",
-                                    style: CustomTextStyles
-                                        .titleSmallSecondaryContainer)
-                              ]))
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Active",
+                                style:
+                                    CustomTextStyles.titleSmallLightgreen900),
+                            SizedBox(
+                              width: 5.h,
+                            ),
+                            SvgPicture.asset(
+                              ImageConstant.imgMingcuteQuestionFill,
+                            ),
+                            SizedBox(
+                              width: 10.h,
+                            ),
+                            Container(
+                                height: 4.adaptSize,
+                                width: 4.adaptSize,
+                                margin: EdgeInsets.symmetric(vertical: 7.v),
+                                decoration: BoxDecoration(
+                                    color: theme.colorScheme.secondaryContainer
+                                        .withOpacity(1),
+                                    borderRadius: BorderRadius.circular(2.h))),
+                            SizedBox(
+                              width: 10.h,
+                            ),
+                            Text(
+                                'Posted ${timeago.format(employerJobResponseEntity.createdAt ?? DateTime.now())}',
+
+                                //"Posted 3mins ago",
+                                style: CustomTextStyles
+                                    .titleSmallSecondaryContainer)
+                          ])
                     ])),
             Spacer(),
             CustomImageView(
@@ -78,7 +84,11 @@ class ManageJobWidget extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.only(left: 9.h, top: 3.v),
-                child: Text("0 applicants",
+                child: Text(
+                    employerJobResponseEntity.jobMergingCount == 0 ||
+                            employerJobResponseEntity.jobMergingCount == 1
+                        ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
+                        : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
                     style: CustomTextStyles.titleSmallPrimaryContainer_1)),
             Container(
                 height: 4.adaptSize,
@@ -92,19 +102,19 @@ class ManageJobWidget extends StatelessWidget {
                 child: Text("1 views",
                     style: CustomTextStyles.titleSmallSecondaryContainer))
           ]),
-          SizedBox(height: 7.v),
-          Row(children: [
-            SvgPicture.asset(
-              ImageConstant.imgFluentMdl2PostUpdate,
-            ),
-            Padding(
-                padding: EdgeInsets.only(left: 7.h, top: 3.v, bottom: 3.v),
-                child: Text('Package: Free',
-                    style: CustomTextStyles.titleSmallPrimaryContainer_1
-                        .copyWith(
-                            color: theme.colorScheme.primaryContainer
-                                .withOpacity(1))))
-          ]),
+          // SizedBox(height: 7.v),
+          // Row(children: [
+          //   SvgPicture.asset(
+          //     ImageConstant.imgFluentMdl2PostUpdate,
+          //   ),
+          //   Padding(
+          //       padding: EdgeInsets.only(left: 7.h, top: 3.v, bottom: 3.v),
+          //       child: Text('Package: Free',
+          //           style: CustomTextStyles.titleSmallPrimaryContainer_1
+          //               .copyWith(
+          //                   color: theme.colorScheme.primaryContainer
+          //                       .withOpacity(1))))
+          // ]),
           SizedBox(height: 20.v),
           CustomOutlinedButton(
               onPressed: (() {
@@ -117,15 +127,6 @@ class ManageJobWidget extends StatelessWidget {
                     'identity': employerJobResponseEntity.identity,
                   },
                 );
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) =>
-                //           ViewCandidatesPageScreen(
-                //               job_id: data[index]
-                //                       ["id"]
-                //                   .toString())),
-                // );
               }),
               width: 153.h,
               text: "View Applicants",
@@ -138,7 +139,7 @@ class ManageJobWidget extends StatelessWidget {
           SizedBox(height: 7.v),
           Padding(
               padding: EdgeInsets.only(left: 4.h),
-              child: Text("You must be skilled and intelligent minded person",
+              child: Text(employerJobResponseEntity.jobDescription ?? '',
                   style: CustomTextStyles.bodyMediumPrimaryContainer)),
           SizedBox(height: 18.v),
           Divider(indent: 4.h, endIndent: 6.h),

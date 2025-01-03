@@ -16,8 +16,11 @@ class CandidatesState with _$CandidatesState {
       GetCandidateSkillState getCandidateSkillState,
       String? errorMessage,
       String? jobId,
+      String? skillRating,
+      int? skillIndex,
       @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       @Default([]) List<CandidateSkillEntity> candidateSkillList,
+      @Default([]) List<String> dropdownValues,
       @Default('1') String dropdownValue,
       @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
       List<String> dropdownList,

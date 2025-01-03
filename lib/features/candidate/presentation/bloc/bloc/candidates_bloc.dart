@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -37,6 +38,8 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_GetAssignedCandidate>(_onGetAssignedCandidate);
     on<_GetCandidateProfile>(_onGetCandidateProfile);
     on<_GetCandidateSkill>(_onGetCandidateSkill);
+    on<_UpdateSkillRating>(_onUpdateSkillRating);
+    on<_InitializeSkills>(_onInitializeSkills);
   }
 
   final AcceptCandidateUseCase _acceptCandidateUsecase;
@@ -140,4 +143,45 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     );
     emit(state.copyWith(getCandidateSkillState: GetCandidateSkillState.idle));
   }
+
+  FutureOr<void> _onInitializeSkills(
+      _InitializeSkills event, Emitter<CandidatesState> emit) {
+    final initialDropdownValues = List<String>.filled(
+        event.candidateSkills.length, '1'); // Default ratings
+
+    emit(state.copyWith(
+      candidateSkillList: event.candidateSkills,
+      dropdownValues: initialDropdownValues,
+    ));
+  }
+
+  FutureOr<void> _onUpdateSkillRating(
+      _UpdateSkillRating event, Emitter<CandidatesState> emit) {
+    final updatedDropdownValues = List<String>.from(state.dropdownValues);
+    updatedDropdownValues[event.skillIndex] = event.value;
+
+    emit(state.copyWith(
+      dropdownValues: updatedDropdownValues,
+      skillRating: event.value,
+      skillIndex: event.skillIndex,
+    ));
+  }
+
+  //    final initialRatings = List<int>.filled(event..length, 0); // Default rating is 0
+  // emit(SkillsRatingState(skills: event.skills, ratings: initialRatings));
+  //    final updatedRatings = List<int>.from(state.ratings);
+  // updatedRatings[event.skillIndex] = event.rating;
+  // emit(state.copyWith(ratings: updatedRatings));
+  //       final updatedSkills = List<CandidateSkillEntity>.from(state.dropdownList);
+  //   updatedSkills[event.skillIndex] =
+  //       updatedSkills[event.skillIndex].copyWith(: event.newRating);
+  // dropdownValues:
+  // List<int>.filled(state.dropdownList.length, 1);
+  // final updatedValues = List<String>.from(state.dropdownValues);
+  // updatedValues[event.skillIndex] = event.value;
+  // //  emit(SkillState(skills: updatedSkills));
+  // // final updatedValues = Map<int, int>.from(state.dropdownValue)
+  // //   ..[event.index] = event.value;
+  // emit(state.copyWith(dropdownList: updatedValues));
+  // emit(state.copyWith(dropdownValue: event.value, skillIndex: event.skillIndex));
 }

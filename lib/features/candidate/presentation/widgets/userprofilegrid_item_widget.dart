@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class UserprofilegridItemWidget extends StatefulWidget {
@@ -54,42 +55,30 @@ class _UserprofilegridItemWidgetState extends State<UserprofilegridItemWidget> {
               ),
             ),
           ),
-          //  CachedNetworkImage(
-          //                     imageUrl:  widget.getAssignedApplicantsEntity.users.,
+          Padding(
+            padding: const EdgeInsets.only(top: 45),
+            child: CachedNetworkImage(
+              imageUrl:
+                  'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
 
-          //                     //  state.jobSeekerJobList[index].profileImage,
-          //                     fit: BoxFit.cover,
+              //  state.jobSeekerJobList[index].profileImage,
+              fit: BoxFit.cover,
 
-          //                     progressIndicatorBuilder:
-          //                         (context, url, downloadProgress) =>
-          //                             const Center(),
-          //                     imageBuilder: (context, imageProvider) =>
-          //                         Container(
-          //                       // width: 50,
-          //                       // height: 50,
-          //                       decoration: BoxDecoration(
-          //                         shape: BoxShape.circle,
-          //                         // borderRadius: BorderRadius.circular(10),
-          //                         image: DecorationImage(
-          //                           image:
-          //                               imageProvider, // Use the provided imageProvider
-          //                           fit: BoxFit.cover,
-          //                         ),
-          //                       ),
-          //                     ),
-          //                     errorWidget: (context, url, error) =>
-          //                         const Icon(Icons.error),
-          //                   ),
-          //                 ),
-          CustomImageView(
-            imagePath: ImageConstant.imgEllipse68,
-            height: 60.adaptSize,
-            width: 60.adaptSize,
-            radius: BorderRadius.circular(
-              30.h,
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  const Center(),
+              imageBuilder: (context, imageProvider) => Container(
+                width: 55,
+                height: 55,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
-            alignment: Alignment.topCenter,
-            margin: EdgeInsets.only(top: 30),
           ),
         ],
       ),

@@ -46,7 +46,7 @@ class EmployerJobResponseEntity extends Equatable {
   final dynamic topJobs;
   final String? workType;
   final int? country;
-
+  final int? jobMergingCount;
   const EmployerJobResponseEntity({
     this.id,
     this.commuteType,
@@ -93,6 +93,7 @@ class EmployerJobResponseEntity extends Equatable {
     this.topJobs,
     this.workType,
     this.country,
+    this.jobMergingCount
   });
 
   @override
@@ -142,5 +143,6 @@ class EmployerJobResponseEntity extends Equatable {
         topJobs,
         workType,
         country,
+        jobMergingCount
       ];
 }

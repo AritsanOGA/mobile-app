@@ -46,6 +46,7 @@ class EmployerJobResponseModel extends EmployerJobResponseEntity {
   final dynamic topJobs;
   final String? workType;
   final int? country;
+    final int? jobMergingCount;
 
   EmployerJobResponseModel({
     this.id,
@@ -93,6 +94,7 @@ class EmployerJobResponseModel extends EmployerJobResponseEntity {
     this.topJobs,
     this.workType,
     this.country,
+    this.jobMergingCount
   });
 
   factory EmployerJobResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -146,5 +148,6 @@ class EmployerJobResponseModel extends EmployerJobResponseEntity {
         topJobs: json["top_jobs"],
         workType: json["work_type"],
         country: json["country"],
+        jobMergingCount: json["job_merging_count"]
       );
 }

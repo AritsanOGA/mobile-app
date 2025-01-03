@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-Future<void> acceptCandidateDialog(context, String identityId,
+Future<void> rejectCandidateDialog(context, String identityId,
     String jobIdentitty, List<CandidateSkillEntity> entity) async {
   return showDialog<void>(
     context: context,
@@ -23,7 +23,7 @@ Future<void> acceptCandidateDialog(context, String identityId,
         actionsPadding: EdgeInsets.zero,
         contentPadding: EdgeInsets.zero,
         backgroundColor: Colors.transparent,
-        content: AcceptRejectPageModalBoxDialog(
+        content: RejectPageModalBoxDialog(
           identityId: identityId,
           jobIdentity: jobIdentitty,
           entity: entity,
@@ -34,11 +34,11 @@ Future<void> acceptCandidateDialog(context, String identityId,
 }
 
 // ignore_for_file: must_be_immutable
-class AcceptRejectPageModalBoxDialog extends HookWidget {
+class RejectPageModalBoxDialog extends HookWidget {
   final String identityId;
   final String jobIdentity;
   final List<CandidateSkillEntity> entity;
-  AcceptRejectPageModalBoxDialog({
+  RejectPageModalBoxDialog({
     Key? key,
     required this.identityId,
     required this.jobIdentity,
@@ -53,9 +53,9 @@ class AcceptRejectPageModalBoxDialog extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return BlocConsumer<CandidatesBloc, CandidatesState>(
       listener: (context, state) {
-        if (state.acceptCandidateState == AcceptCandidateState.success) {
+        if (state.rejectCandidateState == RejectCandidateState.success) {
           Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
-        } else if (state.acceptCandidateState == AcceptCandidateState.failure) {
+        } else if (state.rejectCandidateState == RejectCandidateState.failure) {
           ToastUtils.showRedToast(state.errorMessage ?? '');
         }
         ;
@@ -136,13 +136,13 @@ class AcceptRejectPageModalBoxDialog extends HookWidget {
                 ),
                 SizedBox(height: 31.v),
                 CustomElevatedButton(
-                  text: "Accept",
+                  text: "Reject",
                   onPressed: () {
                     final selectedRatings =
                         state.dropdownValues.map(int.parse).toList();
                     if (formKey.currentState!.validate()) {
                       context.read<CandidatesBloc>().add(
-                          CandidatesEvent.acceptCandidate(AcceptCandidateEntity(
+                          CandidatesEvent.rejectCandidate(AcceptCandidateEntity(
                               skillId: state.candidateSkillList
                                   .map((e) => e.id ?? 0)
                                   .toList(),

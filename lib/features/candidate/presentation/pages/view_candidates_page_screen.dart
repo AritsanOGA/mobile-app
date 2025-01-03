@@ -5,10 +5,11 @@ import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../widgets/userprofilegrid_item_widget.dart';
 
-class ViewCandidatesPageScreen extends StatelessWidget {
+class ViewCandidatesPageScreen extends HookWidget {
   final String jobId;
   final String jobIdentity;
 
@@ -20,6 +21,12 @@ class ViewCandidatesPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      context.read<CandidatesBloc>()
+        ..add(CandidatesEvent.getAssignedCandidate(jobId));
+
+      return null;
+    }, []);
     return SafeArea(
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
@@ -37,12 +44,9 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [])),
                   SizedBox(height: 19.v),
-                  Text("Click on any applicant to view their profile",
-                      style: theme.textTheme.bodyMedium),
-                  SizedBox(height: 36.v),
                   BlocBuilder<CandidatesBloc, CandidatesState>(
-                    bloc: context.read<CandidatesBloc>()
-                      ..add(CandidatesEvent.getAssignedCandidate(jobId)),
+                    // bloc: context.read<CandidatesBloc>()
+                    //   ..add(CandidatesEvent.getAssignedCandidate(jobId)),
                     builder: (context, state) {
                       if (state.getAssignedCandidateState ==
                           GetAssignedCandidateState.loading) {
@@ -55,14 +59,23 @@ class ViewCandidatesPageScreen extends StatelessWidget {
                       }
 
                       if (state.getAssignedCandidateList.isEmpty) {
-                        return Center(
-                            child: Text(
-                          "No applicants for this job.",
-                        ));
+                        return Column(
+                          //mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: 50,
+                            ),
+                            Text(
+                              "No applicants for this job.",
+                              style: CustomTextStyles
+                                  .titleMediumPrimaryContainer18,
+                            ),
+                          ],
+                        );
                       }
 
-                      return SizedBox(
-                        height: 200.h,
+                      return Expanded(
                         child: GridView.builder(
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(

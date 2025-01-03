@@ -12,6 +12,11 @@ class CandidatesEvent with _$CandidatesEvent {
       _GetAssignedCandidate;
   const factory CandidatesEvent.getCandidateSkill(String identityId) =
       _GetCandidateSkill;
+        const factory CandidatesEvent.initializeSkills(
+     List<CandidateSkillEntity> candidateSkills,
+  ) = _InitializeSkills;
   const factory CandidatesEvent.getCandidateProfile(String jobId) =
       _GetCandidateProfile;
+       const factory CandidatesEvent.updateSkillRating(String value, int skillIndex) =
+      _UpdateSkillRating;
 }
