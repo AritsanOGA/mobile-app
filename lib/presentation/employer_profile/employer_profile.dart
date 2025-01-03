@@ -1,5 +1,7 @@
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 
@@ -60,15 +62,32 @@ class _SettingsPageOneScreenState extends State<SettingsPageOneScreen> {
                           style: TextStyle(fontSize: 18)))
                 ])),
             SizedBox(height: 31.v),
-            Padding(
-                padding: EdgeInsets.only(left: 3.h),
-                child: Row(children: [
-                  SvgPicture.asset("assets/images/logout-2-svgrepo-com.svg",
-                      height: 22.adaptSize, width: 22.adaptSize),
-                  Padding(
-                      padding: EdgeInsets.only(left: 14.h),
-                      child: Text("Log out", style: TextStyle(fontSize: 18)))
-                ])),
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () {
+                    context
+                        .read<AuthBloc>()
+                        .add(const AuthEvent.removeUserData());
+
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, AppRoutes.welcomePageScreen, (route) => false);
+                  },
+                  child: Padding(
+                      padding: EdgeInsets.only(left: 3.h),
+                      child: Row(children: [
+                        SvgPicture.asset(
+                            "assets/images/logout-2-svgrepo-com.svg",
+                            height: 22.adaptSize,
+                            width: 22.adaptSize),
+                        Padding(
+                            padding: EdgeInsets.only(left: 14.h),
+                            child:
+                                Text("Log out", style: TextStyle(fontSize: 18)))
+                      ])),
+                );
+              },
+            ),
             SizedBox(height: 5.v)
           ])),
     ));

@@ -149,4 +149,22 @@ class AuthRepositoryImpl implements AuthRepository {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, bool>> removeUser() async {
+    try {
+      final result = await localDataSource.removeUser();
+      print('print${result}');
+      return const Right(true);
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+  }
 }

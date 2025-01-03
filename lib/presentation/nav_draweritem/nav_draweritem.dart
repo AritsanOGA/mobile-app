@@ -1,5 +1,7 @@
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 // ignore_for_file: must_be_immutable
 class NavDraweritem extends StatelessWidget {
@@ -134,24 +136,38 @@ class NavDraweritem extends StatelessWidget {
             SizedBox(height: 39.v),
 
             //SizedBox(height: 39.v),
-            Row(
-              children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgThumbsUp,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 9.h,
-                    top: 3.v,
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () {
+                    context
+                        .read<AuthBloc>()
+                        .add(const AuthEvent.removeUserData());
+
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, AppRoutes.welcomePageScreen, (route) => false);
+                  },
+                  child: Row(
+                    children: [
+                      CustomImageView(
+                        imagePath: ImageConstant.imgThumbsUp,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 9.h,
+                          top: 3.v,
+                        ),
+                        child: Text(
+                          "Logout",
+                          style: CustomTextStyles.titleSmall20,
+                        ),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    "Logout",
-                    style: CustomTextStyles.titleSmall20,
-                  ),
-                ),
-              ],
+                );
+              },
             ),
             SizedBox(height: 39.v),
           ],

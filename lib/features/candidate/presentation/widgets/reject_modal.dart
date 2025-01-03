@@ -72,6 +72,9 @@ Future<void> interviewedCandidate(context, String identityId,
                         //  margin: EdgeInsets.only(left: 22.h),
                         onPressed: () {
                           Navigator.pop(context);
+                          employerReview(
+                              context, identityId, jobIdentity, entity);
+
                           // acceptCandidateDialog(
                           //     context,
                           //     getAssignedApplicantsEntity.users.identity,
@@ -101,7 +104,8 @@ Future<void> employerReview(context, String identityId, String jobIdentity,
           contentPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
           content: Container(
-            height: 200.v,
+            height: 250.v,
+            padding: EdgeInsets.symmetric(horizontal: 10),
             margin: EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
                 color: AppColors.kwhite,
@@ -154,7 +158,7 @@ Future<void> employerReview(context, String identityId, String jobIdentity,
                         height: 46.v,
                         width: 120.h,
                         text: "Reject",
-                        //  margin: EdgeInsets.only(left: 22.h),
+                        
                         onPressed: () {
                           Navigator.pop(context);
                           // acceptCandidateDialog(

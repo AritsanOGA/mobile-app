@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/auth_result_
 abstract class AuthLocalDataSource {
   Future<bool> cacheUser(AuthResultEntity authEvent);
   Future<AuthResultEntity> getUser();
+  Future<bool> removeUser();
 }
 
 class AuthLocalDataSourceImpl implements AuthLocalDataSource {
@@ -32,5 +33,13 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
     return AuthResultModel.fromJson(
       jsonDecode(result.toString()) as Map<String, dynamic>,
     );
+  }
+
+  @override
+  Future<bool> removeUser() async {
+    await localStorage.removeFromDisk(
+      'user',
+    );
+    return true;
   }
 }

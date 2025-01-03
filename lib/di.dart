@@ -11,6 +11,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/get_user_use
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
@@ -42,7 +43,6 @@ import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -117,6 +117,8 @@ Future<void> init() async {
         () => VerifyCodeUseCase(locator()))
     ..registerLazySingleton<GetUserDataUseCase>(
         () => GetUserDataUseCase(locator()))
+    ..registerLazySingleton<RemoveUserDataUseCase>(
+        () => RemoveUserDataUseCase(locator()))
     ..registerLazySingleton<ApplyForJobUseCase>(
         () => ApplyForJobUseCase(locator()))
     ..registerLazySingleton<GetAllJobUseCase>(() => GetAllJobUseCase(locator()))

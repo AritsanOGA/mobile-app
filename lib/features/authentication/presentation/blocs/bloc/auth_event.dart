@@ -49,5 +49,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.registerJobSeeker(RegisterJobSeekerEntity param) =
       _RegisterJobSeeker;
   const factory AuthEvent.getUserData() = _GetUserData;
+    const factory AuthEvent.removeUserData() = _RemoveUserData;
   const factory AuthEvent.selectTab(int index) = _SelectTabEvent;
 }

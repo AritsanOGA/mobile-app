@@ -15,6 +15,7 @@ abstract class AuthRepository {
   Future<Either<Failure, bool>> registerJobSeeker(
       RegisterJobSeekerEntity param);
   Future<Either<Failure, bool>> getUserData();
+  Future<Either<Failure, bool>> removeUser();
   Future<Either<Failure, List<CountryResponseEntity>>> getCountries();
   Future<Either<Failure, List<StateResponseEntity>>> getState(String countryId);
   Future<Either<Failure, List<CategoryResponseEntity>>> getCategory();

@@ -1,10 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../features/candidate/presentation/pages/manage_jobs_page.dart';
-import '../payments_made_page_screen/payments_made_page_screen.dart';
 import '../../features/settings/presentation/pages/update_profile_page_screen.dart';
+import '../payments_made_page_screen/payments_made_page_screen.dart';
 import '../view_all_candidates/view_all_candidates.dart';
 
 // ignore_for_file: must_be_immutable
@@ -225,36 +227,39 @@ class DashboardMenuPageDraweritem extends StatelessWidget {
                   ],
                 )),
             SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                
-                Navigator.pushNamedAndRemoveUntil(
-                    context, AppRoutes.welcomePageScreen, (route) => false);
-                // Navigator.push(
-                //     context,
-                //     PageTransition(
-                //         type: PageTransitionType.rightToLeft,
-                //         child: WelcomePageScreen()));
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () {
+                    context
+                        .read<AuthBloc>()
+                        .add(const AuthEvent.removeUserData());
+
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, AppRoutes.welcomePageScreen, (route) => false);
+                 
+                  },
+                  child: Row(
+                    children: [
+                      CustomImageView(
+                        imagePath: ImageConstant.imgThumbsUp,
+                        height: 24.adaptSize,
+                        width: 24.adaptSize,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 9.h,
+                          top: 3.v,
+                        ),
+                        child: Text(
+                          "Logout",
+                          style: CustomTextStyles.titleSmall15,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
               },
-              child: Row(
-                children: [
-                  CustomImageView(
-                    imagePath: ImageConstant.imgThumbsUp,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 9.h,
-                      top: 3.v,
-                    ),
-                    child: Text(
-                      "Logout",
-                      style: CustomTextStyles.titleSmall15,
-                    ),
-                  ),
-                ],
-              ),
             ),
             SizedBox(height: 39.v),
           ],

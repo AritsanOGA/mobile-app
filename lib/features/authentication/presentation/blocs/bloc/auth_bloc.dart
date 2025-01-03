@@ -19,6 +19,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/get_user_use
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
@@ -41,6 +42,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       FilePickerService? filePickerService,
       StateUseCase? stateUseCase,
       VerifyCodeUseCase? verifyCodeUseCase,
+      RemoveUserDataUseCase? removeUserDataUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
@@ -52,6 +54,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _filePickerService = filePickerService ?? locator(),
         _verifyCodeUseCase = verifyCodeUseCase ?? locator(),
         _getUserDataUseCase = getUserUseCase ?? locator(),
+        _removeUserDataUseCase = removeUserDataUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
@@ -81,6 +84,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetSkills>(_onGetSkill);
     on<_VerifyCode>(_onVerifyCode);
     on<_GetUserData>(_onGetUserData);
+
+    on<_RemoveUserData>(_onRemoveUserData);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -93,6 +98,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final FilePickerService _filePickerService;
   final VerifyCodeUseCase _verifyCodeUseCase;
   final GetUserDataUseCase _getUserDataUseCase;
+  final RemoveUserDataUseCase _removeUserDataUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -347,6 +353,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     await _getUserDataUseCase(NoParams());
+  }
+
+  FutureOr<void> _onRemoveUserData(
+    _RemoveUserData event,
+    Emitter<AuthState> emit,
+  ) async {
+    await _removeUserDataUseCase(NoParams());
   }
 
   FutureOr<void> _onSelectTabEvent(
