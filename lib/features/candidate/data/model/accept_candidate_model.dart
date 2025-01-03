@@ -1,7 +1,7 @@
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
 
 class AcceptCandidateModel extends AcceptCandidateEntity {
-   AcceptCandidateModel({
+  AcceptCandidateModel({
     required super.jobIdentity,
     required super.candidateIdentity,
     required super.remark,
@@ -19,7 +19,7 @@ class AcceptCandidateModel extends AcceptCandidateEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        'job_merging_identity': jobIdentity,
+        'employer_job_identity': jobIdentity,
         'candidate_identity': candidateIdentity,
         'remark': remark,
         'ratting': ratings,

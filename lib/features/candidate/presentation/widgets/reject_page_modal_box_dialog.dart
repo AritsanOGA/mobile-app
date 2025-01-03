@@ -137,6 +137,8 @@ class RejectPageModalBoxDialog extends HookWidget {
                 SizedBox(height: 31.v),
                 CustomElevatedButton(
                   text: "Reject",
+                  isBusy: state.rejectCandidateState ==
+                      RejectCandidateState.loading,
                   onPressed: () {
                     final selectedRatings =
                         state.dropdownValues.map(int.parse).toList();

@@ -5,7 +5,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
-import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
+import 'package:artisan_oga/features/home/presentation/widgets/employer_drawer.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +27,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DashboardMenuPageDraweritem(),
+      drawer: EmployerDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leadingWidth: 52.h,

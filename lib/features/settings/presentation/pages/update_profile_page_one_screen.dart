@@ -1,15 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:intl/intl.dart';
+
 //import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../core/services/default.dart';
+import '../../../../core/services/default.dart';
 
 // ignore_for_file: must_be_immutable
 class UpdateProfilePageOneScreen extends StatefulWidget {
@@ -66,8 +65,12 @@ class _UpdateProfilePageOneScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Settings',
+            ),
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            //  appBar: _buildAppBar(context),
             body: SingleChildScrollView(
                 child: Container(
                     width: double.maxFinite,
@@ -660,18 +663,18 @@ class _UpdateProfilePageOneScreenState
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 38.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftOnprimary,
-            margin: EdgeInsets.only(left: 22.h, top: 20.v, bottom: 19.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarSubtitle(text: "Edit Profile"));
-  }
+  // PreferredSizeWidget _buildAppBar(BuildContext context) {
+  //   return CustomAppBar(
+  //       leadingWidth: 38.h,
+  //       leading: AppbarLeadingImage(
+  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
+  //           margin: EdgeInsets.only(left: 22.h, top: 20.v, bottom: 19.v),
+  //           onTap: () {
+  //             onTapArrowLeft(context);
+  //           }),
+  //       centerTitle: true,
+  //       title: AppbarSubtitle(text: "Edit Profile"));
+  // 
 
   /// Section Widget
   Widget _buildNext(BuildContext context) {

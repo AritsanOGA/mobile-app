@@ -38,12 +38,6 @@ class ViewCandidatesPageScreen extends HookWidget {
                 padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                 child: Column(children: [
                   SizedBox(height: 26.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [])),
-                  SizedBox(height: 19.v),
                   BlocBuilder<CandidatesBloc, CandidatesState>(
                     // bloc: context.read<CandidatesBloc>()
                     //   ..add(CandidatesEvent.getAssignedCandidate(jobId)),

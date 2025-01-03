@@ -3,8 +3,8 @@ import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth
 import 'package:artisan_oga/features/candidate/presentation/pages/manage_jobs_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/settings_page.dart';
-import 'package:artisan_oga/presentation/dashboard_menu_page_draweritem/dashboard_menu_page_draweritem.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/employer_settings_page.dart';
+import 'package:artisan_oga/features/home/presentation/widgets/employer_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,7 +26,7 @@ class EmployerNavBarPage extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           backgroundColor: AppColors.kwhite,
-          drawer: DashboardMenuPageDraweritem(),
+          drawer: EmployerDrawer(),
           body: pages[state.selectedIndex],
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,

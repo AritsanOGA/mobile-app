@@ -3,7 +3,7 @@ import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth
 import 'package:artisan_oga/presentation/awards/view.dart';
 import 'package:artisan_oga/presentation/education/view.dart';
 import 'package:artisan_oga/presentation/experience/view.dart';
-import 'package:artisan_oga/presentation/update_profile_page_one_screen/update_profile_page_one_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';

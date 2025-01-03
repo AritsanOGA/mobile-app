@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../features/candidate/presentation/pages/manage_jobs_page.dart';
-import '../../features/settings/presentation/pages/update_profile_page_screen.dart';
-import '../payments_made_page_screen/payments_made_page_screen.dart';
-import '../view_all_candidates/view_all_candidates.dart';
+import '../../../candidate/presentation/pages/manage_jobs_page.dart';
+import '../../../settings/presentation/pages/update_profile_page_screen.dart';
+import '../../../../presentation/payments_made_page_screen/payments_made_page_screen.dart';
+import '../../../../presentation/view_all_candidates/view_all_candidates.dart';
 
 // ignore_for_file: must_be_immutable
-class DashboardMenuPageDraweritem extends StatelessWidget {
-  const DashboardMenuPageDraweritem({Key? key})
+class EmployerDrawer extends StatelessWidget {
+  const EmployerDrawer({Key? key})
       : super(
           key: key,
         );

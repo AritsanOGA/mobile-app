@@ -17,6 +17,12 @@ import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/candidates_profile_accept_page_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_two_screen.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -55,6 +61,7 @@ class AppRoutes {
 
   static const String employerDashboardPage = '/employer_dashboard_page';
 
+  static const String updateEmployerPage = '/update_employer_page';
   static const String searchResultPageScreen = '/search_result_page_screen';
 
   static const String paymentsMadePageScreen = '/payments_made_page_screen';
@@ -352,6 +359,14 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: SearchResultPageScreen(),
         );
+      case changePasswordPageOneScreen:
+        return AppPageRouteBuilder(
+          navigateTo: ChangePasswordPageOneScreen(),
+        );
+      case changePasswordPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: ChangePasswordPageScreen(),
+        );
       case candidatesProfilePage:
         return AppPageRouteBuilder(
           navigateTo: CandidatesProfileAcceptPageScreen(
@@ -390,18 +405,22 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulJobApplicationPage(),
         );
-      // case reviewSummaryPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const ReviewSummary(),
-      //   );
-      // case appointmentPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const AppointmentScreen(),
-      //   );
-      // case bookAppointmentPage:
-      //   return AppPageRouteBuilder(
-      //     navigateTo: const BookAppointmentScreen(),
-      //   );
+      case updateProfilePageThreeScreen:
+        return AppPageRouteBuilder(
+          navigateTo: UpdateProfilePageThreeScreen(),
+        );
+      case updateProfilePageTwoScreen:
+        return AppPageRouteBuilder(
+          navigateTo: UpdateProfilePageTwoScreen(),
+        );
+      case updateProfilePageOneScreen:
+        return AppPageRouteBuilder(
+          navigateTo: UpdateProfilePageOneScreen(),
+        );
+      case updateEmployerPage:
+        return AppPageRouteBuilder(
+          navigateTo: EmployerProfilePageScreen(),
+        );
       // case bottomNavBar:
       //   return MaterialPageRoute(builder: (context) => const BottomNavBar());
 

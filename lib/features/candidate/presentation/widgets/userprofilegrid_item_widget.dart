@@ -55,8 +55,8 @@ class _UserprofilegridItemWidgetState extends State<UserprofilegridItemWidget> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 45),
+          Positioned(
+            top: 40,
             child: CachedNetworkImage(
               imageUrl:
                   'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',

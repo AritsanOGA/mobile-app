@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-// ignore_for_file: must_be_immutable
-class NavDraweritem extends StatelessWidget {
-  const NavDraweritem({Key? key})
+
+class JSDrawer extends StatelessWidget {
+  const JSDrawer({Key? key})
       : super(
           key: key,
         );

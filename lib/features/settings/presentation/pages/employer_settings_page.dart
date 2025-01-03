@@ -9,13 +9,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class JSSettingsPage extends HookWidget {
-  const JSSettingsPage({Key? key}) : super(key: key);
+class EmployerSettingsPage extends HookWidget {
+  const EmployerSettingsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     useEffect(() {
-      context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
+      context.read<SettingBloc>().add(SettingEvent.getEmployerProfile());
       return null;
     }, []);
     return BlocBuilder<SettingBloc, SettingState>(
@@ -83,14 +83,14 @@ class JSSettingsPage extends HookWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                  state.getJobSeekerResponseEntity
+                                                  state.getEmployerResponseEntity
                                                           ?.fullName ??
                                                       '',
                                                   style: CustomTextStyles
                                                       .titleLargePrimary),
                                               SizedBox(height: 1.v),
                                               Text(
-                                                  state.getJobSeekerResponseEntity
+                                                  state.getEmployerResponseEntity
                                                           ?.role ??
                                                       '',
                                                   style: theme
@@ -110,17 +110,24 @@ class JSSettingsPage extends HookWidget {
                               Divider(indent: 3.h, endIndent: 4.h),
                               SizedBox(height: 27.v),
 
-                              Padding(
-                                  padding: EdgeInsets.only(left: 4.h),
-                                  child: Row(children: [
-                                    SvgPicture.asset(ImageConstant.imgLocation),
-                                    Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 19.h, top: 2.v),
-                                        child: Text("Change Password",
-                                            style: CustomTextStyles
-                                                .titleMediumPrimaryContainerMedium_1))
-                                  ])),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context,
+                                      AppRoutes.changePasswordPageOneScreen);
+                                },
+                                child: Padding(
+                                    padding: EdgeInsets.only(left: 4.h),
+                                    child: Row(children: [
+                                      SvgPicture.asset(
+                                          ImageConstant.imgLocation),
+                                      Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 19.h, top: 2.v),
+                                          child: Text("Change Password",
+                                              style: CustomTextStyles
+                                                  .titleMediumPrimaryContainerMedium_1))
+                                    ])),
+                              ),
                               SizedBox(height: 32.v),
                               // SizedBox(height: 30.v),
                               Padding(
@@ -134,17 +141,23 @@ class JSSettingsPage extends HookWidget {
                                                 .titleMediumPrimaryContainerMedium_1))
                                   ])),
                               SizedBox(height: 32.v),
-                              Padding(
-                                  padding: EdgeInsets.only(left: 4.h),
-                                  child: Row(children: [
-                                    SvgPicture.asset(
-                                        ImageConstant.imgTrendingUp),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 15.h),
-                                        child: Text("Update Profile",
-                                            style: CustomTextStyles
-                                                .titleMediumPrimaryContainerMedium_1))
-                                  ])),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, AppRoutes.updateEmployerPage);
+                                },
+                                child: Padding(
+                                    padding: EdgeInsets.only(left: 4.h),
+                                    child: Row(children: [
+                                      SvgPicture.asset(
+                                          ImageConstant.imgTrendingUp),
+                                      Padding(
+                                          padding: EdgeInsets.only(left: 15.h),
+                                          child: Text("Update Profile",
+                                              style: CustomTextStyles
+                                                  .titleMediumPrimaryContainerMedium_1))
+                                    ])),
+                              ),
                               SizedBox(height: 34.v),
                               BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
@@ -155,7 +168,7 @@ class JSSettingsPage extends HookWidget {
 
                                       Navigator.pushNamedAndRemoveUntil(
                                           context,
-                                          AppRoutes.jSLoginPageScreen,
+                                          AppRoutes.employerLoginPageScreen,
                                           (route) => false);
                                     },
                                     child: Padding(
