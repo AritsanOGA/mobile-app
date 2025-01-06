@@ -36,8 +36,8 @@ class ChangePasswordPageOneScreen extends StatelessWidget {
                             Align(
                                 alignment: Alignment.center,
                                 child: Container(
-                                  height: 227.adaptSize,
-                                  width: 227.adaptSize,
+                                  height: 180.adaptSize,
+                                  width: 180.adaptSize,
                                   padding: EdgeInsets.all(39.h),
                                   decoration: AppDecoration
                                       .fillSecondaryContainer
@@ -101,8 +101,8 @@ class ChangePasswordPageOneScreen extends StatelessWidget {
                                     textInputType:
                                         TextInputType.visiblePassword,
                                     obscureText: true,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 3.h),
+                                    // contentPadding:
+                                    //     EdgeInsets.symmetric(horizontal: 3.h),
                                     borderDecoration: TextFormFieldStyleHelper
                                         .underLinePrimaryContainer)),
                             SizedBox(height: 67.v),

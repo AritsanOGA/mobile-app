@@ -10,13 +10,13 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
-import 'package:artisan_oga/features/candidate/presentation/pages/candidate_profile_page.dart';
+import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
-import 'package:artisan_oga/features/home/presentation/pages/candidates_profile_accept_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
@@ -367,14 +367,15 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: ChangePasswordPageScreen(),
         );
-      case candidatesProfilePage:
+      
+      case candidatesProfileAcceptPageScreen:
         return AppPageRouteBuilder(
           navigateTo: CandidatesProfileAcceptPageScreen(
             id: settings.arguments as String,
           ),
         );
 
-      case candidatesProfileAcceptPageScreen:
+      case candidatesProfilePage:
         return AppPageRouteBuilder(
           navigateTo: CandidatesProfilePage(
             id: settings.arguments as String,

@@ -4,8 +4,10 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/waitering_item_widget.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CandidatesProfilePage extends StatelessWidget {
   final String id;
@@ -18,7 +20,7 @@ class CandidatesProfilePage extends StatelessWidget {
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: 'Applicants',
+              title: 'Applicant Profile',
             ),
             body: SingleChildScrollView(
                 child: Container(
@@ -43,9 +45,6 @@ class CandidatesProfilePage extends StatelessWidget {
                         //   return Center(child: Text('No items found.'));
                         // }
                         return Column(children: [
-                          SizedBox(height: 26.v),
-                          Text("Applicants Profile",
-                              style: theme.textTheme.titleLarge),
                           SizedBox(height: 21.v),
                           SizedBox(
                               height: 75.adaptSize,
@@ -53,12 +52,39 @@ class CandidatesProfilePage extends StatelessWidget {
                               child: Stack(
                                   alignment: Alignment.bottomRight,
                                   children: [
-                                    CustomImageView(
-                                        imagePath: ImageConstant.imgEllipse5,
-                                        height: 75.adaptSize,
-                                        width: 75.adaptSize,
-                                        radius: BorderRadius.circular(37.h),
-                                        alignment: Alignment.center),
+                                    CachedNetworkImage(
+                                      imageUrl:
+                                          // state.candidateProfileEntity
+                                          //         ?.profileImage ??
+                                          'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
+
+                                      //  state.jobSeekerJobList[index].profileImage,
+                                      fit: BoxFit.cover,
+
+                                      progressIndicatorBuilder:
+                                          (context, url, downloadProgress) =>
+                                              const Center(),
+                                      imageBuilder: (context, imageProvider) =>
+                                          Container(
+                                        width: 70,
+                                        height: 70,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                            image: imageProvider,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      errorWidget: (context, url, error) =>
+                                          const Icon(Icons.error),
+                                    ),
+                                    // CustomImageView(
+                                    //     imagePath: ImageConstant.imgEllipse5,
+                                    //     height: 75.adaptSize,
+                                    //     width: 75.adaptSize,
+                                    //     radius: BorderRadius.circular(37.h),
+                                    //     alignment: Alignment.center),
                                     Align(
                                         alignment: Alignment.bottomRight,
                                         child: Container(
@@ -85,10 +111,7 @@ class CandidatesProfilePage extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CustomImageView(
-                                    imagePath: ImageConstant.imgMdiLocation,
-                                    height: 24.adaptSize,
-                                    width: 24.adaptSize),
+                                SvgPicture.asset(ImageConstant.imgMdiLocation),
                                 Padding(
                                     padding: EdgeInsets.only(
                                         left: 4.h, top: 2.v, bottom: 2.v),
@@ -106,11 +129,7 @@ class CandidatesProfilePage extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CustomImageView(
-                                    imagePath: ImageConstant.imgCall,
-                                    height: 17.adaptSize,
-                                    width: 17.adaptSize,
-                                    margin: EdgeInsets.only(top: 1.v)),
+                                SvgPicture.asset(ImageConstant.imgCall),
                                 Padding(
                                     padding: EdgeInsets.only(left: 9.h),
                                     child: Text(
@@ -154,8 +173,12 @@ class CandidatesProfilePage extends StatelessWidget {
                                       SizedBox(height: 10.v),
                                       Text(
                                           state.candidateProfileEntity
-                                                  ?.education[0].title ??
-                                              '',
+                                                      ?.education ==
+                                                  []
+                                              ? state.candidateProfileEntity
+                                                      ?.education[0].title ??
+                                                  ''
+                                              : '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 18.v),

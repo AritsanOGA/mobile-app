@@ -20,7 +20,7 @@ class CandidateProfileModel extends CandidateProfileEntity {
     required super.about,
     required super.identity,
     required super.phone,
-    required super.dateOfBirth,
+    // required super.dateOfBirth,
     required super.streetAddress,
     required super.city,
     required super.country,
@@ -106,9 +106,9 @@ class CandidateProfileModel extends CandidateProfileEntity {
         about: json["about"],
         identity: json["identity"],
         phone: json["phone"],
-        dateOfBirth: json["date_of_birth"] == null
-            ? null
-            : DateTime.parse(json["date_of_birth"]),
+        // dateOfBirth: json["date_of_birth"] == null
+        //     ? null
+        //     : DateTime.parse(json["date_of_birth"]),
         streetAddress: json["street_address"],
         city: json["city"],
         country: json["country"],
@@ -150,10 +150,10 @@ class CandidateProfileModel extends CandidateProfileEntity {
         guarantorEmail: json["guarantor_email"],
         referredByLink: json["referred_by_link"],
         referredByWho: json["referred_by_who"],
-        awardsAndCertificates: awardList.map(AwardsAndCertificateModel.fromJson).toList().cast(),
-        artisanAssignedSkills: skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast(),
-        education: educationList.map(AwardsAndCertificateModel.fromJson).toList().cast(),
-        experience: experienceList.map(ExperienceModel.fromJson).toList().cast(),
+        awardsAndCertificates: awardList.isNotEmpty? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast() : [],
+        artisanAssignedSkills: skillList.isNotEmpty? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast() : [],
+        education: educationList.isNotEmpty? educationList.map(AwardsAndCertificateModel.fromJson).toList().cast(): [],
+        experience: experienceList.isNotEmpty? experienceList.map(ExperienceModel.fromJson).toList().cast(): [],
         customerRating: json["customer_rating"] == null
             ? []
             : List<dynamic>.from(json["customer_rating"]),
