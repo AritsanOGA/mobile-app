@@ -90,10 +90,10 @@ class CustomDropDown<T> extends StatelessWidget {
           height: 50.v,
           child: DropdownButtonFormField(
             validator: (value) {
-              if (value == null || value == '') {
+              if (value == null) {
                 return 'Please select an option';
               }
-              return null; // Valid value
+              return null;
             },
             value: selectedItem,
             isExpanded: true,

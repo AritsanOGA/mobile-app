@@ -24,6 +24,7 @@ class EmployerSettingsPage extends HookWidget {
             child: Scaffold(
                 backgroundColor: AppColors.kwhite,
                 appBar: CustomAppBar(
+                  hasBackButton: false,
                   title: 'Settings',
                 ),
                 body: Container(

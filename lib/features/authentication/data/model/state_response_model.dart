@@ -2,8 +2,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/state_respon
 
 class StateResponseModel extends StateResponseEntity {
   const StateResponseModel({
-    required super.id,
-    required super.name,
+     super.id,
+     super.name,
   });
 
   factory StateResponseModel.fromJson(Map<String, dynamic> json) {

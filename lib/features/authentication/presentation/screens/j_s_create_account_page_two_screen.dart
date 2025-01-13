@@ -31,6 +31,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCountries());
+      context.read<AuthBloc>().add(AuthEvent.getState('161'));
       return null;
     }, []);
     return SafeArea(
@@ -204,7 +205,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                             return item.id == selectedItem.id;
                                           },
                                           filterFn: (item, filter) {
-                                            return item.name
+                                            return item.name!
                                                 .toLowerCase()
                                                 .contains(filter.toLowerCase());
                                           },
@@ -313,11 +314,11 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                                   streetAddress:
                                                       streetaddressController
                                                           .text,
+                                                  state: state.state?.name ??
+                                                      state.states.first.name,
                                                   country: state.country?.id
                                                           .toString() ??
-                                                      '',
-                                                  state:
-                                                      state.state?.name ?? '',
+                                                      '161',
                                                   jobType: state.jobType,
                                                   city: cityController.text,
                                                   dateOFBirth:

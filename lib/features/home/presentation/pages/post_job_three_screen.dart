@@ -154,7 +154,7 @@ class PostJobThreeScreen extends HookWidget {
                                           orElse: () => state.states.first)
                                       : StateResponseEntity(
                                           id: 1098, name: 'Djelfa'),
-                                  itemLabel: (state) => state.name,
+                                  itemLabel: (state) => state.name!,
                                   onChanged: (value) {
                                     context.read<HomeBloc>().add(
                                           HomeEvent.updateState(value!),

@@ -150,7 +150,7 @@ class EmployerProfilePageScreen extends HookWidget {
                                             orElse: () => StateResponseEntity(
                                                 id: 4, name: 'ALgeria'),
                                           ),
-                                          itemLabel: (state) => state.name,
+                                          itemLabel: (state) => state.name!,
                                           onChanged: (value) {
                                             context.read<AuthBloc>().add(
                                                   AuthEvent.updateSelectedState(

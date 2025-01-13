@@ -29,6 +29,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCountries());
+      context.read<AuthBloc>().add(AuthEvent.getState('161'));
       return null;
     }, []);
 
@@ -54,7 +55,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
                   key: formKey,
                   child: Container(
                       width: double.maxFinite,
-                      //  height: double.maxFinite,
                       padding: EdgeInsets.symmetric(
                           horizontal: 25.h, vertical: 12.v),
                       child: Column(children: [
@@ -71,7 +71,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                         CustomTextFormField(
                             title: 'Full Name',
                             controller: fullNameController,
-                            hintText: "eg: Kingsley ",
+                            hintText: "eg: Kingsley Adam ",
                             textInputType: TextInputType.name,
                             validator: FormValidation.stringValidation,
                             hintStyle: theme.textTheme.titleSmall!),
@@ -109,9 +109,9 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                     selectedItem: state.countries.firstWhere(
                                       (country) =>
                                           country.id ==
-                                          (state.country?.id ?? 4),
+                                          (state.country?.id ?? 161),
                                       orElse: () => CountryResponseEntity(
-                                          id: 4, name: 'ALgeria'),
+                                          id: 161, name: 'Nigeria'),
                                     ),
                                     itemLabel: (country) => country.name,
                                     onChanged: (value) {
@@ -124,6 +124,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                             AuthEvent.getState(
                                                 value.id.toString()),
                                           );
+                                      print('statelist ${state.states}');
                                     },
                                   );
                                 },
@@ -139,9 +140,9 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                     selectedItem: state.states.firstWhere(
                                       (state) => state.id == (state.id),
                                       orElse: () => StateResponseEntity(
-                                          id: 4, name: 'ALgeria'),
+                                          id: 0, name: '-Select'),
                                     ),
-                                    itemLabel: (state) => state.name,
+                                    itemLabel: (state) => state.name!,
                                     onChanged: (value) {
                                       context.read<AuthBloc>().add(
                                             AuthEvent.updateSelectedState(
@@ -347,6 +348,12 @@ class EmployerSignuppageOneScreen extends HookWidget {
                               EmployerSignUpState.loading,
                           text: "Submit",
                           onPressed: (() {
+                            if (state.file == null) {
+                              ToastUtils.showRedToast('Select company logo');
+                            }
+
+                            debugPrint(
+                                'state ${state.country?.id.toString()} ${'161'}  ${state.states.first.name}  ${state.state?.name}${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
                             if (formKey.currentState?.validate() ?? false) {
                               context.read<AuthBloc>().add(
                                     AuthEvent.registerEmployer(
@@ -354,19 +361,18 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                         fullName: fullNameController.text,
                                         officeTitle: officeTitleController.text,
                                         companyName: companyNameController.text,
-                                        state: state.state?.name ?? '',
+                                        state: state.state?.name ??
+                                            state.states.first.name,
                                         city: cityController.text,
                                         companyLogo: state.file!,
                                         gender: state.gender,
-                                        country:
-                                            state.country?.id.toString() ?? '',
+                                        country: state.country?.id.toString() ??
+                                            '161',
                                         phoneNumber: phoneController.text,
                                       ),
                                     ),
                                   );
                             }
-                            debugPrint(
-                                'state ${state.country?.id}  ${state.state?.name} ${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
                           }),
                         )
                       ])),
