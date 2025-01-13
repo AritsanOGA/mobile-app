@@ -210,6 +210,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(jobSeekerSignUpState: JobSeekerSignUpState.loading));
 
     await _registerJobSeekerUseCase(event.param).then((value) {
+          if (state.picture == null) {
+                                          ToastUtils.showRedToast(
+                                              'Upload a picture');
+                                        } 
       value.fold(
           (error) => emit(state.copyWith(
               jobSeekerSignUpState: JobSeekerSignUpState.failure,

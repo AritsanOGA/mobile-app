@@ -58,7 +58,7 @@ class CandidateProfileEntity extends Equatable {
   final List<AwardsAndCertificateEntity> awardsAndCertificates;
   final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
   final List<AwardsAndCertificateEntity> education;
-  final List<ExperienceEntity>? experience;
+  final List<ExperienceEntity> experience;
   final List<dynamic>? customerRating;
   final List<dynamic>? skillAssessmentAverage;
 
@@ -120,7 +120,7 @@ class CandidateProfileEntity extends Equatable {
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
-    this.experience,
+   required this.experience,
     this.customerRating,
     this.skillAssessmentAverage,
   });
@@ -213,12 +213,12 @@ class ArtisanAssignedSkillEntity extends Equatable {
 }
 
 class ExperienceEntity extends Equatable {
-  final String? purpose;
+  final String? title;
 
-  const ExperienceEntity({this.purpose});
+  const ExperienceEntity({this.title});
 
   @override
-  List<Object?> get props => [purpose];
+  List<Object?> get props => [title];
 }
 
 class EducationEntity extends Equatable {

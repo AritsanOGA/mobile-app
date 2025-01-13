@@ -115,6 +115,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                       itemCount: state.featureCandidateList.length,
                       itemBuilder: (context, index) {
                         return UserprofilelistItemWidget(
+                          image: state.featureCandidateList[index].profileImage,
                           fullName: state.featureCandidateList[index].fullName,
                           phone: state.featureCandidateList[index].role,
                           availability:

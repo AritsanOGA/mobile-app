@@ -110,14 +110,14 @@ class ApiServiceImpl implements ApiService {
         url.toString(),
         queryParameters: queryParameters,
         options: Options(
-            headers: headers,
-            followRedirects: false,
-            validateStatus: (status)=> true,
-            // validateStatus: (status) {
-            //   return status != null &&
-            //       (status < 400 || status == 400 || status == 500);
-            // }
-            ),
+          headers: headers,
+          followRedirects: false,
+          validateStatus: (status) => true,
+          // validateStatus: (status) {
+          //   return status != null &&
+          //       (status < 400 || status == 400 || status == 500);
+          // }
+        ),
       );
       //    if (response.statusCode != null &&
       //     response.statusCode! >= 300 &&
@@ -151,7 +151,7 @@ class ApiServiceImpl implements ApiService {
     Map<String, String>? headers,
   }) async {
     //final jsonBody = jsonEncode(body);
-    print('hiii $body');
+    print('hiii ${body.toString()}');
     // _log.i(
     //   'Making Post Request to $url with the following data'
     //   ' \n${jsonBody.substring(0, jsonBody.length ~/ 2)}',
@@ -181,9 +181,7 @@ class ApiServiceImpl implements ApiService {
           // validateStatus: (status) => status != null && status < 400,
 
           validateStatus: (status) => true,
-
         ),
-    
       );
       // Manually check the status code
       if (response.statusCode != null &&

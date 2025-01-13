@@ -395,7 +395,7 @@ class PostJobOnePage extends HookWidget {
                         ),
                         SizedBox(
                           width: double.maxFinite,
-                          height: 20,
+                          height: 40,
                         ),
                       ]))),
             );

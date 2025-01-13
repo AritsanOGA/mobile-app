@@ -368,7 +368,7 @@ class PostJobTwoScreen extends HookWidget {
                                 );
                               },
                             ),
-                            SizedBox(height: 20.v),
+                            SizedBox(height: 40.v),
                           ]))),
                 );
               },

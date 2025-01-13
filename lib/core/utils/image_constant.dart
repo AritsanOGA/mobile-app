@@ -61,7 +61,8 @@ class ImageConstant {
 
   // pay with card Page images
   static String imgTelevision = '$imagePath/img_television.svg';
-
+  static String lock = '$svgPath/lock.svg';
+  static String userPlus = '$svgPath/user_plus.svg';
   static String imgEleyecloseSecondarycontainer =
       '$imagePath/img_eleyeclose_secondarycontainer.svg';
 

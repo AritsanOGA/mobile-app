@@ -1,8 +1,8 @@
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 
 class JSDrawer extends StatelessWidget {
   const JSDrawer({Key? key})
@@ -32,10 +32,8 @@ class JSDrawer extends StatelessWidget {
             SizedBox(height: 32.v),
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgHome,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgHome,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -52,10 +50,8 @@ class JSDrawer extends StatelessWidget {
             SizedBox(height: 39.v),
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgBriefcase,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgBriefcase,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -72,10 +68,8 @@ class JSDrawer extends StatelessWidget {
             SizedBox(height: 38.v),
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgSearchPrimarycontainer,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgSearchPrimarycontainer,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -90,36 +84,32 @@ class JSDrawer extends StatelessWidget {
               ],
             ),
             SizedBox(height: 39.v),
-            /*   Padding(
-              padding: EdgeInsets.only(right: 55.h),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 3.h,
+                right: 55.h,
+              ),
               child: Row(
                 children: [
-                  CustomImageView(
-                    imagePath: ImageConstant.imgLock,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
+                  SvgPicture.asset(
+                    ImageConstant.lock,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.h,
-                      top: 2.v,
-                      bottom: 2.v,
-                    ),
+                    padding: EdgeInsets.only(left: 13.h),
                     child: Text(
                       "Change Password",
-                      style: CustomTextStyles.titleSmall20,
+                      style: CustomTextStyles.titleSmall15,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 39.v),*/
+            SizedBox(height: 39.v),
+
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgUserPrimarycontainer,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgUserPrimarycontainer,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -133,6 +123,34 @@ class JSDrawer extends StatelessWidget {
                 ),
               ],
             ),
+
+            SizedBox(height: 41.v),
+            GestureDetector(
+                onTap: (() {
+                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         type: PageTransitionType.rightToLeft,
+                  //         child: EmployerProfilePageScreen()));
+                }),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.userPlus,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        bottom: 3.v,
+                      ),
+                      child: Text(
+                        "Update Profile",
+                        style: CustomTextStyles.titleSmall15,
+                      ),
+                    ),
+                  ],
+                )),
             SizedBox(height: 39.v),
 
             //SizedBox(height: 39.v),
@@ -142,18 +160,15 @@ class JSDrawer extends StatelessWidget {
                   onTap: () {
                     context
                         .read<AuthBloc>()
-                        .
-                        add(const AuthEvent.removeUserData());
+                        .add(const AuthEvent.removeUserData());
 
                     Navigator.pushNamedAndRemoveUntil(
                         context, AppRoutes.jSLoginPageScreen, (route) => false);
                   },
                   child: Row(
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgThumbsUp,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                      SvgPicture.asset(
+                        ImageConstant.imgThumbsUp,
                       ),
                       Padding(
                         padding: EdgeInsets.only(

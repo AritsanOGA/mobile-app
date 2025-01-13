@@ -8,6 +8,7 @@ import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -220,10 +221,14 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                   builder: (context, registerJobSeekerRequest) {
                                     return CustomElevatedButton(
                                       onPressed: (() {
+                                        if (state.picture == null) {
+                                          ToastUtils.showRedToast(
+                                              'Upload a picture');
+                                          return;
+                                        }
+
                                         if (formKey.currentState?.validate() ??
                                             false) {
-                                          print(
-                                              '${state.picture}  ${state.gender}');
                                           context.read<AuthBloc>().add(AuthEvent
                                               .updateRegisterJobSeekerRequest(
                                                   registerJobSeekerRequest.copyWith(

@@ -173,12 +173,12 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                       SizedBox(height: 10.v),
                                       Text(
                                           state.candidateProfileEntity
-                                                      ?.education ==
-                                                  []
-                                              ? state.candidateProfileEntity
+                                                      ?.education.length ==
+                                                  0
+                                              ? ''
+                                              : state.candidateProfileEntity
                                                       ?.education[0].title ??
-                                                  ''
-                                              : '',
+                                                  '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 18.v),
@@ -186,7 +186,14 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           style: CustomTextStyles
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 8.v),
-                                      Text("()",
+                                      Text(
+                                          state.candidateProfileEntity
+                                                      ?.experience.length ==
+                                                  0
+                                              ? ''
+                                              : state.candidateProfileEntity
+                                                      ?.experience[0].title ??
+                                                  '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 16.v),

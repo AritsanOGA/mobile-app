@@ -10,6 +10,7 @@ import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,10 +22,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
   final String email;
   JSCreateAccountPageFiveScreen({required this.email, Key? key})
       : super(key: key);
-  void _onSkillsChanged(List<SkillResponseEntity> selectedSkills) {
-    print("Selected Skills: ${selectedSkills.map((e) => e.name).join(', ')}");
-    // Additional logic can be implemented here
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,16 +82,6 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                               },
                             ),
                             SizedBox(height: 30.v),
-                            Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 3.h),
-                                child: CustomTextFormField(
-                                    title: 'Years of Experience',
-                                    controller: yearsController,
-                                    hintText: "Enter number of years",
-                                    textInputType: TextInputType.number,
-                                    validator: FormValidation.stringValidation,
-                                    hintStyle: theme.textTheme.titleSmall!)),
-                            SizedBox(height: 27.v),
                             Text('Select Skill',
                                 style: CustomTextStyles
                                     .bodyMediumPrimaryContainer_1),
@@ -230,6 +217,16 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                         ),
                                       ),
                                     ])),
+                            SizedBox(height: 27.v),
+                            Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 3.h),
+                                child: CustomTextFormField(
+                                    title: 'Years of Experience',
+                                    controller: yearsController,
+                                    hintText: "Enter number of years",
+                                    textInputType: TextInputType.number,
+                                    validator: FormValidation.stringValidation,
+                                    hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 30.v),
                             Align(
                                 alignment: Alignment.centerLeft,
@@ -318,6 +315,10 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                               builder: (context, registerJobSeekerRequest) {
                                 return CustomElevatedButton(
                                   onPressed: (() {
+                                    if (state.resume == null) {
+                                      ToastUtils.showRedToast('Upload your CV');
+                                      return;
+                                    }
                                     if (formKey.currentState?.validate() ??
                                         false) {
                                       List<SkillResponseEntity> countries =

@@ -37,10 +37,6 @@ class SuccessfulJobPostedPage extends StatelessWidget {
               CustomElevatedButton(
                 text: "Back to Home",
                 onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => JobSeekerNavBarPage()));
                   Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
                 },
               ),

@@ -349,7 +349,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                           text: "Submit",
                           onPressed: (() {
                             if (state.file == null) {
-                              ToastUtils.showRedToast('Select company logo');
+                              ToastUtils.showRedToast('Upload company logo');
                             }
 
                             debugPrint(

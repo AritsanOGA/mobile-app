@@ -26,6 +26,7 @@ class PostJobThreeScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<HomeBloc>().add(HomeEvent.getCountries());
+      context.read<HomeBloc>().add(HomeEvent.getState('161'));
       return null;
     }, []);
     return SafeArea(
@@ -177,25 +178,26 @@ class PostJobThreeScreen extends HookWidget {
                                       print(
                                           'hello ${int.parse(maxSalaryController.text)}');
                                       print(
-                                          '${state.country?.name} ${state.state?.name} ');
+                                          '${state.country?.name} ${state.state?.name} ${state.states.first.name} ');
                                       context.read<HomeBloc>().add(
                                             HomeEvent.updatePostJobRequest(
                                               postJobRequest.copyWith(
-                                                  maxAmount: int.parse(
-                                                      maxSalaryController.text),
-                                                  minAmount: int.parse(
-                                                      minSalaryController.text),
-                                                  applicationDeadline:
-                                                      applicationDeadlineController
-                                                          .text,
-                                                  country: state.country?.id
-                                                          .toString() ??
-                                                      '',
-                                                  yearsOfExperience: int.parse(
-                                                      yearsOfExperienceController
-                                                          .text),
-                                                  state:
-                                                      state.state?.name ?? ''),
+                                                maxAmount: int.parse(
+                                                    maxSalaryController.text),
+                                                minAmount: int.parse(
+                                                    minSalaryController.text),
+                                                applicationDeadline:
+                                                    applicationDeadlineController
+                                                        .text,
+                                                country: state.country?.id
+                                                        .toString() ??
+                                                    '161',
+                                                yearsOfExperience: int.parse(
+                                                    yearsOfExperienceController
+                                                        .text),
+                                                state: state.state?.name ??
+                                                    state.states.first.name,
+                                              ),
                                             ),
                                           );
 

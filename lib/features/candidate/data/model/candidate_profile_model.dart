@@ -207,19 +207,19 @@ class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
 
 class ExperienceModel extends ExperienceEntity {
   ExperienceModel({
-    required super.purpose,
+    required super.title,
   });
 
   factory ExperienceModel.fromEntity(ExperienceEntity entity) =>
       ExperienceModel(
-        purpose: entity.purpose,
+        title: entity.title,
       );
   factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
       ExperienceModel(
-        purpose: json["purpose"],
+        title: json["title"],
       );
 
   Map<String, dynamic> toJson() => {
-        "purpose": purpose,
+        "title": title,
       };
 }

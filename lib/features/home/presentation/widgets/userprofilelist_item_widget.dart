@@ -11,6 +11,7 @@ class UserprofilelistItemWidget extends StatefulWidget {
   final String availability;
   final String city;
   final String identityId;
+  final String image;
 
   const UserprofilelistItemWidget({
     Key? key,
@@ -19,6 +20,7 @@ class UserprofilelistItemWidget extends StatefulWidget {
     required this.availability,
     required this.city,
     required this.identityId,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -49,27 +51,28 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               SizedBox(height: 6.v),
               Row(
                 children: [
-                  //             CachedNetworkImage(
-                  //   imageUrl: imageURL,
+                  // CachedNetworkImage(
+                  //   imageUrl: widget.image,
                   //   fit: BoxFit.cover,
-                  //   progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  //       const Center(),
+                  //   progressIndicatorBuilder:
+                  //       (context, url, downloadProgress) => const Center(),
                   //   imageBuilder: (context, imageProvider) => Container(
                   //     width: 180,
                   //     height: 220,
                   //     decoration: BoxDecoration(
-                  //       border: Border.all(
-                  //         width: 4,
-                  //         color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
-                  //       ),
-                  //       borderRadius: BorderRadius.circular(16),
+                  //       // border: Border.all(
+                  //       //   width: 4,
+                  //       //   color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
+                  //       // ),
+                  //       // borderRadius: BorderRadius.circular(16),
                   //       image: DecorationImage(
-                  //         image: CachedNetworkImageProvider(imageURL),
+                  //         image: CachedNetworkImageProvider(widget.image),
                   //         fit: BoxFit.cover,
                   //       ),
                   //     ),
                   //   ),
-                  //   errorWidget: (context, url, error) => const Icon(Icons.error),
+                  //   errorWidget: (context, url, error) =>
+                  //       const Icon(Icons.error),
                   // ),
                   Container(
                       child: ClipOval(

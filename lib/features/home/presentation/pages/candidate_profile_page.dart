@@ -125,18 +125,18 @@ class CandidatesProfilePage extends StatelessWidget {
                               "Job Preference: ${state.candidateProfileEntity?.jobPreference ?? ''}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
-                          SizedBox(height: 14.v),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SvgPicture.asset(ImageConstant.imgCall),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 9.h),
-                                    child: Text(
-                                        "${state.candidateProfileEntity?.phone ?? ''}",
-                                        style: CustomTextStyles
-                                            .titleSmallPrimarySemiBold))
-                              ]),
+                          // SizedBox(height: 14.v),
+                          // Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: [
+                          //       SvgPicture.asset(ImageConstant.imgCall),
+                          //       Padding(
+                          //           padding: EdgeInsets.only(left: 9.h),
+                          //           child: Text(
+                          //               "${state.candidateProfileEntity?.phone ?? ''}",
+                          //               style: CustomTextStyles
+                          //                   .titleSmallPrimarySemiBold))
+                          //     ]),
                           SizedBox(height: 20.v),
                           Container(
                               width: 303.h,
@@ -145,14 +145,14 @@ class CandidatesProfilePage extends StatelessWidget {
                                   text: TextSpan(children: [
                                     TextSpan(
                                         text:
-                                            "Chloé Scarlett ${state.candidateProfileEntity?.serviceDescription ?? ''} ",
+                                            "${state.candidateProfileEntity?.serviceDescription ?? ''} ",
                                         style: CustomTextStyles
                                             .bodyMediumff666666),
-                                    TextSpan(
-                                        text:
-                                            "3 years of experience helping her target clients achieve their goals.",
-                                        style: CustomTextStyles
-                                            .titleSmallfff7941eSemiBold15)
+                                    // TextSpan(
+                                    //     text:
+                                    //         "3 years of experience helping her target clients achieve their goals.",
+                                    //     style: CustomTextStyles
+                                    //         .titleSmallfff7941eSemiBold15)
                                   ]),
                                   textAlign: TextAlign.center)),
                           SizedBox(height: 22.v),
@@ -173,20 +173,27 @@ class CandidatesProfilePage extends StatelessWidget {
                                       SizedBox(height: 10.v),
                                       Text(
                                           state.candidateProfileEntity
-                                                      ?.education ==
-                                                  []
-                                              ? state.candidateProfileEntity
+                                                      ?.education.length ==
+                                                  0
+                                              ? ''
+                                              : state.candidateProfileEntity
                                                       ?.education[0].title ??
-                                                  ''
-                                              : '',
+                                                  '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
-                                      SizedBox(height: 18.v),
+                                      SizedBox(height: 20.v),
                                       Text("Experience",
                                           style: CustomTextStyles
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 8.v),
-                                      Text("()",
+                                      Text(
+                                          state.candidateProfileEntity
+                                                      ?.experience.length ==
+                                                  0
+                                              ? ''
+                                              : state.candidateProfileEntity
+                                                      ?.experience[0].title ??
+                                                  '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 16.v),
@@ -254,11 +261,11 @@ class CandidatesProfilePage extends StatelessWidget {
                           SizedBox(height: 17.v),
                           _buildReviews(context),
                           SizedBox(height: 20.v),
-                          SizedBox(
-                              width: 130.h,
-                              child: Divider(
-                                  color: theme.colorScheme.primaryContainer
-                                      .withOpacity(1)))
+                          // SizedBox(
+                          //     width: 130.h,
+                          //     child: Divider(
+                          //         color: theme.colorScheme.primaryContainer
+                          //             .withOpacity(1)))
                         ]);
                       },
                     )))));

@@ -2,12 +2,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:page_transition/page_transition.dart';
-
-import '../../../candidate/presentation/pages/manage_jobs_page.dart';
-import '../../../settings/presentation/pages/update_profile_page_screen.dart';
-import '../../../../presentation/payments_made_page_screen/payments_made_page_screen.dart';
-import '../../../../presentation/view_all_candidates/view_all_candidates.dart';
+import 'package:flutter_svg/svg.dart';
 
 // ignore_for_file: must_be_immutable
 class EmployerDrawer extends StatelessWidget {
@@ -38,10 +33,8 @@ class EmployerDrawer extends StatelessWidget {
             SizedBox(height: 32.v),
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgHome,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgHome,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -58,21 +51,19 @@ class EmployerDrawer extends StatelessWidget {
             SizedBox(height: 39.v),
             GestureDetector(
               onTap: (() {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: ViewAllCandidatesPageScreen()));
+                // Navigator.pop(context);
+                // Navigator.push(
+                //     context,
+                //     PageTransition(
+                //         type: PageTransitionType.rightToLeft,
+                //         child: ViewAllCandidatesPageScreen()));
               }),
               child: Padding(
                   padding: EdgeInsets.only(right: 30.h),
                   child: Row(
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgBriefcase,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                      SvgPicture.asset(
+                        ImageConstant.imgBriefcase,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -90,19 +81,17 @@ class EmployerDrawer extends StatelessWidget {
             SizedBox(height: 39.v),
             GestureDetector(
                 onTap: (() {
-                  Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: ManageJobsPage()));
+                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         type: PageTransitionType.rightToLeft,
+                  //         child: ManageJobsPage()));
                 }),
                 child: Row(
                   children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.imgSend,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize,
+                    SvgPicture.asset(
+                      ImageConstant.imgSend,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -119,10 +108,8 @@ class EmployerDrawer extends StatelessWidget {
             SizedBox(height: 39.v),
             Row(
               children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgSearchPrimarycontainer,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                SvgPicture.asset(
+                  ImageConstant.imgSearchPrimarycontainer,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -139,19 +126,17 @@ class EmployerDrawer extends StatelessWidget {
             SizedBox(height: 42.v),
             GestureDetector(
                 onTap: (() {
-                  Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: PaymentsMadePageScreen()));
+                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         type: PageTransitionType.rightToLeft,
+                  //         child: PaymentsMadePageScreen()));
                 }),
                 child: Row(
                   children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.imgIcOutlinePayment,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize,
+                    SvgPicture.asset(
+                      ImageConstant.imgIcOutlinePayment,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -166,26 +151,15 @@ class EmployerDrawer extends StatelessWidget {
                   ],
                 )),
             SizedBox(height: 39.v),
-            /*  Padding(
+            Padding(
               padding: EdgeInsets.only(
                 left: 3.h,
                 right: 55.h,
               ),
               child: Row(
                 children: [
-                  Column(
-                    children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgVectorPrimarycontainer9x10,
-                        height: 9.v,
-                        width: 10.h,
-                      ),
-                      CustomImageView(
-                        imagePath: ImageConstant.imgVectorPrimarycontainer11x18,
-                        height: 11.v,
-                        width: 18.h,
-                      ),
-                    ],
+                  SvgPicture.asset(
+                    ImageConstant.lock,
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 13.h),
@@ -197,22 +171,20 @@ class EmployerDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 41.v),*/
+            SizedBox(height: 41.v),
             GestureDetector(
                 onTap: (() {
-                  Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: EmployerProfilePageScreen()));
+                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         type: PageTransitionType.rightToLeft,
+                  //         child: EmployerProfilePageScreen()));
                 }),
                 child: Row(
                   children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.imgUserPrimarycontainer,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize,
+                    SvgPicture.asset(
+                      ImageConstant.imgUserPrimarycontainer,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -221,6 +193,33 @@ class EmployerDrawer extends StatelessWidget {
                       ),
                       child: Text(
                         "View Profile",
+                        style: CustomTextStyles.titleSmall15,
+                      ),
+                    ),
+                  ],
+                )),
+            SizedBox(height: 41.v),
+            GestureDetector(
+                onTap: (() {
+                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     PageTransition(
+                  //         type: PageTransitionType.rightToLeft,
+                  //         child: EmployerProfilePageScreen()));
+                }),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.userPlus,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        bottom: 3.v,
+                      ),
+                      child: Text(
+                        "Update Profile",
                         style: CustomTextStyles.titleSmall15,
                       ),
                     ),
@@ -241,10 +240,8 @@ class EmployerDrawer extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgThumbsUp,
-                        height: 24.adaptSize,
-                        width: 24.adaptSize,
+                      SvgPicture.asset(
+                        ImageConstant.imgThumbsUp,
                       ),
                       Padding(
                         padding: EdgeInsets.only(

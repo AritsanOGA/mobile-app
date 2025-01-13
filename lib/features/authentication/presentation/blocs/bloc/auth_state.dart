@@ -84,7 +84,7 @@ class AuthState with _$AuthState {
       'WAEC',
       'NECO',
       'GCE',
-      'B.sc',
+      'B.sc /B.Eng / B.Ed',
       'M.sc',
       'Phd',
       'B. Tech'

@@ -178,40 +178,38 @@ class PostJobFourScreen extends HookWidget {
                                                 );
                                           })),
                                   SizedBox(height: 44.v),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Container(
-                                          width: 350.h,
-                                          margin: EdgeInsets.only(
-                                              left: 2.h, right: 12.h),
-                                          child: RichText(
-                                              text: TextSpan(children: [
-                                                TextSpan(
-                                                    text:
-                                                        "By continuing, you agree to ArtisanOga’s",
-                                                    style: CustomTextStyles
-                                                        .bodyMediumff3a332c),
-                                                TextSpan(text: " "),
-                                                TextSpan(
-                                                    text:
-                                                        "Jobs Terms\nand Conditions",
-                                                    style: CustomTextStyles
-                                                        .titleSmallfff7941e_1),
-                                                TextSpan(text: " "),
-                                                TextSpan(
-                                                    text: "including our",
-                                                    style: CustomTextStyles
-                                                        .bodyMediumff3a332c),
-                                                TextSpan(text: " "),
-                                                TextSpan(
-                                                    text:
-                                                        "policies prohibiting\ndiscriminatory job posts.",
-                                                    style: CustomTextStyles
-                                                        .titleSmallfff7941e_1)
-                                              ]),
-                                              textAlign: TextAlign.left))),
                                 ],
                               ),
+                        Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                                width: 350.h,
+                                margin: EdgeInsets.only(left: 2.h, right: 12.h),
+                                child: RichText(
+                                    text: TextSpan(children: [
+                                      TextSpan(
+                                          text:
+                                              "By continuing, you agree to ArtisanOga’s",
+                                          style: CustomTextStyles
+                                              .bodyMediumff3a332c),
+                                      TextSpan(text: " "),
+                                      TextSpan(
+                                          text: "Jobs Terms\nand Conditions",
+                                          style: CustomTextStyles
+                                              .titleSmallfff7941e_1),
+                                      TextSpan(text: " "),
+                                      TextSpan(
+                                          text: "including our",
+                                          style: CustomTextStyles
+                                              .bodyMediumff3a332c),
+                                      TextSpan(text: " "),
+                                      TextSpan(
+                                          text:
+                                              "policies prohibiting\ndiscriminatory job posts.",
+                                          style: CustomTextStyles
+                                              .titleSmallfff7941e_1)
+                                    ]),
+                                    textAlign: TextAlign.left))),
                         SizedBox(height: 40.v),
                         BlocSelector<HomeBloc, HomeState, PostJobEntity>(
                           selector: (state) {
@@ -234,15 +232,8 @@ class PostJobFourScreen extends HookWidget {
                                         ),
                                       );
                                 }
-
-                                // Navigator.push(
-                                //     context,
-                                //     PageTransition(
-                                //         type: PageTransitionType.rightToLeft,
-                                //         duration: Durations.long1,
-                                //         child: PaymentPageScreen()));
                               }),
-                              text: "Next",
+                              text: "Post Job",
                             );
                           },
                         ),
