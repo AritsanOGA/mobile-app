@@ -64,7 +64,10 @@ class AcceptRejectPageModalBoxDialog extends HookWidget {
         ..add(CandidatesEvent.getCandidateSkill(identityId))
         ..add(CandidatesEvent.initializeSkills(entity)),
       builder: (context, state) {
-        print('hibboo ${entity}');
+        if (state.getCandidateSkillState == GetCandidateSkillState.loading) {
+          return Center(child: CircularProgressIndicator());
+        }
+
         return Form(
           key: formKey,
           child: Container(

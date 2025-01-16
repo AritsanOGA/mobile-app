@@ -1,8 +1,10 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
@@ -26,6 +28,10 @@ class EmployerProfilePageScreen extends HookWidget {
     final companyNameController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
+      useEffect(() {
+        context.read<SettingBloc>().add(SettingEvent.getEmployerProfile());
+        return null;
+      }, []);
       context.read<AuthBloc>().add(
             AuthEvent.getState('4'),
           );
@@ -41,9 +47,40 @@ class EmployerProfilePageScreen extends HookWidget {
             ),
             body: BlocConsumer<SettingBloc, SettingState>(
               listener: (context, state) {
-                // TODO: implement listener
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.success) {
+                  print('iknow ${state.getEmployerResponseEntity}');
+                  // Set controller values when profile data is loaded
+                  final profile = state.getEmployerResponseEntity;
+                  if (profile != null) {
+                    fullNameEditTextController.text = profile.fullName ?? '';
+                    companyNameController.text = profile.companyName ?? '';
+                    addressEditTextController.text =
+                        profile.streetAddress ?? '';
+                    cityTextController.text = profile.city ?? '';
+                  }
+                }
               },
               builder: (context, state) {
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.loading) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.failure) {
+                  return Center(child: Text('Error: '));
+                }
+
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.success) {
+                  final nameController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.fullName);
+                  final emailController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.companyName);
+                  final phoneController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.streetAddress);
+                }
                 return SizedBox(
                     width: SizeUtils.width,
                     child: SingleChildScrollView(
@@ -186,14 +223,29 @@ class EmployerProfilePageScreen extends HookWidget {
                                     ),
                                     CustomElevatedButton(
                                       text: "Save",
-                                      // margin: EdgeInsets.only(
-                                      //     left: 3.h, right: 4.h),
-                                      // buttonStyle: CustomButtonStyles
-                                      //     .fillSecondaryContainerTL24,
-                                      // buttonTextStyle: CustomTextStyles
-                                      //     .titleLargeOnPrimaryContainerSemiBold,
                                       onPressed: () {
-                                        // c
+                                        if (formKey.currentState!.validate()) {
+                                          context.read<SettingBloc>().add(
+                                              SettingEvent.updateEmployerProfile(
+                                                  UpdateEmployerProfileEntity(
+                                                      userId: state
+                                                              .getEmployerResponseEntity
+                                                              ?.identity ??
+                                                          '',
+                                                      fullName:
+                                                          fullNameEditTextController
+                                                              .text,
+                                                      businessName:
+                                                          companyNameController
+                                                              .text,
+                                                      phoneNo:
+                                                          addressEditTextController
+                                                              .text,
+                                                      city: cityTextController
+                                                          .text,
+                                                      country: '161',
+                                                      state: 0)));
+                                        } // c
                                       },
                                     ),
                                     SizedBox(height: 25.v),

@@ -73,6 +73,7 @@ class HomeState with _$HomeState {
       ])
       List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
+          @Default(0) int selectedIndex,
       @Default(
           ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
       List<String> skillLevelList,

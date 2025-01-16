@@ -47,6 +47,7 @@ mixin _$HomeEvent {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +78,7 @@ mixin _$HomeEvent {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -107,6 +109,7 @@ mixin _$HomeEvent {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,6 +150,7 @@ mixin _$HomeEvent {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -181,6 +185,7 @@ mixin _$HomeEvent {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -214,6 +219,7 @@ mixin _$HomeEvent {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -303,6 +309,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return started();
   }
@@ -336,6 +343,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return started?.call();
   }
@@ -369,6 +377,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -415,6 +424,7 @@ class _$StartedImpl implements _Started {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return started(this);
   }
@@ -452,6 +462,7 @@ class _$StartedImpl implements _Started {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return started?.call(this);
   }
@@ -488,6 +499,7 @@ class _$StartedImpl implements _Started {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -569,6 +581,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getFeaturedCandidates();
   }
@@ -602,6 +615,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getFeaturedCandidates?.call();
   }
@@ -635,6 +649,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getFeaturedCandidates != null) {
@@ -681,6 +696,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getFeaturedCandidates(this);
   }
@@ -718,6 +734,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getFeaturedCandidates?.call(this);
   }
@@ -754,6 +771,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getFeaturedCandidates != null) {
@@ -834,6 +852,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getFeaturedJob();
   }
@@ -867,6 +886,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getFeaturedJob?.call();
   }
@@ -900,6 +920,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getFeaturedJob != null) {
@@ -946,6 +967,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getFeaturedJob(this);
   }
@@ -983,6 +1005,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getFeaturedJob?.call(this);
   }
@@ -1019,6 +1042,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getFeaturedJob != null) {
@@ -1099,6 +1123,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getEmployerJob();
   }
@@ -1132,6 +1157,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getEmployerJob?.call();
   }
@@ -1165,6 +1191,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getEmployerJob != null) {
@@ -1211,6 +1238,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getEmployerJob(this);
   }
@@ -1248,6 +1276,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getEmployerJob?.call(this);
   }
@@ -1284,6 +1313,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getEmployerJob != null) {
@@ -1364,6 +1394,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getAllJobs();
   }
@@ -1397,6 +1428,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getAllJobs?.call();
   }
@@ -1430,6 +1462,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getAllJobs != null) {
@@ -1476,6 +1509,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getAllJobs(this);
   }
@@ -1513,6 +1547,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getAllJobs?.call(this);
   }
@@ -1549,6 +1584,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getAllJobs != null) {
@@ -1629,6 +1665,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getJobSeekerJobs();
   }
@@ -1662,6 +1699,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getJobSeekerJobs?.call();
   }
@@ -1695,6 +1733,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getJobSeekerJobs != null) {
@@ -1741,6 +1780,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getJobSeekerJobs(this);
   }
@@ -1778,6 +1818,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getJobSeekerJobs?.call(this);
   }
@@ -1814,6 +1855,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getJobSeekerJobs != null) {
@@ -1920,6 +1962,7 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return postJob(param);
   }
@@ -1953,6 +1996,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return postJob?.call(param);
   }
@@ -1986,6 +2030,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (postJob != null) {
@@ -2032,6 +2077,7 @@ class _$PostJobImpl implements _PostJob {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return postJob(this);
   }
@@ -2069,6 +2115,7 @@ class _$PostJobImpl implements _PostJob {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return postJob?.call(this);
   }
@@ -2105,6 +2152,7 @@ class _$PostJobImpl implements _PostJob {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (postJob != null) {
@@ -2219,6 +2267,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updatePostJobRequest(postJobRequest);
   }
@@ -2252,6 +2301,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updatePostJobRequest?.call(postJobRequest);
   }
@@ -2285,6 +2335,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updatePostJobRequest != null) {
@@ -2331,6 +2382,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updatePostJobRequest(this);
   }
@@ -2368,6 +2420,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updatePostJobRequest?.call(this);
   }
@@ -2404,6 +2457,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updatePostJobRequest != null) {
@@ -2517,6 +2571,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedDate(value);
   }
@@ -2550,6 +2605,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedDate?.call(value);
   }
@@ -2583,6 +2639,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -2629,6 +2686,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedDate(this);
   }
@@ -2666,6 +2724,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedDate?.call(this);
   }
@@ -2702,6 +2761,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -2814,6 +2874,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return applyForJob(id);
   }
@@ -2847,6 +2908,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return applyForJob?.call(id);
   }
@@ -2880,6 +2942,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (applyForJob != null) {
@@ -2926,6 +2989,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return applyForJob(this);
   }
@@ -2963,6 +3027,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return applyForJob?.call(this);
   }
@@ -2999,6 +3064,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (applyForJob != null) {
@@ -3084,6 +3150,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getCategory();
   }
@@ -3117,6 +3184,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getCategory?.call();
   }
@@ -3150,6 +3218,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -3196,6 +3265,7 @@ class _$GetCategoryImpl implements _GetCategory {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getCategory(this);
   }
@@ -3233,6 +3303,7 @@ class _$GetCategoryImpl implements _GetCategory {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getCategory?.call(this);
   }
@@ -3269,6 +3340,7 @@ class _$GetCategoryImpl implements _GetCategory {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -3375,6 +3447,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getSkills(id);
   }
@@ -3408,6 +3481,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getSkills?.call(id);
   }
@@ -3441,6 +3515,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -3487,6 +3562,7 @@ class _$GetSkillsImpl implements _GetSkills {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getSkills(this);
   }
@@ -3524,6 +3600,7 @@ class _$GetSkillsImpl implements _GetSkills {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getSkills?.call(this);
   }
@@ -3560,6 +3637,7 @@ class _$GetSkillsImpl implements _GetSkills {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -3645,6 +3723,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getCountries();
   }
@@ -3678,6 +3757,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getCountries?.call();
   }
@@ -3711,6 +3791,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -3757,6 +3838,7 @@ class _$GetCountriesImpl implements _GetCountries {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getCountries(this);
   }
@@ -3794,6 +3876,7 @@ class _$GetCountriesImpl implements _GetCountries {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getCountries?.call(this);
   }
@@ -3830,6 +3913,7 @@ class _$GetCountriesImpl implements _GetCountries {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -3936,6 +4020,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return getState(id);
   }
@@ -3969,6 +4054,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return getState?.call(id);
   }
@@ -4002,6 +4088,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -4048,6 +4135,7 @@ class _$GetStateImpl implements _GetState {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return getState(this);
   }
@@ -4085,6 +4173,7 @@ class _$GetStateImpl implements _GetState {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return getState?.call(this);
   }
@@ -4121,6 +4210,7 @@ class _$GetStateImpl implements _GetState {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -4235,6 +4325,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedCategory(value);
   }
@@ -4268,6 +4359,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedCategory?.call(value);
   }
@@ -4301,6 +4393,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -4347,6 +4440,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedCategory(this);
   }
@@ -4384,6 +4478,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedCategory?.call(this);
   }
@@ -4420,6 +4515,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -4534,6 +4630,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedJobType(value);
   }
@@ -4567,6 +4664,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedJobType?.call(value);
   }
@@ -4600,6 +4698,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -4646,6 +4745,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedJobType(this);
   }
@@ -4683,6 +4783,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedJobType?.call(this);
   }
@@ -4719,6 +4820,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -4834,6 +4936,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedWorkMode(value);
   }
@@ -4867,6 +4970,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedWorkMode?.call(value);
   }
@@ -4900,6 +5004,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedWorkMode != null) {
@@ -4946,6 +5051,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedWorkMode(this);
   }
@@ -4983,6 +5089,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedWorkMode?.call(this);
   }
@@ -5019,6 +5126,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedWorkMode != null) {
@@ -5133,6 +5241,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedGender(value);
   }
@@ -5166,6 +5275,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedGender?.call(value);
   }
@@ -5199,6 +5309,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -5245,6 +5356,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedGender(this);
   }
@@ -5282,6 +5394,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedGender?.call(this);
   }
@@ -5318,6 +5431,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -5435,6 +5549,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedCompensationType(value);
   }
@@ -5468,6 +5583,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedCompensationType?.call(value);
   }
@@ -5501,6 +5617,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedCompensationType != null) {
@@ -5547,6 +5664,7 @@ class _$UpdateSelectedCompensationTypeImpl
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedCompensationType(this);
   }
@@ -5584,6 +5702,7 @@ class _$UpdateSelectedCompensationTypeImpl
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedCompensationType?.call(this);
   }
@@ -5620,6 +5739,7 @@ class _$UpdateSelectedCompensationTypeImpl
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedCompensationType != null) {
@@ -5736,6 +5856,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedSkillLevel(value);
   }
@@ -5769,6 +5890,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedSkillLevel?.call(value);
   }
@@ -5802,6 +5924,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedSkillLevel != null) {
@@ -5848,6 +5971,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedSkillLevel(this);
   }
@@ -5885,6 +6009,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedSkillLevel?.call(this);
   }
@@ -5921,6 +6046,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedSkillLevel != null) {
@@ -6038,6 +6164,7 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedEducationlevel(value);
   }
@@ -6071,6 +6198,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedEducationlevel?.call(value);
   }
@@ -6104,6 +6232,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedEducationlevel != null) {
@@ -6150,6 +6279,7 @@ class _$UpdateSelectedEducationLevelImpl
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedEducationlevel(this);
   }
@@ -6187,6 +6317,7 @@ class _$UpdateSelectedEducationLevelImpl
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedEducationlevel?.call(this);
   }
@@ -6223,6 +6354,7 @@ class _$UpdateSelectedEducationLevelImpl
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedEducationlevel != null) {
@@ -6344,6 +6476,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedSkill(value);
   }
@@ -6377,6 +6510,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedSkill?.call(value);
   }
@@ -6410,6 +6544,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -6456,6 +6591,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedSkill(this);
   }
@@ -6493,6 +6629,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedSkill?.call(this);
   }
@@ -6529,6 +6666,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -6643,6 +6781,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedPackage(value);
   }
@@ -6676,6 +6815,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedPackage?.call(value);
   }
@@ -6709,6 +6849,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedPackage != null) {
@@ -6755,6 +6896,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedPackage(this);
   }
@@ -6792,6 +6934,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedPackage?.call(this);
   }
@@ -6828,6 +6971,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedPackage != null) {
@@ -6943,6 +7087,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateSelectedAvailability(value);
   }
@@ -6976,6 +7121,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateSelectedAvailability?.call(value);
   }
@@ -7009,6 +7155,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedAvailability != null) {
@@ -7055,6 +7202,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateSelectedAvailability(this);
   }
@@ -7092,6 +7240,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateSelectedAvailability?.call(this);
   }
@@ -7128,6 +7277,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateSelectedAvailability != null) {
@@ -7240,6 +7390,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateCountry(value);
   }
@@ -7273,6 +7424,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateCountry?.call(value);
   }
@@ -7306,6 +7458,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateCountry != null) {
@@ -7352,6 +7505,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateCountry(this);
   }
@@ -7389,6 +7543,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateCountry?.call(this);
   }
@@ -7425,6 +7580,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateCountry != null) {
@@ -7537,6 +7693,7 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(String value) updateSelectedAvailability,
     required TResult Function(CountryResponseEntity value) updateCountry,
     required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
   }) {
     return updateState(value);
   }
@@ -7570,6 +7727,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(String value)? updateSelectedAvailability,
     TResult? Function(CountryResponseEntity value)? updateCountry,
     TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
   }) {
     return updateState?.call(value);
   }
@@ -7603,6 +7761,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(String value)? updateSelectedAvailability,
     TResult Function(CountryResponseEntity value)? updateCountry,
     TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateState != null) {
@@ -7649,6 +7808,7 @@ class _$UpdateStateImpl implements _UpdateState {
         updateSelectedAvailability,
     required TResult Function(_UpdateCountry value) updateCountry,
     required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
   }) {
     return updateState(this);
   }
@@ -7686,6 +7846,7 @@ class _$UpdateStateImpl implements _UpdateState {
         updateSelectedAvailability,
     TResult? Function(_UpdateCountry value)? updateCountry,
     TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
   }) {
     return updateState?.call(this);
   }
@@ -7722,6 +7883,7 @@ class _$UpdateStateImpl implements _UpdateState {
         updateSelectedAvailability,
     TResult Function(_UpdateCountry value)? updateCountry,
     TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
     required TResult orElse(),
   }) {
     if (updateState != null) {
@@ -7738,6 +7900,309 @@ abstract class _UpdateState implements HomeEvent {
   StateResponseEntity get value;
   @JsonKey(ignore: true)
   _$$UpdateStateImplCopyWith<_$UpdateStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectedDrawerImplCopyWith<$Res> {
+  factory _$$SelectedDrawerImplCopyWith(_$SelectedDrawerImpl value,
+          $Res Function(_$SelectedDrawerImpl) then) =
+      __$$SelectedDrawerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$SelectedDrawerImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$SelectedDrawerImpl>
+    implements _$$SelectedDrawerImplCopyWith<$Res> {
+  __$$SelectedDrawerImplCopyWithImpl(
+      _$SelectedDrawerImpl _value, $Res Function(_$SelectedDrawerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$SelectedDrawerImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectedDrawerImpl implements _SelectedDrawer {
+  const _$SelectedDrawerImpl(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'HomeEvent.selectedDrawer(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectedDrawerImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectedDrawerImplCopyWith<_$SelectedDrawerImpl> get copyWith =>
+      __$$SelectedDrawerImplCopyWithImpl<_$SelectedDrawerImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(String id) applyForJob,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value) updateSelectedWorkMode,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedSkillLevel,
+    required TResult Function(String value) updateSelectedEducationlevel,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedPackage,
+    required TResult Function(String value) updateSelectedAvailability,
+    required TResult Function(CountryResponseEntity value) updateCountry,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
+  }) {
+    return selectedDrawer(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(String id)? applyForJob,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedWorkMode,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedSkillLevel,
+    TResult? Function(String value)? updateSelectedEducationlevel,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedPackage,
+    TResult? Function(String value)? updateSelectedAvailability,
+    TResult? Function(CountryResponseEntity value)? updateCountry,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
+  }) {
+    return selectedDrawer?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(String id)? applyForJob,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedWorkMode,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedSkillLevel,
+    TResult Function(String value)? updateSelectedEducationlevel,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedPackage,
+    TResult Function(String value)? updateSelectedAvailability,
+    TResult Function(CountryResponseEntity value)? updateCountry,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (selectedDrawer != null) {
+      return selectedDrawer(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_ApplyForJob value) applyForJob,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedWorkMode value)
+        updateSelectedWorkMode,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedSkillLevel value)
+        updateSelectedSkillLevel,
+    required TResult Function(_UpdateSelectedEducationLevel value)
+        updateSelectedEducationlevel,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedPackage value)
+        updateSelectedPackage,
+    required TResult Function(_UpdateSelectedAvailability value)
+        updateSelectedAvailability,
+    required TResult Function(_UpdateCountry value) updateCountry,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
+  }) {
+    return selectedDrawer(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedSkillLevel value)?
+        updateSelectedSkillLevel,
+    TResult? Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult? Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult? Function(_UpdateCountry value)? updateCountry,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
+  }) {
+    return selectedDrawer?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
+    TResult Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult Function(_UpdateCountry value)? updateCountry,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (selectedDrawer != null) {
+      return selectedDrawer(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectedDrawer implements HomeEvent {
+  const factory _SelectedDrawer(final int index) = _$SelectedDrawerImpl;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$SelectedDrawerImplCopyWith<_$SelectedDrawerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -7781,6 +8246,7 @@ mixin _$HomeState {
   List<String> get genderList => throw _privateConstructorUsedError;
   List<String> get packageList => throw _privateConstructorUsedError;
   List<String> get availabilityList => throw _privateConstructorUsedError;
+  int get selectedIndex => throw _privateConstructorUsedError;
   List<String> get skillLevelList => throw _privateConstructorUsedError;
   GetFeaturedJobState get getFeaturedJobState =>
       throw _privateConstructorUsedError;
@@ -7831,6 +8297,7 @@ mixin _$HomeState {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -7880,6 +8347,7 @@ mixin _$HomeState {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -7929,6 +8397,7 @@ mixin _$HomeState {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -8004,6 +8473,7 @@ abstract class $HomeStateCopyWith<$Res> {
       List<String> genderList,
       List<String> packageList,
       List<String> availabilityList,
+      int selectedIndex,
       List<String> skillLevelList,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
@@ -8062,6 +8532,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? genderList = null,
     Object? packageList = null,
     Object? availabilityList = null,
+    Object? selectedIndex = null,
     Object? skillLevelList = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
@@ -8200,6 +8671,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.availabilityList
           : availabilityList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       skillLevelList: null == skillLevelList
           ? _value.skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
@@ -8292,6 +8767,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<String> genderList,
       List<String> packageList,
       List<String> availabilityList,
+      int selectedIndex,
       List<String> skillLevelList,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
@@ -8348,6 +8824,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? genderList = null,
     Object? packageList = null,
     Object? availabilityList = null,
+    Object? selectedIndex = null,
     Object? skillLevelList = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
@@ -8486,6 +8963,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._availabilityList
           : availabilityList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
       skillLevelList: null == skillLevelList
           ? _value._skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
@@ -8614,6 +9095,7 @@ class _$InitialImpl implements _Initial {
       ],
       final List<String> packageList = const ["Male", "Female", "Both"],
       final List<String> availabilityList = const ["Yes", "No"],
+      this.selectedIndex = 0,
       final List<String> skillLevelList = const [
         "Internship/Graduate Training",
         "Semi-Skilled",
@@ -8836,6 +9318,9 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_availabilityList);
   }
 
+  @override
+  @JsonKey()
+  final int selectedIndex;
   final List<String> _skillLevelList;
   @override
   @JsonKey()
@@ -8881,7 +9366,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -8943,6 +9428,8 @@ class _$InitialImpl implements _Initial {
                 .equals(other._packageList, _packageList) &&
             const DeepCollectionEquality()
                 .equals(other._availabilityList, _availabilityList) &&
+            (identical(other.selectedIndex, selectedIndex) ||
+                other.selectedIndex == selectedIndex) &&
             const DeepCollectionEquality()
                 .equals(other._skillLevelList, _skillLevelList) &&
             (identical(other.getFeaturedJobState, getFeaturedJobState) ||
@@ -9004,6 +9491,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_genderList),
         const DeepCollectionEquality().hash(_packageList),
         const DeepCollectionEquality().hash(_availabilityList),
+        selectedIndex,
         const DeepCollectionEquality().hash(_skillLevelList),
         getFeaturedJobState,
         getFeaturedCandidateState,
@@ -9059,6 +9547,7 @@ class _$InitialImpl implements _Initial {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -9105,6 +9594,7 @@ class _$InitialImpl implements _Initial {
         genderList,
         packageList,
         availabilityList,
+        selectedIndex,
         skillLevelList,
         getFeaturedJobState,
         getFeaturedCandidateState,
@@ -9154,6 +9644,7 @@ class _$InitialImpl implements _Initial {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -9200,6 +9691,7 @@ class _$InitialImpl implements _Initial {
         genderList,
         packageList,
         availabilityList,
+        selectedIndex,
         skillLevelList,
         getFeaturedJobState,
         getFeaturedCandidateState,
@@ -9249,6 +9741,7 @@ class _$InitialImpl implements _Initial {
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            int selectedIndex,
             List<String> skillLevelList,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
@@ -9297,6 +9790,7 @@ class _$InitialImpl implements _Initial {
           genderList,
           packageList,
           availabilityList,
+          selectedIndex,
           skillLevelList,
           getFeaturedJobState,
           getFeaturedCandidateState,
@@ -9375,6 +9869,7 @@ abstract class _Initial implements HomeState {
       final List<String> genderList,
       final List<String> packageList,
       final List<String> availabilityList,
+      final int selectedIndex,
       final List<String> skillLevelList,
       final GetFeaturedJobState getFeaturedJobState,
       final GetFeaturedCandidateState getFeaturedCandidateState,
@@ -9450,6 +9945,8 @@ abstract class _Initial implements HomeState {
   List<String> get packageList;
   @override
   List<String> get availabilityList;
+  @override
+  int get selectedIndex;
   @override
   List<String> get skillLevelList;
   @override

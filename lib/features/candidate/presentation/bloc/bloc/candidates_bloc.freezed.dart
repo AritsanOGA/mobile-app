@@ -1685,7 +1685,18 @@ class _$InitialImpl implements _Initial {
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList =
           const [],
       final List<CandidateSkillEntity> candidateSkillList = const [],
-      final List<String> dropdownValues = const [],
+      final List<String> dropdownValues = const [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10'
+      ],
       this.dropdownValue = '1',
       final List<String> dropdownList = const [
         '1',

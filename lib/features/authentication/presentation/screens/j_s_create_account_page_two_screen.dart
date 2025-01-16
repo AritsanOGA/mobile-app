@@ -57,7 +57,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                             CustomTextFormField(
                                 title: 'Phone Number',
                                 controller: phoneController,
-                                hintText: "e.g 703 345 1345",
+                                hintText: "e.g 0703 345 1345",
                                 textInputType: TextInputType.phone,
                                 inputFormatters: [
                                   LengthLimitingTextInputFormatter(11),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
@@ -142,6 +144,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
     print('bbbo ${await RegisterJobSeekerModel.fromEntity(entity).toJson()}');
     // try {
+    final formData = await RegisterJobSeekerModel.fromEntity(entity).toJson();
+    log('okay ${formData.fields}');
+    log('okay ${formData.files}');
     final result = await api.post(
       url: AppApiEndpoint.candidateSignup,
       body: await RegisterJobSeekerModel.fromEntity(entity).toJson(),

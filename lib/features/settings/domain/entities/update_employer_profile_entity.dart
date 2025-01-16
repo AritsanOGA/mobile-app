@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class UpdateEmployerProfileEntity extends Equatable {
-  final int userId;
+  final String userId;
   final String fullName;
   final String businessName;
   final String phoneNo;

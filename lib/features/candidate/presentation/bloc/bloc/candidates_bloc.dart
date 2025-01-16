@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';

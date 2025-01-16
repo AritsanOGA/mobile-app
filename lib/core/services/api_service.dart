@@ -163,23 +163,6 @@ class ApiServiceImpl implements ApiService {
         options: Options(
           headers: headers,
           followRedirects: false,
-          // validateStatus: (status) {
-          //   // Always return true for all status codes
-          //   if (status == null) return false;
-
-          //   // Optionally, handle specific status codes differently
-          //   // if (status == 200 || status == 201) {
-          //   //   print('Status is 200, 201, or 404: $status');
-          //   // }
-
-          //   // Accept all status codes
-          //   return status == 200 || status == 201;
-          // }
-          // validateStatus: (status) {
-          //   return status != null && (status == 200 || status == 201);
-          // }
-          // validateStatus: (status) => status != null && status < 400,
-
           validateStatus: (status) => true,
         ),
       );
@@ -187,42 +170,26 @@ class ApiServiceImpl implements ApiService {
       if (response.statusCode != null &&
           response.statusCode! >= 300 &&
           response.statusCode! < 500) {
-        throw Exception('Client-side error: ${response.statusCode}');
+        print('soemthing wen');
+        throw ServerException(
+          trace: StackTrace.current,
+          message:
+              // response.data?['error']
+              'Client-side error: ${response.statusCode} - ${response.data}',
+        );
       } else if (response.statusCode != null && response.statusCode! >= 500) {
         throw Exception('Server-side error: ${response.statusCode}');
       }
 
-      // if (response.data?['msg'] == 'Error') {
-      //   throw DioException(
-      //     requestOptions: response.requestOptions,
-      //     response: response,
-      //     message: response.data?['data'],
-      //   );
-      // }
       _log.i('Response from $url \n${response.data}');
       print('statys${response.statusCode}');
       return response.data;
     } on DioException catch (error, trace) {
-      // final statusCode = error.response?.statusCode;
-      // if (statusCode == 404) {
-      //   print('Resource not found.');
-      // } else if (statusCode == 500) {
-      //   print('Internal server error.');
-      // } else {
-      //   print('Request failed with status: $statusCode');
-      // }
-      // // if (error.response?.statusCode == 422) {
-      // //   // Handle 422 errors specifically
-      // //   // final errorDetails = error.response?.data['data'] ?? 'Validation error';
-      // //   final errorDetails =
-      // //       error.response?.data['errors'] ?? 'Validation error';
-      // //   throw Exception('Validation failed: $errorDetails');
-      // // }
       _log.e('Error from ', error: error.message);
       print('errrpr ni ${error.response?.data['data']}');
       throw ServerException(
         trace: trace,
-        message: error.response?.data['data'] as String?,
+        message: error.response?.data['data'] ?? 'Error Occuured',
       );
     }
   }

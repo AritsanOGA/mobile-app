@@ -11,8 +11,9 @@ class GetEmployerResponseEntity extends Equatable {
   final dynamic businessName;
   final dynamic websiteAddress;
   final String? gender;
+  final String? identity;
 
-  const GetEmployerResponseEntity({
+  const GetEmployerResponseEntity( {
     this.fullName,
     this.about,
     this.streetAddress,
@@ -23,6 +24,7 @@ class GetEmployerResponseEntity extends Equatable {
     this.businessName,
     this.websiteAddress,
     this.gender,
+    this.identity,
   });
 
   @override
@@ -37,5 +39,6 @@ class GetEmployerResponseEntity extends Equatable {
         businessName,
         websiteAddress,
         gender,
+        identity,
       ];
 }

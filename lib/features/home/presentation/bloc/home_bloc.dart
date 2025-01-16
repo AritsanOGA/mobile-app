@@ -81,6 +81,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
     on<_GetSkills>(_onGetSkill);
+    on<_SelectedDrawer>(_onSelectedDrawer);
   }
   final GetFeaturedCandidateUseCase _getFeaturedCandidateseCase;
   final GetEmployerJobUseCase _getEmployerJobUseCase;
@@ -378,5 +379,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onUpdateSelectedDate(
       _UpdateSelectedDate event, Emitter<HomeState> emit) {
     emit(state.copyWith(applicationTime: event.value));
+  }
+
+  FutureOr<void> _onSelectedDrawer(
+      _SelectedDrawer event, Emitter<HomeState> emit) {
+    emit(state.copyWith(selectedIndex: event.index));
   }
 }

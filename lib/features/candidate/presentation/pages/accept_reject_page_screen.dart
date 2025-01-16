@@ -2,6 +2,8 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/widgets/accept_reject_page_modal_box_dialog.dart';
+import 'package:artisan_oga/features/candidate/presentation/widgets/reject_modal.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
@@ -102,11 +104,11 @@ class AcceptRejectPageScreen extends HookWidget {
                               text: "Accept",
                               margin: EdgeInsets.only(left: 22.h),
                               onPressed: () {
-                                // acceptCandidateDialog(
-                                //     context,
-                                //     getAssignedApplicantsEntity.users.identity,
-                                //     jobIdentity,
-                                //     state.candidateSkillList);
+                                acceptCandidateDialog(
+                                    context,
+                                    getAssignedApplicantsEntity.users.identity,
+                                    jobIdentity,
+                                    state.candidateSkillList);
                               },
                               buttonStyle: CustomButtonStyles.fillPrimaryTL8,
                               buttonTextStyle:
@@ -120,11 +122,11 @@ class AcceptRejectPageScreen extends HookWidget {
                               width: 135.h,
                               text: "Reject",
                               onPressed: () {
-                                // interviewedCandidate(
-                                //     context,
-                                //     getAssignedApplicantsEntity.users.identity,
-                                //     jobIdentity,
-                                //     state.candidateSkillList);
+                                interviewedCandidate(
+                                    context,
+                                    getAssignedApplicantsEntity.users.identity,
+                                    jobIdentity,
+                                    state.candidateSkillList);
                               },
                               margin: EdgeInsets.only(left: 22.h),
                               buttonStyle: CustomButtonStyles.outlinePrimary,

@@ -47,4 +47,5 @@ class HomeEvent with _$HomeEvent {
       _UpdateCountry;
 
   const factory HomeEvent.updateState(StateResponseEntity value) = _UpdateState;
+    const factory HomeEvent.selectedDrawer(int index) = _SelectedDrawer;
 }

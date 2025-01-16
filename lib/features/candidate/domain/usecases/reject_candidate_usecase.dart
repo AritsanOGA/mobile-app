@@ -9,7 +9,7 @@ class RejectCandidateUseCase implements UseCase<bool, AcceptCandidateEntity> {
   RejectCandidateUseCase(this.repository);
   final CandidateRepository repository;
   @override
-  Future<Either<Failure, bool>> call(AcceptCandidateEntity entity) {
+  Future<Either<Failure, bool>> call( entity) {
     return repository.rejectCandidate(entity);
   }
 }

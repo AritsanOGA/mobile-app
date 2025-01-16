@@ -148,11 +148,11 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                             "${state.candidateProfileEntity?.serviceDescription ?? ''} ",
                                         style: CustomTextStyles
                                             .bodyMediumff666666),
-                                    TextSpan(
-                                        text:
-                                            "3 years of experience helping her target clients achieve their goals.",
-                                        style: CustomTextStyles
-                                            .titleSmallfff7941eSemiBold15)
+                                    // TextSpan(
+                                    //     text:
+                                    //         "3 years of experience helping her target clients achieve their goals.",
+                                    //     style: CustomTextStyles
+                                    //         .titleSmallfff7941eSemiBold15)
                                   ]),
                                   textAlign: TextAlign.center)),
                           SizedBox(height: 22.v),

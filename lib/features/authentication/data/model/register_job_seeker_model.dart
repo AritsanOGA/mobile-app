@@ -75,6 +75,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       );
 
   Future<FormData> toJson() async => FormData.fromMap({
+    
         'email': email,
         'password': password,
         'password_confirmation': confirmPassword,
