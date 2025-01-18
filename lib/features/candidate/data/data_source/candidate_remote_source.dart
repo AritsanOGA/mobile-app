@@ -5,16 +5,18 @@ import 'package:artisan_oga/features/candidate/data/model/accept_candidate_model
 import 'package:artisan_oga/features/candidate/data/model/candidate_profile_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
   Future<List<CandidateSkillEntity>> getCandidateSkills(String identityId);
   Future<CandidateProfileEntity> getCandidateProfile(String identityId);
-  Future<bool> rejectCandidate(AcceptCandidateEntity entity);
+  Future<bool> rejectCandidate(RejectCandidateEntity entity);
   Future<bool> acceptCandidate(AcceptCandidateEntity entity);
 }
 
@@ -55,10 +57,10 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<bool> rejectCandidate(AcceptCandidateEntity entity) async {
+  Future<bool> rejectCandidate(RejectCandidateEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.rejectCandidate,
-        body: AcceptCandidateModel.fromEntity(entity).toJson(),
+        body: RejectCandidateModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;

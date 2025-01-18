@@ -36,7 +36,8 @@ class RegisterJobSeekerEntity extends Equatable {
       required this.certificateObtained,
       required this.graduationYear,
       required this.courseName,
-      required this.employmentHistory});
+      required this.employmentHistory,
+      required this.yearOfGraduation});
 
   final String email;
   final String password;
@@ -71,6 +72,7 @@ class RegisterJobSeekerEntity extends Equatable {
   final String gender;
   final String courseName;
   final String employmentHistory;
+  final String yearOfGraduation;
 
   RegisterJobSeekerEntity copyWith({
     String? email,
@@ -106,6 +108,7 @@ class RegisterJobSeekerEntity extends Equatable {
     String? courseName,
     String? employmentHistory,
     String? guarantorPhoneNumber,
+    String? yearOfGraduation,
   }) {
     return RegisterJobSeekerEntity(
         guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
@@ -141,7 +144,8 @@ class RegisterJobSeekerEntity extends Equatable {
         certificateObtained: certificateObtained ?? this.certificateObtained,
         graduationYear: graduationYear ?? this.graduationYear,
         courseName: courseName ?? this.courseName,
-        employmentHistory: employmentHistory ?? this.employmentHistory);
+        employmentHistory: employmentHistory ?? this.employmentHistory,
+        yearOfGraduation: yearOfGraduation ?? this.yearOfGraduation);
   }
 
   @override
@@ -177,6 +181,7 @@ class RegisterJobSeekerEntity extends Equatable {
         resume,
         gender,
         courseName,
-        employmentHistory
+        employmentHistory,
+        yearOfGraduation
       ];
 }

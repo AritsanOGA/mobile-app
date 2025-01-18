@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -147,13 +148,13 @@ class RejectPageModalBoxDialog extends HookWidget {
                         state.dropdownValues.map(int.parse).toList();
                     if (formKey.currentState!.validate()) {
                       context.read<CandidatesBloc>().add(
-                          CandidatesEvent.rejectCandidate(AcceptCandidateEntity(
+                          CandidatesEvent.rejectCandidate(RejectCandidateEntity(
                               skillId: state.candidateSkillList
                                   .map((e) => e.id ?? 0)
                                   .toList(),
                               ratings: selectedRatings,
                               remark: reviewController.text,
-                              jobIdentity: jobIdentity,
+                              jobMergingdentity: jobIdentity,
                               candidateIdentity: identityId)));
                     }
                   },

@@ -35,47 +35,47 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       required super.streetAddress,
       required super.courseName,
       required super.employmentHistory,
-      required super.guarantorPhoneNumber});
+      required super.guarantorPhoneNumber,
+      required super.yearOfGraduation});
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
       RegisterJobSeekerModel(
-        email: entity.email,
-        password: entity.password,
-        confirmPassword: entity.confirmPassword,
-        country: entity.country,
-        fullName: entity.fullName,
-        companyName: entity.companyName,
-        state: entity.state,
-        city: entity.city,
-        passport: entity.passport,
-        resume: entity.resume,
-        gender: entity.gender,
-        phoneNumber: entity.phoneNumber,
-        jobType: entity.jobType,
-        guarantorName: entity.guarantorName,
-        residentialAddress: entity.residentialAddress,
-        guarantorEmail: entity.guarantorEmail,
-        yearsOfExperience: entity.yearsOfExperience,
-        describeYourRole: entity.describeYourRole,
-        dateOFBirth: entity.dateOFBirth,
-        role: entity.role,
-        description: entity.description,
-        schoolName: entity.schoolName,
-        endYear: entity.endYear,
-        skill: entity.skill,
-        category: entity.category,
-        startYear: entity.startYear,
-        graduationYear: entity.graduationYear,
-        certificateObtained: entity.certificateObtained,
-        educationalQualification: entity.educationalQualification,
-        streetAddress: entity.streetAddress,
-        courseName: entity.courseName,
-        employmentHistory: entity.employmentHistory,
-        guarantorPhoneNumber: entity.guarantorPhoneNumber,
-      );
+          email: entity.email,
+          password: entity.password,
+          confirmPassword: entity.confirmPassword,
+          country: entity.country,
+          fullName: entity.fullName,
+          companyName: entity.companyName,
+          state: entity.state,
+          city: entity.city,
+          passport: entity.passport,
+          resume: entity.resume,
+          gender: entity.gender,
+          phoneNumber: entity.phoneNumber,
+          jobType: entity.jobType,
+          guarantorName: entity.guarantorName,
+          residentialAddress: entity.residentialAddress,
+          guarantorEmail: entity.guarantorEmail,
+          yearsOfExperience: entity.yearsOfExperience,
+          describeYourRole: entity.describeYourRole,
+          dateOFBirth: entity.dateOFBirth,
+          role: entity.role,
+          description: entity.description,
+          schoolName: entity.schoolName,
+          endYear: entity.endYear,
+          skill: entity.skill,
+          category: entity.category,
+          startYear: entity.startYear,
+          graduationYear: entity.graduationYear,
+          certificateObtained: entity.certificateObtained,
+          educationalQualification: entity.educationalQualification,
+          streetAddress: entity.streetAddress,
+          courseName: entity.courseName,
+          employmentHistory: entity.employmentHistory,
+          guarantorPhoneNumber: entity.guarantorPhoneNumber,
+          yearOfGraduation: entity.yearOfGraduation);
 
   Future<FormData> toJson() async => FormData.fromMap({
-    
         'email': email,
         'password': password,
         'password_confirmation': confirmPassword,
@@ -108,7 +108,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'education_qualification': educationalQualification,
         'school_name':
             educationalQualification == 'No Education' ? '' : schoolName,
-        'award_year':
+        'year_of_graduation':
             educationalQualification == 'No Education' ? '' : graduationYear,
         'award_title': educationalQualification == 'No Education' ||
                 educationalQualification == 'GCE' ||
@@ -132,7 +132,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'years_of_experience': yearsOfExperience,
         'StreetAddress': streetAddress,
         'service_description': describeYourRole,
-        'guarantor_phone': guarantorPhoneNumber
+        'guarantor_phone': guarantorPhoneNumber,
+        'year_of_graduation':
+            yearOfGraduation == 'No Education' ? '' : yearOfGraduation,
       });
-      
 }

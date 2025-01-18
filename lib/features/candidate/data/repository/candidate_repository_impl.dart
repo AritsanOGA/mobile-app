@@ -7,6 +7,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 import 'package:dartz/dartz.dart';
@@ -47,7 +48,7 @@ class CandidateRepositoryImpl implements CandidateRepository {
 
   @override
   Future<Either<Failure, bool>> rejectCandidate(
-      AcceptCandidateEntity entity) async {
+      RejectCandidateEntity entity) async {
     try {
       final result = await candidateRemoteSource.rejectCandidate(entity);
       // await localDataSource.cacheUser(result);

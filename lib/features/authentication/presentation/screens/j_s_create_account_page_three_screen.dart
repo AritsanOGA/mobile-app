@@ -22,6 +22,7 @@ class JSCreateAccountPagetThreeScreen extends HookWidget {
     final schoolNameController = useTextEditingController();
     final awardYearController = useTextEditingController();
     final courseNameController = useTextEditingController();
+    final yearOfGraduationController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
         child: Scaffold(

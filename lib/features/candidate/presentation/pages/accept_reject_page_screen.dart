@@ -122,10 +122,12 @@ class AcceptRejectPageScreen extends HookWidget {
                               width: 135.h,
                               text: "Reject",
                               onPressed: () {
+                                print(
+                                    'user ${getAssignedApplicantsEntity.users.identity} ${getAssignedApplicantsEntity.identity}');
                                 interviewedCandidate(
                                     context,
                                     getAssignedApplicantsEntity.users.identity,
-                                    jobIdentity,
+                                    getAssignedApplicantsEntity.identity,
                                     state.candidateSkillList);
                               },
                               margin: EdgeInsets.only(left: 22.h),
