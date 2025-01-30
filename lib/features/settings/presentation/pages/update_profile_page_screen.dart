@@ -81,183 +81,191 @@ class EmployerProfilePageScreen extends HookWidget {
                   final phoneController = TextEditingController(
                       text: state.getEmployerResponseEntity?.streetAddress);
                 }
-                return SizedBox(
-                    width: SizeUtils.width,
-                    child: SingleChildScrollView(
-                        padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom),
-                        child: SizedBox(
-                            width: double.maxFinite,
-                            child: Column(children: [
-                              SizedBox(height: 16.v),
-                              SizedBox(
-                                  height: 184.adaptSize,
-                                  width: 184.adaptSize,
-                                  child: Stack(
-                                      alignment: Alignment.bottomRight,
-                                      children: [
-                                        image == null
-                                            ? CustomImageView(
-                                                imagePath:
-                                                    ImageConstant.imgEllipse40,
-                                                height: 184.adaptSize,
-                                                width: 184.adaptSize,
-                                                radius:
-                                                    BorderRadius.circular(92.h),
-                                                alignment: Alignment.center)
-                                            : Container(
-                                                width: 200,
-                                                height: 200,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                    image: FileImage(image!),
-                                                    fit: BoxFit.cover,
+                return Form(
+                  key: formKey,
+                  child: SizedBox(
+                      width: SizeUtils.width,
+                      child: SingleChildScrollView(
+                          padding: EdgeInsets.only(
+                              bottom: MediaQuery.of(context).viewInsets.bottom),
+                          child: SizedBox(
+                              width: double.maxFinite,
+                              child: Column(children: [
+                                SizedBox(height: 16.v),
+                                SizedBox(
+                                    height: 184.adaptSize,
+                                    width: 184.adaptSize,
+                                    child: Stack(
+                                        alignment: Alignment.bottomRight,
+                                        children: [
+                                          image == null
+                                              ? CustomImageView(
+                                                  imagePath: ImageConstant
+                                                      .imgEllipse40,
+                                                  height: 184.adaptSize,
+                                                  width: 184.adaptSize,
+                                                  radius: BorderRadius.circular(
+                                                      92.h),
+                                                  alignment: Alignment.center)
+                                              : Container(
+                                                  width: 200,
+                                                  height: 200,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    image: DecorationImage(
+                                                      image: FileImage(image!),
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                        GestureDetector(
-                                          onTap: (() {
-                                            //  pickImage();
-                                          }),
-                                          child: CustomIconButton(
-                                              height: 57.adaptSize,
-                                              width: 57.adaptSize,
-                                              padding: EdgeInsets.all(7.h),
-                                              decoration: IconButtonStyleHelper
-                                                  .fillPrimaryTL28,
-                                              alignment: Alignment.bottomRight,
-                                              child: Icon(
-                                                Icons.add,
-                                                color: Colors.white,
-                                                size: 20,
-                                              )),
-                                        )
-                                      ])),
-                              SizedBox(height: 43.v),
-                              Container(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 25.h),
-                                  child: Column(children: [
-                                    SizedBox(height: 16.v),
-                                    CustomTextFormField(
-                                      title: 'Full Name',
-                                      titleStyle:
-                                          CustomTextStyles.titleMediumMedium18,
-                                      hintText: 'Add a Job Description',
-                                      controller: fullNameEditTextController,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      isBorderNone: true,
-                                    ),
-                                    SizedBox(height: 25.v),
-                                    CustomTextFormField(
-                                      title: 'Company Name',
-                                      titleStyle:
-                                          CustomTextStyles.titleMediumMedium18,
-                                      hintText: 'Add a Job Description',
-                                      controller: companyNameController,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      isBorderNone: true,
-                                    ),
-                                    SizedBox(height: 25.v),
-                                    CustomTextFormField(
-                                      title: 'Street Address',
-                                      titleStyle:
-                                          CustomTextStyles.titleMediumMedium18,
-                                      hintText: 'Add a Job Description',
-                                      controller: addressEditTextController,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      isBorderNone: true,
-                                    ),
-                                    SizedBox(height: 25.v),
-                                    BlocBuilder<AuthBloc, AuthState>(
-                                      builder: (context, state) {
-                                        return CustomDropDown<
-                                            StateResponseEntity>(
-                                          isBorderNone: true,
-                                          titleStyle: CustomTextStyles
-                                              .titleMediumMedium18,
-                                          title: 'State',
-                                          items: state.states,
-                                          selectedItem: state.states.firstWhere(
-                                            (state) => state.id == (state.id),
-                                            orElse: () => StateResponseEntity(
-                                                id: 4, name: 'ALgeria'),
-                                          ),
-                                          itemLabel: (state) => state.name!,
-                                          onChanged: (value) {
-                                            context.read<AuthBloc>().add(
-                                                  AuthEvent.updateSelectedState(
-                                                      value!),
-                                                );
-                                          },
-                                        );
-                                      },
-                                    ),
-                                    // CustomTextFormField(
-                                    //   title: 'State',
-                                    //   titleStyle:
-                                    //       CustomTextStyles.titleMediumMedium18,
-                                    //   hintText: 'Add a Job Description',
-                                    //   controller: addressEditTextController,
-                                    //   validator:
-                                    //       FormValidation.stringValidation,
-                                    //   isBorderNone: true,
-                                    // ),
-                                    SizedBox(height: 25.v),
-                                    CustomTextFormField(
-                                      title: 'City',
-                                      titleStyle:
-                                          CustomTextStyles.titleMediumMedium18,
-                                      hintText: 'Add a Job Description',
-                                      controller: cityTextController,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      isBorderNone: true,
-                                    ),
-                                    SizedBox(
-                                      height: 40,
-                                    ),
-                                    CustomElevatedButton(
-                                      text: "Save",
-                                      onPressed: () {
-                                        if (formKey.currentState!.validate()) {
-                                          context.read<SettingBloc>().add(
-                                              SettingEvent.updateEmployerProfile(
-                                                  UpdateEmployerProfileEntity(
-                                                      userId: state
-                                                              .getEmployerResponseEntity
-                                                              ?.identity ??
-                                                          '',
-                                                      fullName:
-                                                          fullNameEditTextController
-                                                              .text,
-                                                      businessName:
-                                                          companyNameController
-                                                              .text,
-                                                      phoneNo:
-                                                          addressEditTextController
-                                                              .text,
-                                                      city: cityTextController
-                                                          .text,
-                                                      country: '161',
-                                                      state: 0)));
-                                        } // c
-                                      },
-                                    ),
-                                    SizedBox(height: 25.v),
-                                    SizedBox(
-                                        width: 130.h,
-                                        child: Divider(
-                                            color: theme
-                                                .colorScheme.primaryContainer
-                                                .withOpacity(1))),
-                                    SizedBox(height: 12.v)
-                                  ]))
-                            ]))));
+                                          GestureDetector(
+                                            onTap: (() {
+                                              //  pickImage();
+                                            }),
+                                            child: CustomIconButton(
+                                                height: 57.adaptSize,
+                                                width: 57.adaptSize,
+                                                padding: EdgeInsets.all(7.h),
+                                                decoration:
+                                                    IconButtonStyleHelper
+                                                        .fillPrimaryTL28,
+                                                alignment:
+                                                    Alignment.bottomRight,
+                                                child: Icon(
+                                                  Icons.add,
+                                                  color: Colors.white,
+                                                  size: 20,
+                                                )),
+                                          )
+                                        ])),
+                                SizedBox(height: 43.v),
+                                Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 25.h),
+                                    child: Column(children: [
+                                      SizedBox(height: 16.v),
+                                      CustomTextFormField(
+                                        title: 'Full Name',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: fullNameEditTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      CustomTextFormField(
+                                        title: 'Company Name',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: companyNameController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      CustomTextFormField(
+                                        title: 'Street Address',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: addressEditTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                        builder: (context, state) {
+                                          return CustomDropDown<
+                                              StateResponseEntity>(
+                                            isBorderNone: true,
+                                            titleStyle: CustomTextStyles
+                                                .titleMediumMedium18,
+                                            title: 'State',
+                                            items: state.states,
+                                            selectedItem:
+                                                state.states.firstWhere(
+                                              (state) => state.id == (state.id),
+                                              orElse: () => StateResponseEntity(
+                                                  id: 4, name: 'ALgeria'),
+                                            ),
+                                            itemLabel: (state) => state.name!,
+                                            onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                                    AuthEvent
+                                                        .updateSelectedState(
+                                                            value!),
+                                                  );
+                                            },
+                                          );
+                                        },
+                                      ),
+                                      // CustomTextFormField(
+                                      //   title: 'State',
+                                      //   titleStyle:
+                                      //       CustomTextStyles.titleMediumMedium18,
+                                      //   hintText: 'Add a Job Description',
+                                      //   controller: addressEditTextController,
+                                      //   validator:
+                                      //       FormValidation.stringValidation,
+                                      //   isBorderNone: true,
+                                      // ),
+                                      SizedBox(height: 25.v),
+                                      CustomTextFormField(
+                                        title: 'City',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: cityTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      CustomElevatedButton(
+                                        text: "Save",
+                                        onPressed: () {
+                                          if (formKey.currentState!
+                                              .validate()) {
+                                            // context.read<SettingBloc>().add(
+                                            //     SettingEvent.updateEmployerProfile(
+                                            //         UpdateEmployerProfileEntity(
+                                            //             userId: state
+                                            //                     .getEmployerResponseEntity
+                                            //                     ?.identity ??
+                                            //                 '',
+                                            //             fullName:
+                                            //                 fullNameEditTextController
+                                            //                     .text,
+                                            //             businessName:
+                                            //                 companyNameController
+                                            //                     .text,
+                                            //             phoneNo:
+                                            //                 addressEditTextController
+                                            //                     .text,
+                                            //             city: cityTextController
+                                            //                 .text,
+                                            //             country: '161',
+                                            //             state: 0)));
+                                          } // c
+                                        },
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      SizedBox(
+                                          width: 130.h,
+                                          child: Divider(
+                                              color: theme
+                                                  .colorScheme.primaryContainer
+                                                  .withOpacity(1))),
+                                      SizedBox(height: 12.v)
+                                    ]))
+                              ])))),
+                );
               },
             )));
   }

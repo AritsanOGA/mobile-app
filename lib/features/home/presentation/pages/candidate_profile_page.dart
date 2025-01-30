@@ -197,9 +197,15 @@ class CandidatesProfilePage extends StatelessWidget {
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 16.v),
-                                      Text("Skills",
-                                          style: CustomTextStyles
-                                              .titleSmallPrimaryContainer),
+                                      GestureDetector(
+                                        onTap: () {
+                                          print(
+                                              'cans ${state.candidateProfileEntity?.skillAssessmentAverage}');
+                                        },
+                                        child: Text("Skills",
+                                            style: CustomTextStyles
+                                                .titleSmallPrimaryContainer),
+                                      ),
                                       SizedBox(height: 9.v),
                                       Wrap(
                                           runSpacing: 6.v,
@@ -242,6 +248,16 @@ class CandidatesProfilePage extends StatelessWidget {
                                                 style: CustomTextStyles
                                                     .bodyMediumPrimaryContainer),
                                             SizedBox(height: 1.v),
+                                            LinearProgressIndicator(
+                                              value:
+                                                  0.5, // Progress value (0.0 to 1.0), null for indeterminate
+                                              backgroundColor: Colors
+                                                  .grey, // Background color of the indicator
+                                              color:
+                                                  Colors.blue, // Progress color
+                                              minHeight:
+                                                  5.0, // Optional: height of the indicator
+                                            ),
                                             Container(
                                                 height: 14.v,
                                                 width: 380.h,

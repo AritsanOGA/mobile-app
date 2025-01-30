@@ -304,8 +304,8 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??
                                         false) {
-                                      print(
-                                          'date ${dateOfBirthController.text}');
+                                      // print(
+                                      //     'date ${dateOfBirthController.text} ${state.states.first.name}');
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(

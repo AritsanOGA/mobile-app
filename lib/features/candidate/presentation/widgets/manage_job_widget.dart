@@ -123,8 +123,8 @@ class ManageJobWidget extends StatelessWidget {
                   context,
                   AppRoutes.viewCandidatesPageScreen,
                   arguments: {
-                    'id': employerJobResponseEntity.id.toString(),
-                  
+                    'jobId': employerJobResponseEntity.id.toString(),
+                    "jobIdentity": employerJobResponseEntity.identity
                   },
                 );
               }),

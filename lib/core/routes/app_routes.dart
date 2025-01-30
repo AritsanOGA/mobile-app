@@ -10,13 +10,15 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
-import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
+import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
+import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
+import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
-import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
@@ -24,19 +26,20 @@ import 'package:artisan_oga/features/settings/presentation/pages/update_profile_
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_two_screen.dart';
 import 'package:flutter/material.dart';
-import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
-import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
-import '../../presentation/login_options_page_screen/login_options_page_screen.dart';
+
+import '../../features/authentication/presentation/screens/employer_login_page_screen.dart';
 import '../../features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
 import '../../features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
-import '../../presentation/successful_page_screen/successful_page_screen.dart';
-import '../../features/authentication/presentation/screens/employer_login_page_screen.dart';
-import '../../presentation/search_result_page_screen/search_result_page_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
+import '../../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import '../../features/home/presentation/pages/dashboard_screen.dart';
 import '../../features/home/presentation/pages/successful_job_application_screen.dart';
+import '../../presentation/login_options_page_screen/login_options_page_screen.dart';
+import '../../presentation/search_result_page_screen/search_result_page_screen.dart';
+import '../../presentation/signup_options_page_screen/signup_options_page_screen.dart';
+import '../../presentation/successful_page_screen/successful_page_screen.dart';
+import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 
 class AppRoutes {
   static final navigatorKey = GlobalKey<NavigatorState>();
@@ -151,7 +154,7 @@ class AppRoutes {
 
   static const String activitiesPage = '/activities_page';
   static const String feauredJobDetails = '/featured-job-details';
-
+  static const String jobHistoryDetails = '/job-history-details';
   static const String activitiesTabContainerScreen =
       '/activities_tab_container_screen';
 
@@ -289,8 +292,8 @@ class AppRoutes {
 
         return AppPageRouteBuilder(
           navigateTo: ViewCandidatesPageScreen(
-            jobId: args['id'] as String,
-            jobIdentity: args['identity'] as String,
+            jobId: args['jobId'] as String,
+            jobIdentity: args['jobIdentity'] as String,
           ),
         );
       case verifyEmployerScreen:
@@ -316,6 +319,14 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: FeaturedJobDetailsScreen(
             featuredJobResponseEntity: model,
+          ),
+        );
+
+      case jobHistoryDetails:
+        final model = settings.arguments as EmployerJobResponseEntity;
+        return AppPageRouteBuilder(
+          navigateTo: JobHistoryDetailsScreen(
+            employerJobResponseEntity: model,
           ),
         );
 
@@ -367,7 +378,7 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: ChangePasswordPageScreen(),
         );
-      
+
       case candidatesProfileAcceptPageScreen:
         return AppPageRouteBuilder(
           navigateTo: CandidatesProfileAcceptPageScreen(

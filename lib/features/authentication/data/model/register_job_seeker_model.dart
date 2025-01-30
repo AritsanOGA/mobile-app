@@ -133,7 +133,6 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'StreetAddress': streetAddress,
         'service_description': describeYourRole,
         'guarantor_phone': guarantorPhoneNumber,
-        'year_of_graduation':
-            yearOfGraduation == 'No Education' ? '' : yearOfGraduation,
+       
       });
 }

@@ -108,6 +108,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
               updateJobSeekerProfileState: UpdateJobSeekerProfileState.failure,
               errorMessage: error.message)),
           (result) => emit(state.copyWith(
+            
               updateJobSeekerProfileState:
                   UpdateJobSeekerProfileState.success)));
     });

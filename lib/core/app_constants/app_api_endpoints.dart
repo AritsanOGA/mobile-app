@@ -5,7 +5,7 @@ class AppApiEndpoint {
   static const int receiveTimeout = 50000;
   static const int sendTimeout = 50000;
 
-  static Uri baseUri = Uri.parse("http://3.91.77.179:8050/api/v1");
+  static Uri baseUri = Uri.parse("http://54.159.228.215:8050/api/v1");
 
 //Auth
   static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup/');

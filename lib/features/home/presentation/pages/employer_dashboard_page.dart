@@ -176,19 +176,28 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                       // scrollDirection: Axis.horizontal,
                       itemCount: state.employerJobList.length,
                       itemBuilder: (context, index) {
-                        return EmployerJobWidget(
-                            jobTitle:
-                                state.employerJobList[index].jobTitle ?? '',
-                            hireType:
-                                state.employerJobList[index].hireType ?? '',
-                            location: state.employerJobList[index].city ?? '',
-                            applicationDeadline: state.employerJobList[index]
-                                    .applicationDeadline ??
-                                '',
-                            amount: state.employerJobList[index].minSalary
-                                .toString(),
-                            dateCreated: getTimeAgo(
-                                state.employerJobList[index].createdAt!));
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              AppRoutes.jobHistoryDetails,
+                              arguments: state.employerJobList[index],
+                            );
+                          },
+                          child: EmployerJobWidget(
+                              jobTitle:
+                                  state.employerJobList[index].jobTitle ?? '',
+                              hireType:
+                                  state.employerJobList[index].hireType ?? '',
+                              location: state.employerJobList[index].city ?? '',
+                              applicationDeadline: state.employerJobList[index]
+                                      .applicationDeadline ??
+                                  '',
+                              amount: state.employerJobList[index].minSalary
+                                  .toString(),
+                              dateCreated: getTimeAgo(
+                                  state.employerJobList[index].createdAt!)),
+                        );
                       },
                     ),
                   );

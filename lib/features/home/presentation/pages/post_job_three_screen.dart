@@ -33,8 +33,6 @@ class PostJobThreeScreen extends HookWidget {
         child: Scaffold(
             appBar: CustomAppBar(
               titleStatus: false,
-              //hasBackButton: false,
-
               title: '',
             ),
             backgroundColor: AppColors.kwhite,

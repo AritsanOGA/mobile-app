@@ -166,19 +166,21 @@ class ApiServiceImpl implements ApiService {
           validateStatus: (status) => true,
         ),
       );
-      // Manually check the status code
+
       if (response.statusCode != null &&
           response.statusCode! >= 300 &&
           response.statusCode! < 500) {
-        print('soemthing wen');
         throw ServerException(
           trace: StackTrace.current,
-          message:
-              // response.data?['error']
-              'Client-side error: ${response.statusCode} - ${response.data}',
+          message: ' ${response.data?['message'] ?? 'Something went wronng'}',
         );
       } else if (response.statusCode != null && response.statusCode! >= 500) {
-        throw Exception('Server-side error: ${response.statusCode}');
+        throw ServerException(
+          trace: StackTrace.current,
+          message: ' ${response.data?['message'] ?? 'Something went wronng'}',
+        );
+
+        //Exception('Server-side error: ${response.statusCode}');
       }
 
       _log.i('Response from $url \n${response.data}');
@@ -189,7 +191,7 @@ class ApiServiceImpl implements ApiService {
       print('errrpr ni ${error.response?.data['data']}');
       throw ServerException(
         trace: trace,
-        message: error.response?.data['data'] ?? 'Error Occuured',
+        message: error.response?.data['message'] ?? 'Error Occuured',
       );
     }
   }
