@@ -9,11 +9,13 @@ import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -27,20 +29,25 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       RejectCandidateUseCase? rejectCandidateUseCase,
       GetAssignedCandidateUseCase? getAssignedCandidateUseCase,
       CandidateProfileUseCase? candidateProfileUseCase,
+       RejectCandidateWithoutIntervieUseCase? rejectCandidateWithoutIntervieUseCase,
       CandidateSkillUseCase? candidateSkillUseCase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
         _getAssignedCandidateUseCase = getAssignedCandidateUseCase ?? locator(),
         _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
         _candidateSkillUseCase = candidateSkillUseCase ?? locator(),
+        _rejectCandidateWithoutIntervieUseCase = rejectCandidateWithoutIntervieUseCase ?? locator(),
+
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
+        on<_RejectCandidate>(_onRejectCandidate);
+
     on<_GetAssignedCandidate>(_onGetAssignedCandidate);
     on<_GetCandidateProfile>(_onGetCandidateProfile);
     on<_GetCandidateSkill>(_onGetCandidateSkill);
     on<_UpdateSkillRating>(_onUpdateSkillRating);
-    on<_InitializeSkills>(_onInitializeSkills);
+    on<_RejectCandidateWithoutInterview>(_onRejectCandidateWithoutInterview);
   }
 
   final AcceptCandidateUseCase _acceptCandidateUsecase;
@@ -48,6 +55,7 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final GetAssignedCandidateUseCase _getAssignedCandidateUseCase;
   final CandidateSkillUseCase _candidateSkillUseCase;
   final CandidateProfileUseCase _candidateProfileUseCase;
+  final RejectCandidateWithoutIntervieUseCase _rejectCandidateWithoutIntervieUseCase;
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -168,21 +176,22 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     ));
   }
 
-  //    final initialRatings = List<int>.filled(event..length, 0); // Default rating is 0
-  // emit(SkillsRatingState(skills: event.skills, ratings: initialRatings));
-  //    final updatedRatings = List<int>.from(state.ratings);
-  // updatedRatings[event.skillIndex] = event.rating;
-  // emit(state.copyWith(ratings: updatedRatings));
-  //       final updatedSkills = List<CandidateSkillEntity>.from(state.dropdownList);
-  //   updatedSkills[event.skillIndex] =
-  //       updatedSkills[event.skillIndex].copyWith(: event.newRating);
-  // dropdownValues:
-  // List<int>.filled(state.dropdownList.length, 1);
-  // final updatedValues = List<String>.from(state.dropdownValues);
-  // updatedValues[event.skillIndex] = event.value;
-  // //  emit(SkillState(skills: updatedSkills));
-  // // final updatedValues = Map<int, int>.from(state.dropdownValue)
-  // //   ..[event.index] = event.value;
-  // emit(state.copyWith(dropdownList: updatedValues));
-  // emit(state.copyWith(dropdownValue: event.value, skillIndex: event.skillIndex));
+
+
+  FutureOr<void> _onRejectCandidateWithoutInterview(_RejectCandidateWithoutInterview event, Emitter<CandidatesState> emit)
+  async {
+
+     emit(state.copyWith(rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.loading));
+    await _rejectCandidateWithoutIntervieUseCase(event.param).then((value) {
+      value.fold(
+          (error) => emit(state.copyWith(
+              rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.failure)),
+          (result) => emit(state.copyWith(
+                rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.success,
+              )));
+    });
+    emit(state.copyWith(rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.idle));
+  }
+
+
 }

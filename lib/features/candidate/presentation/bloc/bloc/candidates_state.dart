@@ -14,6 +14,8 @@ class CandidatesState with _$CandidatesState {
       GetCandidateProfileState getCandidateProfileState,
       @Default(GetCandidateSkillState.idle)
       GetCandidateSkillState getCandidateSkillState,
+      @Default(RejectCandidateWithoutInterviewState.idle)
+      RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
       String? skillRating,

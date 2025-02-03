@@ -97,7 +97,6 @@ class _DashboardPageState extends State<DashboardPage> {
                 bloc: context.read<HomeBloc>()..add(HomeEvent.getFeaturedJob()),
                 //..add(event),
                 builder: (context, state) {
-                  
                   if (state.getFeaturedJobState ==
                       GetFeaturedJobState.loading) {
                     return Center(child: CircularProgressIndicator());

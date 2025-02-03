@@ -8,15 +8,18 @@ class CandidatesEvent with _$CandidatesEvent {
       _AcceptCandidate;
   const factory CandidatesEvent.rejectCandidate(RejectCandidateEntity param) =
       _RejectCandidate;
+  const factory CandidatesEvent.rejectCandidateWithoutInterview(
+          RejectCandidateWithoutInterviewEntity param) =
+      _RejectCandidateWithoutInterview;
   const factory CandidatesEvent.getAssignedCandidate(String jobId) =
       _GetAssignedCandidate;
   const factory CandidatesEvent.getCandidateSkill(String identityId) =
       _GetCandidateSkill;
-        const factory CandidatesEvent.initializeSkills(
-     List<CandidateSkillEntity> candidateSkills,
+  const factory CandidatesEvent.initializeSkills(
+    List<CandidateSkillEntity> candidateSkills,
   ) = _InitializeSkills;
   const factory CandidatesEvent.getCandidateProfile(String jobId) =
       _GetCandidateProfile;
-       const factory CandidatesEvent.updateSkillRating(String value, int skillIndex) =
-      _UpdateSkillRating;
+  const factory CandidatesEvent.updateSkillRating(
+      String value, int skillIndex) = _UpdateSkillRating;
 }
