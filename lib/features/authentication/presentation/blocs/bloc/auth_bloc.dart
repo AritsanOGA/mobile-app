@@ -210,10 +210,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(jobSeekerSignUpState: JobSeekerSignUpState.loading));
 
     await _registerJobSeekerUseCase(event.param).then((value) {
-          if (state.picture == null) {
-                                          ToastUtils.showRedToast(
-                                              'Upload a picture');
-                                        } 
+      if (state.picture == null) {
+        ToastUtils.showRedToast('Upload a picture');
+      }
       value.fold(
           (error) => emit(state.copyWith(
               jobSeekerSignUpState: JobSeekerSignUpState.failure,
@@ -303,7 +302,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     } else {
       print('extension $image');
       ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
-      print('onavlid tyoe');
+      print('inavlid tyoe');
     }
   }
 

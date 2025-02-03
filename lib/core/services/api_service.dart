@@ -47,7 +47,7 @@ abstract class ApiService {
     Map<String, dynamic>? queryParameters,
     Map<String, String> headers,
   });
-
+// y [MapEntry(email: jaiyeola@yopmail.com), MapEntry(password: Jaiyeola20.), MapEntry(password_confirmation: Jaiyeola20.), MapEntry(country: 4), MapEntry(fullname: Jaiyeloa Adam), MapEntry(states: Adrar), MapEntry(city: epe), MapEntry(gender: Male), MapEntry(phone: 09055899858), MapEntry(DateOfBirth: 01/01/2002), MapEntry(employment_history: No Employment History), MapEntry(company_name: ), MapEntry(end_year: ), MapEntry(start_year: ), MapEntry(job_title: ), MapEntry(job_description: ), MapEntry(education_qualification: No Education), MapEntry(school_name: ), MapEntry(year_of_graduation: ), MapEntry(award_title: ), MapEntry(course_name: ), MapEntry(categories: 5), MapEntry(artisan_skills: Child Care ), MapEntry(guarantor_name: gbenga), MapEntry(guarantor_email: gbenga@yopmail.com), MapEntry(guarantor_address: gbenga@yopmail.com), MapEntry(job_type: Full Time), MapEntry(years_of_experience: 7), MapEntry(StreetAddress: epe), MapEntry(service_description: build app), MapEntry(guarantor_phone: 09078487477)]
   //? For downloading file from the endpoint
   Future<void> download({
     required Uri url,
@@ -76,15 +76,26 @@ class ApiServiceImpl implements ApiService {
 
           //   return handler.resolve(await _retry(e.requestOptions));
           // }
-          return handler.next(e);
+          print("ERROR [${e.response?.statusCode}]: ${e.requestOptions.uri}");
+          print("Message: ${e.message}");
+          print("Data: ${e.response?.data}");
+          handler.next(e); // Continue error handling
+
+          
         },
-        onRequest: (r, handler) {
-          print('hoohh');
-          handler.next(r);
+        onRequest: (options, handler) {
+          print("REQUEST: ${options.method} ${options.uri}");
+          print("Headers: ${options.headers}");
+          print("Body: ${options.data}");
+
+          handler.next(options);
         },
-        onResponse: (r, handler) {
-          print('redddd');
-          handler.next(r);
+        onResponse: (response, handler) {
+          print(
+              "RESPONSE [${response.statusCode}]: ${response.requestOptions.uri}");
+          print("Headers: ${response.headers}");
+          print("Data: ${response.data}");
+          handler.next(response); 
         },
       ),
     );

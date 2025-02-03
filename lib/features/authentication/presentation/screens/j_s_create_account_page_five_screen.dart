@@ -30,7 +30,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
-      context.read<AuthBloc>().add(AuthEvent.getState('1'));
+
       return null;
     }, []);
     return SafeArea(
