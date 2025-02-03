@@ -7,11 +7,13 @@ import 'package:artisan_oga/features/authentication/data/data_source/auth_local_
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
@@ -156,6 +158,72 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await localDataSource.removeUser();
       print('print${result}');
       return const Right(true);
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> forgotPassword(
+      ForgotPasswordEntity param) async {
+    try {
+      final result = await authRemoteDataSource.forgotPassword(param);
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
+      return const Right(true);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> updatePassword(
+      UpdatePasswordEntity param) async {
+    try {
+      final result = await authRemoteDataSource.updatePassword(param);
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
+      return const Right(true);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } on CachedException catch (e) {
+      return Left(ServerFailure(message: e.message));
+    } catch (e) {
+      debugPrint(e.toString());
+      return const Left(
+        ServerFailure(
+          message: AppStrings.genericErrorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> verifyForgotPasswordCode(
+      VerifyCodeEntity param) async {
+    try {
+      final result = await authRemoteDataSource.verifyForgotPasswordCode(param);
+      // await localDataSource.cacheUser(result);
+      // UserService().authData = result;
+      return const Right(true);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(message: e.message));
     } on CachedException catch (e) {
       return Left(ServerFailure(message: e.message));
     } catch (e) {

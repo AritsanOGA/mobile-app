@@ -42,11 +42,16 @@ enum UpdateJobSeekerProfileState { idle, loading, success, failure }
 
 enum UpdatePasswordState { idle, loading, success, failure }
 
+enum ChangePasswordState { idle, loading, success, failure }
+
+enum ForgotPasswordState { idle, loading, success, failure }
+
 enum AcceptCandidateState { idle, loading, success, failure }
 
 enum RejectCandidateState { idle, loading, success, failure }
 
 enum GetAssignedCandidateState { idle, loading, success, failure }
+
 enum GetCandidateProfileState { idle, loading, success, failure }
 
 enum GetCandidateSkillState { idle, loading, success, failure }

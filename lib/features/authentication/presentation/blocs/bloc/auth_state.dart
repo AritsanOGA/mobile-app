@@ -72,7 +72,8 @@ class AuthState with _$AuthState {
         graduationYear: '',
         courseName: '',
         employmentHistory: '',
-        guarantorPhoneNumber: '', yearOfGraduation: ''))
+        guarantorPhoneNumber: '',
+        yearOfGraduation: ''))
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
     @Default([]) List<StateResponseEntity> states,
@@ -98,6 +99,8 @@ class AuthState with _$AuthState {
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
+    @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
+    @Default(ForgotPasswordState.idle) ForgotPasswordState forgotPasswordState,
     @Default(EmployerLoginState.idle) EmployerLoginState employerLoginState,
     @Default(JobSeekerLoginState.idle) JobSeekerLoginState jobSeekerLoginState,
     @Default(EmployerSignUpState.idle) EmployerSignUpState employerSignUpState,

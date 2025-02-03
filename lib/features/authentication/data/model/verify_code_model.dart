@@ -2,7 +2,6 @@ import 'package:artisan_oga/features/authentication/domain/entities/verify_code_
 
 class VerifyCodeModel extends VerifyCodeEntity {
   const VerifyCodeModel({
-    // super.success,
     required super.email,
     required super.code,
   });

@@ -20,7 +20,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedEducationQualification;
   const factory AuthEvent.updateEmploymentHistory(String value) =
       _UpdateEmploymentHistory;
- 
+
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
   const factory AuthEvent.selectCompanyLogo() = _SelectCompanyLogo;
@@ -34,6 +34,12 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedResume;
   const factory AuthEvent.verifyCode(VerifyCodeEntity value) = _VerifyCode;
   const factory AuthEvent.loginUser(LoginEntity param) = _LoginUser;
+  const factory AuthEvent.updatePassword(UpdatePasswordEntity param) =
+      _UpdatePassword;
+  const factory AuthEvent.forgotPassword(ForgotPasswordEntity param) =
+      _ForgotPassword;
+  const factory AuthEvent.verifyForgotPasswordCode(VerifyCodeEntity param) =
+      _verifyForgotPasswordCode;
   const factory AuthEvent.getCountries() = _GetCountries;
   const factory AuthEvent.getState(String id) = _GetState;
   const factory AuthEvent.getCategory() = _GetCategory;
@@ -49,6 +55,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.registerJobSeeker(RegisterJobSeekerEntity param) =
       _RegisterJobSeeker;
   const factory AuthEvent.getUserData() = _GetUserData;
-    const factory AuthEvent.removeUserData() = _RemoveUserData;
+  const factory AuthEvent.removeUserData() = _RemoveUserData;
   const factory AuthEvent.selectTab(int index) = _SelectTabEvent;
 }

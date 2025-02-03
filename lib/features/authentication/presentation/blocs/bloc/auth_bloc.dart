@@ -7,13 +7,16 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
@@ -22,6 +25,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_job
 import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
@@ -42,6 +46,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       FilePickerService? filePickerService,
       StateUseCase? stateUseCase,
       VerifyCodeUseCase? verifyCodeUseCase,
+      UpdatePasswordUseCase? updatePasswordUseCase,
+      ForgotPasswordUseCase? forgotPasswordUseCase,
       RemoveUserDataUseCase? removeUserDataUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
@@ -54,6 +60,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _filePickerService = filePickerService ?? locator(),
         _verifyCodeUseCase = verifyCodeUseCase ?? locator(),
         _getUserDataUseCase = getUserUseCase ?? locator(),
+        _forgotPasswordUseCase = forgotPasswordUseCase ?? locator(),
+        _updatePasswordUseCase = updatePasswordUseCase ?? locator(),
         _removeUserDataUseCase = removeUserDataUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
@@ -86,6 +94,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetUserData>(_onGetUserData);
 
     on<_RemoveUserData>(_onRemoveUserData);
+    on<_UpdatePassword>(_onUpdatePassword);
+    on<_ForgotPassword>(_onForgotPassword);
+
+    on<_verifyForgotPasswordCode>(_onVerifyForgotPasswordCode);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -98,6 +110,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final FilePickerService _filePickerService;
   final VerifyCodeUseCase _verifyCodeUseCase;
   final GetUserDataUseCase _getUserDataUseCase;
+  final UpdatePasswordUseCase _updatePasswordUseCase;
+  final ForgotPasswordUseCase _forgotPasswordUseCase;
   final RemoveUserDataUseCase _removeUserDataUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
@@ -368,5 +382,51 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onSelectTabEvent(
       _SelectTabEvent event, Emitter<AuthState> emit) {
     emit(state.copyWith(selectedIndex: event.index));
+  }
+
+  FutureOr<void> _onUpdatePassword(
+      _UpdatePassword event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(updatePasswordState: UpdatePasswordState.loading));
+
+    await _updatePasswordUseCase(event.param).then((value) {
+      value.fold(
+          (error) => emit(state.copyWith(
+              updatePasswordState: UpdatePasswordState.failure,
+              errorMessage: error.message)),
+          (result) => emit(state.copyWith(
+              updatePasswordState: UpdatePasswordState.success)));
+    });
+    emit(state.copyWith(updatePasswordState: UpdatePasswordState.idle));
+  }
+
+  FutureOr<void> _onForgotPassword(
+      _ForgotPassword event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(forgotPasswordState: ForgotPasswordState.loading));
+
+    await _forgotPasswordUseCase(event.param).then((value) {
+      value.fold(
+          (error) => emit(state.copyWith(
+              forgotPasswordState: ForgotPasswordState.failure,
+              errorMessage: error.message)),
+          (result) => emit(state.copyWith(
+              forgotPasswordState: ForgotPasswordState.success)));
+    });
+    emit(state.copyWith(forgotPasswordState: ForgotPasswordState.idle));
+  }
+
+  FutureOr<void> _onVerifyForgotPasswordCode(
+      _verifyForgotPasswordCode event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(
+        employerVerifyCodeState: EmployerVerifyCodeState.loading));
+
+    await _verifyCodeUseCase(event.param).then((value) {
+      value.fold(
+          (error) => emit(state.copyWith(
+              employerVerifyCodeState: EmployerVerifyCodeState.failure,
+              errorMessage: error.message)),
+          (result) => emit(state.copyWith(
+              employerVerifyCodeState: EmployerVerifyCodeState.success)));
+    });
+    emit(state.copyWith(employerVerifyCodeState: EmployerVerifyCodeState.idle));
   }
 }
