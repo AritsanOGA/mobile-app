@@ -6,6 +6,7 @@ import 'package:artisan_oga/features/authentication/data/data_source/auth_remote
 import 'package:artisan_oga/features/authentication/data/reposItories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
@@ -14,6 +15,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/register_job
 import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote_source.dart';
 import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
@@ -94,6 +96,10 @@ Future<void> init() async {
     //usecases
     ..registerLazySingleton<RegisterEmployerUseCase>(
         () => RegisterEmployerUseCase(locator()))
+         ..registerLazySingleton<ForgotPasswordUseCase>(
+        () => ForgotPasswordUseCase(locator()))
+         ..registerLazySingleton<UpdatePasswordUseCase>(
+        () => UpdatePasswordUseCase(locator()))
     ..registerLazySingleton<AcceptCandidateUseCase>(
         () => AcceptCandidateUseCase(locator()))
     ..registerLazySingleton<RejectCandidateUseCase>(
