@@ -133,6 +133,5 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'StreetAddress': streetAddress,
         'service_description': describeYourRole,
         'guarantor_phone': guarantorPhoneNumber,
-       
       });
 }

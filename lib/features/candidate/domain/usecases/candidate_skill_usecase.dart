@@ -10,6 +10,6 @@ class CandidateSkillUseCase
   final CandidateRepository repository;
   @override
   Future<Either<Failure, List<CandidateSkillEntity>>> call(String identityId) {
-    return repository.getCandidateSkills( identityId);
+    return repository.getCandidateSkills(identityId);
   }
 }

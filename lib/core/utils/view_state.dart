@@ -49,8 +49,8 @@ enum ForgotPasswordState { idle, loading, success, failure }
 enum AcceptCandidateState { idle, loading, success, failure }
 
 enum RejectCandidateState { idle, loading, success, failure }
-enum RejectCandidateWithoutInterviewState { idle, loading, success, failure }
 
+enum RejectCandidateWithoutInterviewState { idle, loading, success, failure }
 
 enum GetAssignedCandidateState { idle, loading, success, failure }
 

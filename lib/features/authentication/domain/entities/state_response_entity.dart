@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 
 class StateResponseEntity extends Equatable {
   const StateResponseEntity({
-     this.id,
-     this.name,
+    this.id,
+    this.name,
   });
 
   final int? id;

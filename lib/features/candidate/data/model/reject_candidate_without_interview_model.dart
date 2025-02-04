@@ -1,6 +1,7 @@
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 
-class RejectCandidateWithoutInterviewModel extends RejectCandidateWithoutInterviewEntity {
+class RejectCandidateWithoutInterviewModel
+    extends RejectCandidateWithoutInterviewEntity {
   RejectCandidateWithoutInterviewModel({
     required super.jobMergingdentity,
     required super.candidateIdentity,

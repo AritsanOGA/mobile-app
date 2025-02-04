@@ -13,7 +13,7 @@ class GetEmployerResponseEntity extends Equatable {
   final String? gender;
   final String? identity;
 
-  const GetEmployerResponseEntity( {
+  const GetEmployerResponseEntity({
     this.fullName,
     this.about,
     this.streetAddress,

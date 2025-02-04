@@ -16,6 +16,3 @@ class LoginModel extends LoginEntity {
         'password': password,
       };
 }
-
-
-

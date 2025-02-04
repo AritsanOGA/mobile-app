@@ -8,8 +8,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class SettingsRepository {
   Future<Either<Failure, GetEmployerResponseEntity>> getEmployerProfile();
-  Future<Either<Failure, GetJobSeekerResponseEntity>>
-      getJobSeekerProfile();
+  Future<Either<Failure, GetJobSeekerResponseEntity>> getJobSeekerProfile();
   Future<Either<Failure, bool>> updateJobSeekerProfile(
       UpdateJobSeekerProfileEntity entity);
   Future<Either<Failure, bool>> updateEmployerProfile(

@@ -284,21 +284,21 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
 
     String valueWithoutComma = price.replaceAll(",", "");
 
-   // final Customer customer = Customer(email: "customer@customer.com");
+    // final Customer customer = Customer(email: "customer@customer.com");
 
-  //   final Flutterwave flutterwave = Flutterwave(
-  //       context: context,
-  //       publicKey: "FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X",
-  //       currency: "NGN",
-  //       redirectUrl: 'https://artisanoga.com',
-  //       txRef: "9382839283923",
-  //       amount: valueWithoutComma,
-  //       customer: customer,
-  //       paymentOptions: "card, payattitude, barter, bank transfer, ussd",
-  //       customization: Customization(title: "Test Payment"),
-  //       isTestMode: false);
-  //   final ChargeResponse response = await flutterwave.charge();
-  //   // this.showLoading(response.toString());
-  //   print("${response.toJson()}");
-   }
+    //   final Flutterwave flutterwave = Flutterwave(
+    //       context: context,
+    //       publicKey: "FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X",
+    //       currency: "NGN",
+    //       redirectUrl: 'https://artisanoga.com',
+    //       txRef: "9382839283923",
+    //       amount: valueWithoutComma,
+    //       customer: customer,
+    //       paymentOptions: "card, payattitude, barter, bank transfer, ussd",
+    //       customization: Customization(title: "Test Payment"),
+    //       isTestMode: false);
+    //   final ChargeResponse response = await flutterwave.charge();
+    //   // this.showLoading(response.toString());
+    //   print("${response.toJson()}");
+  }
 }

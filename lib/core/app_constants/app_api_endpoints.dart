@@ -56,8 +56,8 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/employer/accept-candidate');
   static Uri rejectCandidate =
       baseUri.replace(path: '/api/v1/employer/reject-candidate');
-        static Uri rejectCandidateWithoutInterview =
-      baseUri.replace(path: '/api/v1/employer/reject-candidate-without-interview');
+  static Uri rejectCandidateWithoutInterview = baseUri.replace(
+      path: '/api/v1/employer/reject-candidate-without-interview');
   static Uri candidateProfile =
       baseUri.replace(path: '/api/v1/candidate/get-profile');
   static Uri getCandidateSkill =

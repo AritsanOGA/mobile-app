@@ -158,7 +158,6 @@ Future<void> employerReview(context, String identityId, String jobIdentity,
                         height: 46.v,
                         width: 120.h,
                         text: "Reject",
-                        
                         onPressed: () {
                           Navigator.pop(context);
                           // acceptCandidateDialog(

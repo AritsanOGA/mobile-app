@@ -120,7 +120,7 @@ class CandidateProfileEntity extends Equatable {
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
-   required this.experience,
+    required this.experience,
     this.customerRating,
     this.skillAssessmentAverage,
   });

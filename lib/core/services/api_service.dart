@@ -80,8 +80,6 @@ class ApiServiceImpl implements ApiService {
           print("Message: ${e.message}");
           print("Data: ${e.response?.data}");
           handler.next(e); // Continue error handling
-
-          
         },
         onRequest: (options, handler) {
           print("REQUEST: ${options.method} ${options.uri}");
@@ -95,7 +93,7 @@ class ApiServiceImpl implements ApiService {
               "RESPONSE [${response.statusCode}]: ${response.requestOptions.uri}");
           print("Headers: ${response.headers}");
           print("Data: ${response.data}");
-          handler.next(response); 
+          handler.next(response);
         },
       ),
     );

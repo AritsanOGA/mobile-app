@@ -26,19 +26,20 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       RejectCandidateUseCase? rejectCandidateUseCase,
       GetAssignedCandidateUseCase? getAssignedCandidateUseCase,
       CandidateProfileUseCase? candidateProfileUseCase,
-       RejectCandidateWithoutIntervieUseCase? rejectCandidateWithoutIntervieUseCase,
+      RejectCandidateWithoutIntervieUseCase?
+          rejectCandidateWithoutIntervieUseCase,
       CandidateSkillUseCase? candidateSkillUseCase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
         _getAssignedCandidateUseCase = getAssignedCandidateUseCase ?? locator(),
         _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
         _candidateSkillUseCase = candidateSkillUseCase ?? locator(),
-        _rejectCandidateWithoutIntervieUseCase = rejectCandidateWithoutIntervieUseCase ?? locator(),
-
+        _rejectCandidateWithoutIntervieUseCase =
+            rejectCandidateWithoutIntervieUseCase ?? locator(),
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
-        on<_RejectCandidate>(_onRejectCandidate);
+    on<_RejectCandidate>(_onRejectCandidate);
 
     on<_GetAssignedCandidate>(_onGetAssignedCandidate);
     on<_GetCandidateProfile>(_onGetCandidateProfile);
@@ -52,7 +53,8 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final GetAssignedCandidateUseCase _getAssignedCandidateUseCase;
   final CandidateSkillUseCase _candidateSkillUseCase;
   final CandidateProfileUseCase _candidateProfileUseCase;
-  final RejectCandidateWithoutIntervieUseCase _rejectCandidateWithoutIntervieUseCase;
+  final RejectCandidateWithoutIntervieUseCase
+      _rejectCandidateWithoutIntervieUseCase;
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -173,22 +175,24 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     ));
   }
 
-
-
-  FutureOr<void> _onRejectCandidateWithoutInterview(_RejectCandidateWithoutInterview event, Emitter<CandidatesState> emit)
-  async {
-
-     emit(state.copyWith(rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.loading));
+  FutureOr<void> _onRejectCandidateWithoutInterview(
+      _RejectCandidateWithoutInterview event,
+      Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(
+        rejectCandidateWithoutInterviewState:
+            RejectCandidateWithoutInterviewState.loading));
     await _rejectCandidateWithoutIntervieUseCase(event.param).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
-              rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.failure)),
+              rejectCandidateWithoutInterviewState:
+                  RejectCandidateWithoutInterviewState.failure)),
           (result) => emit(state.copyWith(
-                rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.success,
+                rejectCandidateWithoutInterviewState:
+                    RejectCandidateWithoutInterviewState.success,
               )));
     });
-    emit(state.copyWith(rejectCandidateWithoutInterviewState: RejectCandidateWithoutInterviewState.idle));
+    emit(state.copyWith(
+        rejectCandidateWithoutInterviewState:
+            RejectCandidateWithoutInterviewState.idle));
   }
-
-
 }

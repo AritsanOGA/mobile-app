@@ -674,7 +674,7 @@ class _UpdateProfilePageOneScreenState
   //           }),
   //       centerTitle: true,
   //       title: AppbarSubtitle(text: "Edit Profile"));
-  // 
+  //
 
   /// Section Widget
   Widget _buildNext(BuildContext context) {

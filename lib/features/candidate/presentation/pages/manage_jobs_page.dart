@@ -29,7 +29,6 @@ class ManageJobsPage extends HookWidget {
                 child: Column(children: [
                   SizedBox(height: 38.v),
                   BlocBuilder<HomeBloc, HomeState>(
-                    
                     // bloc: context.read<HomeBloc>()
                     //   ..add(HomeEvent.getEmployerJob()),
                     builder: (context, state) {

@@ -96,9 +96,9 @@ Future<void> init() async {
     //usecases
     ..registerLazySingleton<RegisterEmployerUseCase>(
         () => RegisterEmployerUseCase(locator()))
-         ..registerLazySingleton<ForgotPasswordUseCase>(
+    ..registerLazySingleton<ForgotPasswordUseCase>(
         () => ForgotPasswordUseCase(locator()))
-         ..registerLazySingleton<UpdatePasswordUseCase>(
+    ..registerLazySingleton<UpdatePasswordUseCase>(
         () => UpdatePasswordUseCase(locator()))
     ..registerLazySingleton<AcceptCandidateUseCase>(
         () => AcceptCandidateUseCase(locator()))

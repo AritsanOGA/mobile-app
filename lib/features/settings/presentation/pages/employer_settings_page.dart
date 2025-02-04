@@ -144,7 +144,6 @@ class EmployerSettingsPage extends HookWidget {
                               SizedBox(height: 32.v),
                               GestureDetector(
                                 onTap: () {
-                                  
                                   Navigator.pushNamed(
                                       context, AppRoutes.updateEmployerPage);
                                 },
