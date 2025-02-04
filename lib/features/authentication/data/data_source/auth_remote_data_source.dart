@@ -24,7 +24,6 @@ import 'package:artisan_oga/features/authentication/domain/entities/skill_respon
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
-import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);

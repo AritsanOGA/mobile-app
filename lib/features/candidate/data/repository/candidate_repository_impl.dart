@@ -10,7 +10,6 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
-import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 

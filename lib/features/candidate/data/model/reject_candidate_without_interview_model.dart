@@ -1,4 +1,3 @@
-import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 
 class RejectCandidateWithoutInterviewModel extends RejectCandidateWithoutInterviewEntity {

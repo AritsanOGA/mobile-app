@@ -1,6 +1,5 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
-import 'package:equatable/equatable.dart';
 
 class CandidateProfileModel extends CandidateProfileEntity {
   const CandidateProfileModel({
