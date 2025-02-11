@@ -147,8 +147,8 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
 
   FutureOr<void> _onInitializeSkills(
       _InitializeSkills event, Emitter<CandidatesState> emit) {
-    final initialDropdownValues = List<String>.filled(
-        event.candidateSkills.length, '1'); // Default ratings
+    final initialDropdownValues =
+        List<String>.filled(event.candidateSkills.length, '1');
 
     emit(state.copyWith(
       candidateSkillList: event.candidateSkills,
@@ -168,21 +168,5 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     ));
   }
 
-  //    final initialRatings = List<int>.filled(event..length, 0); // Default rating is 0
-  // emit(SkillsRatingState(skills: event.skills, ratings: initialRatings));
-  //    final updatedRatings = List<int>.from(state.ratings);
-  // updatedRatings[event.skillIndex] = event.rating;
-  // emit(state.copyWith(ratings: updatedRatings));
-  //       final updatedSkills = List<CandidateSkillEntity>.from(state.dropdownList);
-  //   updatedSkills[event.skillIndex] =
-  //       updatedSkills[event.skillIndex].copyWith(: event.newRating);
-  // dropdownValues:
-  // List<int>.filled(state.dropdownList.length, 1);
-  // final updatedValues = List<String>.from(state.dropdownValues);
-  // updatedValues[event.skillIndex] = event.value;
-  // //  emit(SkillState(skills: updatedSkills));
-  // // final updatedValues = Map<int, int>.from(state.dropdownValue)
-  // //   ..[event.index] = event.value;
-  // emit(state.copyWith(dropdownList: updatedValues));
-  // emit(state.copyWith(dropdownValue: event.value, skillIndex: event.skillIndex));
+  
 }

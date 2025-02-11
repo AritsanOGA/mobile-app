@@ -11,6 +11,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -59,6 +60,7 @@ class AppRoutes {
       '/employer_signuppage_one_screen';
 
   static const String successfulPageScreen = '/successful_page_screen';
+  // static const String paymentPageScreen = '/payment_page_screen';
 
   static const String employerLoginPageScreen = '/employer_login_page_screen';
 
@@ -313,7 +315,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulPageScreen(),
         );
-
+      case paymentPageScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const PaymentPageScreen(),
+        );
       case feauredJobDetails:
         final model = settings.arguments as FeaturedJobResponseEntity;
         return AppPageRouteBuilder(

@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'widgets/viewhierarchy_item_widget.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:flutter/material.dart';
+
+import '../widgets/viewhierarchy_item_widget.dart';
 
 class PaymentPageScreen extends StatelessWidget {
   const PaymentPageScreen({Key? key}) : super(key: key);
@@ -9,45 +12,22 @@ class PaymentPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: AppBar(),
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Affordable Pricing',
+            ),
             body: Container(
                 width: double.maxFinite,
                 height: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                 child: SingleChildScrollView(
                     child: Column(children: [
-                  SizedBox(height: 26.v),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(right: 106.h),
-                          child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomImageView(
-                                    imagePath:
-                                        ImageConstant.imgArrowLeftOnprimary,
-                                    height: 16.adaptSize,
-                                    width: 16.adaptSize,
-                                    margin:
-                                        EdgeInsets.only(top: 2.v, bottom: 6.v),
-                                    onTap: () {
-                                      onTapImgArrowLeft(context);
-                                    }),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 91.h),
-                                    child: Text("Affordable Pricing",
-                                        style: theme.textTheme.titleLarge))
-                              ]))),
-                  SizedBox(height: 17.v),
-                  Container(
-                      width: 290.h,
-                      margin: EdgeInsets.only(left: 48.h, right: 47.h),
-                      child: Text("Select your preferred package",
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.bodyMedium)),
+                  Text(
+                      "Select from our flexible plans to suit your requirements",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.bodyMedium),
                   SizedBox(height: 22.v),
                   _buildViewHierarchy(context),
                   SizedBox(height: 87.v),

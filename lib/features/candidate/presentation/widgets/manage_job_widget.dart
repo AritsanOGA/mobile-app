@@ -116,21 +116,39 @@ class ManageJobWidget extends StatelessWidget {
           //                       .withOpacity(1))))
           // ]),
           SizedBox(height: 20.v),
-          CustomOutlinedButton(
-              onPressed: (() {
-                print('jobid ${employerJobResponseEntity.id}');
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.viewCandidatesPageScreen,
-                  arguments: {
-                    'jobId': employerJobResponseEntity.id.toString(),
-                    "jobIdentity": employerJobResponseEntity.identity
-                  },
-                );
-              }),
-              width: 153.h,
-              text: "View Applicants",
-              margin: EdgeInsets.only(left: 4.h)),
+          Row(
+            children: [
+              CustomOutlinedButton(
+                  onPressed: (() {
+                    print('jobid ${employerJobResponseEntity.id}');
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.viewCandidatesPageScreen,
+                      arguments: {
+                        'jobId': employerJobResponseEntity.id.toString(),
+                        "jobIdentity": employerJobResponseEntity.identity
+                      },
+                    );
+                  }),
+                  width: 153.h,
+                  text: "View Applicants",
+                  margin: EdgeInsets.only(left: 4.h)),
+              SizedBox(
+                width: 20,
+              ),
+              CustomOutlinedButton(
+                  onPressed: (() {
+                    print('jobid ${employerJobResponseEntity.id}');
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.paymentPageScreen,
+                    );
+                  }),
+                  width: 153.h,
+                  text: "Pay Now",
+                  margin: EdgeInsets.only(left: 4.h)),
+            ],
+          ),
           SizedBox(height: 20.v),
           Padding(
               padding: EdgeInsets.only(left: 4.h),

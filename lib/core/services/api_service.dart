@@ -80,8 +80,6 @@ class ApiServiceImpl implements ApiService {
           print("Message: ${e.message}");
           print("Data: ${e.response?.data}");
           handler.next(e); // Continue error handling
-
-          
         },
         onRequest: (options, handler) {
           print("REQUEST: ${options.method} ${options.uri}");
@@ -95,7 +93,7 @@ class ApiServiceImpl implements ApiService {
               "RESPONSE [${response.statusCode}]: ${response.requestOptions.uri}");
           print("Headers: ${response.headers}");
           print("Data: ${response.data}");
-          handler.next(response); 
+          handler.next(response);
         },
       ),
     );
@@ -181,9 +179,10 @@ class ApiServiceImpl implements ApiService {
       if (response.statusCode != null &&
           response.statusCode! >= 300 &&
           response.statusCode! < 500) {
+        print('my error ${response.data?['msg']}');
         throw ServerException(
           trace: StackTrace.current,
-          message: ' ${response.data?['message'] ?? 'Something went wronng'}',
+          message: '${response.data?['msg'] ?? 'Something went wronng'}',
         );
       } else if (response.statusCode != null && response.statusCode! >= 500) {
         throw ServerException(

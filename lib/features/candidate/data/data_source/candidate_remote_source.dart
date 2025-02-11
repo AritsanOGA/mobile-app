@@ -35,7 +35,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
         url: AppApiEndpoint.acceptCandidate,
         body: AcceptCandidateModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
-
+    print('what $result');
     return true;
   }
 
