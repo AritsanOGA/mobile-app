@@ -16,29 +16,7 @@ class CustomElevatedButton extends StatelessWidget {
       this.width,
       this.decoration,
       this.isBusy = false});
-  // CustomElevatedButton({
-  //   Key? key,
-  //   this.decoration,
-  //   this.leftIcon,
-  //   this.rightIcon,
-  //   EdgeInsets? margin,
-  //   VoidCallback? onPressed,
-  //   ButtonStyle? buttonStyle,
-  //   Alignment? alignment,
-  //   TextStyle? buttonTextStyle,
-  //   bool? isDisabled,
-  //   double? height,
-  //   double? width,
-  //   required String text,
-  // }) : super(
-  //         key: key,
-  //       );
 
-  // final BoxDecoration? decoration;
-
-  // final Widget? leftIcon;
-
-  // final Widget? rightIcon;
 
   @override
   Widget build(BuildContext context) {

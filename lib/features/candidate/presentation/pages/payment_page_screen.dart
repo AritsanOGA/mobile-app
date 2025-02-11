@@ -41,9 +41,9 @@ class PaymentPageScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildViewHierarchy(BuildContext context) {
-    var planNames = ["Free", "Silver", "Gold", "Platinum"];
+    var planNames = ["Silver", "Gold", "Platinum"];
 
-    var planPrices = ["0.00", "25,000", "35,000", "50,000"];
+    var planPrices = ["25,000", "35,000", "50,000"];
     return Padding(
         padding: EdgeInsets.only(left: 3.h, right: 2.h),
         child: GridView.builder(

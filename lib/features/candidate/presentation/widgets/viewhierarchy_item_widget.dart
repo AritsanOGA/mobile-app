@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:hive/hive.dart';
@@ -30,7 +31,7 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 370.v,
+      height: 390.v,
       width: 180.h,
       child: Stack(
         alignment: Alignment.topCenter,
@@ -49,7 +50,7 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20.v),
+                  SizedBox(height: 15.v),
                   Align(
                     alignment: Alignment.center,
                     child: Text(
@@ -65,13 +66,11 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                       style: CustomTextStyles.titleSmallSecondaryContainer,
                     ),
                   ),
-                  SizedBox(height: 14.v),
+                  SizedBox(height: 10.v),
                   Row(
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgLetsIconsCheckFill,
-                        height: 20.adaptSize,
-                        width: 20.adaptSize,
+                      SvgPicture.asset(
+                        ImageConstant.imgLetsIconsCheckFill,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
@@ -90,10 +89,29 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                     padding: EdgeInsets.only(left: 1.h),
                     child: Row(
                       children: [
-                        CustomImageView(
-                          imagePath: ImageConstant.imgIcRoundCancel,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                        SvgPicture.asset(
+                          ImageConstant.imgIcRoundCancel,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 4.h,
+                            top: 3.v,
+                          ),
+                          child: Text(
+                            "2-3 Verified Candidates",
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 13.v),
+                  Padding(
+                    padding: EdgeInsets.only(left: 1.h),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          ImageConstant.imgIcRoundCancel,
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -113,10 +131,8 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                     padding: EdgeInsets.only(left: 1.h),
                     child: Row(
                       children: [
-                        CustomImageView(
-                          imagePath: ImageConstant.imgIcRoundCancel,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                        SvgPicture.asset(
+                          ImageConstant.imgIcRoundCancel,
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -136,10 +152,8 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                     padding: EdgeInsets.only(left: 1.h),
                     child: Row(
                       children: [
-                        CustomImageView(
-                          imagePath: ImageConstant.imgIcRoundCancel,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                        SvgPicture.asset(
+                          ImageConstant.imgIcRoundCancel,
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -154,23 +168,41 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 23.v),
-                  _buildSelect(
-                      context, "Package", widget.planPrices.toString()),
+                  SizedBox(height: 15.v),
+                  Center(
+                    child: Container(
+                      height: 40.h,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: theme.colorScheme.primary.withOpacity(0.8),
+                      ),
+                      child: Center(
+                          child: Text(
+                        'Select',
+                        style: CustomTextStyles.titleMediumGray50_1,
+                      )),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
-          CustomElevatedButton(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(0)),
-            // height: 29.v,
-            // width: 122.h,
-            text: widget.planName.toString(), onPressed: () {},
-            // buttonStyle: CustomButtonStyles.outlineBlack,
-            // buttonTextStyle: CustomTextStyles.titleMediumOnPrimaryContainer,
-            // alignment: Alignment.topCenter,
+          Positioned(
+            child: Container(
+              height: 40.h,
+              width: 120,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: theme.colorScheme.primary,
+              ),
+              child: Center(
+                  child: Text(
+                widget.planName.toString(),
+                style: CustomTextStyles.titleMediumGray50_1,
+              )),
+            ),
           ),
-          // _buildFree(context),
         ],
       ),
     );
