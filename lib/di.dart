@@ -3,7 +3,7 @@ import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/services/local_storage.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
-import 'package:artisan_oga/features/authentication/data/reposotories/auth_repository_impl.dart';
+import 'package:artisan_oga/features/authentication/data/reposItories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';

@@ -18,8 +18,11 @@ class AppApiEndpoint {
 
   static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
   static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
-
-  static Uri verifyCode = baseUri.replace(path: 'api/v1/verify-code');
+  static Uri verifyCode = baseUri.replace(path: '/api/v1/verify-code');
+  static Uri changePassword = baseUri.replace(path: '/api/v1/change-password');
+  static Uri verifyForgotPasswordCode =
+      baseUri.replace(path: '/api/v1/verify-password-reset-code');
+  static Uri forgotPassword = baseUri.replace(path: '/api/v1/send-reset-code');
 
   //! Dashboard
   static Uri getFeaturedCandidates =
@@ -53,6 +56,8 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/employer/accept-candidate');
   static Uri rejectCandidate =
       baseUri.replace(path: '/api/v1/employer/reject-candidate');
+        static Uri rejectCandidateWithoutInterview =
+      baseUri.replace(path: '/api/v1/employer/reject-candidate-without-interview');
   static Uri candidateProfile =
       baseUri.replace(path: '/api/v1/candidate/get-profile');
   static Uri getCandidateSkill =

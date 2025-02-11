@@ -11,7 +11,7 @@ class HomeState with _$HomeState {
       String? educationLevel,
       String? compensationType,
       String? package,
-          DateTime? applicationTime,
+      DateTime? applicationTime,
       String? availablity,
       @Default([]) List<FeaturedCandidatesEntity> featureCandidateList,
       @Default([]) List<AllJobResponseEntity> allJobList,
@@ -19,12 +19,11 @@ class HomeState with _$HomeState {
       @Default([]) List<FeaturedJobResponseEntity> featuredJobList,
       @Default([]) List<JobSeekerJobResponseEntity> jobSeekerJobList,
       @Default([]) List<SkillResponseEntity> skills,
-         @Default([]) List<SkillResponseEntity> skill,
+      @Default([]) List<SkillResponseEntity> skill,
       @Default([]) List<CategoryResponseEntity> categoryList,
       @Default([]) List<CountryResponseEntity> countries,
       @Default([]) List<StateResponseEntity> states,
       CategoryResponseEntity? category,
-    
       CountryResponseEntity? country,
       StateResponseEntity? state,
       @Default(PostJobEntity(
@@ -73,7 +72,7 @@ class HomeState with _$HomeState {
       ])
       List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
-          @Default(0) int selectedIndex,
+      @Default(0) int selectedIndex,
       @Default(
           ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
       List<String> skillLevelList,

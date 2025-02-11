@@ -5,21 +5,26 @@ import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/forgot_password_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/login_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_employer_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_job_seeker_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/update_password_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/verify_code_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
+import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
@@ -32,6 +37,9 @@ abstract class AuthRemoteDataSource {
   Future<List<CategoryResponseEntity>> getCategory();
   Future<List<SkillResponseEntity>> getSkill(String categoryId);
   Future<bool> verifyCode(VerifyCodeEntity entity);
+  Future<bool> forgotPassword(ForgotPasswordEntity entity);
+  Future<bool> updatePassword(UpdatePasswordEntity entity);
+  Future<bool> verifyForgotPasswordCode(VerifyCodeEntity entity);
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -187,5 +195,32 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       body: LoginModel.fromEntity(entity).toJson(),
     );
     return AuthResultModel.fromJson(result as Map<String, dynamic>);
+  }
+
+  @override
+  Future<bool> updatePassword(UpdatePasswordEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.updatePassword,
+      body: UpdatePasswordModel.fromEntity(entity).toJson(),
+    );
+    return true;
+  }
+
+  @override
+  Future<bool> forgotPassword(ForgotPasswordEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.forgotPassword,
+      body: ForgotPasswordModel.fromEntity(entity).toJson(),
+    );
+    return true;
+  }
+
+  @override
+  Future<bool> verifyForgotPasswordCode(VerifyCodeEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.verifyForgotPasswordCode,
+      body: VerifyCodeModel.fromEntity(entity).toJson(),
+    );
+    return true;
   }
 }

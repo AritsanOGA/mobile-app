@@ -6,17 +6,22 @@ import 'package:artisan_oga/features/candidate/data/model/candidate_profile_mode
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
   Future<List<CandidateSkillEntity>> getCandidateSkills(String identityId);
   Future<CandidateProfileEntity> getCandidateProfile(String identityId);
   Future<bool> rejectCandidate(RejectCandidateEntity entity);
+  Future<bool> rejectCandidateWithoutInterview(
+      RejectCandidateWithoutInterviewEntity entity);
+
   Future<bool> acceptCandidate(AcceptCandidateEntity entity);
 }
 
@@ -95,5 +100,16 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
     return CandidateProfileModel.fromJson(
       result['data'] as Map<String, dynamic>,
     );
+  }
+
+  @override
+  Future<bool> rejectCandidateWithoutInterview(
+      RejectCandidateWithoutInterviewEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.rejectCandidateWithoutInterview,
+        body: RejectCandidateWithoutInterviewModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
   }
 }

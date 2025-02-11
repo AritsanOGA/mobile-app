@@ -20,6 +20,8 @@ mixin _$CandidatesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -32,6 +34,8 @@ mixin _$CandidatesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -44,6 +48,8 @@ mixin _$CandidatesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -57,6 +63,8 @@ mixin _$CandidatesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -68,6 +76,8 @@ mixin _$CandidatesEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -79,6 +89,8 @@ mixin _$CandidatesEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -174,6 +186,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -189,6 +203,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -204,6 +220,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -223,6 +241,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -237,6 +257,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -251,6 +273,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -342,6 +366,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -357,6 +383,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -372,6 +400,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -391,6 +421,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -405,6 +437,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -419,6 +453,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -441,6 +477,193 @@ abstract class _RejectCandidate implements CandidatesEvent {
   @JsonKey(ignore: true)
   _$$RejectCandidateImplCopyWith<_$RejectCandidateImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RejectCandidateWithoutInterviewImplCopyWith<$Res> {
+  factory _$$RejectCandidateWithoutInterviewImplCopyWith(
+          _$RejectCandidateWithoutInterviewImpl value,
+          $Res Function(_$RejectCandidateWithoutInterviewImpl) then) =
+      __$$RejectCandidateWithoutInterviewImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({RejectCandidateWithoutInterviewEntity param});
+}
+
+/// @nodoc
+class __$$RejectCandidateWithoutInterviewImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res,
+        _$RejectCandidateWithoutInterviewImpl>
+    implements _$$RejectCandidateWithoutInterviewImplCopyWith<$Res> {
+  __$$RejectCandidateWithoutInterviewImplCopyWithImpl(
+      _$RejectCandidateWithoutInterviewImpl _value,
+      $Res Function(_$RejectCandidateWithoutInterviewImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? param = null,
+  }) {
+    return _then(_$RejectCandidateWithoutInterviewImpl(
+      null == param
+          ? _value.param
+          : param // ignore: cast_nullable_to_non_nullable
+              as RejectCandidateWithoutInterviewEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RejectCandidateWithoutInterviewImpl
+    implements _RejectCandidateWithoutInterview {
+  const _$RejectCandidateWithoutInterviewImpl(this.param);
+
+  @override
+  final RejectCandidateWithoutInterviewEntity param;
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.rejectCandidateWithoutInterview(param: $param)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RejectCandidateWithoutInterviewImpl &&
+            (identical(other.param, param) || other.param == param));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, param);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RejectCandidateWithoutInterviewImplCopyWith<
+          _$RejectCandidateWithoutInterviewImpl>
+      get copyWith => __$$RejectCandidateWithoutInterviewImplCopyWithImpl<
+          _$RejectCandidateWithoutInterviewImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return rejectCandidateWithoutInterview(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return rejectCandidateWithoutInterview?.call(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (rejectCandidateWithoutInterview != null) {
+      return rejectCandidateWithoutInterview(param);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return rejectCandidateWithoutInterview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return rejectCandidateWithoutInterview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (rejectCandidateWithoutInterview != null) {
+      return rejectCandidateWithoutInterview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RejectCandidateWithoutInterview implements CandidatesEvent {
+  const factory _RejectCandidateWithoutInterview(
+          final RejectCandidateWithoutInterviewEntity param) =
+      _$RejectCandidateWithoutInterviewImpl;
+
+  RejectCandidateWithoutInterviewEntity get param;
+  @JsonKey(ignore: true)
+  _$$RejectCandidateWithoutInterviewImplCopyWith<
+          _$RejectCandidateWithoutInterviewImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -511,6 +734,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -526,6 +751,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -541,6 +768,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -560,6 +789,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -574,6 +805,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -588,6 +821,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -680,6 +915,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -695,6 +932,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -710,6 +949,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -729,6 +970,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -743,6 +986,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -757,6 +1002,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -856,6 +1103,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -871,6 +1120,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -886,6 +1137,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -905,6 +1158,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -919,6 +1174,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -933,6 +1190,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -1025,6 +1284,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -1040,6 +1301,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -1055,6 +1318,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -1074,6 +1339,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -1088,6 +1355,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -1102,6 +1371,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -1202,6 +1473,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult when<TResult extends Object?>({
     required TResult Function(AcceptCandidateEntity param) acceptCandidate,
     required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
     required TResult Function(String jobId) getAssignedCandidate,
     required TResult Function(String identityId) getCandidateSkill,
     required TResult Function(List<CandidateSkillEntity> candidateSkills)
@@ -1217,6 +1490,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult? Function(String jobId)? getAssignedCandidate,
     TResult? Function(String identityId)? getCandidateSkill,
     TResult? Function(List<CandidateSkillEntity> candidateSkills)?
@@ -1232,6 +1507,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AcceptCandidateEntity param)? acceptCandidate,
     TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
     TResult Function(String jobId)? getAssignedCandidate,
     TResult Function(String identityId)? getCandidateSkill,
     TResult Function(List<CandidateSkillEntity> candidateSkills)?
@@ -1251,6 +1528,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult map<TResult extends Object?>({
     required TResult Function(_AcceptCandidate value) acceptCandidate,
     required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
     required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
     required TResult Function(_GetCandidateSkill value) getCandidateSkill,
     required TResult Function(_InitializeSkills value) initializeSkills,
@@ -1265,6 +1544,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AcceptCandidate value)? acceptCandidate,
     TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult? Function(_InitializeSkills value)? initializeSkills,
@@ -1279,6 +1560,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AcceptCandidate value)? acceptCandidate,
     TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
     TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
     TResult Function(_GetCandidateSkill value)? getCandidateSkill,
     TResult Function(_InitializeSkills value)? initializeSkills,
@@ -1318,6 +1601,9 @@ mixin _$CandidatesState {
       throw _privateConstructorUsedError;
   GetCandidateSkillState get getCandidateSkillState =>
       throw _privateConstructorUsedError;
+  RejectCandidateWithoutInterviewState
+      get rejectCandidateWithoutInterviewState =>
+          throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get jobId => throw _privateConstructorUsedError;
   String? get skillRating => throw _privateConstructorUsedError;
@@ -1340,6 +1626,8 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1362,6 +1650,8 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1384,6 +1674,8 @@ mixin _$CandidatesState {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1433,6 +1725,7 @@ abstract class $CandidatesStateCopyWith<$Res> {
       GetAssignedCandidateState getAssignedCandidateState,
       GetCandidateProfileState getCandidateProfileState,
       GetCandidateSkillState getCandidateSkillState,
+      RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
       String? skillRating,
@@ -1464,6 +1757,7 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? getAssignedCandidateState = null,
     Object? getCandidateProfileState = null,
     Object? getCandidateSkillState = null,
+    Object? rejectCandidateWithoutInterviewState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? skillRating = freezed,
@@ -1500,6 +1794,11 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.getCandidateSkillState
           : getCandidateSkillState // ignore: cast_nullable_to_non_nullable
               as GetCandidateSkillState,
+      rejectCandidateWithoutInterviewState: null ==
+              rejectCandidateWithoutInterviewState
+          ? _value.rejectCandidateWithoutInterviewState
+          : rejectCandidateWithoutInterviewState // ignore: cast_nullable_to_non_nullable
+              as RejectCandidateWithoutInterviewState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1559,6 +1858,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetAssignedCandidateState getAssignedCandidateState,
       GetCandidateProfileState getCandidateProfileState,
       GetCandidateSkillState getCandidateSkillState,
+      RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
       String? skillRating,
@@ -1588,6 +1888,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getAssignedCandidateState = null,
     Object? getCandidateProfileState = null,
     Object? getCandidateSkillState = null,
+    Object? rejectCandidateWithoutInterviewState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? skillRating = freezed,
@@ -1624,6 +1925,11 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getCandidateSkillState
           : getCandidateSkillState // ignore: cast_nullable_to_non_nullable
               as GetCandidateSkillState,
+      rejectCandidateWithoutInterviewState: null ==
+              rejectCandidateWithoutInterviewState
+          ? _value.rejectCandidateWithoutInterviewState
+          : rejectCandidateWithoutInterviewState // ignore: cast_nullable_to_non_nullable
+              as RejectCandidateWithoutInterviewState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1678,6 +1984,8 @@ class _$InitialImpl implements _Initial {
       this.getAssignedCandidateState = GetAssignedCandidateState.idle,
       this.getCandidateProfileState = GetCandidateProfileState.idle,
       this.getCandidateSkillState = GetCandidateSkillState.idle,
+      this.rejectCandidateWithoutInterviewState =
+          RejectCandidateWithoutInterviewState.idle,
       this.errorMessage,
       this.jobId,
       this.skillRating,
@@ -1734,6 +2042,10 @@ class _$InitialImpl implements _Initial {
   @JsonKey()
   final GetCandidateSkillState getCandidateSkillState;
   @override
+  @JsonKey()
+  final RejectCandidateWithoutInterviewState
+      rejectCandidateWithoutInterviewState;
+  @override
   final String? errorMessage;
   @override
   final String? jobId;
@@ -1787,7 +2099,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, errorMessage: $errorMessage, jobId: $jobId, skillRating: $skillRating, skillIndex: $skillIndex, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, dropdownValues: $dropdownValues, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, skillRating: $skillRating, skillIndex: $skillIndex, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, dropdownValues: $dropdownValues, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -1809,6 +2121,10 @@ class _$InitialImpl implements _Initial {
                 other.getCandidateProfileState == getCandidateProfileState) &&
             (identical(other.getCandidateSkillState, getCandidateSkillState) ||
                 other.getCandidateSkillState == getCandidateSkillState) &&
+            (identical(other.rejectCandidateWithoutInterviewState,
+                    rejectCandidateWithoutInterviewState) ||
+                other.rejectCandidateWithoutInterviewState ==
+                    rejectCandidateWithoutInterviewState) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.jobId, jobId) || other.jobId == jobId) &&
@@ -1839,6 +2155,7 @@ class _$InitialImpl implements _Initial {
       getAssignedCandidateState,
       getCandidateProfileState,
       getCandidateSkillState,
+      rejectCandidateWithoutInterviewState,
       errorMessage,
       jobId,
       skillRating,
@@ -1866,6 +2183,8 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1885,6 +2204,7 @@ class _$InitialImpl implements _Initial {
         getAssignedCandidateState,
         getCandidateProfileState,
         getCandidateSkillState,
+        rejectCandidateWithoutInterviewState,
         errorMessage,
         jobId,
         skillRating,
@@ -1907,6 +2227,8 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1926,6 +2248,7 @@ class _$InitialImpl implements _Initial {
         getAssignedCandidateState,
         getCandidateProfileState,
         getCandidateSkillState,
+        rejectCandidateWithoutInterviewState,
         errorMessage,
         jobId,
         skillRating,
@@ -1948,6 +2271,8 @@ class _$InitialImpl implements _Initial {
             GetAssignedCandidateState getAssignedCandidateState,
             GetCandidateProfileState getCandidateProfileState,
             GetCandidateSkillState getCandidateSkillState,
+            RejectCandidateWithoutInterviewState
+                rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
             String? skillRating,
@@ -1969,6 +2294,7 @@ class _$InitialImpl implements _Initial {
           getAssignedCandidateState,
           getCandidateProfileState,
           getCandidateSkillState,
+          rejectCandidateWithoutInterviewState,
           errorMessage,
           jobId,
           skillRating,
@@ -2020,6 +2346,8 @@ abstract class _Initial implements CandidatesState {
       final GetAssignedCandidateState getAssignedCandidateState,
       final GetCandidateProfileState getCandidateProfileState,
       final GetCandidateSkillState getCandidateSkillState,
+      final RejectCandidateWithoutInterviewState
+          rejectCandidateWithoutInterviewState,
       final String? errorMessage,
       final String? jobId,
       final String? skillRating,
@@ -2043,6 +2371,8 @@ abstract class _Initial implements CandidatesState {
   GetCandidateProfileState get getCandidateProfileState;
   @override
   GetCandidateSkillState get getCandidateSkillState;
+  @override
+  RejectCandidateWithoutInterviewState get rejectCandidateWithoutInterviewState;
   @override
   String? get errorMessage;
   @override
