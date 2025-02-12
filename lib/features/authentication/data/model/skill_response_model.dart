@@ -8,5 +8,5 @@ class SkillResponseModel extends SkillResponseEntity {
       SkillResponseModel(
           id: json['id'] as int? ?? 0,
           name: json['name'] as String? ?? '',
-          categoryId: json['category_id'] as int ?? 0);
+          categoryId: json['category_id'] as int);
 }

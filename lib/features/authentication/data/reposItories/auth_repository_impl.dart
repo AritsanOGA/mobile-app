@@ -72,6 +72,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.registerEmployer(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -116,6 +118,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.registerJobSeeker(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -137,6 +141,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.verifyCode(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -177,6 +183,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.forgotPassword(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -199,6 +207,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.updatePassword(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -221,6 +230,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final result = await authRemoteDataSource.verifyForgotPasswordCode(param);
       // await localDataSource.cacheUser(result);
       // UserService().authData = result;
+      print(result);
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));

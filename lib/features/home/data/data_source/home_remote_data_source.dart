@@ -139,6 +139,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
       headers: userService.authorizationHeader,
       body: PostJobModel.fromEntity(entity).toJson(),
     ) as Map<String, dynamic>;
+        print(result);
 
     return true;
   }

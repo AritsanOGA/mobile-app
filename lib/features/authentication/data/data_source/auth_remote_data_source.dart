@@ -68,6 +68,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'Accept': 'application/json',
       },
     );
+    print(result);
     return true;
   }
 
@@ -149,8 +150,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity) async {
-    print('bbbo ${await RegisterJobSeekerModel.fromEntity(entity).toJson()}');
-    // try {
     final formData = await RegisterJobSeekerModel.fromEntity(entity).toJson();
     log('okay ${formData.fields}');
     log('okay ${formData.files}');
@@ -162,14 +161,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'Accept': 'application/json',
       },
     );
-    //  print('hh${body}')
-    // } catch (e, stackTrace) {
-    //   print('Error when registering: $e');
-    //   print('StackTrace: $stackTrace');
-    //   throw Exception('Failed to register');
-    // }
+    print(result);
 
-    // print('hhhh$body');
     return true;
   }
 
@@ -183,6 +176,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         'Accept': 'application/json',
       },
     );
+    print(result);
 
     return true;
   }
@@ -202,6 +196,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       url: AppApiEndpoint.updatePassword,
       body: UpdatePasswordModel.fromEntity(entity).toJson(),
     );
+    print(result);
+
     return true;
   }
 
@@ -211,6 +207,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       url: AppApiEndpoint.forgotPassword,
       body: ForgotPasswordModel.fromEntity(entity).toJson(),
     );
+    print(result);
+
     return true;
   }
 
@@ -220,6 +218,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       url: AppApiEndpoint.verifyForgotPasswordCode,
       body: VerifyCodeModel.fromEntity(entity).toJson(),
     );
+    print(result);
+
     return true;
   }
 }

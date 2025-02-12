@@ -37,6 +37,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
         'Accept': 'application/json',
       },
     );
+    print(result);
 
     return true;
   }
@@ -53,20 +54,6 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     return GetEmployerResponseModel.fromJson(
       result['data'] as Map<String, dynamic>,
     );
-    // Ensure 'data' exists and is a Map
-    //   if (result['data'] is Map<String, dynamic>) {
-    //     return GetEmployerResponseModel.fromJson(
-    //       result['data'] as Map<String, dynamic>,
-    //     );
-
-    //   } else {
-    //     throw Exception('Invalid data format received from API.');
-    //   }
-    // } catch (e, stackTrace) {
-    //   print('Error fetching employer profile: $e');
-    //   print('StackTrace: $stackTrace');
-    //   throw Exception(
-    //       'Failed to fetch employer profile. Please try again later.');
   }
 
   @override
@@ -88,6 +75,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
       headers: userService.authorizationHeader,
       body: UpdateEmployerProfileModel.fromEntity(entity).toJson(),
     );
+    print(result);
 
     return true;
   }
@@ -100,6 +88,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
       headers: userService.authorizationHeader,
       body: UpdateJobSeekerProfileModel.fromEntity(entity).toJson(),
     );
+    print(result);
 
     return true;
   }

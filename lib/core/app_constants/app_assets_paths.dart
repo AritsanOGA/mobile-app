@@ -3,5 +3,5 @@ class AppAsset {
 
   static const String dropdown = '${_basePathForIcon}dropdown.svg';
 
-  static const String _basePathForImage = 'assets/images/';
+//  static const String _basePathForImage = 'assets/images/';
 }

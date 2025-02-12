@@ -40,6 +40,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
         url: AppApiEndpoint.acceptCandidate,
         body: AcceptCandidateModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
+    print(result);
 
     return true;
   }
@@ -67,6 +68,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
         url: AppApiEndpoint.rejectCandidate,
         body: RejectCandidateModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
+    print(result);
 
     return true;
   }
@@ -109,6 +111,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
         url: AppApiEndpoint.rejectCandidateWithoutInterview,
         body: RejectCandidateWithoutInterviewModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
+    print(result);
 
     return true;
   }

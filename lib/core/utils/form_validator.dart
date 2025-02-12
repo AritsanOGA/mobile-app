@@ -18,9 +18,9 @@ class FormValidation {
       return 'Password must be at least 8 characters long';
     }
     // Regex to validate password\\\\
-    bool validatePassword = RegExp(
-            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$')
-        .hasMatch(password);
+    // bool validatePassword = RegExp(
+    //         r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$')
+    //     .hasMatch(password);
 
     // if (!validatePassword) {
     //   return 'Password include at least one uppercase letter, one lowercase letter, one number, and one special character';
