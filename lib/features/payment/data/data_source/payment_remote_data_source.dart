@@ -10,7 +10,7 @@ import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
 
 abstract class PaymentRemoteDataSource {
-  Future<GetInvoiceEntity> getInvoice();
+  Future<GetInvoiceEntity> getInvoice(String identity);
 
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity);
 
@@ -35,10 +35,10 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   }
 
   @override
-  Future<GetInvoiceEntity> getInvoice() async {
+  Future<GetInvoiceEntity> getInvoice(String identity) async {
     final result = await api.get(
-      url: AppApiEndpoint.getInvoice,
-    ) as Map<String, dynamic>;
+        url: AppApiEndpoint.getInvoice,
+        queryParameters: {"identity": identity}) as Map<String, dynamic>;
 
     return GetInvoiceModel.fromJson(
       result['data'] as Map<String, dynamic>,

@@ -7,11 +7,11 @@ import 'package:artisan_oga/features/payment/domain/repositories/payment_reposit
 import 'package:dartz/dartz.dart';
 
 class GetInvoiceUsecase
-    implements UseCase<GetInvoiceEntity, NoParams> {
+    implements UseCase<GetInvoiceEntity, String> {
   GetInvoiceUsecase(this.repository);
   final PaymentRepository repository;
   @override
-  Future<Either<Failure, GetInvoiceEntity>> call(NoParams params) {
-    return repository.getInvoice();
+  Future<Either<Failure, GetInvoiceEntity>> call(String identity) {
+    return repository.getInvoice(identity);
   }
 }

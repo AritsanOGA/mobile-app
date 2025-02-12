@@ -23,7 +23,7 @@ mixin _$PaymentEvent {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,7 +32,7 @@ mixin _$PaymentEvent {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,7 +41,7 @@ mixin _$PaymentEvent {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -136,7 +136,7 @@ class _$StartedImpl implements _Started {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) {
     return started();
   }
@@ -148,7 +148,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) {
     return started?.call();
   }
@@ -160,7 +160,7 @@ class _$StartedImpl implements _Started {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -284,7 +284,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) {
     return transferPayment(param);
   }
@@ -296,7 +296,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) {
     return transferPayment?.call(param);
   }
@@ -308,7 +308,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) {
     if (transferPayment != null) {
@@ -437,7 +437,7 @@ class _$CardPaymentImpl implements _CardPayment {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) {
     return cardPayment(param);
   }
@@ -449,7 +449,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) {
     return cardPayment?.call(param);
   }
@@ -461,7 +461,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) {
     if (cardPayment != null) {
@@ -590,7 +590,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) {
     return postInvoice(param);
   }
@@ -602,7 +602,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) {
     return postInvoice?.call(param);
   }
@@ -614,7 +614,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) {
     if (postInvoice != null) {
@@ -678,6 +678,8 @@ abstract class _$$GetInvoiceImplCopyWith<$Res> {
   factory _$$GetInvoiceImplCopyWith(
           _$GetInvoiceImpl value, $Res Function(_$GetInvoiceImpl) then) =
       __$$GetInvoiceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String identity});
 }
 
 /// @nodoc
@@ -687,26 +689,51 @@ class __$$GetInvoiceImplCopyWithImpl<$Res>
   __$$GetInvoiceImplCopyWithImpl(
       _$GetInvoiceImpl _value, $Res Function(_$GetInvoiceImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? identity = null,
+  }) {
+    return _then(_$GetInvoiceImpl(
+      null == identity
+          ? _value.identity
+          : identity // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetInvoiceImpl implements _GetInvoice {
-  const _$GetInvoiceImpl();
+  const _$GetInvoiceImpl(this.identity);
+
+  @override
+  final String identity;
 
   @override
   String toString() {
-    return 'PaymentEvent.getInvoice()';
+    return 'PaymentEvent.getInvoice(identity: $identity)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetInvoiceImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetInvoiceImpl &&
+            (identical(other.identity, identity) ||
+                other.identity == identity));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, identity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInvoiceImplCopyWith<_$GetInvoiceImpl> get copyWith =>
+      __$$GetInvoiceImplCopyWithImpl<_$GetInvoiceImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -716,9 +743,9 @@ class _$GetInvoiceImpl implements _GetInvoice {
         transferPayment,
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
-    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoice,
   }) {
-    return getInvoice();
+    return getInvoice(identity);
   }
 
   @override
@@ -728,9 +755,9 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
-    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoice,
   }) {
-    return getInvoice?.call();
+    return getInvoice?.call(identity);
   }
 
   @override
@@ -740,11 +767,11 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
-    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoice,
     required TResult orElse(),
   }) {
     if (getInvoice != null) {
-      return getInvoice();
+      return getInvoice(identity);
     }
     return orElse();
   }
@@ -791,12 +818,18 @@ class _$GetInvoiceImpl implements _GetInvoice {
 }
 
 abstract class _GetInvoice implements PaymentEvent {
-  const factory _GetInvoice() = _$GetInvoiceImpl;
+  const factory _GetInvoice(final String identity) = _$GetInvoiceImpl;
+
+  String get identity;
+  @JsonKey(ignore: true)
+  _$$GetInvoiceImplCopyWith<_$GetInvoiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$PaymentState {
   GetInvoiceEntity? get getInvoice => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
   PostInvoiceState get postInvoiceState => throw _privateConstructorUsedError;
   TransferPaymentState get transferPaymentState =>
       throw _privateConstructorUsedError;
@@ -806,6 +839,7 @@ mixin _$PaymentState {
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
@@ -817,6 +851,7 @@ mixin _$PaymentState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
@@ -828,6 +863,7 @@ mixin _$PaymentState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
@@ -866,6 +902,7 @@ abstract class $PaymentStateCopyWith<$Res> {
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      String? errorMessage,
       PostInvoiceState postInvoiceState,
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
@@ -886,6 +923,7 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? errorMessage = freezed,
     Object? postInvoiceState = null,
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
@@ -896,6 +934,10 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
       postInvoiceState: null == postInvoiceState
           ? _value.postInvoiceState
           : postInvoiceState // ignore: cast_nullable_to_non_nullable
@@ -926,6 +968,7 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      String? errorMessage,
       PostInvoiceState postInvoiceState,
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
@@ -944,6 +987,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? errorMessage = freezed,
     Object? postInvoiceState = null,
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
@@ -954,6 +998,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
       postInvoiceState: null == postInvoiceState
           ? _value.postInvoiceState
           : postInvoiceState // ignore: cast_nullable_to_non_nullable
@@ -979,6 +1027,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.getInvoice,
+      this.errorMessage,
       this.postInvoiceState = PostInvoiceState.idle,
       this.transferPaymentState = TransferPaymentState.idle,
       this.cardPaymentState = CardPaymentState.idle,
@@ -986,6 +1035,8 @@ class _$InitialImpl implements _Initial {
 
   @override
   final GetInvoiceEntity? getInvoice;
+  @override
+  final String? errorMessage;
   @override
   @JsonKey()
   final PostInvoiceState postInvoiceState;
@@ -1001,7 +1052,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PaymentState.initial(getInvoice: $getInvoice, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState)';
+    return 'PaymentState.initial(getInvoice: $getInvoice, errorMessage: $errorMessage, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState)';
   }
 
   @override
@@ -1011,6 +1062,8 @@ class _$InitialImpl implements _Initial {
             other is _$InitialImpl &&
             (identical(other.getInvoice, getInvoice) ||
                 other.getInvoice == getInvoice) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
             (identical(other.postInvoiceState, postInvoiceState) ||
                 other.postInvoiceState == postInvoiceState) &&
             (identical(other.transferPaymentState, transferPaymentState) ||
@@ -1022,8 +1075,14 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, getInvoice, postInvoiceState,
-      transferPaymentState, cardPaymentState, getInvoiceState);
+  int get hashCode => Object.hash(
+      runtimeType,
+      getInvoice,
+      errorMessage,
+      postInvoiceState,
+      transferPaymentState,
+      cardPaymentState,
+      getInvoiceState);
 
   @JsonKey(ignore: true)
   @override
@@ -1036,14 +1095,15 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState)
         initial,
   }) {
-    return initial(getInvoice, postInvoiceState, transferPaymentState,
-        cardPaymentState, getInvoiceState);
+    return initial(getInvoice, errorMessage, postInvoiceState,
+        transferPaymentState, cardPaymentState, getInvoiceState);
   }
 
   @override
@@ -1051,14 +1111,15 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState)?
         initial,
   }) {
-    return initial?.call(getInvoice, postInvoiceState, transferPaymentState,
-        cardPaymentState, getInvoiceState);
+    return initial?.call(getInvoice, errorMessage, postInvoiceState,
+        transferPaymentState, cardPaymentState, getInvoiceState);
   }
 
   @override
@@ -1066,6 +1127,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
@@ -1074,8 +1136,8 @@ class _$InitialImpl implements _Initial {
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(getInvoice, postInvoiceState, transferPaymentState,
-          cardPaymentState, getInvoiceState);
+      return initial(getInvoice, errorMessage, postInvoiceState,
+          transferPaymentState, cardPaymentState, getInvoiceState);
     }
     return orElse();
   }
@@ -1112,6 +1174,7 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements PaymentState {
   const factory _Initial(
       {final GetInvoiceEntity? getInvoice,
+      final String? errorMessage,
       final PostInvoiceState postInvoiceState,
       final TransferPaymentState transferPaymentState,
       final CardPaymentState cardPaymentState,
@@ -1119,6 +1182,8 @@ abstract class _Initial implements PaymentState {
 
   @override
   GetInvoiceEntity? get getInvoice;
+  @override
+  String? get errorMessage;
   @override
   PostInvoiceState get postInvoiceState;
   @override

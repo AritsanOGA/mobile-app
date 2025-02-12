@@ -4,6 +4,7 @@ part of 'payment_bloc.dart';
 class PaymentState with _$PaymentState {
   const factory PaymentState.initial({
     GetInvoiceEntity? getInvoice,
+    String? errorMessage,
     @Default(PostInvoiceState.idle) PostInvoiceState postInvoiceState,
     @Default(TransferPaymentState.idle)
     TransferPaymentState transferPaymentState,

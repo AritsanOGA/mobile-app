@@ -38,8 +38,8 @@ class PaymentRepositoryImpl implements PaymentRepository {
   }
 
   @override
-  Future<Either<Failure, GetInvoiceEntity>> getInvoice() async {
-    return paymentRemoteDataSource.getInvoice().makeRequest();
+  Future<Either<Failure, GetInvoiceEntity>> getInvoice(String identity) async {
+    return paymentRemoteDataSource.getInvoice(identity).makeRequest();
   }
 
   @override

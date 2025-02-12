@@ -9,7 +9,7 @@ import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_de
 import 'package:dartz/dartz.dart';
 
 abstract class PaymentRepository {
-  Future<Either<Failure, GetInvoiceEntity>> getInvoice();
+  Future<Either<Failure, GetInvoiceEntity>> getInvoice(String identity);
   Future<Either<Failure, bool>> postInvoice(PostInvoiceEntity entity);
   Future<Either<Failure, bool>> transferPayment(
       TransferPaymentDetailsEntity entity);
