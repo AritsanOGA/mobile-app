@@ -56,50 +56,22 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/employer/accept-candidate');
   static Uri rejectCandidate =
       baseUri.replace(path: '/api/v1/employer/reject-candidate');
-        static Uri rejectCandidateWithoutInterview =
-      baseUri.replace(path: '/api/v1/employer/reject-candidate-without-interview');
+  static Uri rejectCandidateWithoutInterview = baseUri.replace(
+      path: '/api/v1/employer/reject-candidate-without-interview');
   static Uri candidateProfile =
       baseUri.replace(path: '/api/v1/candidate/get-profile');
   static Uri getCandidateSkill =
       baseUri.replace(path: 'api/v1/employer/candidate/technical-skills');
 
-  //! News
-
-  static Uri newsComment(String id) =>
-      baseUri.replace(path: '/api/v1/comments/$id');
-
-  static Uri commentOnNews(String id) =>
-      baseUri.replace(path: '/api/v1/comments/comment/$id');
-
-  static Uri getHighlights =
-      baseUri.replace(path: '/api/v1/highlights/trending');
-
-  //! Fixtures
-  static Uri getFixtures = baseUri.replace(path: '/api/v1/fixtures');
-  static Uri getFixturesByLeague(int id) =>
-      baseUri.replace(path: '/api/v1/fixtures/league/$id');
-  static Uri predict = baseUri.replace(path: '/api/v1/prediction/predict');
-  static Uri fixtureLeague = baseUri.replace(path: '/api/v1/leagues/featured');
-  static Uri leadership =
-      baseUri.replace(path: '/api/v1/prediction/leaderboard');
-
-  //! Statistics
-
-  static Uri getLeagueStanding(int leagueId) => baseUri.replace(
-        path: '/api/v1/leagues/standings/$leagueId',
-      );
-
-  static Uri getTopScorer(int leagueId) => baseUri.replace(
-        path: 'api/v1/leagues/top-scorers/$leagueId',
-      );
-
-  static Uri getTopAssist(int leagueId) => baseUri.replace(
-        path: 'api/v1/leagues/top-assists/$leagueId',
-      );
-
-  static Uri getCard(int leagueId) => baseUri.replace(
-        path: 'api/v1/leagues/top-red/$leagueId',
-      );
-
-  static Uri activeLeagues = baseUri.replace(path: '/api/v1/leagues/active');
+  //! Employer
+  static Uri getInvoice = baseUri.replace(path: '/api/v1/employer/invoice');
+  static Uri makeBankTransferPayment =
+      baseUri.replace(path: 'api/v1/employer/make-bank-transfer-paymente');
+  static Uri bankPayment =
+      baseUri.replace(path: '/api/v1/employer/bank-payment');
+  static Uri generateInvoice =
+      baseUri.replace(path: 'api/v1/employer/generate-invoice');
+  static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
+  static Uri cardPayment =
+      baseUri.replace(path: 'api/v1/employer/card-payment');
 }
