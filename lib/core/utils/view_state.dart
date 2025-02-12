@@ -49,8 +49,16 @@ enum ForgotPasswordState { idle, loading, success, failure }
 enum AcceptCandidateState { idle, loading, success, failure }
 
 enum RejectCandidateState { idle, loading, success, failure }
-enum RejectCandidateWithoutInterviewState { idle, loading, success, failure }
 
+enum PostInvoiceState { idle, loading, success, failure }
+
+enum GetInvoiceState { idle, loading, success, failure }
+
+enum TransferPaymentState { idle, loading, success, failure }
+
+enum CardPaymentState { idle, loading, success, failure }
+
+enum RejectCandidateWithoutInterviewState { idle, loading, success, failure }
 
 enum GetAssignedCandidateState { idle, loading, success, failure }
 
