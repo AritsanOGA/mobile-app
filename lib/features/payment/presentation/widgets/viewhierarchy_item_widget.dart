@@ -30,181 +30,178 @@ class ViewhierarchyItemWidget extends StatefulWidget {
 class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 390.v,
-      width: 180.h,
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 6.h,
-                vertical: 15.v,
+    return Stack(
+      //  alignment: Alignment.topCenter,
+      children: [
+        Container(
+          height: 390.v,
+          width: 180.h,
+          padding: EdgeInsets.symmetric(
+            horizontal: 6.h,
+            vertical: 15.v,
+          ),
+          decoration: AppDecoration.outlineBlack9001.copyWith(
+            borderRadius: BorderRadiusStyle.roundedBorder12,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 15.v),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Per Position",
+                  style: CustomTextStyles.labelLargePrimaryContainer13,
+                ),
               ),
-              decoration: AppDecoration.outlineBlack9001.copyWith(
-                borderRadius: BorderRadiusStyle.roundedBorder12,
+              SizedBox(height: 6.v),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "₦" + widget.planPrices.toString(),
+                  style: CustomTextStyles.titleSmallSecondaryContainer,
+                ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(height: 10.v),
+              Row(
                 children: [
-                  SizedBox(height: 15.v),
-                  Align(
-                    alignment: Alignment.center,
+                  SvgPicture.asset(
+                    ImageConstant.imgLetsIconsCheckFill,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 3.h,
+                      top: 4.v,
+                    ),
                     child: Text(
-                      "Per Position",
-                      style: CustomTextStyles.labelLargePrimaryContainer13,
-                    ),
-                  ),
-                  SizedBox(height: 6.v),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "₦" + widget.planPrices.toString(),
-                      style: CustomTextStyles.titleSmallSecondaryContainer,
-                    ),
-                  ),
-                  SizedBox(height: 10.v),
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        ImageConstant.imgLetsIconsCheckFill,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 3.h,
-                          top: 4.v,
-                        ),
-                        child: Text(
-                          "Job Posting",
-                          style: theme.textTheme.bodySmall,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 13.v),
-                  Padding(
-                    padding: EdgeInsets.only(left: 1.h),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          ImageConstant.imgIcRoundCancel,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 4.h,
-                            top: 3.v,
-                          ),
-                          child: Text(
-                            "2-3 Verified Candidates",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 13.v),
-                  Padding(
-                    padding: EdgeInsets.only(left: 1.h),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          ImageConstant.imgIcRoundCancel,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 4.h,
-                            top: 3.v,
-                          ),
-                          child: Text(
-                            "Soft Skill Training",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 12.v),
-                  Padding(
-                    padding: EdgeInsets.only(left: 1.h),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          ImageConstant.imgIcRoundCancel,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 4.h,
-                            top: 3.v,
-                          ),
-                          child: Text(
-                            "Replacement warranty",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 12.v),
-                  Padding(
-                    padding: EdgeInsets.only(left: 1.h),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset(
-                          ImageConstant.imgIcRoundCancel,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 4.h,
-                            top: 3.v,
-                          ),
-                          child: Text(
-                            "Dedicated Support",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 15.v),
-                  Center(
-                    child: Container(
-                      height: 40.h,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: theme.colorScheme.primary.withOpacity(0.8),
-                      ),
-                      child: Center(
-                          child: Text(
-                        'Select',
-                        style: CustomTextStyles.titleMediumGray50_1,
-                      )),
+                      "Job Posting",
+                      style: theme.textTheme.bodySmall,
                     ),
                   ),
                 ],
               ),
-            ),
-          ),
-          Positioned(
-            child: Container(
-              height: 40.h,
-              width: 120,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: theme.colorScheme.primary,
+              SizedBox(height: 13.v),
+              Padding(
+                padding: EdgeInsets.only(left: 1.h),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgIcRoundCancel,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 4.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "2-3 Verified Candidates",
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              child: Center(
-                  child: Text(
-                widget.planName.toString(),
-                style: CustomTextStyles.titleMediumGray50_1,
-              )),
-            ),
+              SizedBox(height: 13.v),
+              Padding(
+                padding: EdgeInsets.only(left: 1.h),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgIcRoundCancel,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 4.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Soft Skill Training",
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 12.v),
+              Padding(
+                padding: EdgeInsets.only(left: 1.h),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgIcRoundCancel,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 4.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Replacement warranty",
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 12.v),
+              Padding(
+                padding: EdgeInsets.only(left: 1.h),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgIcRoundCancel,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 4.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Dedicated Support",
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 15.v),
+              Center(
+                child: Container(
+                  height: 40.h,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: theme.colorScheme.primary.withOpacity(0.8),
+                  ),
+                  child: Center(
+                      child: Text(
+                    'Select',
+                    style: CustomTextStyles.titleMediumGray50_1,
+                  )),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        Positioned(
+           left: 25,
+          // bottom: 20,
+          child: Container(
+            height: 40.h,
+            width: 120,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: theme.colorScheme.primary,
+            ),
+            child: Center(
+                child: Text(
+              widget.planName.toString(),
+              style: CustomTextStyles.titleMediumGray50_1,
+            )),
+          ),
+        ),
+      ],
     );
   }
 

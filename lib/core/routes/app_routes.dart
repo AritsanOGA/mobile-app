@@ -11,7 +11,6 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
-import 'package:artisan_oga/features/candidate/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -20,6 +19,9 @@ import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
@@ -70,6 +72,10 @@ class AppRoutes {
   static const String searchResultPageScreen = '/search_result_page_screen';
 
   static const String paymentsMadePageScreen = '/payments_made_page_screen';
+
+  static const String createInvoicePage = '/create_invoice_page';
+
+  static const String invoicePage = '/invoice_page';
 
   static const String postJobOnePage = '/post_job_one_page';
 
@@ -273,7 +279,14 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const LoginOptionsPageScreen(),
         );
-
+      case createInvoicePage:
+        return AppPageRouteBuilder(
+          navigateTo: const CreateInvoiceScreen(),
+        );
+      case invoicePage:
+        return AppPageRouteBuilder(
+          navigateTo: const InvoiceScreen(),
+        );
       case employerSignUppageScreen:
         return AppPageRouteBuilder(
           navigateTo: EmployerSignUpPageScreen(),

@@ -35,6 +35,13 @@ import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_job_seeker_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/post_job_usecase.dart';
+import 'package:artisan_oga/features/payment/data/data_source/payment_remote_data_source.dart';
+import 'package:artisan_oga/features/payment/data/repository/payment_repository.dart';
+import 'package:artisan_oga/features/payment/domain/repositories/payment_repository.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
 import 'package:artisan_oga/features/settings/data/data_source/settings_remote_data_source.dart';
 import 'package:artisan_oga/features/settings/data/repository/settings_repository_impl.dart';
 import 'package:artisan_oga/features/settings/domain/repositories/settings_repository.dart';
@@ -79,8 +86,12 @@ Future<void> init() async {
         () => HomeRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<AuthLocalDataSource>(
         () => AuthLocalDataSourceImpl(locator()))
+           ..registerLazySingleton<PaymentRemoteDataSource>(
+        () => PaymentRemoteDataSourceImpl(locator()))
     ..registerLazySingleton<LocalStorageService>(
         () => LocalStorageServiceImpl(locator()))
+
+
     ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
         authRemoteDataSource: locator(), localDataSource: locator()))
     ..registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(
@@ -91,6 +102,9 @@ Future<void> init() async {
         ))
     ..registerLazySingleton<CandidateRepository>(() => CandidateRepositoryImpl(
           candidateRemoteSource: locator(),
+        ))
+    ..registerLazySingleton<PaymentRepository>(() => PaymentRepositoryImpl(
+          paymentRemoteDataSource: locator(),
         ))
 
     //usecases
@@ -144,5 +158,13 @@ Future<void> init() async {
     ..registerLazySingleton<ForgotPasswordUseCase>(
         () => ForgotPasswordUseCase(locator()))
     ..registerLazySingleton<UpdatePasswordUseCase>(
-        () => UpdatePasswordUseCase(locator()));
+        () => UpdatePasswordUseCase(locator()))
+    ..registerLazySingleton<CardPaymentUseCase>(
+        () => CardPaymentUseCase(locator()))
+    ..registerLazySingleton<GetInvoiceUsecase>(
+        () => GetInvoiceUsecase(locator()))
+    ..registerLazySingleton<PostInvoiceUseCase>(
+        () => PostInvoiceUseCase(locator()))
+    ..registerLazySingleton<TransferPaymentUseCase>(
+        () => TransferPaymentUseCase(locator()));
 }

@@ -829,21 +829,29 @@ abstract class _GetInvoice implements PaymentEvent {
 /// @nodoc
 mixin _$PaymentState {
   GetInvoiceEntity? get getInvoice => throw _privateConstructorUsedError;
+  String? get paymentMethod => throw _privateConstructorUsedError;
+  String? get payingAll => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   PostInvoiceState get postInvoiceState => throw _privateConstructorUsedError;
   TransferPaymentState get transferPaymentState =>
       throw _privateConstructorUsedError;
   CardPaymentState get cardPaymentState => throw _privateConstructorUsedError;
   GetInvoiceState get getInvoiceState => throw _privateConstructorUsedError;
+  List<String> get payingAllList => throw _privateConstructorUsedError;
+  List<String> get paymentMethodList => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -851,11 +859,15 @@ mixin _$PaymentState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)?
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -863,11 +875,15 @@ mixin _$PaymentState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)?
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)?
         initial,
     required TResult orElse(),
   }) =>
@@ -902,11 +918,15 @@ abstract class $PaymentStateCopyWith<$Res> {
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      String? paymentMethod,
+      String? payingAll,
       String? errorMessage,
       PostInvoiceState postInvoiceState,
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
-      GetInvoiceState getInvoiceState});
+      GetInvoiceState getInvoiceState,
+      List<String> payingAllList,
+      List<String> paymentMethodList});
 }
 
 /// @nodoc
@@ -923,17 +943,29 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? paymentMethod = freezed,
+    Object? payingAll = freezed,
     Object? errorMessage = freezed,
     Object? postInvoiceState = null,
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
     Object? getInvoiceState = null,
+    Object? payingAllList = null,
+    Object? paymentMethodList = null,
   }) {
     return _then(_value.copyWith(
       getInvoice: freezed == getInvoice
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      paymentMethod: freezed == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payingAll: freezed == payingAll
+          ? _value.payingAll
+          : payingAll // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -954,6 +986,14 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.getInvoiceState
           : getInvoiceState // ignore: cast_nullable_to_non_nullable
               as GetInvoiceState,
+      payingAllList: null == payingAllList
+          ? _value.payingAllList
+          : payingAllList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      paymentMethodList: null == paymentMethodList
+          ? _value.paymentMethodList
+          : paymentMethodList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -968,11 +1008,15 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      String? paymentMethod,
+      String? payingAll,
       String? errorMessage,
       PostInvoiceState postInvoiceState,
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
-      GetInvoiceState getInvoiceState});
+      GetInvoiceState getInvoiceState,
+      List<String> payingAllList,
+      List<String> paymentMethodList});
 }
 
 /// @nodoc
@@ -987,17 +1031,29 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? paymentMethod = freezed,
+    Object? payingAll = freezed,
     Object? errorMessage = freezed,
     Object? postInvoiceState = null,
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
     Object? getInvoiceState = null,
+    Object? payingAllList = null,
+    Object? paymentMethodList = null,
   }) {
     return _then(_$InitialImpl(
       getInvoice: freezed == getInvoice
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      paymentMethod: freezed == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payingAll: freezed == payingAll
+          ? _value.payingAll
+          : payingAll // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1018,6 +1074,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getInvoiceState
           : getInvoiceState // ignore: cast_nullable_to_non_nullable
               as GetInvoiceState,
+      payingAllList: null == payingAllList
+          ? _value._payingAllList
+          : payingAllList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      paymentMethodList: null == paymentMethodList
+          ? _value._paymentMethodList
+          : paymentMethodList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -1027,14 +1091,27 @@ class __$$InitialImplCopyWithImpl<$Res>
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.getInvoice,
+      this.paymentMethod,
+      this.payingAll,
       this.errorMessage,
       this.postInvoiceState = PostInvoiceState.idle,
       this.transferPaymentState = TransferPaymentState.idle,
       this.cardPaymentState = CardPaymentState.idle,
-      this.getInvoiceState = GetInvoiceState.idle});
+      this.getInvoiceState = GetInvoiceState.idle,
+      final List<String> payingAllList = const ["Yes", "No"],
+      final List<String> paymentMethodList = const [
+        "Pay With Card",
+        "Bank Transfer"
+      ]})
+      : _payingAllList = payingAllList,
+        _paymentMethodList = paymentMethodList;
 
   @override
   final GetInvoiceEntity? getInvoice;
+  @override
+  final String? paymentMethod;
+  @override
+  final String? payingAll;
   @override
   final String? errorMessage;
   @override
@@ -1049,10 +1126,28 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final GetInvoiceState getInvoiceState;
+  final List<String> _payingAllList;
+  @override
+  @JsonKey()
+  List<String> get payingAllList {
+    if (_payingAllList is EqualUnmodifiableListView) return _payingAllList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_payingAllList);
+  }
+
+  final List<String> _paymentMethodList;
+  @override
+  @JsonKey()
+  List<String> get paymentMethodList {
+    if (_paymentMethodList is EqualUnmodifiableListView)
+      return _paymentMethodList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_paymentMethodList);
+  }
 
   @override
   String toString() {
-    return 'PaymentState.initial(getInvoice: $getInvoice, errorMessage: $errorMessage, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState)';
+    return 'PaymentState.initial(getInvoice: $getInvoice, paymentMethod: $paymentMethod, payingAll: $payingAll, errorMessage: $errorMessage, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState, payingAllList: $payingAllList, paymentMethodList: $paymentMethodList)';
   }
 
   @override
@@ -1062,6 +1157,10 @@ class _$InitialImpl implements _Initial {
             other is _$InitialImpl &&
             (identical(other.getInvoice, getInvoice) ||
                 other.getInvoice == getInvoice) &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod) &&
+            (identical(other.payingAll, payingAll) ||
+                other.payingAll == payingAll) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.postInvoiceState, postInvoiceState) ||
@@ -1071,18 +1170,26 @@ class _$InitialImpl implements _Initial {
             (identical(other.cardPaymentState, cardPaymentState) ||
                 other.cardPaymentState == cardPaymentState) &&
             (identical(other.getInvoiceState, getInvoiceState) ||
-                other.getInvoiceState == getInvoiceState));
+                other.getInvoiceState == getInvoiceState) &&
+            const DeepCollectionEquality()
+                .equals(other._payingAllList, _payingAllList) &&
+            const DeepCollectionEquality()
+                .equals(other._paymentMethodList, _paymentMethodList));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       getInvoice,
+      paymentMethod,
+      payingAll,
       errorMessage,
       postInvoiceState,
       transferPaymentState,
       cardPaymentState,
-      getInvoiceState);
+      getInvoiceState,
+      const DeepCollectionEquality().hash(_payingAllList),
+      const DeepCollectionEquality().hash(_paymentMethodList));
 
   @JsonKey(ignore: true)
   @override
@@ -1095,15 +1202,28 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)
         initial,
   }) {
-    return initial(getInvoice, errorMessage, postInvoiceState,
-        transferPaymentState, cardPaymentState, getInvoiceState);
+    return initial(
+        getInvoice,
+        paymentMethod,
+        payingAll,
+        errorMessage,
+        postInvoiceState,
+        transferPaymentState,
+        cardPaymentState,
+        getInvoiceState,
+        payingAllList,
+        paymentMethodList);
   }
 
   @override
@@ -1111,15 +1231,28 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)?
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)?
         initial,
   }) {
-    return initial?.call(getInvoice, errorMessage, postInvoiceState,
-        transferPaymentState, cardPaymentState, getInvoiceState);
+    return initial?.call(
+        getInvoice,
+        paymentMethod,
+        payingAll,
+        errorMessage,
+        postInvoiceState,
+        transferPaymentState,
+        cardPaymentState,
+        getInvoiceState,
+        payingAllList,
+        paymentMethodList);
   }
 
   @override
@@ -1127,17 +1260,30 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            String? paymentMethod,
+            String? payingAll,
             String? errorMessage,
             PostInvoiceState postInvoiceState,
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
-            GetInvoiceState getInvoiceState)?
+            GetInvoiceState getInvoiceState,
+            List<String> payingAllList,
+            List<String> paymentMethodList)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(getInvoice, errorMessage, postInvoiceState,
-          transferPaymentState, cardPaymentState, getInvoiceState);
+      return initial(
+          getInvoice,
+          paymentMethod,
+          payingAll,
+          errorMessage,
+          postInvoiceState,
+          transferPaymentState,
+          cardPaymentState,
+          getInvoiceState,
+          payingAllList,
+          paymentMethodList);
     }
     return orElse();
   }
@@ -1174,14 +1320,22 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements PaymentState {
   const factory _Initial(
       {final GetInvoiceEntity? getInvoice,
+      final String? paymentMethod,
+      final String? payingAll,
       final String? errorMessage,
       final PostInvoiceState postInvoiceState,
       final TransferPaymentState transferPaymentState,
       final CardPaymentState cardPaymentState,
-      final GetInvoiceState getInvoiceState}) = _$InitialImpl;
+      final GetInvoiceState getInvoiceState,
+      final List<String> payingAllList,
+      final List<String> paymentMethodList}) = _$InitialImpl;
 
   @override
   GetInvoiceEntity? get getInvoice;
+  @override
+  String? get paymentMethod;
+  @override
+  String? get payingAll;
   @override
   String? get errorMessage;
   @override
@@ -1192,6 +1346,10 @@ abstract class _Initial implements PaymentState {
   CardPaymentState get cardPaymentState;
   @override
   GetInvoiceState get getInvoiceState;
+  @override
+  List<String> get payingAllList;
+  @override
+  List<String> get paymentMethodList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

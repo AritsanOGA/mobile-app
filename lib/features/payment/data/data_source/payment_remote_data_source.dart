@@ -22,7 +22,7 @@ abstract class PaymentRemoteDataSource {
 class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   final ApiService api;
 
-  PaymentRemoteDataSourceImpl({required this.api});
+  PaymentRemoteDataSourceImpl(this.api);
 
   @override
   Future<bool> cardPayment(CardPaymentDetailsEntity entity) async {

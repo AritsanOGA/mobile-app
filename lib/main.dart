@@ -2,6 +2,7 @@ import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -52,6 +53,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => CandidatesBloc(),
         ),
+        BlocProvider(
+          create: (_) => PaymentBloc(),
+        ),
       ],
       child: Sizer(
         builder: (context, orientation, deviceType) {
@@ -61,7 +65,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: AppRoutes.navigatorKey,
             onGenerateRoute: AppRoutes.generateRoute,
-            initialRoute: AppRoutes.welcomePageScreen,
+            initialRoute: AppRoutes.createInvoicePage,
             // routes: AppRoutes.routes,
             // builder: EasyLoading.init(),
           );
