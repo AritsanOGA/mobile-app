@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -38,114 +40,126 @@ class CreateInvoiceScreen extends HookWidget {
             }
           },
           builder: (context, state) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.h),
-              child: Column(
-                children: [
-                  Text("Kindly Create an Invoice to Initiate Payment",
-                      style: theme.textTheme.bodyMedium),
-                  SizedBox(height: 15.v),
-                  Text('I am paying', style: theme.textTheme.bodyMedium),
-                  SizedBox(height: 15.v),
-                  Padding(
-                      padding: EdgeInsets.only(right: 74.h),
-                      child: CustomRadioButton(
-                          text: "75%",
-                          value: state.payingAllList[0],
-                          groupValue: state.payingAll,
-                          padding: EdgeInsets.symmetric(vertical: 1.v),
-                          onChange: (value) {
-                            context.read<HomeBloc>().add(
-                                  HomeEvent.updateSelectedPackage(value),
-                                );
-                          })),
-                  Padding(
-                      padding: EdgeInsets.only(top: 11.v, right: 58.h),
-                      child: CustomRadioButton(
-                          text: "100%",
-                          value: state.payingAllList[1],
-                          groupValue: state.payingAll,
-                          padding: EdgeInsets.symmetric(vertical: 1.v),
-                          onChange: (value) {
-                            context.read<HomeBloc>().add(
-                                  HomeEvent.updateSelectedPackage(value),
-                                );
-                          })),
-                  SizedBox(height: 44.v),
-                  CustomTextFormField(
-                    title: 'Password',
-                    controller: amountController,
-                    hintText: "*************",
-                    hintStyle: theme.textTheme.titleSmall!,
-                    textInputAction: TextInputAction.done,
-                    textInputType: TextInputType.visiblePassword,
-                    isPassword: true,
-                    isObscure: true,
-                    suffixConstraints: BoxConstraints(
-                      maxHeight: 48.v,
+            return Form(
+              key: formKey,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 20.v),
+                    Center(
+                      child: Text(
+                          "Kindly Create an Invoice to Initiate Payment",
+                          style: theme.textTheme.bodyMedium),
                     ),
-                    contentPadding: EdgeInsets.only(
-                      left: 20.h,
-                      top: 15.v,
-                      bottom: 15.v,
+                    SizedBox(height: 20.v),
+                    Text('I am paying', style: theme.textTheme.bodyMedium),
+                    SizedBox(height: 20.v),
+                    Padding(
+                        padding: EdgeInsets.only(right: 74.h),
+                        child: CustomRadioButton(
+                            text: "75%",
+                            value: state.payingAllList[0],
+                            groupValue: state.payingAll,
+                            padding: EdgeInsets.symmetric(vertical: 1.v),
+                            onChange: (value) {
+                              context.read<HomeBloc>().add(
+                                    HomeEvent.updateSelectedPackage(value),
+                                  );
+                            })),
+                    Padding(
+                        padding: EdgeInsets.only(top: 11.v, right: 58.h),
+                        child: CustomRadioButton(
+                            text: "100%",
+                            value: state.payingAllList[1],
+                            groupValue: state.payingAll,
+                            padding: EdgeInsets.symmetric(vertical: 1.v),
+                            onChange: (value) {
+                              context.read<HomeBloc>().add(
+                                    HomeEvent.updateSelectedPackage(value),
+                                  );
+                            })),
+                    SizedBox(height: 20.v),
+                    CustomTextFormField(
+                      title: 'Amount',
+                      controller: amountController,
+                      hintText: '',
+                      validator: FormValidation.stringValidation,
+                      hintStyle: theme.textTheme.titleSmall!,
+                      suffixConstraints: BoxConstraints(
+                        maxHeight: 48.v,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20.h,
+                        top: 15.v,
+                        bottom: 15.v,
+                      ),
                     ),
-                  ),
-                  CustomTextFormField(
-                    title: 'Password',
-                    controller: balanceController,
-                    hintText: "*************",
-                    hintStyle: theme.textTheme.titleSmall!,
-                    textInputAction: TextInputAction.done,
-                    textInputType: TextInputType.visiblePassword,
-                    isPassword: true,
-                    isObscure: true,
-                    suffixConstraints: BoxConstraints(
-                      maxHeight: 48.v,
+                    SizedBox(height: 20.v),
+                    CustomTextFormField(
+                      title: 'Balance',
+                      controller: balanceController,
+                      validator: FormValidation.stringValidation,
+                      hintText: '',
+                      hintStyle: theme.textTheme.titleSmall!,
+                      suffixConstraints: BoxConstraints(
+                        maxHeight: 48.v,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20.h,
+                        top: 15.v,
+                        bottom: 15.v,
+                      ),
                     ),
-                    contentPadding: EdgeInsets.only(
-                      left: 20.h,
-                      top: 15.v,
-                      bottom: 15.v,
+                    SizedBox(height: 20.v),
+                    CustomTextFormField(
+                      title: 'Depositors Name',
+                      validator: FormValidation.stringValidation,
+                      controller: depositNameController,
+                      hintText: '',
+                      hintStyle: theme.textTheme.titleSmall!,
+                      suffixConstraints: BoxConstraints(
+                        maxHeight: 48.v,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20.h,
+                        top: 15.v,
+                        bottom: 15.v,
+                      ),
                     ),
-                  ),
-                  CustomTextFormField(
-                    title: 'Password',
-                    controller: depositNameController,
-                    hintText: "*************",
-                    hintStyle: theme.textTheme.titleSmall!,
-                    textInputAction: TextInputAction.done,
-                    textInputType: TextInputType.visiblePassword,
-                    isPassword: true,
-                    isObscure: true,
-                    suffixConstraints: BoxConstraints(
-                      maxHeight: 48.v,
+                    SizedBox(height: 20.v),
+                    CustomTextFormField(
+                      title: 'Teller No (Optional)',
+                      controller: tellerNoController,
+                      hintText: '',
+                      validator: FormValidation.stringValidation,
+                      hintStyle: theme.textTheme.titleSmall!,
+                      suffixConstraints: BoxConstraints(
+                        maxHeight: 48.v,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20.h,
+                        top: 15.v,
+                        bottom: 15.v,
+                      ),
                     ),
-                    contentPadding: EdgeInsets.only(
-                      left: 20.h,
-                      top: 15.v,
-                      bottom: 15.v,
-                    ),
-                  ),
-                  CustomTextFormField(
-                    title: 'Password',
-                    controller: tellerNoController,
-                    hintText: "*************",
-                    hintStyle: theme.textTheme.titleSmall!,
-                    textInputAction: TextInputAction.done,
-                    textInputType: TextInputType.visiblePassword,
-                    isPassword: true,
-                    isObscure: true,
-                    suffixConstraints: BoxConstraints(
-                      maxHeight: 48.v,
-                    ),
-                    contentPadding: EdgeInsets.only(
-                      left: 20.h,
-                      top: 15.v,
-                      bottom: 15.v,
-                    ),
-                  ),
-                  CustomElevatedButton(text: 'Submit', onPressed: () {})
-                ],
+                    SizedBox(height: 60.v),
+                    CustomElevatedButton(
+                        text: 'Submit',
+                        onPressed: () {
+                          context
+                              .read<PaymentBloc>()
+                              .add(PaymentEvent.postInvoice(PostInvoiceEntity(
+                                amount: double.parse(amountController.text),
+                                balance: double.parse(balanceController.text),
+                                currency: '',
+                                package: '',
+                                percentage: 0,
+                              )));
+                        })
+                  ],
+                ),
               ),
             );
           },

@@ -63,11 +63,7 @@ class HomeState with _$HomeState {
       @Default(["BSC", "BA", "MSC", "OND", "HND", "SSCE", "NONE"])
       List<String> levelOfEducationList,
       @Default(["Male", "Female", "No preferences"]) List<String> genderList,
-      @Default([
-        "Male", "Female", "Both"
-      
-      ])
-      List<String> packageList,
+      @Default(["Male", "Female", "Both"]) List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
       @Default(0) int selectedIndex,
       @Default(
