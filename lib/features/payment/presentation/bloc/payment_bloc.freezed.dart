@@ -2020,8 +2020,8 @@ mixin _$PaymentState {
   String? get payingAll => throw _privateConstructorUsedError;
   String? get typeOfCurrencyBank => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
-  String? get dollarAccount => throw _privateConstructorUsedError;
-  String? get nairaAccount => throw _privateConstructorUsedError;
+  String get dollarAccount => throw _privateConstructorUsedError;
+  String get nairaAccount => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   double? get percentage => throw _privateConstructorUsedError;
   double? get amount => throw _privateConstructorUsedError;
@@ -2045,8 +2045,8 @@ mixin _$PaymentState {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2072,8 +2072,8 @@ mixin _$PaymentState {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2099,8 +2099,8 @@ mixin _$PaymentState {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2153,8 +2153,8 @@ abstract class $PaymentStateCopyWith<$Res> {
       String? payingAll,
       String? typeOfCurrencyBank,
       String? errorMessage,
-      String? dollarAccount,
-      String? nairaAccount,
+      String dollarAccount,
+      String nairaAccount,
       double? price,
       double? percentage,
       double? amount,
@@ -2189,8 +2189,8 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
     Object? payingAll = freezed,
     Object? typeOfCurrencyBank = freezed,
     Object? errorMessage = freezed,
-    Object? dollarAccount = freezed,
-    Object? nairaAccount = freezed,
+    Object? dollarAccount = null,
+    Object? nairaAccount = null,
     Object? price = freezed,
     Object? percentage = freezed,
     Object? amount = freezed,
@@ -2224,14 +2224,14 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      dollarAccount: freezed == dollarAccount
+      dollarAccount: null == dollarAccount
           ? _value.dollarAccount
           : dollarAccount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nairaAccount: freezed == nairaAccount
+              as String,
+      nairaAccount: null == nairaAccount
           ? _value.nairaAccount
           : nairaAccount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -2309,8 +2309,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? payingAll,
       String? typeOfCurrencyBank,
       String? errorMessage,
-      String? dollarAccount,
-      String? nairaAccount,
+      String dollarAccount,
+      String nairaAccount,
       double? price,
       double? percentage,
       double? amount,
@@ -2343,8 +2343,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? payingAll = freezed,
     Object? typeOfCurrencyBank = freezed,
     Object? errorMessage = freezed,
-    Object? dollarAccount = freezed,
-    Object? nairaAccount = freezed,
+    Object? dollarAccount = null,
+    Object? nairaAccount = null,
     Object? price = freezed,
     Object? percentage = freezed,
     Object? amount = freezed,
@@ -2378,14 +2378,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      dollarAccount: freezed == dollarAccount
+      dollarAccount: null == dollarAccount
           ? _value.dollarAccount
           : dollarAccount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nairaAccount: freezed == nairaAccount
+              as String,
+      nairaAccount: null == nairaAccount
           ? _value.nairaAccount
           : nairaAccount // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -2458,8 +2458,8 @@ class _$InitialImpl implements _Initial {
       this.payingAll,
       this.typeOfCurrencyBank,
       this.errorMessage,
-      this.dollarAccount,
-      this.nairaAccount,
+      this.dollarAccount = '--Select--',
+      this.nairaAccount = '--Select--',
       this.price,
       this.percentage,
       this.amount,
@@ -2505,9 +2505,11 @@ class _$InitialImpl implements _Initial {
   @override
   final String? errorMessage;
   @override
-  final String? dollarAccount;
+  @JsonKey()
+  final String dollarAccount;
   @override
-  final String? nairaAccount;
+  @JsonKey()
+  final String nairaAccount;
   @override
   final double? price;
   @override
@@ -2673,8 +2675,8 @@ class _$InitialImpl implements _Initial {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2724,8 +2726,8 @@ class _$InitialImpl implements _Initial {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2775,8 +2777,8 @@ class _$InitialImpl implements _Initial {
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
-            String? dollarAccount,
-            String? nairaAccount,
+            String dollarAccount,
+            String nairaAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -2857,8 +2859,8 @@ abstract class _Initial implements PaymentState {
       final String? payingAll,
       final String? typeOfCurrencyBank,
       final String? errorMessage,
-      final String? dollarAccount,
-      final String? nairaAccount,
+      final String dollarAccount,
+      final String nairaAccount,
       final double? price,
       final double? percentage,
       final double? amount,
@@ -2884,9 +2886,9 @@ abstract class _Initial implements PaymentState {
   @override
   String? get errorMessage;
   @override
-  String? get dollarAccount;
+  String get dollarAccount;
   @override
-  String? get nairaAccount;
+  String get nairaAccount;
   @override
   double? get price;
   @override

@@ -36,6 +36,9 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     on<_UpdatePaymentMethod>(_onUpdatePaymentMethod);
 
     on<_UpdateTypeOfCurrencyBank>(_onUpdateTypeOfCurrencyBank);
+    on<_UpdateNairaAccount>(_onUpdateNairaAccount);
+
+    on<_UpdateDollarAccount>(_onUpdateDollarAccount);
   }
 
   final CardPaymentUseCase _cardPaymentUsecase;
@@ -132,5 +135,15 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   FutureOr<void> _onUpdateTypeOfCurrencyBank(
       _UpdateTypeOfCurrencyBank event, Emitter<PaymentState> emit) {
     emit(state.copyWith(typeOfCurrencyBank: event.value));
+  }
+
+  FutureOr<void> _onUpdateNairaAccount(
+      _UpdateNairaAccount event, Emitter<PaymentState> emit) {
+    emit(state.copyWith(nairaAccount: event.value));
+  }
+
+  FutureOr<void> _onUpdateDollarAccount(
+      _UpdateDollarAccount event, Emitter<PaymentState> emit) {
+    emit(state.copyWith(dollarAccount: event.value));
   }
 }

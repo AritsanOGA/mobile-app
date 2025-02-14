@@ -1,4 +1,3 @@
-
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
