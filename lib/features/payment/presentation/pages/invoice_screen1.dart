@@ -2,18 +2,14 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
-import 'package:artisan_oga/features/payment/presentation/widgets/account_details_dialog.dart';
 import 'package:artisan_oga/features/payment/presentation/widgets/separtor_widget.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-class InvoiceScreen extends StatelessWidget {
-  const InvoiceScreen({super.key});
+class Invoice1Screen extends StatelessWidget {
+  const Invoice1Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class InvoiceScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          children: [
               SizedBox(height: 20.v),
               Center(
                 child: Text("Kindly Create an Invoice to Initiate Payment",
@@ -275,114 +271,6 @@ class InvoiceScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "Amount to Pay ",
-                                style: CustomTextStyles.titleSmallff3a332c_1),
-                            TextSpan(text: " "),
-                            TextSpan(
-                                text: state.getInvoice?.totalWithVat ?? '',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.bold, fontSize: 15))
-                          ]),
-                          textAlign: TextAlign.left),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      CustomDropDown<String>(
-                        title: "Payment Method",
-                        items: state.paymentMethodList,
-                        selectedItem: state.paymentMethod ?? '',
-                        itemLabel: (history) => history,
-                        onChanged: (value) {
-                          context.read<PaymentBloc>().add(
-                                PaymentEvent.updatePaymentMethod(value ?? ''),
-                              );
-                          print('ssss ${value}');
-                        },
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Padding(
-                                  padding: EdgeInsets.only(right: 74.h),
-                                  child: CustomRadioButton(
-                                      text: "Naira Accounts",
-                                      value: state.typeOfCurrencyBankList[0],
-                                      groupValue: state.typeOfCurrencyBank,
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 1.v),
-                                      onChange: (value) {
-                                        context.read<PaymentBloc>().add(
-                                              PaymentEvent
-                                                  .updateTypeOfCurrencyBank(
-                                                value,
-                                              ),
-                                            );
-                                      })),
-                              Padding(
-                                  padding:
-                                      EdgeInsets.only(top: 11.v, right: 58.h),
-                                  child: CustomRadioButton(
-                                      text: "Dollar Acounts%",
-                                      value: state.typeOfCurrencyBankList[1],
-                                      groupValue: state.typeOfCurrencyBank,
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 1.v),
-                                      onChange: (value) {
-                                        context.read<PaymentBloc>().add(
-                                              PaymentEvent
-                                                  .updateTypeOfCurrencyBank(
-                                                value,
-                                              ),
-                                            );
-                                      })),
-                            ],
-                          ),
-                          CustomDropDown<String>(
-                            title: "Naira Account",
-                            items: state.nairaAccountList,
-                            selectedItem: state.nairaAccount ?? '',
-                            itemLabel: (history) => history,
-                            onChanged: (value) {
-                              context.read<PaymentBloc>().add(
-                                    PaymentEvent.updateNairaAccount(
-                                        value ?? ''),
-                                  );
-                              print('ssss ${value}');
-                            },
-                          ),
-                          CustomDropDown<String>(
-                            title: "Dollar Account",
-                            items: state.dollarAccountList,
-                            selectedItem: state.dollarAccount ?? '',
-                            itemLabel: (history) => history,
-                            onChanged: (value) {
-                              context.read<PaymentBloc>().add(
-                                    PaymentEvent.updateNairaAccount(
-                                        value ?? ''),
-                                  );
-                              print('ssss ${value}');
-                            },
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      CustomElevatedButton(
-                          text: 'Submit',
-                          onPressed: () {
-                            accountDetailsDialg(
-                                context,
-                                state.getInvoice?.identity ?? '',
-                                state.getInvoice?.totalWithVat ?? '');
-                          })
                     ],
                   );
                 },

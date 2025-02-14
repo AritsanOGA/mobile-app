@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
@@ -33,6 +32,10 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     on<_CardPayment>(_onCardPayment);
     on<_PostInvoice>(_onPostInvoice);
     on<_GetInvoice>(_onGetInvoice);
+    on<_UpdatePricePercent>(_onUpdatePricePercent);
+    on<_UpdatePaymentMethod>(_onUpdatePaymentMethod);
+
+    on<_UpdateTypeOfCurrencyBank>(_onUpdateTypeOfCurrencyBank);
   }
 
   final CardPaymentUseCase _cardPaymentUsecase;
@@ -107,5 +110,27 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
       ),
     );
     emit(state.copyWith(getInvoiceState: GetInvoiceState.idle));
+  }
+
+  FutureOr<void> _onUpdatePricePercent(
+      _UpdatePricePercent event, Emitter<PaymentState> emit) {
+    double newAmount = event.totalPrice * event.percentage;
+    double newBalance = event.totalPrice - newAmount;
+    emit(state.copyWith(
+      payingAll: event.value,
+      amount: newAmount,
+      balance: newBalance,
+      selectedPercentage: event.percentage,
+    ));
+  }
+
+  FutureOr<void> _onUpdatePaymentMethod(
+      _UpdatePaymentMethod event, Emitter<PaymentState> emit) {
+    emit(state.copyWith(paymentMethod: event.value));
+  }
+
+  FutureOr<void> _onUpdateTypeOfCurrencyBank(
+      _UpdateTypeOfCurrencyBank event, Emitter<PaymentState> emit) {
+    emit(state.copyWith(typeOfCurrencyBank: event.value));
   }
 }

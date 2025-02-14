@@ -7,25 +7,26 @@ class PostInvoiceModel extends PostInvoiceEntity {
     required super.currency,
     required super.percentage,
     required super.package,
+    required super.identity,
   });
 
   factory PostInvoiceModel.fromEntity(PostInvoiceEntity entity) =>
       PostInvoiceModel(
-        amount: entity.amount,
-        balance: entity.balance,
-        currency: entity.currency,
-        percentage: entity.percentage,
-        package: entity.package,
-      );
+          amount: entity.amount,
+          balance: entity.balance,
+          currency: entity.currency,
+          percentage: entity.percentage,
+          package: entity.package,
+          identity: entity.identity);
 
   factory PostInvoiceModel.fromJson(Map<String, dynamic> json) =>
       PostInvoiceModel(
-        amount: (json["amount"] as num?)?.toDouble() ?? 0.0,
-        balance: (json["balance"] as num?)?.toDouble() ?? 0.0,
-        currency: json["currency"] as String? ?? '',
-        percentage: json["percentage"] as int? ?? 0,
-        package: json["package"] as String? ?? '',
-      );
+          amount: (json["amount"] as num?)?.toDouble() ?? 0.0,
+          balance: (json["balance"] as num?)?.toDouble() ?? 0.0,
+          currency: json["currency"] as String? ?? '',
+          percentage: json["percentage"] as int? ?? 0,
+          package: json["package"] as String? ?? '',
+          identity: json['identity'] as String);
 
   Map<String, dynamic> toJson() => {
         "amount": amount,
@@ -33,5 +34,6 @@ class PostInvoiceModel extends PostInvoiceEntity {
         "currency": currency,
         "percentage": percentage,
         "package": package,
+        "identity": identity
       };
 }

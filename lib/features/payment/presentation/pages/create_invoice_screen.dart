@@ -2,7 +2,6 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -10,20 +9,35 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
-import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class CreateInvoiceScreen extends HookWidget {
-  const CreateInvoiceScreen({super.key});
+  final String identity;
+  final String planName;
+  final String amount;
+  CreateInvoiceScreen({
+    super.key,
+    required this.amount,
+    required this.identity,
+    required this.planName,
+  });
+  double selectedPercentage = 0.75; // Default selection
+
+  double getAmount() {
+    return double.parse(amount) * selectedPercentage;
+  }
+
+  double getBalance() {
+    return double.parse(amount) - getAmount();
+  }
 
   @override
   Widget build(BuildContext context) {
     final amountController = useTextEditingController();
     final balanceController = useTextEditingController();
-    final depositNameController = useTextEditingController();
-    final tellerNoController = useTextEditingController();
+
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
@@ -34,7 +48,8 @@ class CreateInvoiceScreen extends HookWidget {
         body: BlocConsumer<PaymentBloc, PaymentState>(
           listener: (context, state) {
             if (state.postInvoiceState == PostInvoiceState.success) {
-              Navigator.pushNamed(context, AppRoutes.successfulJobPostedPage);
+              Navigator.pushNamed(context, AppRoutes.invoicePage,
+              );
             } else if (state.postInvoiceState == PostInvoiceState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }
@@ -64,8 +79,12 @@ class CreateInvoiceScreen extends HookWidget {
                             groupValue: state.payingAll,
                             padding: EdgeInsets.symmetric(vertical: 1.v),
                             onChange: (value) {
-                              context.read<HomeBloc>().add(
-                                    HomeEvent.updateSelectedPackage(value),
+                              context.read<PaymentBloc>().add(
+                                    PaymentEvent.updatePricePercent(
+                                        value,
+                                        double.parse(
+                                            amount.replaceAll(',', '')),
+                                        0.75),
                                   );
                             })),
                     Padding(
@@ -76,14 +95,20 @@ class CreateInvoiceScreen extends HookWidget {
                             groupValue: state.payingAll,
                             padding: EdgeInsets.symmetric(vertical: 1.v),
                             onChange: (value) {
-                              context.read<HomeBloc>().add(
-                                    HomeEvent.updateSelectedPackage(value),
+                              context.read<PaymentBloc>().add(
+                                    PaymentEvent.updatePricePercent(
+                                        value,
+                                        double.parse(
+                                            amount.replaceAll(',', '')),
+                                        1),
                                   );
                             })),
                     SizedBox(height: 20.v),
                     CustomTextFormField(
                       title: 'Amount',
-                      controller: amountController,
+                      readOnly: true,
+                      controller: TextEditingController(
+                          text: state.amount?.toStringAsFixed(2)),
                       hintText: '',
                       validator: FormValidation.stringValidation,
                       hintStyle: theme.textTheme.titleSmall!,
@@ -99,41 +124,11 @@ class CreateInvoiceScreen extends HookWidget {
                     SizedBox(height: 20.v),
                     CustomTextFormField(
                       title: 'Balance',
-                      controller: balanceController,
+                      readOnly: true,
+                      controller: TextEditingController(
+                          text: state.balance?.toStringAsFixed(2)),
                       validator: FormValidation.stringValidation,
                       hintText: '',
-                      hintStyle: theme.textTheme.titleSmall!,
-                      suffixConstraints: BoxConstraints(
-                        maxHeight: 48.v,
-                      ),
-                      contentPadding: EdgeInsets.only(
-                        left: 20.h,
-                        top: 15.v,
-                        bottom: 15.v,
-                      ),
-                    ),
-                    SizedBox(height: 20.v),
-                    CustomTextFormField(
-                      title: 'Depositors Name',
-                      validator: FormValidation.stringValidation,
-                      controller: depositNameController,
-                      hintText: '',
-                      hintStyle: theme.textTheme.titleSmall!,
-                      suffixConstraints: BoxConstraints(
-                        maxHeight: 48.v,
-                      ),
-                      contentPadding: EdgeInsets.only(
-                        left: 20.h,
-                        top: 15.v,
-                        bottom: 15.v,
-                      ),
-                    ),
-                    SizedBox(height: 20.v),
-                    CustomTextFormField(
-                      title: 'Teller No (Optional)',
-                      controller: tellerNoController,
-                      hintText: '',
-                      validator: FormValidation.stringValidation,
                       hintStyle: theme.textTheme.titleSmall!,
                       suffixConstraints: BoxConstraints(
                         maxHeight: 48.v,
@@ -147,15 +142,21 @@ class CreateInvoiceScreen extends HookWidget {
                     SizedBox(height: 60.v),
                     CustomElevatedButton(
                         text: 'Submit',
+                        isBusy:
+                            state.postInvoiceState == PostInvoiceState.loading,
                         onPressed: () {
+                          print(
+                              "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
+
                           context
                               .read<PaymentBloc>()
                               .add(PaymentEvent.postInvoice(PostInvoiceEntity(
-                                amount: double.parse(amountController.text),
-                                balance: double.parse(balanceController.text),
-                                currency: '',
-                                package: '',
-                                percentage: 0,
+                                identity: identity,
+                                amount: state.amount ?? 0.0,
+                                balance: state.balance ?? 0.0,
+                                currency: 'NGN',
+                                package: planName,
+                                percentage: int.parse(state.payingAll ?? ''),
                               )));
                         })
                   ],

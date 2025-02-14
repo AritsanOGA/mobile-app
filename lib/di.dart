@@ -86,12 +86,10 @@ Future<void> init() async {
         () => HomeRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<AuthLocalDataSource>(
         () => AuthLocalDataSourceImpl(locator()))
-           ..registerLazySingleton<PaymentRemoteDataSource>(
-        () => PaymentRemoteDataSourceImpl(locator()))
+    ..registerLazySingleton<PaymentRemoteDataSource>(
+        () => PaymentRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<LocalStorageService>(
         () => LocalStorageServiceImpl(locator()))
-
-
     ..registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
         authRemoteDataSource: locator(), localDataSource: locator()))
     ..registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(

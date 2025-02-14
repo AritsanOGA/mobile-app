@@ -3,26 +3,26 @@ import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_de
 class TransferPaymentDetailsModel extends TransferPaymentDetailsEntity {
   TransferPaymentDetailsModel({
     required super.identity,
-    required super.trxId,
+    required super.amount,
     required super.bank,
   });
   factory TransferPaymentDetailsModel.fromEntity(
           TransferPaymentDetailsEntity entity) =>
       TransferPaymentDetailsModel(
         identity: entity.identity,
-        trxId: entity.trxId,
+        amount: entity.amount,
         bank: entity.bank,
       );
   factory TransferPaymentDetailsModel.fromJson(Map<String, dynamic> json) =>
       TransferPaymentDetailsModel(
-        identity: json["identity"].toString(), 
-        trxId: json["trx_id"].toString(), 
-        bank: json["bank"].toString(), 
+        identity: json["identity"].toString(),
+        amount: json["amount"].toString(),
+        bank: json["bank"].toString(),
       );
 
   Map<String, dynamic> toJson() => {
         "identity": identity,
-        "trx_id": trxId,
+        "amount": amount,
         "bank": bank,
       };
 }

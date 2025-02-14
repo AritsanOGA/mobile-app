@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/payment/data/model/card_payment_model.dart';
 import 'package:artisan_oga/features/payment/data/model/get_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/post_invoice_model.dart';
@@ -21,13 +22,15 @@ abstract class PaymentRemoteDataSource {
 
 class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   final ApiService api;
+  final UserService userService;
 
-  PaymentRemoteDataSourceImpl(this.api);
+  PaymentRemoteDataSourceImpl(this.api, this.userService);
 
   @override
   Future<bool> cardPayment(CardPaymentDetailsEntity entity) async {
     final result = await api.post(
       url: AppApiEndpoint.cardPayment,
+      headers: userService.authorizationHeader,
       body: CardPaymentDetailsModel.fromEntity(entity).toJson(),
     );
     print('what $result');
@@ -38,6 +41,7 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   Future<GetInvoiceEntity> getInvoice(String identity) async {
     final result = await api.get(
         url: AppApiEndpoint.getInvoice,
+        headers: userService.authorizationHeader,
         queryParameters: {"identity": identity}) as Map<String, dynamic>;
 
     return GetInvoiceModel.fromJson(
@@ -48,9 +52,9 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   @override
   Future<bool> postInvoice(PostInvoiceEntity entity) async {
     final result = await api.post(
-      url: AppApiEndpoint.generateInvoice,
-      body: PostInvoiceModel.fromEntity(entity).toJson(),
-    );
+        url: AppApiEndpoint.generateInvoice,
+        headers: userService.authorizationHeader,
+        body: PostInvoiceModel.fromEntity(entity).toJson());
     print('what $result');
     return true;
   }
@@ -58,7 +62,8 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   @override
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity) async {
     final result = await api.post(
-      url: AppApiEndpoint.makeBankTransferPayment,
+      url: AppApiEndpoint.bankPayment,
+      headers: userService.authorizationHeader,
       body: TransferPaymentDetailsModel.fromEntity(entity).toJson(),
     );
     print('what $result');

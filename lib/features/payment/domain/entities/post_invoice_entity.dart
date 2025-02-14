@@ -6,6 +6,7 @@ class PostInvoiceEntity extends Equatable {
   final String currency;
   final int percentage;
   final String package;
+  final String identity;
 
   const PostInvoiceEntity({
     required this.amount,
@@ -13,8 +14,9 @@ class PostInvoiceEntity extends Equatable {
     required this.currency,
     required this.percentage,
     required this.package,
+    required this.identity,
   });
 
   @override
-  List<Object?> get props => [amount, balance, currency, percentage, package];
+  List<Object?> get props => [amount, balance, currency, percentage, package, identity];
 }

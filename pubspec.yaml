@@ -38,6 +38,7 @@ dependencies:
   dropdown_search: ^6.0.0
   timeago: ^3.7.0
   multiselect: ^0.1.1
+  dash: ^1.0.5
  # multiselect: ^0.1.0
   
   

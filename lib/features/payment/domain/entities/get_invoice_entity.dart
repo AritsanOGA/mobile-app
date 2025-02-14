@@ -236,7 +236,7 @@ class Users extends Equatable {
   final String role;
   final String status;
   final String phone;
-  final String profileImage;
+
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -247,23 +247,11 @@ class Users extends Equatable {
     required this.role,
     required this.status,
     required this.phone,
-    required this.profileImage,
     required this.createdAt,
     required this.updatedAt,
   });
 
   @override
-  List<Object?> get props => [
-        id,
-        fullName,
-        email,
-        role,
-        status,
-        phone,
-        profileImage,
-        createdAt,
-        updatedAt
-      ];
-
- 
+  List<Object?> get props =>
+      [id, fullName, email, role, status, phone, createdAt, updatedAt];
 }

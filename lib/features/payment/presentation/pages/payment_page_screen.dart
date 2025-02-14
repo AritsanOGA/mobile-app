@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import '../widgets/viewhierarchy_item_widget.dart';
 
 class PaymentPageScreen extends StatelessWidget {
-  const PaymentPageScreen({Key? key}) : super(key: key);
+  final String identity;
+  const PaymentPageScreen({Key? key, required this.identity}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +57,26 @@ class PaymentPageScreen extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             itemCount: planNames.length,
             itemBuilder: (context, index) {
-              return ViewhierarchyItemWidget(
-                  planName: planNames[index].toString(),
-                  planPrices: planPrices[index].toString());
+              return GestureDetector(
+                onTap: () {
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   AppRoutes.invoicePage,
+                  // );
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.createInvoicePage,
+                    arguments: {
+                      'identity': identity,
+                      "planName": planNames[index],
+                      "amount": planPrices[index]
+                    },
+                  );
+                },
+                child: ViewhierarchyItemWidget(
+                    planName: planNames[index].toString(),
+                    planPrices: planPrices[index].toString()),
+              );
             }));
   }
 

@@ -162,7 +162,7 @@ class UsersModel extends Users {
     required super.id,
     required super.fullName,
     required super.email,
-    required super.profileImage,
+
     required super.status,
     required super.role,
     required super.phone,
@@ -179,6 +179,5 @@ class UsersModel extends Users {
         phone: json['phone'] as String? ?? '',
         createdAt: DateTime.parse(json['created_at'] ?? ''),
         updatedAt: DateTime.parse(json['updated_at'] ?? ''),
-        profileImage: json['profileImage'] as String ?? '',
       );
 }

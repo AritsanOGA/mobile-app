@@ -21,6 +21,7 @@ import 'package:artisan_oga/features/home/presentation/pages/job_details_details
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen1.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
@@ -76,6 +77,7 @@ class AppRoutes {
   static const String createInvoicePage = '/create_invoice_page';
 
   static const String invoicePage = '/invoice_page';
+  static const String invoicePage1 = '/invoice_page1';
 
   static const String postJobOnePage = '/post_job_one_page';
 
@@ -280,12 +282,22 @@ class AppRoutes {
           navigateTo: const LoginOptionsPageScreen(),
         );
       case createInvoicePage:
+        final args = settings.arguments as Map<String, dynamic>;
+
         return AppPageRouteBuilder(
-          navigateTo: const CreateInvoiceScreen(),
+          navigateTo: CreateInvoiceScreen(
+            amount: args['amount'] as String,
+            identity: args['identity'] as String,
+            planName: args['planName'] as String,
+          ),
         );
       case invoicePage:
         return AppPageRouteBuilder(
           navigateTo: const InvoiceScreen(),
+        );
+      case invoicePage1:
+        return AppPageRouteBuilder(
+          navigateTo: const Invoice1Screen(),
         );
       case employerSignUppageScreen:
         return AppPageRouteBuilder(
@@ -330,7 +342,9 @@ class AppRoutes {
         );
       case paymentPageScreen:
         return AppPageRouteBuilder(
-          navigateTo: const PaymentPageScreen(),
+          navigateTo: PaymentPageScreen(
+            identity: settings.arguments as String,
+          ),
         );
       case feauredJobDetails:
         final model = settings.arguments as FeaturedJobResponseEntity;

@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: AppRoutes.navigatorKey,
             onGenerateRoute: AppRoutes.generateRoute,
-            initialRoute: AppRoutes.invoicePage,
+            initialRoute: AppRoutes.welcomePageScreen,
             // routes: AppRoutes.routes,
             // builder: EasyLoading.init(),
           );

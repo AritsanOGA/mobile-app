@@ -138,11 +138,8 @@ class ManageJobWidget extends StatelessWidget {
               ),
               CustomOutlinedButton(
                   onPressed: (() {
-                    print('jobid ${employerJobResponseEntity.id}');
-                    Navigator.pushNamed(
-                      context,
-                      AppRoutes.paymentPageScreen,
-                    );
+                    Navigator.pushNamed(context, AppRoutes.paymentPageScreen,
+                        arguments: employerJobResponseEntity.identity);
                   }),
                   width: 153.h,
                   text: "Pay Now",

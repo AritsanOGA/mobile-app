@@ -65,8 +65,7 @@ class AppApiEndpoint {
 
   //! Employer
   static Uri getInvoice = baseUri.replace(path: '/api/v1/employer/invoice');
-  static Uri makeBankTransferPayment =
-      baseUri.replace(path: 'api/v1/employer/make-bank-transfer-paymente');
+
   static Uri bankPayment =
       baseUri.replace(path: '/api/v1/employer/bank-payment');
   static Uri generateInvoice =
