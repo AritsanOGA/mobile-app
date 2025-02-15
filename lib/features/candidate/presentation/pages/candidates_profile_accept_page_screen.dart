@@ -19,7 +19,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
-              title: 'Applicant Profile',
+              title: 'Applicant Profile', 
             ),
             body: SingleChildScrollView(
                 child: Container(

@@ -32,7 +32,9 @@ mixin _$PaymentEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -50,7 +52,9 @@ mixin _$PaymentEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +72,9 @@ mixin _$PaymentEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) =>
@@ -203,7 +209,9 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return started();
@@ -224,7 +232,9 @@ class _$StartedImpl implements _Started {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return started?.call();
@@ -245,7 +255,9 @@ class _$StartedImpl implements _Started {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -409,7 +421,9 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return transferPayment(param);
@@ -430,7 +444,9 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return transferPayment?.call(param);
@@ -451,7 +467,9 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -620,7 +638,9 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return cardPayment(param);
@@ -641,7 +661,9 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return cardPayment?.call(param);
@@ -662,7 +684,9 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -831,7 +855,9 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return postInvoice(param);
@@ -852,7 +878,9 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return postInvoice?.call(param);
@@ -873,7 +901,9 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -1042,7 +1072,9 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return getInvoice(identity);
@@ -1063,7 +1095,9 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return getInvoice?.call(identity);
@@ -1084,7 +1118,9 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -1253,7 +1289,9 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return verifyPayment(transactionId);
@@ -1274,7 +1312,9 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return verifyPayment?.call(transactionId);
@@ -1295,7 +1335,9 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -1483,7 +1525,9 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updatePricePercent(value, totalPrice, percentage);
@@ -1504,7 +1548,9 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updatePricePercent?.call(value, totalPrice, percentage);
@@ -1525,7 +1571,9 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -1697,7 +1745,9 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updatePaymentMethod(value);
@@ -1718,7 +1768,9 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updatePaymentMethod?.call(value);
@@ -1739,7 +1791,9 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -1911,7 +1965,9 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank(value);
@@ -1932,7 +1988,9 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank?.call(value);
@@ -1953,7 +2011,9 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -2123,7 +2183,9 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateDollarAccount(value);
@@ -2144,7 +2206,9 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateDollarAccount?.call(value);
@@ -2165,7 +2229,9 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -2335,7 +2401,9 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateNairaAccount(value);
@@ -2356,7 +2424,9 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateNairaAccount?.call(value);
@@ -2377,7 +2447,9 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
@@ -2475,7 +2547,8 @@ abstract class _$$InitializeTransactionEventImplCopyWith<$Res> {
           $Res Function(_$InitializeTransactionEventImpl) then) =
       __$$InitializeTransactionEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String value});
+  $Res call(
+      {BuildContext context, String value, String amount, Customer customer});
 }
 
 /// @nodoc
@@ -2490,13 +2563,28 @@ class __$$InitializeTransactionEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? context = null,
     Object? value = null,
+    Object? amount = null,
+    Object? customer = null,
   }) {
     return _then(_$InitializeTransactionEventImpl(
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
+      null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == customer
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as Customer,
     ));
   }
 }
@@ -2504,14 +2592,21 @@ class __$$InitializeTransactionEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
-  const _$InitializeTransactionEventImpl(this.value);
+  const _$InitializeTransactionEventImpl(
+      this.context, this.value, this.amount, this.customer);
 
   @override
+  final BuildContext context;
+  @override
   final String value;
+  @override
+  final String amount;
+  @override
+  final Customer customer;
 
   @override
   String toString() {
-    return 'PaymentEvent.initializeTransactionEvent(value: $value)';
+    return 'PaymentEvent.initializeTransactionEvent(context: $context, value: $value, amount: $amount, customer: $customer)';
   }
 
   @override
@@ -2519,11 +2614,16 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializeTransactionEventImpl &&
-            (identical(other.value, value) || other.value == value));
+            (identical(other.context, context) || other.context == context) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode =>
+      Object.hash(runtimeType, context, value, amount, customer);
 
   @JsonKey(ignore: true)
   @override
@@ -2549,10 +2649,12 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
-    return initializeTransactionEvent(value);
+    return initializeTransactionEvent(context, value, amount, customer);
   }
 
   @override
@@ -2570,10 +2672,12 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
-    return initializeTransactionEvent?.call(value);
+    return initializeTransactionEvent?.call(context, value, amount, customer);
   }
 
   @override
@@ -2591,12 +2695,14 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (initializeTransactionEvent != null) {
-      return initializeTransactionEvent(value);
+      return initializeTransactionEvent(context, value, amount, customer);
     }
     return orElse();
   }
@@ -2673,10 +2779,16 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
 }
 
 abstract class _InitializeTransactionEvent implements PaymentEvent {
-  const factory _InitializeTransactionEvent(final String value) =
-      _$InitializeTransactionEventImpl;
+  const factory _InitializeTransactionEvent(
+      final BuildContext context,
+      final String value,
+      final String amount,
+      final Customer customer) = _$InitializeTransactionEventImpl;
 
+  BuildContext get context;
   String get value;
+  String get amount;
+  Customer get customer;
   @JsonKey(ignore: true)
   _$$InitializeTransactionEventImplCopyWith<_$InitializeTransactionEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2763,7 +2875,9 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
-    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
     required TResult Function(String value) verifyTransactionEvent,
   }) {
     return verifyTransactionEvent(value);
@@ -2784,7 +2898,9 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
-    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return verifyTransactionEvent?.call(value);
@@ -2805,7 +2921,9 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
-    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
     TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {

@@ -20,8 +20,10 @@ import 'package:artisan_oga/features/home/presentation/pages/featured_job_detail
 import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/invoice_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen1.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/payment_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
@@ -151,6 +153,9 @@ class AppRoutes {
 
   static const String dashboardScreen = '/dashboard_screen';
 
+  static const String paymentHistoryScreen = '/payment_history_screen';
+
+  static const String invoiceHistoryScreen = '/invoice_history_screen';
   // static const String successfulJobPostedPage = '/successful_job_posted_screen';
   static const String searchJobResultPageScreen =
       '/search_job_result_page_screen';
@@ -263,6 +268,14 @@ class AppRoutes {
       case employerNavBarScreen:
         return AppPageRouteBuilder(
           navigateTo: EmployerNavBarPage(),
+        );
+      case invoiceHistoryScreen:
+        return AppPageRouteBuilder(
+          navigateTo: InvoiceHistoryScreen(),
+        );
+      case paymentHistoryScreen:
+        return AppPageRouteBuilder(
+          navigateTo: PaymentHistoryScreen(),
         );
       case successScreen:
         final args = settings.arguments as Map<String, dynamic>;

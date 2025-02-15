@@ -13,6 +13,7 @@ class ImageConstant {
 
   // Login Options Page images
   static String imgEmployerLogin = '$imagePath/img_employer_login.png';
+  static String delivery = '$imagePath/delivery.png';
 
   // Employer Dashboard Page images
   static String imgSolarMenuDotsBold =

@@ -32,7 +32,9 @@ class PaymentEvent with _$PaymentEvent {
     String value,
   ) = _UpdateNairaAccount;
   const factory PaymentEvent.initializeTransactionEvent(
-    String value,
+    BuildContext context,
+    String value, String amount,
+   Customer customer,
   ) = _InitializeTransactionEvent;
   const factory PaymentEvent.verifyTransactionEvent(
     String value,
