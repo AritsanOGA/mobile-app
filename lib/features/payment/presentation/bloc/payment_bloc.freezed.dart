@@ -24,6 +24,7 @@ mixin _$PaymentEvent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -31,6 +32,8 @@ mixin _$PaymentEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,12 +43,15 @@ mixin _$PaymentEvent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,12 +61,15 @@ mixin _$PaymentEvent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,12 +80,17 @@ mixin _$PaymentEvent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,12 +100,16 @@ mixin _$PaymentEvent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,11 +119,15 @@ mixin _$PaymentEvent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,6 +195,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -180,6 +203,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return started();
   }
@@ -192,12 +217,15 @@ class _$StartedImpl implements _Started {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return started?.call();
   }
@@ -210,12 +238,15 @@ class _$StartedImpl implements _Started {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -232,12 +263,17 @@ class _$StartedImpl implements _Started {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return started(this);
   }
@@ -250,12 +286,16 @@ class _$StartedImpl implements _Started {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return started?.call(this);
   }
@@ -268,11 +308,15 @@ class _$StartedImpl implements _Started {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -357,6 +401,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -364,6 +409,8 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return transferPayment(param);
   }
@@ -376,12 +423,15 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return transferPayment?.call(param);
   }
@@ -394,12 +444,15 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (transferPayment != null) {
@@ -416,12 +469,17 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return transferPayment(this);
   }
@@ -434,12 +492,16 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return transferPayment?.call(this);
   }
@@ -452,11 +514,15 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (transferPayment != null) {
@@ -546,6 +612,7 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -553,6 +620,8 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return cardPayment(param);
   }
@@ -565,12 +634,15 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return cardPayment?.call(param);
   }
@@ -583,12 +655,15 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (cardPayment != null) {
@@ -605,12 +680,17 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return cardPayment(this);
   }
@@ -623,12 +703,16 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return cardPayment?.call(this);
   }
@@ -641,11 +725,15 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (cardPayment != null) {
@@ -735,6 +823,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -742,6 +831,8 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return postInvoice(param);
   }
@@ -754,12 +845,15 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return postInvoice?.call(param);
   }
@@ -772,12 +866,15 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (postInvoice != null) {
@@ -794,12 +891,17 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return postInvoice(this);
   }
@@ -812,12 +914,16 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return postInvoice?.call(this);
   }
@@ -830,11 +936,15 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (postInvoice != null) {
@@ -924,6 +1034,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -931,6 +1042,8 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return getInvoice(identity);
   }
@@ -943,12 +1056,15 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return getInvoice?.call(identity);
   }
@@ -961,12 +1077,15 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (getInvoice != null) {
@@ -983,12 +1102,17 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return getInvoice(this);
   }
@@ -1001,12 +1125,16 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return getInvoice?.call(this);
   }
@@ -1019,11 +1147,15 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (getInvoice != null) {
@@ -1039,6 +1171,218 @@ abstract class _GetInvoice implements PaymentEvent {
   String get identity;
   @JsonKey(ignore: true)
   _$$GetInvoiceImplCopyWith<_$GetInvoiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyPaymentImplCopyWith<$Res> {
+  factory _$$VerifyPaymentImplCopyWith(
+          _$VerifyPaymentImpl value, $Res Function(_$VerifyPaymentImpl) then) =
+      __$$VerifyPaymentImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String transactionId});
+}
+
+/// @nodoc
+class __$$VerifyPaymentImplCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res, _$VerifyPaymentImpl>
+    implements _$$VerifyPaymentImplCopyWith<$Res> {
+  __$$VerifyPaymentImplCopyWithImpl(
+      _$VerifyPaymentImpl _value, $Res Function(_$VerifyPaymentImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? transactionId = null,
+  }) {
+    return _then(_$VerifyPaymentImpl(
+      null == transactionId
+          ? _value.transactionId
+          : transactionId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyPaymentImpl implements _VerifyPayment {
+  const _$VerifyPaymentImpl(this.transactionId);
+
+  @override
+  final String transactionId;
+
+  @override
+  String toString() {
+    return 'PaymentEvent.verifyPayment(transactionId: $transactionId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyPaymentImpl &&
+            (identical(other.transactionId, transactionId) ||
+                other.transactionId == transactionId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, transactionId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyPaymentImplCopyWith<_$VerifyPaymentImpl> get copyWith =>
+      __$$VerifyPaymentImplCopyWithImpl<_$VerifyPaymentImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TransferPaymentDetailsEntity param)
+        transferPayment,
+    required TResult Function(CardPaymentDetailsEntity param) cardPayment,
+    required TResult Function(PostInvoiceEntity param) postInvoice,
+    required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
+    required TResult Function(
+            String value, double totalPrice, double percentage)
+        updatePricePercent,
+    required TResult Function(String value) updatePaymentMethod,
+    required TResult Function(String value) updateTypeOfCurrencyBank,
+    required TResult Function(String value) updateDollarAccount,
+    required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
+  }) {
+    return verifyPayment(transactionId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult? Function(PostInvoiceEntity param)? postInvoice,
+    TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
+    TResult? Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult? Function(String value)? updatePaymentMethod,
+    TResult? Function(String value)? updateTypeOfCurrencyBank,
+    TResult? Function(String value)? updateDollarAccount,
+    TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
+  }) {
+    return verifyPayment?.call(transactionId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult Function(PostInvoiceEntity param)? postInvoice,
+    TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
+    TResult Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult Function(String value)? updatePaymentMethod,
+    TResult Function(String value)? updateTypeOfCurrencyBank,
+    TResult Function(String value)? updateDollarAccount,
+    TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (verifyPayment != null) {
+      return verifyPayment(transactionId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TransferPayment value) transferPayment,
+    required TResult Function(_CardPayment value) cardPayment,
+    required TResult Function(_PostInvoice value) postInvoice,
+    required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
+    required TResult Function(_UpdatePricePercent value) updatePricePercent,
+    required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
+    required TResult Function(_UpdateTypeOfCurrencyBank value)
+        updateTypeOfCurrencyBank,
+    required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
+    required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
+  }) {
+    return verifyPayment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_TransferPayment value)? transferPayment,
+    TResult? Function(_CardPayment value)? cardPayment,
+    TResult? Function(_PostInvoice value)? postInvoice,
+    TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
+    TResult? Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult? Function(_UpdateTypeOfCurrencyBank value)?
+        updateTypeOfCurrencyBank,
+    TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+  }) {
+    return verifyPayment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TransferPayment value)? transferPayment,
+    TResult Function(_CardPayment value)? cardPayment,
+    TResult Function(_PostInvoice value)? postInvoice,
+    TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
+    TResult Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
+    TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (verifyPayment != null) {
+      return verifyPayment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyPayment implements PaymentEvent {
+  const factory _VerifyPayment(final String transactionId) =
+      _$VerifyPaymentImpl;
+
+  String get transactionId;
+  @JsonKey(ignore: true)
+  _$$VerifyPaymentImplCopyWith<_$VerifyPaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1131,6 +1475,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -1138,6 +1483,8 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updatePricePercent(value, totalPrice, percentage);
   }
@@ -1150,12 +1497,15 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updatePricePercent?.call(value, totalPrice, percentage);
   }
@@ -1168,12 +1518,15 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updatePricePercent != null) {
@@ -1190,12 +1543,17 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return updatePricePercent(this);
   }
@@ -1208,12 +1566,16 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return updatePricePercent?.call(this);
   }
@@ -1226,11 +1588,15 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updatePricePercent != null) {
@@ -1323,6 +1689,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -1330,6 +1697,8 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updatePaymentMethod(value);
   }
@@ -1342,12 +1711,15 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updatePaymentMethod?.call(value);
   }
@@ -1360,12 +1732,15 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updatePaymentMethod != null) {
@@ -1382,12 +1757,17 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return updatePaymentMethod(this);
   }
@@ -1400,12 +1780,16 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return updatePaymentMethod?.call(this);
   }
@@ -1418,11 +1802,15 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updatePaymentMethod != null) {
@@ -1515,6 +1903,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -1522,6 +1911,8 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank(value);
   }
@@ -1534,12 +1925,15 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank?.call(value);
   }
@@ -1552,12 +1946,15 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateTypeOfCurrencyBank != null) {
@@ -1574,12 +1971,17 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank(this);
   }
@@ -1592,12 +1994,16 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return updateTypeOfCurrencyBank?.call(this);
   }
@@ -1610,11 +2016,15 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateTypeOfCurrencyBank != null) {
@@ -1705,6 +2115,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -1712,6 +2123,8 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateDollarAccount(value);
   }
@@ -1724,12 +2137,15 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateDollarAccount?.call(value);
   }
@@ -1742,12 +2158,15 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateDollarAccount != null) {
@@ -1764,12 +2183,17 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return updateDollarAccount(this);
   }
@@ -1782,12 +2206,16 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return updateDollarAccount?.call(this);
   }
@@ -1800,11 +2228,15 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateDollarAccount != null) {
@@ -1895,6 +2327,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
     required TResult Function(
             String value, double totalPrice, double percentage)
         updatePricePercent,
@@ -1902,6 +2335,8 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
   }) {
     return updateNairaAccount(value);
   }
@@ -1914,12 +2349,15 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
     TResult? Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult? Function(String value)? updatePaymentMethod,
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
   }) {
     return updateNairaAccount?.call(value);
   }
@@ -1932,12 +2370,15 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
     TResult Function(String value, double totalPrice, double percentage)?
         updatePricePercent,
     TResult Function(String value)? updatePaymentMethod,
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateNairaAccount != null) {
@@ -1954,12 +2395,17 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
     required TResult Function(_UpdatePricePercent value) updatePricePercent,
     required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
     required TResult Function(_UpdateTypeOfCurrencyBank value)
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
   }) {
     return updateNairaAccount(this);
   }
@@ -1972,12 +2418,16 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
     TResult? Function(_UpdatePricePercent value)? updatePricePercent,
     TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult? Function(_UpdateTypeOfCurrencyBank value)?
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
   }) {
     return updateNairaAccount?.call(this);
   }
@@ -1990,11 +2440,15 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
     TResult Function(_UpdatePricePercent value)? updatePricePercent,
     TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
     required TResult orElse(),
   }) {
     if (updateNairaAccount != null) {
@@ -2015,8 +2469,438 @@ abstract class _UpdateNairaAccount implements PaymentEvent {
 }
 
 /// @nodoc
+abstract class _$$InitializeTransactionEventImplCopyWith<$Res> {
+  factory _$$InitializeTransactionEventImplCopyWith(
+          _$InitializeTransactionEventImpl value,
+          $Res Function(_$InitializeTransactionEventImpl) then) =
+      __$$InitializeTransactionEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$InitializeTransactionEventImplCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res, _$InitializeTransactionEventImpl>
+    implements _$$InitializeTransactionEventImplCopyWith<$Res> {
+  __$$InitializeTransactionEventImplCopyWithImpl(
+      _$InitializeTransactionEventImpl _value,
+      $Res Function(_$InitializeTransactionEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$InitializeTransactionEventImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
+  const _$InitializeTransactionEventImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'PaymentEvent.initializeTransactionEvent(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitializeTransactionEventImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitializeTransactionEventImplCopyWith<_$InitializeTransactionEventImpl>
+      get copyWith => __$$InitializeTransactionEventImplCopyWithImpl<
+          _$InitializeTransactionEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TransferPaymentDetailsEntity param)
+        transferPayment,
+    required TResult Function(CardPaymentDetailsEntity param) cardPayment,
+    required TResult Function(PostInvoiceEntity param) postInvoice,
+    required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
+    required TResult Function(
+            String value, double totalPrice, double percentage)
+        updatePricePercent,
+    required TResult Function(String value) updatePaymentMethod,
+    required TResult Function(String value) updateTypeOfCurrencyBank,
+    required TResult Function(String value) updateDollarAccount,
+    required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
+  }) {
+    return initializeTransactionEvent(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult? Function(PostInvoiceEntity param)? postInvoice,
+    TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
+    TResult? Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult? Function(String value)? updatePaymentMethod,
+    TResult? Function(String value)? updateTypeOfCurrencyBank,
+    TResult? Function(String value)? updateDollarAccount,
+    TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
+  }) {
+    return initializeTransactionEvent?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult Function(PostInvoiceEntity param)? postInvoice,
+    TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
+    TResult Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult Function(String value)? updatePaymentMethod,
+    TResult Function(String value)? updateTypeOfCurrencyBank,
+    TResult Function(String value)? updateDollarAccount,
+    TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (initializeTransactionEvent != null) {
+      return initializeTransactionEvent(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TransferPayment value) transferPayment,
+    required TResult Function(_CardPayment value) cardPayment,
+    required TResult Function(_PostInvoice value) postInvoice,
+    required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
+    required TResult Function(_UpdatePricePercent value) updatePricePercent,
+    required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
+    required TResult Function(_UpdateTypeOfCurrencyBank value)
+        updateTypeOfCurrencyBank,
+    required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
+    required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
+  }) {
+    return initializeTransactionEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_TransferPayment value)? transferPayment,
+    TResult? Function(_CardPayment value)? cardPayment,
+    TResult? Function(_PostInvoice value)? postInvoice,
+    TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
+    TResult? Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult? Function(_UpdateTypeOfCurrencyBank value)?
+        updateTypeOfCurrencyBank,
+    TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+  }) {
+    return initializeTransactionEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TransferPayment value)? transferPayment,
+    TResult Function(_CardPayment value)? cardPayment,
+    TResult Function(_PostInvoice value)? postInvoice,
+    TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
+    TResult Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
+    TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (initializeTransactionEvent != null) {
+      return initializeTransactionEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitializeTransactionEvent implements PaymentEvent {
+  const factory _InitializeTransactionEvent(final String value) =
+      _$InitializeTransactionEventImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$InitializeTransactionEventImplCopyWith<_$InitializeTransactionEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyTransactionEventImplCopyWith<$Res> {
+  factory _$$VerifyTransactionEventImplCopyWith(
+          _$VerifyTransactionEventImpl value,
+          $Res Function(_$VerifyTransactionEventImpl) then) =
+      __$$VerifyTransactionEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$VerifyTransactionEventImplCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res, _$VerifyTransactionEventImpl>
+    implements _$$VerifyTransactionEventImplCopyWith<$Res> {
+  __$$VerifyTransactionEventImplCopyWithImpl(
+      _$VerifyTransactionEventImpl _value,
+      $Res Function(_$VerifyTransactionEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$VerifyTransactionEventImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
+  const _$VerifyTransactionEventImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'PaymentEvent.verifyTransactionEvent(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyTransactionEventImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyTransactionEventImplCopyWith<_$VerifyTransactionEventImpl>
+      get copyWith => __$$VerifyTransactionEventImplCopyWithImpl<
+          _$VerifyTransactionEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TransferPaymentDetailsEntity param)
+        transferPayment,
+    required TResult Function(CardPaymentDetailsEntity param) cardPayment,
+    required TResult Function(PostInvoiceEntity param) postInvoice,
+    required TResult Function(String identity) getInvoice,
+    required TResult Function(String transactionId) verifyPayment,
+    required TResult Function(
+            String value, double totalPrice, double percentage)
+        updatePricePercent,
+    required TResult Function(String value) updatePaymentMethod,
+    required TResult Function(String value) updateTypeOfCurrencyBank,
+    required TResult Function(String value) updateDollarAccount,
+    required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
+  }) {
+    return verifyTransactionEvent(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult? Function(PostInvoiceEntity param)? postInvoice,
+    TResult? Function(String identity)? getInvoice,
+    TResult? Function(String transactionId)? verifyPayment,
+    TResult? Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult? Function(String value)? updatePaymentMethod,
+    TResult? Function(String value)? updateTypeOfCurrencyBank,
+    TResult? Function(String value)? updateDollarAccount,
+    TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
+  }) {
+    return verifyTransactionEvent?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult Function(PostInvoiceEntity param)? postInvoice,
+    TResult Function(String identity)? getInvoice,
+    TResult Function(String transactionId)? verifyPayment,
+    TResult Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult Function(String value)? updatePaymentMethod,
+    TResult Function(String value)? updateTypeOfCurrencyBank,
+    TResult Function(String value)? updateDollarAccount,
+    TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (verifyTransactionEvent != null) {
+      return verifyTransactionEvent(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TransferPayment value) transferPayment,
+    required TResult Function(_CardPayment value) cardPayment,
+    required TResult Function(_PostInvoice value) postInvoice,
+    required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_VerifyPayment value) verifyPayment,
+    required TResult Function(_UpdatePricePercent value) updatePricePercent,
+    required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
+    required TResult Function(_UpdateTypeOfCurrencyBank value)
+        updateTypeOfCurrencyBank,
+    required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
+    required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
+  }) {
+    return verifyTransactionEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_TransferPayment value)? transferPayment,
+    TResult? Function(_CardPayment value)? cardPayment,
+    TResult? Function(_PostInvoice value)? postInvoice,
+    TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
+    TResult? Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult? Function(_UpdateTypeOfCurrencyBank value)?
+        updateTypeOfCurrencyBank,
+    TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+  }) {
+    return verifyTransactionEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TransferPayment value)? transferPayment,
+    TResult Function(_CardPayment value)? cardPayment,
+    TResult Function(_PostInvoice value)? postInvoice,
+    TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_VerifyPayment value)? verifyPayment,
+    TResult Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
+    TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (verifyTransactionEvent != null) {
+      return verifyTransactionEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyTransactionEvent implements PaymentEvent {
+  const factory _VerifyTransactionEvent(final String value) =
+      _$VerifyTransactionEventImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$VerifyTransactionEventImplCopyWith<_$VerifyTransactionEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PaymentState {
   GetInvoiceEntity? get getInvoice => throw _privateConstructorUsedError;
+  VerifyFlutterwavePaymentEntity? get verifyFlutterwavePaymentEntity =>
+      throw _privateConstructorUsedError;
   String? get payingAll => throw _privateConstructorUsedError;
   String? get typeOfCurrencyBank => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
@@ -2033,6 +2917,8 @@ mixin _$PaymentState {
       throw _privateConstructorUsedError;
   CardPaymentState get cardPaymentState => throw _privateConstructorUsedError;
   GetInvoiceState get getInvoiceState => throw _privateConstructorUsedError;
+  FlutterWavePaymentState get flutterwavePaymentState =>
+      throw _privateConstructorUsedError;
   List<String> get payingAllList => throw _privateConstructorUsedError;
   List<String> get typeOfCurrencyBankList => throw _privateConstructorUsedError;
   List<String> get paymentMethodList => throw _privateConstructorUsedError;
@@ -2042,6 +2928,7 @@ mixin _$PaymentState {
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2057,6 +2944,7 @@ mixin _$PaymentState {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2069,6 +2957,7 @@ mixin _$PaymentState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2084,6 +2973,7 @@ mixin _$PaymentState {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2096,6 +2986,7 @@ mixin _$PaymentState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2111,6 +3002,7 @@ mixin _$PaymentState {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2150,6 +3042,7 @@ abstract class $PaymentStateCopyWith<$Res> {
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
       String? payingAll,
       String? typeOfCurrencyBank,
       String? errorMessage,
@@ -2165,6 +3058,7 @@ abstract class $PaymentStateCopyWith<$Res> {
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
       GetInvoiceState getInvoiceState,
+      FlutterWavePaymentState flutterwavePaymentState,
       List<String> payingAllList,
       List<String> typeOfCurrencyBankList,
       List<String> paymentMethodList,
@@ -2186,6 +3080,7 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? verifyFlutterwavePaymentEntity = freezed,
     Object? payingAll = freezed,
     Object? typeOfCurrencyBank = freezed,
     Object? errorMessage = freezed,
@@ -2201,6 +3096,7 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
     Object? getInvoiceState = null,
+    Object? flutterwavePaymentState = null,
     Object? payingAllList = null,
     Object? typeOfCurrencyBankList = null,
     Object? paymentMethodList = null,
@@ -2212,6 +3108,10 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      verifyFlutterwavePaymentEntity: freezed == verifyFlutterwavePaymentEntity
+          ? _value.verifyFlutterwavePaymentEntity
+          : verifyFlutterwavePaymentEntity // ignore: cast_nullable_to_non_nullable
+              as VerifyFlutterwavePaymentEntity?,
       payingAll: freezed == payingAll
           ? _value.payingAll
           : payingAll // ignore: cast_nullable_to_non_nullable
@@ -2272,6 +3172,10 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.getInvoiceState
           : getInvoiceState // ignore: cast_nullable_to_non_nullable
               as GetInvoiceState,
+      flutterwavePaymentState: null == flutterwavePaymentState
+          ? _value.flutterwavePaymentState
+          : flutterwavePaymentState // ignore: cast_nullable_to_non_nullable
+              as FlutterWavePaymentState,
       payingAllList: null == payingAllList
           ? _value.payingAllList
           : payingAllList // ignore: cast_nullable_to_non_nullable
@@ -2306,6 +3210,7 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {GetInvoiceEntity? getInvoice,
+      VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
       String? payingAll,
       String? typeOfCurrencyBank,
       String? errorMessage,
@@ -2321,6 +3226,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       TransferPaymentState transferPaymentState,
       CardPaymentState cardPaymentState,
       GetInvoiceState getInvoiceState,
+      FlutterWavePaymentState flutterwavePaymentState,
       List<String> payingAllList,
       List<String> typeOfCurrencyBankList,
       List<String> paymentMethodList,
@@ -2340,6 +3246,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? getInvoice = freezed,
+    Object? verifyFlutterwavePaymentEntity = freezed,
     Object? payingAll = freezed,
     Object? typeOfCurrencyBank = freezed,
     Object? errorMessage = freezed,
@@ -2355,6 +3262,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? transferPaymentState = null,
     Object? cardPaymentState = null,
     Object? getInvoiceState = null,
+    Object? flutterwavePaymentState = null,
     Object? payingAllList = null,
     Object? typeOfCurrencyBankList = null,
     Object? paymentMethodList = null,
@@ -2366,6 +3274,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getInvoice
           : getInvoice // ignore: cast_nullable_to_non_nullable
               as GetInvoiceEntity?,
+      verifyFlutterwavePaymentEntity: freezed == verifyFlutterwavePaymentEntity
+          ? _value.verifyFlutterwavePaymentEntity
+          : verifyFlutterwavePaymentEntity // ignore: cast_nullable_to_non_nullable
+              as VerifyFlutterwavePaymentEntity?,
       payingAll: freezed == payingAll
           ? _value.payingAll
           : payingAll // ignore: cast_nullable_to_non_nullable
@@ -2426,6 +3338,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getInvoiceState
           : getInvoiceState // ignore: cast_nullable_to_non_nullable
               as GetInvoiceState,
+      flutterwavePaymentState: null == flutterwavePaymentState
+          ? _value.flutterwavePaymentState
+          : flutterwavePaymentState // ignore: cast_nullable_to_non_nullable
+              as FlutterWavePaymentState,
       payingAllList: null == payingAllList
           ? _value._payingAllList
           : payingAllList // ignore: cast_nullable_to_non_nullable
@@ -2455,6 +3371,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.getInvoice,
+      this.verifyFlutterwavePaymentEntity,
       this.payingAll,
       this.typeOfCurrencyBank,
       this.errorMessage,
@@ -2470,6 +3387,7 @@ class _$InitialImpl implements _Initial {
       this.transferPaymentState = TransferPaymentState.idle,
       this.cardPaymentState = CardPaymentState.idle,
       this.getInvoiceState = GetInvoiceState.idle,
+      this.flutterwavePaymentState = FlutterWavePaymentState.idle,
       final List<String> payingAllList = const ["75", "100"],
       final List<String> typeOfCurrencyBankList = const [
         "Naira Accounts",
@@ -2498,6 +3416,8 @@ class _$InitialImpl implements _Initial {
 
   @override
   final GetInvoiceEntity? getInvoice;
+  @override
+  final VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity;
   @override
   final String? payingAll;
   @override
@@ -2535,6 +3455,9 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final GetInvoiceState getInvoiceState;
+  @override
+  @JsonKey()
+  final FlutterWavePaymentState flutterwavePaymentState;
   final List<String> _payingAllList;
   @override
   @JsonKey()
@@ -2586,7 +3509,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PaymentState.initial(getInvoice: $getInvoice, payingAll: $payingAll, typeOfCurrencyBank: $typeOfCurrencyBank, errorMessage: $errorMessage, dollarAccount: $dollarAccount, nairaAccount: $nairaAccount, price: $price, percentage: $percentage, amount: $amount, balance: $balance, selectedPercentage: $selectedPercentage, paymentMethod: $paymentMethod, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState, payingAllList: $payingAllList, typeOfCurrencyBankList: $typeOfCurrencyBankList, paymentMethodList: $paymentMethodList, dollarAccountList: $dollarAccountList, nairaAccountList: $nairaAccountList)';
+    return 'PaymentState.initial(getInvoice: $getInvoice, verifyFlutterwavePaymentEntity: $verifyFlutterwavePaymentEntity, payingAll: $payingAll, typeOfCurrencyBank: $typeOfCurrencyBank, errorMessage: $errorMessage, dollarAccount: $dollarAccount, nairaAccount: $nairaAccount, price: $price, percentage: $percentage, amount: $amount, balance: $balance, selectedPercentage: $selectedPercentage, paymentMethod: $paymentMethod, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState, flutterwavePaymentState: $flutterwavePaymentState, payingAllList: $payingAllList, typeOfCurrencyBankList: $typeOfCurrencyBankList, paymentMethodList: $paymentMethodList, dollarAccountList: $dollarAccountList, nairaAccountList: $nairaAccountList)';
   }
 
   @override
@@ -2596,6 +3519,10 @@ class _$InitialImpl implements _Initial {
             other is _$InitialImpl &&
             (identical(other.getInvoice, getInvoice) ||
                 other.getInvoice == getInvoice) &&
+            (identical(other.verifyFlutterwavePaymentEntity,
+                    verifyFlutterwavePaymentEntity) ||
+                other.verifyFlutterwavePaymentEntity ==
+                    verifyFlutterwavePaymentEntity) &&
             (identical(other.payingAll, payingAll) ||
                 other.payingAll == payingAll) &&
             (identical(other.typeOfCurrencyBank, typeOfCurrencyBank) ||
@@ -2623,6 +3550,9 @@ class _$InitialImpl implements _Initial {
                 other.cardPaymentState == cardPaymentState) &&
             (identical(other.getInvoiceState, getInvoiceState) ||
                 other.getInvoiceState == getInvoiceState) &&
+            (identical(
+                    other.flutterwavePaymentState, flutterwavePaymentState) ||
+                other.flutterwavePaymentState == flutterwavePaymentState) &&
             const DeepCollectionEquality()
                 .equals(other._payingAllList, _payingAllList) &&
             const DeepCollectionEquality().equals(
@@ -2639,6 +3569,7 @@ class _$InitialImpl implements _Initial {
   int get hashCode => Object.hashAll([
         runtimeType,
         getInvoice,
+        verifyFlutterwavePaymentEntity,
         payingAll,
         typeOfCurrencyBank,
         errorMessage,
@@ -2654,6 +3585,7 @@ class _$InitialImpl implements _Initial {
         transferPaymentState,
         cardPaymentState,
         getInvoiceState,
+        flutterwavePaymentState,
         const DeepCollectionEquality().hash(_payingAllList),
         const DeepCollectionEquality().hash(_typeOfCurrencyBankList),
         const DeepCollectionEquality().hash(_paymentMethodList),
@@ -2672,6 +3604,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2687,6 +3620,7 @@ class _$InitialImpl implements _Initial {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2696,6 +3630,7 @@ class _$InitialImpl implements _Initial {
   }) {
     return initial(
         getInvoice,
+        verifyFlutterwavePaymentEntity,
         payingAll,
         typeOfCurrencyBank,
         errorMessage,
@@ -2711,6 +3646,7 @@ class _$InitialImpl implements _Initial {
         transferPaymentState,
         cardPaymentState,
         getInvoiceState,
+        flutterwavePaymentState,
         payingAllList,
         typeOfCurrencyBankList,
         paymentMethodList,
@@ -2723,6 +3659,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2738,6 +3675,7 @@ class _$InitialImpl implements _Initial {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2747,6 +3685,7 @@ class _$InitialImpl implements _Initial {
   }) {
     return initial?.call(
         getInvoice,
+        verifyFlutterwavePaymentEntity,
         payingAll,
         typeOfCurrencyBank,
         errorMessage,
@@ -2762,6 +3701,7 @@ class _$InitialImpl implements _Initial {
         transferPaymentState,
         cardPaymentState,
         getInvoiceState,
+        flutterwavePaymentState,
         payingAllList,
         typeOfCurrencyBankList,
         paymentMethodList,
@@ -2774,6 +3714,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             GetInvoiceEntity? getInvoice,
+            VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
             String? payingAll,
             String? typeOfCurrencyBank,
             String? errorMessage,
@@ -2789,6 +3730,7 @@ class _$InitialImpl implements _Initial {
             TransferPaymentState transferPaymentState,
             CardPaymentState cardPaymentState,
             GetInvoiceState getInvoiceState,
+            FlutterWavePaymentState flutterwavePaymentState,
             List<String> payingAllList,
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
@@ -2800,6 +3742,7 @@ class _$InitialImpl implements _Initial {
     if (initial != null) {
       return initial(
           getInvoice,
+          verifyFlutterwavePaymentEntity,
           payingAll,
           typeOfCurrencyBank,
           errorMessage,
@@ -2815,6 +3758,7 @@ class _$InitialImpl implements _Initial {
           transferPaymentState,
           cardPaymentState,
           getInvoiceState,
+          flutterwavePaymentState,
           payingAllList,
           typeOfCurrencyBankList,
           paymentMethodList,
@@ -2856,6 +3800,7 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements PaymentState {
   const factory _Initial(
       {final GetInvoiceEntity? getInvoice,
+      final VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
       final String? payingAll,
       final String? typeOfCurrencyBank,
       final String? errorMessage,
@@ -2871,6 +3816,7 @@ abstract class _Initial implements PaymentState {
       final TransferPaymentState transferPaymentState,
       final CardPaymentState cardPaymentState,
       final GetInvoiceState getInvoiceState,
+      final FlutterWavePaymentState flutterwavePaymentState,
       final List<String> payingAllList,
       final List<String> typeOfCurrencyBankList,
       final List<String> paymentMethodList,
@@ -2879,6 +3825,8 @@ abstract class _Initial implements PaymentState {
 
   @override
   GetInvoiceEntity? get getInvoice;
+  @override
+  VerifyFlutterwavePaymentEntity? get verifyFlutterwavePaymentEntity;
   @override
   String? get payingAll;
   @override
@@ -2909,6 +3857,8 @@ abstract class _Initial implements PaymentState {
   CardPaymentState get cardPaymentState;
   @override
   GetInvoiceState get getInvoiceState;
+  @override
+  FlutterWavePaymentState get flutterwavePaymentState;
   @override
   List<String> get payingAllList;
   @override

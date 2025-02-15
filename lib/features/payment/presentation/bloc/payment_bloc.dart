@@ -1,32 +1,45 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:developer';
 
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/payment/data/model/verify_payment_models.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/verify_payment_usecase.dart';
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
+import 'package:flutterwave_standard/core/flutterwave.dart';
+import 'package:flutterwave_standard/models/requests/customizations.dart';
+import 'package:flutterwave_standard/models/responses/charge_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'payment_bloc.freezed.dart';
 part 'payment_event.dart';
 part 'payment_state.dart';
 
 class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
+  final Dio dio = Dio();
   PaymentBloc({
     CardPaymentUseCase? cardPaymentUsecase,
     GetInvoiceUsecase? getInvoiceUsecase,
     PostInvoiceUseCase? postInvoiceUseCase,
     TransferPaymentUseCase? transferPaymentUseCase,
+    VerifyPaymentUseCase? verifyPaymentUseCase,
   })  : _cardPaymentUsecase = cardPaymentUsecase ?? locator(),
         _getInvoiceUsecase = getInvoiceUsecase ?? locator(),
         _postInvoiceUseCase = postInvoiceUseCase ?? locator(),
         _transferPaymentUseCase = transferPaymentUseCase ?? locator(),
+        _verifyPaymentUseCase = verifyPaymentUseCase ?? locator(),
         super(_Initial()) {
     on<_TransferPayment>(_onTransferPayment);
     on<_CardPayment>(_onCardPayment);
@@ -39,12 +52,16 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     on<_UpdateNairaAccount>(_onUpdateNairaAccount);
 
     on<_UpdateDollarAccount>(_onUpdateDollarAccount);
+    on<_InitializeTransactionEvent>(_onInitializeTransaction);
+
+    on<_VerifyPayment>(_onVerifyPayment);
   }
 
   final CardPaymentUseCase _cardPaymentUsecase;
   final GetInvoiceUsecase _getInvoiceUsecase;
   final PostInvoiceUseCase _postInvoiceUseCase;
   final TransferPaymentUseCase _transferPaymentUseCase;
+  final VerifyPaymentUseCase _verifyPaymentUseCase;
 
   FutureOr<void> _onPostInvoice(
       _PostInvoice event, Emitter<PaymentState> emit) async {
@@ -145,5 +162,64 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   FutureOr<void> _onUpdateDollarAccount(
       _UpdateDollarAccount event, Emitter<PaymentState> emit) {
     emit(state.copyWith(dollarAccount: event.value));
+  }
+
+  FutureOr<void> _onInitializeTransaction(
+      event, Emitter<PaymentState> emit) async {
+    emit(state.copyWith(
+        flutterwavePaymentState: FlutterWavePaymentState.loading));
+    final Flutterwave flutterwave = Flutterwave(
+      context: event.customer,
+      publicKey: 'FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X',
+      currency: "NGN",
+      redirectUrl: 'https://www.google.com',
+      txRef: "${DateTime.now().millisecondsSinceEpoch}",
+      amount: event.amount,
+      customer: event.customer,
+      paymentOptions: "card",
+      customization: Customization(title: "Artisan Oga"),
+      isTestMode: true,
+    );
+
+    try {
+      final ChargeResponse paymentResponse = await flutterwave.charge();
+      if (paymentResponse.success == true) {
+        log('Payment success: ${paymentResponse.transactionId}');
+
+        // final prefs = await SharedPreferences.getInstance();
+        // await prefs.setString('trxId', '${paymentResponse.transactionId}');
+
+        add(PaymentEvent.verifyPayment(paymentResponse.transactionId ?? ''));
+        emit(state.copyWith(
+            flutterwavePaymentState: FlutterWavePaymentState.success));
+      } else {
+        emit(state.copyWith(
+            flutterwavePaymentState: FlutterWavePaymentState.idle));
+      }
+    } catch (e) {
+      emit(state.copyWith(
+          flutterwavePaymentState: FlutterWavePaymentState.failure));
+    }
+    emit(state.copyWith(flutterwavePaymentState: FlutterWavePaymentState.idle));
+  }
+
+  FutureOr<void> _onVerifyPayment(event, Emitter<PaymentState> emit) async {
+    emit(state.copyWith(getInvoiceState: GetInvoiceState.loading));
+    final result = await _verifyPaymentUseCase(event.identity);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          flutterwavePaymentState: FlutterWavePaymentState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (verifyPayment) => emit(
+        state.copyWith(
+          verifyFlutterwavePaymentEntity: verifyPayment,
+          flutterwavePaymentState: FlutterWavePaymentState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(flutterwavePaymentState: FlutterWavePaymentState.idle));
   }
 }

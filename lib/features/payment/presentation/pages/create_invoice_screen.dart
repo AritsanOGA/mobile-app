@@ -48,7 +48,9 @@ class CreateInvoiceScreen extends HookWidget {
         body: BlocConsumer<PaymentBloc, PaymentState>(
           listener: (context, state) {
             if (state.postInvoiceState == PostInvoiceState.success) {
-              Navigator.pushNamed(context, AppRoutes.invoicePage,
+              Navigator.pushNamed(
+                context,
+                AppRoutes.invoicePage,
               );
             } else if (state.postInvoiceState == PostInvoiceState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');

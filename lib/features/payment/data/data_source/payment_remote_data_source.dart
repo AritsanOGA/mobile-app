@@ -5,10 +5,13 @@ import 'package:artisan_oga/features/payment/data/model/card_payment_model.dart'
 import 'package:artisan_oga/features/payment/data/model/get_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/post_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/transfer_payment_details_model.dart';
+import 'package:artisan_oga/features/payment/data/model/verify_payment_model.dart';
+import 'package:artisan_oga/features/payment/data/model/verify_payment_models.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
 
 abstract class PaymentRemoteDataSource {
   Future<GetInvoiceEntity> getInvoice(String identity);
@@ -18,6 +21,7 @@ abstract class PaymentRemoteDataSource {
   Future<bool> cardPayment(CardPaymentDetailsEntity entity);
 
   Future<bool> postInvoice(PostInvoiceEntity entity);
+  Future<VerifyFlutterwavePaymentEntity> verifyPayment(String transactionId);
 }
 
 class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
@@ -68,5 +72,24 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
     );
     print('what $result');
     return true;
+  }
+
+  @override
+  Future<VerifyFlutterwavePaymentEntity> verifyPayment(
+      String transactionId) async {
+    final String flutterwaveSecretTestKey =
+        'FLWSECK_TEST-4c5080741c3da4bb967f0ef7aef9c10a-X';
+    final result = await api.get(
+        url: Uri.parse(
+            'https://api.flutterwave.com/v3/transactions/${transactionId}/verify'),
+        headers: {
+          'Authorization': 'Bearer $flutterwaveSecretTestKey',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        });
+
+    return VerifyFlutterwavePaymentModel.fromJson(
+      result['data'] as Map<String, dynamic>,
+    );
   }
 }

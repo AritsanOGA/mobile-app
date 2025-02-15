@@ -23,21 +23,16 @@ class Invoice1Screen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-              SizedBox(height: 20.v),
-              Center(
-                child: Text("Kindly Create an Invoice to Initiate Payment",
-                    style: theme.textTheme.bodyMedium),
-              ),
+            children: [
               SizedBox(height: 20.v),
               BlocBuilder<PaymentBloc, PaymentState>(
                 bloc: context.read<PaymentBloc>()
                   ..add(PaymentEvent.getInvoice(
                       '30621732629423961732629423065393')),
                 builder: (context, state) {
-                  if (state.getInvoiceState == GetInvoiceState.loading) {
-                    return Center(child: CircularProgressIndicator());
-                  }
+                  // if (state.getInvoiceState == GetInvoiceState.loading) {
+                  //   return Center(child: CircularProgressIndicator());
+                  // }
 
                   if (state.getInvoiceState == GetJobSeekerJobState.failure) {
                     return Center(child: Text('Error: '));
@@ -134,16 +129,66 @@ class Invoice1Screen extends StatelessWidget {
                                       ],
                                     ),
                                     Container(
-                                      height: 30.h,
-                                      width: 70.h,
+                                      padding: EdgeInsets.all(5),
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(5),
-                                          color: Colors.red),
+                                          color: state.getInvoice?.status == 0 &&
+                                                  state.getInvoice
+                                                          ?.percentage ==
+                                                      75
+                                              ? Colors.red
+                                              : state.getInvoice?.status == 2 &&
+                                                      state.getInvoice
+                                                              ?.percentage ==
+                                                          75
+                                                  ? Colors.yellow
+                                                  : state.getInvoice?.status ==
+                                                              3 &&
+                                                          state.getInvoice
+                                                                  ?.percentage ==
+                                                              75
+                                                      ? Colors.blueAccent
+                                                      : state.getInvoice
+                                                                      ?.status ==
+                                                                  5 &&
+                                                              state.getInvoice
+                                                                      ?.percentage ==
+                                                                  75
+                                                          ? Colors.green
+                                                          : theme.primaryColor
+                                                              .withOpacity(0.8)),
                                       child: Center(
-                                          child: Text('Unpaid',
-                                              style:
-                                                  theme.textTheme.bodyMedium)),
+                                          child: Text(
+                                              state.getInvoice?.status == 0 &&
+                                                      state.getInvoice
+                                                              ?.percentage ==
+                                                          75
+                                                  ? 'Unpaid'
+                                                  : state.getInvoice?.status ==
+                                                              2 &&
+                                                          state.getInvoice
+                                                                  ?.percentage ==
+                                                              75
+                                                      ? 'Waiting for approval'
+                                                      : state.getInvoice?.status ==
+                                                                  3 &&
+                                                              state.getInvoice
+                                                                      ?.percentage ==
+                                                                  75
+                                                          ? 'Initial Deposit'
+                                                          : state.getInvoice
+                                                                          ?.status ==
+                                                                      5 &&
+                                                                  state.getInvoice
+                                                                          ?.percentage ==
+                                                                      75
+                                                              ? 'Paid'
+                                                              : 'Waiting for approval',
+                                              style: theme.textTheme.bodyMedium
+                                                  ?.copyWith(
+                                                      fontSize: 10,
+                                                      color: AppColors.kwhite))),
                                     )
                                   ],
                                 ),

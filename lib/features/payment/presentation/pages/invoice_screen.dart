@@ -38,7 +38,7 @@ class InvoiceScreen extends StatelessWidget {
                 BlocBuilder<PaymentBloc, PaymentState>(
                   bloc: context.read<PaymentBloc>()
                     ..add(PaymentEvent.getInvoice(
-                        '30621732629423961732629423065393')),
+                        '30621739554084651739554084063869')),
                   builder: (context, state) {
                     // if (state.getInvoiceState == GetInvoiceState.loading) {
                     //   return Center(child: CircularProgressIndicator());
@@ -152,7 +152,11 @@ class InvoiceScreen extends StatelessWidget {
                                         child: Center(
                                             child: Text('Unpaid',
                                                 style: theme
-                                                    .textTheme.bodyMedium)),
+                                                    .textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                        fontSize: 10,
+                                                        color:
+                                                            AppColors.kwhite))),
                                       )
                                     ],
                                   ),
