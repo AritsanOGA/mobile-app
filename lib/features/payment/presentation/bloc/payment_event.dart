@@ -11,7 +11,7 @@ class PaymentEvent with _$PaymentEvent {
 
   const factory PaymentEvent.postInvoice(PostInvoiceEntity param) =
       _PostInvoice;
-  const factory PaymentEvent.getInvoice(String identity) = _GetInvoice;
+  const factory PaymentEvent.getInvoice() = _GetInvoice;
   const factory PaymentEvent.getAllInvoice() = _GetAllInvoice;
   const factory PaymentEvent.getAllPayment() = _GetAllPayment;
   const factory PaymentEvent.verifyPayment(String transactionId) =

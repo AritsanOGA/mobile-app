@@ -92,7 +92,7 @@ accountDetailsDialg(
                               height: 3.h,
                             ),
                             Text(
-                              'ABC Bank',
+                              'DEFA Bank',
                               style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
@@ -104,8 +104,8 @@ accountDetailsDialg(
                                 isBusy: state.postInvoiceState ==
                                     PostInvoiceState.loading,
                                 onPressed: () {
-                                  print(
-                                      "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
+                                  // print(
+                                  //     "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
 
                                   context.read<PaymentBloc>().add(
                                       PaymentEvent.transferPayment(

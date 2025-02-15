@@ -6,8 +6,9 @@ class UpdateEmployerProfileEntity extends Equatable {
   final String businessName;
   final String phoneNo;
   final String country;
-  final int state;
+  final String state;
   final String city;
+  final String streetAddress;
 
   UpdateEmployerProfileEntity(
       {required this.userId,
@@ -16,9 +17,18 @@ class UpdateEmployerProfileEntity extends Equatable {
       required this.phoneNo,
       required this.city,
       required this.country,
-      required this.state});
+      required this.state,
+      required this.streetAddress});
 
   @override
-  List<Object?> get props =>
-      [userId, fullName, businessName, phoneNo, city, country, state];
+  List<Object?> get props => [
+        userId,
+        fullName,
+        businessName,
+        phoneNo,
+        city,
+        country,
+        state,
+        streetAddress
+      ];
 }

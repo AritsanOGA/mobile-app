@@ -8,7 +8,8 @@ class UpdateEmployerProfileModel extends UpdateEmployerProfileEntity {
       required super.phoneNo,
       required super.city,
       required super.country,
-      required super.state});
+      required super.state,
+      required super.streetAddress});
 
   factory UpdateEmployerProfileModel.fromEntity(
           UpdateEmployerProfileEntity entity) =>
@@ -19,12 +20,14 @@ class UpdateEmployerProfileModel extends UpdateEmployerProfileEntity {
           phoneNo: entity.phoneNo,
           city: entity.city,
           country: entity.country,
-          state: entity.state);
+          state: entity.state,
+          streetAddress: entity.streetAddress);
 
   Map<String, dynamic> toJson() => {
-        'user_id': userId,
+        'identity': userId,
         "full_name": fullName,
         "business_name": businessName,
+        "street_address": streetAddress,
         "city": city,
         "state": state,
         "phone": phoneNo,

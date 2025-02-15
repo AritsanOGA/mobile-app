@@ -12,6 +12,8 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedCity;
   const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
+      const factory AuthEvent.searchJobs(SearchJobDataEntity value) =
+      _SearchJobs;
   const factory AuthEvent.updateSelectedSkill(List<SkillResponseEntity> value) =
       _UpdateSelectedSkill;
   const factory AuthEvent.updateSelectedJobType(String value) =

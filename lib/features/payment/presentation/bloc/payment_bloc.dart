@@ -126,7 +126,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   FutureOr<void> _onGetInvoice(
       _GetInvoice event, Emitter<PaymentState> emit) async {
     emit(state.copyWith(getInvoiceState: GetInvoiceState.loading));
-    final result = await _getInvoiceUsecase(event.identity);
+    final result = await _getInvoiceUsecase(NoParams());
     result.fold(
       (error) => emit(
         state.copyWith(

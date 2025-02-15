@@ -83,7 +83,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
 
   @override
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity) async {
-    final result = await api.patch(
+    final result = await api.post(
       url: AppApiEndpoint.updateEmployerProfile,
       headers: userService.authorizationHeader,
       body: UpdateEmployerProfileModel.fromEntity(entity).toJson(),
@@ -98,7 +98,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     final result = await api.patch(
       url: AppApiEndpoint.updateCandidateProfile,
       headers: userService.authorizationHeader,
-      body: UpdateJobSeekerProfileModel.fromEntity(entity).toJson(),
+      body: UpdateJobSeekerModel.fromEntity(entity).toJson(),
     );
 
     return true;

@@ -8,6 +8,8 @@ class AllPaymentModel extends AllPaymentEntity {
     required super.jobIdentity,
     required super.jobTitle,
     required super.logo,
+    required super.paymentGateway,
+    required super.createdAt,
   });
 
   /// Convert from JSON to Model
@@ -19,19 +21,24 @@ class AllPaymentModel extends AllPaymentEntity {
       jobIdentity: json["job_identity"],
       jobTitle: json["job_title"],
       logo: json["logo"],
+      paymentGateway: json["payment_gateway"],
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
+          : DateTime.now(),
     );
   }
 
   /// Convert from Entity to Model
   factory AllPaymentModel.fromEntity(AllPaymentEntity entity) {
     return AllPaymentModel(
-      id: entity.id,
-      amount: entity.amount,
-      paymentIdentity: entity.paymentIdentity,
-      jobIdentity: entity.jobIdentity,
-      jobTitle: entity.jobTitle,
-      logo: entity.logo,
-    );
+        id: entity.id,
+        amount: entity.amount,
+        paymentIdentity: entity.paymentIdentity,
+        jobIdentity: entity.jobIdentity,
+        jobTitle: entity.jobTitle,
+        logo: entity.logo,
+        paymentGateway: entity.paymentGateway,
+        createdAt: entity.createdAt);
   }
 
   /// Convert Model to JSON
@@ -43,6 +50,8 @@ class AllPaymentModel extends AllPaymentEntity {
       "job_identity": jobIdentity,
       "job_title": jobTitle,
       "logo": logo,
+      "payment_gateway": paymentGateway,
+      "created_at": createdAt
     };
   }
 }

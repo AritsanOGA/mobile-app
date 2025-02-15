@@ -8,6 +8,7 @@ class AllInvoiceEntity extends Equatable {
   final String jobIdentity;
   final String jobTitle;
   final String logo;
+   final DateTime createdAt;
 
   const AllInvoiceEntity({
     required this.id,
@@ -17,9 +18,10 @@ class AllInvoiceEntity extends Equatable {
     required this.jobIdentity,
     required this.jobTitle,
     required this.logo,
+    required this.createdAt
   });
 
   @override
   List<Object> get props =>
-      [id, amount, invoiceStatus, invoiceIdentity, jobIdentity, jobTitle, logo];
+      [id, amount, invoiceStatus, invoiceIdentity, jobIdentity, jobTitle, logo, createdAt];
 }

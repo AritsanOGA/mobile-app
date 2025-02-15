@@ -7,6 +7,8 @@ class AllPaymentEntity extends Equatable {
   final String jobIdentity;
   final String jobTitle;
   final String logo;
+  final String paymentGateway;
+  final DateTime createdAt;
 
   const AllPaymentEntity({
     required this.id,
@@ -15,8 +17,11 @@ class AllPaymentEntity extends Equatable {
     required this.jobIdentity,
     required this.jobTitle,
     required this.logo,
+    required this.paymentGateway,
+    required this.createdAt,
   });
 
   @override
-  List<Object> get props => [id, amount, paymentIdentity, jobIdentity, jobTitle, logo];
+  List<Object> get props =>
+      [id, amount, paymentIdentity, jobIdentity, jobTitle, logo, paymentGateway, createdAt];
 }

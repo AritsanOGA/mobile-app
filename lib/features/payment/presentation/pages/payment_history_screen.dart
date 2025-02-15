@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../shared/widgets/custom_appbar.dart';
 
@@ -101,7 +102,9 @@ class PaymentHistoryScreen extends StatelessWidget {
                                           SizedBox(
                                             height: 3.h,
                                           ),
-                                          Text(state.payments[index].jobTitle,
+                                          Text(
+                                              state.payments[index]
+                                                  .paymentGateway,
                                               style: theme.textTheme.bodyMedium
                                                   ?.copyWith(
                                                 color: theme.primaryColor
@@ -125,7 +128,8 @@ class PaymentHistoryScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 3.h,
                                   ),
-                                  Text('Dee One Fashion'),
+                                  Text(DateFormat("dd MMM, yyyy")
+                                      .format(state.payments[index].createdAt)),
                                 ],
                               )
                             ],

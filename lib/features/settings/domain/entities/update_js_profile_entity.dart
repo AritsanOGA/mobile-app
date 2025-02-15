@@ -1,24 +1,125 @@
 import 'package:equatable/equatable.dart';
 
-class UpdateJobSeekerProfileEntity extends Equatable {
-  final int userId;
-  final String fullName;
-  final String businessName;
-  final String phoneNo;
-  final String country;
-  final int state;
-  final String city;
+import 'dart:io';
 
-  UpdateJobSeekerProfileEntity(
-      {required this.userId,
-      required this.fullName,
-      required this.businessName,
-      required this.phoneNo,
-      required this.city,
-      required this.country,
-      required this.state});
+class UpdateJobSeekerProfileEntity extends Equatable {
+  const UpdateJobSeekerProfileEntity({
+    required this.fullName,
+    required this.state,
+    required this.city,
+    required this.resume,
+    required this.email,
+    required this.phoneNumber,
+    required this.jobType,
+    required this.streetAddress,
+    required this.yearsOfExperience,
+    required this.guarantorPhoneNumber,
+    required this.guarantorName,
+    required this.guarantorEmail,
+    required this.category,
+    required this.identity,
+    required this.countryId,
+    required this.aboutMe,
+    required this.compensationType,
+    required this.maxAmount,
+    required this.minAmount,
+    required this.dateOFBirth,
+    required this.skill,
+  });
+
+  final String email;
+  final String fullName;
+  final String jobType;
+  final String guarantorPhoneNumber;
+  final String guarantorName;
+  final String guarantorEmail;
+  final String identity;
+  final String streetAddress;
+  final String yearsOfExperience;
+
+  final String category;
+  final String dateOFBirth;
+  final String skill;
+  final String phoneNumber;
+  final String countryId;
+  final String state;
+  final String city;
+  final File? resume;
+  final String aboutMe;
+  final String maxAmount;
+  final String minAmount;
+  final String compensationType;
+
+  UpdateJobSeekerProfileEntity copyWith({
+    String? email,
+    String? fullName,
+    String? jobType,
+    String? guarantorName,
+    String? guarantorPhoneNumber,
+    String? guarantorEmail,
+    String? streetAddress,
+    String? yearsOfExperience,
+    String? category,
+    String? dateOFBirth,
+    String? skill,
+    String? minAmount,
+    String? maxAmount,
+    String? compensationType,
+    String? aboutMe,
+    String? phoneNumber,
+    String? countryId,
+    String? state,
+    String? city,
+    String? identity,
+    File? resume,
+  }) {
+    return UpdateJobSeekerProfileEntity(
+      guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
+      fullName: fullName ?? this.fullName,
+      identity: identity ?? this.identity,
+      state: state ?? this.state,
+      city: city ?? this.city,
+      maxAmount: maxAmount ?? this.maxAmount,
+      minAmount: minAmount ?? this.minAmount,
+      resume: resume ?? this.resume,
+      compensationType: compensationType ?? this.compensationType,
+      countryId: countryId ?? this.countryId,
+      email: email ?? this.email,
+      aboutMe: aboutMe ?? this.aboutMe,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      jobType: jobType ?? this.jobType,
+      guarantorName: guarantorName ?? this.guarantorName,
+      guarantorEmail: guarantorEmail ?? this.guarantorEmail,
+      streetAddress: streetAddress ?? this.streetAddress,
+      yearsOfExperience: yearsOfExperience ?? this.yearsOfExperience,
+      category: category ?? this.category,
+      dateOFBirth: dateOFBirth ?? this.dateOFBirth,
+      skill: skill ?? this.skill,
+    );
+  }
 
   @override
-  List<Object?> get props =>
-      [userId, fullName, businessName, phoneNo, city, country, state];
+  List<Object?> get props => [
+        email,
+        aboutMe,
+        fullName,
+        guarantorPhoneNumber,
+        jobType,
+        identity,
+        guarantorName,
+        guarantorEmail,
+        compensationType,
+        streetAddress,
+        yearsOfExperience,
+        category,
+        dateOFBirth,
+        skill,
+        maxAmount,
+        minAmount,
+        phoneNumber,
+        countryId,
+        state,
+        city,
+        resume,
+      ];
 }

@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../shared/widgets/custom_appbar.dart';
 
@@ -20,11 +21,11 @@ class InvoiceHistoryScreen extends StatelessWidget {
       body: BlocBuilder<PaymentBloc, PaymentState>(
         bloc: context.read<PaymentBloc>()..add(PaymentEvent.getAllInvoice()),
         builder: (context, state) {
-          if (state.getInvoiceState == GetInvoiceState.loading) {
+          if (state.getAllInvoiceState == GetAllInvoiceState.loading) {
             return Center(child: CircularProgressIndicator());
           }
 
-          if (state.getInvoiceState == GetInvoiceState.failure) {
+          if (state.getAllInvoiceState == GetAllInvoiceState.failure) {
             return Center(child: Text('Error: '));
           }
 
@@ -36,7 +37,7 @@ class InvoiceHistoryScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24.h),
               child: Column(
                 children: [
-                  // SizedBox(height: 20.v),
+                  
                   ...List.generate(state.invoices.length, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -165,7 +166,8 @@ class InvoiceHistoryScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 3.h,
                                   ),
-                                  Text('Dee One Fashion'),
+                                  Text(DateFormat("dd MMM, yyyy")
+                                      .format(state.invoices[index].createdAt)),
                                 ],
                               )
                             ],

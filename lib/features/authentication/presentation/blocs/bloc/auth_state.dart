@@ -6,6 +6,7 @@ class AuthState with _$AuthState {
     @Default('--Select--') String gender,
     CountryResponseEntity? country,
     StateResponseEntity? state,
+ 
     String? jsCountry,
     File? file,
     String? errorMessage,
@@ -23,6 +24,7 @@ class AuthState with _$AuthState {
     String? endYear,
     @Default('--Select--') String employmentHistory,
     @Default([]) List<SkillResponseEntity> skills,
+    @Default([]) List<SearchJobEntity> searchJobEntity,
     CategoryResponseEntity? category,
     @Default(RegisterEmployerEntity(
       email: '',
@@ -104,6 +106,7 @@ class AuthState with _$AuthState {
     @Default(EmployerLoginState.idle) EmployerLoginState employerLoginState,
     @Default(JobSeekerLoginState.idle) JobSeekerLoginState jobSeekerLoginState,
     @Default(EmployerSignUpState.idle) EmployerSignUpState employerSignUpState,
+    @Default(SearchJobState.idle) SearchJobState searchJobState,
     @Default(JobSeekerSignUpState.idle)
     JobSeekerSignUpState jobSeekerSignUpState,
     @Default(GetCategoryState.idle) GetCategoryState getCategoryState,

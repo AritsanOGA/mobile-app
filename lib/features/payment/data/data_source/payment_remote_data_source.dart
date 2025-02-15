@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/local_storage.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/payment/data/model/all_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/all_payment_model.dart';
@@ -17,7 +18,7 @@ import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_de
 import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
 
 abstract class PaymentRemoteDataSource {
-  Future<GetInvoiceEntity> getInvoice(String identity);
+  Future<GetInvoiceEntity> getInvoice();
   Future<List<AllInvoiceEntity>> getAllInvoice();
   Future<List<AllPaymentEntity>> getAllPayment();
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity);
@@ -31,8 +32,9 @@ abstract class PaymentRemoteDataSource {
 class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   final ApiService api;
   final UserService userService;
+  final LocalStorageService localStorage;
 
-  PaymentRemoteDataSourceImpl(this.api, this.userService);
+  PaymentRemoteDataSourceImpl(this.api, this.userService, this.localStorage);
 
   @override
   Future<bool> cardPayment(CardPaymentDetailsEntity entity) async {
@@ -46,7 +48,11 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   }
 
   @override
-  Future<GetInvoiceEntity> getInvoice(String identity) async {
+  Future<GetInvoiceEntity> getInvoice() async {
+    final identity = localStorage.getFromDisk(
+      'identity',
+    );
+    print('my $identity');
     final result = await api.get(
         url: AppApiEndpoint.getInvoice,
         headers: userService.authorizationHeader,
@@ -63,7 +69,9 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
         url: AppApiEndpoint.generateInvoice,
         headers: userService.authorizationHeader,
         body: PostInvoiceModel.fromEntity(entity).toJson());
-    print('what $result');
+    String identity = result['data']['identity'];
+    print('what ${result['data']['identity']}');
+    await localStorage.saveToDisk('identity', identity);
     return true;
   }
 

@@ -27,8 +27,7 @@ class Invoice1Screen extends StatelessWidget {
               SizedBox(height: 20.v),
               BlocBuilder<PaymentBloc, PaymentState>(
                 bloc: context.read<PaymentBloc>()
-                  ..add(PaymentEvent.getInvoice(
-                      '30621732629423961732629423065393')),
+                  ..add(PaymentEvent.getInvoice()),
                 builder: (context, state) {
                   // if (state.getInvoiceState == GetInvoiceState.loading) {
                   //   return Center(child: CircularProgressIndicator());

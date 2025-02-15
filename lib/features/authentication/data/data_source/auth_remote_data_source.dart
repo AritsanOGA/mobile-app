@@ -9,6 +9,7 @@ import 'package:artisan_oga/features/authentication/data/model/forgot_password_m
 import 'package:artisan_oga/features/authentication/data/model/login_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_employer_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_job_seeker_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/search_job_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/update_password_model.dart';
@@ -20,11 +21,12 @@ import 'package:artisan_oga/features/authentication/domain/entities/forgot_passw
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
-import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> login(LoginEntity entity);
@@ -33,6 +35,7 @@ abstract class AuthRemoteDataSource {
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity);
 
   Future<List<CountryResponseEntity>> getCountries();
+  Future<List<SearchJobEntity>> searchJobs(SearchJobDataEntity entity);
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
   Future<List<SkillResponseEntity>> getSkill(String categoryId);
@@ -223,5 +226,23 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     );
     return true;
   }
-}
 
+  @override
+  Future<List<SearchJobEntity>> searchJobs(SearchJobDataEntity entity) async {
+    final result = await api.get(
+        url: AppApiEndpoint.getSkills,
+        queryParameters: {
+          "category": entity.category,
+          "skill": entity.skill,
+          "location": entity.location
+        }) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => SearchJobModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+}

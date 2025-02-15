@@ -11,6 +11,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/forgot_passw
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
@@ -23,6 +25,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/login_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/search_job_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
@@ -49,6 +52,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       UpdatePasswordUseCase? updatePasswordUseCase,
       ForgotPasswordUseCase? forgotPasswordUseCase,
       RemoveUserDataUseCase? removeUserDataUseCase,
+      SearchJobUseCase? searchJobUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
@@ -63,6 +67,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _forgotPasswordUseCase = forgotPasswordUseCase ?? locator(),
         _updatePasswordUseCase = updatePasswordUseCase ?? locator(),
         _removeUserDataUseCase = removeUserDataUseCase ?? locator(),
+        _searchJobUseCase = searchJobUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
@@ -98,6 +103,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_ForgotPassword>(_onForgotPassword);
 
     on<_verifyForgotPasswordCode>(_onVerifyForgotPasswordCode);
+    on<_SearchJobs>(_onSearchJobs);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -113,6 +119,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UpdatePasswordUseCase _updatePasswordUseCase;
   final ForgotPasswordUseCase _forgotPasswordUseCase;
   final RemoveUserDataUseCase _removeUserDataUseCase;
+  final SearchJobUseCase _searchJobUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -428,5 +435,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               employerVerifyCodeState: EmployerVerifyCodeState.success)));
     });
     emit(state.copyWith(employerVerifyCodeState: EmployerVerifyCodeState.idle));
+  }
+
+  FutureOr<void> _onSearchJobs(
+      _SearchJobs event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(searchJobState: SearchJobState.loading));
+    final result = await _searchJobUseCase(event.value);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          searchJobState: SearchJobState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (searchJobEntity) => emit(
+        state.copyWith(
+          searchJobEntity: searchJobEntity,
+          searchJobState: SearchJobState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(searchJobState: SearchJobState.idle));
   }
 }

@@ -11,6 +11,7 @@ import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -33,7 +34,7 @@ class EmployerProfilePageScreen extends HookWidget {
         return null;
       }, []);
       context.read<AuthBloc>().add(
-            AuthEvent.getState('4'),
+            AuthEvent.getState('161'),
           );
       return null;
     }, []);
@@ -49,8 +50,6 @@ class EmployerProfilePageScreen extends HookWidget {
               listener: (context, state) {
                 if (state.getEmployerProfileState ==
                     GetEmployerProfileState.success) {
-                  print('iknow ${state.getEmployerResponseEntity}');
-                  // Set controller values when profile data is loaded
                   final profile = state.getEmployerResponseEntity;
                   if (profile != null) {
                     fullNameEditTextController.text = profile.fullName ?? '';
@@ -59,6 +58,15 @@ class EmployerProfilePageScreen extends HookWidget {
                         profile.streetAddress ?? '';
                     cityTextController.text = profile.city ?? '';
                   }
+                }
+                if (state.updateEmployerProfileState ==
+                    UpdateEmployerProfileState.success) {
+                  ToastUtils.showGreenToast('Profile Update Successfully');
+                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+                }
+                if (state.updateEmployerProfileState ==
+                    UpdateEmployerProfileState.failure) {
+                  ToastUtils.showRedToast('Something went wrong');
                 }
               },
               builder: (context, state) {
@@ -218,7 +226,7 @@ class EmployerProfilePageScreen extends HookWidget {
                                         title: 'City',
                                         titleStyle: CustomTextStyles
                                             .titleMediumMedium18,
-                                        hintText: 'Add a Job Description',
+                                        hintText: 'Enter City',
                                         controller: cityTextController,
                                         validator:
                                             FormValidation.stringValidation,
@@ -227,32 +235,50 @@ class EmployerProfilePageScreen extends HookWidget {
                                       SizedBox(
                                         height: 40,
                                       ),
-                                      CustomElevatedButton(
-                                        text: "Save",
-                                        onPressed: () {
-                                          if (formKey.currentState!
-                                              .validate()) {
-                                            // context.read<SettingBloc>().add(
-                                            //     SettingEvent.updateEmployerProfile(
-                                            //         UpdateEmployerProfileEntity(
-                                            //             userId: state
-                                            //                     .getEmployerResponseEntity
-                                            //                     ?.identity ??
-                                            //                 '',
-                                            //             fullName:
-                                            //                 fullNameEditTextController
-                                            //                     .text,
-                                            //             businessName:
-                                            //                 companyNameController
-                                            //                     .text,
-                                            //             phoneNo:
-                                            //                 addressEditTextController
-                                            //                     .text,
-                                            //             city: cityTextController
-                                            //                 .text,
-                                            //             country: '161',
-                                            //             state: 0)));
-                                          } // c
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                        builder: (context, authState) {
+                                          return CustomElevatedButton(
+                                            isBusy: state
+                                                    .updateEmployerProfileState ==
+                                                UpdateEmployerProfileState
+                                                    .loading,
+                                            text: "Save",
+                                            onPressed: () {
+                                              if (formKey.currentState!
+                                                  .validate()) {
+                                                context
+                                                    .read<SettingBloc>()
+                                                    .add(SettingEvent
+                                                        .updateEmployerProfile(
+                                                            UpdateEmployerProfileEntity(
+                                                      userId: state
+                                                              .getEmployerResponseEntity
+                                                              ?.identity ??
+                                                          '',
+                                                      streetAddress:
+                                                          addressEditTextController
+                                                              .text,
+                                                      fullName:
+                                                          fullNameEditTextController
+                                                              .text,
+                                                      businessName:
+                                                          companyNameController
+                                                              .text,
+                                                      phoneNo:
+                                                          addressEditTextController
+                                                              .text,
+                                                      city: cityTextController
+                                                          .text,
+                                                      country: '161',
+                                                      state: authState
+                                                              .state?.name ??
+                                                          authState.states.first
+                                                              .name ??
+                                                          '',
+                                                    )));
+                                              }
+                                            },
+                                          );
                                         },
                                       ),
                                       SizedBox(height: 25.v),

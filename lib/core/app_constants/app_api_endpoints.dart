@@ -18,6 +18,7 @@ class AppApiEndpoint {
 
   static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
   static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
+   static Uri searchJobs = baseUri.replace(path: '/api/v1/search/jobs');
   static Uri verifyCode = baseUri.replace(path: '/api/v1/verify-code');
   static Uri changePassword = baseUri.replace(path: '/api/v1/change-password');
   static Uri verifyForgotPasswordCode =

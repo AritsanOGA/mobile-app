@@ -12,7 +12,7 @@ import 'package:artisan_oga/features/payment/domain/entities/verify_payment_enti
 import 'package:dartz/dartz.dart';
 
 abstract class PaymentRepository {
-  Future<Either<Failure, GetInvoiceEntity>> getInvoice(String identity);
+  Future<Either<Failure, GetInvoiceEntity>> getInvoice();
   Future<Either<Failure, List<AllInvoiceEntity>>> getAllInvoice();
   Future<Either<Failure, List<AllPaymentEntity>>> getAllPayment();
   Future<Either<Failure, bool>> postInvoice(PostInvoiceEntity entity);

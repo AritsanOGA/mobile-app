@@ -1,8 +1,8 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
+import 'package:artisan_oga/features/payment/presentation/widgets/account_details_dialog.dart';
 import 'package:artisan_oga/features/payment/presentation/widgets/separtor_widget.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -12,7 +12,6 @@ import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutterwave_standard/models/requests/customer.dart';
 import 'package:intl/intl.dart';
 
 class InvoiceScreen extends HookWidget {
@@ -36,7 +35,7 @@ class InvoiceScreen extends HookWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 20.v),
+                SizedBox(height: 10.v),
                 Center(
                   child: Text("Kindly Create an Invoice to Initiate Payment",
                       style: theme.textTheme.bodyMedium),
@@ -44,8 +43,7 @@ class InvoiceScreen extends HookWidget {
                 SizedBox(height: 20.v),
                 BlocBuilder<PaymentBloc, PaymentState>(
                   bloc: context.read<PaymentBloc>()
-                    ..add(PaymentEvent.getInvoice(
-                        '30621739554084651739554084063869')),
+                    ..add(PaymentEvent.getInvoice()),
                   builder: (context, state) {
                     // if (state.getInvoiceState == GetInvoiceState.loading) {
                     //   return Center(child: CircularProgressIndicator());
@@ -354,29 +352,25 @@ class InvoiceScreen extends HookWidget {
                                                       ),
                                                     );
                                               })),
-                                      Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 11.v, right: 58.h),
-                                          child: CustomRadioButton(
-                                              text: "Dollar Acounts",
-                                              value: state
-                                                  .typeOfCurrencyBankList[1],
-                                              groupValue:
-                                                  state.typeOfCurrencyBank,
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 1.v),
-                                              onChange: (value) {
-                                                context.read<PaymentBloc>().add(
-                                                      PaymentEvent
-                                                          .updateTypeOfCurrencyBank(
-                                                        value,
-                                                      ),
-                                                    );
-                                              })),
+                                      CustomRadioButton(
+                                          text: "Dollar Acounts",
+                                          value:
+                                              state.typeOfCurrencyBankList[1],
+                                          groupValue: state.typeOfCurrencyBank,
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 1.v),
+                                          onChange: (value) {
+                                            context.read<PaymentBloc>().add(
+                                                  PaymentEvent
+                                                      .updateTypeOfCurrencyBank(
+                                                    value,
+                                                  ),
+                                                );
+                                          }),
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 10.h,
+                                    height: 15.h,
                                   ),
                                   state.typeOfCurrencyBank == 'Naira Accounts'
                                       ? CustomDropDown<String>(
@@ -423,29 +417,32 @@ class InvoiceScreen extends HookWidget {
                                 FlutterWavePaymentState.loading,
                             text: 'Submit',
                             onPressed: () {
-                              context.read<PaymentBloc>().add(
-                                  PaymentEvent.initializeTransactionEvent(
-                                      context,
-                                      '',
-                                      state.getInvoice?.amountWithVat ?? '',
-                                      Customer(
-                                          name:
-                                              '${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
-                                          phoneNumber:
-                                              '${UserService().authData?.user.phoneNumber}',
-                                          email: 'samj@gmail.com')));
-                              // String bankName =
-                              //     state.typeOfCurrencyBank == 'Naira Accounts'
-                              //         ? state.nairaAccount
-                              //         : state.dollarAccount;
-                              // print(' ${state.typeOfCurrencyBank}');
-                              // accountDetailsDialg(
-                              //     context,
-                              //     state.getInvoice?.identity ?? '',
-                              //     state.getInvoice?.totalWithVat ?? '',
-                              //     state.typeOfCurrencyBank ?? '',
-                              //     bankName);
+                              // context.read<PaymentBloc>().add(
+                              //     PaymentEvent.initializeTransactionEvent(
+                              //         context,
+                              //         '',
+                              //         state.getInvoice?.amountWithVat ?? '',
+                              //         Customer(
+                              //             name:
+                              //                 '${UserService().authData?.user.fullName?.split(" ")[0] ?? ''}',
+                              //             phoneNumber:
+                              //                 '${UserService().authData?.user.phoneNumber}',
+                              //             email: 'samj@gmail.com')));
+                              String bankName =
+                                  state.typeOfCurrencyBank == 'Naira Accounts'
+                                      ? state.nairaAccount
+                                      : state.dollarAccount;
+                              print(' ${state.typeOfCurrencyBank}');
+                              accountDetailsDialg(
+                                  context,
+                                  state.getInvoice?.identity ?? '',
+                                  state.getInvoice?.totalWithVat ?? '',
+                                  state.typeOfCurrencyBank ?? '',
+                                  bankName);
                             }),
+                        SizedBox(
+                          height: 30.h,
+                        ),
                         SizedBox(
                           height: 30.h,
                         ),

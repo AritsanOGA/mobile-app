@@ -11,6 +11,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/forgot_passw
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
@@ -234,5 +236,11 @@ class AuthRepositoryImpl implements AuthRepository {
         ),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, List<SearchJobEntity>>> searchJob(
+      SearchJobDataEntity entity) {
+    return authRemoteDataSource.searchJobs(entity).makeRequest();
   }
 }
