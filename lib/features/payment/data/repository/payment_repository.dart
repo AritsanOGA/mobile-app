@@ -3,6 +3,8 @@ import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/features/payment/data/data_source/payment_remote_data_source.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
@@ -89,5 +91,17 @@ class PaymentRepositoryImpl implements PaymentRepository {
   @override
   Future<Either<Failure, VerifyFlutterwavePaymentEntity>> verifyPayment(String transactionId) {
    return paymentRemoteDataSource.verifyPayment(transactionId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<AllInvoiceEntity>>> getAllInvoice() {
+     return paymentRemoteDataSource.getAllInvoice().makeRequest();
+
+  }
+
+  @override
+  Future<Either<Failure, List<AllPaymentEntity>>> getAllPayment() {
+       return paymentRemoteDataSource.getAllPayment().makeRequest();
+
   }
 }

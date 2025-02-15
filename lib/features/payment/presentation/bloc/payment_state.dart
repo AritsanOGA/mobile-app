@@ -4,7 +4,9 @@ part of 'payment_bloc.dart';
 class PaymentState with _$PaymentState {
   const factory PaymentState.initial({
     GetInvoiceEntity? getInvoice,
-        VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
+    @Default([]) List<AllInvoiceEntity> invoices,
+    @Default([]) List<AllPaymentEntity> payments,
+    VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
     String? payingAll,
     String? typeOfCurrencyBank,
     String? errorMessage,
@@ -21,8 +23,10 @@ class PaymentState with _$PaymentState {
     TransferPaymentState transferPaymentState,
     @Default(CardPaymentState.idle) CardPaymentState cardPaymentState,
     @Default(GetInvoiceState.idle) GetInvoiceState getInvoiceState,
-    @Default(FlutterWavePaymentState.idle) FlutterWavePaymentState flutterwavePaymentState,
-
+    @Default(GetAllInvoiceState.idle) GetAllInvoiceState getAllInvoiceState,
+    @Default(GetAllPaymentState.idle) GetAllPaymentState getAllPaymentState,
+    @Default(FlutterWavePaymentState.idle)
+    FlutterWavePaymentState flutterwavePaymentState,
     @Default([
       "75",
       "100",

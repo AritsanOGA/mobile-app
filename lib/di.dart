@@ -39,6 +39,8 @@ import 'package:artisan_oga/features/payment/data/data_source/payment_remote_dat
 import 'package:artisan_oga/features/payment/data/repository/payment_repository.dart';
 import 'package:artisan_oga/features/payment/domain/repositories/payment_repository.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_all_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_all_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
@@ -166,6 +168,10 @@ Future<void> init() async {
         () => PostInvoiceUseCase(locator()))
     ..registerLazySingleton<TransferPaymentUseCase>(
         () => TransferPaymentUseCase(locator()))
+    ..registerLazySingleton<GetAllInvoiceUsecase>(
+        () => GetAllInvoiceUsecase(locator()))
+    ..registerLazySingleton<GetAllPaymentUsecase>(
+        () => GetAllPaymentUsecase(locator()))
     ..registerLazySingleton<VerifyPaymentUseCase>(
         () => VerifyPaymentUseCase(locator()));
 }

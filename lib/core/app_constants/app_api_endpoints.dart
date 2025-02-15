@@ -65,12 +65,16 @@ class AppApiEndpoint {
 
   //! Employer
   static Uri getInvoice = baseUri.replace(path: '/api/v1/employer/invoice');
+    static Uri getInvoices = baseUri.replace(path: '/api/v1/employer/get-invoices');
+
+  static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
+
 
   static Uri bankPayment =
       baseUri.replace(path: '/api/v1/employer/bank-payment');
   static Uri generateInvoice =
       baseUri.replace(path: 'api/v1/employer/generate-invoice');
-  static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
+
   static Uri cardPayment =
       baseUri.replace(path: 'api/v1/employer/card-payment');
 }

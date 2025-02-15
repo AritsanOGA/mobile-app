@@ -1,14 +1,19 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_all_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_all_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
@@ -34,15 +39,21 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     PostInvoiceUseCase? postInvoiceUseCase,
     TransferPaymentUseCase? transferPaymentUseCase,
     VerifyPaymentUseCase? verifyPaymentUseCase,
+    GetAllPaymentUsecase? getAllPaymentUsecase,
+    GetAllInvoiceUsecase? getAllInvoiceUsecase,
   })  : _cardPaymentUsecase = cardPaymentUsecase ?? locator(),
         _getInvoiceUsecase = getInvoiceUsecase ?? locator(),
         _postInvoiceUseCase = postInvoiceUseCase ?? locator(),
         _transferPaymentUseCase = transferPaymentUseCase ?? locator(),
         _verifyPaymentUseCase = verifyPaymentUseCase ?? locator(),
+        _getAllInvoiceUsecase = getAllInvoiceUsecase ?? locator(),
+        _getAllPaymentUsecase = getAllPaymentUsecase ?? locator(),
         super(_Initial()) {
     on<_TransferPayment>(_onTransferPayment);
     on<_CardPayment>(_onCardPayment);
     on<_PostInvoice>(_onPostInvoice);
+    on<_GetAllPayment>(_onGetAllPayment);
+    on<_GetAllInvoice>(_onGetAllInvoice);
     on<_GetInvoice>(_onGetInvoice);
     on<_UpdatePricePercent>(_onUpdatePricePercent);
     on<_UpdatePaymentMethod>(_onUpdatePaymentMethod);
@@ -61,6 +72,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   final PostInvoiceUseCase _postInvoiceUseCase;
   final TransferPaymentUseCase _transferPaymentUseCase;
   final VerifyPaymentUseCase _verifyPaymentUseCase;
+  final GetAllInvoiceUsecase _getAllInvoiceUsecase;
+  final GetAllPaymentUsecase _getAllPaymentUsecase;
 
   FutureOr<void> _onPostInvoice(
       _PostInvoice event, Emitter<PaymentState> emit) async {
@@ -225,5 +238,47 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
       ),
     );
     emit(state.copyWith(flutterwavePaymentState: FlutterWavePaymentState.idle));
+  }
+
+  FutureOr<void> _onGetAllPayment(
+      _GetAllPayment event, Emitter<PaymentState> emit) async {
+    emit(state.copyWith(getAllPaymentState: GetAllPaymentState.loading));
+    final result = await _getAllPaymentUsecase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getAllPaymentState: GetAllPaymentState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (payments) => emit(
+        state.copyWith(
+          payments: payments,
+          getAllPaymentState: GetAllPaymentState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getAllPaymentState: GetAllPaymentState.idle));
+  }
+
+  FutureOr<void> _onGetAllInvoice(
+      _GetAllInvoice event, Emitter<PaymentState> emit) async {
+    emit(state.copyWith(getAllInvoiceState: GetAllInvoiceState.loading));
+    final result = await _getAllInvoiceUsecase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getAllInvoiceState: GetAllInvoiceState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (invoice) => emit(
+        state.copyWith(
+          invoices: invoice,
+          getAllInvoiceState: GetAllInvoiceState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getAllInvoiceState: GetAllInvoiceState.idle));
   }
 }

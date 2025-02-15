@@ -54,6 +54,10 @@ enum PostInvoiceState { idle, loading, success, failure }
 
 enum GetInvoiceState { idle, loading, success, failure }
 
+enum GetAllInvoiceState { idle, loading, success, failure }
+
+enum GetAllPaymentState { idle, loading, success, failure }
+
 enum TransferPaymentState { idle, loading, success, failure }
 
 enum CardPaymentState { idle, loading, success, failure }
@@ -67,4 +71,3 @@ enum GetCandidateProfileState { idle, loading, success, failure }
 enum GetCandidateSkillState { idle, loading, success, failure }
 
 enum FlutterWavePaymentState { idle, loading, success, failure }
-

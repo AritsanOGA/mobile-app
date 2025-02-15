@@ -12,7 +12,10 @@ class PaymentEvent with _$PaymentEvent {
   const factory PaymentEvent.postInvoice(PostInvoiceEntity param) =
       _PostInvoice;
   const factory PaymentEvent.getInvoice(String identity) = _GetInvoice;
-    const factory PaymentEvent.verifyPayment(String transactionId) = _VerifyPayment;
+  const factory PaymentEvent.getAllInvoice() = _GetAllInvoice;
+  const factory PaymentEvent.getAllPayment() = _GetAllPayment;
+  const factory PaymentEvent.verifyPayment(String transactionId) =
+      _VerifyPayment;
 
   const factory PaymentEvent.updatePricePercent(
       String value, double totalPrice, double percentage) = _UpdatePricePercent;
@@ -33,8 +36,9 @@ class PaymentEvent with _$PaymentEvent {
   ) = _UpdateNairaAccount;
   const factory PaymentEvent.initializeTransactionEvent(
     BuildContext context,
-    String value, String amount,
-   Customer customer,
+    String value,
+    String amount,
+    Customer customer,
   ) = _InitializeTransactionEvent;
   const factory PaymentEvent.verifyTransactionEvent(
     String value,

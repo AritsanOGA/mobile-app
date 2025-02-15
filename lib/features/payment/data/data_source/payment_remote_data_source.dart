@@ -1,12 +1,15 @@
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
+import 'package:artisan_oga/features/payment/data/model/all_invoice_model.dart';
+import 'package:artisan_oga/features/payment/data/model/all_payment_model.dart';
 import 'package:artisan_oga/features/payment/data/model/card_payment_model.dart';
 import 'package:artisan_oga/features/payment/data/model/get_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/post_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/transfer_payment_details_model.dart';
 import 'package:artisan_oga/features/payment/data/model/verify_payment_model.dart';
-import 'package:artisan_oga/features/payment/data/model/verify_payment_models.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
@@ -15,7 +18,8 @@ import 'package:artisan_oga/features/payment/domain/entities/verify_payment_enti
 
 abstract class PaymentRemoteDataSource {
   Future<GetInvoiceEntity> getInvoice(String identity);
-
+  Future<List<AllInvoiceEntity>> getAllInvoice();
+  Future<List<AllPaymentEntity>> getAllPayment();
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity);
 
   Future<bool> cardPayment(CardPaymentDetailsEntity entity);
@@ -91,5 +95,36 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
     return VerifyFlutterwavePaymentModel.fromJson(
       result['data'] as Map<String, dynamic>,
     );
+  }
+
+  @override
+  Future<List<AllInvoiceEntity>> getAllInvoice() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getInvoices,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => AllInvoiceModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+    ;
+  }
+
+  @override
+  Future<List<AllPaymentEntity>> getAllPayment() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getPayments,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => AllPaymentModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
   }
 }

@@ -134,12 +134,31 @@ class EmployerDrawer extends StatelessWidget {
                 SizedBox(height: 42.v),
                 GestureDetector(
                     onTap: (() {
-                      // Navigator.pop(context);
-                      // Navigator.push(
-                      //     context,
-                      //     PageTransition(
-                      //         type: PageTransitionType.rightToLeft,
-                      //         child: PaymentsMadePageScreen()));
+                      Navigator.pushNamed(
+                          context, AppRoutes.invoiceHistoryScreen);
+                    }),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          ImageConstant.imgIcOutlinePayment,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 10.h,
+                            top: 3.v,
+                          ),
+                          child: Text(
+                            "Invoice",
+                            style: CustomTextStyles.titleSmall15,
+                          ),
+                        ),
+                      ],
+                    )),
+                SizedBox(height: 42.v),
+                GestureDetector(
+                    onTap: (() {
+                      Navigator.pushNamed(
+                          context, AppRoutes.paymentHistoryScreen);
                     }),
                     child: Row(
                       children: [
