@@ -144,8 +144,8 @@ class JSSettingsPage extends HookWidget {
                               SizedBox(height: 32.v),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context,
-                                      AppRoutes.updateProfilePageOneScreen);
+                                  // Navigator.pushNamed(context,
+                                  //     AppRoutes.updateProfilePageOneScreen);
                                 },
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 4.h),

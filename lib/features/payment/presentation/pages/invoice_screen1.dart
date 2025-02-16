@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:artisan_oga/features/payment/presentation/widgets/separtor_widget.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -309,8 +310,6 @@ class Invoice1Screen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 5.v),
-                              MySeparator(color: theme.primaryColor),
                             ],
                           ),
                         ),
@@ -318,7 +317,14 @@ class Invoice1Screen extends StatelessWidget {
                     ],
                   );
                 },
-              )
+              ),
+              SizedBox(height: 40.h),
+              CustomElevatedButton(
+                  text: 'Go to home',
+                  onPressed: () {
+                    Navigator.pushNamed(
+                        context, AppRoutes.employerNavBarScreen);
+                  })
             ],
           ),
         ),

@@ -376,8 +376,7 @@ class InvoiceScreen extends HookWidget {
                                       ? CustomDropDown<String>(
                                           title: "Naira Account",
                                           items: state.nairaAccountList,
-                                          selectedItem:
-                                              state.nairaAccount ?? '',
+                                          selectedItem: state.nairaAccount,
                                           itemLabel: (history) => history,
                                           onChanged: (value) {
                                             context.read<PaymentBloc>().add(
@@ -393,16 +392,15 @@ class InvoiceScreen extends HookWidget {
                                       ? CustomDropDown<String>(
                                           title: "Dollar Account",
                                           items: state.dollarAccountList,
-                                          selectedItem:
-                                              state.dollarAccount ?? '',
+                                          selectedItem: state.dollarAccount,
                                           itemLabel: (history) => history,
                                           onChanged: (value) {
                                             context.read<PaymentBloc>().add(
                                                   PaymentEvent
-                                                      .updateNairaAccount(
+                                                      .updateDollarAccount(
                                                           value ?? ''),
                                                 );
-                                            print('ssss ${value}');
+                                            print('dolla ${value}');
                                           },
                                         )
                                       : SizedBox()
@@ -413,10 +411,11 @@ class InvoiceScreen extends HookWidget {
                           height: 30.h,
                         ),
                         CustomElevatedButton(
-                            isBusy: state.flutterwavePaymentState ==
-                                FlutterWavePaymentState.loading,
+                            // isBusy: state.flutterwavePaymentState ==
+                            //     FlutterWavePaymentState.loading,
                             text: 'Submit',
                             onPressed: () {
+                              print('emi ${state.dollarAccount}');
                               // context.read<PaymentBloc>().add(
                               //     PaymentEvent.initializeTransactionEvent(
                               //         context,
@@ -433,6 +432,7 @@ class InvoiceScreen extends HookWidget {
                                       ? state.nairaAccount
                                       : state.dollarAccount;
                               print(' ${state.typeOfCurrencyBank}');
+                              print('mybank ${bankName}');
                               accountDetailsDialg(
                                   context,
                                   state.getInvoice?.identity ?? '',

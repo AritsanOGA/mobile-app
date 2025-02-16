@@ -40,14 +40,14 @@ accountDetailsDialg(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 content: Container(
-                  height: 320.h,
+                  height: 240.h,
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: accountCurrency == 'Naira Accounts'
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: 20.h,
+                              height: 30.h,
                             ),
                             Center(
                               child: Text(
@@ -59,54 +59,69 @@ accountDetailsDialg(
                             SizedBox(
                               height: 20.h,
                             ),
-                            Text('Artisan Oga Ltd'),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              '1234567891',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              'ABC Bank',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            Text('Artisan Oga Ltd'),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              '1234567891',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              'DEFA Bank',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
+                            bank == 'ABC Bank'
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Artisan Oga Ltd'),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        '1234567891',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        'ABC Bank',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                    ],
+                                  )
+                                : Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Artisan Oga Ltd'),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        '1234567891',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        'DEFA Bank',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                    ],
+                                  ),
                             SizedBox(
                               height: 20.h,
                             ),
                             CustomElevatedButton(
                                 text: 'Submit',
-                                isBusy: state.postInvoiceState ==
-                                    PostInvoiceState.loading,
+                                isBusy: state.transferPaymentState ==
+                                    TransferPaymentState.loading,
                                 onPressed: () {
-                                  // print(
-                                  //     "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
-
                                   context.read<PaymentBloc>().add(
                                       PaymentEvent.transferPayment(
                                           TransferPaymentDetailsEntity(
@@ -130,56 +145,74 @@ accountDetailsDialg(
                               ),
                             ),
                             SizedBox(
-                              height: 10.h,
+                              height: 20.h,
                             ),
-                            Text('Artisan Oga Ltd'),
+                            bank == 'ACCESS Bank'
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Artisan Oga Ltd'),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        'ACCESS Bank',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        '2736354673846',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 15.h,
+                                      ),
+                                    ],
+                                  )
+                                : Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Artisan Oga Ltd'),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        'SWISS Bank',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        '2736354673846',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                    ],
+                                  ),
                             SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              'ACCESS Bank',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              '2736354673846',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                            Text('Artisan Oga Ltd'),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              'ACCESS Bank',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Text(
-                              '2736354673846',
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            ),
-                            SizedBox(
-                              height: 30.h,
+                              height: 20.h,
                             ),
                             CustomElevatedButton(
                                 text: 'Submit',
-                                isBusy: state.postInvoiceState ==
-                                    PostInvoiceState.loading,
+                                isBusy: state.transferPaymentState ==
+                                    TransferPaymentState.loading,
                                 onPressed: () {
-                                  print(
-                                      "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
-
                                   context.read<PaymentBloc>().add(
                                       PaymentEvent.transferPayment(
                                           TransferPaymentDetailsEntity(

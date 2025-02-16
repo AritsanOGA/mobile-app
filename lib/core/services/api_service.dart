@@ -182,7 +182,7 @@ class ApiServiceImpl implements ApiService {
         print('my error ${response.data?['msg']}');
         throw ServerException(
           trace: StackTrace.current,
-          message: '${response.data?['msg'] ?? 'Something went wronng'}',
+          message: '${response.data?['data'] ?? 'Something went wronng'}',
         );
       } else if (response.statusCode != null && response.statusCode! >= 500) {
         throw ServerException(

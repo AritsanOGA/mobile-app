@@ -5,6 +5,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/category_res
 import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
@@ -12,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
 
 class JobSearchScreen extends HookWidget {
   const JobSearchScreen({super.key});
@@ -32,6 +35,14 @@ class JobSearchScreen extends HookWidget {
             ..add(AuthEvent.searchJobs(
                 SearchJobDataEntity(category: 0, location: '', skill: ''))),
           builder: (context, state) {
+            // if (state.searchJobState == SearchJobState.loading) {
+            //   return Center(child: CircularProgressIndicator());
+            // }
+
+            // if (state.searchJobState == SearchJobState.failure) {
+            //   return Center(child: Text('Error: '));
+            // }
+
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.h),
               child: Column(
@@ -45,27 +56,46 @@ class JobSearchScreen extends HookWidget {
                       Image.asset(ImageConstant.bigLogo),
                       Row(
                         children: [
-                          Container(
-                            child: Text('Register',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    //fontWeight: FontWeight.w600,
-                                    color: theme.primaryColor)),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageTransition(
+                                      type: PageTransitionType.rightToLeft,
+                                      duration: Durations.long1,
+                                      child: JSCreateAccountPageOneScreen()));
+                            },
+                            child: Container(
+                              child: Text('Register',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                      //fontWeight: FontWeight.w600,
+                                      color: theme.primaryColor)),
+                            ),
                           ),
                           SizedBox(
                             width: 20.v,
                           ),
-                          Container(
-                              height: 28.h,
-                              width: 70.v,
-                              padding: EdgeInsets.symmetric(vertical: 3),
-                              decoration: BoxDecoration(
-                                  color: theme.primaryColor,
-                                  borderRadius: BorderRadius.circular(3)),
-                              child: Center(
-                                child: Text('Login',
-                                    style: theme.textTheme.bodyMedium
-                                        ?.copyWith(color: AppColors.kwhite)),
-                              ))
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => JSLoginPageScreen()),
+                              );
+                            },
+                            child: Container(
+                                height: 28.h,
+                                width: 70.v,
+                                padding: EdgeInsets.symmetric(vertical: 3),
+                                decoration: BoxDecoration(
+                                    color: theme.primaryColor,
+                                    borderRadius: BorderRadius.circular(3)),
+                                child: Center(
+                                  child: Text('Login',
+                                      style: theme.textTheme.bodyMedium
+                                          ?.copyWith(color: AppColors.kwhite)),
+                                )),
+                          )
                         ],
                       ),
                     ],
@@ -127,10 +157,8 @@ class JobSearchScreen extends HookWidget {
                   CustomTextFormField(
                     title: 'Location',
                     controller: locationController,
-                    hintText: "Enter city",
+                    hintText: "Enter location",
                     hintStyle: theme.textTheme.titleSmall!,
-
-                    // validator: FormValidation.emailValidation,
                   ),
                   SizedBox(
                     height: 20.h,
@@ -139,7 +167,7 @@ class JobSearchScreen extends HookWidget {
                     children: [
                       CustomElevatedButton(
                         width: 180.v,
-                        isBusy: state.searchJobState == SearchJobState.loading,
+                        // isBusy: state.searchJobState == SearchJobState.loading,
                         onPressed: () {
                           context.read<AuthBloc>().add(
                                 AuthEvent.searchJobs(SearchJobDataEntity(
@@ -150,22 +178,6 @@ class JobSearchScreen extends HookWidget {
                         },
                         text: "Search",
                       ),
-                      // GestureDetector(
-                      //   onTap: () {},
-                      //   child: Container(
-                      //       height: 40.h,
-                      //       width: 100.v,
-                      //       padding: EdgeInsets.symmetric(vertical: 3),
-                      //       decoration: BoxDecoration(
-                      //           color: theme.primaryColor,
-                      //           borderRadius: BorderRadius.circular(10)),
-                      //       child: Center(
-                      //         child: Text('Search',
-                      //             style: theme.textTheme.bodyMedium?.copyWith(
-                      //                 //fontWeight: FontWeight.w600,
-                      //                 color: AppColors.kwhite)),
-                      //       )),
-                      // ),
                     ],
                   ),
                   SizedBox(
@@ -283,7 +295,8 @@ class JobSearchScreen extends HookWidget {
                                                 AppRoutes
                                                     .jobSearchDetailsScreen,
                                                 arguments: state
-                                                    .searchJobEntity[index].identity,
+                                                    .searchJobEntity[index]
+                                                    .identity,
                                               );
                                             },
                                             child: Container(

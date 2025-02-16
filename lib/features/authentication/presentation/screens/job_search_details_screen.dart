@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -26,6 +27,13 @@ class JobSearchDetailsScreen extends StatelessWidget {
       body: BlocBuilder<AuthBloc, AuthState>(
         bloc: context.read<AuthBloc>()..add(AuthEvent.searchJobDetails(jobId)),
         builder: (context, state) {
+          if (state.searchJobDetailState == SearchJobDetailState.loading) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (state.searchJobDetailState == SearchJobDetailState.failure) {
+            return Center(child: Text('Error: '));
+          }
           return SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -35,8 +43,6 @@ class JobSearchDetailsScreen extends StatelessWidget {
                   Center(
                     child: CachedNetworkImage(
                       imageUrl: 'https://picsum.photos/250?image=9',
-
-                      //  state.jobSeekerJobList[index].profileImage,
                       fit: BoxFit.cover,
                       progressIndicatorBuilder:
                           (context, url, downloadProgress) => const Center(),
@@ -248,12 +254,14 @@ class JobSearchDetailsScreen extends StatelessWidget {
                       text: 'Apply Now',
                       onPressed: () {
                         ToastUtils.showRedToast('Create a account to apply');
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                duration: Durations.long1,
-                                child: JSCreateAccountPageOneScreen()));
+                        Future.delayed(Duration(seconds: 3), () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  duration: Durations.long1,
+                                  child: JSCreateAccountPageOneScreen()));
+                        });
                       }),
                   SizedBox(
                     height: 40.h,
