@@ -317,7 +317,9 @@ class AppRoutes {
         );
       case jobSearchDetailsScreen:
         return AppPageRouteBuilder(
-          navigateTo: const JobSearchDetailsScreen(),
+          navigateTo: JobSearchDetailsScreen(
+            jobId: settings.arguments as String,
+          ),
         );
       case invoicePage1:
         return AppPageRouteBuilder(

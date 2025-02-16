@@ -249,14 +249,14 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<SearchJobDetailEntity> searchJobDetails(String jobId) async {
-    final result = await api.get(
-      // headers: userService.authorizationHeader,
-      url: AppApiEndpoint.getEmployerProfile,
-    ) as Map<String, dynamic>;
+    final result = await api.post(
+        // headers: userService.authorizationHeader,
+        url: AppApiEndpoint.searchJobDetails,
+        body: {"identity": jobId}) as Map<String, dynamic>;
 
     print('API Response: $result');
     return SearchJobDetailModel.fromJson(
-      result['data'] as Map<String, dynamic>,
+      result['data']['result'] as Map<String, dynamic>,
     );
   }
 }

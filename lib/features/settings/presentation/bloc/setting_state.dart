@@ -15,14 +15,29 @@ class SettingState with _$SettingState {
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
     GetEmployerResponseEntity? getEmployerResponseEntity,
     GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-    // @Default(UpdateJobSeekerProfileEntity(
-    //     userId: 0,
-    //     fullName: '',
-    //     businessName: '',
-    //     phoneNo: '',
-    //     city: '',
-    //     country: '',
-    //     state: ''))
-    // UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+    @Default(UpdateJobSeekerProfileEntity(
+        fullName: '',
+        state: '',
+        city: '',
+        resume: null,
+        email: '',
+        phoneNumber: '',
+        jobType: '',
+        streetAddress: '',
+        yearsOfExperience: '',
+        guarantorPhoneNumber: '',
+        guarantorName: '',
+        guarantorEmail: '',
+        category: '',
+        identity: '',
+        countryId: '',
+        aboutMe: '',
+        compensationType: '',
+        maxAmount: '',
+        minAmount: '',
+        dateOFBirth: '',
+        skill: '',
+        guarantorAddress: ''))
+    UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
   }) = _Initial;
 }

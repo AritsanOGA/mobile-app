@@ -1,228 +1,418 @@
-import 'package:flutter/material.dart';
+import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
+import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
+import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
-import 'package:flutter/services.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
+import 'package:dropdown_search/dropdown_search.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore_for_file: must_be_immutable
-class UpdateProfilePageTwoScreen extends StatelessWidget {
+class UpdateProfilePageTwoScreen extends HookWidget {
   UpdateProfilePageTwoScreen({Key? key}) : super(key: key);
-
-  TextEditingController fullNameEditTextController = TextEditingController();
-
-  TextEditingController emailEditTextController = TextEditingController();
-
-  TextEditingController jobPreferencesEditTextController =
-      TextEditingController();
-
-  TextEditingController phoneNumberEditTextController = TextEditingController();
-
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  var image;
   @override
   Widget build(BuildContext context) {
+    final aboutMeTextController = useTextEditingController();
+    final addressController = useTextEditingController();
+    final phoneNoTextController = useTextEditingController();
+    final dateOfBirthController = useTextEditingController();
+    final formKey = useMemoized(GlobalKey<FormState>.new);
+    useEffect(() {
+      useEffect(() {
+        context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
+        return null;
+      }, []);
+      context.read<AuthBloc>().add(AuthEvent.getCountries());
+      context.read<AuthBloc>().add(AuthEvent.getState('161'));
+      return null;
+    }, []);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: Form(
-                        key: _formKey,
-                        child: Container(
-                            width: double.maxFinite,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 25.h, vertical: 12.v),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(height: 4.v),
-                                  Align(
-                                      alignment: Alignment.center,
-                                      child: SizedBox(
-                                          height: 120.adaptSize,
-                                          width: 120.adaptSize,
-                                          child: Stack(
-                                              alignment: Alignment.bottomRight,
-                                              children: [
-                                                CustomImageView(
-                                                    imagePath: ImageConstant
-                                                        .imgEllipse40120x120,
-                                                    height: 120.adaptSize,
-                                                    width: 120.adaptSize,
-                                                    radius:
-                                                        BorderRadius.circular(
-                                                            60.h),
-                                                    alignment:
-                                                        Alignment.center),
-                                                CustomIconButton(
-                                                    height: 37.adaptSize,
-                                                    width: 37.adaptSize,
-                                                    padding:
-                                                        EdgeInsets.all(4.h),
-                                                    decoration:
-                                                        IconButtonStyleHelper
-                                                            .fillPrimaryTL18,
-                                                    alignment:
-                                                        Alignment.bottomRight,
-                                                    child: CustomImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgFluentCameraAdd48Filled))
-                                              ]))),
-                                  SizedBox(height: 29.v),
-                                  Text("Update CV",
-                                      style: theme.textTheme.bodyMedium),
-                                  SizedBox(height: 5.v),
-                                  Container(
-                                      padding: EdgeInsets.all(6.h),
-                                      decoration: AppDecoration.outlineBlueGray
-                                          .copyWith(
-                                              borderRadius: BorderRadiusStyle
-                                                  .roundedBorder7),
-                                      child: Row(children: [])),
-                                  SizedBox(height: 33.v),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 1.h),
-                                      child: Text("Full Name",
-                                          style: theme.textTheme.titleMedium)),
-                                  SizedBox(height: 16.v),
-                                  _buildFullNameEditText(context),
-                                  SizedBox(height: 28.v),
-                                  Text("Email Address",
-                                      style: theme.textTheme.titleMedium),
-                                  SizedBox(height: 15.v),
-                                  _buildEmailEditText(context),
-                                  SizedBox(height: 21.v),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 1.h),
-                                      child: Text("Job Preferences",
-                                          style: theme.textTheme.titleMedium)),
-                                  SizedBox(height: 15.v),
-                                  _buildJobPreferencesEditText(context),
-                                  SizedBox(height: 28.v),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 1.h),
-                                      child: Text("Phone Number",
-                                          style: theme.textTheme.titleMedium)),
-                                  SizedBox(height: 15.v),
-                                  _buildPhoneNumberEditText(context),
-                                  SizedBox(height: 21.v),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 1.h),
-                                      child: Text("Date of Birth",
-                                          style: theme.textTheme.titleMedium)),
-                                  SizedBox(height: 15.v),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 1.h),
-                                      child: Text("MM/DD/YY",
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Settings',
+            ),
+            body: BlocConsumer<SettingBloc, SettingState>(
+              listener: (context, state) {
+                if (state.getJobSeekerProfileState ==
+                    GetJobSeekerProfileState.success) {
+                  final profile = state.getJobSeekerResponseEntity;
+                  if (profile != null) {
+                    // fullNameEditTextController.text = profile.fullName ?? '';
+                    // emailController.text = profile.email ?? '';
+                    // phoneNoTextController.text = profile.phone ?? '';
+                    // dateOfBirthController.text = profile.dateOfBirth ?? '';
+                  }
+                }
+                if (state.updateJobSeekerProfileState ==
+                    UpdateJobSeekerProfileState.success) {
+                  ToastUtils.showGreenToast('Profile Update Successfully');
+                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+                }
+                if (state.updateJobSeekerProfileState ==
+                    UpdateJobSeekerProfileState.failure) {
+                  ToastUtils.showRedToast('Something went wrong');
+                }
+              },
+              builder: (context, state) {
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.loading) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.failure) {
+                  return Center(child: Text('Error: '));
+                }
+
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.success) {
+                  final nameController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.fullName);
+                  final emailController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.companyName);
+                  final phoneController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.streetAddress);
+                }
+                return Form(
+                  key: formKey,
+                  child: SingleChildScrollView(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 16.v),
+                            Container(
+                                padding: EdgeInsets.symmetric(horizontal: 25.h),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      CustomTextFormField(
+                                        title: 'About Me',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: aboutMeTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      Text('Country',
                                           style: CustomTextStyles
-                                              .bodyMediumGray700)),
-                                  SizedBox(height: 16.v),
-                                  _buildNextButton(context),
-                                  SizedBox(height: 25.v),
-                                  Align(
-                                      alignment: Alignment.center,
-                                      child: SizedBox(
-                                          width: 130.h,
-                                          child: Divider(
-                                              color: theme
-                                                  .colorScheme.primaryContainer
-                                                  .withOpacity(1))))
-                                ])))))));
-  }
-
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 38.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftOnprimary,
-            margin: EdgeInsets.only(left: 22.h, top: 20.v, bottom: 19.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarSubtitle(text: "Edit Profile"));
-  }
-
-  /// Section Widget
-  Widget _buildFullNameEditText(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 1.h),
-        child: CustomTextFormField(
-            title: 'Password',
-            controller: fullNameEditTextController,
-            hintText: "e.g David Jude",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            borderDecoration:
-                TextFormFieldStyleHelper.underLinePrimaryContainer));
-  }
-
-  /// Section Widget
-  Widget _buildEmailEditText(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 1.h),
-        child: CustomTextFormField(
-            title: 'Password',
-            controller: emailEditTextController,
-            hintText: "Enter Email Address",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            textInputType: TextInputType.emailAddress,
-            borderDecoration:
-                TextFormFieldStyleHelper.underLinePrimaryContainer));
-  }
-
-  /// Section Widget
-  Widget _buildJobPreferencesEditText(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 1.h),
-        child: CustomTextFormField(
-            title: 'Password',
-            controller: jobPreferencesEditTextController,
-            hintText: "Enter Job Preferences",
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            borderDecoration:
-                TextFormFieldStyleHelper.underLinePrimaryContainer));
-  }
-
-  /// Section Widget
-  Widget _buildPhoneNumberEditText(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 1.h),
-        child: CustomTextFormField(
-            title: 'Password',
-            controller: phoneNumberEditTextController,
-            hintText: "Enter Phone Number",
-            inputFormatters: [
-              LengthLimitingTextInputFormatter(11),
-              FilteringTextInputFormatter.digitsOnly,
-            ],
-            hintStyle: CustomTextStyles.bodyMediumGray700,
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.phone,
-            borderDecoration:
-                TextFormFieldStyleHelper.underLinePrimaryContainer));
-  }
-
-  /// Section Widget
-  Widget _buildNextButton(BuildContext context) {
-    return CustomElevatedButton(
-      text: "Next", onPressed: () {},
-      // margin: EdgeInsets.only(left: 1.h),
-      // buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
-      // buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold
-    );
-  }
-
-  /// Navigates back to the previous screen.
-  onTapArrowLeft(BuildContext context) {
-    Navigator.pop(context);
+                                              .bodyMediumPrimaryContainer_1),
+                                      SizedBox(height: 7.v),
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                          builder: (context, state) {
+                                        return Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            padding: const EdgeInsets.only(
+                                                left: 20, right: 5),
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: appTheme.gray500,
+                                                    width: 0.8),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  DropdownSearch<
+                                                      CountryResponseEntity>(
+                                                    items: (filter,
+                                                            infiniteScrollProps) =>
+                                                        state.countries,
+                                                    itemAsString:
+                                                        (CountryResponseEntity
+                                                                state) =>
+                                                            state.name ?? '',
+                                                    decoratorProps:
+                                                        const DropDownDecoratorProps(
+                                                            decoration:
+                                                                InputDecoration(
+                                                      border: InputBorder.none,
+                                                    )),
+                                                    onChanged:
+                                                        (CountryResponseEntity?
+                                                            newValue) {
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(
+                                                            AuthEvent
+                                                                .updateSelectedCountry(
+                                                                    newValue!),
+                                                          );
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(
+                                                            AuthEvent.getState(
+                                                                newValue.id
+                                                                    .toString()),
+                                                          );
+                                                    },
+                                                    filterFn: (item, filter) {
+                                                      return item.name
+                                                          .toLowerCase()
+                                                          .contains(filter
+                                                              .toLowerCase());
+                                                    },
+                                                    suffixProps:
+                                                        DropdownSuffixProps(
+                                                      dropdownButtonProps:
+                                                          DropdownButtonProps(
+                                                        selectedIcon: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 20.0),
+                                                          child: SvgPicture
+                                                              .asset(AppAsset
+                                                                  .dropdown),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    compareFn:
+                                                        (item, selectedItem) {
+                                                      return item.id ==
+                                                          selectedItem.id;
+                                                    },
+                                                    dropdownBuilder: (context,
+                                                        selectedItem) {
+                                                      return Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(top: 10),
+                                                        child: Text(
+                                                          state.country?.name ??
+                                                              'Select Country',
+                                                          style: selectedItem ==
+                                                                  null
+                                                              ? CustomTextStyles
+                                                                  .titleSmallPrimaryContainer_1
+                                                              : CustomTextStyles
+                                                                  .titleSmallPrimaryContainer_1,
+                                                        ),
+                                                      );
+                                                    },
+                                                    popupProps:
+                                                        const PopupProps.menu(
+                                                      showSearchBox: true,
+                                                      searchFieldProps:
+                                                          TextFieldProps(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          border:
+                                                              OutlineInputBorder(),
+                                                          hintText: 'Search...',
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ]));
+                                      }),
+                                      SizedBox(height: 30.v),
+                                      Text('State of Residence',
+                                          style: CustomTextStyles
+                                              .bodyMediumPrimaryContainer_1),
+                                      SizedBox(height: 7.v),
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                          builder: (context, state) {
+                                        return Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            padding: const EdgeInsets.only(
+                                                left: 20, right: 5),
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: appTheme.gray500,
+                                                    width: 0.8),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  DropdownSearch<
+                                                      StateResponseEntity>(
+                                                    items: (filter,
+                                                            infiniteScrollProps) =>
+                                                        state.states,
+                                                    itemAsString:
+                                                        (StateResponseEntity
+                                                                state) =>
+                                                            state.name ?? '',
+                                                    decoratorProps:
+                                                        const DropDownDecoratorProps(
+                                                            decoration:
+                                                                InputDecoration(
+                                                      border: InputBorder.none,
+                                                    )),
+                                                    onChanged:
+                                                        (StateResponseEntity?
+                                                            newValue) {
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(
+                                                            AuthEvent
+                                                                .updateSelectedState(
+                                                                    newValue!),
+                                                          );
+                                                    },
+                                                    compareFn:
+                                                        (item, selectedItem) {
+                                                      return item.id ==
+                                                          selectedItem.id;
+                                                    },
+                                                    filterFn: (item, filter) {
+                                                      return item.name!
+                                                          .toLowerCase()
+                                                          .contains(filter
+                                                              .toLowerCase());
+                                                    },
+                                                    suffixProps:
+                                                        DropdownSuffixProps(
+                                                      dropdownButtonProps:
+                                                          DropdownButtonProps(
+                                                        selectedIcon: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .only(
+                                                                  left: 20.0),
+                                                          child: SvgPicture
+                                                              .asset(AppAsset
+                                                                  .dropdown),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    dropdownBuilder: (context,
+                                                        selectedItem) {
+                                                      return Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(top: 10),
+                                                        child: Text(
+                                                          state.state?.name ??
+                                                              'Select State',
+                                                          style: selectedItem ==
+                                                                  null
+                                                              ? CustomTextStyles
+                                                                  .titleSmallPrimaryContainer_1
+                                                              : CustomTextStyles
+                                                                  .titleSmallPrimaryContainer_1,
+                                                        ),
+                                                      );
+                                                    },
+                                                    popupProps:
+                                                        const PopupProps.menu(
+                                                      showSearchBox: true,
+                                                      searchFieldProps:
+                                                          TextFieldProps(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          border:
+                                                              OutlineInputBorder(),
+                                                          hintText: 'Search...',
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ]));
+                                      }),
+                                      SizedBox(height: 30.v),
+                                      CustomTextFormField(
+                                        title: 'Address ',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: addressController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                        builder: (context, state) {
+                                          return CustomDropDown<String>(
+                                            title: 'Job Type',
+                                            items: state.jobTypeList,
+                                            selectedItem: state.jobType,
+                                            itemLabel: (gender) => gender,
+                                            onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                                    AuthEvent
+                                                        .updateSelectedJobType(
+                                                            value ?? ''),
+                                                  );
+                                            },
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      BlocSelector<SettingBloc, SettingState,
+                                          UpdateJobSeekerProfileEntity>(
+                                        selector: (state) {
+                                          return state
+                                              .updateJobSeekerProfileRequest;
+                                        },
+                                        builder:
+                                            (context, updateJobSeekerRequest) {
+                                          return CustomElevatedButton(
+                                            onPressed: (() {
+                                              if (formKey.currentState
+                                                      ?.validate() ??
+                                                  false) {
+                                                context.read<SettingBloc>().add(
+                                                    SettingEvent.updateJobSeekerRequest(
+                                                        updateJobSeekerRequest.copyWith(
+                                                            aboutMe:
+                                                                aboutMeTextController
+                                                                    .text,
+                                                            streetAddress:
+                                                                addressController
+                                                                    .text,
+                                                            compensationType:
+                                                                phoneNoTextController
+                                                                    .text,
+                                                            countryId:
+                                                                dateOfBirthController
+                                                                    .text,
+                                                            state: '')));
+                                                Navigator.pushNamed(
+                                                  context,
+                                                  AppRoutes
+                                                      .updateProfilePageThreeScreen,
+                                                );
+                                              }
+                                            }),
+                                            text: "Next",
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 12.v)
+                                    ]))
+                          ])),
+                );
+              },
+            )));
   }
 }

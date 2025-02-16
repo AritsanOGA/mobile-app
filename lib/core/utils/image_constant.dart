@@ -13,6 +13,7 @@ class ImageConstant {
     static String locationImage = '$imagePath/location.png';
       static String time = '$imagePath/time.png';
         static String money = '$imagePath/money.png';
+              static String doc = '$imagePath/doc.png';
   static String imgEmployerRegister = '$imagePath/img_employer_register.png';
 
   // Login Options Page images

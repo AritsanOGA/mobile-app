@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: AppRoutes.navigatorKey,
             onGenerateRoute: AppRoutes.generateRoute,
-            initialRoute: AppRoutes.jobSearch,
+            initialRoute: AppRoutes.welcomePageScreen,
             // routes: AppRoutes.routes,
             // builder: EasyLoading.init(),
           );

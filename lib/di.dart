@@ -59,8 +59,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'features/authentication/data/data_source/auth_local_datasource.dart';
+import 'features/authentication/domain/usecases/search_job_detals_usecase.dart';
+
 
 final locator = GetIt.instance;
 
@@ -175,7 +176,8 @@ Future<void> init() async {
         () => GetAllPaymentUsecase(locator()))
     ..registerLazySingleton<VerifyPaymentUseCase>(
         () => VerifyPaymentUseCase(locator()))
-
-            ..registerLazySingleton<SearchJobUseCase>(
+    ..registerLazySingleton<SearchJobDetailUseCase>(
+        () => SearchJobDetailUseCase(locator()))
+    ..registerLazySingleton<SearchJobUseCase>(
         () => SearchJobUseCase(locator()));
 }

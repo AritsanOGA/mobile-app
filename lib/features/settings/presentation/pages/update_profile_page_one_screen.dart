@@ -1,703 +1,269 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
+import 'package:artisan_oga/core/utils/text_formatter.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
+import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-//import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-
-import '../../../../core/services/default.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 // ignore_for_file: must_be_immutable
-class UpdateProfilePageOneScreen extends StatefulWidget {
+class UpdateProfilePageOneScreen extends HookWidget {
   UpdateProfilePageOneScreen({Key? key}) : super(key: key);
-
-  @override
-  _UpdateProfilePageOneScreenState createState() =>
-      _UpdateProfilePageOneScreenState();
-}
-
-class _UpdateProfilePageOneScreenState
-    extends State<UpdateProfilePageOneScreen> {
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
-
-  TextEditingController countryController = TextEditingController();
-
-  TextEditingController addressController = TextEditingController();
-
-  TextEditingController inputherevalueController = TextEditingController();
-  String selectedDate = "yyyy-MM-dd";
-  TextEditingController dateOfBirthController = TextEditingController();
-
-  int selectedCountry = 161;
-  String selectedCountryName = "Nigeria";
-  Future<dynamic>? countriesFuture;
-
-  int selectedState = 306;
-  String selectedStateName = "Lagos";
-  Future<dynamic>? statesFuture;
-  List<String> dropdownItemLGender = ["Male", "Female"];
-  List<String> dropdownItemJobType = [
-    "Full Time",
-    "Tempoary",
-    "Contract",
-    "Part Time"
-  ];
-  List<String> dropdownItemCompensationType = [
-    "Salary",
-    "Pay Per Job",
-  ];
-  String gender = "", jobType = "", compensationType = "";
-
-  @override
-  void initState() {
-    super.initState();
-    // Call getCountries when the widget initializes
-
-    countriesFuture = Default().getCountries();
-    statesFuture = Default().getStates(selectedCountry.toString());
-  }
-
+  var image;
   @override
   Widget build(BuildContext context) {
+    final fullNameEditTextController = useTextEditingController();
+    final emailController = useTextEditingController();
+    final phoneNoTextController = useTextEditingController();
+    final dateOfBirthController = useTextEditingController();
+    final formKey = useMemoized(GlobalKey<FormState>.new);
+    useEffect(() {
+      useEffect(() {
+        context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
+        return null;
+      }, []);
+
+      return null;
+    }, []);
     return SafeArea(
         child: Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
               title: 'Settings',
             ),
-            resizeToAvoidBottomInset: false,
-            //  appBar: _buildAppBar(context),
-            body: SingleChildScrollView(
-                child: Container(
-                    width: double.maxFinite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          // First Name TextField
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: 'First Name',
-                              labelStyle:
-                                  TextStyle(color: Colors.orange, fontSize: 14),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          // Last Name TextField
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: 'Last Name',
-                              labelStyle:
-                                  TextStyle(color: Colors.orange, fontSize: 14),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          // Street Address TextField
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: 'Street Address',
-                              labelStyle:
-                                  TextStyle(color: Colors.orange, fontSize: 14),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          // City TextField
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: 'City',
-                              labelStyle:
-                                  TextStyle(color: Colors.orange, fontSize: 14),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          // Phone TextField (accepts only numbers)
-                          TextField(
-                            keyboardType: TextInputType.phone,
-                            decoration: InputDecoration(
-                              labelText: 'Phone',
-                              labelStyle:
-                                  TextStyle(color: Colors.orange, fontSize: 14),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromARGB(255, 220, 219, 219)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
+            body: BlocConsumer<SettingBloc, SettingState>(
+              listener: (context, state) {
+                if (state.getJobSeekerProfileState ==
+                    GetJobSeekerProfileState.success) {
+                  final profile = state.getJobSeekerResponseEntity;
+                  if (profile != null) {
+                    fullNameEditTextController.text = profile.fullName ?? '';
+                    emailController.text = profile.email ?? '';
+                    phoneNoTextController.text = profile.phone ?? '';
+                    dateOfBirthController.text = profile.dateOfBirth ?? '';
+                  }
+                }
+                if (state.updateJobSeekerProfileState ==
+                    UpdateJobSeekerProfileState.success) {
+                  ToastUtils.showGreenToast('Profile Update Successfully');
+                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+                }
+                if (state.updateJobSeekerProfileState ==
+                    UpdateJobSeekerProfileState.failure) {
+                  ToastUtils.showRedToast('Something went wrong');
+                }
+              },
+              builder: (context, state) {
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.loading) {
+                  return Center(child: CircularProgressIndicator());
+                }
 
-                          _buildDateOfBirth(context),
-                          SizedBox(
-                            height: 20,
-                          ),
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.failure) {
+                  return Center(child: Text('Error: '));
+                }
 
-                          Padding(
-                              padding: EdgeInsets.only(right: 10.h),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Country",
-                                        style: theme.textTheme.bodyMedium),
-                                    SizedBox(height: 5.v),
-                                    GestureDetector(
-                                        onTap: (() {
-                                          setState(() {});
-                                          showCoutryList(context);
-                                        }),
-                                        child: Container(
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 12, horizontal: 12),
-                                          child: Text(
-                                            selectedCountryName,
-                                            maxLines: 1,
-                                          ),
-                                          width: double.maxFinite,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: Color.fromARGB(
-                                                    255,
-                                                    148,
-                                                    148,
-                                                    148)), // Slightly grayish border
-                                            borderRadius: BorderRadius.circular(
-                                                5.0), // Rounded corners
-                                          ),
-                                        )),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Padding(
-                                        padding: EdgeInsets.only(right: 1.h),
-                                        child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text("State of Residence",
-                                                  style: theme
-                                                      .textTheme.bodyMedium),
-                                              SizedBox(height: 5.v),
-                                              GestureDetector(
-                                                  onTap: (() {
-                                                    showStates(context);
-                                                  }),
-                                                  child: Container(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 12,
-                                                            horizontal: 12),
-                                                    child: Text(
-                                                      selectedStateName,
-                                                      maxLines: 1,
+                if (state.getEmployerProfileState ==
+                    GetEmployerProfileState.success) {
+                  final nameController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.fullName);
+                  final emailController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.companyName);
+                  final phoneController = TextEditingController(
+                      text: state.getEmployerResponseEntity?.streetAddress);
+                }
+                return Form(
+                  key: formKey,
+                  child: SizedBox(
+                      width: SizeUtils.width,
+                      child: SingleChildScrollView(
+                          padding: EdgeInsets.only(
+                              bottom: MediaQuery.of(context).viewInsets.bottom),
+                          child: SizedBox(
+                              width: double.maxFinite,
+                              child: Column(children: [
+                                SizedBox(height: 16.v),
+                                SizedBox(
+                                    height: 184.adaptSize,
+                                    width: 184.adaptSize,
+                                    child: Stack(
+                                        alignment: Alignment.bottomRight,
+                                        children: [
+                                          image == null
+                                              ? CustomImageView(
+                                                  imagePath: ImageConstant
+                                                      .imgEllipse40,
+                                                  height: 184.adaptSize,
+                                                  width: 184.adaptSize,
+                                                  radius: BorderRadius.circular(
+                                                      92.h),
+                                                  alignment: Alignment.center)
+                                              : Container(
+                                                  width: 200,
+                                                  height: 200,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    image: DecorationImage(
+                                                      image: FileImage(image!),
+                                                      fit: BoxFit.cover,
                                                     ),
-                                                    width: double.maxFinite,
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              148,
-                                                              148,
-                                                              148)), // Slightly grayish border
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5.0), // Rounded corners
-                                                    ),
-                                                  ))
-                                            ]))
-                                  ])),
-
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          Text(
-                            "Gender",
-                            style: TextStyle(fontSize: 13),
-                          ),
-
-                          SizedBox(height: 6.v),
-                          // Padding(
-                          //     padding: EdgeInsets.only(right: 1.h),
-                          //     child: CustomDropDown(
-                          //         width: double.maxFinite,
-                          //         icon: Container(
-                          //             padding: EdgeInsets.all(3.h),
-                          //             margin: EdgeInsets.fromLTRB(
-                          //                 30.h, 14.v, 20.h, 14.v),
-                          //             decoration: BoxDecoration(
-                          //                 color: theme.colorScheme.primary,
-                          //                 borderRadius:
-                          //                     BorderRadius.circular(9.h)),
-                          //             child: CustomImageView(
-                          //                 imagePath: ImageConstant.imgCheckmark,
-                          //                 height: 11.adaptSize,
-                          //                 width: 11.adaptSize)),
-                          //         hintText: "Male",
-                          //         items: dropdownItemLGender,
-                          //         onChanged: (value) {
-                          //           print(value.toString());
-
-                          //           setState(() {
-                          //             gender = value.toString();
-                          //           });
-                          //         })),
-
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          Text(
-                            "Job Type",
-                            style: TextStyle(fontSize: 13),
-                          ),
-
-                          SizedBox(height: 6.v),
-                          // Padding(
-                          //     padding: EdgeInsets.only(right: 1.h),
-                          //     child: CustomDropDown(
-                          //         width: double.maxFinite,
-                          //         icon: Container(
-                          //             padding: EdgeInsets.all(3.h),
-                          //             margin: EdgeInsets.fromLTRB(
-                          //                 30.h, 14.v, 20.h, 14.v),
-                          //             decoration: BoxDecoration(
-                          //                 color: theme.colorScheme.primary,
-                          //                 borderRadius:
-                          //                     BorderRadius.circular(9.h)),
-                          //             child: CustomImageView(
-                          //                 imagePath: ImageConstant.imgCheckmark,
-                          //                 height: 11.adaptSize,
-                          //                 width: 11.adaptSize)),
-                          //         hintText: "Full Time",
-                          //         items: dropdownItemJobType,
-                          //         onChanged: (value) {
-                          //           print(value.toString());
-
-                          //           setState(() {
-                          //             jobType = value.toString();
-                          //           });
-                          //         })),
-
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          Text(
-                            "Compensation Type",
-                            style: TextStyle(fontSize: 13),
-                          ),
-
-                          SizedBox(height: 6.v),
-                          // Padding(
-                          //     padding: EdgeInsets.only(right: 1.h),
-                          //     child: CustomDropDown(
-                          //         width: double.maxFinite,
-                          //         icon: Container(
-                          //             padding: EdgeInsets.all(3.h),
-                          //             margin: EdgeInsets.fromLTRB(
-                          //                 30.h, 14.v, 20.h, 14.v),
-                          //             decoration: BoxDecoration(
-                          //                 color: theme.colorScheme.primary,
-                          //                 borderRadius:
-                          //                     BorderRadius.circular(9.h)),
-                          //             child: CustomImageView(
-                          //                 imagePath: ImageConstant.imgCheckmark,
-                          //                 height: 11.adaptSize,
-                          //                 width: 11.adaptSize)),
-                          //         hintText: "Salary",
-                          //         items: dropdownItemJobType,
-                          //         onChanged: (value) {
-                          //           print(value.toString());
-
-                          //           setState(() {
-                          //             compensationType = value.toString();
-                          //           });
-                          //         })),
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          CustomElevatedButton(
-                            onPressed: (() {
-                              if ( //_emailController.text.isNotEmpty &&
-                                  firstNameController.text.isNotEmpty &&
-                                      lastNameController.text.isNotEmpty) {
-                                EasyLoading.show();
-                                /*
-
-                          Auth()
-                            .loginEmployer(
-                              email: emailController.text,
-                              password: passwordController.text,
-                            )
-                            .then((value) => {
-                                  //  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen),
-                                  if (value == "success")
-                                    {
-                                      print(value.toString()),
-                                      EasyLoading.dismiss(),
-                                      Fluttertoast.showToast(
-                                          msg: "Login successful",
-                                          toastLength: Toast.LENGTH_SHORT,
-                                          gravity: ToastGravity.CENTER,
-                                          timeInSecForIosWeb: 1,
-                                          backgroundColor: const Color.fromARGB(
-                                                  255, 86, 86, 86)
-                                              .withOpacity(0.6),
-                                          textColor: Colors.white,
-                                          fontSize: 16.0),
-                                      Navigator.push(
-                                          context,
-                                          PageTransition(
-                                              duration:
-                                                  Duration(milliseconds: 500),
-                                              type: PageTransitionType
-                                                  .rightToLeft,
-                                              child: EmployerDashboardPage()))
-
-                                      // Navigator.pushNamed(context, EmployerLogin()),
-                                    }
-                                  else
-                                    {
-                                      print(value.toString()),
-                                      //  Navigator.pop(context),
-                                      EasyLoading.dismiss(),
-                                      // Navigator.pop(context),
-                                      //  EasyLoading.showToast(value.toString())
-
-                                      Fluttertoast.showToast(
-                                          msg: value.toString(),
-                                          toastLength: Toast.LENGTH_SHORT,
-                                          gravity: ToastGravity.CENTER,
-                                          timeInSecForIosWeb: 1,
-                                          backgroundColor: const Color.fromARGB(
-                                                  255, 86, 86, 86)
-                                              .withOpacity(0.6),
-                                          textColor: Colors.white,
-                                          fontSize: 16.0),
-                                    }
-                                });
-
-                        */
-                                //  Navigator.pushNamed(context, AppRoutes.employerRegisterPageOneScreen);
-                              } else {
-                                Fluttertoast.showToast(
-                                    msg: "Please fill out all fields",
-                                    toastLength: Toast.LENGTH_SHORT,
-                                    gravity: ToastGravity.CENTER,
-                                    timeInSecForIosWeb: 1,
-                                    backgroundColor:
-                                        const Color.fromARGB(255, 86, 86, 86)
-                                            .withOpacity(0.6),
-                                    textColor: Colors.white,
-                                    fontSize: 16.0);
-                              }
-                            }),
-                            text: "Update",
-                            // buttonTextStyle:
-                            //     CustomTextStyles.titleMediumGray5001,
-                          ),
-                        ])))));
+                                                  ),
+                                                ),
+                                          GestureDetector(
+                                            onTap: (() {
+                                              //  pickImage();
+                                            }),
+                                            child: CustomIconButton(
+                                                height: 57.adaptSize,
+                                                width: 57.adaptSize,
+                                                padding: EdgeInsets.all(7.h),
+                                                decoration:
+                                                    IconButtonStyleHelper
+                                                        .fillPrimaryTL28,
+                                                alignment:
+                                                    Alignment.bottomRight,
+                                                child: Icon(
+                                                  Icons.add,
+                                                  color: Colors.white,
+                                                  size: 20,
+                                                )),
+                                          )
+                                        ])),
+                                SizedBox(height: 43.v),
+                                Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 25.h),
+                                    child: Column(children: [
+                                      SizedBox(height: 16.v),
+                                      CustomTextFormField(
+                                        title: 'Full Name',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: fullNameEditTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      CustomTextFormField(
+                                        title: 'Email Address',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: emailController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      BlocBuilder<AuthBloc, AuthState>(
+                                        builder: (context, state) {
+                                          return CustomDropDown<String>(
+                                            title: 'Job Type',
+                                            items: state.jobTypeList,
+                                            selectedItem: state.jobType,
+                                            itemLabel: (gender) => gender,
+                                            onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                                    AuthEvent
+                                                        .updateSelectedJobType(
+                                                            value ?? ''),
+                                                  );
+                                            },
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      CustomTextFormField(
+                                        title: 'Phone Number',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Add a Job Description',
+                                        controller: phoneNoTextController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
+                                      ),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      CustomTextFormField(
+                                        hintText: 'MM/DD/YYYY',
+                                        title: 'Date of Birth',
+                                        textInputType: TextInputType.number,
+                                        inputFormatters: [DateInputFormatter()],
+                                        controller: dateOfBirthController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                      ),
+                                      SizedBox(
+                                        height: 40,
+                                      ),
+                                      BlocSelector<SettingBloc, SettingState,
+                                          UpdateJobSeekerProfileEntity>(
+                                        selector: (state) {
+                                          return state
+                                              .updateJobSeekerProfileRequest;
+                                        },
+                                        builder:
+                                            (context, updateJobSeekerRequest) {
+                                          return CustomElevatedButton(
+                                            onPressed: (() {
+                                              if (formKey.currentState
+                                                      ?.validate() ??
+                                                  false) {
+                                                context.read<SettingBloc>().add(
+                                                    SettingEvent.updateJobSeekerRequest(
+                                                        updateJobSeekerRequest.copyWith(
+                                                            fullName:
+                                                                fullNameEditTextController
+                                                                    .text,
+                                                            email:
+                                                                emailController
+                                                                    .text,
+                                                            phoneNumber:
+                                                                phoneNoTextController
+                                                                    .text,
+                                                            dateOFBirth:
+                                                                dateOfBirthController
+                                                                    .text,
+                                                            jobType: '')));
+                                                Navigator.pushNamed(
+                                                  context,
+                                                  AppRoutes
+                                                      .updateProfilePageTwoScreen,
+                                                );
+                                              }
+                                            }),
+                                            text: "Next",
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(height: 25.v),
+                                      SizedBox(
+                                          width: 130.h,
+                                          child: Divider(
+                                              color: theme
+                                                  .colorScheme.primaryContainer
+                                                  .withOpacity(1))),
+                                      SizedBox(height: 12.v)
+                                    ]))
+                              ])))),
+                );
+              },
+            )));
   }
-
-  showCoutryList(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-            title: Text('Country List'),
-            content: Container(
-                height: 500, // Set height as needed
-                width: 300, // Set width as needed
-                child: FutureBuilder<dynamic>(
-                  future: countriesFuture,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                        ),
-                      ); // Show a loader while data is being fetched
-                    } else if (snapshot.hasError) {
-                      return Text(
-                          'Error: ${snapshot.error}'); // Show error message if there's an error
-                    } else if (snapshot.hasData) {
-                      // Data is fetched successfully, use it here
-                      var countries = snapshot.data;
-                      return ListView.builder(
-                        itemCount: countries.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            onTap: (() async {
-                              setState(() {
-                                selectedCountry = countries[index]['id'];
-                                selectedCountryName = countries[index]["name"];
-
-                                statesFuture = Default()
-                                    .getStates(selectedCountry.toString());
-                              });
-
-                              print(selectedCountryName);
-
-                              Navigator.pop(context);
-                            }),
-                            title: Text(
-                              countries[index]['name'],
-                              style: TextStyle(color: Colors.black),
-                            ), // Assuming 'name' is a key in your country data
-                          );
-                        },
-                      );
-                    } else {
-                      print(snapshot.toString());
-                      return Text(
-                          'No data available'); // Show a message if there's no data
-                    }
-                  },
-                )));
-      },
-    );
-  }
-
-  showStates(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-            title: Text('States List'),
-            content: Container(
-                height: 500, // Set height as needed
-                width: 300, // Set width as needed
-                child: FutureBuilder<dynamic>(
-                  future: statesFuture,
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                        ),
-                      ); // Show a loader while data is being fetched
-                    } else if (snapshot.hasError) {
-                      return Text(
-                          'Error: ${snapshot.error}'); // Show error message if there's an error
-                    } else if (snapshot.hasData) {
-                      // Data is fetched successfully, use it here
-                      var states = snapshot.data;
-                      return ListView.builder(
-                        itemCount: states.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            onTap: (() {
-                              setState(() {
-                                print(states[index]['id'].toString());
-                                selectedState = states[index]['id'];
-                                selectedStateName = states[index]["name"];
-                              });
-
-                              print(selectedCountryName);
-
-                              Navigator.pop(context);
-                            }),
-                            title: Text(
-                              states[index]['name'],
-                              style: TextStyle(color: Colors.black),
-                            ), // Assuming 'name' is a key in your country data
-                          );
-                        },
-                      );
-                    } else {
-                      print(snapshot.toString());
-                      return Text(
-                          'No data available'); // Show a message if there's no data
-                    }
-                  },
-                )));
-      },
-    );
-  }
-
-  Widget _buildDateOfBirth(BuildContext context) {
-    return SizedBox(
-        width: double.maxFinite,
-        child: GestureDetector(
-            onTap: (() {
-              _showDatePickerBottomSheet(context);
-            }),
-            child: Padding(
-                padding: EdgeInsets.only(right: 10.h),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Date of Birth", style: theme.textTheme.bodyMedium),
-                      SizedBox(height: 7.v),
-                      Container(
-                        width: double.maxFinite,
-                        child: Text(selectedDate),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 12),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(6)),
-                            border: Border.all(
-                                width: 1,
-                                color: Color.fromARGB(255, 220, 219, 219))),
-                      )
-                    ]))));
-  }
-
-  void _showDatePickerBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          padding: EdgeInsets.only(top: 10),
-          height: 400, // Adjust the height as needed
-          child: Column(
-            children: [
-              // SfDateRangePicker(
-              //   onSelectionChanged: _onSelectionChanged,
-              //   selectionMode: DateRangePickerSelectionMode.single,
-              // ),
-              Container(
-                  width: double.maxFinite,
-                  child: Center(
-                    child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 20),
-                              backgroundColor: Color.fromARGB(255, 0, 0,
-                                  0), // Change this to your desired color
-                            ),
-                            child: Text(
-                              'Close',
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.white),
-                            ),
-                          ),
-                          SizedBox(width: 20),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 20, horizontal: 20),
-                              backgroundColor: Color.fromARGB(255, 204, 82,
-                                  0), // Change this to your desired color
-                            ),
-                            child: Text(
-                              'Submit',
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.white),
-                            ),
-                          ),
-                        ]),
-                  ))
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  /// Section Widget
-  // PreferredSizeWidget _buildAppBar(BuildContext context) {
-  //   return CustomAppBar(
-  //       leadingWidth: 38.h,
-  //       leading: AppbarLeadingImage(
-  //           imagePath: ImageConstant.imgArrowLeftOnprimary,
-  //           margin: EdgeInsets.only(left: 22.h, top: 20.v, bottom: 19.v),
-  //           onTap: () {
-  //             onTapArrowLeft(context);
-  //           }),
-  //       centerTitle: true,
-  //       title: AppbarSubtitle(text: "Edit Profile"));
-  // 
-
-  /// Section Widget
-  Widget _buildNext(BuildContext context) {
-    return CustomElevatedButton(
-      text: "Next", onPressed: () {},
-      // margin: EdgeInsets.only(left: 1.h),
-      // buttonStyle: CustomButtonStyles.fillSecondaryContainerTL24,
-      // buttonTextStyle: CustomTextStyles.titleLargeOnPrimaryContainerSemiBold
-    );
-  }
-
-  /// Navigates back to the previous screen.
-  onTapArrowLeft(BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  // void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
-  //   final pickedDate = DateFormat('yyyy-MM-dd').format(args.value);
-
-  //   setState(() {
-  //     selectedDate = pickedDate;
-  //   });
-
-  //   print(args.value);
-  // }
 }

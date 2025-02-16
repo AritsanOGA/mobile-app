@@ -1346,6 +1346,8 @@ mixin _$SettingState {
       throw _privateConstructorUsedError;
   GetJobSeekerResponseEntity? get getJobSeekerResponseEntity =>
       throw _privateConstructorUsedError;
+  UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -1356,7 +1358,8 @@ mixin _$SettingState {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -1370,7 +1373,8 @@ mixin _$SettingState {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)?
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -1384,7 +1388,8 @@ mixin _$SettingState {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)?
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
         initial,
     required TResult orElse(),
   }) =>
@@ -1425,7 +1430,8 @@ abstract class $SettingStateCopyWith<$Res> {
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
-      GetJobSeekerResponseEntity? getJobSeekerResponseEntity});
+      GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest});
 }
 
 /// @nodoc
@@ -1449,6 +1455,7 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
+    Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_value.copyWith(
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
@@ -1483,6 +1490,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.getJobSeekerResponseEntity
           : getJobSeekerResponseEntity // ignore: cast_nullable_to_non_nullable
               as GetJobSeekerResponseEntity?,
+      updateJobSeekerProfileRequest: null == updateJobSeekerProfileRequest
+          ? _value.updateJobSeekerProfileRequest
+          : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
+              as UpdateJobSeekerProfileEntity,
     ) as $Val);
   }
 }
@@ -1503,7 +1514,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
-      GetJobSeekerResponseEntity? getJobSeekerResponseEntity});
+      GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest});
 }
 
 /// @nodoc
@@ -1525,6 +1537,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
+    Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_$InitialImpl(
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
@@ -1559,6 +1572,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getJobSeekerResponseEntity
           : getJobSeekerResponseEntity // ignore: cast_nullable_to_non_nullable
               as GetJobSeekerResponseEntity?,
+      updateJobSeekerProfileRequest: null == updateJobSeekerProfileRequest
+          ? _value.updateJobSeekerProfileRequest
+          : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
+              as UpdateJobSeekerProfileEntity,
     ));
   }
 }
@@ -1574,7 +1591,30 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       this.errorMessage,
       this.updatePasswordState = UpdatePasswordState.idle,
       this.getEmployerResponseEntity,
-      this.getJobSeekerResponseEntity});
+      this.getJobSeekerResponseEntity,
+      this.updateJobSeekerProfileRequest = const UpdateJobSeekerProfileEntity(
+          fullName: '',
+          state: '',
+          city: '',
+          resume: null,
+          email: '',
+          phoneNumber: '',
+          jobType: '',
+          streetAddress: '',
+          yearsOfExperience: '',
+          guarantorPhoneNumber: '',
+          guarantorName: '',
+          guarantorEmail: '',
+          category: '',
+          identity: '',
+          countryId: '',
+          aboutMe: '',
+          compensationType: '',
+          maxAmount: '',
+          minAmount: '',
+          dateOFBirth: '',
+          skill: '',
+          guarantorAddress: '')});
 
   @override
   @JsonKey()
@@ -1597,10 +1637,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   final GetEmployerResponseEntity? getEmployerResponseEntity;
   @override
   final GetJobSeekerResponseEntity? getJobSeekerResponseEntity;
+  @override
+  @JsonKey()
+  final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingState.initial(updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity)';
+    return 'SettingState.initial(updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
   }
 
   @override
@@ -1621,7 +1664,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       ..add(DiagnosticsProperty(
           'getEmployerResponseEntity', getEmployerResponseEntity))
       ..add(DiagnosticsProperty(
-          'getJobSeekerResponseEntity', getJobSeekerResponseEntity));
+          'getJobSeekerResponseEntity', getJobSeekerResponseEntity))
+      ..add(DiagnosticsProperty(
+          'updateJobSeekerProfileRequest', updateJobSeekerProfileRequest));
   }
 
   @override
@@ -1635,24 +1680,25 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
                     updateJobSeekerProfileState) &&
             (identical(other.getEmployerProfileState, getEmployerProfileState) ||
                 other.getEmployerProfileState == getEmployerProfileState) &&
-            (identical(
-                    other.getJobSeekerProfileState, getJobSeekerProfileState) ||
+            (identical(other.getJobSeekerProfileState, getJobSeekerProfileState) ||
                 other.getJobSeekerProfileState == getJobSeekerProfileState) &&
-            (identical(other.updateEmployerProfileState,
-                    updateEmployerProfileState) ||
+            (identical(other.updateEmployerProfileState, updateEmployerProfileState) ||
                 other.updateEmployerProfileState ==
                     updateEmployerProfileState) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.updatePasswordState, updatePasswordState) ||
                 other.updatePasswordState == updatePasswordState) &&
-            (identical(other.getEmployerResponseEntity,
-                    getEmployerResponseEntity) ||
+            (identical(other.getEmployerResponseEntity, getEmployerResponseEntity) ||
                 other.getEmployerResponseEntity == getEmployerResponseEntity) &&
             (identical(other.getJobSeekerResponseEntity,
                     getJobSeekerResponseEntity) ||
                 other.getJobSeekerResponseEntity ==
-                    getJobSeekerResponseEntity));
+                    getJobSeekerResponseEntity) &&
+            (identical(other.updateJobSeekerProfileRequest,
+                    updateJobSeekerProfileRequest) ||
+                other.updateJobSeekerProfileRequest ==
+                    updateJobSeekerProfileRequest));
   }
 
   @override
@@ -1665,7 +1711,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       errorMessage,
       updatePasswordState,
       getEmployerResponseEntity,
-      getJobSeekerResponseEntity);
+      getJobSeekerResponseEntity,
+      updateJobSeekerProfileRequest);
 
   @JsonKey(ignore: true)
   @override
@@ -1684,7 +1731,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)
         initial,
   }) {
     return initial(
@@ -1695,7 +1743,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
-        getJobSeekerResponseEntity);
+        getJobSeekerResponseEntity,
+        updateJobSeekerProfileRequest);
   }
 
   @override
@@ -1709,7 +1758,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)?
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
         initial,
   }) {
     return initial?.call(
@@ -1720,7 +1770,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
-        getJobSeekerResponseEntity);
+        getJobSeekerResponseEntity,
+        updateJobSeekerProfileRequest);
   }
 
   @override
@@ -1734,7 +1785,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
-            GetJobSeekerResponseEntity? getJobSeekerResponseEntity)?
+            GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
         initial,
     required TResult orElse(),
   }) {
@@ -1747,7 +1799,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           errorMessage,
           updatePasswordState,
           getEmployerResponseEntity,
-          getJobSeekerResponseEntity);
+          getJobSeekerResponseEntity,
+          updateJobSeekerProfileRequest);
     }
     return orElse();
   }
@@ -1790,7 +1843,8 @@ abstract class _Initial implements SettingState {
           final String? errorMessage,
           final UpdatePasswordState updatePasswordState,
           final GetEmployerResponseEntity? getEmployerResponseEntity,
-          final GetJobSeekerResponseEntity? getJobSeekerResponseEntity}) =
+          final GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+          final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest}) =
       _$InitialImpl;
 
   @override
@@ -1809,6 +1863,8 @@ abstract class _Initial implements SettingState {
   GetEmployerResponseEntity? get getEmployerResponseEntity;
   @override
   GetJobSeekerResponseEntity? get getJobSeekerResponseEntity;
+  @override
+  UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

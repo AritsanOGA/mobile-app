@@ -2,32 +2,20 @@ import 'package:artisan_oga/features/authentication/domain/entities/search_job_d
 
 class SearchJobDetailModel extends SearchJobDetailEntity {
   const SearchJobDetailModel({
-    required String hireType,
-    required String applicationDeadline,
-    required String city,
-    required String basicSalary,
-    required String description,
-    required String position,
-    required String jobDescription,
-    required String accomodation,
-    required String qualification,
-    required String jobTitle,
-    required String industry,
-    required DateTime createdAt,
-  }) : super(
-          hireType: hireType,
-          applicationDeadline: applicationDeadline,
-          city: city,
-          basicSalary: basicSalary,
-          description: description,
-          position: position,
-          jobDescription: jobDescription,
-          accomodation: accomodation,
-          qualification: qualification,
-          jobTitle: jobTitle,
-          industry: industry,
-          createdAt: createdAt,
-        );
+    required super.hireType,
+    required super.applicationDeadline,
+    required super.city,
+    required super.basicSalary,
+    required super.description,
+    required super.position,
+    required super.jobDescription,
+    required super.accomodation,
+    required super.qualification,
+    required super.jobTitle,
+    required super.industry,
+    required super.createdAt,
+    required super.itSkills,
+  });
 
   /// **Factory method to create an instance from JSON**
   factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
@@ -39,11 +27,12 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
       description: json['description'] ?? '',
       position: json['position'] ?? '',
       jobDescription: json['job_description'] ?? '',
-      accomodation: json['accomodation'] ?? '',
-      qualification: json['qualification'] ?? '',
+      accomodation: json['accommodation_available'] ?? '',
+      qualification: json['level_of_education'] ?? '',
       jobTitle: json['job_title'] ?? '',
       industry: json['industry'] ?? '',
       createdAt: DateTime.parse(json['created_at']),
+      itSkills: json["it_skills"],
     );
   }
 
@@ -57,11 +46,29 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
       "description": description,
       "position": position,
       "job_description": jobDescription,
-      "accomodation": accomodation,
-      "qualification": qualification,
+      "accommodation_available": accomodation,
+      "level_of_education": qualification,
       "job_title": jobTitle,
       "industry": industry,
-      "created_at": createdAt.toIso8601String(),
+      "created_at": createdAt
     };
+  }
+
+  factory SearchJobDetailModel.fromEntity(SearchJobDetailEntity entity) {
+    return SearchJobDetailModel(
+      hireType: entity.hireType,
+      itSkills: entity.itSkills,
+      applicationDeadline: entity.applicationDeadline,
+      city: entity.city,
+      basicSalary: entity.basicSalary,
+      description: entity.description,
+      position: entity.position,
+      jobDescription: entity.jobDescription,
+      accomodation: entity.accomodation,
+      qualification: entity.qualification,
+      jobTitle: entity.jobTitle,
+      industry: entity.industry,
+      createdAt: entity.createdAt,
+    );
   }
 }

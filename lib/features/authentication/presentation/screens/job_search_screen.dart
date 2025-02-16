@@ -63,9 +63,8 @@ class JobSearchScreen extends HookWidget {
                                   borderRadius: BorderRadius.circular(3)),
                               child: Center(
                                 child: Text('Login',
-                                    style: theme.textTheme.bodyMedium?.copyWith(
-                                        
-                                        color: AppColors.kwhite)),
+                                    style: theme.textTheme.bodyMedium
+                                        ?.copyWith(color: AppColors.kwhite)),
                               ))
                         ],
                       ),
@@ -273,6 +272,48 @@ class JobSearchScreen extends HookWidget {
                                                   style: theme
                                                       .textTheme.bodyMedium),
                                             ],
+                                          ),
+                                          SizedBox(
+                                            height: 10.h,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.pushNamed(
+                                                context,
+                                                AppRoutes
+                                                    .jobSearchDetailsScreen,
+                                                arguments: state
+                                                    .searchJobEntity[index].identity,
+                                              );
+                                            },
+                                            child: Container(
+                                              height: 40.h,
+                                              width: 180.v,
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              decoration: BoxDecoration(
+                                                  color: theme.primaryColor,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Row(
+                                                children: [
+                                                  Text('View Job Details',
+                                                      style: theme
+                                                          .textTheme.bodyMedium
+                                                          ?.copyWith(
+                                                              color: AppColors
+                                                                  .kwhite)),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Image.asset(
+                                                    ImageConstant.doc,
+                                                    color: AppColors.kwhite,
+                                                  )
+                                                ],
+                                              ),
+                                            ),
                                           )
                                         ],
                                       ),

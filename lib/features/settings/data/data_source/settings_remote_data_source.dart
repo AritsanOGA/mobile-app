@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
@@ -95,10 +97,13 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   @override
   Future<bool> updateJobSeekerProfile(
       UpdateJobSeekerProfileEntity entity) async {
-    final result = await api.patch(
+    final formData = await UpdateJobSeekerModel.fromEntity(entity).toJson();
+    log('okay ${formData.fields}');
+    log('okay ${formData.files}');
+    final result = await api.post(
       url: AppApiEndpoint.updateCandidateProfile,
       headers: userService.authorizationHeader,
-      body: UpdateJobSeekerModel.fromEntity(entity).toJson(),
+      body: await UpdateJobSeekerModel.fromEntity(entity).toJson(),
     );
 
     return true;

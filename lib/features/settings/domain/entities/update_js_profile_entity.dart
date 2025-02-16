@@ -25,6 +25,7 @@ class UpdateJobSeekerProfileEntity extends Equatable {
     required this.minAmount,
     required this.dateOFBirth,
     required this.skill,
+    required this.guarantorAddress
   });
 
   final String email;
@@ -36,7 +37,7 @@ class UpdateJobSeekerProfileEntity extends Equatable {
   final String identity;
   final String streetAddress;
   final String yearsOfExperience;
-
+  final String guarantorAddress;
   final String category;
   final String dateOFBirth;
   final String skill;
@@ -72,6 +73,7 @@ class UpdateJobSeekerProfileEntity extends Equatable {
     String? city,
     String? identity,
     File? resume,
+    String? guarantorAddress
   }) {
     return UpdateJobSeekerProfileEntity(
       guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
@@ -95,6 +97,7 @@ class UpdateJobSeekerProfileEntity extends Equatable {
       category: category ?? this.category,
       dateOFBirth: dateOFBirth ?? this.dateOFBirth,
       skill: skill ?? this.skill,
+      guarantorAddress: guarantorAddress ?? this.guarantorAddress
     );
   }
 
@@ -121,5 +124,6 @@ class UpdateJobSeekerProfileEntity extends Equatable {
         state,
         city,
         resume,
+        guarantorAddress
       ];
 }
