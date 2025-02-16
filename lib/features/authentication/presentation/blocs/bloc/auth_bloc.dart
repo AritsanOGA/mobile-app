@@ -12,6 +12,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/login_entity
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/search_job_details_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/search_job_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
@@ -34,6 +35,8 @@ import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../domain/usecases/search_job_detals_usecase.dart';
+
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -52,6 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       UpdatePasswordUseCase? updatePasswordUseCase,
       ForgotPasswordUseCase? forgotPasswordUseCase,
       RemoveUserDataUseCase? removeUserDataUseCase,
+      SearchJobDetailUseCase? searchJobDetailUseCase,
       SearchJobUseCase? searchJobUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
@@ -68,6 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _updatePasswordUseCase = updatePasswordUseCase ?? locator(),
         _removeUserDataUseCase = removeUserDataUseCase ?? locator(),
         _searchJobUseCase = searchJobUseCase ?? locator(),
+        _searchJobDetailsUseCase = searchJobDetailUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
@@ -75,6 +80,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedCity>(_onUpdateSelectedCity);
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
+    on<_UpdateSkill>(_onUpdateSkill);
     on<_UpdateEmploymentHistory>(_onUpdateEmploymentHistory);
     on<_UpdateSelectedEducationQualification>(
         _onUpdateSelectedEducationQualification);
@@ -86,7 +92,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectResume>(_onSelectResume);
     on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
-
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
     on<_RegisterEmployer>(_onRegisterEmployer);
     on<_RegisterJobSeeker>(_onRegisterJobSeeker);
@@ -97,13 +102,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetSkills>(_onGetSkill);
     on<_VerifyCode>(_onVerifyCode);
     on<_GetUserData>(_onGetUserData);
-
     on<_RemoveUserData>(_onRemoveUserData);
     on<_UpdatePassword>(_onUpdatePassword);
     on<_ForgotPassword>(_onForgotPassword);
-
     on<_verifyForgotPasswordCode>(_onVerifyForgotPasswordCode);
     on<_SearchJobs>(_onSearchJobs);
+    on<_SearchJobDetails>(_onSearchJobDetails);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -120,6 +124,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ForgotPasswordUseCase _forgotPasswordUseCase;
   final RemoveUserDataUseCase _removeUserDataUseCase;
   final SearchJobUseCase _searchJobUseCase;
+  final SearchJobDetailUseCase _searchJobDetailsUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -456,5 +461,30 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(searchJobState: SearchJobState.idle));
+  }
+
+  FutureOr<void> _onUpdateSkill(_UpdateSkill event, Emitter<AuthState> emit) {
+    emit(state.copyWith(singleSkill: event.value));
+  }
+
+  FutureOr<void> _onSearchJobDetails(
+      _SearchJobDetails event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(searchJobDetailState: SearchJobDetailState.loading));
+    final result = await _searchJobDetailsUseCase(event.jobId);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          searchJobDetailState: SearchJobDetailState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (searchJobDetail) => emit(
+        state.copyWith(
+          searchJobDetail: searchJobDetail,
+          searchJobDetailState: SearchJobDetailState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(searchJobDetailState: SearchJobDetailState.idle));
   }
 }

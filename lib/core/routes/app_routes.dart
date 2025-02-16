@@ -4,6 +4,8 @@ import 'package:artisan_oga/features/authentication/presentation/screens/j_s_cre
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/job_search_details_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/job_search_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/splash_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
@@ -191,7 +193,8 @@ class AppRoutes {
 
   static const String updateProfilePageThreeScreen =
       '/update_profile_page_three_screen';
-
+  static const String jobSearch = '/job-search_screen';
+  static const String jobSearchDetailsScreen = '/job_search_details_screen';
   static const String appNavigationScreen = '/app_navigation_screen';
   static const String verifyEmployerScreen = '/verify_employer_screen';
   static const String verifyJobSeekerScreen = '/verify_job_seeker_screen';
@@ -307,6 +310,14 @@ class AppRoutes {
       case invoicePage:
         return AppPageRouteBuilder(
           navigateTo: const InvoiceScreen(),
+        );
+      case jobSearch:
+        return AppPageRouteBuilder(
+          navigateTo: const JobSearchScreen(),
+        );
+      case jobSearchDetailsScreen:
+        return AppPageRouteBuilder(
+          navigateTo: const JobSearchDetailsScreen(),
         );
       case invoicePage1:
         return AppPageRouteBuilder(

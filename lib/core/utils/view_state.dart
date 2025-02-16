@@ -71,4 +71,6 @@ enum GetCandidateProfileState { idle, loading, success, failure }
 enum GetCandidateSkillState { idle, loading, success, failure }
 
 enum FlutterWavePaymentState { idle, loading, success, failure }
+
 enum SearchJobState { idle, loading, success, failure }
+enum SearchJobDetailState { idle, loading, success, failure }

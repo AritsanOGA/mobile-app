@@ -37,7 +37,6 @@ class InvoiceHistoryScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24.h),
               child: Column(
                 children: [
-                  
                   ...List.generate(state.invoices.length, (index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),

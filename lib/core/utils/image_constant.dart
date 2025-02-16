@@ -8,7 +8,11 @@ class ImageConstant {
 
   static String imgBxsHardHat = '$imagePath/img_bxs_hard_hat.svg';
 
-  // Signup Options Page images
+  // Signu
+  static String bigLogo = '$imagePath/big_logo.png';
+    static String locationImage = '$imagePath/location.png';
+      static String time = '$imagePath/time.png';
+        static String money = '$imagePath/money.png';
   static String imgEmployerRegister = '$imagePath/img_employer_register.png';
 
   // Login Options Page images

@@ -12,10 +12,10 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedCity;
   const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
-      const factory AuthEvent.searchJobs(SearchJobDataEntity value) =
-      _SearchJobs;
+  const factory AuthEvent.searchJobs(SearchJobDataEntity value) = _SearchJobs;
   const factory AuthEvent.updateSelectedSkill(List<SkillResponseEntity> value) =
       _UpdateSelectedSkill;
+  const factory AuthEvent.updateSkill(SkillResponseEntity value) = _UpdateSkill;
   const factory AuthEvent.updateSelectedJobType(String value) =
       _UpdateSelectedJobType;
   const factory AuthEvent.updateSelectedEducationQualification(String value) =
@@ -44,6 +44,7 @@ class AuthEvent with _$AuthEvent {
       _verifyForgotPasswordCode;
   const factory AuthEvent.getCountries() = _GetCountries;
   const factory AuthEvent.getState(String id) = _GetState;
+  const factory AuthEvent.searchJobDetails(String jobId) = _SearchJobDetails;
   const factory AuthEvent.getCategory() = _GetCategory;
   const factory AuthEvent.updateRegisterEmployerRequest(
           RegisterEmployerEntity registerEmployerRequest) =

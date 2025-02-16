@@ -28,6 +28,7 @@ mixin _$AuthEvent {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -46,6 +47,7 @@ mixin _$AuthEvent {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -68,6 +70,7 @@ mixin _$AuthEvent {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -85,6 +88,7 @@ mixin _$AuthEvent {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -107,6 +111,7 @@ mixin _$AuthEvent {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -124,6 +129,7 @@ mixin _$AuthEvent {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -149,6 +155,7 @@ mixin _$AuthEvent {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -173,6 +180,7 @@ mixin _$AuthEvent {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -195,6 +203,7 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -215,6 +224,7 @@ mixin _$AuthEvent {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -237,6 +247,7 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -256,6 +267,7 @@ mixin _$AuthEvent {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -365,6 +377,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -383,6 +396,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -408,6 +422,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -425,6 +440,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -450,6 +466,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -467,6 +484,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -498,6 +516,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -522,6 +541,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -547,6 +567,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -567,6 +588,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -592,6 +614,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -611,6 +634,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -717,6 +741,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -735,6 +760,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -760,6 +786,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -777,6 +804,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -802,6 +830,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -819,6 +848,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -850,6 +880,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -874,6 +905,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -899,6 +931,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -919,6 +952,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -944,6 +978,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -963,6 +998,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1068,6 +1104,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -1086,6 +1123,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -1111,6 +1149,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -1128,6 +1167,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1153,6 +1193,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -1170,6 +1211,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1201,6 +1243,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -1225,6 +1268,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -1250,6 +1294,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -1270,6 +1315,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1295,6 +1341,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -1314,6 +1361,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1419,6 +1467,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -1437,6 +1486,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -1462,6 +1512,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -1479,6 +1530,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1504,6 +1556,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -1521,6 +1574,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1552,6 +1606,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -1576,6 +1631,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -1601,6 +1657,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -1621,6 +1678,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1646,6 +1704,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -1665,6 +1724,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1772,6 +1832,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -1790,6 +1851,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -1815,6 +1877,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -1832,6 +1895,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1857,6 +1921,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -1874,6 +1939,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -1905,6 +1971,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -1929,6 +1996,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -1954,6 +2022,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -1974,6 +2043,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -1999,6 +2069,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -2018,6 +2089,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -2122,6 +2194,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -2140,6 +2213,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -2165,6 +2239,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -2182,6 +2257,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2207,6 +2283,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -2224,6 +2301,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2255,6 +2333,7 @@ class _$SearchJobsImpl implements _SearchJobs {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -2279,6 +2358,7 @@ class _$SearchJobsImpl implements _SearchJobs {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -2304,6 +2384,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -2324,6 +2405,7 @@ class _$SearchJobsImpl implements _SearchJobs {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -2349,6 +2431,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -2368,6 +2451,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -2479,6 +2563,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -2497,6 +2582,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -2522,6 +2608,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -2539,6 +2626,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2564,6 +2652,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -2581,6 +2670,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2612,6 +2702,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -2636,6 +2727,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -2661,6 +2753,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -2681,6 +2774,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -2706,6 +2800,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -2725,6 +2820,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -2752,6 +2848,368 @@ abstract class _UpdateSelectedSkill implements AuthEvent {
   List<SkillResponseEntity> get value;
   @JsonKey(ignore: true)
   _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSkillImplCopyWith<$Res> {
+  factory _$$UpdateSkillImplCopyWith(
+          _$UpdateSkillImpl value, $Res Function(_$UpdateSkillImpl) then) =
+      __$$UpdateSkillImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SkillResponseEntity value});
+}
+
+/// @nodoc
+class __$$UpdateSkillImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateSkillImpl>
+    implements _$$UpdateSkillImplCopyWith<$Res> {
+  __$$UpdateSkillImplCopyWithImpl(
+      _$UpdateSkillImpl _value, $Res Function(_$UpdateSkillImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSkillImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as SkillResponseEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSkillImpl implements _UpdateSkill {
+  const _$UpdateSkillImpl(this.value);
+
+  @override
+  final SkillResponseEntity value;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateSkill(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSkillImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSkillImplCopyWith<_$UpdateSkillImpl> get copyWith =>
+      __$$UpdateSkillImplCopyWithImpl<_$UpdateSkillImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SearchJobDataEntity value) searchJobs,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPicture,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function(UpdatePasswordEntity param) updatePassword,
+    required TResult Function(ForgotPasswordEntity param) forgotPassword,
+    required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+    required TResult Function() getUserData,
+    required TResult Function() removeUserData,
+    required TResult Function(int index) selectTab,
+  }) {
+    return updateSkill(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SearchJobDataEntity value)? searchJobs,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPicture,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function(UpdatePasswordEntity param)? updatePassword,
+    TResult? Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult? Function()? getUserData,
+    TResult? Function()? removeUserData,
+    TResult? Function(int index)? selectTab,
+  }) {
+    return updateSkill?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SearchJobDataEntity value)? searchJobs,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPicture,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function(UpdatePasswordEntity param)? updatePassword,
+    TResult Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult Function()? getUserData,
+    TResult Function()? removeUserData,
+    TResult Function(int index)? selectTab,
+    required TResult orElse(),
+  }) {
+    if (updateSkill != null) {
+      return updateSkill(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_SearchJobs value) searchJobs,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPicture value) selectPicture,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_ForgotPassword value) forgotPassword,
+    required TResult Function(_verifyForgotPasswordCode value)
+        verifyForgotPasswordCode,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+    required TResult Function(_GetUserData value) getUserData,
+    required TResult Function(_RemoveUserData value) removeUserData,
+    required TResult Function(_SelectTabEvent value) selectTab,
+  }) {
+    return updateSkill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_SearchJobs value)? searchJobs,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPicture value)? selectPicture,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
+    TResult? Function(_verifyForgotPasswordCode value)?
+        verifyForgotPasswordCode,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult? Function(_GetUserData value)? getUserData,
+    TResult? Function(_RemoveUserData value)? removeUserData,
+    TResult? Function(_SelectTabEvent value)? selectTab,
+  }) {
+    return updateSkill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_SearchJobs value)? searchJobs,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPicture value)? selectPicture,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_ForgotPassword value)? forgotPassword,
+    TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult Function(_GetUserData value)? getUserData,
+    TResult Function(_RemoveUserData value)? removeUserData,
+    TResult Function(_SelectTabEvent value)? selectTab,
+    required TResult orElse(),
+  }) {
+    if (updateSkill != null) {
+      return updateSkill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSkill implements AuthEvent {
+  const factory _UpdateSkill(final SkillResponseEntity value) =
+      _$UpdateSkillImpl;
+
+  SkillResponseEntity get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSkillImplCopyWith<_$UpdateSkillImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2831,6 +3289,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -2849,6 +3308,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -2874,6 +3334,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -2891,6 +3352,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2916,6 +3378,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -2933,6 +3396,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -2964,6 +3428,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -2988,6 +3453,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -3013,6 +3479,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3033,6 +3500,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3058,6 +3526,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3077,6 +3546,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3187,6 +3657,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -3205,6 +3676,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -3230,6 +3702,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -3247,6 +3720,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -3272,6 +3746,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -3289,6 +3764,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -3320,6 +3796,7 @@ class _$UpdateSelectedEducationQualificationImpl
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -3344,6 +3821,7 @@ class _$UpdateSelectedEducationQualificationImpl
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -3369,6 +3847,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3389,6 +3868,7 @@ class _$UpdateSelectedEducationQualificationImpl
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3414,6 +3894,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3433,6 +3914,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3541,6 +4023,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -3559,6 +4042,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -3584,6 +4068,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -3601,6 +4086,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -3626,6 +4112,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -3643,6 +4130,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -3674,6 +4162,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -3698,6 +4187,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -3723,6 +4213,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3743,6 +4234,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3768,6 +4260,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -3787,6 +4280,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -3894,6 +4388,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -3912,6 +4407,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -3937,6 +4433,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -3954,6 +4451,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -3979,6 +4477,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -3996,6 +4495,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4027,6 +4527,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -4051,6 +4552,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -4076,6 +4578,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4096,6 +4599,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4121,6 +4625,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4140,6 +4645,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4218,6 +4724,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -4236,6 +4743,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -4261,6 +4769,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -4278,6 +4787,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4303,6 +4813,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -4320,6 +4831,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4351,6 +4863,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -4375,6 +4888,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -4400,6 +4914,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4420,6 +4935,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4445,6 +4961,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4464,6 +4981,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4536,6 +5054,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -4554,6 +5073,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -4579,6 +5099,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -4596,6 +5117,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4621,6 +5143,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -4638,6 +5161,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4669,6 +5193,7 @@ class _$SelectPictureImpl implements _SelectPicture {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -4693,6 +5218,7 @@ class _$SelectPictureImpl implements _SelectPicture {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -4718,6 +5244,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4738,6 +5265,7 @@ class _$SelectPictureImpl implements _SelectPicture {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4763,6 +5291,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -4782,6 +5311,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -4854,6 +5384,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -4872,6 +5403,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -4897,6 +5429,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -4914,6 +5447,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4939,6 +5473,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -4956,6 +5491,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -4987,6 +5523,7 @@ class _$SelectResumeImpl implements _SelectResume {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -5011,6 +5548,7 @@ class _$SelectResumeImpl implements _SelectResume {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -5036,6 +5574,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5056,6 +5595,7 @@ class _$SelectResumeImpl implements _SelectResume {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5081,6 +5621,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5100,6 +5641,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5201,6 +5743,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -5219,6 +5762,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -5244,6 +5788,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -5261,6 +5806,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -5286,6 +5832,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -5303,6 +5850,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -5334,6 +5882,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -5358,6 +5907,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -5383,6 +5933,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5403,6 +5954,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5428,6 +5980,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5447,6 +6000,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5554,6 +6108,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -5572,6 +6127,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -5597,6 +6153,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -5614,6 +6171,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -5639,6 +6197,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -5656,6 +6215,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -5687,6 +6247,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -5711,6 +6272,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -5736,6 +6298,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5756,6 +6319,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5781,6 +6345,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -5800,6 +6365,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -5906,6 +6472,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -5924,6 +6491,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -5949,6 +6517,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -5966,6 +6535,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -5991,6 +6561,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -6008,6 +6579,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -6039,6 +6611,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -6063,6 +6636,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -6088,6 +6662,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6108,6 +6683,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6133,6 +6709,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6152,6 +6729,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6256,6 +6834,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -6274,6 +6853,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -6299,6 +6879,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -6316,6 +6897,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -6341,6 +6923,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -6358,6 +6941,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -6389,6 +6973,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -6413,6 +6998,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -6438,6 +7024,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6458,6 +7045,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6483,6 +7071,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6502,6 +7091,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6605,6 +7195,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -6623,6 +7214,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -6648,6 +7240,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -6665,6 +7258,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -6690,6 +7284,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -6707,6 +7302,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -6738,6 +7334,7 @@ class _$LoginUserImpl implements _LoginUser {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -6762,6 +7359,7 @@ class _$LoginUserImpl implements _LoginUser {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -6787,6 +7385,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6807,6 +7406,7 @@ class _$LoginUserImpl implements _LoginUser {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6832,6 +7432,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -6851,6 +7452,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -6955,6 +7557,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -6973,6 +7576,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -6998,6 +7602,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -7015,6 +7620,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7040,6 +7646,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -7057,6 +7664,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7088,6 +7696,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -7112,6 +7721,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -7137,6 +7747,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7157,6 +7768,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7182,6 +7794,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7201,6 +7814,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7306,6 +7920,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -7324,6 +7939,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -7349,6 +7965,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -7366,6 +7983,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7391,6 +8009,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -7408,6 +8027,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7439,6 +8059,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -7463,6 +8084,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -7488,6 +8110,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7508,6 +8131,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7533,6 +8157,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7552,6 +8177,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7659,6 +8285,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -7677,6 +8304,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -7702,6 +8330,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -7719,6 +8348,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7744,6 +8374,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -7761,6 +8392,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -7792,6 +8424,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -7816,6 +8449,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -7841,6 +8475,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7861,6 +8496,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7886,6 +8522,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -7905,6 +8542,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -7983,6 +8621,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -8001,6 +8640,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -8026,6 +8666,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -8043,6 +8684,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8068,6 +8710,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -8085,6 +8728,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8116,6 +8760,7 @@ class _$GetCountriesImpl implements _GetCountries {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -8140,6 +8785,7 @@ class _$GetCountriesImpl implements _GetCountries {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -8165,6 +8811,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8185,6 +8832,7 @@ class _$GetCountriesImpl implements _GetCountries {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -8210,6 +8858,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8229,6 +8878,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -8327,6 +8977,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -8345,6 +8996,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -8370,6 +9022,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -8387,6 +9040,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8412,6 +9066,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -8429,6 +9084,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8460,6 +9116,7 @@ class _$GetStateImpl implements _GetState {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -8484,6 +9141,7 @@ class _$GetStateImpl implements _GetState {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -8509,6 +9167,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8529,6 +9188,7 @@ class _$GetStateImpl implements _GetState {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -8554,6 +9214,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8573,6 +9234,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -8599,6 +9261,368 @@ abstract class _GetState implements AuthEvent {
   String get id;
   @JsonKey(ignore: true)
   _$$GetStateImplCopyWith<_$GetStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchJobDetailsImplCopyWith<$Res> {
+  factory _$$SearchJobDetailsImplCopyWith(_$SearchJobDetailsImpl value,
+          $Res Function(_$SearchJobDetailsImpl) then) =
+      __$$SearchJobDetailsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String jobId});
+}
+
+/// @nodoc
+class __$$SearchJobDetailsImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SearchJobDetailsImpl>
+    implements _$$SearchJobDetailsImplCopyWith<$Res> {
+  __$$SearchJobDetailsImplCopyWithImpl(_$SearchJobDetailsImpl _value,
+      $Res Function(_$SearchJobDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? jobId = null,
+  }) {
+    return _then(_$SearchJobDetailsImpl(
+      null == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchJobDetailsImpl implements _SearchJobDetails {
+  const _$SearchJobDetailsImpl(this.jobId);
+
+  @override
+  final String jobId;
+
+  @override
+  String toString() {
+    return 'AuthEvent.searchJobDetails(jobId: $jobId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchJobDetailsImpl &&
+            (identical(other.jobId, jobId) || other.jobId == jobId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, jobId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchJobDetailsImplCopyWith<_$SearchJobDetailsImpl> get copyWith =>
+      __$$SearchJobDetailsImplCopyWithImpl<_$SearchJobDetailsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SearchJobDataEntity value) searchJobs,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPicture,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function(UpdatePasswordEntity param) updatePassword,
+    required TResult Function(ForgotPasswordEntity param) forgotPassword,
+    required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+    required TResult Function() getUserData,
+    required TResult Function() removeUserData,
+    required TResult Function(int index) selectTab,
+  }) {
+    return searchJobDetails(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SearchJobDataEntity value)? searchJobs,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPicture,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function(UpdatePasswordEntity param)? updatePassword,
+    TResult? Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult? Function()? getUserData,
+    TResult? Function()? removeUserData,
+    TResult? Function(int index)? selectTab,
+  }) {
+    return searchJobDetails?.call(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SearchJobDataEntity value)? searchJobs,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPicture,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function(UpdatePasswordEntity param)? updatePassword,
+    TResult Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult Function()? getUserData,
+    TResult Function()? removeUserData,
+    TResult Function(int index)? selectTab,
+    required TResult orElse(),
+  }) {
+    if (searchJobDetails != null) {
+      return searchJobDetails(jobId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_SearchJobs value) searchJobs,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPicture value) selectPicture,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_ForgotPassword value) forgotPassword,
+    required TResult Function(_verifyForgotPasswordCode value)
+        verifyForgotPasswordCode,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+    required TResult Function(_GetUserData value) getUserData,
+    required TResult Function(_RemoveUserData value) removeUserData,
+    required TResult Function(_SelectTabEvent value) selectTab,
+  }) {
+    return searchJobDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_SearchJobs value)? searchJobs,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPicture value)? selectPicture,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
+    TResult? Function(_verifyForgotPasswordCode value)?
+        verifyForgotPasswordCode,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult? Function(_GetUserData value)? getUserData,
+    TResult? Function(_RemoveUserData value)? removeUserData,
+    TResult? Function(_SelectTabEvent value)? selectTab,
+  }) {
+    return searchJobDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_SearchJobs value)? searchJobs,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPicture value)? selectPicture,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_ForgotPassword value)? forgotPassword,
+    TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult Function(_GetUserData value)? getUserData,
+    TResult Function(_RemoveUserData value)? removeUserData,
+    TResult Function(_SelectTabEvent value)? selectTab,
+    required TResult orElse(),
+  }) {
+    if (searchJobDetails != null) {
+      return searchJobDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchJobDetails implements AuthEvent {
+  const factory _SearchJobDetails(final String jobId) = _$SearchJobDetailsImpl;
+
+  String get jobId;
+  @JsonKey(ignore: true)
+  _$$SearchJobDetailsImplCopyWith<_$SearchJobDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -8650,6 +9674,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -8668,6 +9693,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -8693,6 +9719,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -8710,6 +9737,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8735,6 +9763,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -8752,6 +9781,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -8783,6 +9813,7 @@ class _$GetCategoryImpl implements _GetCategory {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -8807,6 +9838,7 @@ class _$GetCategoryImpl implements _GetCategory {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -8832,6 +9864,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8852,6 +9885,7 @@ class _$GetCategoryImpl implements _GetCategory {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -8877,6 +9911,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -8896,6 +9931,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9001,6 +10037,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -9019,6 +10056,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -9044,6 +10082,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -9061,6 +10100,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9086,6 +10126,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -9103,6 +10144,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9134,6 +10176,7 @@ class _$UpdateRegisterEmployerRequestImpl
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -9158,6 +10201,7 @@ class _$UpdateRegisterEmployerRequestImpl
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -9183,6 +10227,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9203,6 +10248,7 @@ class _$UpdateRegisterEmployerRequestImpl
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9228,6 +10274,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9247,6 +10294,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9360,6 +10408,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -9378,6 +10427,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -9403,6 +10453,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -9420,6 +10471,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9445,6 +10497,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -9462,6 +10515,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9493,6 +10547,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -9517,6 +10572,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -9542,6 +10598,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9562,6 +10619,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9587,6 +10645,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9606,6 +10665,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9712,6 +10772,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -9730,6 +10791,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -9755,6 +10817,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -9772,6 +10835,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9797,6 +10861,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -9814,6 +10879,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -9845,6 +10911,7 @@ class _$GetSkillsImpl implements _GetSkills {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -9869,6 +10936,7 @@ class _$GetSkillsImpl implements _GetSkills {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -9894,6 +10962,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9914,6 +10983,7 @@ class _$GetSkillsImpl implements _GetSkills {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -9939,6 +11009,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -9958,6 +11029,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10062,6 +11134,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -10080,6 +11153,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -10105,6 +11179,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -10122,6 +11197,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10147,6 +11223,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -10164,6 +11241,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10195,6 +11273,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -10219,6 +11298,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -10244,6 +11324,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10264,6 +11345,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10289,6 +11371,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10308,6 +11391,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10413,6 +11497,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -10431,6 +11516,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -10456,6 +11542,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -10473,6 +11560,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10498,6 +11586,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -10515,6 +11604,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10546,6 +11636,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -10570,6 +11661,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -10595,6 +11687,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10615,6 +11708,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10640,6 +11734,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10659,6 +11754,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10737,6 +11833,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -10755,6 +11852,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -10780,6 +11878,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -10797,6 +11896,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10822,6 +11922,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -10839,6 +11940,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -10870,6 +11972,7 @@ class _$GetUserDataImpl implements _GetUserData {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -10894,6 +11997,7 @@ class _$GetUserDataImpl implements _GetUserData {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -10919,6 +12023,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10939,6 +12044,7 @@ class _$GetUserDataImpl implements _GetUserData {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -10964,6 +12070,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -10983,6 +12090,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -11055,6 +12163,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -11073,6 +12182,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -11098,6 +12208,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -11115,6 +12226,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -11140,6 +12252,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -11157,6 +12270,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -11188,6 +12302,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -11212,6 +12327,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -11237,6 +12353,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -11257,6 +12374,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -11282,6 +12400,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -11301,6 +12420,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -11400,6 +12520,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(SearchJobDataEntity value) searchJobs,
     required TResult Function(List<SkillResponseEntity> value)
         updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
     required TResult Function(String value) updateSelectedJobType,
     required TResult Function(String value)
         updateSelectedEducationQualification,
@@ -11418,6 +12539,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
     required TResult Function() getCountries,
     required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
     required TResult Function() getCategory,
     required TResult Function(RegisterEmployerEntity registerEmployerRequest)
         updateRegisterEmployerRequest,
@@ -11443,6 +12565,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult? Function(SearchJobDataEntity value)? searchJobs,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
@@ -11460,6 +12583,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult? Function()? getCountries,
     TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
     TResult? Function()? getCategory,
     TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -11485,6 +12609,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
     TResult Function(SearchJobDataEntity value)? searchJobs,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
@@ -11502,6 +12627,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
     TResult Function()? getCountries,
     TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
     TResult Function()? getCategory,
     TResult Function(RegisterEmployerEntity registerEmployerRequest)?
         updateRegisterEmployerRequest,
@@ -11533,6 +12659,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
         updateSelectedCategory,
     required TResult Function(_SearchJobs value) searchJobs,
     required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
     required TResult Function(_UpdateSelectedJobType value)
         updateSelectedJobType,
     required TResult Function(_UpdateSelectedEducationQualification value)
@@ -11557,6 +12684,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
         verifyForgotPasswordCode,
     required TResult Function(_GetCountries value) getCountries,
     required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
     required TResult Function(_GetCategory value) getCategory,
     required TResult Function(_UpdateRegisterEmployerRequest value)
         updateRegisterEmployerRequest,
@@ -11582,6 +12710,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult? Function(_SearchJobs value)? searchJobs,
     TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
     TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -11602,6 +12731,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
         verifyForgotPasswordCode,
     TResult? Function(_GetCountries value)? getCountries,
     TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
     TResult? Function(_GetCategory value)? getCategory,
     TResult? Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -11627,6 +12757,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
     TResult Function(_SearchJobs value)? searchJobs,
     TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
     TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
@@ -11646,6 +12777,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
     TResult Function(_GetCountries value)? getCountries,
     TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
     TResult Function(_GetCategory value)? getCategory,
     TResult Function(_UpdateRegisterEmployerRequest value)?
         updateRegisterEmployerRequest,
@@ -11680,6 +12812,8 @@ mixin _$AuthState {
   String get gender => throw _privateConstructorUsedError;
   CountryResponseEntity? get country => throw _privateConstructorUsedError;
   StateResponseEntity? get state => throw _privateConstructorUsedError;
+  SearchJobDetailEntity? get searchJobDetail =>
+      throw _privateConstructorUsedError;
   String? get jsCountry => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
@@ -11700,6 +12834,7 @@ mixin _$AuthState {
   List<SearchJobEntity> get searchJobEntity =>
       throw _privateConstructorUsedError;
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
+  SkillResponseEntity? get singleSkill => throw _privateConstructorUsedError;
   RegisterEmployerEntity get registerEmployerRequest =>
       throw _privateConstructorUsedError;
   RegisterJobSeekerEntity get registerJobSeekerRequest =>
@@ -11737,12 +12872,15 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   JobSeekerVerifyCodeState get jobSeekerVerifyCodeState =>
       throw _privateConstructorUsedError;
+  SearchJobDetailState get searchJobDetailState =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -11762,6 +12900,7 @@ mixin _$AuthState {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -11786,7 +12925,8 @@ mixin _$AuthState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -11796,6 +12936,7 @@ mixin _$AuthState {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -11815,6 +12956,7 @@ mixin _$AuthState {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -11839,7 +12981,8 @@ mixin _$AuthState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -11849,6 +12992,7 @@ mixin _$AuthState {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -11868,6 +13012,7 @@ mixin _$AuthState {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -11892,7 +13037,8 @@ mixin _$AuthState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)?
         initial,
     required TResult orElse(),
   }) =>
@@ -11928,6 +13074,7 @@ abstract class $AuthStateCopyWith<$Res> {
       {String gender,
       CountryResponseEntity? country,
       StateResponseEntity? state,
+      SearchJobDetailEntity? searchJobDetail,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -11947,6 +13094,7 @@ abstract class $AuthStateCopyWith<$Res> {
       List<SkillResponseEntity> skills,
       List<SearchJobEntity> searchJobEntity,
       CategoryResponseEntity? category,
+      SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
       RegisterJobSeekerEntity registerJobSeekerRequest,
       File? resume,
@@ -11971,7 +13119,8 @@ abstract class $AuthStateCopyWith<$Res> {
       GetCountryState getCountryState,
       GetStateState getStateState,
       EmployerVerifyCodeState employerVerifyCodeState,
-      JobSeekerVerifyCodeState jobSeekerVerifyCodeState});
+      JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+      SearchJobDetailState searchJobDetailState});
 }
 
 /// @nodoc
@@ -11990,6 +13139,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? gender = null,
     Object? country = freezed,
     Object? state = freezed,
+    Object? searchJobDetail = freezed,
     Object? jsCountry = freezed,
     Object? file = freezed,
     Object? errorMessage = freezed,
@@ -12009,6 +13159,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? skills = null,
     Object? searchJobEntity = null,
     Object? category = freezed,
+    Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
     Object? registerJobSeekerRequest = null,
     Object? resume = freezed,
@@ -12034,6 +13185,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? getStateState = null,
     Object? employerVerifyCodeState = null,
     Object? jobSeekerVerifyCodeState = null,
+    Object? searchJobDetailState = null,
   }) {
     return _then(_value.copyWith(
       gender: null == gender
@@ -12048,6 +13200,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as StateResponseEntity?,
+      searchJobDetail: freezed == searchJobDetail
+          ? _value.searchJobDetail
+          : searchJobDetail // ignore: cast_nullable_to_non_nullable
+              as SearchJobDetailEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -12124,6 +13280,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
+      singleSkill: freezed == singleSkill
+          ? _value.singleSkill
+          : singleSkill // ignore: cast_nullable_to_non_nullable
+              as SkillResponseEntity?,
       registerEmployerRequest: null == registerEmployerRequest
           ? _value.registerEmployerRequest
           : registerEmployerRequest // ignore: cast_nullable_to_non_nullable
@@ -12224,6 +13384,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.jobSeekerVerifyCodeState
           : jobSeekerVerifyCodeState // ignore: cast_nullable_to_non_nullable
               as JobSeekerVerifyCodeState,
+      searchJobDetailState: null == searchJobDetailState
+          ? _value.searchJobDetailState
+          : searchJobDetailState // ignore: cast_nullable_to_non_nullable
+              as SearchJobDetailState,
     ) as $Val);
   }
 }
@@ -12240,6 +13404,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       {String gender,
       CountryResponseEntity? country,
       StateResponseEntity? state,
+      SearchJobDetailEntity? searchJobDetail,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -12259,6 +13424,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<SkillResponseEntity> skills,
       List<SearchJobEntity> searchJobEntity,
       CategoryResponseEntity? category,
+      SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
       RegisterJobSeekerEntity registerJobSeekerRequest,
       File? resume,
@@ -12283,7 +13449,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetCountryState getCountryState,
       GetStateState getStateState,
       EmployerVerifyCodeState employerVerifyCodeState,
-      JobSeekerVerifyCodeState jobSeekerVerifyCodeState});
+      JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+      SearchJobDetailState searchJobDetailState});
 }
 
 /// @nodoc
@@ -12300,6 +13467,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? gender = null,
     Object? country = freezed,
     Object? state = freezed,
+    Object? searchJobDetail = freezed,
     Object? jsCountry = freezed,
     Object? file = freezed,
     Object? errorMessage = freezed,
@@ -12319,6 +13487,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? skills = null,
     Object? searchJobEntity = null,
     Object? category = freezed,
+    Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
     Object? registerJobSeekerRequest = null,
     Object? resume = freezed,
@@ -12344,6 +13513,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getStateState = null,
     Object? employerVerifyCodeState = null,
     Object? jobSeekerVerifyCodeState = null,
+    Object? searchJobDetailState = null,
   }) {
     return _then(_$InitialImpl(
       gender: null == gender
@@ -12358,6 +13528,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as StateResponseEntity?,
+      searchJobDetail: freezed == searchJobDetail
+          ? _value.searchJobDetail
+          : searchJobDetail // ignore: cast_nullable_to_non_nullable
+              as SearchJobDetailEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -12434,6 +13608,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
+      singleSkill: freezed == singleSkill
+          ? _value.singleSkill
+          : singleSkill // ignore: cast_nullable_to_non_nullable
+              as SkillResponseEntity?,
       registerEmployerRequest: null == registerEmployerRequest
           ? _value.registerEmployerRequest
           : registerEmployerRequest // ignore: cast_nullable_to_non_nullable
@@ -12534,6 +13712,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.jobSeekerVerifyCodeState
           : jobSeekerVerifyCodeState // ignore: cast_nullable_to_non_nullable
               as JobSeekerVerifyCodeState,
+      searchJobDetailState: null == searchJobDetailState
+          ? _value.searchJobDetailState
+          : searchJobDetailState // ignore: cast_nullable_to_non_nullable
+              as SearchJobDetailState,
     ));
   }
 }
@@ -12545,6 +13727,7 @@ class _$InitialImpl implements _Initial {
       {this.gender = '--Select--',
       this.country,
       this.state,
+      this.searchJobDetail,
       this.jsCountry,
       this.file,
       this.errorMessage,
@@ -12564,6 +13747,7 @@ class _$InitialImpl implements _Initial {
       final List<SkillResponseEntity> skills = const [],
       final List<SearchJobEntity> searchJobEntity = const [],
       this.category,
+      this.singleSkill,
       this.registerEmployerRequest = const RegisterEmployerEntity(
           email: '',
           password: '',
@@ -12660,7 +13844,8 @@ class _$InitialImpl implements _Initial {
       this.getCountryState = GetCountryState.idle,
       this.getStateState = GetStateState.idle,
       this.employerVerifyCodeState = EmployerVerifyCodeState.idle,
-      this.jobSeekerVerifyCodeState = JobSeekerVerifyCodeState.idle})
+      this.jobSeekerVerifyCodeState = JobSeekerVerifyCodeState.idle,
+      this.searchJobDetailState = SearchJobDetailState.idle})
       : _skills = skills,
         _searchJobEntity = searchJobEntity,
         _states = states,
@@ -12679,6 +13864,8 @@ class _$InitialImpl implements _Initial {
   final CountryResponseEntity? country;
   @override
   final StateResponseEntity? state;
+  @override
+  final SearchJobDetailEntity? searchJobDetail;
   @override
   final String? jsCountry;
   @override
@@ -12735,6 +13922,8 @@ class _$InitialImpl implements _Initial {
 
   @override
   final CategoryResponseEntity? category;
+  @override
+  final SkillResponseEntity? singleSkill;
   @override
   @JsonKey()
   final RegisterEmployerEntity registerEmployerRequest;
@@ -12859,10 +14048,13 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final JobSeekerVerifyCodeState jobSeekerVerifyCodeState;
+  @override
+  @JsonKey()
+  final SearchJobDetailState searchJobDetailState;
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, updatePasswordState: $updatePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, updatePasswordState: $updatePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
   }
 
   @override
@@ -12873,6 +14065,8 @@ class _$InitialImpl implements _Initial {
             (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.state, state) || other.state == state) &&
+            (identical(other.searchJobDetail, searchJobDetail) ||
+                other.searchJobDetail == searchJobDetail) &&
             (identical(other.jsCountry, jsCountry) ||
                 other.jsCountry == jsCountry) &&
             (identical(other.file, file) || other.file == file) &&
@@ -12904,6 +14098,8 @@ class _$InitialImpl implements _Initial {
                 .equals(other._searchJobEntity, _searchJobEntity) &&
             (identical(other.category, category) ||
                 other.category == category) &&
+            (identical(other.singleSkill, singleSkill) ||
+                other.singleSkill == singleSkill) &&
             (identical(other.registerEmployerRequest, registerEmployerRequest) ||
                 other.registerEmployerRequest == registerEmployerRequest) &&
             (identical(other.registerJobSeekerRequest, registerJobSeekerRequest) ||
@@ -12938,13 +14134,13 @@ class _$InitialImpl implements _Initial {
                 other.searchJobState == searchJobState) &&
             (identical(other.jobSeekerSignUpState, jobSeekerSignUpState) ||
                 other.jobSeekerSignUpState == jobSeekerSignUpState) &&
-            (identical(other.getCategoryState, getCategoryState) ||
-                other.getCategoryState == getCategoryState) &&
+            (identical(other.getCategoryState, getCategoryState) || other.getCategoryState == getCategoryState) &&
             (identical(other.getSkillState, getSkillState) || other.getSkillState == getSkillState) &&
             (identical(other.getCountryState, getCountryState) || other.getCountryState == getCountryState) &&
             (identical(other.getStateState, getStateState) || other.getStateState == getStateState) &&
             (identical(other.employerVerifyCodeState, employerVerifyCodeState) || other.employerVerifyCodeState == employerVerifyCodeState) &&
-            (identical(other.jobSeekerVerifyCodeState, jobSeekerVerifyCodeState) || other.jobSeekerVerifyCodeState == jobSeekerVerifyCodeState));
+            (identical(other.jobSeekerVerifyCodeState, jobSeekerVerifyCodeState) || other.jobSeekerVerifyCodeState == jobSeekerVerifyCodeState) &&
+            (identical(other.searchJobDetailState, searchJobDetailState) || other.searchJobDetailState == searchJobDetailState));
   }
 
   @override
@@ -12953,6 +14149,7 @@ class _$InitialImpl implements _Initial {
         gender,
         country,
         state,
+        searchJobDetail,
         jsCountry,
         file,
         errorMessage,
@@ -12972,6 +14169,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_skills),
         const DeepCollectionEquality().hash(_searchJobEntity),
         category,
+        singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
         resume,
@@ -12996,7 +14194,8 @@ class _$InitialImpl implements _Initial {
         getCountryState,
         getStateState,
         employerVerifyCodeState,
-        jobSeekerVerifyCodeState
+        jobSeekerVerifyCodeState,
+        searchJobDetailState
       ]);
 
   @JsonKey(ignore: true)
@@ -13012,6 +14211,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13031,6 +14231,7 @@ class _$InitialImpl implements _Initial {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -13055,13 +14256,15 @@ class _$InitialImpl implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)
         initial,
   }) {
     return initial(
         gender,
         country,
         state,
+        searchJobDetail,
         jsCountry,
         file,
         errorMessage,
@@ -13081,6 +14284,7 @@ class _$InitialImpl implements _Initial {
         skills,
         searchJobEntity,
         category,
+        singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
         resume,
@@ -13105,7 +14309,8 @@ class _$InitialImpl implements _Initial {
         getCountryState,
         getStateState,
         employerVerifyCodeState,
-        jobSeekerVerifyCodeState);
+        jobSeekerVerifyCodeState,
+        searchJobDetailState);
   }
 
   @override
@@ -13115,6 +14320,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13134,6 +14340,7 @@ class _$InitialImpl implements _Initial {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -13158,13 +14365,15 @@ class _$InitialImpl implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)?
         initial,
   }) {
     return initial?.call(
         gender,
         country,
         state,
+        searchJobDetail,
         jsCountry,
         file,
         errorMessage,
@@ -13184,6 +14393,7 @@ class _$InitialImpl implements _Initial {
         skills,
         searchJobEntity,
         category,
+        singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
         resume,
@@ -13208,7 +14418,8 @@ class _$InitialImpl implements _Initial {
         getCountryState,
         getStateState,
         employerVerifyCodeState,
-        jobSeekerVerifyCodeState);
+        jobSeekerVerifyCodeState,
+        searchJobDetailState);
   }
 
   @override
@@ -13218,6 +14429,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
+            SearchJobDetailEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13237,6 +14449,7 @@ class _$InitialImpl implements _Initial {
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
             CategoryResponseEntity? category,
+            SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
             File? resume,
@@ -13261,7 +14474,8 @@ class _$InitialImpl implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
-            JobSeekerVerifyCodeState jobSeekerVerifyCodeState)?
+            JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+            SearchJobDetailState searchJobDetailState)?
         initial,
     required TResult orElse(),
   }) {
@@ -13270,6 +14484,7 @@ class _$InitialImpl implements _Initial {
           gender,
           country,
           state,
+          searchJobDetail,
           jsCountry,
           file,
           errorMessage,
@@ -13289,6 +14504,7 @@ class _$InitialImpl implements _Initial {
           skills,
           searchJobEntity,
           category,
+          singleSkill,
           registerEmployerRequest,
           registerJobSeekerRequest,
           resume,
@@ -13313,7 +14529,8 @@ class _$InitialImpl implements _Initial {
           getCountryState,
           getStateState,
           employerVerifyCodeState,
-          jobSeekerVerifyCodeState);
+          jobSeekerVerifyCodeState,
+          searchJobDetailState);
     }
     return orElse();
   }
@@ -13352,6 +14569,7 @@ abstract class _Initial implements AuthState {
       {final String gender,
       final CountryResponseEntity? country,
       final StateResponseEntity? state,
+      final SearchJobDetailEntity? searchJobDetail,
       final String? jsCountry,
       final File? file,
       final String? errorMessage,
@@ -13371,6 +14589,7 @@ abstract class _Initial implements AuthState {
       final List<SkillResponseEntity> skills,
       final List<SearchJobEntity> searchJobEntity,
       final CategoryResponseEntity? category,
+      final SkillResponseEntity? singleSkill,
       final RegisterEmployerEntity registerEmployerRequest,
       final RegisterJobSeekerEntity registerJobSeekerRequest,
       final File? resume,
@@ -13395,7 +14614,8 @@ abstract class _Initial implements AuthState {
       final GetCountryState getCountryState,
       final GetStateState getStateState,
       final EmployerVerifyCodeState employerVerifyCodeState,
-      final JobSeekerVerifyCodeState jobSeekerVerifyCodeState}) = _$InitialImpl;
+      final JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+      final SearchJobDetailState searchJobDetailState}) = _$InitialImpl;
 
   @override
   String get gender;
@@ -13403,6 +14623,8 @@ abstract class _Initial implements AuthState {
   CountryResponseEntity? get country;
   @override
   StateResponseEntity? get state;
+  @override
+  SearchJobDetailEntity? get searchJobDetail;
   @override
   String? get jsCountry;
   @override
@@ -13441,6 +14663,8 @@ abstract class _Initial implements AuthState {
   List<SearchJobEntity> get searchJobEntity;
   @override
   CategoryResponseEntity? get category;
+  @override
+  SkillResponseEntity? get singleSkill;
   @override
   RegisterEmployerEntity get registerEmployerRequest;
   @override
@@ -13491,6 +14715,8 @@ abstract class _Initial implements AuthState {
   EmployerVerifyCodeState get employerVerifyCodeState;
   @override
   JobSeekerVerifyCodeState get jobSeekerVerifyCodeState;
+  @override
+  SearchJobDetailState get searchJobDetailState;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

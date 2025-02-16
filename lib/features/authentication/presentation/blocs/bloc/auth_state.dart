@@ -6,7 +6,7 @@ class AuthState with _$AuthState {
     @Default('--Select--') String gender,
     CountryResponseEntity? country,
     StateResponseEntity? state,
- 
+    SearchJobDetailEntity? searchJobDetail,
     String? jsCountry,
     File? file,
     String? errorMessage,
@@ -26,6 +26,7 @@ class AuthState with _$AuthState {
     @Default([]) List<SkillResponseEntity> skills,
     @Default([]) List<SearchJobEntity> searchJobEntity,
     CategoryResponseEntity? category,
+    SkillResponseEntity? singleSkill,
     @Default(RegisterEmployerEntity(
       email: '',
       password: '',
@@ -117,5 +118,7 @@ class AuthState with _$AuthState {
     EmployerVerifyCodeState employerVerifyCodeState,
     @Default(JobSeekerVerifyCodeState.idle)
     JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
+    @Default(SearchJobDetailState.idle)
+    SearchJobDetailState searchJobDetailState,
   }) = _Initial;
 }

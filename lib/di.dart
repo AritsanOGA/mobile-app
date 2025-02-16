@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/login_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/remove_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/search_job_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
@@ -173,5 +174,8 @@ Future<void> init() async {
     ..registerLazySingleton<GetAllPaymentUsecase>(
         () => GetAllPaymentUsecase(locator()))
     ..registerLazySingleton<VerifyPaymentUseCase>(
-        () => VerifyPaymentUseCase(locator()));
+        () => VerifyPaymentUseCase(locator()))
+
+            ..registerLazySingleton<SearchJobUseCase>(
+        () => SearchJobUseCase(locator()));
 }
