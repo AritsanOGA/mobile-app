@@ -1,7 +1,4 @@
 import 'package:artisan_oga/core/error/failure.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';

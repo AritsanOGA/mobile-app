@@ -83,14 +83,12 @@ class PostJobThreeScreen extends HookWidget {
                                   firstDate: DateTime(2024),
                                   lastDate: DateTime(2100),
                                 );
-                                if (pickedDate != null) {
-                                  applicationDeadlineController.text =
-                                      "${pickedDate.year}-${pickedDate.month}-${pickedDate.day}";
+                                applicationDeadlineController.text =
+                                    "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
 
-                                  context.read<HomeBloc>().add(
-                                      HomeEvent.updateSelectedDate(pickedDate));
-                                }
-                              },
+                                context.read<HomeBloc>().add(
+                                    HomeEvent.updateSelectedDate(pickedDate!));
+                                                            },
                               hintText: 'YYYY-MM-DD',
                               titleStyle: CustomTextStyles.titleMediumMedium18,
                               validator: FormValidation.stringValidation,

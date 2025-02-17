@@ -4,7 +4,6 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/core/services/candidates.dart';
-import 'package:artisan_oga/features/home/presentation/widgets/employer_drawer.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/js_drawer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';

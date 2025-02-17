@@ -5,8 +5,6 @@ import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_e
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
-import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
-import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class CandidateRepository {

@@ -1,5 +1,6 @@
+import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/theme/custom_text_style.dart';
 import 'package:flutter/material.dart';
-import '../../core/app_export.dart';
 
 class CustomSearchView extends StatelessWidget {
   CustomSearchView({

@@ -304,7 +304,6 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??
                                         false) {
-                             
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(

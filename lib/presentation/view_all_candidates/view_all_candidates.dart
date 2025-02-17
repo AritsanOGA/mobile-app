@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:hive/hive.dart';
-import 'package:page_transition/page_transition.dart';
 import '../../core/services/default.dart';
-import '../../features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'widgets/userprofilegrid_item_widget.dart';
 
 class ViewAllCandidatesPageScreen extends StatefulWidget {
