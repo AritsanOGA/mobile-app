@@ -26,6 +26,7 @@ import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
@@ -61,7 +62,6 @@ import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'features/authentication/data/data_source/auth_local_datasource.dart';
 import 'features/authentication/domain/usecases/search_job_detals_usecase.dart';
-
 
 final locator = GetIt.instance;
 
@@ -178,6 +178,8 @@ Future<void> init() async {
         () => VerifyPaymentUseCase(locator()))
     ..registerLazySingleton<SearchJobDetailUseCase>(
         () => SearchJobDetailUseCase(locator()))
+    ..registerLazySingleton<RejectCandidateWithoutIntervieUseCase>(
+        () => RejectCandidateWithoutIntervieUseCase(locator()))
     ..registerLazySingleton<SearchJobUseCase>(
         () => SearchJobUseCase(locator()));
 }

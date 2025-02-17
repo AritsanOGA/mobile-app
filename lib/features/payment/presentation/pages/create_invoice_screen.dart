@@ -143,7 +143,7 @@ class CreateInvoiceScreen extends HookWidget {
                     ),
                     SizedBox(height: 60.v),
                     CustomElevatedButton(
-                        text: 'Submit',
+                        text: 'Generate Invoice',
                         isBusy:
                             state.postInvoiceState == PostInvoiceState.loading,
                         onPressed: () {

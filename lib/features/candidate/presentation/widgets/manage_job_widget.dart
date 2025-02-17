@@ -90,17 +90,7 @@ class ManageJobWidget extends StatelessWidget {
                         ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
                         : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
                     style: CustomTextStyles.titleSmallPrimaryContainer_1)),
-            Container(
-                height: 4.adaptSize,
-                width: 4.adaptSize,
-                margin: EdgeInsets.only(left: 10.h, top: 9.v, bottom: 8.v),
-                decoration: BoxDecoration(
-                    color: theme.colorScheme.secondaryContainer.withOpacity(1),
-                    borderRadius: BorderRadius.circular(2.h))),
-            Padding(
-                padding: EdgeInsets.only(left: 9.h, top: 2.v),
-                child: Text("1 views",
-                    style: CustomTextStyles.titleSmallSecondaryContainer))
+       
           ]),
           // SizedBox(height: 7.v),
           // Row(children: [
