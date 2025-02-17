@@ -14,9 +14,7 @@ class EmployerNavBarPage extends StatelessWidget {
 
   final List<Widget> pages = [
     EmployerDashboardPage(),
-
     ManageJobsPage(),
-
     PostJobOnePage(),
     EmployerSettingsPage()
   ];

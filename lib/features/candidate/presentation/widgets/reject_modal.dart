@@ -19,8 +19,8 @@ Future<void> interviewedCandidate(context, String identityId,
           contentPadding: EdgeInsets.zero,
           backgroundColor: Colors.transparent,
           content: Container(
-            height: 200.v,
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            height: 220.v,
+            padding: EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
                 color: AppColors.kwhite,
                 borderRadius: BorderRadius.circular(20)),
@@ -36,9 +36,9 @@ Future<void> interviewedCandidate(context, String identityId,
                           },
                           icon: Icon(Icons.close))),
                 ),
-                // SizedBox(
-                //   height: 30.v,
-                // ),
+                SizedBox(
+                  height: 15.v,
+                ),
                 Text(
                   'Have you interviewed this\ncandidate?',
                   textAlign: TextAlign.center,
@@ -158,7 +158,6 @@ Future<void> employerReview(context, String identityId, String jobIdentity,
                         height: 46.v,
                         width: 120.h,
                         text: "Reject",
-                        
                         onPressed: () {
                           Navigator.pop(context);
                           // acceptCandidateDialog(

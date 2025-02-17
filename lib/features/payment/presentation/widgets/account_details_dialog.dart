@@ -26,6 +26,7 @@ accountDetailsDialg(
                 context,
                 AppRoutes.invoicePage1,
               );
+              // ToastUtils.showRedToast(state.errorMessage ?? '');
             } else if (state.transferPaymentState ==
                 TransferPaymentState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -118,7 +119,7 @@ accountDetailsDialg(
                               height: 20.h,
                             ),
                             CustomElevatedButton(
-                                text: 'Submit',
+                                text: 'Confirm',
                                 isBusy: state.transferPaymentState ==
                                     TransferPaymentState.loading,
                                 onPressed: () {
@@ -209,7 +210,7 @@ accountDetailsDialg(
                               height: 20.h,
                             ),
                             CustomElevatedButton(
-                                text: 'Submit',
+                                text: 'Confirm',
                                 isBusy: state.transferPaymentState ==
                                     TransferPaymentState.loading,
                                 onPressed: () {
