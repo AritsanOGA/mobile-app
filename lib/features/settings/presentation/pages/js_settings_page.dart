@@ -114,7 +114,7 @@ class JSSettingsPage extends HookWidget {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.pushNamed(context,
-                                      AppRoutes.changePasswordPageOneScreen);
+                                      AppRoutes.jSPasswordChangeScreen);
                                 },
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 4.h),

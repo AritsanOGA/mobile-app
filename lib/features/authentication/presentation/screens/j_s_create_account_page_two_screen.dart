@@ -2,7 +2,6 @@ import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
-import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
@@ -270,12 +269,27 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               children: [
                                 Expanded(
                                   child: CustomTextFormField(
-                                    hintText: 'MM/DD/YYYY',
-                                    title: 'Date of Birth',
-                                    textInputType: TextInputType.number,
-                                    inputFormatters: [DateInputFormatter()],
-                                    controller: dateOfBirthController,
+                                    ontap: () async {
+                                      DateTime? pickedDate =
+                                          await showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(2024),
+                                        lastDate: DateTime(2100),
+                                      );
+                                      dateOfBirthController.text =
+                                          "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
+
+                                      context.read<AuthBloc>().add(
+                                          AuthEvent.updateSelectedDate(
+                                              pickedDate));
+                                    },
+                                    hintText: 'YYYY-MM-DD',
+                                    titleStyle: CustomTextStyles
+                                        .bodyMediumPrimaryContainer_1,
                                     validator: FormValidation.stringValidation,
+                                    title: 'Date of Birth',
+                                    controller: dateOfBirthController,
                                   ),
                                 ),
                                 SizedBox(
@@ -302,6 +316,8 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               builder: (context, registerJobSeekerRequest) {
                                 return CustomElevatedButton(
                                   onPressed: (() {
+                                    print(
+                                        'hiboo ${dateOfBirthController.text}');
                                     if (formKey.currentState?.validate() ??
                                         false) {
                                       context.read<AuthBloc>().add(AuthEvent

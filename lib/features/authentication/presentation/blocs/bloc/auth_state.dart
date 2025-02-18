@@ -13,6 +13,7 @@ class AuthState with _$AuthState {
     String? confirmPassword,
     String? countryId,
     String? jsGender,
+    DateTime? dateOfBirth,
     @Default(0) int selectedIndex,
     @Default('--Select--') String jobType,
     String? jsState,

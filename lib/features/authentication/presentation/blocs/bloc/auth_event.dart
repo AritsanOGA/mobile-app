@@ -10,6 +10,8 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedState;
   const factory AuthEvent.updateSelectedCity(String value) =
       _UpdateSelectedCity;
+        const factory AuthEvent.updateSelectedDate(DateTime value) =
+      _UpdateSelectedDate;
   const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
   const factory AuthEvent.searchJobs(SearchJobDataEntity value) = _SearchJobs;

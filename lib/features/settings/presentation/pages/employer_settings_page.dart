@@ -114,7 +114,7 @@ class EmployerSettingsPage extends HookWidget {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.pushNamed(context,
-                                      AppRoutes.changePasswordPageOneScreen);
+                                      AppRoutes.employerPasswordChangeScreen);
                                 },
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 4.h),

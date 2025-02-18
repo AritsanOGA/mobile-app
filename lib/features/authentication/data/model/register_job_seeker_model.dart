@@ -92,7 +92,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
                 "${resume?.path}",
                 filename: "${resume?.path.split('/').last}",
               )
-            : 'i am null',
+            : '',
         'gender': gender,
         'phone': phoneNumber,
         'DateOfBirth': dateOFBirth,
@@ -133,6 +133,5 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
         'StreetAddress': streetAddress,
         'service_description': describeYourRole,
         'guarantor_phone': guarantorPhoneNumber,
-       
       });
 }

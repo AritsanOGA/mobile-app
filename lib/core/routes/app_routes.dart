@@ -27,8 +27,8 @@ import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen.d
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen1.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_one_screen.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/change_password_page_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/employer_password_change_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
@@ -123,7 +123,7 @@ class AppRoutes {
 
   static const String settingsPage = '/settings_page';
 
-  static const String changePasswordPageScreen = '/change_password_page_screen';
+  static const String jSPasswordChangeScreen = '/jS-password-change-screen';
 
   static const String updateProfilePageScreen = '/update_profile_page_screen';
 
@@ -182,8 +182,8 @@ class AppRoutes {
 
   static const String settingsPageOneScreen = '/settings_page_one_screen';
 
-  static const String changePasswordPageOneScreen =
-      '/change_password_page_one_screen';
+  static const String employerPasswordChangeScreen =
+      '/employer-password-change-screen';
 
   static const String updateProfilePageTwoScreen =
       '/update_profile_page_two_screen';
@@ -428,13 +428,13 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: SearchResultPageScreen(),
         );
-      case changePasswordPageOneScreen:
+      case employerPasswordChangeScreen:
         return AppPageRouteBuilder(
-          navigateTo: ChangePasswordPageOneScreen(),
+          navigateTo: EmployerPasswordChangeScreen(),
         );
-      case changePasswordPageScreen:
+      case jSPasswordChangeScreen:
         return AppPageRouteBuilder(
-          navigateTo: ChangePasswordPageScreen(),
+          navigateTo: JSPasswordChangeScreen(),
         );
 
       case candidatesProfileAcceptPageScreen:

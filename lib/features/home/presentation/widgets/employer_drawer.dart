@@ -190,7 +190,7 @@ class EmployerDrawer extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(
-                            context, AppRoutes.changePasswordPageOneScreen);
+                            context, AppRoutes.employerPasswordChangeScreen);
                       },
                       child: Row(
                         children: [
