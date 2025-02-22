@@ -323,7 +323,9 @@ class AppRoutes {
         );
       case invoicePage1:
         return AppPageRouteBuilder(
-          navigateTo: const Invoice1Screen(),
+          navigateTo: Invoice1Screen(
+            identity: settings.arguments as String,
+          ),
         );
       case employerSignUppageScreen:
         return AppPageRouteBuilder(

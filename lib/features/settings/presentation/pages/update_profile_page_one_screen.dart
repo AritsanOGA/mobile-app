@@ -27,14 +27,12 @@ class UpdateProfilePageOneScreen extends HookWidget {
     final phoneNoTextController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
-    useEffect(() {
-      useEffect(() {
-        context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
-        return null;
-      }, []);
 
+    useEffect(() {
+      context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
       return null;
     }, []);
+
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,

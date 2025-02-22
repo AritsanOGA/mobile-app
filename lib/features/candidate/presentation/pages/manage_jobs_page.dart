@@ -21,7 +21,6 @@ class ManageJobsPage extends HookWidget {
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
               title: 'Manage Job Post',
-              hasBackButton: false,
             ),
             body: Container(
                 width: double.maxFinite,

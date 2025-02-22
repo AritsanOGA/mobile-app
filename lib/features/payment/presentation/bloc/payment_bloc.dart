@@ -15,6 +15,7 @@ import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecas
 import 'package:artisan_oga/features/payment/domain/usecases/get_all_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_all_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_with_identity_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/verify_payment_usecase.dart';
@@ -41,6 +42,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     VerifyPaymentUseCase? verifyPaymentUseCase,
     GetAllPaymentUsecase? getAllPaymentUsecase,
     GetAllInvoiceUsecase? getAllInvoiceUsecase,
+    GetInvoiceWithIndentityUsecase? getInvoiceWithIndentityUsecase,
   })  : _cardPaymentUsecase = cardPaymentUsecase ?? locator(),
         _getInvoiceUsecase = getInvoiceUsecase ?? locator(),
         _postInvoiceUseCase = postInvoiceUseCase ?? locator(),
@@ -48,6 +50,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         _verifyPaymentUseCase = verifyPaymentUseCase ?? locator(),
         _getAllInvoiceUsecase = getAllInvoiceUsecase ?? locator(),
         _getAllPaymentUsecase = getAllPaymentUsecase ?? locator(),
+        _getInvoiceWithIndentityUsecase =
+            getInvoiceWithIndentityUsecase ?? locator(),
         super(_Initial()) {
     on<_TransferPayment>(_onTransferPayment);
     on<_CardPayment>(_onCardPayment);
@@ -55,6 +59,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     on<_GetAllPayment>(_onGetAllPayment);
     on<_GetAllInvoice>(_onGetAllInvoice);
     on<_GetInvoice>(_onGetInvoice);
+    on<_GetInvoiceWithIdentity>(_onGetInvoiceWithIdentity);
     on<_UpdatePricePercent>(_onUpdatePricePercent);
     on<_UpdatePaymentMethod>(_onUpdatePaymentMethod);
 
@@ -69,6 +74,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
 
   final CardPaymentUseCase _cardPaymentUsecase;
   final GetInvoiceUsecase _getInvoiceUsecase;
+  final GetInvoiceWithIndentityUsecase _getInvoiceWithIndentityUsecase;
   final PostInvoiceUseCase _postInvoiceUseCase;
   final TransferPaymentUseCase _transferPaymentUseCase;
   final VerifyPaymentUseCase _verifyPaymentUseCase;
@@ -280,5 +286,26 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
       ),
     );
     emit(state.copyWith(getAllInvoiceState: GetAllInvoiceState.idle));
+  }
+
+  FutureOr<void> _onGetInvoiceWithIdentity(
+      _GetInvoiceWithIdentity event, Emitter<PaymentState> emit) async {
+    emit(state.copyWith(getInvoiceState: GetInvoiceState.loading));
+    final result = await _getInvoiceWithIndentityUsecase(event.identity);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getInvoiceState: GetInvoiceState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (invoice) => emit(
+        state.copyWith(
+          getInvoice: invoice,
+          getInvoiceState: GetInvoiceState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getInvoiceState: GetInvoiceState.idle));
   }
 }

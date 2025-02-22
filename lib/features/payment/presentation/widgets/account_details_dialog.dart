@@ -24,7 +24,7 @@ accountDetailsDialg(
             if (state.transferPaymentState == TransferPaymentState.success) {
               Navigator.pushNamed(
                 context,
-                AppRoutes.invoicePage1,
+                AppRoutes.invoiceHistoryScreen,
               );
               // ToastUtils.showRedToast(state.errorMessage ?? '');
             } else if (state.transferPaymentState ==

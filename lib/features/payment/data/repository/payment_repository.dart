@@ -89,19 +89,23 @@ class PaymentRepositoryImpl implements PaymentRepository {
   }
 
   @override
-  Future<Either<Failure, VerifyFlutterwavePaymentEntity>> verifyPayment(String transactionId) {
-   return paymentRemoteDataSource.verifyPayment(transactionId).makeRequest();
+  Future<Either<Failure, VerifyFlutterwavePaymentEntity>> verifyPayment(
+      String transactionId) {
+    return paymentRemoteDataSource.verifyPayment(transactionId).makeRequest();
   }
 
   @override
   Future<Either<Failure, List<AllInvoiceEntity>>> getAllInvoice() {
-     return paymentRemoteDataSource.getAllInvoice().makeRequest();
-
+    return paymentRemoteDataSource.getAllInvoice().makeRequest();
   }
 
   @override
   Future<Either<Failure, List<AllPaymentEntity>>> getAllPayment() {
-       return paymentRemoteDataSource.getAllPayment().makeRequest();
+    return paymentRemoteDataSource.getAllPayment().makeRequest();
+  }
 
+  @override
+  Future<Either<Failure, GetInvoiceEntity>> getInvoiceWithId(String identity) {
+ return paymentRemoteDataSource.getInvoiceWithId(identity).makeRequest();
   }
 }

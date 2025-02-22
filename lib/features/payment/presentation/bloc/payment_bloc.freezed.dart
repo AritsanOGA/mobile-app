@@ -24,6 +24,7 @@ mixin _$PaymentEvent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -47,6 +48,7 @@ mixin _$PaymentEvent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -69,6 +71,7 @@ mixin _$PaymentEvent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -92,6 +95,8 @@ mixin _$PaymentEvent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -114,6 +119,7 @@ mixin _$PaymentEvent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -135,6 +141,7 @@ mixin _$PaymentEvent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -213,6 +220,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -239,6 +247,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -264,6 +273,7 @@ class _$StartedImpl implements _Started {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -293,6 +303,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -318,6 +330,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -342,6 +355,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -437,6 +451,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -463,6 +478,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -488,6 +504,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -517,6 +534,8 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -542,6 +561,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -566,6 +586,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -666,6 +687,7 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -692,6 +714,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -717,6 +740,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -746,6 +770,8 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -771,6 +797,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -795,6 +822,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -895,6 +923,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -921,6 +950,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -946,6 +976,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -975,6 +1006,8 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -1000,6 +1033,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -1024,6 +1058,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -1097,6 +1132,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -1123,6 +1159,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -1148,6 +1185,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -1177,6 +1215,8 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -1202,6 +1242,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -1226,6 +1267,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -1248,6 +1290,246 @@ class _$GetInvoiceImpl implements _GetInvoice {
 
 abstract class _GetInvoice implements PaymentEvent {
   const factory _GetInvoice() = _$GetInvoiceImpl;
+}
+
+/// @nodoc
+abstract class _$$GetInvoiceWithIdentityImplCopyWith<$Res> {
+  factory _$$GetInvoiceWithIdentityImplCopyWith(
+          _$GetInvoiceWithIdentityImpl value,
+          $Res Function(_$GetInvoiceWithIdentityImpl) then) =
+      __$$GetInvoiceWithIdentityImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String identity});
+}
+
+/// @nodoc
+class __$$GetInvoiceWithIdentityImplCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res, _$GetInvoiceWithIdentityImpl>
+    implements _$$GetInvoiceWithIdentityImplCopyWith<$Res> {
+  __$$GetInvoiceWithIdentityImplCopyWithImpl(
+      _$GetInvoiceWithIdentityImpl _value,
+      $Res Function(_$GetInvoiceWithIdentityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? identity = null,
+  }) {
+    return _then(_$GetInvoiceWithIdentityImpl(
+      null == identity
+          ? _value.identity
+          : identity // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
+  const _$GetInvoiceWithIdentityImpl(this.identity);
+
+  @override
+  final String identity;
+
+  @override
+  String toString() {
+    return 'PaymentEvent.getInvoiceWithIdentity(identity: $identity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetInvoiceWithIdentityImpl &&
+            (identical(other.identity, identity) ||
+                other.identity == identity));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, identity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetInvoiceWithIdentityImplCopyWith<_$GetInvoiceWithIdentityImpl>
+      get copyWith => __$$GetInvoiceWithIdentityImplCopyWithImpl<
+          _$GetInvoiceWithIdentityImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TransferPaymentDetailsEntity param)
+        transferPayment,
+    required TResult Function(CardPaymentDetailsEntity param) cardPayment,
+    required TResult Function(PostInvoiceEntity param) postInvoice,
+    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
+    required TResult Function() getAllInvoice,
+    required TResult Function() getAllPayment,
+    required TResult Function(String transactionId) verifyPayment,
+    required TResult Function(
+            String value, double totalPrice, double percentage)
+        updatePricePercent,
+    required TResult Function(String value) updatePaymentMethod,
+    required TResult Function(String value) updateTypeOfCurrencyBank,
+    required TResult Function(String value) updateDollarAccount,
+    required TResult Function(String value) updateNairaAccount,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
+  }) {
+    return getInvoiceWithIdentity(identity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult? Function(PostInvoiceEntity param)? postInvoice,
+    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
+    TResult? Function()? getAllInvoice,
+    TResult? Function()? getAllPayment,
+    TResult? Function(String transactionId)? verifyPayment,
+    TResult? Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult? Function(String value)? updatePaymentMethod,
+    TResult? Function(String value)? updateTypeOfCurrencyBank,
+    TResult? Function(String value)? updateDollarAccount,
+    TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
+  }) {
+    return getInvoiceWithIdentity?.call(identity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult Function(PostInvoiceEntity param)? postInvoice,
+    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
+    TResult Function()? getAllInvoice,
+    TResult Function()? getAllPayment,
+    TResult Function(String transactionId)? verifyPayment,
+    TResult Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult Function(String value)? updatePaymentMethod,
+    TResult Function(String value)? updateTypeOfCurrencyBank,
+    TResult Function(String value)? updateDollarAccount,
+    TResult Function(String value)? updateNairaAccount,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (getInvoiceWithIdentity != null) {
+      return getInvoiceWithIdentity(identity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TransferPayment value) transferPayment,
+    required TResult Function(_CardPayment value) cardPayment,
+    required TResult Function(_PostInvoice value) postInvoice,
+    required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
+    required TResult Function(_GetAllInvoice value) getAllInvoice,
+    required TResult Function(_GetAllPayment value) getAllPayment,
+    required TResult Function(_VerifyPayment value) verifyPayment,
+    required TResult Function(_UpdatePricePercent value) updatePricePercent,
+    required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
+    required TResult Function(_UpdateTypeOfCurrencyBank value)
+        updateTypeOfCurrencyBank,
+    required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
+    required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
+  }) {
+    return getInvoiceWithIdentity(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_TransferPayment value)? transferPayment,
+    TResult? Function(_CardPayment value)? cardPayment,
+    TResult? Function(_PostInvoice value)? postInvoice,
+    TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
+    TResult? Function(_GetAllInvoice value)? getAllInvoice,
+    TResult? Function(_GetAllPayment value)? getAllPayment,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
+    TResult? Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult? Function(_UpdateTypeOfCurrencyBank value)?
+        updateTypeOfCurrencyBank,
+    TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+  }) {
+    return getInvoiceWithIdentity?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TransferPayment value)? transferPayment,
+    TResult Function(_CardPayment value)? cardPayment,
+    TResult Function(_PostInvoice value)? postInvoice,
+    TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
+    TResult Function(_GetAllInvoice value)? getAllInvoice,
+    TResult Function(_GetAllPayment value)? getAllPayment,
+    TResult Function(_VerifyPayment value)? verifyPayment,
+    TResult Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
+    TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (getInvoiceWithIdentity != null) {
+      return getInvoiceWithIdentity(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetInvoiceWithIdentity implements PaymentEvent {
+  const factory _GetInvoiceWithIdentity(final String identity) =
+      _$GetInvoiceWithIdentityImpl;
+
+  String get identity;
+  @JsonKey(ignore: true)
+  _$$GetInvoiceWithIdentityImplCopyWith<_$GetInvoiceWithIdentityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1294,6 +1576,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -1320,6 +1603,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -1345,6 +1629,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -1374,6 +1659,8 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -1399,6 +1686,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -1423,6 +1711,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -1491,6 +1780,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -1517,6 +1807,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -1542,6 +1833,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -1571,6 +1863,8 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -1596,6 +1890,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -1620,6 +1915,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -1715,6 +2011,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -1741,6 +2038,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -1766,6 +2064,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -1795,6 +2094,8 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -1820,6 +2121,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -1844,6 +2146,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -1963,6 +2266,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -1989,6 +2293,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -2014,6 +2319,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -2043,6 +2349,8 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -2068,6 +2376,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -2092,6 +2401,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -2195,6 +2505,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -2221,6 +2532,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -2246,6 +2558,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -2275,6 +2588,8 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -2300,6 +2615,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -2324,6 +2640,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -2427,6 +2744,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -2453,6 +2771,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -2478,6 +2797,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -2507,6 +2827,8 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -2532,6 +2854,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -2556,6 +2879,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -2657,6 +2981,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -2683,6 +3008,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -2708,6 +3034,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -2737,6 +3064,8 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -2762,6 +3091,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -2786,6 +3116,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -2887,6 +3218,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -2913,6 +3245,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -2938,6 +3271,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -2967,6 +3301,8 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -2992,6 +3328,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -3016,6 +3353,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -3147,6 +3485,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -3173,6 +3512,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -3198,6 +3538,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -3227,6 +3568,8 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -3252,6 +3595,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -3276,6 +3620,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,
@@ -3385,6 +3730,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     required TResult Function(CardPaymentDetailsEntity param) cardPayment,
     required TResult Function(PostInvoiceEntity param) postInvoice,
     required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
     required TResult Function() getAllInvoice,
     required TResult Function() getAllPayment,
     required TResult Function(String transactionId) verifyPayment,
@@ -3411,6 +3757,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult? Function(PostInvoiceEntity param)? postInvoice,
     TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
     TResult? Function()? getAllInvoice,
     TResult? Function()? getAllPayment,
     TResult? Function(String transactionId)? verifyPayment,
@@ -3436,6 +3783,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult Function(CardPaymentDetailsEntity param)? cardPayment,
     TResult Function(PostInvoiceEntity param)? postInvoice,
     TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
     TResult Function()? getAllInvoice,
     TResult Function()? getAllPayment,
     TResult Function(String transactionId)? verifyPayment,
@@ -3465,6 +3813,8 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     required TResult Function(_CardPayment value) cardPayment,
     required TResult Function(_PostInvoice value) postInvoice,
     required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
     required TResult Function(_GetAllInvoice value) getAllInvoice,
     required TResult Function(_GetAllPayment value) getAllPayment,
     required TResult Function(_VerifyPayment value) verifyPayment,
@@ -3490,6 +3840,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult? Function(_CardPayment value)? cardPayment,
     TResult? Function(_PostInvoice value)? postInvoice,
     TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult? Function(_GetAllInvoice value)? getAllInvoice,
     TResult? Function(_GetAllPayment value)? getAllPayment,
     TResult? Function(_VerifyPayment value)? verifyPayment,
@@ -3514,6 +3865,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult Function(_CardPayment value)? cardPayment,
     TResult Function(_PostInvoice value)? postInvoice,
     TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
     TResult Function(_GetAllInvoice value)? getAllInvoice,
     TResult Function(_GetAllPayment value)? getAllPayment,
     TResult Function(_VerifyPayment value)? verifyPayment,

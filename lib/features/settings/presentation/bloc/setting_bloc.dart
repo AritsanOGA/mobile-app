@@ -17,9 +17,9 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'setting_bloc.freezed.dart';
 part 'setting_event.dart';
 part 'setting_state.dart';
-part 'setting_bloc.freezed.dart';
 
 class SettingBloc extends Bloc<SettingEvent, SettingState> {
   SettingBloc({
@@ -77,8 +77,8 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     emit(state.copyWith(
         getJobSeekerProfileState: GetJobSeekerProfileState.loading));
 
-  final result =  await _getJobSeekerProfileUseCase(NoParams());
-        result.fold(
+    final result = await _getJobSeekerProfileUseCase(NoParams());
+    result.fold(
       (error) => emit(
         state.copyWith(
           getJobSeekerProfileState: GetJobSeekerProfileState.failure,
@@ -108,7 +108,6 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
               updateJobSeekerProfileState: UpdateJobSeekerProfileState.failure,
               errorMessage: error.message)),
           (result) => emit(state.copyWith(
-            
               updateJobSeekerProfileState:
                   UpdateJobSeekerProfileState.success)));
     });

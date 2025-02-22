@@ -10,7 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class Invoice1Screen extends StatelessWidget {
-  const Invoice1Screen({super.key});
+  final String identity;
+  const Invoice1Screen({super.key, required this.identity});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class Invoice1Screen extends StatelessWidget {
               SizedBox(height: 20.v),
               BlocBuilder<PaymentBloc, PaymentState>(
                 bloc: context.read<PaymentBloc>()
-                  ..add(PaymentEvent.getInvoice()),
+                  ..add(PaymentEvent.getInvoiceWithIdentity(identity)),
                 builder: (context, state) {
                   // if (state.getInvoiceState == GetInvoiceState.loading) {
                   //   return Center(child: CircularProgressIndicator());

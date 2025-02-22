@@ -10,6 +10,8 @@ import 'package:dartz/dartz.dart';
 
 abstract class PaymentRepository {
   Future<Either<Failure, GetInvoiceEntity>> getInvoice();
+
+  Future<Either<Failure, GetInvoiceEntity>> getInvoiceWithId(String identity);
   Future<Either<Failure, List<AllInvoiceEntity>>> getAllInvoice();
   Future<Either<Failure, List<AllPaymentEntity>>> getAllPayment();
   Future<Either<Failure, bool>> postInvoice(PostInvoiceEntity entity);

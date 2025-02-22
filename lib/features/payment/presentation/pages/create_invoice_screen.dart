@@ -35,8 +35,8 @@ class CreateInvoiceScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final amountController = useTextEditingController();
-    final balanceController = useTextEditingController();
+    // final amountController = useTextEditingController();
+    // final balanceController = useTextEditingController();
 
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(

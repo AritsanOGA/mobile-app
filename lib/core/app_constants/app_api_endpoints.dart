@@ -18,8 +18,8 @@ class AppApiEndpoint {
 
   static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
   static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
-   static Uri searchJobs = baseUri.replace(path: '/api/v1/search/jobs');
-      static Uri searchJobDetails = baseUri.replace(path: '/api/v1/job-details');
+  static Uri searchJobs = baseUri.replace(path: '/api/v1/search/jobs');
+  static Uri searchJobDetails = baseUri.replace(path: '/api/v1/job-details');
   static Uri verifyCode = baseUri.replace(path: '/api/v1/verify-code');
   static Uri changePassword = baseUri.replace(path: '/api/v1/change-password');
   static Uri verifyForgotPasswordCode =
@@ -67,10 +67,10 @@ class AppApiEndpoint {
 
   //! Employer
   static Uri getInvoice = baseUri.replace(path: '/api/v1/employer/invoice');
-    static Uri getInvoices = baseUri.replace(path: '/api/v1/employer/get-invoices');
+  static Uri getInvoices =
+      baseUri.replace(path: '/api/v1/employer/get-invoices');
 
   static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
-
 
   static Uri bankPayment =
       baseUri.replace(path: '/api/v1/employer/bank-payment');

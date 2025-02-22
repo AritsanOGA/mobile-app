@@ -34,10 +34,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     final result = await api.patch(
       url: AppApiEndpoint.updatePassword,
       body: ChangePasswordModel.fromEntity(entity).toJson(),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
+      headers: userService.authorizationHeader,
     );
 
     return true;

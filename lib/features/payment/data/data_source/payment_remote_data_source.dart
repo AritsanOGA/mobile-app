@@ -19,6 +19,7 @@ import 'package:artisan_oga/features/payment/domain/entities/verify_payment_enti
 
 abstract class PaymentRemoteDataSource {
   Future<GetInvoiceEntity> getInvoice();
+  Future<GetInvoiceEntity> getInvoiceWithId(String identity);
   Future<List<AllInvoiceEntity>> getAllInvoice();
   Future<List<AllPaymentEntity>> getAllPayment();
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity);
@@ -70,7 +71,7 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
         headers: userService.authorizationHeader,
         body: PostInvoiceModel.fromEntity(entity).toJson());
     String identity = result['data']['identity'];
-    print('what ${result['data']['identity']}');
+
     await localStorage.saveToDisk('identity', identity);
     return true;
   }
@@ -134,5 +135,17 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
           ),
         )
         .toList();
+  }
+
+  @override
+  Future<GetInvoiceEntity> getInvoiceWithId(String identity) async {
+    final result = await api.get(
+        url: AppApiEndpoint.getInvoice,
+        headers: userService.authorizationHeader,
+        queryParameters: {"identity": identity}) as Map<String, dynamic>;
+
+    return GetInvoiceModel.fromJson(
+      result['data'] as Map<String, dynamic>,
+    );
   }
 }

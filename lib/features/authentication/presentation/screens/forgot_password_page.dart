@@ -1,25 +1,25 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
-import 'package:artisan_oga/shared/widgets/custom_toast.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-class EmployerLoginPageScreen extends HookWidget {
-  const EmployerLoginPageScreen({super.key});
+class ForgotPasswordPage extends HookWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     bool obscure = true;
     final emailController = useTextEditingController();
-    final passwordController = useTextEditingController();
+
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(
@@ -72,44 +72,7 @@ class EmployerLoginPageScreen extends HookWidget {
                           textInputType: TextInputType.emailAddress,
                           validator: FormValidation.emailValidation,
                         ),
-                        SizedBox(height: 25.v),
-                        CustomTextFormField(
-                          title: 'Password',
-                          controller: passwordController,
-                          hintText: "*************",
-                          hintStyle: theme.textTheme.titleSmall!,
-                          textInputAction: TextInputAction.done,
-                          textInputType: TextInputType.visiblePassword,
-                          validator: FormValidation.stringValidation,
-                          isPassword: true,
-                          isObscure: true,
-                          suffixConstraints: BoxConstraints(
-                            maxHeight: 48.v,
-                          ),
-                          obscureText: obscure,
-                          contentPadding: EdgeInsets.only(
-                            left: 20.h,
-                            top: 15.v,
-                            bottom: 15.v,
-                          ),
-                        ),
-                        SizedBox(height: 19.v),
-                        GestureDetector(
-                          onTap: (){
-                            
-                          },
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Forgot Password?",
-                              style:
-                                  CustomTextStyles.titleSmallPrimary_1.copyWith(
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 41.v),
+                        SizedBox(height: 70.v),
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return CustomElevatedButton(
@@ -118,11 +81,9 @@ class EmployerLoginPageScreen extends HookWidget {
                               onPressed: () {
                                 if (formKey.currentState?.validate() ?? false) {
                                   context.read<AuthBloc>().add(
-                                        AuthEvent.loginUser(
-                                          LoginEntity(
+                                        AuthEvent.forgotPassword(
+                                          ForgotPasswordEntity(
                                             email: emailController.text.trim(),
-                                            password:
-                                                passwordController.text.trim(),
                                           ),
                                         ),
                                       );
