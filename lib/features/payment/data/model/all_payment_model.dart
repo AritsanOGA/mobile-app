@@ -7,7 +7,7 @@ class AllPaymentModel extends AllPaymentEntity {
     required super.paymentIdentity,
     required super.jobIdentity,
     required super.jobTitle,
-    required super.logo,
+    // required super.logo,
     required super.paymentGateway,
     required super.createdAt,
   });
@@ -15,12 +15,12 @@ class AllPaymentModel extends AllPaymentEntity {
   /// Convert from JSON to Model
   factory AllPaymentModel.fromJson(Map<String, dynamic> json) {
     return AllPaymentModel(
-      id: json["id"],
+      id: json["id"]  ?? 0,
       amount: json["amount"].toString(),
       paymentIdentity: json["payment_identity"] ?? "",
-      jobIdentity: json["job_identity"],
-      jobTitle: json["job_title"],
-      logo: json["logo"],
+      jobIdentity: json["job_identity"] ?? '',
+      jobTitle: json["job_title"] ?? '',
+      // logo: json["logo"] ?? null,
       paymentGateway: json["payment_gateway"],
       createdAt: json['created_at'] != null
           ? DateTime.parse(json['created_at'])
@@ -36,7 +36,7 @@ class AllPaymentModel extends AllPaymentEntity {
         paymentIdentity: entity.paymentIdentity,
         jobIdentity: entity.jobIdentity,
         jobTitle: entity.jobTitle,
-        logo: entity.logo,
+        // logo: entity.logo,
         paymentGateway: entity.paymentGateway,
         createdAt: entity.createdAt);
   }
@@ -49,7 +49,7 @@ class AllPaymentModel extends AllPaymentEntity {
       "payment_identity": paymentIdentity,
       "job_identity": jobIdentity,
       "job_title": jobTitle,
-      "logo": logo,
+      // "logo": logo,
       "payment_gateway": paymentGateway,
       "created_at": createdAt
     };

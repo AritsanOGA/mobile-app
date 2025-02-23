@@ -56,7 +56,7 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
     final identity = localStorage.getFromDisk(
       'identity',
     );
-    print('my $identity');
+    print('myidentity $identity');
     final result = await api.get(
         url: AppApiEndpoint.getInvoice,
         headers: userService.authorizationHeader,
@@ -74,7 +74,7 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
         headers: userService.authorizationHeader,
         body: PostInvoiceModel.fromEntity(entity).toJson());
     String identity = result['data']['identity'];
-
+    print('save $identity');
     await localStorage.saveToDisk('identity', identity);
     return true;
   }
