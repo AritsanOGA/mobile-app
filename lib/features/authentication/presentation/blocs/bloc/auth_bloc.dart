@@ -31,6 +31,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/verify_forgot_password_usecase.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -52,6 +53,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       FilePickerService? filePickerService,
       StateUseCase? stateUseCase,
       VerifyCodeUseCase? verifyCodeUseCase,
+      VerifyForgotPasswordUseCase? verifyForgotPasswordUseCase,
       UpdatePasswordUseCase? updatePasswordUseCase,
       ForgotPasswordUseCase? forgotPasswordUseCase,
       RemoveUserDataUseCase? removeUserDataUseCase,
@@ -73,6 +75,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _removeUserDataUseCase = removeUserDataUseCase ?? locator(),
         _searchJobUseCase = searchJobUseCase ?? locator(),
         _searchJobDetailsUseCase = searchJobDetailUseCase ?? locator(),
+        _verifyForgotPasswordUseCase = verifyForgotPasswordUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
@@ -119,6 +122,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final StateUseCase _stateUseCase;
   final FilePickerService _filePickerService;
   final VerifyCodeUseCase _verifyCodeUseCase;
+  final VerifyForgotPasswordUseCase _verifyForgotPasswordUseCase;
   final GetUserDataUseCase _getUserDataUseCase;
   final UpdatePasswordUseCase _updatePasswordUseCase;
   final ForgotPasswordUseCase _forgotPasswordUseCase;
@@ -398,17 +402,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onUpdatePassword(
       _UpdatePassword event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(updatePasswordState: UpdatePasswordState.loading));
+    emit(state.copyWith(changePasswordState: ChangePasswordState.loading));
 
     await _updatePasswordUseCase(event.param).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
-              updatePasswordState: UpdatePasswordState.failure,
+              changePasswordState: ChangePasswordState.failure,
               errorMessage: error.message)),
           (result) => emit(state.copyWith(
-              updatePasswordState: UpdatePasswordState.success)));
+              changePasswordState: ChangePasswordState.success)));
     });
-    emit(state.copyWith(updatePasswordState: UpdatePasswordState.idle));
+    emit(state.copyWith(changePasswordState: ChangePasswordState.idle));
   }
 
   FutureOr<void> _onForgotPassword(
@@ -431,7 +435,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(
         employerVerifyCodeState: EmployerVerifyCodeState.loading));
 
-    await _verifyCodeUseCase(event.param).then((value) {
+    await _verifyForgotPasswordUseCase(event.param).then((value) {
       value.fold(
           (error) => emit(state.copyWith(
               employerVerifyCodeState: EmployerVerifyCodeState.failure,

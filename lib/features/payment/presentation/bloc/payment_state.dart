@@ -4,6 +4,7 @@ part of 'payment_bloc.dart';
 class PaymentState with _$PaymentState {
   const factory PaymentState.initial({
     GetInvoiceEntity? getInvoice,
+     NoOfCandidateEntity? noOfCandidateEntity,
     @Default([]) List<AllInvoiceEntity> invoices,
     @Default([]) List<AllPaymentEntity> payments,
     VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
@@ -25,6 +26,7 @@ class PaymentState with _$PaymentState {
     @Default(GetInvoiceState.idle) GetInvoiceState getInvoiceState,
     @Default(GetAllInvoiceState.idle) GetAllInvoiceState getAllInvoiceState,
     @Default(GetAllPaymentState.idle) GetAllPaymentState getAllPaymentState,
+    @Default(NoOfCandidateState.idle) NoOfCandidateState noOfCandidateState,
     @Default(FlutterWavePaymentState.idle)
     FlutterWavePaymentState flutterwavePaymentState,
     @Default([

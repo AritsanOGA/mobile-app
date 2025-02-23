@@ -13437,7 +13437,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
-  UpdatePasswordState get updatePasswordState =>
+  ChangePasswordState get changePasswordState =>
       throw _privateConstructorUsedError;
   ForgotPasswordState get forgotPasswordState =>
       throw _privateConstructorUsedError;
@@ -13500,7 +13500,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -13557,7 +13557,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -13614,7 +13614,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -13697,7 +13697,7 @@ abstract class $AuthStateCopyWith<$Res> {
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      UpdatePasswordState updatePasswordState,
+      ChangePasswordState changePasswordState,
       ForgotPasswordState forgotPasswordState,
       EmployerLoginState employerLoginState,
       JobSeekerLoginState jobSeekerLoginState,
@@ -13763,7 +13763,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
-    Object? updatePasswordState = null,
+    Object? changePasswordState = null,
     Object? forgotPasswordState = null,
     Object? employerLoginState = null,
     Object? jobSeekerLoginState = null,
@@ -13927,10 +13927,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
               as bool,
-      updatePasswordState: null == updatePasswordState
-          ? _value.updatePasswordState
-          : updatePasswordState // ignore: cast_nullable_to_non_nullable
-              as UpdatePasswordState,
+      changePasswordState: null == changePasswordState
+          ? _value.changePasswordState
+          : changePasswordState // ignore: cast_nullable_to_non_nullable
+              as ChangePasswordState,
       forgotPasswordState: null == forgotPasswordState
           ? _value.forgotPasswordState
           : forgotPasswordState // ignore: cast_nullable_to_non_nullable
@@ -14033,7 +14033,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       bool isChecked,
-      UpdatePasswordState updatePasswordState,
+      ChangePasswordState changePasswordState,
       ForgotPasswordState forgotPasswordState,
       EmployerLoginState employerLoginState,
       JobSeekerLoginState jobSeekerLoginState,
@@ -14097,7 +14097,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? categoryList = null,
     Object? skill = null,
     Object? isChecked = null,
-    Object? updatePasswordState = null,
+    Object? changePasswordState = null,
     Object? forgotPasswordState = null,
     Object? employerLoginState = null,
     Object? jobSeekerLoginState = null,
@@ -14261,10 +14261,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
               as bool,
-      updatePasswordState: null == updatePasswordState
-          ? _value.updatePasswordState
-          : updatePasswordState // ignore: cast_nullable_to_non_nullable
-              as UpdatePasswordState,
+      changePasswordState: null == changePasswordState
+          ? _value.changePasswordState
+          : changePasswordState // ignore: cast_nullable_to_non_nullable
+              as ChangePasswordState,
       forgotPasswordState: null == forgotPasswordState
           ? _value.forgotPasswordState
           : forgotPasswordState // ignore: cast_nullable_to_non_nullable
@@ -14434,7 +14434,7 @@ class _$InitialImpl implements _Initial {
       final List<CategoryResponseEntity> categoryList = const [],
       final List<SkillResponseEntity> skill = const [],
       this.isChecked = false,
-      this.updatePasswordState = UpdatePasswordState.idle,
+      this.changePasswordState = ChangePasswordState.idle,
       this.forgotPasswordState = ForgotPasswordState.idle,
       this.employerLoginState = EmployerLoginState.idle,
       this.jobSeekerLoginState = JobSeekerLoginState.idle,
@@ -14615,7 +14615,7 @@ class _$InitialImpl implements _Initial {
   final bool isChecked;
   @override
   @JsonKey()
-  final UpdatePasswordState updatePasswordState;
+  final ChangePasswordState changePasswordState;
   @override
   @JsonKey()
   final ForgotPasswordState forgotPasswordState;
@@ -14658,7 +14658,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, updatePasswordState: $updatePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
   }
 
   @override
@@ -14726,8 +14726,8 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._skill, _skill) &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
-            (identical(other.updatePasswordState, updatePasswordState) ||
-                other.updatePasswordState == updatePasswordState) &&
+            (identical(other.changePasswordState, changePasswordState) ||
+                other.changePasswordState == changePasswordState) &&
             (identical(other.forgotPasswordState, forgotPasswordState) ||
                 other.forgotPasswordState == forgotPasswordState) &&
             (identical(other.employerLoginState, employerLoginState) ||
@@ -14789,7 +14789,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_categoryList),
         const DeepCollectionEquality().hash(_skill),
         isChecked,
-        updatePasswordState,
+        changePasswordState,
         forgotPasswordState,
         employerLoginState,
         jobSeekerLoginState,
@@ -14852,7 +14852,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -14906,7 +14906,7 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         isChecked,
-        updatePasswordState,
+        changePasswordState,
         forgotPasswordState,
         employerLoginState,
         jobSeekerLoginState,
@@ -14963,7 +14963,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -15017,7 +15017,7 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         isChecked,
-        updatePasswordState,
+        changePasswordState,
         forgotPasswordState,
         employerLoginState,
         jobSeekerLoginState,
@@ -15074,7 +15074,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             bool isChecked,
-            UpdatePasswordState updatePasswordState,
+            ChangePasswordState changePasswordState,
             ForgotPasswordState forgotPasswordState,
             EmployerLoginState employerLoginState,
             JobSeekerLoginState jobSeekerLoginState,
@@ -15130,7 +15130,7 @@ class _$InitialImpl implements _Initial {
           categoryList,
           skill,
           isChecked,
-          updatePasswordState,
+          changePasswordState,
           forgotPasswordState,
           employerLoginState,
           jobSeekerLoginState,
@@ -15216,7 +15216,7 @@ abstract class _Initial implements AuthState {
       final List<CategoryResponseEntity> categoryList,
       final List<SkillResponseEntity> skill,
       final bool isChecked,
-      final UpdatePasswordState updatePasswordState,
+      final ChangePasswordState changePasswordState,
       final ForgotPasswordState forgotPasswordState,
       final EmployerLoginState employerLoginState,
       final JobSeekerLoginState jobSeekerLoginState,
@@ -15306,7 +15306,7 @@ abstract class _Initial implements AuthState {
   @override
   bool get isChecked;
   @override
-  UpdatePasswordState get updatePasswordState;
+  ChangePasswordState get changePasswordState;
   @override
   ForgotPasswordState get forgotPasswordState;
   @override

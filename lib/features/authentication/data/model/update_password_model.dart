@@ -14,6 +14,9 @@ class UpdatePasswordModel extends UpdatePasswordEntity {
           password: entity.password,
           confirmPassword: entity.confirmPassword);
 
-  Map<String, dynamic> toJson() =>
-      {'email': email, 'passord': password, 'confirm_passord': confirmPassword};
+  Map<String, dynamic> toJson() => {
+        'email': email,
+        'password': password,
+        'password_confirmation': confirmPassword
+      };
 }

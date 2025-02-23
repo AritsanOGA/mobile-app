@@ -222,8 +222,7 @@ class AuthRepositoryImpl implements AuthRepository {
       VerifyCodeEntity param) async {
     try {
       final result = await authRemoteDataSource.verifyForgotPasswordCode(param);
-      // await localDataSource.cacheUser(result);
-      // UserService().authData = result;
+    
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));

@@ -32,20 +32,8 @@ class VerifyForgotPasswordPage extends HookWidget {
         listener: (context, state) {
           if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.success) {
-            print('suceess');
-            Navigator.pushNamed(
-              context,
-              AppRoutes.successScreen,
-              arguments: {
-                'message': 'Account Created',
-                'onTap': () {
-                  Navigator.pushNamed(
-                    context,
-                    AppRoutes.employerLoginPageScreen,
-                  );
-                },
-              },
-            );
+            Navigator.pushNamed(context, AppRoutes.resetPasswordScreen,
+                arguments: email);
           } else if (state.employerVerifyCodeState ==
               EmployerVerifyCodeState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -129,8 +117,9 @@ class VerifyForgotPasswordPage extends HookWidget {
                             EmployerVerifyCodeState.loading,
                         onPressed: () {
                           context.read<AuthBloc>()
-                            ..add(AuthEvent.verifyCode(VerifyCodeEntity(
-                                code: otpController.text, email: email)));
+                            ..add(AuthEvent.verifyForgotPasswordCode(
+                                VerifyCodeEntity(
+                                    code: otpController.text, email: email)));
                         },
                         text: 'Verify')
                   ],

@@ -61,7 +61,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                     hintStyle: theme.textTheme.titleSmall!),
                                 SizedBox(height: 30.v),
                                 CustomTextFormField(
-                                    title: 'Email Address (optional)',
+                                    title: 'Email Address',
                                     controller: emailController,
                                     hintText: "example@gmail.com",
                                     validator: FormValidation.emailValidation,

@@ -140,7 +140,7 @@ class RegisterJobSeekerEntity extends Equatable {
         endYear: endYear ?? this.endYear,
         schoolName: schoolName ?? this.schoolName,
         educationalQualification:
-            educationalQualification ?? this.educationalQualification,
+        educationalQualification ?? this.educationalQualification,
         certificateObtained: certificateObtained ?? this.certificateObtained,
         graduationYear: graduationYear ?? this.graduationYear,
         courseName: courseName ?? this.courseName,

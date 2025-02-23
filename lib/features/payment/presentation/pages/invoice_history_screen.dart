@@ -114,48 +114,36 @@ class InvoiceHistoryScreen extends StatelessWidget {
                                                     ? 'Unpaid'
                                                     : state.invoices[index]
                                                                 .invoiceStatus ==
-                                                            '2'
+                                                            '1'
                                                         ? 'Waiting for approval'
                                                         : state.invoices[index]
                                                                     .invoiceStatus ==
-                                                                '3'
+                                                                '2'
                                                             ? 'Initial Deposit'
                                                             : state
                                                                         .invoices[
                                                                             index]
                                                                         .invoiceStatus ==
-                                                                    '5'
-                                                                ? 'Paid'
-                                                                : 'Waiting for approval',
-                                                style: theme
-                                                    .textTheme.bodyMedium
-                                                    ?.copyWith(
-                                                  fontSize: 10,
-                                                  color: state.invoices[index]
-                                                              .invoiceStatus ==
-                                                          '0'
-                                                      ? Colors.red
-                                                      : state.invoices[index]
-                                                                  .invoiceStatus ==
-                                                              '2'
-                                                          ? Colors.yellowAccent
-                                                          : state
-                                                                      .invoices[
-                                                                          index]
-                                                                      .invoiceStatus ==
-                                                                  '3'
-                                                              ? Colors.blue
-                                                              : state
-                                                                          .invoices[
-                                                                              index]
-                                                                          .invoiceStatus ==
-                                                                      '5'
-                                                                  ? Colors.green
-                                                                  : theme
-                                                                      .primaryColor
-                                                                      .withOpacity(
-                                                                          0.8),
-                                                )),
+                                                                    '3'
+                                                                ? 'Waiting for approval'
+                                                                : state.invoices[index]
+                                                                            .invoiceStatus ==
+                                                                        '4'
+                                                                    ? 'Paid'
+                                                                    : '',
+                                                style: theme.textTheme.bodyMedium?.copyWith(
+                                                    fontSize: 10,
+                                                    color: state.invoices[index].invoiceStatus == '0'
+                                                        ? Colors.red
+                                                        : state.invoices[index].invoiceStatus == '1'
+                                                            ? theme.primaryColor
+                                                            : state.invoices[index].invoiceStatus == '2'
+                                                                ? Colors.blue
+                                                                : state.invoices[index].invoiceStatus == '3'
+                                                                    ? theme.primaryColor
+                                                                    : state.invoices[index].invoiceStatus == '4'
+                                                                        ? Colors.green
+                                                                        : Colors.transparent)),
                                           ],
                                         ),
                                       ],

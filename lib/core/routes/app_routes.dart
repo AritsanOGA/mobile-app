@@ -1,14 +1,17 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_nav_bar_page.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/forgot_password_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/job_search_details_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/job_search_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/password_reset_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/splash_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/succes_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_emplyer_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/verify_forgot_password_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
@@ -25,6 +28,7 @@ import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_s
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_screen1.dart';
+import 'package:artisan_oga/features/payment/presentation/pages/invoice_success_payment_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/employer_password_change_screen.dart';
@@ -59,6 +63,8 @@ class AppRoutes {
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
   static const String successScreen = '/success_page_screen';
+
+  static const String invoiceSuccessScreen = '/invoice_success_screen';
   static const String successfulApplicationScreen =
       '/success_application_screen';
   static const String employerSignUppageScreen = '/employer_sign_uppage_screen';
@@ -198,6 +204,10 @@ class AppRoutes {
   static const String appNavigationScreen = '/app_navigation_screen';
   static const String verifyEmployerScreen = '/verify_employer_screen';
   static const String verifyJobSeekerScreen = '/verify_job_seeker_screen';
+  static const String forgotPasswordScreen = '/forgot_password_screen';
+  static const String verifyForgotPasswordScreen =
+      '/verify_forgot_password_screen';
+  static const String resetPasswordScreen = '/reset_password_screen';
 
   static Map<String, WidgetBuilder> routes = {
     // welcomePageScreen: (context) => WelcomePageScreen(),
@@ -280,6 +290,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: PaymentHistoryScreen(),
         );
+      case invoiceSuccessScreen:
+        return AppPageRouteBuilder(
+          navigateTo: InvoiceSuccessfulPage(),
+        );
       case successScreen:
         final args = settings.arguments as Map<String, dynamic>;
 
@@ -305,6 +319,7 @@ class AppRoutes {
             amount: args['amount'] as String,
             identity: args['identity'] as String,
             planName: args['planName'] as String,
+            candidate: args['candidate'] as String,
           ),
         );
       case invoicePage:
@@ -468,7 +483,22 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerDashboardPage(),
         );
-
+      case forgotPasswordScreen:
+        return AppPageRouteBuilder(
+          navigateTo: ForgotPasswordPage(),
+        );
+      case verifyForgotPasswordScreen:
+        return AppPageRouteBuilder(
+          navigateTo: VerifyForgotPasswordPage(
+            email: settings.arguments as String,
+          ),
+        );
+      case resetPasswordScreen:
+        return AppPageRouteBuilder(
+          navigateTo: PasswordResetPage(
+            email: settings.arguments as String,
+          ),
+        );
       case successfulJobPostedPage:
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulJobPostedPage(),

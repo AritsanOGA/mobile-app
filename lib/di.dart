@@ -18,6 +18,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/verify_forgot_password_usecase.dart';
 import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote_source.dart';
 import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
@@ -44,6 +45,8 @@ import 'package:artisan_oga/features/payment/domain/usecases/card_payment_usecas
 import 'package:artisan_oga/features/payment/domain/usecases/get_all_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_all_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_invoice_with_identity_usecase.dart';
+import 'package:artisan_oga/features/payment/domain/usecases/get_no_of_candidate_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/post_invoice_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/transfer_payment_usecase.dart';
 import 'package:artisan_oga/features/payment/domain/usecases/verify_payment_usecase.dart';
@@ -60,6 +63,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'features/authentication/data/data_source/auth_local_datasource.dart';
 import 'features/authentication/domain/usecases/search_job_detals_usecase.dart';
 
@@ -180,6 +184,11 @@ Future<void> init() async {
         () => SearchJobDetailUseCase(locator()))
     ..registerLazySingleton<RejectCandidateWithoutIntervieUseCase>(
         () => RejectCandidateWithoutIntervieUseCase(locator()))
-    ..registerLazySingleton<SearchJobUseCase>(
-        () => SearchJobUseCase(locator()));
+    ..registerLazySingleton<SearchJobUseCase>(() => SearchJobUseCase(locator()))
+    ..registerLazySingleton<VerifyForgotPasswordUseCase>(
+        () => VerifyForgotPasswordUseCase(locator()))
+    ..registerLazySingleton<GetInvoiceWithIndentityUsecase>(
+        () => GetInvoiceWithIndentityUsecase(locator()))
+    ..registerLazySingleton<NoOfCandidateUseCase>(
+        () => NoOfCandidateUseCase(locator()));
 }

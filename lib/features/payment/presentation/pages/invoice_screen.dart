@@ -443,9 +443,7 @@ class InvoiceScreen extends HookWidget {
                         SizedBox(
                           height: 30.h,
                         ),
-                        SizedBox(
-                          height: 30.h,
-                        ),
+                      
                       ],
                     );
                   },

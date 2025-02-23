@@ -326,7 +326,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                           .map((country) => country.name)
                                           .where((name) => name != null)
                                           .join(', ');
-                                      print('resey ${result}');
+                                      print('resey ${result} ${state.resume}');
                                       context.read<AuthBloc>().add(AuthEvent
                                           .updateRegisterJobSeekerRequest(
                                               registerJobSeekerRequest.copyWith(

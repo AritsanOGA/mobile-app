@@ -75,63 +75,73 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
           guarantorPhoneNumber: entity.guarantorPhoneNumber,
           yearOfGraduation: entity.yearOfGraduation);
 
-  Future<FormData> toJson() async => FormData.fromMap({
-        'email': email,
-        'password': password,
-        'password_confirmation': confirmPassword,
-        'country': country,
-        'fullname': fullName,
-        'states': state,
-        'city': city,
-        'passport': await MultipartFile.fromFile(
-          "${passport?.path}",
-          filename: "${passport?.path.split('/').last}",
-        ),
-        'resume': resume?.path != null
-            ? await MultipartFile.fromFile(
-                "${resume?.path}",
-                filename: "${resume?.path.split('/').last}",
-              )
-            : '',
-        'gender': gender,
-        'phone': phoneNumber,
-        'DateOfBirth': dateOFBirth,
-        'employment_history': employmentHistory,
-        'company_name':
-            employmentHistory == 'No Employment History' ? '' : companyName,
-        'end_year': employmentHistory == 'No Employment History' ? '' : endYear,
-        'start_year':
-            employmentHistory == 'No Employment History' ? '' : startYear,
-        'job_title': employmentHistory == 'No Employment History' ? '' : role,
-        'job_description':
-            employmentHistory == 'No Employment History' ? '' : description,
-        'education_qualification': educationalQualification,
-        'school_name':
-            educationalQualification == 'No Education' ? '' : schoolName,
-        'year_of_graduation':
-            educationalQualification == 'No Education' ? '' : graduationYear,
-        'award_title': educationalQualification == 'No Education' ||
-                educationalQualification == 'GCE' ||
-                educationalQualification == 'NECO' ||
-                educationalQualification == 'WAEC'
-            ? ''
-            : '',
-        'course_name': educationalQualification == 'No Education' ||
-                educationalQualification == 'GCE' ||
-                educationalQualification == 'NECO' ||
-                educationalQualification == 'WAEC' ||
-                educationalQualification == 'FLSC'
-            ? ''
-            : courseName,
-        'categories': category,
-        'artisan_skills': skill,
-        'guarantor_name': guarantorName,
-        'guarantor_email': guarantorEmail,
-        'guarantor_address': residentialAddress,
-        'job_type': jobType,
-        'years_of_experience': yearsOfExperience,
-        'StreetAddress': streetAddress,
-        'service_description': describeYourRole,
-        'guarantor_phone': guarantorPhoneNumber,
-      });
+  Future<FormData> toJson() async {
+    final Map<String, dynamic> formDataMap = {
+      'email': email,
+      'password': password,
+      'password_confirmation': confirmPassword,
+      'country': country,
+      'fullname': fullName,
+      'states': state,
+      'city': city,
+      'passport': await MultipartFile.fromFile(
+        "${passport?.path}",
+        filename: "${passport?.path.split('/').last}",
+      ),
+      // 'resume': resume?.path != null
+      //     ? await MultipartFile.fromFile(
+      //         "${resume?.path}",
+      //         filename: "${resume?.path.split('/').last}",
+      //       )
+      //     : null,
+      'gender': gender,
+      'phone': phoneNumber,
+      'DateOfBirth': dateOFBirth,
+      'employment_history': employmentHistory,
+      'company_name':
+          employmentHistory == 'No Employment History' ? '' : companyName,
+      'end_year': employmentHistory == 'No Employment History' ? '' : endYear,
+      'start_year':
+          employmentHistory == 'No Employment History' ? '' : startYear,
+      'job_title': employmentHistory == 'No Employment History' ? '' : role,
+      'job_description':
+          employmentHistory == 'No Employment History' ? '' : description,
+      'education_qualification': educationalQualification,
+      'school_name':
+          educationalQualification == 'No Education' ? '' : schoolName,
+      'year_of_graduation':
+          educationalQualification == 'No Education' ? '' : graduationYear,
+      'award_title': educationalQualification == 'No Education' ||
+              educationalQualification == 'GCE' ||
+              educationalQualification == 'NECO' ||
+              educationalQualification == 'WAEC'
+          ? ''
+          : '',
+      'course_name': educationalQualification == 'No Education' ||
+              educationalQualification == 'GCE' ||
+              educationalQualification == 'NECO' ||
+              educationalQualification == 'WAEC' ||
+              educationalQualification == 'FLSC'
+          ? ''
+          : courseName,
+      'categories': category,
+      'artisan_skills': skill,
+      'guarantor_name': guarantorName,
+      'guarantor_email': guarantorEmail,
+      'guarantor_address': residentialAddress,
+      'job_type': jobType,
+      'years_of_experience': yearsOfExperience,
+      'StreetAddress': streetAddress,
+      'service_description': describeYourRole,
+      'guarantor_phone': guarantorPhoneNumber,
+    };
+    if (resume?.path != null) {
+      formDataMap['resume'] = await MultipartFile.fromFile(
+        "${resume?.path}",
+        filename: "${resume?.path.split('/').last}",
+      );
+    }
+
+    return FormData.fromMap(formDataMap);
+  }
 }

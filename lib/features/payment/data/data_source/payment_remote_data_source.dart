@@ -6,6 +6,7 @@ import 'package:artisan_oga/features/payment/data/model/all_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/all_payment_model.dart';
 import 'package:artisan_oga/features/payment/data/model/card_payment_model.dart';
 import 'package:artisan_oga/features/payment/data/model/get_invoice_model.dart';
+import 'package:artisan_oga/features/payment/data/model/no_of_candidate_model.dart';
 import 'package:artisan_oga/features/payment/data/model/post_invoice_model.dart';
 import 'package:artisan_oga/features/payment/data/model/transfer_payment_details_model.dart';
 import 'package:artisan_oga/features/payment/data/model/verify_payment_model.dart';
@@ -13,6 +14,7 @@ import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.
 import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/no_of_candidate_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
@@ -20,6 +22,7 @@ import 'package:artisan_oga/features/payment/domain/entities/verify_payment_enti
 abstract class PaymentRemoteDataSource {
   Future<GetInvoiceEntity> getInvoice();
   Future<GetInvoiceEntity> getInvoiceWithId(String identity);
+  Future<NoOfCandidateEntity> getNoOfCandidate(String identity);
   Future<List<AllInvoiceEntity>> getAllInvoice();
   Future<List<AllPaymentEntity>> getAllPayment();
   Future<bool> transferPayment(TransferPaymentDetailsEntity entity);
@@ -146,6 +149,19 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
 
     return GetInvoiceModel.fromJson(
       result['data'] as Map<String, dynamic>,
+    );
+  }
+
+  @override
+  Future<NoOfCandidateEntity> getNoOfCandidate(String jobId) async {
+    final result = await api.post(
+      url: AppApiEndpoint.noOfCandidate,
+      headers: userService.authorizationHeader,
+      body: {"job_id": jobId},
+    ) as Map<String, dynamic>;
+
+    return NoOfCandidateModel.fromJson(
+      result['data'][0] as Map<String, dynamic>,
     );
   }
 }

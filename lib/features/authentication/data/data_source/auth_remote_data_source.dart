@@ -207,7 +207,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<bool> updatePassword(UpdatePasswordEntity entity) async {
     final result = await api.post(
-      url: AppApiEndpoint.updatePassword,
+      url: AppApiEndpoint.resetPassword,
       body: UpdatePasswordModel.fromEntity(entity).toJson(),
     );
     return true;
@@ -250,7 +250,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   @override
   Future<SearchJobDetailEntity> searchJobDetails(String jobId) async {
     final result = await api.post(
-        // headers: userService.authorizationHeader,
         url: AppApiEndpoint.searchJobDetails,
         body: {"identity": jobId}) as Map<String, dynamic>;
 

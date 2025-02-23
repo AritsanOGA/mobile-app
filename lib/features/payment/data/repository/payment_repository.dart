@@ -7,6 +7,7 @@ import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.
 import 'package:artisan_oga/features/payment/domain/entities/all_payment_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/card_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/get_invoice_entity.dart';
+import 'package:artisan_oga/features/payment/domain/entities/no_of_candidate_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/post_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/transfer_payment_details_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/verify_payment_entity.dart';
@@ -107,5 +108,10 @@ class PaymentRepositoryImpl implements PaymentRepository {
   @override
   Future<Either<Failure, GetInvoiceEntity>> getInvoiceWithId(String identity) {
  return paymentRemoteDataSource.getInvoiceWithId(identity).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, NoOfCandidateEntity>> noOfCandidate(String jobId) {
+    return paymentRemoteDataSource.getNoOfCandidate(jobId).makeRequest();
   }
 }

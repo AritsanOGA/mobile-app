@@ -17,13 +17,15 @@ class CreateInvoiceScreen extends HookWidget {
   final String identity;
   final String planName;
   final String amount;
+  final String candidate;
   CreateInvoiceScreen({
     super.key,
     required this.amount,
     required this.identity,
     required this.planName,
+    required this.candidate,
   });
-  double selectedPercentage = 0.75; // Default selection
+  double selectedPercentage = 0.75;
 
   double getAmount() {
     return double.parse(amount) * selectedPercentage;
@@ -35,8 +37,7 @@ class CreateInvoiceScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final amountController = useTextEditingController();
-    // final balanceController = useTextEditingController();
+    final noOfCandidate = useTextEditingController();
 
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
@@ -69,6 +70,23 @@ class CreateInvoiceScreen extends HookWidget {
                       child: Text(
                           "Kindly Create an Invoice to Initiate Payment",
                           style: theme.textTheme.bodyMedium),
+                    ),
+                    SizedBox(height: 20.v),
+                    CustomTextFormField(
+                      title: 'No of candidates(s)',
+                      // controller: noOfCandidate,
+                      hintText: candidate,
+                      readOnly: true,
+                      validator: FormValidation.stringValidation,
+                      hintStyle: theme.textTheme.titleSmall!,
+                      suffixConstraints: BoxConstraints(
+                        maxHeight: 48.v,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20.h,
+                        top: 15.v,
+                        bottom: 15.v,
+                      ),
                     ),
                     SizedBox(height: 20.v),
                     Text('I am paying', style: theme.textTheme.bodyMedium),
@@ -110,7 +128,15 @@ class CreateInvoiceScreen extends HookWidget {
                       title: 'Amount',
                       readOnly: true,
                       controller: TextEditingController(
-                          text: state.amount?.toStringAsFixed(2)),
+                        text: () {
+                          // Try to parse the number of candidates
+                          final candidateCount = int.tryParse(candidate) ?? 0;
+                          // Calculate total balance: multiply individual balance by candidate count.
+                          final totalAmount =
+                              (state.amount ?? 0.0) * candidateCount;
+                          return totalAmount.toStringAsFixed(2);
+                        }(),
+                      ),
                       hintText: '',
                       validator: FormValidation.stringValidation,
                       hintStyle: theme.textTheme.titleSmall!,
@@ -128,7 +154,15 @@ class CreateInvoiceScreen extends HookWidget {
                       title: 'Balance',
                       readOnly: true,
                       controller: TextEditingController(
-                          text: state.balance?.toStringAsFixed(2)),
+                        text: () {
+                          // Try to parse the number of candidates
+                          final candidateCount = int.tryParse(candidate) ?? 0;
+                          // Calculate total balance: multiply individual balance by candidate count.
+                          final totalBalance =
+                              (state.balance ?? 0.0) * candidateCount;
+                          return totalBalance.toStringAsFixed(2);
+                        }(),
+                      ),
                       validator: FormValidation.stringValidation,
                       hintText: '',
                       hintStyle: theme.textTheme.titleSmall!,
@@ -147,15 +181,21 @@ class CreateInvoiceScreen extends HookWidget {
                         isBusy:
                             state.postInvoiceState == PostInvoiceState.loading,
                         onPressed: () {
-                          print(
-                              "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
+                          final candidateCount = int.tryParse(candidate) ?? 0;
+                          final totalBalance =
+                              (state.balance ?? 0.0) * candidateCount;
+
+                          final totalAmount =
+                              (state.amount ?? 0.0) * candidateCount;
+                          // print
+                          //     "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
 
                           context
                               .read<PaymentBloc>()
                               .add(PaymentEvent.postInvoice(PostInvoiceEntity(
                                 identity: identity,
-                                amount: state.amount ?? 0.0,
-                                balance: state.balance ?? 0.0,
+                                amount: totalAmount,
+                                balance: totalBalance,
                                 currency: 'NGN',
                                 package: planName,
                                 percentage: int.parse(state.payingAll ?? ''),

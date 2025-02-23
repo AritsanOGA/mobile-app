@@ -103,7 +103,7 @@ class AuthState with _$AuthState {
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default(false) bool isChecked,
-    @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
+    @Default(ChangePasswordState.idle) ChangePasswordState changePasswordState,
     @Default(ForgotPasswordState.idle) ForgotPasswordState forgotPasswordState,
     @Default(EmployerLoginState.idle) EmployerLoginState employerLoginState,
     @Default(JobSeekerLoginState.idle) JobSeekerLoginState jobSeekerLoginState,

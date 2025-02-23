@@ -24,7 +24,8 @@ class AppApiEndpoint {
   static Uri changePassword = baseUri.replace(path: '/api/v1/change-password');
   static Uri verifyForgotPasswordCode =
       baseUri.replace(path: '/api/v1/verify-password-reset-code');
-  static Uri forgotPassword = baseUri.replace(path: '/api/v1/send-reset-code');
+  static Uri forgotPassword = baseUri.replace(path: '/api/v1/forget-password');
+  static Uri resetPassword = baseUri.replace(path: '/api/v1/reset-password');
 
   //! Dashboard
   static Uri getFeaturedCandidates =
@@ -71,7 +72,8 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/employer/get-invoices');
 
   static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
-
+  static Uri noOfCandidate =
+      baseUri.replace(path: '/api/v1/employer/get-no-of-candidates');
   static Uri bankPayment =
       baseUri.replace(path: '/api/v1/employer/bank-payment');
   static Uri generateInvoice =

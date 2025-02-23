@@ -90,7 +90,6 @@ class ManageJobWidget extends StatelessWidget {
                         ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
                         : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
                     style: CustomTextStyles.titleSmallPrimaryContainer_1)),
-       
           ]),
           // SizedBox(height: 7.v),
           // Row(children: [
