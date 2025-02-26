@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/presentation/activities_page/activities_page.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:flutter/material.dart';
+
+import '../../shared/widgets/custom_appbar.dart';
 
 class ActivitiesTabContainerScreen extends StatefulWidget {
   const ActivitiesTabContainerScreen({Key? key}) : super(key: key);
@@ -29,7 +28,10 @@ class ActivitiesTabContainerScreenState
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: _buildAppBar(context),
+            backgroundColor: AppColors.kwhite,
+            appBar: CustomAppBar(
+              title: 'Activities',
+            ),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(children: [
@@ -61,33 +63,18 @@ class ActivitiesTabContainerScreenState
                             Tab(child: Text("Applied")),
                             Tab(child: Text("Interviewing"))
                           ])),
-                  SizedBox(
-                      height: 531.v,
+                  Expanded(
+                      //     height: 531.v,
                       child: TabBarView(
                           controller: tabviewController,
                           children: [
-                            ActivitiesPage(),
-                            ActivitiesPage(),
-                            ActivitiesPage()
-                          ]))
+                        ActivitiesPage(),
+                        ActivitiesPage(),
+                        ActivitiesPage()
+                      ]))
                 ]))));
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 38.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeftOnprimary,
-            margin: EdgeInsets.only(left: 22.h, top: 20.v, bottom: 19.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        centerTitle: true,
-        title: AppbarSubtitle(text: "Activities"));
-  }
-
-  /// Section Widget
   Widget _buildEightyFour(BuildContext context) {
     return Card(
         clipBehavior: Clip.antiAlias,
@@ -100,20 +87,38 @@ class ActivitiesTabContainerScreenState
             width: 380.h,
             decoration: AppDecoration.orange
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder16),
-            child: Stack(alignment: Alignment.bottomLeft, children: [
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                      width: 199.h,
-                      margin: EdgeInsets.only(left: 20.h, top: 30.v),
-                      child: Text(
-                          "Get tips for getting your\nDream Job to work in Canada",
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: CustomTextStyles.titleMediumGray50Bold17))),
-              CustomElevatedButton(
-                text: "Apply Now",
-                onPressed: () {},
+            child: Stack(children: [
+              Column(
+                children: [
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                          width: 199.h,
+                          margin: EdgeInsets.only(left: 20.h, top: 30.v),
+                          child: Text(
+                              "Get tips for getting your Dream Job to work in Canada",
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                              style:
+                                  CustomTextStyles.titleMediumGray50Bold17))),
+                ],
+              ),
+              Positioned(
+                bottom: 20,
+                left: 20,
+                child: Container(
+                  width: 100,
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  decoration: BoxDecoration(
+                      color: AppColors.kwhite,
+                      borderRadius: BorderRadius.circular(10)
+                      // border: Border.all(color: AppColors.)
+                      ),
+                  child: Text(
+                    'Apply now',
+                    style: theme.textTheme.titleMedium,
+                  ),
+                ),
               ),
               CustomImageView(
                   imagePath: ImageConstant.img9ebdc45a3e7a600,
@@ -122,10 +127,5 @@ class ActivitiesTabContainerScreenState
                   radius: BorderRadius.circular(16.h),
                   alignment: Alignment.centerRight)
             ])));
-  }
-
-  /// Navigates back to the previous screen.
-  onTapArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }

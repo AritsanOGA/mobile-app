@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
+import 'package:artisan_oga/presentation/activities_tab_container_screen/activities_tab_container_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,22 +51,31 @@ class JSDrawer extends StatelessWidget {
               ],
             ),
             SizedBox(height: 39.v),
-            Row(
-              children: [
-                SvgPicture.asset(
-                  ImageConstant.imgBriefcase,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.h,
-                    bottom: 3.v,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: ActivitiesTabContainerScreen()));
+              },
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    ImageConstant.imgBriefcase,
                   ),
-                  child: Text(
-                    "Activities",
-                    style: CustomTextStyles.titleSmall20,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 10.h,
+                      bottom: 3.v,
+                    ),
+                    child: Text(
+                      "Activities",
+                      style: CustomTextStyles.titleSmall20,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 38.v),
             Row(
@@ -111,25 +121,25 @@ class JSDrawer extends StatelessWidget {
             ),
             SizedBox(height: 39.v),
 
-            Row(
-              children: [
-                SvgPicture.asset(
-                  ImageConstant.imgUserPrimarycontainer,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.h,
-                    bottom: 3.v,
-                  ),
-                  child: Text(
-                    "View Profile",
-                    style: CustomTextStyles.titleSmall20,
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     SvgPicture.asset(
+            //       ImageConstant.imgUserPrimarycontainer,
+            //     ),
+            //     Padding(
+            //       padding: EdgeInsets.only(
+            //         left: 10.h,
+            //         bottom: 3.v,
+            //       ),
+            //       child: Text(
+            //         "View Profile",
+            //         style: CustomTextStyles.titleSmall20,
+            //       ),
+            //     ),
+            //   ],
+            // ),
 
-            SizedBox(height: 41.v),
+            // SizedBox(height: 41.v),
             GestureDetector(
                 onTap: (() {
                   // // Navigator.pop(context);

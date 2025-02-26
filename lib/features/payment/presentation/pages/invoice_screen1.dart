@@ -68,8 +68,9 @@ class Invoice1Screen extends StatelessWidget {
                                     children: [
                                       Image.asset(
                                           ImageConstant.artisanSmallLogo),
-                                      Text(DateFormat("dd MMM, yyyy")
-                                          .format(state.getInvoice!.createdAt))
+                                      Text(DateFormat("dd MMM, yyyy").format(
+                                          state.getInvoice?.createdAt ??
+                                              DateTime.now()))
                                     ],
                                   ),
                                 ),
@@ -209,26 +210,34 @@ class Invoice1Screen extends StatelessWidget {
                                                           FontWeight.w600))),
                                     )),
                                 SizedBox(height: 20.v),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                          'Initial Payment (${state.getInvoice?.percentage ?? ''}%)',
-                                          style: theme.textTheme.bodyMedium
-                                              ?.copyWith(
-                                                  fontWeight: FontWeight.w600)),
-                                      Text(
-                                          state.getInvoice?.amountWithVat ?? '',
-                                          style: theme.textTheme.bodyMedium
-                                              ?.copyWith(
-                                                  fontWeight: FontWeight.w700)),
-                                    ],
-                                  ),
-                                ),
+                                state.getInvoice?.percentage == 0
+                                    ? Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                                'Initial Payment (${state.getInvoice?.percentage ?? ''}%)',
+                                                style: theme
+                                                    .textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                        fontWeight:
+                                                            FontWeight.w600)),
+                                            Text(
+                                                state.getInvoice
+                                                        ?.amountWithVat ??
+                                                    '',
+                                                style: theme
+                                                    .textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                        fontWeight:
+                                                            FontWeight.w700)),
+                                          ],
+                                        ),
+                                      )
+                                    : SizedBox(),
                                 SizedBox(height: 10.v),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -285,8 +294,7 @@ class Invoice1Screen extends StatelessWidget {
                                                     fontWeight:
                                                         FontWeight.w600)),
                                         Text(
-                                            state.getInvoice?.totalWithVat ??
-                                                '',
+                                            '${(double.tryParse(state.getInvoice?.balWithVat.toString() ?? "0") ?? 0) + (double.tryParse(state.getInvoice?.vat.toString() ?? "0") ?? 0)}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight:

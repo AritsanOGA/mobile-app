@@ -38,7 +38,8 @@ class PostJobTwoScreen extends HookWidget {
                       width: double.maxFinite,
                       height: double.maxFinite,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 22.h, vertical: 12.v),
+                        horizontal: 22.h,
+                      ),
                       child: SingleChildScrollView(
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -361,7 +362,11 @@ class PostJobTwoScreen extends HookWidget {
                                               type: PageTransitionType
                                                   .rightToLeft,
                                               duration: Durations.long1,
-                                              child: PostJobThreeScreen()));
+                                              child: PostJobThreeScreen(
+                                                compensationType:
+                                                    state.compensationType ??
+                                                        '',
+                                              )));
                                     }
                                   }),
                                   text: "Next",

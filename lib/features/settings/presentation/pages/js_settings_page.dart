@@ -106,11 +106,9 @@ class JSSettingsPage extends HookWidget {
                                         margin: EdgeInsets.only(
                                             top: 24.v, bottom: 15.v))
                                   ])),
-
                               SizedBox(height: 24.v),
                               Divider(indent: 3.h, endIndent: 4.h),
                               SizedBox(height: 27.v),
-
                               GestureDetector(
                                 onTap: () {
                                   Navigator.pushNamed(context,
@@ -129,18 +127,6 @@ class JSSettingsPage extends HookWidget {
                                                   .titleMediumPrimaryContainerMedium_1))
                                     ])),
                               ),
-                              SizedBox(height: 32.v),
-                              // SizedBox(height: 30.v),
-                              Padding(
-                                  padding: EdgeInsets.only(left: 4.h),
-                                  child: Row(children: [
-                                    SvgPicture.asset(ImageConstant.imgBookmark),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 15.h),
-                                        child: Text("Payment Integration",
-                                            style: CustomTextStyles
-                                                .titleMediumPrimaryContainerMedium_1))
-                                  ])),
                               SizedBox(height: 32.v),
                               GestureDetector(
                                 onTap: () {

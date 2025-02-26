@@ -34,7 +34,7 @@ class JSPasswordChangeScreen extends HookWidget {
               listener: (context, state) {
                 if (state.updatePasswordState == UpdatePasswordState.success) {
                   print('suceess');
-                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+                  Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
                 } else if (state.updatePasswordState ==
                     UpdatePasswordState.failure) {
                   ToastUtils.showRedToast(state.errorMessage ?? '');

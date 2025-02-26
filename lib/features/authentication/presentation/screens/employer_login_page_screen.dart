@@ -29,7 +29,8 @@ class EmployerLoginPageScreen extends HookWidget {
           listener: (context, state) {
             if (state.employerLoginState == EmployerLoginState.success) {
               print('suceessnnn');
-              Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+              Navigator.pushReplacementNamed(
+                  context, AppRoutes.employerNavBarScreen);
             } else if (state.employerLoginState == EmployerLoginState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }

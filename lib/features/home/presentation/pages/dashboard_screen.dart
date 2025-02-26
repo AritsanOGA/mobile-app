@@ -1,24 +1,23 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/js_drawer.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../../../../core/utils/app_formatter.dart';
+
 import '../../../../core/services/default.dart';
+import '../../../../core/utils/app_formatter.dart';
 import '../../../../shared/widgets/custom_outlined_button.dart';
 
-//jobs seeker dashboard
-// ignore_for_file: must_be_immutable
 class DashboardPage extends StatefulWidget {
   @override
   _DashboardPageState createState() => _DashboardPageState();
@@ -572,7 +571,7 @@ class FeaturedJobWidget extends StatelessWidget {
           width: 260.h,
           child: Text(
             softWrap: false,
-            featuredJobResponseEntity.industry ?? '',
+            featuredJobResponseEntity.jobTitle ?? '',
             style: theme.textTheme.titleLarge!.copyWith(
                 color: appTheme.gray50,
                 fontSize: 23.fSize,
@@ -588,7 +587,7 @@ class FeaturedJobWidget extends StatelessWidget {
               width: 15,
             )),
         Text(
-          featuredJobResponseEntity.jobTitle ?? '',
+          featuredJobResponseEntity.city ?? '',
           style: CustomTextStyles.titleMediumGray50,
         ),
         SizedBox(

@@ -24,6 +24,9 @@ class JobSearchScreen extends HookWidget {
     final locationController = useTextEditingController();
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
+      context.read<AuthBloc>().add(
+            AuthEvent.getSkills('1'),
+          );
 
       return null;
     }, []);
@@ -33,16 +36,8 @@ class JobSearchScreen extends HookWidget {
         body: BlocBuilder<AuthBloc, AuthState>(
           bloc: context.read<AuthBloc>()
             ..add(AuthEvent.searchJobs(
-                SearchJobDataEntity(category: 0, location: '', skill: ''))),
+                SearchJobDataEntity(category: 1, location: '', skill: ''))),
           builder: (context, state) {
-            // if (state.searchJobState == SearchJobState.loading) {
-            //   return Center(child: CircularProgressIndicator());
-            // }
-
-            // if (state.searchJobState == SearchJobState.failure) {
-            //   return Center(child: Text('Error: '));
-            // }
-
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.h),
               child: Column(
@@ -143,7 +138,7 @@ class JobSearchScreen extends HookWidget {
                                 category.id == (state.category?.id ?? 1),
                             orElse: () => state.skill.first)
                         : SkillResponseEntity(
-                            id: 1, name: 'Fashion', categoryId: 1),
+                            id: 1, name: 'Corset', categoryId: 1),
                     itemLabel: (category) => category.name,
                     onChanged: (value) {
                       context.read<AuthBloc>().add(
@@ -171,7 +166,7 @@ class JobSearchScreen extends HookWidget {
                         onPressed: () {
                           context.read<AuthBloc>().add(
                                 AuthEvent.searchJobs(SearchJobDataEntity(
-                                    category: state.category?.id ?? 0,
+                                    category: state.category?.id ?? 1,
                                     location: locationController.text,
                                     skill: state.singleSkill?.name ?? '')),
                               );
@@ -194,147 +189,168 @@ class JobSearchScreen extends HookWidget {
                             ),
                           ],
                         )
-                      : Expanded(
-                          child: ListView.builder(
-                              itemCount: state.searchJobEntity.length,
-                              itemBuilder: (context, index) {
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5, vertical: 10),
-                                  child: Material(
-                                    elevation: 5,
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Container(
-                                      margin: EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                              state.searchJobEntity[index]
-                                                  .jobTitle,
-                                              style: theme.textTheme.bodyMedium
-                                                  ?.copyWith(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 20)),
-                                          SizedBox(
-                                            height: 3.h,
-                                          ),
-                                          Text(
-                                              state.searchJobEntity[index]
-                                                  .industry,
-                                              style:
-                                                  theme.textTheme.bodyMedium),
-                                          SizedBox(
-                                            height: 10.h,
-                                          ),
-                                          Row(
+                      : state.searchJobEntity.isEmpty
+                          ? Column(
+                              children: [
+                                SizedBox(
+                                  height: 80,
+                                ),
+                                Text('No Result found',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500,
+                                    )),
+                              ],
+                            )
+                          : Expanded(
+                              child: ListView.builder(
+                                  itemCount: state.searchJobEntity.length,
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 5, vertical: 10),
+                                      child: Material(
+                                        elevation: 5,
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Container(
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Image.asset(ImageConstant.money),
-                                              SizedBox(
-                                                width: 10.v,
-                                              ),
                                               Text(
                                                   state.searchJobEntity[index]
-                                                      .basicSalary,
+                                                      .jobTitle,
                                                   style: theme
                                                       .textTheme.bodyMedium
                                                       ?.copyWith(
-                                                    fontWeight: FontWeight.w500,
-                                                  )),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10.h,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                  ImageConstant.locationImage),
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontSize: 20)),
                                               SizedBox(
-                                                width: 10.v,
+                                                height: 3.h,
                                               ),
                                               Text(
                                                   state.searchJobEntity[index]
-                                                      .city,
+                                                      .industry,
                                                   style: theme
                                                       .textTheme.bodyMedium),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10.h,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset(ImageConstant.time),
                                               SizedBox(
-                                                width: 10.v,
+                                                height: 10.h,
                                               ),
-                                              Text(
-                                                  DateFormat(
-                                                          "yyyy-MM-dd hh:mm a")
-                                                      .format(state
+                                              Row(
+                                                children: [
+                                                  Image.asset(
+                                                      ImageConstant.money),
+                                                  SizedBox(
+                                                    width: 10.v,
+                                                  ),
+                                                  Text(
+                                                      state
                                                           .searchJobEntity[
                                                               index]
-                                                          .createdAt),
-                                                  style: theme
-                                                      .textTheme.bodyMedium),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10.h,
-                                          ),
-                                          GestureDetector(
-                                            onTap: () {
-                                              Navigator.pushNamed(
-                                                context,
-                                                AppRoutes
-                                                    .jobSearchDetailsScreen,
-                                                arguments: state
-                                                    .searchJobEntity[index]
-                                                    .identity,
-                                              );
-                                            },
-                                            child: Container(
-                                              height: 40.h,
-                                              width: 180.v,
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 10),
-                                              decoration: BoxDecoration(
-                                                  color: theme.primaryColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              child: Row(
-                                                children: [
-                                                  Text('View Job Details',
+                                                          .basicSalary,
                                                       style: theme
                                                           .textTheme.bodyMedium
                                                           ?.copyWith(
-                                                              color: AppColors
-                                                                  .kwhite)),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Image.asset(
-                                                    ImageConstant.doc,
-                                                    color: AppColors.kwhite,
-                                                  )
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      )),
                                                 ],
                                               ),
-                                            ),
-                                          )
-                                        ],
+                                              SizedBox(
+                                                height: 10.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Image.asset(ImageConstant
+                                                      .locationImage),
+                                                  SizedBox(
+                                                    width: 10.v,
+                                                  ),
+                                                  Text(
+                                                      state
+                                                          .searchJobEntity[
+                                                              index]
+                                                          .city,
+                                                      style: theme.textTheme
+                                                          .bodyMedium),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 10.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Image.asset(
+                                                      ImageConstant.time),
+                                                  SizedBox(
+                                                    width: 10.v,
+                                                  ),
+                                                  Text(
+                                                      DateFormat(
+                                                              "yyyy-MM-dd hh:mm a")
+                                                          .format(state
+                                                              .searchJobEntity[
+                                                                  index]
+                                                              .createdAt),
+                                                      style: theme.textTheme
+                                                          .bodyMedium),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 10.h,
+                                              ),
+                                              GestureDetector(
+                                                onTap: () {
+                                                  Navigator.pushNamed(
+                                                    context,
+                                                    AppRoutes
+                                                        .jobSearchDetailsScreen,
+                                                    arguments: state
+                                                        .searchJobEntity[index]
+                                                        .identity,
+                                                  );
+                                                },
+                                                child: Container(
+                                                  height: 40.h,
+                                                  width: 180.v,
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: 10),
+                                                  decoration: BoxDecoration(
+                                                      color: theme.primaryColor,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10)),
+                                                  child: Row(
+                                                    children: [
+                                                      Text('View Job Details',
+                                                          style: theme.textTheme
+                                                              .bodyMedium
+                                                              ?.copyWith(
+                                                                  color: AppColors
+                                                                      .kwhite)),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      Image.asset(
+                                                        ImageConstant.doc,
+                                                        color: AppColors.kwhite,
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                );
-                              }),
-                        )
+                                    );
+                                  }),
+                            )
                   // ...List.generate(state.searchJobEntity.length, (index) {
                   //   return Material(
                   //     elevation: 3,

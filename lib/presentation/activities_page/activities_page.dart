@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter/material.dart';
+
 import 'widgets/userprofile2_item_widget.dart';
 
 // ignore_for_file: must_be_immutable

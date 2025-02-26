@@ -109,8 +109,9 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
                           style: CustomTextStyles.titleSmallSemiBold,
                         ),
                         Text(
-                          AppFormatter.dateTimeFormatter
-                              .format(featuredJobResponseEntity.createdAt!),
+                          formatCardinalDate(
+                              featuredJobResponseEntity.createdAt ??
+                                  DateTime.now()),
                           style: CustomTextStyles.labelLargePrimaryContainer_2,
                         ),
                       ],
@@ -170,7 +171,9 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
                           style: CustomTextStyles.titleSmallSemiBold,
                         ),
                         Text(
-                          featuredJobResponseEntity.applicationDeadline!,
+                          formatDateString(
+                              featuredJobResponseEntity.applicationDeadline ??
+                                  ''),
                           style: CustomTextStyles.labelLargePrimaryContainer_2,
                         ),
                       ],

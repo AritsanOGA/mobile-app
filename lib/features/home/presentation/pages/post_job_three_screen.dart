@@ -17,6 +17,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
 
 class PostJobThreeScreen extends HookWidget {
+  final String compensationType;
+
+  PostJobThreeScreen({super.key, required this.compensationType});
   @override
   Widget build(BuildContext context) {
     final minSalaryController = useTextEditingController();
@@ -50,31 +53,42 @@ class PostJobThreeScreen extends HookWidget {
                   child: Container(
                       width: double.maxFinite,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 22.h, vertical: 38.v),
+                        horizontal: 22.h,
+                      ),
                       child: SingleChildScrollView(
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            CustomTextFormField(
-                              title: 'Proposed Minimum Salary',
-                              textInputType: TextInputType.number,
-                              titleStyle: CustomTextStyles.titleMediumMedium18,
-                              validator: FormValidation.stringValidation,
-                              hintText: 'Enter Minimum Salary',
-                              isBorderNone: true,
-                              controller: minSalaryController,
-                            ),
-                            SizedBox(height: 30.v),
-                            CustomTextFormField(
-                              textInputType: TextInputType.number,
-                              title: 'Proposed Maximum Salary',
-                              titleStyle: CustomTextStyles.titleMediumMedium18,
-                              validator: FormValidation.stringValidation,
-                              hintText: 'Enter Maximum Salary',
-                              isBorderNone: true,
-                              controller: maxSalaryController,
-                            ),
-                            SizedBox(height: 30.v),
+                            compensationType == 'Salary'
+                                ? Column(
+                                    children: [
+                                      CustomTextFormField(
+                                        title: 'Proposed Minimum Salary',
+                                        textInputType: TextInputType.number,
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        hintText: 'Enter Minimum Salary',
+                                        isBorderNone: true,
+                                        controller: minSalaryController,
+                                      ),
+                                      SizedBox(height: 30.v),
+                                      CustomTextFormField(
+                                        textInputType: TextInputType.number,
+                                        title: 'Proposed Maximum Salary',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        hintText: 'Enter Maximum Salary',
+                                        isBorderNone: true,
+                                        controller: maxSalaryController,
+                                      ),
+                                      SizedBox(height: 30.v),
+                                    ],
+                                  )
+                                : SizedBox(),
                             CustomTextFormField(
                               ontap: () async {
                                 DateTime? pickedDate = await showDatePicker(
@@ -87,12 +101,13 @@ class PostJobThreeScreen extends HookWidget {
                                     "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
 
                                 context.read<HomeBloc>().add(
-                                    HomeEvent.updateSelectedDate(pickedDate!));
-                                                            },
+                                    HomeEvent.updateSelectedDate(pickedDate));
+                              },
                               hintText: 'YYYY-MM-DD',
                               titleStyle: CustomTextStyles.titleMediumMedium18,
                               validator: FormValidation.stringValidation,
                               isBorderNone: true,
+                              readOnly: true,
                               title: 'Application Deadline Date',
                               controller: applicationDeadlineController,
                             ),
@@ -160,7 +175,11 @@ class PostJobThreeScreen extends HookWidget {
                                 );
                               },
                             ),
-                            SizedBox(height: 40.v),
+                            compensationType == 'Salary'
+                                ? SizedBox(height: 40.v)
+                                : SizedBox(
+                                    height: 80,
+                                  ),
                             BlocSelector<HomeBloc, HomeState, PostJobEntity>(
                               selector: (state) {
                                 return state.postJobRequest;
@@ -170,33 +189,47 @@ class PostJobThreeScreen extends HookWidget {
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??
                                         false) {
-                                      print(maxSalaryController.text);
-                                      print(
-                                          'hello ${int.parse(maxSalaryController.text)}');
-                                      print(
-                                          '${state.country?.name} ${state.state?.name} ${state.states.first.name} ');
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updatePostJobRequest(
-                                              postJobRequest.copyWith(
-                                                maxAmount: int.parse(
-                                                    maxSalaryController.text),
-                                                minAmount: int.parse(
-                                                    minSalaryController.text),
-                                                applicationDeadline:
-                                                    applicationDeadlineController
-                                                        .text,
-                                                country: state.country?.id
-                                                        .toString() ??
-                                                    '161',
-                                                yearsOfExperience: int.parse(
-                                                    yearsOfExperienceController
-                                                        .text),
-                                                state: state.state?.name ??
-                                                    state.states.first.name,
-                                              ),
-                                            ),
-                                          );
-
+                                      compensationType == 'Salary'
+                                          ? context.read<HomeBloc>().add(
+                                                HomeEvent.updatePostJobRequest(
+                                                  postJobRequest.copyWith(
+                                                    maxAmount: int.parse(
+                                                        maxSalaryController
+                                                            .text),
+                                                    minAmount: int.parse(
+                                                        minSalaryController
+                                                            .text),
+                                                    applicationDeadline:
+                                                        applicationDeadlineController
+                                                            .text,
+                                                    country: state.country?.id
+                                                            .toString() ??
+                                                        '161',
+                                                    yearsOfExperience: int.parse(
+                                                        yearsOfExperienceController
+                                                            .text),
+                                                    state: state.state?.name ??
+                                                        state.states.first.name,
+                                                  ),
+                                                ),
+                                              )
+                                          : context.read<HomeBloc>().add(
+                                                HomeEvent.updatePostJobRequest(
+                                                  postJobRequest.copyWith(
+                                                    applicationDeadline:
+                                                        applicationDeadlineController
+                                                            .text,
+                                                    country: state.country?.id
+                                                            .toString() ??
+                                                        '161',
+                                                    yearsOfExperience: int.parse(
+                                                        yearsOfExperienceController
+                                                            .text),
+                                                    state: state.state?.name ??
+                                                        state.states.first.name,
+                                                  ),
+                                                ),
+                                              );
                                       Navigator.push(
                                           context,
                                           PageTransition(

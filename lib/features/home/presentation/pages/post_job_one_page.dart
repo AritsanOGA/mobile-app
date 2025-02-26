@@ -43,7 +43,7 @@ class PostJobOnePage extends HookWidget {
               key: formKey,
               child: Container(
                   width: double.maxFinite,
-                  padding: EdgeInsets.symmetric(horizontal: 24.h),
+                  padding: EdgeInsets.symmetric(horizontal: 22.h),
                   child: SingleChildScrollView(
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

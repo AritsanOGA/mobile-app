@@ -63,37 +63,6 @@ class EmployerDrawer extends StatelessWidget {
                   ),
                   SizedBox(height: 39.v),
                   GestureDetector(
-                    onTap: (() {
-                      // Navigator.pop(context);
-                      // Navigator.push(
-                      //     context,
-                      //     PageTransition(
-                      //         type: PageTransitionType.rightToLeft,
-                      //         child: ViewAllCandidatesPageScreen()));
-                    }),
-                    child: Padding(
-                        padding: EdgeInsets.only(right: 30.h),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              ImageConstant.imgBriefcase,
-                              color: AppColors.kblack,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: 10.h,
-                                bottom: 3.v,
-                              ),
-                              child: Text(
-                                "Screened Candidates",
-                                style: CustomTextStyles.titleSmall15,
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  SizedBox(height: 39.v),
-                  GestureDetector(
                       onTap: (() {
                         // Navigator.pop(context);
                         Navigator.push(
@@ -210,33 +179,6 @@ class EmployerDrawer extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 41.v),
-                  GestureDetector(
-                      onTap: (() {
-                        // Navigator.pop(context);
-                        // Navigator.push(
-                        //     context,
-                        //     PageTransition(
-                        //         type: PageTransitionType.rightToLeft,
-                        //         child: EmployerProfilePageScreen()));
-                      }),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            ImageConstant.imgUserPrimarycontainer,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              left: 10.h,
-                              bottom: 3.v,
-                            ),
-                            child: Text(
-                              "View Profile",
-                              style: CustomTextStyles.titleSmall15,
-                            ),
-                          ),
-                        ],
-                      )),
                   SizedBox(height: 41.v),
                   GestureDetector(
                       onTap: (() {
