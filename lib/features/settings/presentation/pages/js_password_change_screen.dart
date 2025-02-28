@@ -33,7 +33,6 @@ class JSPasswordChangeScreen extends HookWidget {
             body: BlocListener<SettingBloc, SettingState>(
               listener: (context, state) {
                 if (state.updatePasswordState == UpdatePasswordState.success) {
-                  print('suceess');
                   Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
                 } else if (state.updatePasswordState ==
                     UpdatePasswordState.failure) {

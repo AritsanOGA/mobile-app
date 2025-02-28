@@ -1,117 +1,97 @@
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 
 class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
-  final int? id;
-  final int? whatsappNumber;
-  final String? fullName;
-  final String? email;
-  final String? role;
-  final String? isAdmin;
-  final String? status;
-  final dynamic featured;
-  final dynamic resume;
-  final dynamic profileImage;
-  final dynamic gender;
-  final dynamic about;
-  final String? identity;
-  final String? phone;
-  final dynamic dateOfBirth;
-  final dynamic streetAddress;
-  final String? city;
-  final int? country;
-  final String? companyName;
-  final dynamic state;
-  final dynamic locationAddress;
-  final dynamic deliveryAddress;
-  final dynamic businessCategory;
-  final dynamic businessName;
-  final dynamic facebook;
-  final dynamic instagram;
-  final dynamic workExperience;
-  final dynamic websiteAddress;
-  final dynamic agreementStatus;
-  final dynamic serviceDescription;
-  final String? availability;
-  final String? verifyCode;
-  final dynamic minAmount;
-  final dynamic maxAmount;
-  final dynamic compensationType;
-  final dynamic jobPreference;
-  final dynamic isVerified;
-  final dynamic rating;
-  final dynamic educationQualification;
-  final dynamic employmentHistory;
-  final dynamic passwordReset;
-  final int? block;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final dynamic jobType;
-  final dynamic package;
-  final dynamic guarantorName;
-  final dynamic guarantorAddress;
-  final dynamic guarantorPhone;
-  final dynamic guarantorEmail;
-  final dynamic referredByLink;
-  final dynamic referredByWho;
 
   GetJobSeekerResponseModel({
-    this.id,
-    this.whatsappNumber,
-    this.fullName,
-    this.email,
-    this.role,
-    this.isAdmin,
-    this.status,
-    this.featured,
-    this.resume,
-    this.profileImage,
-    this.gender,
-    this.about,
-    this.identity,
-    this.phone,
-    this.dateOfBirth,
-    this.streetAddress,
-    this.city,
-    this.country,
-    this.companyName,
-    this.state,
-    this.locationAddress,
-    this.deliveryAddress,
-    this.businessCategory,
-    this.businessName,
-    this.facebook,
-    this.instagram,
-    this.workExperience,
-    this.websiteAddress,
-    this.agreementStatus,
-    this.serviceDescription,
-    this.availability,
-    this.verifyCode,
-    this.minAmount,
-    this.maxAmount,
-    this.compensationType,
-    this.jobPreference,
-    this.isVerified,
-    this.rating,
-    this.educationQualification,
-    this.employmentHistory,
-    this.passwordReset,
-    this.block,
-    this.createdAt,
-    this.updatedAt,
-    this.jobType,
-    this.package,
-    this.guarantorName,
-    this.guarantorAddress,
-    this.guarantorPhone,
-    this.guarantorEmail,
-    this.referredByLink,
-    this.referredByWho,
+    required super.id,
+    required super.hired,
+    required super.hiredDate,
+    required super.whatsappNumber,
+    required super.fullName,
+    required super.email,
+    required super.role,
+    required super.isAdmin,
+    required super.status,
+    required super.featured,
+    required super.resume,
+    required super.profileImage,
+    required super.gender,
+    required super.about,
+    required super.identity,
+    required super.phone,
+    // required super.dateOfBirth,
+    required super.streetAddress,
+    required super.city,
+    required super.country,
+    required super.companyName,
+    required super.state,
+    required super.locationAddress,
+    required super.deliveryAddress,
+    required super.businessCategory,
+    required super.businessName,
+    required super.facebook,
+    required super.instagram,
+    required super.workExperience,
+    required super.websiteAddress,
+    required super.agreementStatus,
+    required super.serviceDescription,
+    required super.availability,
+    required super.verifyCode,
+    required super.minAmount,
+    required super.maxAmount,
+    required super.compensationType,
+    required super.jobPreference,
+    required super.isVerified,
+    required super.rating,
+    required super.educationQualification,
+    required super.employmentHistory,
+    required super.passwordReset,
+    required super.block,
+    required super.createdAt,
+    required super.updatedAt,
+    required super.jobType,
+    required super.package,
+    required super.guarantorName,
+    required super.guarantorAddress,
+    required super.guarantorPhone,
+    required super.guarantorEmail,
+    required super.referredByLink,
+    required super.referredByWho,
+    required List<AwardsAndCertificateModel> super.awardsAndCertificates,
+    required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
+    required List<AwardsAndCertificateModel> super.education,
+    required List<ExperienceModel>  super.experience,
+    required super.customerRating,
+    required super.skillAssessmentAverage,
   });
 
-  factory GetJobSeekerResponseModel.fromJson(Map<String, dynamic> json) =>
-      GetJobSeekerResponseModel(
+  factory GetJobSeekerResponseModel.fromJson(Map<String, dynamic> json) {
+        final awardList = json['awards_and_certificates'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['awards_and_certificates'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final skillList = json['artisan_assigned_skills'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['artisan_assigned_skills'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final educationList = json['education'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['education'] as List,
+          )
+        : <Map<String, dynamic>>[];
+            final experienceList = json['experience'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['experience'] as List,
+          )
+        : <Map<String, dynamic>>[];
+    return GetJobSeekerResponseModel(
         id: json["id"],
+        hired: json["hired"],
+        hiredDate: json["hired_date"] == null
+            ? null
+            : DateTime.parse(json["hired_date"]),
         whatsappNumber: json["whatsapp_number"],
         fullName: json["full_name"],
         email: json["email"],
@@ -125,7 +105,9 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
         about: json["about"],
         identity: json["identity"],
         phone: json["phone"],
-        dateOfBirth: json["date_of_birth"],
+        // dateOfBirth: json["date_of_birth"] == null
+        //     ? null
+        //     : DateTime.parse(json["date_of_birth"]),
         streetAddress: json["street_address"],
         city: json["city"],
         country: json["country"],
@@ -167,7 +149,18 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
         guarantorEmail: json["guarantor_email"],
         referredByLink: json["referred_by_link"],
         referredByWho: json["referred_by_who"],
+        awardsAndCertificates: awardList.isNotEmpty? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast() : [],
+        artisanAssignedSkills: skillList.isNotEmpty? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast() : [],
+        education: educationList.isNotEmpty? educationList.map(AwardsAndCertificateModel.fromJson).toList().cast(): [],
+        experience: experienceList.isNotEmpty? experienceList.map(ExperienceModel.fromJson).toList().cast(): [],
+        customerRating: json["customer_rating"] == null
+            ? []
+            : List<dynamic>.from(json["customer_rating"]),
+        skillAssessmentAverage: json["skill_assessment_average"] == null
+            ? []
+            : List<dynamic>.from(json["skill_assessment_average"]),
       );
+  }
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -222,5 +215,66 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
         "guarantor_email": guarantorEmail,
         "referred_by_link": referredByLink,
         "referred_by_who": referredByWho,
+      };
+}
+
+
+class AwardsAndCertificateModel extends AwardsAndCertificateEntity {
+  AwardsAndCertificateModel({
+    required super.title,
+    required super.desc,
+  });
+
+  factory AwardsAndCertificateModel.fromEntity(
+          AwardsAndCertificateEntity entity) =>
+      AwardsAndCertificateModel(title: entity.title, desc: entity.desc);
+  factory AwardsAndCertificateModel.fromJson(Map<String, dynamic> json) =>
+      AwardsAndCertificateModel(
+        title: json["title"],
+        desc: json["desc"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "title": title,
+        "desc": desc,
+      };
+}
+
+class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
+  ArtisanAssignedSkillModel({
+    required super.skill,
+  });
+
+  factory ArtisanAssignedSkillModel.fromEntity(
+          ArtisanAssignedSkillEntity entity) =>
+      ArtisanAssignedSkillModel(
+        skill: entity.skill,
+      );
+  factory ArtisanAssignedSkillModel.fromJson(Map<String, dynamic> json) =>
+      ArtisanAssignedSkillModel(
+        skill: json["skills"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "skills": skill,
+      };
+}
+
+class ExperienceModel extends ExperienceEntity {
+  ExperienceModel({
+    required super.title,
+  });
+
+  factory ExperienceModel.fromEntity(ExperienceEntity entity) =>
+      ExperienceModel(
+        title: entity.title,
+      );
+  factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
+      ExperienceModel(
+        title: json["title"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "title": title,
       };
 }

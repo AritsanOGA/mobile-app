@@ -33,7 +33,6 @@ Future<void> rejectCandidateDialog(context, String identityId,
   );
 }
 
-// ignore_for_file: must_be_immutable
 class RejectPageModalBoxDialog extends HookWidget {
   final String identityId;
   final String jobIdentity;

@@ -1,7 +1,6 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 
 class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
@@ -91,38 +90,38 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  final NumberFormat _formatter = NumberFormat("#,###");
+  // final NumberFormat _formatter = NumberFormat("#,###");
 
-  @override
-  void initState() {
-    super.initState();
-    widget.controller?.addListener(_formatInput);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   widget.controller?.addListener(_formatInput);
+  // }
 
-  void _formatInput() {
-    String text = widget.controller!.text;
+  // void _formatInput() {
+  //   String text = widget.controller!.text;
 
-    // If text is empty or non-numeric, do nothing
-    if (text.isEmpty || !RegExp(r'^\d+$').hasMatch(text.replaceAll(',', '')))
-      return;
+  //   // If text is empty or non-numeric, do nothing
+  //   if (text.isEmpty || !RegExp(r'^\d+$').hasMatch(text.replaceAll(',', '')))
+  //     return;
 
-    // Remove existing commas and parse as number
-    double value = double.tryParse(text.replaceAll(',', '')) ?? 0;
-    String formattedText = _formatter.format(value);
+  //   // Remove existing commas and parse as number
+  //   double value = double.tryParse(text.replaceAll(',', '')) ?? 0;
+  //   String formattedText = _formatter.format(value);
 
-    // Update controller with formatted text
-    widget.controller!.value = TextEditingValue(
-      text: formattedText,
-      selection: TextSelection.collapsed(
-          offset: formattedText.length), // Keep cursor at end
-    );
-  }
+  //   // Update controller with formatted text
+  //   widget.controller!.value = TextEditingValue(
+  //     text: formattedText,
+  //     selection: TextSelection.collapsed(
+  //         offset: formattedText.length), // Keep cursor at end
+  //   );
+  // }
 
-  @override
-  void dispose() {
-    widget.controller!.removeListener(_formatInput);
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   widget.controller!.removeListener(_formatInput);
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

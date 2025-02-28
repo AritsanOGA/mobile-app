@@ -49,7 +49,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                     fullNameEditTextController.text = profile.fullName ?? '';
                     emailController.text = profile.email ?? '';
                     phoneNoTextController.text = profile.phone ?? '';
-                    dateOfBirthController.text = profile.dateOfBirth ?? '';
+                    //dateOfBirthController.text = profile.dateOfBirth ?? '';
                   }
                 }
                 if (state.updateJobSeekerProfileState ==

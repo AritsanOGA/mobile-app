@@ -2,60 +2,70 @@ import 'package:equatable/equatable.dart';
 
 class GetJobSeekerResponseEntity extends Equatable {
   final int? id;
+  final int? hired;
+  final DateTime? hiredDate;
   final int? whatsappNumber;
   final String? fullName;
   final String? email;
   final String? role;
   final String? isAdmin;
   final String? status;
-  final dynamic featured;
-  final dynamic resume;
+  final int? featured;
+  final String? resume;
   final dynamic profileImage;
-  final dynamic gender;
+  final String? gender;
   final dynamic about;
   final String? identity;
   final String? phone;
-  final dynamic dateOfBirth;
-  final dynamic streetAddress;
+  final DateTime? dateOfBirth;
+  final String? streetAddress;
   final String? city;
   final int? country;
   final String? companyName;
-  final dynamic state;
-  final dynamic locationAddress;
-  final dynamic deliveryAddress;
-  final dynamic businessCategory;
+  final String? state;
+  final String? locationAddress;
+  final String? deliveryAddress;
+  final String? businessCategory;
   final dynamic businessName;
   final dynamic facebook;
   final dynamic instagram;
-  final dynamic workExperience;
+  final String? workExperience;
   final dynamic websiteAddress;
-  final dynamic agreementStatus;
+  final String? agreementStatus;
   final dynamic serviceDescription;
   final String? availability;
-  final String? verifyCode;
+  final dynamic verifyCode;
   final dynamic minAmount;
   final dynamic maxAmount;
   final dynamic compensationType;
   final dynamic jobPreference;
   final dynamic isVerified;
-  final dynamic rating;
-  final dynamic educationQualification;
-  final dynamic employmentHistory;
-  final dynamic passwordReset;
+  final String? rating;
+  final String? educationQualification;
+  final String? employmentHistory;
+  final String? passwordReset;
   final int? block;
   final DateTime? createdAt;
   final DateTime? updatedAt;
-  final dynamic jobType;
-  final dynamic package;
-  final dynamic guarantorName;
-  final dynamic guarantorAddress;
-  final dynamic guarantorPhone;
-  final dynamic guarantorEmail;
-  final dynamic referredByLink;
-  final dynamic referredByWho;
+  final String? jobType;
+  final String? package;
+  final String? guarantorName;
+  final String? guarantorAddress;
+  final String? guarantorPhone;
+  final String? guarantorEmail;
+  final int? referredByLink;
+  final String? referredByWho;
+  final List<AwardsAndCertificateEntity> awardsAndCertificates;
+  final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
+  final List<AwardsAndCertificateEntity> education;
+  final List<ExperienceEntity> experience;
+  final List<dynamic>? customerRating;
+  final List<dynamic>? skillAssessmentAverage;
 
   const GetJobSeekerResponseEntity({
     this.id,
+    this.hired,
+    this.hiredDate,
     this.whatsappNumber,
     this.fullName,
     this.email,
@@ -107,11 +117,19 @@ class GetJobSeekerResponseEntity extends Equatable {
     this.guarantorEmail,
     this.referredByLink,
     this.referredByWho,
+    required this.awardsAndCertificates,
+    required this.artisanAssignedSkills,
+    required this.education,
+   required this.experience,
+    this.customerRating,
+    this.skillAssessmentAverage,
   });
 
   @override
   List<Object?> get props => [
-        id,
+         id,
+        hired,
+        hiredDate,
         whatsappNumber,
         fullName,
         email,
@@ -163,5 +181,55 @@ class GetJobSeekerResponseEntity extends Equatable {
         guarantorEmail,
         referredByLink,
         referredByWho,
+        awardsAndCertificates,
+        artisanAssignedSkills,
+        education,
+        experience,
+        customerRating,
+        skillAssessmentAverage,
       ];
+}
+
+class AwardsAndCertificateEntity extends Equatable {
+  final String? title;
+  final String? desc;
+
+  const AwardsAndCertificateEntity({
+    this.title,
+    this.desc,
+  });
+
+  @override
+  List<Object?> get props => [title, desc];
+}
+
+class ArtisanAssignedSkillEntity extends Equatable {
+  final String? skill;
+
+  const ArtisanAssignedSkillEntity({this.skill});
+
+  @override
+  List<Object?> get props => [skill];
+}
+
+class ExperienceEntity extends Equatable {
+  final String? title;
+
+  const ExperienceEntity({this.title});
+
+  @override
+  List<Object?> get props => [title];
+}
+
+class EducationEntity extends Equatable {
+  final String? title;
+  final String? desc;
+
+  const EducationEntity({
+    this.title,
+    this.desc,
+  });
+
+  @override
+  List<Object?> get props => [title, desc];
 }
