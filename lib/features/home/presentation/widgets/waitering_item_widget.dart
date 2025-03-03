@@ -31,7 +31,7 @@ class WaiteringItemWidget extends StatelessWidget {
       backgroundColor: theme.colorScheme.primary,
       selectedColor: theme.colorScheme.primary,
       shape: RoundedRectangleBorder(
-        side: BorderSide.none,
+        side: BorderSide(color: theme.colorScheme.primary),
         borderRadius: BorderRadius.circular(
           11.h,
         ),

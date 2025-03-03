@@ -75,4 +75,9 @@ enum FlutterWavePaymentState { idle, loading, success, failure }
 enum SearchJobState { idle, loading, success, failure }
 
 enum NoOfCandidateState { idle, loading, success, failure }
+
 enum SearchJobDetailState { idle, loading, success, failure }
+
+enum JobSeekerNotificationState { idle, loading, success, failure }
+
+enum EmployerNotificationState { idle, loading, success, failure }

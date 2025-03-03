@@ -6,10 +6,12 @@ import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
+import 'package:artisan_oga/features/settings/domain/entities/notification_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/get_employer_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/get_jobseeker_usecase.dart';
+import 'package:artisan_oga/features/settings/domain/usecases/js_notification_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_employer_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
@@ -28,15 +30,20 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     UpdateEmployerUseCase? updateEmployerProfileUseCase,
     UpdateJobSeekerUsecase? updateJobSeekerUseCase,
     ChangePasswordUseCase? updatePasswordUseCase,
+    GetJobSeekerNotificationUsecase? getJobSeekerNotificationUsecase,
   })  : _getEmployerProfileUseCase = getEmployerProfileUseCase ?? locator(),
         _getJobSeekerProfileUseCase = getJobSeekerProfileUseCase ?? locator(),
         _updateEmployerProfileUseCase =
             updateEmployerProfileUseCase ?? locator(),
         _updateJobSeekerUseCase = updateJobSeekerUseCase ?? locator(),
         _updatePasswordUseCase = updatePasswordUseCase ?? locator(),
+        _getJobSeekerNotificationUsecase =
+            getJobSeekerNotificationUsecase ?? locator(),
         super(_Initial()) {
     on<_GetJobSeekerProfile>(_onGetJobSeekerProfile);
     on<_GetEmployerProfile>(_onGetEmployerProfile);
+    on<_GetJobSeekerNotification>(_onGetJobSeekerNotification);
+
     on<_UpdateJobSeekerProfile>(_onUpdateJobSeekerProfile);
     on<_UpdateEmployerProfile>(_onUpdateEmployerProfile);
     on<_UpdatePassword>(_onUpdatePassword);
@@ -48,6 +55,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
   final UpdateEmployerUseCase _updateEmployerProfileUseCase;
   final UpdateJobSeekerUsecase _updateJobSeekerUseCase;
   final ChangePasswordUseCase _updatePasswordUseCase;
+  final GetJobSeekerNotificationUsecase _getJobSeekerNotificationUsecase;
 
   FutureOr<void> _onGetEmployerProfile(
       _GetEmployerProfile event, Emitter<SettingState> emit) async {
@@ -155,5 +163,30 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     //  emit(
     //     state.copyWith(updateJobSeekerRequest: event.registerJobSeekerRequest),
     //   );
+  }
+
+  FutureOr<void> _onGetJobSeekerNotification(
+      _GetJobSeekerNotification event, Emitter<SettingState> emit) async {
+    emit(state.copyWith(
+        jobSeekerNotificationState: JobSeekerNotificationState.loading));
+
+    final result = await _getJobSeekerNotificationUsecase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          jobSeekerNotificationState: JobSeekerNotificationState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (jsResponse) => emit(
+        state.copyWith(
+          notification: jsResponse,
+          jobSeekerNotificationState: JobSeekerNotificationState.success,
+        ),
+      ),
+    );
+
+    emit(state.copyWith(
+        jobSeekerNotificationState: JobSeekerNotificationState.idle));
   }
 }

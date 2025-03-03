@@ -49,7 +49,13 @@ class _DashboardPageState extends State<DashboardPage> {
             );
           },
         ),
-        actions: [],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.jsNotificationPage);
+              },
+              icon: Icon(Icons.notifications))
+        ],
       ),
       body: Container(
         width: double.maxFinite,

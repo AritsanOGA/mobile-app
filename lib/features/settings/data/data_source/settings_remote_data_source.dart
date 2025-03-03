@@ -6,17 +6,20 @@ import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_js_profile_model.dart';
+import 'package:artisan_oga/features/settings/data/model/notification_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_employer_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_js_model.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
+import 'package:artisan_oga/features/settings/domain/entities/notification_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 
 abstract class SettingsRemoteDataSource {
   Future<GetEmployerResponseEntity> getEmployerProfile();
   Future<GetJobSeekerResponseEntity> getJobSeekerProfile();
+  Future<List<NotificationEntity>> getJobSeekerNotification();
   Future<bool> updateJobSeekerProfile(UpdateJobSeekerProfileEntity entity);
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity);
   Future<bool> changePassword(ChangePasswordEntity entit);
@@ -42,7 +45,6 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
 
   @override
   Future<GetEmployerResponseEntity> getEmployerProfile() async {
-    //try {
     final result = await api.get(
       headers: userService.authorizationHeader,
       url: AppApiEndpoint.getEmployerProfile,
@@ -52,20 +54,6 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     return GetEmployerResponseModel.fromJson(
       result['data'] as Map<String, dynamic>,
     );
-    // Ensure 'data' exists and is a Map
-    //   if (result['data'] is Map<String, dynamic>) {
-    //     return GetEmployerResponseModel.fromJson(
-    //       result['data'] as Map<String, dynamic>,
-    //     );
-
-    //   } else {
-    //     throw Exception('Invalid data format received from API.');
-    //   }
-    // } catch (e, stackTrace) {
-    //   print('Error fetching employer profile: $e');
-    //   print('StackTrace: $stackTrace');
-    //   throw Exception(
-    //       'Failed to fetch employer profile. Please try again later.');
   }
 
   @override
@@ -104,5 +92,22 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     );
 
     return true;
+  }
+
+  @override
+  Future<List<NotificationEntity>> getJobSeekerNotification() async {
+    final result = await api.get(
+      headers: userService.authorizationHeader,
+      url: AppApiEndpoint.getJobSeekerNotification,
+    ) as Map<String, dynamic>;
+
+    print('API Response: $result');
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => NotificationModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
   }
 }

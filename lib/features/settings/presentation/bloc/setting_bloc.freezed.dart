@@ -21,6 +21,8 @@ mixin _$SettingEvent {
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -36,6 +38,8 @@ mixin _$SettingEvent {
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -50,6 +54,8 @@ mixin _$SettingEvent {
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -64,6 +70,10 @@ mixin _$SettingEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -78,6 +88,9 @@ mixin _$SettingEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -89,6 +102,8 @@ mixin _$SettingEvent {
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -163,6 +178,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -181,6 +198,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -198,6 +217,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -218,6 +239,10 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -235,6 +260,9 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -249,6 +277,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -317,6 +347,8 @@ class _$GetJobSeekerProfileImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -335,6 +367,8 @@ class _$GetJobSeekerProfileImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -352,6 +386,8 @@ class _$GetJobSeekerProfileImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -372,6 +408,10 @@ class _$GetJobSeekerProfileImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -389,6 +429,9 @@ class _$GetJobSeekerProfileImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -403,6 +446,8 @@ class _$GetJobSeekerProfileImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -470,6 +515,8 @@ class _$GetEmployerProfileImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -488,6 +535,8 @@ class _$GetEmployerProfileImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -505,6 +554,8 @@ class _$GetEmployerProfileImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -525,6 +576,10 @@ class _$GetEmployerProfileImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -542,6 +597,9 @@ class _$GetEmployerProfileImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -556,6 +614,8 @@ class _$GetEmployerProfileImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -571,6 +631,348 @@ class _$GetEmployerProfileImpl
 
 abstract class _GetEmployerProfile implements SettingEvent {
   const factory _GetEmployerProfile() = _$GetEmployerProfileImpl;
+}
+
+/// @nodoc
+abstract class _$$GetJobSeekerNotificationImplCopyWith<$Res> {
+  factory _$$GetJobSeekerNotificationImplCopyWith(
+          _$GetJobSeekerNotificationImpl value,
+          $Res Function(_$GetJobSeekerNotificationImpl) then) =
+      __$$GetJobSeekerNotificationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetJobSeekerNotificationImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetJobSeekerNotificationImpl>
+    implements _$$GetJobSeekerNotificationImplCopyWith<$Res> {
+  __$$GetJobSeekerNotificationImplCopyWithImpl(
+      _$GetJobSeekerNotificationImpl _value,
+      $Res Function(_$GetJobSeekerNotificationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetJobSeekerNotificationImpl
+    with DiagnosticableTreeMixin
+    implements _GetJobSeekerNotification {
+  const _$GetJobSeekerNotificationImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getJobSeekerNotification()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'SettingEvent.getJobSeekerNotification'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetJobSeekerNotificationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getJobSeekerNotification();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getJobSeekerNotification?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getJobSeekerNotification != null) {
+      return getJobSeekerNotification();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getJobSeekerNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getJobSeekerNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getJobSeekerNotification != null) {
+      return getJobSeekerNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetJobSeekerNotification implements SettingEvent {
+  const factory _GetJobSeekerNotification() = _$GetJobSeekerNotificationImpl;
+}
+
+/// @nodoc
+abstract class _$$GetEmployerNotificationImplCopyWith<$Res> {
+  factory _$$GetEmployerNotificationImplCopyWith(
+          _$GetEmployerNotificationImpl value,
+          $Res Function(_$GetEmployerNotificationImpl) then) =
+      __$$GetEmployerNotificationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetEmployerNotificationImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetEmployerNotificationImpl>
+    implements _$$GetEmployerNotificationImplCopyWith<$Res> {
+  __$$GetEmployerNotificationImplCopyWithImpl(
+      _$GetEmployerNotificationImpl _value,
+      $Res Function(_$GetEmployerNotificationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetEmployerNotificationImpl
+    with DiagnosticableTreeMixin
+    implements _GetEmployerNotification {
+  const _$GetEmployerNotificationImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getEmployerNotification()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'SettingEvent.getEmployerNotification'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetEmployerNotificationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getEmployerNotification();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getEmployerNotification?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getEmployerNotification != null) {
+      return getEmployerNotification();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getEmployerNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getEmployerNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getEmployerNotification != null) {
+      return getEmployerNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetEmployerNotification implements SettingEvent {
+  const factory _GetEmployerNotification() = _$GetEmployerNotificationImpl;
 }
 
 /// @nodoc
@@ -653,6 +1055,8 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -671,6 +1075,8 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -688,6 +1094,8 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -708,6 +1116,10 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -725,6 +1137,9 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -739,6 +1154,8 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -841,6 +1258,8 @@ class _$UpdateEmployerProfileImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -859,6 +1278,8 @@ class _$UpdateEmployerProfileImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -876,6 +1297,8 @@ class _$UpdateEmployerProfileImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -896,6 +1319,10 @@ class _$UpdateEmployerProfileImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -913,6 +1340,9 @@ class _$UpdateEmployerProfileImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -927,6 +1357,8 @@ class _$UpdateEmployerProfileImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1028,6 +1460,8 @@ class _$UpdatePasswordImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1046,6 +1480,8 @@ class _$UpdatePasswordImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1063,6 +1499,8 @@ class _$UpdatePasswordImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1083,6 +1521,10 @@ class _$UpdatePasswordImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1100,6 +1542,9 @@ class _$UpdatePasswordImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1114,6 +1559,8 @@ class _$UpdatePasswordImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1219,6 +1666,8 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1237,6 +1686,8 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1254,6 +1705,8 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1274,6 +1727,10 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_GetEmployerNotification value)
+        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1291,6 +1748,9 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1305,6 +1765,8 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1331,6 +1793,8 @@ abstract class _UpdateJobSeekerRequest implements SettingEvent {
 
 /// @nodoc
 mixin _$SettingState {
+  List<NotificationEntity> get notification =>
+      throw _privateConstructorUsedError;
   UpdateJobSeekerProfileState get updateJobSeekerProfileState =>
       throw _privateConstructorUsedError;
   GetEmployerProfileState get getEmployerProfileState =>
@@ -1338,6 +1802,10 @@ mixin _$SettingState {
   GetJobSeekerProfileState get getJobSeekerProfileState =>
       throw _privateConstructorUsedError;
   UpdateEmployerProfileState get updateEmployerProfileState =>
+      throw _privateConstructorUsedError;
+  JobSeekerNotificationState get jobSeekerNotificationState =>
+      throw _privateConstructorUsedError;
+  EmployerNotificationState get employerNotificationState =>
       throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   UpdatePasswordState get updatePasswordState =>
@@ -1351,10 +1819,13 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1366,10 +1837,13 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1381,10 +1855,13 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1423,10 +1900,13 @@ abstract class $SettingStateCopyWith<$Res> {
       _$SettingStateCopyWithImpl<$Res, SettingState>;
   @useResult
   $Res call(
-      {UpdateJobSeekerProfileState updateJobSeekerProfileState,
+      {List<NotificationEntity> notification,
+      UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
       UpdateEmployerProfileState updateEmployerProfileState,
+      JobSeekerNotificationState jobSeekerNotificationState,
+      EmployerNotificationState employerNotificationState,
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1447,10 +1927,13 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? notification = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
     Object? updateEmployerProfileState = null,
+    Object? jobSeekerNotificationState = null,
+    Object? employerNotificationState = null,
     Object? errorMessage = freezed,
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
@@ -1458,6 +1941,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_value.copyWith(
+      notification: null == notification
+          ? _value.notification
+          : notification // ignore: cast_nullable_to_non_nullable
+              as List<NotificationEntity>,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -1474,6 +1961,14 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.updateEmployerProfileState
           : updateEmployerProfileState // ignore: cast_nullable_to_non_nullable
               as UpdateEmployerProfileState,
+      jobSeekerNotificationState: null == jobSeekerNotificationState
+          ? _value.jobSeekerNotificationState
+          : jobSeekerNotificationState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerNotificationState,
+      employerNotificationState: null == employerNotificationState
+          ? _value.employerNotificationState
+          : employerNotificationState // ignore: cast_nullable_to_non_nullable
+              as EmployerNotificationState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1507,10 +2002,13 @@ abstract class _$$InitialImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {UpdateJobSeekerProfileState updateJobSeekerProfileState,
+      {List<NotificationEntity> notification,
+      UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
       UpdateEmployerProfileState updateEmployerProfileState,
+      JobSeekerNotificationState jobSeekerNotificationState,
+      EmployerNotificationState employerNotificationState,
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1529,10 +2027,13 @@ class __$$InitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? notification = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
     Object? updateEmployerProfileState = null,
+    Object? jobSeekerNotificationState = null,
+    Object? employerNotificationState = null,
     Object? errorMessage = freezed,
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
@@ -1540,6 +2041,10 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_$InitialImpl(
+      notification: null == notification
+          ? _value._notification
+          : notification // ignore: cast_nullable_to_non_nullable
+              as List<NotificationEntity>,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -1556,6 +2061,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.updateEmployerProfileState
           : updateEmployerProfileState // ignore: cast_nullable_to_non_nullable
               as UpdateEmployerProfileState,
+      jobSeekerNotificationState: null == jobSeekerNotificationState
+          ? _value.jobSeekerNotificationState
+          : jobSeekerNotificationState // ignore: cast_nullable_to_non_nullable
+              as JobSeekerNotificationState,
+      employerNotificationState: null == employerNotificationState
+          ? _value.employerNotificationState
+          : employerNotificationState // ignore: cast_nullable_to_non_nullable
+              as EmployerNotificationState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1584,10 +2097,13 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl(
-      {this.updateJobSeekerProfileState = UpdateJobSeekerProfileState.idle,
+      {final List<NotificationEntity> notification = const [],
+      this.updateJobSeekerProfileState = UpdateJobSeekerProfileState.idle,
       this.getEmployerProfileState = GetEmployerProfileState.idle,
       this.getJobSeekerProfileState = GetJobSeekerProfileState.idle,
       this.updateEmployerProfileState = UpdateEmployerProfileState.idle,
+      this.jobSeekerNotificationState = JobSeekerNotificationState.idle,
+      this.employerNotificationState = EmployerNotificationState.idle,
       this.errorMessage,
       this.updatePasswordState = UpdatePasswordState.idle,
       this.getEmployerResponseEntity,
@@ -1614,7 +2130,17 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           minAmount: '',
           dateOFBirth: '',
           skill: '',
-          guarantorAddress: '')});
+          guarantorAddress: '')})
+      : _notification = notification;
+
+  final List<NotificationEntity> _notification;
+  @override
+  @JsonKey()
+  List<NotificationEntity> get notification {
+    if (_notification is EqualUnmodifiableListView) return _notification;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_notification);
+  }
 
   @override
   @JsonKey()
@@ -1628,6 +2154,12 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @JsonKey()
   final UpdateEmployerProfileState updateEmployerProfileState;
+  @override
+  @JsonKey()
+  final JobSeekerNotificationState jobSeekerNotificationState;
+  @override
+  @JsonKey()
+  final EmployerNotificationState employerNotificationState;
   @override
   final String? errorMessage;
   @override
@@ -1643,7 +2175,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingState.initial(updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
+    return 'SettingState.initial(notification: $notification, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, employerNotificationState: $employerNotificationState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
   }
 
   @override
@@ -1651,6 +2183,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SettingState.initial'))
+      ..add(DiagnosticsProperty('notification', notification))
       ..add(DiagnosticsProperty(
           'updateJobSeekerProfileState', updateJobSeekerProfileState))
       ..add(DiagnosticsProperty(
@@ -1659,6 +2192,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           'getJobSeekerProfileState', getJobSeekerProfileState))
       ..add(DiagnosticsProperty(
           'updateEmployerProfileState', updateEmployerProfileState))
+      ..add(DiagnosticsProperty(
+          'jobSeekerNotificationState', jobSeekerNotificationState))
+      ..add(DiagnosticsProperty(
+          'employerNotificationState', employerNotificationState))
       ..add(DiagnosticsProperty('errorMessage', errorMessage))
       ..add(DiagnosticsProperty('updatePasswordState', updatePasswordState))
       ..add(DiagnosticsProperty(
@@ -1674,8 +2211,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
-            (identical(other.updateJobSeekerProfileState,
-                    updateJobSeekerProfileState) ||
+            const DeepCollectionEquality()
+                .equals(other._notification, _notification) &&
+            (identical(other.updateJobSeekerProfileState, updateJobSeekerProfileState) ||
                 other.updateJobSeekerProfileState ==
                     updateJobSeekerProfileState) &&
             (identical(other.getEmployerProfileState, getEmployerProfileState) ||
@@ -1685,14 +2223,18 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             (identical(other.updateEmployerProfileState, updateEmployerProfileState) ||
                 other.updateEmployerProfileState ==
                     updateEmployerProfileState) &&
+            (identical(other.jobSeekerNotificationState, jobSeekerNotificationState) ||
+                other.jobSeekerNotificationState ==
+                    jobSeekerNotificationState) &&
+            (identical(other.employerNotificationState, employerNotificationState) ||
+                other.employerNotificationState == employerNotificationState) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.updatePasswordState, updatePasswordState) ||
                 other.updatePasswordState == updatePasswordState) &&
             (identical(other.getEmployerResponseEntity, getEmployerResponseEntity) ||
                 other.getEmployerResponseEntity == getEmployerResponseEntity) &&
-            (identical(other.getJobSeekerResponseEntity,
-                    getJobSeekerResponseEntity) ||
+            (identical(other.getJobSeekerResponseEntity, getJobSeekerResponseEntity) ||
                 other.getJobSeekerResponseEntity ==
                     getJobSeekerResponseEntity) &&
             (identical(other.updateJobSeekerProfileRequest,
@@ -1704,10 +2246,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(_notification),
       updateJobSeekerProfileState,
       getEmployerProfileState,
       getJobSeekerProfileState,
       updateEmployerProfileState,
+      jobSeekerNotificationState,
+      employerNotificationState,
       errorMessage,
       updatePasswordState,
       getEmployerResponseEntity,
@@ -1724,10 +2269,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1736,10 +2284,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         initial,
   }) {
     return initial(
+        notification,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
         updateEmployerProfileState,
+        jobSeekerNotificationState,
+        employerNotificationState,
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
@@ -1751,10 +2302,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1763,10 +2317,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         initial,
   }) {
     return initial?.call(
+        notification,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
         updateEmployerProfileState,
+        jobSeekerNotificationState,
+        employerNotificationState,
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
@@ -1778,10 +2335,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+            List<NotificationEntity> notification,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
+            JobSeekerNotificationState jobSeekerNotificationState,
+            EmployerNotificationState employerNotificationState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1792,10 +2352,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }) {
     if (initial != null) {
       return initial(
+          notification,
           updateJobSeekerProfileState,
           getEmployerProfileState,
           getJobSeekerProfileState,
           updateEmployerProfileState,
+          jobSeekerNotificationState,
+          employerNotificationState,
           errorMessage,
           updatePasswordState,
           getEmployerResponseEntity,
@@ -1836,10 +2399,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
 abstract class _Initial implements SettingState {
   const factory _Initial(
-          {final UpdateJobSeekerProfileState updateJobSeekerProfileState,
+          {final List<NotificationEntity> notification,
+          final UpdateJobSeekerProfileState updateJobSeekerProfileState,
           final GetEmployerProfileState getEmployerProfileState,
           final GetJobSeekerProfileState getJobSeekerProfileState,
           final UpdateEmployerProfileState updateEmployerProfileState,
+          final JobSeekerNotificationState jobSeekerNotificationState,
+          final EmployerNotificationState employerNotificationState,
           final String? errorMessage,
           final UpdatePasswordState updatePasswordState,
           final GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1848,6 +2414,8 @@ abstract class _Initial implements SettingState {
       _$InitialImpl;
 
   @override
+  List<NotificationEntity> get notification;
+  @override
   UpdateJobSeekerProfileState get updateJobSeekerProfileState;
   @override
   GetEmployerProfileState get getEmployerProfileState;
@@ -1855,6 +2423,10 @@ abstract class _Initial implements SettingState {
   GetJobSeekerProfileState get getJobSeekerProfileState;
   @override
   UpdateEmployerProfileState get updateEmployerProfileState;
+  @override
+  JobSeekerNotificationState get jobSeekerNotificationState;
+  @override
+  EmployerNotificationState get employerNotificationState;
   @override
   String? get errorMessage;
   @override

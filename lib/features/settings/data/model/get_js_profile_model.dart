@@ -1,7 +1,6 @@
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
 
 class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
-
   GetJobSeekerResponseModel({
     required super.id,
     required super.hired,
@@ -60,106 +59,117 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
     required List<AwardsAndCertificateModel> super.awardsAndCertificates,
     required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
     required List<AwardsAndCertificateModel> super.education,
-    required List<ExperienceModel>  super.experience,
+    required List<ExperienceModel> super.experience,
     required super.customerRating,
     required super.skillAssessmentAverage,
   });
 
   factory GetJobSeekerResponseModel.fromJson(Map<String, dynamic> json) {
-        final awardList = json['awards_and_certificates'] != null
+    final awardList = json['awards_and_certificates'] != null
         ? List<Map<String, dynamic>>.from(
             json['awards_and_certificates'] as List,
           )
         : <Map<String, dynamic>>[];
-            final skillList = json['artisan_assigned_skills'] != null
+    final skillList = json['artisan_assigned_skills'] != null
         ? List<Map<String, dynamic>>.from(
             json['artisan_assigned_skills'] as List,
           )
         : <Map<String, dynamic>>[];
-            final educationList = json['education'] != null
+    final educationList = json['education'] != null
         ? List<Map<String, dynamic>>.from(
             json['education'] as List,
           )
         : <Map<String, dynamic>>[];
-            final experienceList = json['experience'] != null
+    final experienceList = json['experience'] != null
         ? List<Map<String, dynamic>>.from(
             json['experience'] as List,
           )
         : <Map<String, dynamic>>[];
     return GetJobSeekerResponseModel(
-        id: json["id"],
-        hired: json["hired"],
-        hiredDate: json["hired_date"] == null
-            ? null
-            : DateTime.parse(json["hired_date"]),
-        whatsappNumber: json["whatsapp_number"],
-        fullName: json["full_name"],
-        email: json["email"],
-        role: json["role"],
-        isAdmin: json["is_admin"],
-        status: json["status"],
-        featured: json["featured"],
-        resume: json["resume"],
-        profileImage: json["profile_image"],
-        gender: json["gender"],
-        about: json["about"],
-        identity: json["identity"],
-        phone: json["phone"],
-        // dateOfBirth: json["date_of_birth"] == null
-        //     ? null
-        //     : DateTime.parse(json["date_of_birth"]),
-        streetAddress: json["street_address"],
-        city: json["city"],
-        country: json["country"],
-        companyName: json["company_name"],
-        state: json["state"],
-        locationAddress: json["location_address"],
-        deliveryAddress: json["delivery_address"],
-        businessCategory: json["business_category"],
-        businessName: json["business_name"],
-        facebook: json["facebook"],
-        instagram: json["instagram"],
-        workExperience: json["work_experience"],
-        websiteAddress: json["website_address"],
-        agreementStatus: json["agreement_status"],
-        serviceDescription: json["service_description"],
-        availability: json["availability"],
-        verifyCode: json["verify_code"],
-        minAmount: json["min_amount"],
-        maxAmount: json["max_amount"],
-        compensationType: json["compensation_type"],
-        jobPreference: json["job_preference"],
-        isVerified: json["is_verified"],
-        rating: json["rating"],
-        educationQualification: json["education_qualification"],
-        employmentHistory: json["employment_history"],
-        passwordReset: json["password_reset"],
-        block: json["block"],
-        createdAt: json["created_at"] == null
-            ? null
-            : DateTime.parse(json["created_at"]),
-        updatedAt: json["updated_at"] == null
-            ? null
-            : DateTime.parse(json["updated_at"]),
-        jobType: json["job_type"],
-        package: json["package"],
-        guarantorName: json["guarantor_name"],
-        guarantorAddress: json["guarantor_address"],
-        guarantorPhone: json["guarantor_phone"],
-        guarantorEmail: json["guarantor_email"],
-        referredByLink: json["referred_by_link"],
-        referredByWho: json["referred_by_who"],
-        awardsAndCertificates: awardList.isNotEmpty? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast() : [],
-        artisanAssignedSkills: skillList.isNotEmpty? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast() : [],
-        education: educationList.isNotEmpty? educationList.map(AwardsAndCertificateModel.fromJson).toList().cast(): [],
-        experience: experienceList.isNotEmpty? experienceList.map(ExperienceModel.fromJson).toList().cast(): [],
-        customerRating: json["customer_rating"] == null
-            ? []
-            : List<dynamic>.from(json["customer_rating"]),
-        skillAssessmentAverage: json["skill_assessment_average"] == null
-            ? []
-            : List<dynamic>.from(json["skill_assessment_average"]),
-      );
+      id: json["id"],
+      hired: json["hired"],
+      hiredDate: json["hired_date"] == null
+          ? null
+          : DateTime.parse(json["hired_date"]),
+      whatsappNumber: json["whatsapp_number"],
+      fullName: json["full_name"],
+      email: json["email"],
+      role: json["role"],
+      isAdmin: json["is_admin"],
+      status: json["status"],
+      featured: json["featured"],
+      resume: json["resume"],
+      profileImage: json["profile_image"],
+      gender: json["gender"],
+      about: json["about"],
+      identity: json["identity"],
+      phone: json["phone"],
+      // dateOfBirth: json["date_of_birth"] == null
+      //     ? null
+      //     : DateTime.parse(json["date_of_birth"]),
+      streetAddress: json["street_address"],
+      city: json["city"],
+      country: json["country"],
+      companyName: json["company_name"],
+      state: json["state"],
+      locationAddress: json["location_address"],
+      deliveryAddress: json["delivery_address"],
+      businessCategory: json["business_category"],
+      businessName: json["business_name"],
+      facebook: json["facebook"],
+      instagram: json["instagram"],
+      workExperience: json["work_experience"],
+      websiteAddress: json["website_address"],
+      agreementStatus: json["agreement_status"],
+      serviceDescription: json["service_description"],
+      availability: json["availability"],
+      verifyCode: json["verify_code"],
+      minAmount: json["min_amount"],
+      maxAmount: json["max_amount"],
+      compensationType: json["compensation_type"],
+      jobPreference: json["job_preference"],
+      isVerified: json["is_verified"],
+      rating: json["rating"],
+      educationQualification: json["education_qualification"],
+      employmentHistory: json["employment_history"],
+      passwordReset: json["password_reset"],
+      block: json["block"],
+      createdAt: json["created_at"] == null
+          ? null
+          : DateTime.parse(json["created_at"]),
+      updatedAt: json["updated_at"] == null
+          ? null
+          : DateTime.parse(json["updated_at"]),
+      jobType: json["job_type"],
+      package: json["package"],
+      guarantorName: json["guarantor_name"],
+      guarantorAddress: json["guarantor_address"],
+      guarantorPhone: json["guarantor_phone"],
+      guarantorEmail: json["guarantor_email"],
+      referredByLink: json["referred_by_link"],
+      referredByWho: json["referred_by_who"],
+      awardsAndCertificates: awardList.isNotEmpty
+          ? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast()
+          : [],
+      artisanAssignedSkills: skillList.isNotEmpty
+          ? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast()
+          : [],
+      education: educationList.isNotEmpty
+          ? educationList
+              .map(AwardsAndCertificateModel.fromJson)
+              .toList()
+              .cast()
+          : [],
+      experience: experienceList.isNotEmpty
+          ? experienceList.map(ExperienceModel.fromJson).toList().cast()
+          : [],
+      customerRating: json["customer_rating"] == null
+          ? []
+          : List<dynamic>.from(json["customer_rating"]),
+      skillAssessmentAverage: json["skill_assessment_average"] == null
+          ? []
+          : List<dynamic>.from(json["skill_assessment_average"]),
+    );
   }
 
   Map<String, dynamic> toJson() => {
@@ -218,7 +228,6 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
       };
 }
 
-
 class AwardsAndCertificateModel extends AwardsAndCertificateEntity {
   AwardsAndCertificateModel({
     required super.title,
@@ -261,20 +270,53 @@ class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
 }
 
 class ExperienceModel extends ExperienceEntity {
-  ExperienceModel({
-    required super.title,
-  });
+  ExperienceModel(
+      {required super.title,
+      required super.desc,
+      required super.startYear,
+      required super.endYear});
 
   factory ExperienceModel.fromEntity(ExperienceEntity entity) =>
       ExperienceModel(
         title: entity.title,
+        desc: entity.desc,
+        startYear: entity.startYear,
+        endYear: entity.startYear,
       );
   factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
       ExperienceModel(
-        title: json["title"],
-      );
+          title: json["title"],
+          desc: json['desc'],
+          startYear: json['start_year'],
+          endYear: json['end_year']);
 
   Map<String, dynamic> toJson() => {
         "title": title,
+        "desc": desc,
+        "start_year": startYear,
+        "end_year": endYear
       };
+}
+
+class EducationModel extends EducationEntity {
+  EducationModel(
+      {required super.title,
+      required super.desc,
+      required super.purpose,
+      required super.year});
+
+  factory EducationModel.fromEntity(EducationEntity entity) => EducationModel(
+        title: entity.title,
+        desc: entity.desc,
+        purpose: entity.purpose,
+        year: entity.year,
+      );
+  factory EducationModel.fromJson(Map<String, dynamic> json) => EducationModel(
+      title: json["title"],
+      desc: json['desc'],
+      purpose: json['purpose'],
+      year: json['year']);
+
+  Map<String, dynamic> toJson() =>
+      {"title": title, "desc": desc, "purpose": purpose, "year": year};
 }

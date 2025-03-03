@@ -55,6 +55,7 @@ import 'package:artisan_oga/features/settings/data/repository/settings_repositor
 import 'package:artisan_oga/features/settings/domain/repositories/settings_repository.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/get_employer_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/get_jobseeker_usecase.dart';
+import 'package:artisan_oga/features/settings/domain/usecases/js_notification_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_employer_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
@@ -190,5 +191,7 @@ Future<void> init() async {
     ..registerLazySingleton<GetInvoiceWithIndentityUsecase>(
         () => GetInvoiceWithIndentityUsecase(locator()))
     ..registerLazySingleton<NoOfCandidateUseCase>(
-        () => NoOfCandidateUseCase(locator()));
+        () => NoOfCandidateUseCase(locator()))
+    ..registerLazySingleton<GetJobSeekerNotificationUsecase>(
+        () => GetJobSeekerNotificationUsecase(locator()));
 }

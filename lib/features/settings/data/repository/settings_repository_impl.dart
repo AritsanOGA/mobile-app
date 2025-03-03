@@ -5,6 +5,7 @@ import 'package:artisan_oga/features/settings/data/data_source/settings_remote_d
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
+import 'package:artisan_oga/features/settings/domain/entities/notification_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_employer_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:artisan_oga/features/settings/domain/repositories/settings_repository.dart';
@@ -93,5 +94,10 @@ class SettingsRepositoryImpl implements SettingsRepository {
         ),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, List<NotificationEntity>>> getCandidateNotification() {
+    return settingsRemoteDataSource.getJobSeekerNotification().makeRequest();
   }
 }

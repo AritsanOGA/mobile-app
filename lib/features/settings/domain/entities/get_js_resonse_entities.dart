@@ -120,14 +120,14 @@ class GetJobSeekerResponseEntity extends Equatable {
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
-   required this.experience,
+    required this.experience,
     this.customerRating,
     this.skillAssessmentAverage,
   });
 
   @override
   List<Object?> get props => [
-         id,
+        id,
         hired,
         hiredDate,
         whatsappNumber,
@@ -214,8 +214,11 @@ class ArtisanAssignedSkillEntity extends Equatable {
 
 class ExperienceEntity extends Equatable {
   final String? title;
+  final String? startYear;
+  final String? endYear;
+  final String? desc;
 
-  const ExperienceEntity({this.title});
+  const ExperienceEntity({this.title, this.startYear, this.endYear, this.desc});
 
   @override
   List<Object?> get props => [title];
@@ -224,12 +227,11 @@ class ExperienceEntity extends Equatable {
 class EducationEntity extends Equatable {
   final String? title;
   final String? desc;
+  final String? purpose;
+  final String? year;
 
-  const EducationEntity({
-    this.title,
-    this.desc,
-  });
+  const EducationEntity({this.title, this.desc, this.purpose, this.year});
 
   @override
-  List<Object?> get props => [title, desc];
+  List<Object?> get props => [title, desc, purpose, year];
 }

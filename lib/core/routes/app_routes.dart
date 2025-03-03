@@ -32,7 +32,9 @@ import 'package:artisan_oga/features/payment/presentation/pages/invoice_success_
 import 'package:artisan_oga/features/payment/presentation/pages/payment_history_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/payment_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/employer_password_change_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/js_notification_page.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page1.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
@@ -208,7 +210,8 @@ class AppRoutes {
   static const String verifyForgotPasswordScreen =
       '/verify_forgot_password_screen';
   static const String resetPasswordScreen = '/reset_password_screen';
-
+  static const String jsProfilePage = '/js_profile_page';
+  static const String jsNotificationPage = '/js_notification_page';
   static Map<String, WidgetBuilder> routes = {
     // welcomePageScreen: (context) => WelcomePageScreen(),
     // signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
@@ -293,6 +296,14 @@ class AppRoutes {
       case invoiceSuccessScreen:
         return AppPageRouteBuilder(
           navigateTo: InvoiceSuccessfulPage(),
+        );
+      case jsProfilePage:
+        return AppPageRouteBuilder(
+          navigateTo: JSProfilePage1(),
+        );
+      case jsNotificationPage:
+        return AppPageRouteBuilder(
+          navigateTo: JsNotificationPage(),
         );
       case successScreen:
         final args = settings.arguments as Map<String, dynamic>;

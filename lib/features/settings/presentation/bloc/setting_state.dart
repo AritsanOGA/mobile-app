@@ -3,6 +3,7 @@ part of 'setting_bloc.dart';
 @freezed
 class SettingState with _$SettingState {
   const factory SettingState.initial({
+    @Default([]) List<NotificationEntity> notification,
     @Default(UpdateJobSeekerProfileState.idle)
     UpdateJobSeekerProfileState updateJobSeekerProfileState,
     @Default(GetEmployerProfileState.idle)
@@ -11,6 +12,10 @@ class SettingState with _$SettingState {
     GetJobSeekerProfileState getJobSeekerProfileState,
     @Default(UpdateEmployerProfileState.idle)
     UpdateEmployerProfileState updateEmployerProfileState,
+    @Default(JobSeekerNotificationState.idle)
+    JobSeekerNotificationState jobSeekerNotificationState,
+    @Default(EmployerNotificationState.idle)
+    EmployerNotificationState employerNotificationState,
     String? errorMessage,
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
     GetEmployerResponseEntity? getEmployerResponseEntity,
