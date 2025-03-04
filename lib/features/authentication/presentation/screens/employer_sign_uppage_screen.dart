@@ -1,13 +1,13 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
@@ -57,14 +57,18 @@ class EmployerSignUpPageScreen extends HookWidget {
                                   title: 'Password',
                                   hintText: '*************',
                                   isPassword: true,
+                                  isObscure: true,
+                                  obscureText: true,
                                   controller: passwordController,
                                   textInputType: TextInputType.visiblePassword,
-                                  validator: FormValidation.stringValidation),
+                                  validator: FormValidation.passwordValidation),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                 title: 'Confirm Password',
                                 hintText: '*************',
                                 isPassword: true,
+                                isObscure: true,
+                                obscureText: true,
                                 controller: confirmPasswordController,
                                 textInputType: TextInputType.visiblePassword,
                                 validator: (value) {

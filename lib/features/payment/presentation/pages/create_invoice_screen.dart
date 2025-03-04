@@ -129,9 +129,9 @@ class CreateInvoiceScreen extends HookWidget {
                       readOnly: true,
                       controller: TextEditingController(
                         text: () {
-                          // Try to parse the number of candidates
+                        
                           final candidateCount = int.tryParse(candidate) ?? 0;
-                          // Calculate total balance: multiply individual balance by candidate count.
+                   
                           final totalAmount =
                               (state.amount ?? 0.0) * candidateCount;
                           return totalAmount.toStringAsFixed(2);

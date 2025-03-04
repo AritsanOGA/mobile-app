@@ -122,7 +122,7 @@ class CandidatesProfilePage extends StatelessWidget {
                               ]),
                           SizedBox(height: 12.v),
                           Text(
-                              "Job Preference: ${state.candidateProfileEntity?.jobPreference ?? ''}",
+                              "Job Preference: ${state.candidateProfileEntity?.jobType ?? ''}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
                           // SizedBox(height: 14.v),

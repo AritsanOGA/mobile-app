@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -77,7 +78,8 @@ class PasswordResetPage extends HookWidget {
                         controller: passwordController,
                         hintText: "*************",
                         hintStyle: theme.textTheme.titleSmall!,
-                        textInputAction: TextInputAction.done,
+                        validator: FormValidation.passwordValidation,
+                        textInputAction: TextInputAction.next,
                         textInputType: TextInputType.visiblePassword,
                         isPassword: true,
                         isObscure: true,
@@ -95,6 +97,7 @@ class PasswordResetPage extends HookWidget {
                         title: 'Confirm Password',
                         controller: confirmPasswordController,
                         hintText: "*************",
+                        validator: FormValidation.passwordValidation,
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,

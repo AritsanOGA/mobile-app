@@ -3,7 +3,9 @@ import 'package:equatable/equatable.dart';
 class GetEmployerResponseEntity extends Equatable {
   final String? fullName;
   final dynamic about;
+  final String? phoneNo;
   final String? streetAddress;
+  final String? address;
   final String? city;
   final int? country;
   final String? companyName;
@@ -13,9 +15,11 @@ class GetEmployerResponseEntity extends Equatable {
   final String? gender;
   final String? identity;
 
-  const GetEmployerResponseEntity( {
+  const GetEmployerResponseEntity({
     this.fullName,
     this.about,
+    this.phoneNo,
+    this.address,
     this.streetAddress,
     this.city,
     this.country,
@@ -31,6 +35,8 @@ class GetEmployerResponseEntity extends Equatable {
   List<Object?> get props => [
         fullName,
         about,
+        phoneNo,
+        address,
         streetAddress,
         city,
         country,

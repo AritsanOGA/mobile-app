@@ -74,11 +74,13 @@ class JSLoginPageScreen extends HookWidget {
                         title: 'Password',
                         controller: passwordController,
                         hintText: "*************",
+                        validator: FormValidation.passwordValidation,
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
                         isPassword: true,
                         isObscure: true,
+                        obscureText: true,
                         suffixConstraints: BoxConstraints(
                           maxHeight: 48.v,
                         ),

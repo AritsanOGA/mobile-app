@@ -17,7 +17,7 @@ class EmployerLoginPageScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool obscure = true;
+    // bool obscure = true;
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
@@ -81,13 +81,13 @@ class EmployerLoginPageScreen extends HookWidget {
                           hintStyle: theme.textTheme.titleSmall!,
                           textInputAction: TextInputAction.done,
                           textInputType: TextInputType.visiblePassword,
-                          validator: FormValidation.stringValidation,
+                          validator: FormValidation.passwordValidation,
                           isPassword: true,
                           isObscure: true,
+                          obscureText: true,
                           suffixConstraints: BoxConstraints(
                             maxHeight: 48.v,
                           ),
-                          obscureText: obscure,
                           contentPadding: EdgeInsets.only(
                             left: 20.h,
                             top: 15.v,

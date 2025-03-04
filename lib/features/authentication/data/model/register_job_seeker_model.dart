@@ -84,10 +84,10 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       'fullname': fullName,
       'states': state,
       'city': city,
-      'passport': await MultipartFile.fromFile(
-        "${passport?.path}",
-        filename: "${passport?.path.split('/').last}",
-      ),
+      // 'passport': await MultipartFile.fromFile(
+      //   "${passport?.path}",
+      //   filename: "${passport?.path.split('/').last}",
+      // ),
       // 'resume': resume?.path != null
       //     ? await MultipartFile.fromFile(
       //         "${resume?.path}",
@@ -135,6 +135,14 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       'service_description': describeYourRole,
       'guarantor_phone': guarantorPhoneNumber,
     };
+
+    if (passport?.path != null) {
+      formDataMap['passport'] = await MultipartFile.fromFile(
+        "${resume?.path}",
+        filename: "${resume?.path.split('/').last}",
+      );
+    }
+
     if (resume?.path != null) {
       formDataMap['resume'] = await MultipartFile.fromFile(
         "${resume?.path}",

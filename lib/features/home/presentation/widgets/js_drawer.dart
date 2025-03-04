@@ -1,8 +1,9 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/activities_tab_container_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/activities_tab_container_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -38,6 +39,7 @@ class JSDrawer extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   ImageConstant.imgHome,
+                  color: AppColors.kblack,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -46,7 +48,7 @@ class JSDrawer extends StatelessWidget {
                   ),
                   child: Text(
                     "Dashboard",
-                    style: CustomTextStyles.titleLargePrimary,
+                    style: CustomTextStyles.titleSmall15,
                   ),
                 ),
               ],

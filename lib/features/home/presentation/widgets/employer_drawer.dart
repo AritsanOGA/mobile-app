@@ -153,30 +153,24 @@ class EmployerDrawer extends StatelessWidget {
                         ],
                       )),
                   SizedBox(height: 39.v),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 3.h,
-                      right: 55.h,
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                            context, AppRoutes.employerPasswordChangeScreen);
-                      },
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            ImageConstant.lock,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, AppRoutes.employerPasswordChangeScreen);
+                    },
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          ImageConstant.lock,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 13.h),
+                          child: Text(
+                            "Change Password",
+                            style: CustomTextStyles.titleSmall15,
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 13.h),
-                            child: Text(
-                              "Change Password",
-                              style: CustomTextStyles.titleSmall15,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 41.v),

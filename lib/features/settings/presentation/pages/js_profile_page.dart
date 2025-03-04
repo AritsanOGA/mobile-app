@@ -41,9 +41,6 @@ class JSProfilePage extends StatelessWidget {
                       return Center(child: Text('Error: '));
                     }
 
-                    // if (state.featureCandidateList.isEmpty) {
-                    //   return Center(child: Text('No items found.'));
-                    // }
                     return Column(children: [
                       SizedBox(height: 26.v),
                       SizedBox(
@@ -79,13 +76,6 @@ class JSProfilePage extends StatelessWidget {
                                   errorWidget: (context, url, error) =>
                                       const Icon(Icons.error),
                                 ),
-
-                                // CustomImageView(
-                                //     imagePath: ImageConstant.imgEllipse5,
-                                //     height: 75.adaptSize,
-                                //     width: 75.adaptSize,
-                                //     radius: BorderRadius.circular(37.h),
-                                //     alignment: Alignment.center),
                                 Align(
                                     alignment: Alignment.bottomRight,
                                     child: Container(

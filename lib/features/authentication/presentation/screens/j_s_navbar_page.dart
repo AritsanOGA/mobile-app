@@ -2,11 +2,12 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/dashboard_screen.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/js_drawer.dart';
-import 'package:artisan_oga/presentation/search_screen/search_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../candidate/presentation/pages/search_screen.dart';
 
 class JobSeekerNavBarPage extends StatelessWidget {
   JobSeekerNavBarPage({super.key});

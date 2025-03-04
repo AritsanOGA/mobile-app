@@ -16,58 +16,56 @@ class ManageJobsPage extends HookWidget {
 
       return null;
     }, []);
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: AppColors.kwhite,
-            appBar: CustomAppBar(
-              title: 'Manage Job Post',
-            ),
-            body: Container(
-                width: double.maxFinite,
-                child: Column(children: [
-                  SizedBox(height: 38.v),
-                  BlocBuilder<HomeBloc, HomeState>(
-                    // bloc: context.read<HomeBloc>()
-                    //   ..add(HomeEvent.getEmployerJob()),
-                    builder: (context, state) {
-                      // if (state.getEmployerJobState ==
-                      //     GetEmployerJobState.loading) {
-                      //   return Centber(child: CircularProgressIndicator());
-                      // }
+    return Scaffold(
+        backgroundColor: AppColors.kwhite,
+        appBar: CustomAppBar(
+          title: 'Manage Job Post',
+        ),
+        body: Container(
+            width: double.maxFinite,
+            child: Column(children: [
+              SizedBox(height: 38.v),
+              BlocBuilder<HomeBloc, HomeState>(
+                // bloc: context.read<HomeBloc>()
+                //   ..add(HomeEvent.getEmployerJob()),
+                builder: (context, state) {
+                  // if (state.getEmployerJobState ==
+                  //     GetEmployerJobState.loading) {
+                  //   return Centber(child: CircularProgressIndicator());
+                  // }
 
-                      if (state.getEmployerJobState ==
-                          GetEmployerJobState.failure) {
-                        return Center(child: Text('Error: '));
-                      }
+                  if (state.getEmployerJobState ==
+                      GetEmployerJobState.failure) {
+                    return Center(child: Text('Error: '));
+                  }
 
-                      if (state.employerJobList.isEmpty) {
-                        return Column(
-                          //mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 50,
-                            ),
-                            Text(
-                              "No job.",
-                              style: CustomTextStyles
-                                  .titleMediumPrimaryContainer18,
-                            ),
-                          ],
-                        );
-                      }
-                      return Expanded(
-                        child: ListView.builder(
-                          itemCount: state.employerJobList.length,
-                          itemBuilder: (context, index) {
-                            return ManageJobWidget(
-                                employerJobResponseEntity:
-                                    state.employerJobList[index]);
-                          },
+                  if (state.employerJobList.isEmpty) {
+                    return Column(
+                      //mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 50,
                         ),
-                      );
-                    },
-                  )
-                ]))));
+                        Text(
+                          "No job.",
+                          style: CustomTextStyles.titleMediumPrimaryContainer18,
+                        ),
+                      ],
+                    );
+                  }
+                  return Expanded(
+                    child: ListView.builder(
+                      itemCount: state.employerJobList.length,
+                      itemBuilder: (context, index) {
+                        return ManageJobWidget(
+                            employerJobResponseEntity:
+                                state.employerJobList[index]);
+                      },
+                    ),
+                  );
+                },
+              )
+            ])));
   }
 }

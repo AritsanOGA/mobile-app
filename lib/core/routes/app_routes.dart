@@ -16,6 +16,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/search_details_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -204,6 +205,7 @@ class AppRoutes {
       '/update_profile_page_three_screen';
   static const String jobSearch = '/job-search_screen';
   static const String jobSearchDetailsScreen = '/job_search_details_screen';
+  static const String searchDetailsScreen = '/search_details_screen';
   static const String appNavigationScreen = '/app_navigation_screen';
   static const String verifyEmployerScreen = '/verify_employer_screen';
   static const String verifyJobSeekerScreen = '/verify_job_seeker_screen';
@@ -353,6 +355,12 @@ class AppRoutes {
       case jobSearchDetailsScreen:
         return AppPageRouteBuilder(
           navigateTo: JobSearchDetailsScreen(
+            jobId: settings.arguments as String,
+          ),
+        );
+      case searchDetailsScreen:
+        return AppPageRouteBuilder(
+          navigateTo: SearchDetailsScreen(
             jobId: settings.arguments as String,
           ),
         );

@@ -226,9 +226,7 @@ class Invoice1Screen extends StatelessWidget {
                                                         fontWeight:
                                                             FontWeight.w600)),
                                             Text(
-                                                state.getInvoice
-                                                        ?.amountWithVat ??
-                                                    '',
+                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.amountWithVat ?? ''))}',
                                                 style: theme
                                                     .textTheme.bodyMedium
                                                     ?.copyWith(
@@ -250,7 +248,8 @@ class Invoice1Screen extends StatelessWidget {
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
-                                      Text('N ${state.getInvoice?.balWithVat}',
+                                      Text(
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.balWithVat ?? ''))}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -269,7 +268,8 @@ class Invoice1Screen extends StatelessWidget {
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
-                                      Text('N ${state.getInvoice?.vat}',
+                                      Text(
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.vat ?? ''))}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -294,7 +294,7 @@ class Invoice1Screen extends StatelessWidget {
                                                     fontWeight:
                                                         FontWeight.w600)),
                                         Text(
-                                            '${(double.tryParse(state.getInvoice?.balWithVat.toString() ?? "0") ?? 0) + (double.tryParse(state.getInvoice?.vat.toString() ?? "0") ?? 0)}',
+                                            '₦ ${NumberFormat("#,##0.00", "en_US").format((double.tryParse(state.getInvoice?.balWithVat.toString() ?? "0") ?? 0) + (double.tryParse(state.getInvoice?.vat.toString() ?? "0") ?? 0))}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight:
@@ -342,9 +342,8 @@ class Invoice1Screen extends StatelessWidget {
                                                 .titleSmallff3a332c_1),
                                         TextSpan(text: " "),
                                         TextSpan(
-                                            text: state
-                                                    .getInvoice?.totalWithVat ??
-                                                '',
+                                            text:
+                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? ''))}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight: FontWeight.bold,
