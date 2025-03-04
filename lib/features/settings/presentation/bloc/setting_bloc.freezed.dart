@@ -20,9 +20,11 @@ mixin _$SettingEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -37,9 +39,11 @@ mixin _$SettingEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -53,9 +57,11 @@ mixin _$SettingEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -69,11 +75,12 @@ mixin _$SettingEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -87,10 +94,12 @@ mixin _$SettingEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -101,9 +110,11 @@ mixin _$SettingEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -177,9 +188,11 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -197,9 +210,11 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -216,9 +231,11 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -238,11 +255,12 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -259,10 +277,12 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -276,9 +296,11 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -346,9 +368,11 @@ class _$GetJobSeekerProfileImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -366,9 +390,11 @@ class _$GetJobSeekerProfileImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -385,9 +411,11 @@ class _$GetJobSeekerProfileImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -407,11 +435,12 @@ class _$GetJobSeekerProfileImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -428,10 +457,12 @@ class _$GetJobSeekerProfileImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -445,9 +476,11 @@ class _$GetJobSeekerProfileImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -463,6 +496,576 @@ class _$GetJobSeekerProfileImpl
 
 abstract class _GetJobSeekerProfile implements SettingEvent {
   const factory _GetJobSeekerProfile() = _$GetJobSeekerProfileImpl;
+}
+
+/// @nodoc
+abstract class _$$GetActivitiesImplCopyWith<$Res> {
+  factory _$$GetActivitiesImplCopyWith(
+          _$GetActivitiesImpl value, $Res Function(_$GetActivitiesImpl) then) =
+      __$$GetActivitiesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetActivitiesImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetActivitiesImpl>
+    implements _$$GetActivitiesImplCopyWith<$Res> {
+  __$$GetActivitiesImplCopyWithImpl(
+      _$GetActivitiesImpl _value, $Res Function(_$GetActivitiesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetActivitiesImpl
+    with DiagnosticableTreeMixin
+    implements _GetActivities {
+  const _$GetActivitiesImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getActivities()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'SettingEvent.getActivities'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetActivitiesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getActivities();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getActivities?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getActivities != null) {
+      return getActivities();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getActivities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getActivities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getActivities != null) {
+      return getActivities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetActivities implements SettingEvent {
+  const factory _GetActivities() = _$GetActivitiesImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadActivitiesImplCopyWith<$Res> {
+  factory _$$LoadActivitiesImplCopyWith(_$LoadActivitiesImpl value,
+          $Res Function(_$LoadActivitiesImpl) then) =
+      __$$LoadActivitiesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadActivitiesImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$LoadActivitiesImpl>
+    implements _$$LoadActivitiesImplCopyWith<$Res> {
+  __$$LoadActivitiesImplCopyWithImpl(
+      _$LoadActivitiesImpl _value, $Res Function(_$LoadActivitiesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadActivitiesImpl
+    with DiagnosticableTreeMixin
+    implements _LoadActivities {
+  const _$LoadActivitiesImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.loadActivities()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'SettingEvent.loadActivities'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadActivitiesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return loadActivities();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return loadActivities?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (loadActivities != null) {
+      return loadActivities();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return loadActivities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return loadActivities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (loadActivities != null) {
+      return loadActivities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadActivities implements SettingEvent {
+  const factory _LoadActivities() = _$LoadActivitiesImpl;
+}
+
+/// @nodoc
+abstract class _$$FilteredActivitiesImplCopyWith<$Res> {
+  factory _$$FilteredActivitiesImplCopyWith(_$FilteredActivitiesImpl value,
+          $Res Function(_$FilteredActivitiesImpl) then) =
+      __$$FilteredActivitiesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int selectedTabIndex});
+}
+
+/// @nodoc
+class __$$FilteredActivitiesImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$FilteredActivitiesImpl>
+    implements _$$FilteredActivitiesImplCopyWith<$Res> {
+  __$$FilteredActivitiesImplCopyWithImpl(_$FilteredActivitiesImpl _value,
+      $Res Function(_$FilteredActivitiesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedTabIndex = null,
+  }) {
+    return _then(_$FilteredActivitiesImpl(
+      null == selectedTabIndex
+          ? _value.selectedTabIndex
+          : selectedTabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FilteredActivitiesImpl
+    with DiagnosticableTreeMixin
+    implements _FilteredActivities {
+  const _$FilteredActivitiesImpl(this.selectedTabIndex);
+
+  @override
+  final int selectedTabIndex;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.filteredActivities(selectedTabIndex: $selectedTabIndex)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.filteredActivities'))
+      ..add(DiagnosticsProperty('selectedTabIndex', selectedTabIndex));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FilteredActivitiesImpl &&
+            (identical(other.selectedTabIndex, selectedTabIndex) ||
+                other.selectedTabIndex == selectedTabIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedTabIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FilteredActivitiesImplCopyWith<_$FilteredActivitiesImpl> get copyWith =>
+      __$$FilteredActivitiesImplCopyWithImpl<_$FilteredActivitiesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return filteredActivities(selectedTabIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return filteredActivities?.call(selectedTabIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (filteredActivities != null) {
+      return filteredActivities(selectedTabIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return filteredActivities(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return filteredActivities?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (filteredActivities != null) {
+      return filteredActivities(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FilteredActivities implements SettingEvent {
+  const factory _FilteredActivities(final int selectedTabIndex) =
+      _$FilteredActivitiesImpl;
+
+  int get selectedTabIndex;
+  @JsonKey(ignore: true)
+  _$$FilteredActivitiesImplCopyWith<_$FilteredActivitiesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -514,9 +1117,11 @@ class _$GetEmployerProfileImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -534,9 +1139,11 @@ class _$GetEmployerProfileImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -553,9 +1160,11 @@ class _$GetEmployerProfileImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -575,11 +1184,12 @@ class _$GetEmployerProfileImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -596,10 +1206,12 @@ class _$GetEmployerProfileImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -613,9 +1225,11 @@ class _$GetEmployerProfileImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -685,9 +1299,11 @@ class _$GetJobSeekerNotificationImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -705,9 +1321,11 @@ class _$GetJobSeekerNotificationImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -724,9 +1342,11 @@ class _$GetJobSeekerNotificationImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -746,11 +1366,12 @@ class _$GetJobSeekerNotificationImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -767,10 +1388,12 @@ class _$GetJobSeekerNotificationImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -784,9 +1407,11 @@ class _$GetJobSeekerNotificationImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -802,177 +1427,6 @@ class _$GetJobSeekerNotificationImpl
 
 abstract class _GetJobSeekerNotification implements SettingEvent {
   const factory _GetJobSeekerNotification() = _$GetJobSeekerNotificationImpl;
-}
-
-/// @nodoc
-abstract class _$$GetEmployerNotificationImplCopyWith<$Res> {
-  factory _$$GetEmployerNotificationImplCopyWith(
-          _$GetEmployerNotificationImpl value,
-          $Res Function(_$GetEmployerNotificationImpl) then) =
-      __$$GetEmployerNotificationImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetEmployerNotificationImplCopyWithImpl<$Res>
-    extends _$SettingEventCopyWithImpl<$Res, _$GetEmployerNotificationImpl>
-    implements _$$GetEmployerNotificationImplCopyWith<$Res> {
-  __$$GetEmployerNotificationImplCopyWithImpl(
-      _$GetEmployerNotificationImpl _value,
-      $Res Function(_$GetEmployerNotificationImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetEmployerNotificationImpl
-    with DiagnosticableTreeMixin
-    implements _GetEmployerNotification {
-  const _$GetEmployerNotificationImpl();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingEvent.getEmployerNotification()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'SettingEvent.getEmployerNotification'));
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetEmployerNotificationImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getJobSeekerProfile,
-    required TResult Function() getEmployerProfile,
-    required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
-    required TResult Function(UpdateJobSeekerProfileEntity entity)
-        updateJobSeekerProfile,
-    required TResult Function(UpdateEmployerProfileEntity entity)
-        updateEmployerProfile,
-    required TResult Function(ChangePasswordEntity entity) updatePassword,
-    required TResult Function(
-            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
-        updateJobSeekerRequest,
-  }) {
-    return getEmployerNotification();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? getJobSeekerProfile,
-    TResult? Function()? getEmployerProfile,
-    TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
-    TResult? Function(UpdateJobSeekerProfileEntity entity)?
-        updateJobSeekerProfile,
-    TResult? Function(UpdateEmployerProfileEntity entity)?
-        updateEmployerProfile,
-    TResult? Function(ChangePasswordEntity entity)? updatePassword,
-    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
-        updateJobSeekerRequest,
-  }) {
-    return getEmployerNotification?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getJobSeekerProfile,
-    TResult Function()? getEmployerProfile,
-    TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
-    TResult Function(UpdateJobSeekerProfileEntity entity)?
-        updateJobSeekerProfile,
-    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
-    TResult Function(ChangePasswordEntity entity)? updatePassword,
-    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
-        updateJobSeekerRequest,
-    required TResult orElse(),
-  }) {
-    if (getEmployerNotification != null) {
-      return getEmployerNotification();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
-    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
-    required TResult Function(_GetJobSeekerNotification value)
-        getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
-    required TResult Function(_UpdateJobSeekerProfile value)
-        updateJobSeekerProfile,
-    required TResult Function(_UpdateEmployerProfile value)
-        updateEmployerProfile,
-    required TResult Function(_UpdatePassword value) updatePassword,
-    required TResult Function(_UpdateJobSeekerRequest value)
-        updateJobSeekerRequest,
-  }) {
-    return getEmployerNotification(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
-    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
-    TResult? Function(_GetJobSeekerNotification value)?
-        getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
-    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
-    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
-    TResult? Function(_UpdatePassword value)? updatePassword,
-    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
-  }) {
-    return getEmployerNotification?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
-    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
-    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
-    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
-    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
-    required TResult orElse(),
-  }) {
-    if (getEmployerNotification != null) {
-      return getEmployerNotification(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetEmployerNotification implements SettingEvent {
-  const factory _GetEmployerNotification() = _$GetEmployerNotificationImpl;
 }
 
 /// @nodoc
@@ -1054,9 +1508,11 @@ class _$UpdateJobSeekerProfileImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1074,9 +1530,11 @@ class _$UpdateJobSeekerProfileImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1093,9 +1551,11 @@ class _$UpdateJobSeekerProfileImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1115,11 +1575,12 @@ class _$UpdateJobSeekerProfileImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1136,10 +1597,12 @@ class _$UpdateJobSeekerProfileImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1153,9 +1616,11 @@ class _$UpdateJobSeekerProfileImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1257,9 +1722,11 @@ class _$UpdateEmployerProfileImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1277,9 +1744,11 @@ class _$UpdateEmployerProfileImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1296,9 +1765,11 @@ class _$UpdateEmployerProfileImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1318,11 +1789,12 @@ class _$UpdateEmployerProfileImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1339,10 +1811,12 @@ class _$UpdateEmployerProfileImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1356,9 +1830,11 @@ class _$UpdateEmployerProfileImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1459,9 +1935,11 @@ class _$UpdatePasswordImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1479,9 +1957,11 @@ class _$UpdatePasswordImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1498,9 +1978,11 @@ class _$UpdatePasswordImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1520,11 +2002,12 @@ class _$UpdatePasswordImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1541,10 +2024,12 @@ class _$UpdatePasswordImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1558,9 +2043,11 @@ class _$UpdatePasswordImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1665,9 +2152,11 @@ class _$UpdateJobSeekerRequestImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
-    required TResult Function() getEmployerNotification,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1685,9 +2174,11 @@ class _$UpdateJobSeekerRequestImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
-    TResult? Function()? getEmployerNotification,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1704,9 +2195,11 @@ class _$UpdateJobSeekerRequestImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
-    TResult Function()? getEmployerNotification,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1726,11 +2219,12 @@ class _$UpdateJobSeekerRequestImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
-    required TResult Function(_GetEmployerNotification value)
-        getEmployerNotification,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1747,10 +2241,12 @@ class _$UpdateJobSeekerRequestImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
-    TResult? Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1764,9 +2260,11 @@ class _$UpdateJobSeekerRequestImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
-    TResult Function(_GetEmployerNotification value)? getEmployerNotification,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1793,8 +2291,12 @@ abstract class _UpdateJobSeekerRequest implements SettingEvent {
 
 /// @nodoc
 mixin _$SettingState {
+  int get selectedTabIndex => throw _privateConstructorUsedError;
+  List<ActivitiesEntity> get filteredActivity =>
+      throw _privateConstructorUsedError;
   List<NotificationEntity> get notification =>
       throw _privateConstructorUsedError;
+  List<ActivitiesEntity> get activity => throw _privateConstructorUsedError;
   UpdateJobSeekerProfileState get updateJobSeekerProfileState =>
       throw _privateConstructorUsedError;
   GetEmployerProfileState get getEmployerProfileState =>
@@ -1805,8 +2307,7 @@ mixin _$SettingState {
       throw _privateConstructorUsedError;
   JobSeekerNotificationState get jobSeekerNotificationState =>
       throw _privateConstructorUsedError;
-  EmployerNotificationState get employerNotificationState =>
-      throw _privateConstructorUsedError;
+  ActvitiesState get activitiesState => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   UpdatePasswordState get updatePasswordState =>
       throw _privateConstructorUsedError;
@@ -1819,13 +2320,16 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1837,13 +2341,16 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1855,13 +2362,16 @@ mixin _$SettingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1900,13 +2410,16 @@ abstract class $SettingStateCopyWith<$Res> {
       _$SettingStateCopyWithImpl<$Res, SettingState>;
   @useResult
   $Res call(
-      {List<NotificationEntity> notification,
+      {int selectedTabIndex,
+      List<ActivitiesEntity> filteredActivity,
+      List<NotificationEntity> notification,
+      List<ActivitiesEntity> activity,
       UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
       UpdateEmployerProfileState updateEmployerProfileState,
       JobSeekerNotificationState jobSeekerNotificationState,
-      EmployerNotificationState employerNotificationState,
+      ActvitiesState activitiesState,
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -1927,13 +2440,16 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedTabIndex = null,
+    Object? filteredActivity = null,
     Object? notification = null,
+    Object? activity = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
     Object? updateEmployerProfileState = null,
     Object? jobSeekerNotificationState = null,
-    Object? employerNotificationState = null,
+    Object? activitiesState = null,
     Object? errorMessage = freezed,
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
@@ -1941,10 +2457,22 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_value.copyWith(
+      selectedTabIndex: null == selectedTabIndex
+          ? _value.selectedTabIndex
+          : selectedTabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      filteredActivity: null == filteredActivity
+          ? _value.filteredActivity
+          : filteredActivity // ignore: cast_nullable_to_non_nullable
+              as List<ActivitiesEntity>,
       notification: null == notification
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
               as List<NotificationEntity>,
+      activity: null == activity
+          ? _value.activity
+          : activity // ignore: cast_nullable_to_non_nullable
+              as List<ActivitiesEntity>,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -1965,10 +2493,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.jobSeekerNotificationState
           : jobSeekerNotificationState // ignore: cast_nullable_to_non_nullable
               as JobSeekerNotificationState,
-      employerNotificationState: null == employerNotificationState
-          ? _value.employerNotificationState
-          : employerNotificationState // ignore: cast_nullable_to_non_nullable
-              as EmployerNotificationState,
+      activitiesState: null == activitiesState
+          ? _value.activitiesState
+          : activitiesState // ignore: cast_nullable_to_non_nullable
+              as ActvitiesState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -2002,13 +2530,16 @@ abstract class _$$InitialImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<NotificationEntity> notification,
+      {int selectedTabIndex,
+      List<ActivitiesEntity> filteredActivity,
+      List<NotificationEntity> notification,
+      List<ActivitiesEntity> activity,
       UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
       UpdateEmployerProfileState updateEmployerProfileState,
       JobSeekerNotificationState jobSeekerNotificationState,
-      EmployerNotificationState employerNotificationState,
+      ActvitiesState activitiesState,
       String? errorMessage,
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -2027,13 +2558,16 @@ class __$$InitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? selectedTabIndex = null,
+    Object? filteredActivity = null,
     Object? notification = null,
+    Object? activity = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
     Object? updateEmployerProfileState = null,
     Object? jobSeekerNotificationState = null,
-    Object? employerNotificationState = null,
+    Object? activitiesState = null,
     Object? errorMessage = freezed,
     Object? updatePasswordState = null,
     Object? getEmployerResponseEntity = freezed,
@@ -2041,10 +2575,22 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? updateJobSeekerProfileRequest = null,
   }) {
     return _then(_$InitialImpl(
+      selectedTabIndex: null == selectedTabIndex
+          ? _value.selectedTabIndex
+          : selectedTabIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      filteredActivity: null == filteredActivity
+          ? _value._filteredActivity
+          : filteredActivity // ignore: cast_nullable_to_non_nullable
+              as List<ActivitiesEntity>,
       notification: null == notification
           ? _value._notification
           : notification // ignore: cast_nullable_to_non_nullable
               as List<NotificationEntity>,
+      activity: null == activity
+          ? _value._activity
+          : activity // ignore: cast_nullable_to_non_nullable
+              as List<ActivitiesEntity>,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -2065,10 +2611,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.jobSeekerNotificationState
           : jobSeekerNotificationState // ignore: cast_nullable_to_non_nullable
               as JobSeekerNotificationState,
-      employerNotificationState: null == employerNotificationState
-          ? _value.employerNotificationState
-          : employerNotificationState // ignore: cast_nullable_to_non_nullable
-              as EmployerNotificationState,
+      activitiesState: null == activitiesState
+          ? _value.activitiesState
+          : activitiesState // ignore: cast_nullable_to_non_nullable
+              as ActvitiesState,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -2097,13 +2643,16 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl(
-      {final List<NotificationEntity> notification = const [],
+      {this.selectedTabIndex = 0,
+      final List<ActivitiesEntity> filteredActivity = const [],
+      final List<NotificationEntity> notification = const [],
+      final List<ActivitiesEntity> activity = const [],
       this.updateJobSeekerProfileState = UpdateJobSeekerProfileState.idle,
       this.getEmployerProfileState = GetEmployerProfileState.idle,
       this.getJobSeekerProfileState = GetJobSeekerProfileState.idle,
       this.updateEmployerProfileState = UpdateEmployerProfileState.idle,
       this.jobSeekerNotificationState = JobSeekerNotificationState.idle,
-      this.employerNotificationState = EmployerNotificationState.idle,
+      this.activitiesState = ActvitiesState.idle,
       this.errorMessage,
       this.updatePasswordState = UpdatePasswordState.idle,
       this.getEmployerResponseEntity,
@@ -2131,7 +2680,22 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           dateOFBirth: '',
           skill: '',
           guarantorAddress: '')})
-      : _notification = notification;
+      : _filteredActivity = filteredActivity,
+        _notification = notification,
+        _activity = activity;
+
+  @override
+  @JsonKey()
+  final int selectedTabIndex;
+  final List<ActivitiesEntity> _filteredActivity;
+  @override
+  @JsonKey()
+  List<ActivitiesEntity> get filteredActivity {
+    if (_filteredActivity is EqualUnmodifiableListView)
+      return _filteredActivity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filteredActivity);
+  }
 
   final List<NotificationEntity> _notification;
   @override
@@ -2140,6 +2704,15 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     if (_notification is EqualUnmodifiableListView) return _notification;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_notification);
+  }
+
+  final List<ActivitiesEntity> _activity;
+  @override
+  @JsonKey()
+  List<ActivitiesEntity> get activity {
+    if (_activity is EqualUnmodifiableListView) return _activity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_activity);
   }
 
   @override
@@ -2159,7 +2732,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   final JobSeekerNotificationState jobSeekerNotificationState;
   @override
   @JsonKey()
-  final EmployerNotificationState employerNotificationState;
+  final ActvitiesState activitiesState;
   @override
   final String? errorMessage;
   @override
@@ -2175,7 +2748,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingState.initial(notification: $notification, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, employerNotificationState: $employerNotificationState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
+    return 'SettingState.initial(selectedTabIndex: $selectedTabIndex, filteredActivity: $filteredActivity, notification: $notification, activity: $activity, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, activitiesState: $activitiesState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
   }
 
   @override
@@ -2183,7 +2756,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SettingState.initial'))
+      ..add(DiagnosticsProperty('selectedTabIndex', selectedTabIndex))
+      ..add(DiagnosticsProperty('filteredActivity', filteredActivity))
       ..add(DiagnosticsProperty('notification', notification))
+      ..add(DiagnosticsProperty('activity', activity))
       ..add(DiagnosticsProperty(
           'updateJobSeekerProfileState', updateJobSeekerProfileState))
       ..add(DiagnosticsProperty(
@@ -2194,8 +2770,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           'updateEmployerProfileState', updateEmployerProfileState))
       ..add(DiagnosticsProperty(
           'jobSeekerNotificationState', jobSeekerNotificationState))
-      ..add(DiagnosticsProperty(
-          'employerNotificationState', employerNotificationState))
+      ..add(DiagnosticsProperty('activitiesState', activitiesState))
       ..add(DiagnosticsProperty('errorMessage', errorMessage))
       ..add(DiagnosticsProperty('updatePasswordState', updatePasswordState))
       ..add(DiagnosticsProperty(
@@ -2211,8 +2786,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
+            (identical(other.selectedTabIndex, selectedTabIndex) ||
+                other.selectedTabIndex == selectedTabIndex) &&
+            const DeepCollectionEquality()
+                .equals(other._filteredActivity, _filteredActivity) &&
             const DeepCollectionEquality()
                 .equals(other._notification, _notification) &&
+            const DeepCollectionEquality().equals(other._activity, _activity) &&
             (identical(other.updateJobSeekerProfileState, updateJobSeekerProfileState) ||
                 other.updateJobSeekerProfileState ==
                     updateJobSeekerProfileState) &&
@@ -2226,8 +2806,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             (identical(other.jobSeekerNotificationState, jobSeekerNotificationState) ||
                 other.jobSeekerNotificationState ==
                     jobSeekerNotificationState) &&
-            (identical(other.employerNotificationState, employerNotificationState) ||
-                other.employerNotificationState == employerNotificationState) &&
+            (identical(other.activitiesState, activitiesState) ||
+                other.activitiesState == activitiesState) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.updatePasswordState, updatePasswordState) ||
@@ -2246,13 +2826,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      selectedTabIndex,
+      const DeepCollectionEquality().hash(_filteredActivity),
       const DeepCollectionEquality().hash(_notification),
+      const DeepCollectionEquality().hash(_activity),
       updateJobSeekerProfileState,
       getEmployerProfileState,
       getJobSeekerProfileState,
       updateEmployerProfileState,
       jobSeekerNotificationState,
-      employerNotificationState,
+      activitiesState,
       errorMessage,
       updatePasswordState,
       getEmployerResponseEntity,
@@ -2269,13 +2852,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -2284,13 +2870,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         initial,
   }) {
     return initial(
+        selectedTabIndex,
+        filteredActivity,
         notification,
+        activity,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
         updateEmployerProfileState,
         jobSeekerNotificationState,
-        employerNotificationState,
+        activitiesState,
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
@@ -2302,13 +2891,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -2317,13 +2909,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         initial,
   }) {
     return initial?.call(
+        selectedTabIndex,
+        filteredActivity,
         notification,
+        activity,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
         updateEmployerProfileState,
         jobSeekerNotificationState,
-        employerNotificationState,
+        activitiesState,
         errorMessage,
         updatePasswordState,
         getEmployerResponseEntity,
@@ -2335,13 +2930,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
+            int selectedTabIndex,
+            List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
+            List<ActivitiesEntity> activity,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
             UpdateEmployerProfileState updateEmployerProfileState,
             JobSeekerNotificationState jobSeekerNotificationState,
-            EmployerNotificationState employerNotificationState,
+            ActvitiesState activitiesState,
             String? errorMessage,
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -2352,13 +2950,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }) {
     if (initial != null) {
       return initial(
+          selectedTabIndex,
+          filteredActivity,
           notification,
+          activity,
           updateJobSeekerProfileState,
           getEmployerProfileState,
           getJobSeekerProfileState,
           updateEmployerProfileState,
           jobSeekerNotificationState,
-          employerNotificationState,
+          activitiesState,
           errorMessage,
           updatePasswordState,
           getEmployerResponseEntity,
@@ -2399,13 +3000,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
 abstract class _Initial implements SettingState {
   const factory _Initial(
-          {final List<NotificationEntity> notification,
+          {final int selectedTabIndex,
+          final List<ActivitiesEntity> filteredActivity,
+          final List<NotificationEntity> notification,
+          final List<ActivitiesEntity> activity,
           final UpdateJobSeekerProfileState updateJobSeekerProfileState,
           final GetEmployerProfileState getEmployerProfileState,
           final GetJobSeekerProfileState getJobSeekerProfileState,
           final UpdateEmployerProfileState updateEmployerProfileState,
           final JobSeekerNotificationState jobSeekerNotificationState,
-          final EmployerNotificationState employerNotificationState,
+          final ActvitiesState activitiesState,
           final String? errorMessage,
           final UpdatePasswordState updatePasswordState,
           final GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -2414,7 +3018,13 @@ abstract class _Initial implements SettingState {
       _$InitialImpl;
 
   @override
+  int get selectedTabIndex;
+  @override
+  List<ActivitiesEntity> get filteredActivity;
+  @override
   List<NotificationEntity> get notification;
+  @override
+  List<ActivitiesEntity> get activity;
   @override
   UpdateJobSeekerProfileState get updateJobSeekerProfileState;
   @override
@@ -2426,7 +3036,7 @@ abstract class _Initial implements SettingState {
   @override
   JobSeekerNotificationState get jobSeekerNotificationState;
   @override
-  EmployerNotificationState get employerNotificationState;
+  ActvitiesState get activitiesState;
   @override
   String? get errorMessage;
   @override

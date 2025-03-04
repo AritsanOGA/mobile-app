@@ -10,10 +10,10 @@ class ImageConstant {
 
   // Signu
   static String bigLogo = '$imagePath/big_logo.png';
-    static String locationImage = '$imagePath/location.png';
-      static String time = '$imagePath/time.png';
-        static String money = '$imagePath/money.png';
-              static String doc = '$imagePath/doc.png';
+  static String locationImage = '$imagePath/location.png';
+  static String time = '$imagePath/time.png';
+  static String money = '$imagePath/money.png';
+  static String doc = '$imagePath/doc.png';
   static String imgEmployerRegister = '$imagePath/img_employer_register.png';
 
   // Login Options Page images
@@ -36,6 +36,7 @@ class ImageConstant {
   static String jobType = '$svgPath/job-type.svg';
   static String location = '$svgPath/location.svg';
   static String star = '$svgPath/star.svg';
+  static String whatsapp = '$imagePath/whatsapp.png';
   static String imgVectorPrimarycontainer =
       '$imagePath/img_vector_primarycontainer.svg';
 

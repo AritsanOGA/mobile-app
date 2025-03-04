@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/features/settings/data/data_source/settings_remote_data_source.dart';
+import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
@@ -99,5 +100,10 @@ class SettingsRepositoryImpl implements SettingsRepository {
   @override
   Future<Either<Failure, List<NotificationEntity>>> getCandidateNotification() {
     return settingsRemoteDataSource.getJobSeekerNotification().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<ActivitiesEntity>>> getActivities() {
+    return settingsRemoteDataSource.getActivities().makeRequest();
   }
 }

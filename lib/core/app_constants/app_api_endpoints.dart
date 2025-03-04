@@ -53,7 +53,9 @@ class AppApiEndpoint {
       baseUri.replace(path: '/api/v1/candidate/profile');
   static Uri getJobSeekerNotification =
       baseUri.replace(path: '/api/v1/candidate/notifications');
-      
+       static Uri jsActivities =
+      baseUri.replace(path: '/api/v1/candidate/jobs-for-you');
+
 //! Candidates
   static Uri getAssignedCandidate =
       baseUri.replace(path: '/api/v1/employer/assigned-applicants');

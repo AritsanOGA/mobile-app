@@ -3,12 +3,14 @@ import 'dart:developer';
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
+import 'package:artisan_oga/features/settings/data/model/activities_model.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_js_profile_model.dart';
 import 'package:artisan_oga/features/settings/data/model/notification_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_employer_model.dart';
 import 'package:artisan_oga/features/settings/data/model/update_js_model.dart';
+import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_js_resonse_entities.dart';
@@ -20,6 +22,7 @@ abstract class SettingsRemoteDataSource {
   Future<GetEmployerResponseEntity> getEmployerProfile();
   Future<GetJobSeekerResponseEntity> getJobSeekerProfile();
   Future<List<NotificationEntity>> getJobSeekerNotification();
+  Future<List<ActivitiesEntity>> getActivities();
   Future<bool> updateJobSeekerProfile(UpdateJobSeekerProfileEntity entity);
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity);
   Future<bool> changePassword(ChangePasswordEntity entit);
@@ -101,10 +104,27 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
       url: AppApiEndpoint.getJobSeekerNotification,
     ) as Map<String, dynamic>;
 
-    print('API Response: $result');
+    print('API Response: ${result['data']}');
     return List<dynamic>.from(result['data'] as List)
         .map(
           (e) => NotificationModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<List<ActivitiesEntity>> getActivities() async {
+    final result = await api.get(
+      headers: userService.authorizationHeader,
+      url: AppApiEndpoint.jsActivities,
+    ) as Map<String, dynamic>;
+
+    print('API Response: ${result['data']}');
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => ActivitiesModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )

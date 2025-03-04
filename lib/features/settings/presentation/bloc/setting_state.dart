@@ -3,7 +3,10 @@ part of 'setting_bloc.dart';
 @freezed
 class SettingState with _$SettingState {
   const factory SettingState.initial({
+   @Default(0) int selectedTabIndex,
+    @Default([]) List<ActivitiesEntity> filteredActivity,
     @Default([]) List<NotificationEntity> notification,
+    @Default([]) List<ActivitiesEntity> activity,
     @Default(UpdateJobSeekerProfileState.idle)
     UpdateJobSeekerProfileState updateJobSeekerProfileState,
     @Default(GetEmployerProfileState.idle)
@@ -14,8 +17,7 @@ class SettingState with _$SettingState {
     UpdateEmployerProfileState updateEmployerProfileState,
     @Default(JobSeekerNotificationState.idle)
     JobSeekerNotificationState jobSeekerNotificationState,
-    @Default(EmployerNotificationState.idle)
-    EmployerNotificationState employerNotificationState,
+    @Default(ActvitiesState.idle) ActvitiesState activitiesState,
     String? errorMessage,
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
     GetEmployerResponseEntity? getEmployerResponseEntity,
@@ -44,5 +46,7 @@ class SettingState with _$SettingState {
         skill: '',
         guarantorAddress: ''))
     UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+    // @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
+    // List<String> activitieCategory,
   }) = _Initial;
 }

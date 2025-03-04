@@ -80,4 +80,4 @@ enum SearchJobDetailState { idle, loading, success, failure }
 
 enum JobSeekerNotificationState { idle, loading, success, failure }
 
-enum EmployerNotificationState { idle, loading, success, failure }
+enum ActvitiesState { idle, loading, success, failure }
