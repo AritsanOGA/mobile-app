@@ -2,7 +2,7 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
-import 'package:artisan_oga/presentation/activities_page/activities_page.dart';
+import 'package:artisan_oga/features/settings/presentation/widgets/activities_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -18,6 +18,8 @@ class ActivitiesTabContainerScreen extends HookWidget {
       0,
     );
     useEffect(() {
+      context.read<SettingBloc>().add(SettingEvent.getActivities());
+      context.read<SettingBloc>().add(SettingEvent.loadActivities());
       context.read<SettingBloc>().add(SettingEvent.filteredActivities(0));
       return null;
     }, []);
@@ -35,86 +37,102 @@ class ActivitiesTabContainerScreen extends HookWidget {
                 SizedBox(height: 13.v),
                 _buildEightyFour(context),
                 SizedBox(height: 21.v),
-                BlocBuilder<SettingBloc, SettingState>(
-                  bloc: context.read<SettingBloc>()
-                    ..add(SettingEvent.getActivities()),
-                  builder: (context, state) {
-                    // if (state.activitiesState == ActvitiesState.loading) {
-                    //   return Center(child: CircularProgressIndicator());
-                    // }
-
-                    if (state.activitiesState == ActvitiesState.failure) {
-                      return Center(child: Text('Error: '));
-                    }
-
-                    if (state.activity.isEmpty) {
-                      return Center(child: Text('No items found.'));
-                    }
-                    return Expanded(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 40.h,
-                            child: ListView.separated(
-                              scrollDirection: Axis.horizontal,
-                              separatorBuilder: (_, __) => SizedBox(
-                                width: 20,
-                              ),
-                              itemCount: 5,
-                              itemBuilder: (context, index) => GestureDetector(
-                                behavior: HitTestBehavior.translucent,
-                                onTap: () {
-                                  context.read<SettingBloc>().add(
-                                      SettingEvent.filteredActivities(index));
-                                  tabIndex.value = index;
-                                },
-                                child: Container(
-                                  width: 100,
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 3),
-                                  alignment: Alignment.centerLeft,
-                                  decoration: tabIndex.value == index
-                                      ? BoxDecoration(
-                                          color: theme.primaryColor,
-                                          borderRadius: BorderRadius.circular(
-                                            10,
-                                          ),
-                                        )
-                                      : BoxDecoration(
-                                          border: Border.all(
-                                              color: AppColors.kblack),
-                                          color: AppColors.kwhite,
-                                          borderRadius: BorderRadius.circular(
-                                            10,
-                                          ),
-                                        ),
-                                  child: Center(
-                                    child: Text(
-                                      [
-                                        'All Status',
-                                        'Applied',
-                                        'Screened',
-                                        'Rejected',
-                                        'Accepted',
-                                      ].elementAt(index),
-                                      style:
-                                          theme.textTheme.titleMedium?.copyWith(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                        color: tabIndex.value == index
-                                            ? AppColors.kwhite
-                                            : AppColors.kblack,
+                Expanded(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 40.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          separatorBuilder: (_, __) => SizedBox(
+                            width: 20,
+                          ),
+                          itemCount: 5,
+                          itemBuilder: (context, index) => GestureDetector(
+                            behavior: HitTestBehavior.translucent,
+                            onTap: () {
+                              context
+                                  .read<SettingBloc>()
+                                  .add(SettingEvent.filteredActivities(index));
+                              tabIndex.value = index;
+                              print('hima $index');
+                            },
+                            child: Container(
+                              width: 100,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 3),
+                              alignment: Alignment.centerLeft,
+                              decoration: tabIndex.value == index
+                                  ? BoxDecoration(
+                                      color: theme.primaryColor,
+                                      borderRadius: BorderRadius.circular(
+                                        10,
+                                      ),
+                                    )
+                                  : BoxDecoration(
+                                      border:
+                                          Border.all(color: AppColors.kblack),
+                                      color: AppColors.kwhite,
+                                      borderRadius: BorderRadius.circular(
+                                        10,
                                       ),
                                     ),
+                              child: Center(
+                                child: Text(
+                                  [
+                                    'All Status',
+                                    'Applied',
+                                    'Screened',
+                                    'Rejected',
+                                    'Accepted',
+                                  ].elementAt(index),
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: tabIndex.value == index
+                                        ? AppColors.kwhite
+                                        : AppColors.kblack,
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Expanded(
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      BlocBuilder<SettingBloc, SettingState>(
+                        bloc: context.read<SettingBloc>()
+                          ..add(SettingEvent.filteredActivities(0)),
+                        builder: (context, state) {
+                          print(
+                              "State Updated: ${state.filteredActivity.length} items");
+                          if (state.activitiesState == ActvitiesState.loading) {
+                            return Center(child: CircularProgressIndicator());
+                          }
+
+                          if (state.activitiesState == ActvitiesState.failure) {
+                            return Center(
+                                child: Text('Error loading activities'));
+                          }
+
+                          if (state.filteredActivity.isEmpty) {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                  height: 100,
+                                ),
+                                Text(
+                                  'No activities found.',
+                                  style: theme.textTheme.displaySmall
+                                      ?.copyWith(fontSize: 17),
+                                ),
+                              ],
+                            );
+                          }
+
+                          return Expanded(
                               child: tabIndex.value == 0
                                   ? ActivitiesPage(
                                       activityEntity: state.filteredActivity,
@@ -137,11 +155,11 @@ class ActivitiesTabContainerScreen extends HookWidget {
                                               : ActivitiesPage(
                                                   activityEntity:
                                                       state.filteredActivity,
-                                                )),
-                        ],
+                                                ));
+                        },
                       ),
-                    );
-                  },
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 20,

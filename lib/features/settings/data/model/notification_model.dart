@@ -5,6 +5,7 @@ import 'package:artisan_oga/features/settings/domain/entities/notification_entit
 class NotificationModel extends NotificationEntity {
   NotificationModel({
     required super.id,
+    required super.jobIdentity,
     required super.userId,
     required super.title,
     required super.body,
@@ -15,6 +16,7 @@ class NotificationModel extends NotificationEntity {
 
   factory NotificationModel.fromEntity(NotificationEntity entity) =>
       NotificationModel(
+        jobIdentity: entity.jobIdentity,
         userId: entity.userId,
         id: entity.id,
         title: entity.title,
@@ -26,6 +28,7 @@ class NotificationModel extends NotificationEntity {
 
   factory NotificationModel.fromJson(Map<String, dynamic> json) {
     return NotificationModel(
+      jobIdentity: json['job_identity'],
       id: json['id'],
       userId: json['user_id'],
       title: json['title'],
@@ -38,6 +41,7 @@ class NotificationModel extends NotificationEntity {
 
   Map<String, dynamic> toJson() {
     return {
+      "job_identity": jobIdentity,
       'id': id,
       'user_id': userId,
       'title': title,

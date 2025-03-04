@@ -4,7 +4,6 @@ import 'package:artisan_oga/features/settings/domain/entities/activities_entity.
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class ActivitiesPage extends StatefulWidget {
   final List<ActivitiesEntity> activityEntity;
   const ActivitiesPage({Key? key, required this.activityEntity})

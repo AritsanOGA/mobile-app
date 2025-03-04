@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class NotificationEntity extends Equatable {
   final int id;
+  final String jobIdentity;
   final int userId;
   final String title;
   final String body;
@@ -10,6 +11,7 @@ class NotificationEntity extends Equatable {
   final DateTime updatedAt;
 
   NotificationEntity({
+    required this.jobIdentity,
     required this.id,
     required this.userId,
     required this.title,
@@ -20,7 +22,6 @@ class NotificationEntity extends Equatable {
   });
 
   @override
-
   List<Object?> get props =>
-      [id, userId, title, body, status, createdAt, updatedAt];
+      [id, jobIdentity, userId, title, body, status, createdAt, updatedAt];
 }

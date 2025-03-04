@@ -229,8 +229,13 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
       ActivitiesEntity(status: '2'),
       ActivitiesEntity(status: '3'),
     ];
+    emit(state.copyWith(
+      activity: List.from(activities), // Ensure it's a new list
+      filteredActivity: List.from(activities), // Set default filter
+      selectedTabIndex: 0, // Default tab index
+    ));
 
-    emit(state.copyWith(activity: activities, filteredActivity: activities));
+    // emit(state.copyWith(activity: activities, filteredActivity: activities));
   }
 
   FutureOr<void> _onFilterActivities(
@@ -238,7 +243,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     List<ActivitiesEntity> filteredList;
     switch (event.selectedTabIndex) {
       case 0:
-        filteredList = state.activity; 
+        filteredList = state.activity;
         break;
       case 1:
         filteredList =
@@ -261,7 +266,11 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     }
 
     emit(state.copyWith(
-        filteredActivity: filteredList,
-        selectedTabIndex: event.selectedTabIndex));
+      filteredActivity: List.from(filteredList), // Force UI to rebuild
+      selectedTabIndex: event.selectedTabIndex,
+    ));
+    // emit(state.copyWith(
+    //     filteredActivity: filteredList,
+    //     selectedTabIndex: event.selectedTabIndex));
   }
 }

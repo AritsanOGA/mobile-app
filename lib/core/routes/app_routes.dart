@@ -35,6 +35,7 @@ import 'package:artisan_oga/features/settings/presentation/pages/employer_passwo
 import 'package:artisan_oga/features/settings/presentation/pages/js_notification_page.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page1.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/notification_job_details_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
@@ -212,6 +213,8 @@ class AppRoutes {
   static const String resetPasswordScreen = '/reset_password_screen';
   static const String jsProfilePage = '/js_profile_page';
   static const String jsNotificationPage = '/js_notification_page';
+  static const String notificationJobDetailsPage =
+      '/notification_job_detail_page';
   static Map<String, WidgetBuilder> routes = {
     // welcomePageScreen: (context) => WelcomePageScreen(),
     // signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
@@ -304,6 +307,12 @@ class AppRoutes {
       case jsNotificationPage:
         return AppPageRouteBuilder(
           navigateTo: JsNotificationPage(),
+        );
+      case notificationJobDetailsPage:
+        return AppPageRouteBuilder(
+          navigateTo: NotificationJobDetailsScreen(
+            jobId: settings.arguments as String,
+          ),
         );
       case successScreen:
         final args = settings.arguments as Map<String, dynamic>;
