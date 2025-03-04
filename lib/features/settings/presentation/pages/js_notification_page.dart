@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -94,7 +95,8 @@ class _JsNotificationPageState extends State<JsNotificationPage> {
                                   ),
                                 ),
                                 Text(
-                                  '5 hours ago',
+                                  getTimeAgo(
+                                      state.notification[index].createdAt),
                                   style: theme.textTheme.titleMedium?.copyWith(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,

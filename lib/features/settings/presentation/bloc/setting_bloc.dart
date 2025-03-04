@@ -223,27 +223,28 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
 
   FutureOr<void> _onLoadActivities(
       _LoadActivities event, Emitter<SettingState> emit) {
-    List<ActivitiesEntity> activities = [
-      ActivitiesEntity(status: '0'),
-      ActivitiesEntity(status: '1'),
-      ActivitiesEntity(status: '2'),
-      ActivitiesEntity(status: '3'),
-    ];
-    emit(state.copyWith(
-      activity: List.from(activities), // Ensure it's a new list
-      filteredActivity: List.from(activities), // Set default filter
-      selectedTabIndex: 0, // Default tab index
-    ));
+    // List<ActivitiesEntity> activities = [
+    //   ActivitiesEntity(status: '0'),
+    //   ActivitiesEntity(status: '1'),
+    //   ActivitiesEntity(status: '2'),
+    //   ActivitiesEntity(status: '3'),
+    // ];
+    // emit(state.copyWith(
+    //   activity: List.from(activities), // Ensure it's a new list
+    //   filteredActivity: List.from(activities), // Set default filter
+    //   selectedTabIndex: 0, // Default tab index
+    // ));
 
     // emit(state.copyWith(activity: activities, filteredActivity: activities));
   }
 
   FutureOr<void> _onFilterActivities(
       _FilteredActivities event, Emitter<SettingState> emit) {
+    print("Total Activities: ${state.activity.length}");
     List<ActivitiesEntity> filteredList;
     switch (event.selectedTabIndex) {
       case 0:
-        filteredList = state.activity;
+        filteredList = List.from(state.activity);
         break;
       case 1:
         filteredList =
@@ -262,7 +263,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
             state.activity.where((activity) => activity.status == '3').toList();
         break;
       default:
-        filteredList = state.activity;
+        filteredList = List.from(state.activity);
     }
 
     emit(state.copyWith(

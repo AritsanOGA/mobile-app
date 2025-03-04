@@ -19,8 +19,6 @@ class ActivitiesTabContainerScreen extends HookWidget {
     );
     useEffect(() {
       context.read<SettingBloc>().add(SettingEvent.getActivities());
-      context.read<SettingBloc>().add(SettingEvent.loadActivities());
-      context.read<SettingBloc>().add(SettingEvent.filteredActivities(0));
       return null;
     }, []);
 
@@ -55,7 +53,6 @@ class ActivitiesTabContainerScreen extends HookWidget {
                                   .read<SettingBloc>()
                                   .add(SettingEvent.filteredActivities(index));
                               tabIndex.value = index;
-                              print('hima $index');
                             },
                             child: Container(
                               width: 100,
@@ -102,61 +99,66 @@ class ActivitiesTabContainerScreen extends HookWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      BlocBuilder<SettingBloc, SettingState>(
-                        bloc: context.read<SettingBloc>()
-                          ..add(SettingEvent.filteredActivities(0)),
-                        builder: (context, state) {
-                          print(
-                              "State Updated: ${state.filteredActivity.length} items");
-                          if (state.activitiesState == ActvitiesState.loading) {
-                            return Center(child: CircularProgressIndicator());
-                          }
-
-                          if (state.activitiesState == ActvitiesState.failure) {
-                            return Center(
-                                child: Text('Error loading activities'));
-                          }
-
-                          if (state.filteredActivity.isEmpty) {
-                            return Column(
-                              children: [
-                                SizedBox(
-                                  height: 100,
-                                ),
-                                Text(
-                                  'No activities found.',
-                                  style: theme.textTheme.displaySmall
-                                      ?.copyWith(fontSize: 17),
-                                ),
-                              ],
-                            );
-                          }
-
-                          return Expanded(
-                              child: tabIndex.value == 0
-                                  ? ActivitiesPage(
-                                      activityEntity: state.filteredActivity,
-                                    )
-                                  : tabIndex.value == 1
-                                      ? ActivitiesPage(
-                                          activityEntity:
-                                              state.filteredActivity,
-                                        )
-                                      : tabIndex.value == 2
-                                          ? ActivitiesPage(
-                                              activityEntity:
-                                                  state.filteredActivity,
-                                            )
-                                          : tabIndex.value == 3
-                                              ? ActivitiesPage(
-                                                  activityEntity:
-                                                      state.filteredActivity,
-                                                )
-                                              : ActivitiesPage(
-                                                  activityEntity:
-                                                      state.filteredActivity,
-                                                ));
+                      BlocListener<SettingBloc, SettingState>(
+                        listener: (context, state) {
+                          context.read<SettingBloc>().add(
+                              SettingEvent.filteredActivities(
+                                  state.selectedTabIndex));
                         },
+                        child: BlocBuilder<SettingBloc, SettingState>(
+                          builder: (context, state) {
+                            if (state.activitiesState ==
+                                ActvitiesState.loading) {
+                              return Center(child: CircularProgressIndicator());
+                            }
+
+                            if (state.activitiesState ==
+                                ActvitiesState.failure) {
+                              return Center(
+                                  child: Text('Error loading activities'));
+                            }
+
+                            if (state.filteredActivity.isEmpty) {
+                              return Column(
+                                children: [
+                                  SizedBox(
+                                    height: 100,
+                                  ),
+                                  Text(
+                                    'No activities found.',
+                                    style: theme.textTheme.displaySmall
+                                        ?.copyWith(fontSize: 17),
+                                  ),
+                                ],
+                              );
+                            }
+
+                            return Expanded(
+                                child: tabIndex.value == 0
+                                    ? ActivitiesPage(
+                                        activityEntity: state.filteredActivity,
+                                      )
+                                    : tabIndex.value == 1
+                                        ? ActivitiesPage(
+                                            activityEntity:
+                                                state.filteredActivity,
+                                          )
+                                        : tabIndex.value == 2
+                                            ? ActivitiesPage(
+                                                activityEntity:
+                                                    state.filteredActivity,
+                                              )
+                                            : tabIndex.value == 3
+                                                ? ActivitiesPage(
+                                                    activityEntity:
+                                                        state.filteredActivity,
+                                                  )
+                                                : ActivitiesPage(
+                                                    activityEntity:
+                                                        state.filteredActivity,
+                                                  ));
+                          },
+                        ),
                       ),
                     ],
                   ),
