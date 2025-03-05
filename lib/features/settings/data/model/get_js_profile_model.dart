@@ -60,8 +60,8 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
     required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
     required List<AwardsAndCertificateModel> super.education,
     required List<ExperienceModel> super.experience,
-    required super.customerRating,
-    required super.skillAssessmentAverage,
+    required List<CustomerRatingModel> super.customerRating,
+    required List<SkillAssessmentModel> super.skillAssessmentAverage,
   });
 
   factory GetJobSeekerResponseModel.fromJson(Map<String, dynamic> json) {
@@ -83,6 +83,16 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
     final experienceList = json['experience'] != null
         ? List<Map<String, dynamic>>.from(
             json['experience'] as List,
+          )
+        : <Map<String, dynamic>>[];
+    final customerRatingList = json['customer_rating'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['customer_rating'] as List,
+          )
+        : <Map<String, dynamic>>[];
+    final skillAssessmentList = json['skill_assessment_average'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['skill_assessment_average'] as List,
           )
         : <Map<String, dynamic>>[];
     return GetJobSeekerResponseModel(
@@ -163,12 +173,15 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
       experience: experienceList.isNotEmpty
           ? experienceList.map(ExperienceModel.fromJson).toList().cast()
           : [],
-      customerRating: json["customer_rating"] == null
-          ? []
-          : List<dynamic>.from(json["customer_rating"]),
-      skillAssessmentAverage: json["skill_assessment_average"] == null
-          ? []
-          : List<dynamic>.from(json["skill_assessment_average"]),
+      customerRating: customerRatingList.isNotEmpty
+          ? customerRatingList.map(CustomerRatingModel.fromJson).toList().cast()
+          : [],
+      skillAssessmentAverage: skillAssessmentList.isNotEmpty
+          ? skillAssessmentList
+              .map(SkillAssessmentModel.fromJson)
+              .toList()
+              .cast()
+          : [],
     );
   }
 
@@ -274,6 +287,7 @@ class ExperienceModel extends ExperienceEntity {
       {required super.title,
       required super.desc,
       required super.startYear,
+      required super.companyName,
       required super.endYear});
 
   factory ExperienceModel.fromEntity(ExperienceEntity entity) =>
@@ -282,17 +296,20 @@ class ExperienceModel extends ExperienceEntity {
         desc: entity.desc,
         startYear: entity.startYear,
         endYear: entity.startYear,
+        companyName: entity.companyName,
       );
   factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
       ExperienceModel(
           title: json["title"],
           desc: json['desc'],
           startYear: json['start_year'],
+          companyName: json['company_name'],
           endYear: json['end_year']);
 
   Map<String, dynamic> toJson() => {
         "title": title,
         "desc": desc,
+        "company_name": companyName,
         "start_year": startYear,
         "end_year": endYear
       };
@@ -319,4 +336,70 @@ class EducationModel extends EducationEntity {
 
   Map<String, dynamic> toJson() =>
       {"title": title, "desc": desc, "purpose": purpose, "year": year};
+}
+
+class CustomerRatingModel extends CustomerRatingEntity {
+  CustomerRatingModel({
+    required super.fullName,
+    required super.review,
+    required super.userId,
+  });
+
+  factory CustomerRatingModel.fromEntity(CustomerRatingEntity entity) =>
+      CustomerRatingModel(
+        fullName: entity.fullName,
+        review: entity.review,
+        userId: entity.userId,
+      );
+  factory CustomerRatingModel.fromJson(Map<String, dynamic> json) =>
+      CustomerRatingModel(
+        fullName: json["fullname"],
+        review: json['review'],
+        userId: json['user_id'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "fullname": fullName,
+        "review": review,
+        "user_id": userId,
+      };
+}
+
+class SkillAssessmentModel extends SkillAssessmentEntity {
+  SkillAssessmentModel({
+    // required super.average,
+    required super.employerId,
+    required super.noOfEmployer,
+    required super.skillId,
+    required super.skillType,
+    required super.total,
+  });
+
+  factory SkillAssessmentModel.fromEntity(SkillAssessmentEntity entity) =>
+      SkillAssessmentModel(
+        //  average: entity.average,
+        employerId: entity.employerId,
+        noOfEmployer: entity.noOfEmployer,
+        skillId: entity.skillId,
+        total: entity.total,
+        skillType: entity.skillType,
+      );
+  factory SkillAssessmentModel.fromJson(Map<String, dynamic> json) =>
+      SkillAssessmentModel(
+        skillId: json["skill_id"],
+        skillType: json['skill_type'],
+        noOfEmployer: json['no_of_employers'],
+        // average: json["average"],
+        employerId: json['employer_id'],
+        total: json['total'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "total": total,
+        //  "average": average,
+        "skill_id": skillId,
+        "skill_type": skillType,
+        "employer_id": employerId,
+        "no_of_employers": noOfEmployer,
+      };
 }

@@ -4,7 +4,7 @@ part of 'payment_bloc.dart';
 class PaymentState with _$PaymentState {
   const factory PaymentState.initial({
     GetInvoiceEntity? getInvoice,
-     NoOfCandidateEntity? noOfCandidateEntity,
+    NoOfCandidateEntity? noOfCandidateEntity,
     @Default([]) List<AllInvoiceEntity> invoices,
     @Default([]) List<AllPaymentEntity> payments,
     VerifyFlutterwavePaymentEntity? verifyFlutterwavePaymentEntity,
@@ -48,13 +48,13 @@ class PaymentState with _$PaymentState {
     @Default([
       "--Select--",
       "ACCESS Bank",
-      "SWISS Bank",
+      "Zenith Bank",
     ])
     List<String> dollarAccountList,
     @Default([
       "--Select--",
-      "ABC Bank",
-      "DEFA Bank",
+      "ZENITH BANK",
+      "UBA",
     ])
     List<String> nairaAccountList,
   }) = _Initial;

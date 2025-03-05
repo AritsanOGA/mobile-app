@@ -1,9 +1,9 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/home/presentation/widgets/waitering_item_widget.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,7 @@ class JSProfilePage extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.kwhite,
         appBar: CustomAppBar(
-          title: 'Applicant Profile',
+          title: 'Profile',
         ),
         body: SingleChildScrollView(
             child: Container(
@@ -110,13 +110,10 @@ class JSProfilePage extends StatelessWidget {
                                     style: CustomTextStyles.titleSmall15))
                           ]),
                       SizedBox(height: 14.v),
-
                       Text(
                           "Job Preference: ${state.getJobSeekerResponseEntity?.jobType ?? ''}",
                           style: CustomTextStyles.titleMediumGray700Medium17),
-
                       SizedBox(height: 20.v),
-
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +132,8 @@ class JSProfilePage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 10.v),
                                   Text(
-                                      'Chloé Scarlett is a freelance expertise with 3 years of experience helping her target clients achieve their goals.',
+                                      state.getJobSeekerResponseEntity?.about ??
+                                          '',
                                       style:
                                           CustomTextStyles.bodyMediumPrimary14),
                                   SizedBox(height: 20.v),
@@ -158,122 +156,314 @@ class JSProfilePage extends StatelessWidget {
                                       style:
                                           CustomTextStyles.bodyMediumPrimary14),
                                   SizedBox(height: 20.v),
-                                  Text("Work Experience",
-                                      style: CustomTextStyles
-                                          .titleSmallPrimaryContainer),
-                                  SizedBox(height: 10.v),
-                                  Divider(
-                                    height: 2,
-                                  ),
-                                  SizedBox(height: 20.v),
-                                  Row(
-                                    children: [
-                                      Text(
-                                          state.getJobSeekerResponseEntity
-                                                      ?.experience.length ==
-                                                  0
-                                              ? ''
-                                              : state.getJobSeekerResponseEntity!
-                                                      .experience[0].title ??
-                                                  '',
-                                          style: CustomTextStyles
-                                              .titleSmallPrimaryContainer),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                          state.getJobSeekerResponseEntity
-                                                      ?.experience.length ==
-                                                  0
-                                              ? ''
-                                              : '(${(state.getJobSeekerResponseEntity!.experience[0].startYear)} - ${state.getJobSeekerResponseEntity!.experience[0].endYear})',
-                                          style: CustomTextStyles
-                                              .titleSmallPrimaryContainer),
-                                    ],
-                                  ),
-                                  SizedBox(height: 5.v),
-                                  Text(
-                                      state.getJobSeekerResponseEntity
-                                                  ?.experience.length ==
-                                              0
-                                          ? ''
-                                          : state.getJobSeekerResponseEntity!
-                                                  .experience[0].desc ??
-                                              '',
-                                      style: CustomTextStyles
-                                          .titleSmallPrimaryContainer),
-                                  SizedBox(height: 20.v),
-                                  Text("Work Photos",
-                                      style: CustomTextStyles
-                                          .titleSmallPrimaryContainer),
-                                  SizedBox(height: 10.v),
-                                  Divider(
-                                    height: 2,
-                                  ),
-                                  SizedBox(height: 10.v),
-                                  SizedBox(
-                                    height: 50,
-                                    child: ListView(
-                                      scrollDirection: Axis.horizontal,
-                                      children: [
-                                        ...List.generate(5, (index) {
-                                          return Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 3),
-                                            child: SizedBox(
-                                              width: 50,
-                                              height: 50,
-                                              child: CachedNetworkImage(
-                                                imageUrl:
-                                                    'https://picsum.photos/250?image=9',
-
-                                                //  state.jobSeekerJobList[index].profileImage,
-                                                fit: BoxFit.cover,
-
-                                                progressIndicatorBuilder:
-                                                    (context, url,
-                                                            downloadProgress) =>
-                                                        const Center(),
-                                                imageBuilder:
-                                                    (context, imageProvider) =>
-                                                        Container(
-                                                  // width: 50,
-                                                  // height: 50,
-                                                  decoration: BoxDecoration(
-                                                    // shape: BoxShape.circle,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    image: DecorationImage(
-                                                      image:
-                                                          imageProvider, // Use the provided imageProvider
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                                errorWidget:
-                                                    (context, url, error) =>
-                                                        const Icon(Icons.error),
-                                              ),
+                                  state.getJobSeekerResponseEntity?.experience
+                                              .length ==
+                                          0
+                                      ? SizedBox()
+                                      : Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Work Experience",
+                                                style: CustomTextStyles
+                                                    .titleSmallPrimaryContainer),
+                                            SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
                                             ),
-                                          );
-                                        })
-                                      ],
-                                    ),
+                                            SizedBox(height: 10.v),
+                                            ...List.generate(
+                                                state.getJobSeekerResponseEntity
+                                                        ?.experience.length ??
+                                                    0, (index) {
+                                              return Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 10),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                            state
+                                                                    .getJobSeekerResponseEntity
+                                                                    ?.experience[
+                                                                        index]
+                                                                    .companyName ??
+                                                                '',
+                                                            style: CustomTextStyles
+                                                                .titleSmallPrimaryContainer),
+                                                        SizedBox(
+                                                          width: 5,
+                                                        ),
+                                                        Text(
+                                                            '(${(state.getJobSeekerResponseEntity?.experience[index].startYear)} - ${state.getJobSeekerResponseEntity?.experience[index].endYear ?? ''})',
+                                                            style: CustomTextStyles
+                                                                .titleSmallPrimaryContainer),
+                                                      ],
+                                                    ),
+                                                    SizedBox(height: 5.v),
+                                                    Text(
+                                                        state
+                                                                .getJobSeekerResponseEntity
+                                                                ?.experience[
+                                                                    index]
+                                                                .desc ??
+                                                            '',
+                                                        style: CustomTextStyles
+                                                            .titleSmallPrimaryContainer),
+                                                  ],
+                                                ),
+                                              );
+                                            }),
+                                          ],
+                                        ),
+
+                                  // SizedBox(height: 20.v),
+                                  // Text("Work Photos",
+                                  //     style: CustomTextStyles
+                                  //         .titleSmallPrimaryContainer),
+                                  // SizedBox(height: 10.v),
+                                  // Divider(
+                                  //   height: 2,
+                                  // ),
+                                  // SizedBox(height: 10.v),
+                                  // SizedBox(
+                                  //   height: 50,
+                                  //   child: ListView(
+                                  //     scrollDirection: Axis.horizontal,
+                                  //     children: [
+                                  //       ...List.generate(5, (index) {
+                                  //         return Padding(
+                                  //           padding: const EdgeInsets.symmetric(
+                                  //               horizontal: 3),
+                                  //           child: SizedBox(
+                                  //             width: 50,
+                                  //             height: 50,
+                                  //             child: CachedNetworkImage(
+                                  //               imageUrl:
+                                  //                   'https://picsum.photos/250?image=9',
+
+                                  //               //  state.jobSeekerJobList[index].profileImage,
+                                  //               fit: BoxFit.cover,
+
+                                  //               progressIndicatorBuilder:
+                                  //                   (context, url,
+                                  //                           downloadProgress) =>
+                                  //                       const Center(),
+                                  //               imageBuilder:
+                                  //                   (context, imageProvider) =>
+                                  //                       Container(
+                                  //                 // width: 50,
+                                  //                 // height: 50,
+                                  //                 decoration: BoxDecoration(
+                                  //                   // shape: BoxShape.circle,
+                                  //                   borderRadius:
+                                  //                       BorderRadius.circular(
+                                  //                           10),
+                                  //                   image: DecorationImage(
+                                  //                     image:
+                                  //                         imageProvider, // Use the provided imageProvider
+                                  //                     fit: BoxFit.cover,
+                                  //                   ),
+                                  //                 ),
+                                  //               ),
+                                  //               errorWidget:
+                                  //                   (context, url, error) =>
+                                  //                       const Icon(Icons.error),
+                                  //             ),
+                                  //           ),
+                                  //         );
+                                  //       })
+                                  //     ],
+                                  //   ),
+                                  // ),
+
+                                  // SizedBox(height: 40.v),
+                                  Text("Skills",
+                                      style: CustomTextStyles
+                                          .titleSmallPrimaryContainer),
+                                  SizedBox(height: 10.v),
+                                  Divider(
+                                    height: 2,
                                   ),
-                                  SizedBox(height: 40.v),
-                                  CustomElevatedButton(
-                                      text: 'Next',
-                                      onPressed: () {
-                                        Navigator.pushNamed(
-                                            context, AppRoutes.jsProfilePage);
-                                      })
+                                  SizedBox(height: 10.v),
+                                  Wrap(
+                                      runSpacing: 6.v,
+                                      spacing: 6.h,
+                                      children: List<Widget>.generate(
+                                          state
+                                                  .getJobSeekerResponseEntity
+                                                  ?.artisanAssignedSkills
+                                                  .length ??
+                                              0,
+                                          (index) => WaiteringItemWidget(
+                                              skill: state
+                                                      .getJobSeekerResponseEntity
+                                                      ?.artisanAssignedSkills[
+                                                          index]
+                                                      .skill ??
+                                                  ''))),
+                                  SizedBox(height: 20.v),
+                                  Text("Skill Endorsement",
+                                      style: CustomTextStyles
+                                          .titleSmallPrimaryContainer),
+                                  SizedBox(height: 10.v),
+                                  ...List.generate(
+                                      state.getJobSeekerResponseEntity
+                                              ?.artisanAssignedSkills.length ??
+                                          0, (index) {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                            state
+                                                    .getJobSeekerResponseEntity
+                                                    ?.artisanAssignedSkills[
+                                                        index]
+                                                    .skill ??
+                                                '',
+                                            style: CustomTextStyles
+                                                .bodyMediumPrimaryContainer),
+                                        SizedBox(height: 1.v),
+                                        Container(
+                                            height: 14.v,
+                                            width: 380.h,
+                                            decoration: BoxDecoration(
+                                                color: appTheme.gray700
+                                                    .withOpacity(0.18),
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        2.h))),
+                                        SizedBox(height: 7.v),
+                                      ],
+                                    );
+                                  }),
+                                  state.getJobSeekerResponseEntity
+                                              ?.awardsAndCertificates.length ==
+                                          0
+                                      ? SizedBox()
+                                      : Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(height: 20.v),
+                                            Text("Awards & Certificates",
+                                                style: CustomTextStyles
+                                                    .titleSmallPrimaryContainer),
+                                            SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
+                                            ),
+                                            SizedBox(height: 10.v),
+                                            Text(
+                                                state
+                                                        .getJobSeekerResponseEntity
+                                                        ?.awardsAndCertificates[
+                                                            0]
+                                                        .title ??
+                                                    '',
+                                                //  'Best Staff of the month - Mar, 2005',
+                                                style: CustomTextStyles
+                                                    .titleSmallPrimaryContainer),
+                                          ],
+                                        ),
+
+                                  SizedBox(height: 20.v),
+
+                                  state.getJobSeekerResponseEntity
+                                              ?.customerRating?.length ==
+                                          0
+                                      ? SizedBox()
+                                      : Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Employer Feedback",
+                                                style: CustomTextStyles
+                                                    .titleSmallPrimaryContainer),
+                                            SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
+                                            ),
+                                            SizedBox(height: 10.v),
+                                            ...List.generate(
+                                                state.getJobSeekerResponseEntity
+                                                        ?.customerRating?.length ??
+                                                    0, (index) {
+                                              return Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 10),
+                                                child: Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width: 50,
+                                                      height: 50,
+                                                      child: CachedNetworkImage(
+                                                        imageUrl:
+                                                            'https://picsum.photos/250?image=9',
+                                                        fit: BoxFit.cover,
+                                                        progressIndicatorBuilder:
+                                                            (context, url,
+                                                                    downloadProgress) =>
+                                                                const Center(),
+                                                        imageBuilder: (context,
+                                                                imageProvider) =>
+                                                            Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            image:
+                                                                DecorationImage(
+                                                              image:
+                                                                  imageProvider,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        errorWidget: (context,
+                                                                url, error) =>
+                                                            const Icon(
+                                                                Icons.error),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 10,
+                                                    ),
+                                                    Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(state
+                                                                .getJobSeekerResponseEntity
+                                                                ?.customerRating?[
+                                                                    index]
+                                                                .fullName ??
+                                                            ''),
+                                                        Text(state
+                                                                .getJobSeekerResponseEntity
+                                                                ?.customerRating?[
+                                                                    index]
+                                                                .review ??
+                                                            ''),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            }),
+                                          ],
+                                        ),
+
+                                  SizedBox(height: 50.v),
                                 ])),
                           ]),
-
-                      // SizedBox(height: 17.v),
-                      // _buildReviews(context),
-                      // SizedBox(height: 20.v),
                     ]);
                   },
                 ))));

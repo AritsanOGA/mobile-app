@@ -72,15 +72,15 @@ class JobSearchDetailsScreen extends StatelessWidget {
                       style: CustomTextStyles.titleLargefff7941e,
                     ),
                   ),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Center(
-                    child: Text(
-                      state.searchJobDetail?.industry ?? '',
-                      style: CustomTextStyles.titleMediumff3a332cMedium,
-                    ),
-                  ),
+                  // SizedBox(
+                  //   height: 5.h,
+                  // ),
+                  // Center(
+                  //   child: Text(
+                  //     state.searchJobDetail?.industry ?? '',
+                  //     style: CustomTextStyles.titleMediumff3a332cMedium,
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 20.h,
                   ),

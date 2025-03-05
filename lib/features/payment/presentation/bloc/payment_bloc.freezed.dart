@@ -4851,12 +4851,12 @@ class _$InitialImpl implements _Initial {
       final List<String> dollarAccountList = const [
         "--Select--",
         "ACCESS Bank",
-        "SWISS Bank"
+        "Zenith Bank"
       ],
       final List<String> nairaAccountList = const [
         "--Select--",
-        "ABC Bank",
-        "DEFA Bank"
+        "ZENITH BANK",
+        "UBA"
       ]})
       : _invoices = invoices,
         _payments = payments,

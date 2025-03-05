@@ -103,53 +103,7 @@ class JobSearchScreen extends HookWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  // GestureDetector(
-                  //   onTap: () {},
-                  //   child: CustomDropDown<CategoryResponseEntity>(
-                  //     title: 'Select Job Category',
-                  //     items: state.categoryList,
-                  //     selectedItem: state.categoryList.isNotEmpty
-                  //         ? state.categoryList.firstWhere(
-                  //             (category) =>
-                  //                 category.id == (state.category?.id ?? 1),
-                  //             orElse: () => state.categoryList.first)
-                  //         : CategoryResponseEntity(id: 1, name: 'Fashion'),
-                  //     itemLabel: (category) => category.name,
-                  //     onChanged: (value) {
-                  //       searchDialog(context, locationController);
-                  //       // context.read<AuthBloc>().add(
-                  //       //       AuthEvent.updateSelectedCategory(value!),
-                  //       //     );
 
-                  //       // context.read<AuthBloc>().add(
-                  //       //       AuthEvent.getSkills(value.id.toString()),
-                  //       //     );
-                  //     },
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   height: 20.h,
-                  // ),
-                  // CustomDropDown<SkillResponseEntity>(
-                  //   title: 'Select Job Skill',
-                  //   items: state.skill,
-                  //   selectedItem: state.skill.isNotEmpty
-                  //       ? state.skill.firstWhere(
-                  //           (category) =>
-                  //               category.id == (state.category?.id ?? 1),
-                  //           orElse: () => state.skill.first)
-                  //       : SkillResponseEntity(
-                  //           id: 1, name: 'Corset', categoryId: 1),
-                  //   itemLabel: (category) => category.name,
-                  //   onChanged: (value) {
-                  //     context.read<AuthBloc>().add(
-                  //           AuthEvent.updateSkill(value!),
-                  //         );
-                  //   },
-                  // ),
-                  // SizedBox(
-                  //   height: 20.h,
-                  // ),
                   CustomTextFormField(
                     ontap: () {
                       searchDialog(context, locationController);
@@ -160,29 +114,7 @@ class JobSearchScreen extends HookWidget {
                     hintText: "Enter location",
                     hintStyle: theme.textTheme.titleSmall!,
                   ),
-                  // SizedBox(
-                  //   height: 20.h,
-                  // ),
-                  // Row(
-                  //   children: [
-                  //     CustomElevatedButton(
-                  //       width: 180.v,
-                  //       // isBusy: state.searchJobState == SearchJobState.loading,
-                  //       onPressed: () {
-                  //         context.read<AuthBloc>().add(
-                  //               AuthEvent.searchJobs(SearchJobDataEntity(
-                  //                   category: state.category?.id ?? 1,
-                  //                   location: locationController.text,
-                  //                   skill: state.singleSkill?.name ?? '')),
-                  //             );
-                  //       },
-                  //       text: "Search",
-                  //     ),
-                  //   ],
-                  // ),
-                  // SizedBox(
-                  //   height: 20.h,
-                  // ),
+
                   state.searchJobState == SearchJobState.loading
                       ? Column(
                           children: [
@@ -236,14 +168,14 @@ class JobSearchScreen extends HookWidget {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                           fontSize: 20)),
-                                              SizedBox(
-                                                height: 3.h,
-                                              ),
-                                              Text(
-                                                  state.searchJobEntity[index]
-                                                      .industry,
-                                                  style: theme
-                                                      .textTheme.bodyMedium),
+                                              // SizedBox(
+                                              //   height: 3.h,
+                                              // ),
+                                              // Text(
+                                              //     state.searchJobEntity[index]
+                                              //         .industry,
+                                              //     style: theme
+                                              //         .textTheme.bodyMedium),
                                               SizedBox(
                                                 height: 10.h,
                                               ),

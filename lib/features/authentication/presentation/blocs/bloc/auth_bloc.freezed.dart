@@ -14413,7 +14413,10 @@ class _$InitialImpl implements _Initial {
         'WAEC',
         'NECO',
         'GCE',
-        'B.sc / B.Eng / B.Ed',
+        'B.sc',
+        'B.Eng',
+        'B.Ed',
+        'BA',
         'M.sc',
         'Phd',
         'B. Tech'

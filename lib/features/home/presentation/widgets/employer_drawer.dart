@@ -88,24 +88,24 @@ class EmployerDrawer extends StatelessWidget {
                           ),
                         ],
                       )),
-                  SizedBox(height: 39.v),
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        ImageConstant.imgSearchPrimarycontainer,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 10.h,
-                          top: 3.v,
-                        ),
-                        child: Text(
-                          "Messages",
-                          style: CustomTextStyles.titleSmall15,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // SizedBox(height: 39.v),
+                  // Row(
+                  //   children: [
+                  //     SvgPicture.asset(
+                  //       ImageConstant.imgSearchPrimarycontainer,
+                  //     ),
+                  //     Padding(
+                  //       padding: EdgeInsets.only(
+                  //         left: 10.h,
+                  //         top: 3.v,
+                  //       ),
+                  //       child: Text(
+                  //         "Messages",
+                  //         style: CustomTextStyles.titleSmall15,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   SizedBox(height: 42.v),
                   GestureDetector(
                       onTap: (() {

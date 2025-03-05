@@ -59,8 +59,8 @@ class GetJobSeekerResponseEntity extends Equatable {
   final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
   final List<AwardsAndCertificateEntity> education;
   final List<ExperienceEntity> experience;
-  final List<dynamic>? customerRating;
-  final List<dynamic>? skillAssessmentAverage;
+  final List<CustomerRatingEntity>? customerRating;
+  final List<SkillAssessmentEntity>? skillAssessmentAverage;
 
   const GetJobSeekerResponseEntity({
     this.id,
@@ -217,11 +217,50 @@ class ExperienceEntity extends Equatable {
   final String? startYear;
   final String? endYear;
   final String? desc;
-
-  const ExperienceEntity({this.title, this.startYear, this.endYear, this.desc});
+final String? companyName;
+  const ExperienceEntity({this.title, this.startYear, this.endYear, this.desc, this.companyName});
 
   @override
-  List<Object?> get props => [title];
+  List<Object?> get props => [title, startYear, endYear, desc, companyName];
+}
+
+class CustomerRatingEntity extends Equatable {
+  final String? fullName;
+  final String? review;
+  final String? userId;
+
+  const CustomerRatingEntity({
+    this.fullName,
+    this.review,
+    this.userId,
+  });
+
+  @override
+  List<Object?> get props => [fullName, review, userId];
+}
+
+class SkillAssessmentEntity extends Equatable {
+ // final double? average;
+  final int? total;
+  final int? employerId;
+  final int? noOfEmployer;
+  final int? skillId;
+  final String? skillType;
+
+  const SkillAssessmentEntity(
+      {
+        //this.average,
+      this.total,
+      this.employerId,
+      this.noOfEmployer,
+      this.skillId,
+      this.skillType});
+
+  @override
+  List<Object?> get props =>
+      [
+        //average, 
+      total, employerId, noOfEmployer, skillId, skillType];
 }
 
 class EducationEntity extends Equatable {

@@ -54,6 +54,7 @@ class AcceptRejectPageModalBoxDialog extends HookWidget {
     return BlocConsumer<CandidatesBloc, CandidatesState>(
       listener: (context, state) {
         if (state.acceptCandidateState == AcceptCandidateState.success) {
+          ToastUtils.showGreenToast('Applicant accepted successfully');
           Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
         } else if (state.acceptCandidateState == AcceptCandidateState.failure) {
           ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -68,98 +69,101 @@ class AcceptRejectPageModalBoxDialog extends HookWidget {
           return Center(child: CircularProgressIndicator());
         }
 
-        return Form(
-          key: formKey,
-          child: Container(
-            width: 380.h,
-            padding: EdgeInsets.symmetric(
-              horizontal: 20.h,
-              vertical: 28.v,
-            ),
-            decoration: AppDecoration.fillGray.copyWith(
-              borderRadius: BorderRadiusStyle.roundedBorder16,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Kindly Endorse this Applicant",
-                    style: CustomTextStyles.titleMediumPrimaryContainer18,
-                  ),
-                ),
-                SizedBox(height: 12.v),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Rate this Applicant Skills from 1-10",
-                    style: CustomTextStyles.bodyMediumGray700,
-                  ),
-                ),
-                SizedBox(height: 20.v),
-                Text(
-                  "Technical Skills",
-                  style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
-                ),
-                SizedBox(height: 20.v),
-                ...List.generate(state.candidateSkillList.length, (index) {
-                  final skill = state.candidateSkillList[index].skills;
-                  final rating = state.dropdownValues[index];
-
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: CustomDropDown<String>(
-                      title: skill,
-                      items: state.dropdownList,
-                      selectedItem: rating,
-                      itemLabel: (gender) => gender,
-                      onChanged: (value) {
-                        context.read<CandidatesBloc>().add(
-                              CandidatesEvent.updateSkillRating(
-                                  value ?? '', index),
-                            );
-                        print('${value}');
-                      },
+        return SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Container(
+              width: 380.h,
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.h,
+                vertical: 28.v,
+              ),
+              decoration: AppDecoration.fillGray.copyWith(
+                borderRadius: BorderRadiusStyle.roundedBorder16,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Kindly Endorse this Applicant",
+                      style: CustomTextStyles.titleMediumPrimaryContainer18,
                     ),
-                  );
-                }),
-                SizedBox(height: 13.v),
-                CustomTextFormField(
-                  title: 'Review',
-                  titleStyle:
-                      CustomTextStyles.titleMediumPrimaryContainerMedium_1,
-                  controller: reviewController,
-                  hintText: "Share your experience with this candidate",
-                  validator: FormValidation.stringValidation,
-                  hintStyle: theme.textTheme.titleSmall!,
-                  textInputType: TextInputType.emailAddress,
-                ),
-                SizedBox(height: 31.v),
-                CustomElevatedButton(
-                  text: "Accept",
-                  isBusy: state.acceptCandidateState ==
-                      AcceptCandidateState.loading,
-                  onPressed: () {
-                    final selectedRatings =
-                        state.dropdownValues.map(int.parse).toList();
-                    if (formKey.currentState!.validate()) {
-                      context.read<CandidatesBloc>().add(
-                          CandidatesEvent.acceptCandidate(AcceptCandidateEntity(
-                              skillId: state.candidateSkillList
-                                  .map((e) => e.id ?? 0)
-                                  .toList(),
-                              ratings: selectedRatings,
-                              remark: reviewController.text,
-                              jobIdentity: jobIdentity,
-                              candidateIdentity: identityId)));
-                    }
-                  },
-                ),
-                SizedBox(height: 2.v),
-              ],
+                  ),
+                  SizedBox(height: 12.v),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Rate this Applicant Skills from 1-10",
+                      style: CustomTextStyles.bodyMediumGray700,
+                    ),
+                  ),
+                  SizedBox(height: 20.v),
+                  Text(
+                    "Technical Skills",
+                    style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
+                  ),
+                  SizedBox(height: 20.v),
+                  ...List.generate(state.candidateSkillList.length, (index) {
+                    final skill = state.candidateSkillList[index].skills;
+                    final rating = state.dropdownValues[index];
+
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
+                      child: CustomDropDown<String>(
+                        title: skill,
+                        items: state.dropdownList,
+                        selectedItem: rating,
+                        itemLabel: (gender) => gender,
+                        onChanged: (value) {
+                          context.read<CandidatesBloc>().add(
+                                CandidatesEvent.updateSkillRating(
+                                    value ?? '', index),
+                              );
+                          print('${value}');
+                        },
+                      ),
+                    );
+                  }),
+                  SizedBox(height: 13.v),
+                  CustomTextFormField(
+                    title: 'Review',
+                    titleStyle:
+                        CustomTextStyles.titleMediumPrimaryContainerMedium_1,
+                    controller: reviewController,
+                    hintText: "Share your experience with this candidate",
+                    validator: FormValidation.stringValidation,
+                    hintStyle: theme.textTheme.titleSmall!,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                  SizedBox(height: 31.v),
+                  CustomElevatedButton(
+                    text: "Accept",
+                    isBusy: state.acceptCandidateState ==
+                        AcceptCandidateState.loading,
+                    onPressed: () {
+                      final selectedRatings =
+                          state.dropdownValues.map(int.parse).toList();
+                      if (formKey.currentState!.validate()) {
+                        context.read<CandidatesBloc>().add(
+                            CandidatesEvent.acceptCandidate(
+                                AcceptCandidateEntity(
+                                    skillId: state.candidateSkillList
+                                        .map((e) => e.id ?? 0)
+                                        .toList(),
+                                    ratings: selectedRatings,
+                                    remark: reviewController.text,
+                                    jobIdentity: jobIdentity,
+                                    candidateIdentity: identityId)));
+                      }
+                    },
+                  ),
+                  SizedBox(height: 2.v),
+                ],
+              ),
             ),
           ),
         );

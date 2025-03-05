@@ -91,12 +91,19 @@ class JSLoginPageScreen extends HookWidget {
                         ),
                       ),
                       SizedBox(height: 19.v),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          "Forgot Password?",
-                          style: CustomTextStyles.titleSmallPrimary_1.copyWith(
-                            decoration: TextDecoration.underline,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.forgotPasswordScreen);
+                        },
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Forgot Password?",
+                            style:
+                                CustomTextStyles.titleSmallPrimary_1.copyWith(
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
                         ),
                       ),

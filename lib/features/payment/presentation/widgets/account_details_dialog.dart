@@ -60,7 +60,7 @@ accountDetailsDialg(
                             SizedBox(
                               height: 20.h,
                             ),
-                            bank == 'ABC Bank'
+                            bank == 'ZENITH BANK'
                                 ? Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        '1234567891',
+                                        '1015255690',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        'ABC Bank',
+                                        'ZENITH BANK',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -97,7 +97,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        '1234567891',
+                                        '1020641475',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        'DEFA Bank',
+                                        'UBA',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -158,7 +158,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        'ACCESS Bank',
+                                        'ACCESS BANK',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -168,7 +168,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        '2736354673846',
+                                        '1862512766',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -188,7 +188,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        'SWISS Bank',
+                                        'Zenith Bank',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,
@@ -198,7 +198,7 @@ accountDetailsDialg(
                                         height: 3.h,
                                       ),
                                       Text(
-                                        '2736354673846',
+                                        '5080430125',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.bold,

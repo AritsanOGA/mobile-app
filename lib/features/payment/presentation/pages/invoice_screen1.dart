@@ -418,6 +418,26 @@ class Invoice1Screen extends StatelessWidget {
                                                             ),
                                                           );
                                                     }),
+                                                CustomRadioButton(
+                                                    text: "Dollar Acounts",
+                                                    value: state
+                                                            .typeOfCurrencyBankList[
+                                                        1],
+                                                    groupValue: state
+                                                        .typeOfCurrencyBank,
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 1.v),
+                                                    onChange: (value) {
+                                                      context
+                                                          .read<PaymentBloc>()
+                                                          .add(
+                                                            PaymentEvent
+                                                                .updateTypeOfCurrencyBank(
+                                                              value,
+                                                            ),
+                                                          );
+                                                    }),
                                               ],
                                             ),
                                             SizedBox(

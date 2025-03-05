@@ -102,19 +102,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   void _formatInput() {
     String text = widget.controller!.text;
 
-    // If text is empty or non-numeric, do nothing
     if (text.isEmpty || !RegExp(r'^\d+$').hasMatch(text.replaceAll(',', '')))
       return;
 
-    // Remove existing commas and parse as number
     double value = double.tryParse(text.replaceAll(',', '')) ?? 0;
     String formattedText = _formatter.format(value);
 
-    // Update controller with formatted text
     widget.controller!.value = TextEditingValue(
       text: formattedText,
-      selection: TextSelection.collapsed(
-          offset: formattedText.length), // Keep cursor at end
+      selection: TextSelection.collapsed(offset: formattedText.length),
     );
   }
 

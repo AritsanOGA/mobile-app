@@ -69,7 +69,7 @@ class JSDrawer extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      left: 10.h,
+                      left: 13.h,
                       bottom: 3.v,
                     ),
                     child: Text(
@@ -81,24 +81,24 @@ class JSDrawer extends StatelessWidget {
               ),
             ),
             SizedBox(height: 38.v),
-            Row(
-              children: [
-                SvgPicture.asset(
-                  ImageConstant.imgSearchPrimarycontainer,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.h,
-                    top: 3.v,
-                  ),
-                  child: Text(
-                    "Messages",
-                    style: CustomTextStyles.titleSmall20,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 39.v),
+            // Row(
+            //   children: [
+            //     SvgPicture.asset(
+            //       ImageConstant.imgSearchPrimarycontainer,
+            //     ),
+            //     Padding(
+            //       padding: EdgeInsets.only(
+            //         left: 10.h,
+            //         top: 3.v,
+            //       ),
+            //       child: Text(
+            //         "Messages",
+            //         style: CustomTextStyles.titleSmall20,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            //  SizedBox(height: 39.v),
             GestureDetector(
               onTap: () {
                 Navigator.push(
