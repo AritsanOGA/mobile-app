@@ -114,11 +114,11 @@ class ActivitiesPageState extends State<ActivitiesPage>
                         borderRadius: BorderRadiusStyle.roundedBorder7,
                       ),
                       child: Text(
-                        widget.activityEntity[index].status == '0'
+                        widget.activityEntity[index].approved == 0
                             ? "Applied"
-                            : widget.activityEntity[index].status == '1'
+                            : widget.activityEntity[index].approved == 1
                                 ? 'Screened'
-                                : widget.activityEntity[index].status == '2'
+                                : widget.activityEntity[index].approved == 2
                                     ? 'Rejected'
                                     : 'Accepted',
                         style: CustomTextStyles.titleSmallPrimaryContainer_1,
@@ -133,13 +133,13 @@ class ActivitiesPageState extends State<ActivitiesPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(ImageConstant.whatsapp),
-                        SizedBox(width: 15.v),
-                        Text('Chat with us')
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Image.asset(ImageConstant.whatsapp),
+                    //     SizedBox(width: 15.v),
+                    //     Text('Chat with us')
+                    //   ],
+                    // ),
                     Spacer(),
                     Padding(
                       padding: EdgeInsets.only(top: 5.v),

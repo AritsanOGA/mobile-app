@@ -241,33 +241,42 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
   FutureOr<void> _onFilterActivities(
       _FilteredActivities event, Emitter<SettingState> emit) {
     print("Total Activities: ${state.activity.length}");
+    print("Total Activities: ${state.filteredActivity.length}");
     List<ActivitiesEntity> filteredList;
+    // int selectedIndex = event.selectedTabIndex ?? -1;
     switch (event.selectedTabIndex) {
       case 0:
         filteredList = List.from(state.activity);
         break;
       case 1:
         filteredList =
-            state.activity.where((activity) => activity.status == '0').toList();
+            state.activity.where((activity) => activity.approved == 0).toList();
         break;
       case 2:
         filteredList =
-            state.activity.where((activity) => activity.status == '1').toList();
+            state.activity.where((activity) => activity.approved == 1).toList();
         break;
       case 3:
         filteredList =
-            state.activity.where((activity) => activity.status == '2').toList();
+            state.activity.where((activity) => activity.approved == 2).toList();
         break;
-      case 4:
-        filteredList =
-            state.activity.where((activity) => activity.status == '3').toList();
-        break;
+      // case 4:
+      //   filteredList =
+      //       state.activity.where((activity) => activity.approved == 3).toList();
+      //   break;
       default:
-        filteredList = List.from(state.activity);
+        if (event.selectedTabIndex == 4) {
+          filteredList = state.activity
+              .where((activity) => activity.approved! >= 3)
+              .toList();
+        } else {
+          filteredList = List.from(state.activity);
+        }
+      //  filteredList = List.from(state.activity);
     }
 
     emit(state.copyWith(
-      filteredActivity: List.from(filteredList), // Force UI to rebuild
+      filteredActivity: List.from(filteredList),
       selectedTabIndex: event.selectedTabIndex,
     ));
     // emit(state.copyWith(

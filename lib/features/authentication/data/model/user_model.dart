@@ -10,6 +10,7 @@ class UserModel extends UserEntity {
     super.isAdmin,
     super.status,
     super.phoneNumber,
+    super.identity
   }) : super();
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -20,6 +21,7 @@ class UserModel extends UserEntity {
       role: json['role'] as String?,
       status: json['status'] as String?,
       fullName: json['full_name'] as String?,
+      identity: json['identity'] as String,
       isAdmin: json['is_admin'] as String?);
 
   factory UserModel.fromEntity(UserEntity entity) => UserModel(
@@ -31,6 +33,7 @@ class UserModel extends UserEntity {
         fullName: entity.fullName,
         isAdmin: entity.isAdmin,
         role: entity.role,
+        identity: entity.identity
       );
 
   Map<String, dynamic> toJson() => {
@@ -42,5 +45,6 @@ class UserModel extends UserEntity {
         'status': status,
         'full_name': fullName,
         'is_admin': isAdmin,
+        'identity': identity
       };
 }

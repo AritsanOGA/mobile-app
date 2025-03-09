@@ -12,6 +12,7 @@ import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:intl/intl.dart';
 
 class CreateInvoiceScreen extends HookWidget {
   final String identity;
@@ -37,7 +38,7 @@ class CreateInvoiceScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final noOfCandidate = useTextEditingController();
+
 
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
@@ -129,12 +130,14 @@ class CreateInvoiceScreen extends HookWidget {
                       readOnly: true,
                       controller: TextEditingController(
                         text: () {
-                        
                           final candidateCount = int.tryParse(candidate) ?? 0;
-                   
+
                           final totalAmount =
                               (state.amount ?? 0.0) * candidateCount;
-                          return totalAmount.toStringAsFixed(2);
+                          final formattedAmount =
+                              NumberFormat("#,##0").format(totalAmount);
+
+                          return formattedAmount;
                         }(),
                       ),
                       hintText: '',
@@ -155,12 +158,13 @@ class CreateInvoiceScreen extends HookWidget {
                       readOnly: true,
                       controller: TextEditingController(
                         text: () {
-                          // Try to parse the number of candidates
                           final candidateCount = int.tryParse(candidate) ?? 0;
-                          // Calculate total balance: multiply individual balance by candidate count.
+
                           final totalBalance =
                               (state.balance ?? 0.0) * candidateCount;
-                          return totalBalance.toStringAsFixed(2);
+                          final formattedAmount =
+                              NumberFormat("#,##0").format(totalBalance);
+                          return formattedAmount;
                         }(),
                       ),
                       validator: FormValidation.stringValidation,
@@ -187,8 +191,6 @@ class CreateInvoiceScreen extends HookWidget {
 
                           final totalAmount =
                               (state.amount ?? 0.0) * candidateCount;
-                          // print
-                          //     "Paid: ${state.amount} | Balance: ${state.balance} ${state.payingAll}");
 
                           context
                               .read<PaymentBloc>()

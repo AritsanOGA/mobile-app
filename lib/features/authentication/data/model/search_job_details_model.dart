@@ -2,6 +2,31 @@ import 'package:artisan_oga/features/authentication/domain/entities/search_job_d
 
 class SearchJobDetailModel extends SearchJobDetailEntity {
   const SearchJobDetailModel({
+    required super.jobDetails,
+    required super.jobSkills,
+  });
+
+  factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
+    return SearchJobDetailModel(
+      jobDetails: SearchJobDetailsResultModel.fromJson(json["result"]),
+      jobSkills: json["job_skills"],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {"result": jobDetails, "job_skills": jobSkills};
+  }
+
+  factory SearchJobDetailModel.fromEntity(SearchJobDetailEntity entity) {
+    return SearchJobDetailModel(
+      jobDetails: entity.jobDetails,
+      jobSkills: entity.jobSkills,
+    );
+  }
+}
+
+class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
+  const SearchJobDetailsResultModel({
     required super.hireType,
     required super.applicationDeadline,
     required super.city,
@@ -17,9 +42,8 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
     required super.itSkills,
   });
 
-  /// **Factory method to create an instance from JSON**
-  factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
-    return SearchJobDetailModel(
+  factory SearchJobDetailsResultModel.fromJson(Map<String, dynamic> json) {
+    return SearchJobDetailsResultModel(
       hireType: json['hire_type'] ?? '',
       applicationDeadline: json['application_deadline'] ?? '',
       city: json['city'] ?? '',
@@ -36,7 +60,6 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
     );
   }
 
-  /// **Converts model instance to JSON**
   Map<String, dynamic> toJson() {
     return {
       "hire_type": hireType,
@@ -54,8 +77,9 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
     };
   }
 
-  factory SearchJobDetailModel.fromEntity(SearchJobDetailEntity entity) {
-    return SearchJobDetailModel(
+  factory SearchJobDetailsResultModel.fromEntity(
+      SearchJobDetailsResultEntity entity) {
+    return SearchJobDetailsResultModel(
       hireType: entity.hireType,
       itSkills: entity.itSkills,
       applicationDeadline: entity.applicationDeadline,

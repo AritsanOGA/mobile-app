@@ -194,11 +194,13 @@ class PostJobThreeScreen extends HookWidget {
                                                 HomeEvent.updatePostJobRequest(
                                                   postJobRequest.copyWith(
                                                     maxAmount: int.parse(
-                                                        maxSalaryController
-                                                            .text),
+                                                        maxSalaryController.text
+                                                            .replaceAll(
+                                                                ',', '')),
                                                     minAmount: int.parse(
-                                                        minSalaryController
-                                                            .text),
+                                                        minSalaryController.text
+                                                            .replaceAll(
+                                                                ',', '')),
                                                     applicationDeadline:
                                                         applicationDeadlineController
                                                             .text,

@@ -1,21 +1,29 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/waitering_item_widget.dart';
-import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class JSProfilePage extends StatelessWidget {
+class JSProfilePage extends HookWidget {
   const JSProfilePage({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      context.read<AuthBloc>().add(const AuthEvent.getUserData());
+      return null;
+    }, []);
+
     return Scaffold(
         backgroundColor: AppColors.kwhite,
         appBar: CustomAppBar(
@@ -24,23 +32,25 @@ class JSProfilePage extends StatelessWidget {
         body: SingleChildScrollView(
             child: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 22.h,
-                ),
-                child: BlocBuilder<SettingBloc, SettingState>(
-                  bloc: context.read<SettingBloc>()
-                    ..add(SettingEvent.getJobSeekerProfile()),
+                padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
+                child: BlocBuilder<CandidatesBloc, CandidatesState>(
+                  bloc: context.read<CandidatesBloc>()
+                    ..add(CandidatesEvent.getCandidateProfile(
+                        UserService().authData?.user.identity ?? '')),
                   builder: (context, state) {
-                    if (state.getJobSeekerProfileState ==
-                        GetJobSeekerProfileState.loading) {
+                    if (state.getCandidateProfileState ==
+                        GetCandidateProfileState.loading) {
                       return Center(child: CircularProgressIndicator());
                     }
 
-                    if (state.getJobSeekerProfileState ==
-                        GetJobSeekerProfileState.failure) {
+                    if (state.getCandidateProfileState ==
+                        GetCandidateProfileState.failure) {
                       return Center(child: Text('Error: '));
                     }
 
+                    // if (state.featureCandidateList.isEmpty) {
+                    //   return Center(child: Text('No items found.'));
+                    // }
                     return Column(children: [
                       SizedBox(height: 26.v),
                       SizedBox(
@@ -51,7 +61,7 @@ class JSProfilePage extends StatelessWidget {
                               children: [
                                 CachedNetworkImage(
                                   imageUrl:
-                                      // state.getJobSeekerResponseEntity
+                                      // state.candidateProfileEntity
                                       //         ?.profileImage ??
                                       'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
 
@@ -94,7 +104,8 @@ class JSProfilePage extends StatelessWidget {
                                                     strokeAlignOutside))))
                               ])),
                       SizedBox(height: 8.v),
-                      Text(state.getJobSeekerResponseEntity?.fullName ?? '',
+                      Text(
+                          state.candidateProfileEntity?.profiles.fullName ?? '',
                           style: CustomTextStyles.titleLargePrimarySemiBold),
                       SizedBox(height: 10.v),
                       Row(
@@ -105,13 +116,14 @@ class JSProfilePage extends StatelessWidget {
                                 padding: EdgeInsets.only(
                                     left: 4.h, top: 2.v, bottom: 2.v),
                                 child: Text(
-                                    state.getJobSeekerResponseEntity?.city ??
+                                    state.candidateProfileEntity?.profiles
+                                            .city ??
                                         '',
                                     style: CustomTextStyles.titleSmall15))
                           ]),
                       SizedBox(height: 14.v),
                       Text(
-                          "Job Preference: ${state.getJobSeekerResponseEntity?.jobType ?? ''}",
+                          "Job Preference: ${state.candidateProfileEntity?.profiles.jobType ?? ''}",
                           style: CustomTextStyles.titleMediumGray700Medium17),
                       SizedBox(height: 20.v),
                       Row(
@@ -132,32 +144,50 @@ class JSProfilePage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 10.v),
                                   Text(
-                                      state.getJobSeekerResponseEntity?.about ??
+                                      state.candidateProfileEntity?.profiles
+                                              .serviceDescription ??
                                           '',
                                       style:
                                           CustomTextStyles.bodyMediumPrimary14),
                                   SizedBox(height: 20.v),
-                                  Text("Education",
-                                      style: CustomTextStyles
-                                          .titleSmallPrimaryContainer),
-                                  SizedBox(height: 10.v),
-                                  Divider(
-                                    height: 2,
-                                  ),
-                                  SizedBox(height: 10.v),
-                                  Text(
-                                      state.getJobSeekerResponseEntity
-                                                  ?.education.length ==
-                                              0
-                                          ? ''
-                                          : state.getJobSeekerResponseEntity
-                                                  ?.education[0].title ??
-                                              '',
-                                      style:
-                                          CustomTextStyles.bodyMediumPrimary14),
-                                  SizedBox(height: 20.v),
-                                  state.getJobSeekerResponseEntity?.experience
-                                              .length ==
+                                  state.candidateProfileEntity?.profiles
+                                              .education.length ==
+                                          0
+                                      ? SizedBox()
+                                      : Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Education",
+                                                style: CustomTextStyles
+                                                    .titleSmallPrimaryContainer),
+                                            SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
+                                            ),
+                                            SizedBox(height: 10.v),
+                                            Text(
+                                                state
+                                                            .candidateProfileEntity
+                                                            ?.profiles
+                                                            .education
+                                                            .length ==
+                                                        0
+                                                    ? ''
+                                                    : state
+                                                            .candidateProfileEntity
+                                                            ?.profiles
+                                                            .education[0]
+                                                            .title ??
+                                                        '',
+                                                style: CustomTextStyles
+                                                    .bodyMediumPrimary14),
+                                            SizedBox(height: 20.v),
+                                          ],
+                                        ),
+
+                                  state.candidateProfileEntity?.profiles
+                                              .experience.length ==
                                           0
                                       ? SizedBox()
                                       : Column(
@@ -173,8 +203,11 @@ class JSProfilePage extends StatelessWidget {
                                             ),
                                             SizedBox(height: 10.v),
                                             ...List.generate(
-                                                state.getJobSeekerResponseEntity
-                                                        ?.experience.length ??
+                                                state
+                                                        .candidateProfileEntity
+                                                        ?.profiles
+                                                        .experience
+                                                        .length ??
                                                     0, (index) {
                                               return Padding(
                                                 padding:
@@ -188,8 +221,9 @@ class JSProfilePage extends StatelessWidget {
                                                       children: [
                                                         Text(
                                                             state
-                                                                    .getJobSeekerResponseEntity
-                                                                    ?.experience[
+                                                                    .candidateProfileEntity
+                                                                    ?.profiles
+                                                                    .experience[
                                                                         index]
                                                                     .companyName ??
                                                                 '',
@@ -199,7 +233,7 @@ class JSProfilePage extends StatelessWidget {
                                                           width: 5,
                                                         ),
                                                         Text(
-                                                            '(${(state.getJobSeekerResponseEntity?.experience[index].startYear)} - ${state.getJobSeekerResponseEntity?.experience[index].endYear ?? ''})',
+                                                            '(${(state.candidateProfileEntity?.profiles.experience[index].startYear)} - ${state.candidateProfileEntity?.profiles.experience[index].endYear ?? ''})',
                                                             style: CustomTextStyles
                                                                 .titleSmallPrimaryContainer),
                                                       ],
@@ -207,8 +241,9 @@ class JSProfilePage extends StatelessWidget {
                                                     SizedBox(height: 5.v),
                                                     Text(
                                                         state
-                                                                .getJobSeekerResponseEntity
-                                                                ?.experience[
+                                                                .candidateProfileEntity
+                                                                ?.profiles
+                                                                .experience[
                                                                     index]
                                                                 .desc ??
                                                             '',
@@ -295,14 +330,16 @@ class JSProfilePage extends StatelessWidget {
                                       spacing: 6.h,
                                       children: List<Widget>.generate(
                                           state
-                                                  .getJobSeekerResponseEntity
-                                                  ?.artisanAssignedSkills
+                                                  .candidateProfileEntity
+                                                  ?.profiles
+                                                  .artisanAssignedSkills
                                                   .length ??
                                               0,
                                           (index) => WaiteringItemWidget(
                                               skill: state
-                                                      .getJobSeekerResponseEntity
-                                                      ?.artisanAssignedSkills[
+                                                      .candidateProfileEntity
+                                                      ?.profiles
+                                                      .artisanAssignedSkills[
                                                           index]
                                                       .skill ??
                                                   ''))),
@@ -312,8 +349,8 @@ class JSProfilePage extends StatelessWidget {
                                           .titleSmallPrimaryContainer),
                                   SizedBox(height: 10.v),
                                   ...List.generate(
-                                      state.getJobSeekerResponseEntity
-                                              ?.artisanAssignedSkills.length ??
+                                      state.candidateProfileEntity
+                                              ?.employerRating.length ??
                                           0, (index) {
                                     return Column(
                                       crossAxisAlignment:
@@ -321,29 +358,47 @@ class JSProfilePage extends StatelessWidget {
                                       children: [
                                         Text(
                                             state
-                                                    .getJobSeekerResponseEntity
-                                                    ?.artisanAssignedSkills[
-                                                        index]
-                                                    .skill ??
+                                                    .candidateProfileEntity
+                                                    ?.employerRating[index]
+                                                    .skills ??
                                                 '',
                                             style: CustomTextStyles
                                                 .bodyMediumPrimaryContainer),
-                                        SizedBox(height: 1.v),
-                                        Container(
-                                            height: 14.v,
-                                            width: 380.h,
-                                            decoration: BoxDecoration(
-                                                color: appTheme.gray700
-                                                    .withOpacity(0.18),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        2.h))),
+                                        SizedBox(height: 5.v),
+                                        GestureDetector(
+                                          onTap: () {
+                                            print(
+                                                'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
+                                          },
+                                          child: LinearProgressIndicator(
+                                            value: ((state
+                                                        .candidateProfileEntity
+                                                        ?.employerRating[index]
+                                                        .employerRating[0]
+                                                        .average ??
+                                                    0) /
+                                                100),
+                                            backgroundColor: Colors.grey[300],
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                                    Colors.blue),
+                                          ),
+                                        ),
+                                        // Container(
+                                        //     height: 14.v,
+                                        //     width: 380.h,
+                                        //     decoration: BoxDecoration(
+                                        //         color: appTheme.gray700
+                                        //             .withOpacity(0.18),
+                                        //         borderRadius:
+                                        //             BorderRadius.circular(
+                                        //                 2.h))),
                                         SizedBox(height: 7.v),
                                       ],
                                     );
                                   }),
-                                  state.getJobSeekerResponseEntity
-                                              ?.awardsAndCertificates.length ==
+                                  state.candidateProfileEntity?.profiles
+                                              .awardsAndCertificates.length ==
                                           0
                                       ? SizedBox()
                                       : Column(
@@ -361,8 +416,9 @@ class JSProfilePage extends StatelessWidget {
                                             SizedBox(height: 10.v),
                                             Text(
                                                 state
-                                                        .getJobSeekerResponseEntity
-                                                        ?.awardsAndCertificates[
+                                                        .candidateProfileEntity
+                                                        ?.profiles
+                                                        .awardsAndCertificates[
                                                             0]
                                                         .title ??
                                                     '',
@@ -374,8 +430,8 @@ class JSProfilePage extends StatelessWidget {
 
                                   SizedBox(height: 20.v),
 
-                                  state.getJobSeekerResponseEntity
-                                              ?.customerRating?.length ==
+                                  state.candidateProfileEntity?.employerFeedback
+                                              .length ==
                                           0
                                       ? SizedBox()
                                       : Column(
@@ -391,8 +447,10 @@ class JSProfilePage extends StatelessWidget {
                                             ),
                                             SizedBox(height: 10.v),
                                             ...List.generate(
-                                                state.getJobSeekerResponseEntity
-                                                        ?.customerRating?.length ??
+                                                state
+                                                        .candidateProfileEntity
+                                                        ?.employerFeedback
+                                                        .length ??
                                                     0, (index) {
                                               return Padding(
                                                 padding:
@@ -441,14 +499,14 @@ class JSProfilePage extends StatelessWidget {
                                                               .start,
                                                       children: [
                                                         Text(state
-                                                                .getJobSeekerResponseEntity
-                                                                ?.customerRating?[
+                                                                .candidateProfileEntity
+                                                                ?.employerFeedback[
                                                                     index]
                                                                 .fullName ??
                                                             ''),
                                                         Text(state
-                                                                .getJobSeekerResponseEntity
-                                                                ?.customerRating?[
+                                                                .candidateProfileEntity
+                                                                ?.employerFeedback[
                                                                     index]
                                                                 .review ??
                                                             ''),
@@ -469,15 +527,6 @@ class JSProfilePage extends StatelessWidget {
                 ))));
   }
 
-  /// Section Widget
-  // Widget _buildEducation(BuildContext context) {
-  //   return Padding(
-  //       padding: EdgeInsets.symmetric(horizontal: 3.h),
-  //       child:
-  //           );
-  // }
-
-  /// Section Widget
   Widget _buildReviews(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
@@ -494,10 +543,5 @@ class JSProfilePage extends StatelessWidget {
               width: 20.adaptSize,
               margin: EdgeInsets.only(top: 18.v, bottom: 8.v))
         ]));
-  }
-
-  /// Navigates back to the previous screen.
-  onTapImgArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }

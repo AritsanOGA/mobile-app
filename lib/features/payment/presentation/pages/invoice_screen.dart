@@ -325,7 +325,6 @@ class InvoiceScreen extends HookWidget {
                             context.read<PaymentBloc>().add(
                                   PaymentEvent.updatePaymentMethod(value ?? ''),
                                 );
-                            print('ssss ${value}');
                           },
                         ),
                         state.paymentMethod == 'Bank Transfer'

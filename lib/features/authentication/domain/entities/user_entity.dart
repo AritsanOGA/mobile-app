@@ -10,6 +10,7 @@ class UserEntity extends Equatable {
     this.role,
     this.isAdmin,
     this.status,
+    this.identity,
   });
 
   final int? id;
@@ -19,6 +20,7 @@ class UserEntity extends Equatable {
   final String? phoneNumber;
   final String? role;
   final String? isAdmin;
+  final String? identity;
   final String? status;
 
   UserEntity copyWith({
@@ -51,5 +53,6 @@ class UserEntity extends Equatable {
         refreshToken,
         status,
         role,
+        identity
       ];
 }

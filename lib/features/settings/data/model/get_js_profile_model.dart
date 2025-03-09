@@ -367,7 +367,7 @@ class CustomerRatingModel extends CustomerRatingEntity {
 
 class SkillAssessmentModel extends SkillAssessmentEntity {
   SkillAssessmentModel({
-    // required super.average,
+    required super.average,
     required super.employerId,
     required super.noOfEmployer,
     required super.skillId,
@@ -377,7 +377,7 @@ class SkillAssessmentModel extends SkillAssessmentEntity {
 
   factory SkillAssessmentModel.fromEntity(SkillAssessmentEntity entity) =>
       SkillAssessmentModel(
-        //  average: entity.average,
+        average: entity.average,
         employerId: entity.employerId,
         noOfEmployer: entity.noOfEmployer,
         skillId: entity.skillId,
@@ -389,14 +389,14 @@ class SkillAssessmentModel extends SkillAssessmentEntity {
         skillId: json["skill_id"],
         skillType: json['skill_type'],
         noOfEmployer: json['no_of_employers'],
-        // average: json["average"],
+        average: json["average"],
         employerId: json['employer_id'],
         total: json['total'],
       );
 
   Map<String, dynamic> toJson() => {
         "total": total,
-        //  "average": average,
+        "average": average,
         "skill_id": skillId,
         "skill_type": skillType,
         "employer_id": employerId,

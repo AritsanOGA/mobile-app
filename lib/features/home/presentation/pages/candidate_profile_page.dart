@@ -45,7 +45,7 @@ class CandidatesProfilePage extends StatelessWidget {
                         //   return Center(child: Text('No items found.'));
                         // }
                         return Column(children: [
-                          SizedBox(height: 21.v),
+                          SizedBox(height: 26.v),
                           SizedBox(
                               height: 75.adaptSize,
                               width: 75.adaptSize,
@@ -79,12 +79,6 @@ class CandidatesProfilePage extends StatelessWidget {
                                       errorWidget: (context, url, error) =>
                                           const Icon(Icons.error),
                                     ),
-                                    // CustomImageView(
-                                    //     imagePath: ImageConstant.imgEllipse5,
-                                    //     height: 75.adaptSize,
-                                    //     width: 75.adaptSize,
-                                    //     radius: BorderRadius.circular(37.h),
-                                    //     alignment: Alignment.center),
                                     Align(
                                         alignment: Alignment.bottomRight,
                                         child: Container(
@@ -104,7 +98,9 @@ class CandidatesProfilePage extends StatelessWidget {
                                                         strokeAlignOutside))))
                                   ])),
                           SizedBox(height: 8.v),
-                          Text(state.candidateProfileEntity?.fullName ?? '',
+                          Text(
+                              state.candidateProfileEntity?.profiles.fullName ??
+                                  '',
                               style:
                                   CustomTextStyles.titleLargePrimarySemiBold),
                           SizedBox(height: 10.v),
@@ -116,48 +112,17 @@ class CandidatesProfilePage extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                         left: 4.h, top: 2.v, bottom: 2.v),
                                     child: Text(
-                                        state.candidateProfileEntity?.city ??
+                                        state.candidateProfileEntity?.profiles
+                                                .city ??
                                             '',
                                         style: CustomTextStyles.titleSmall15))
                               ]),
-                          SizedBox(height: 12.v),
+                          SizedBox(height: 14.v),
                           Text(
-                              "Job Preference: ${state.candidateProfileEntity?.jobType ?? ''}",
+                              "Job Preference: ${state.candidateProfileEntity?.profiles.jobType ?? ''}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
-                          // SizedBox(height: 14.v),
-                          // Row(
-                          //     mainAxisAlignment: MainAxisAlignment.center,
-                          //     children: [
-                          //       SvgPicture.asset(ImageConstant.imgCall),
-                          //       Padding(
-                          //           padding: EdgeInsets.only(left: 9.h),
-                          //           child: Text(
-                          //               "${state.candidateProfileEntity?.phone ?? ''}",
-                          //               style: CustomTextStyles
-                          //                   .titleSmallPrimarySemiBold))
-                          //     ]),
                           SizedBox(height: 20.v),
-                          Container(
-                              width: 303.h,
-                              margin: EdgeInsets.only(left: 41.h, right: 40.h),
-                              child: RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                        text:
-                                            "${state.candidateProfileEntity?.serviceDescription ?? ''} ",
-                                        style: CustomTextStyles
-                                            .bodyMediumff666666),
-                                    // TextSpan(
-                                    //     text:
-                                    //         "3 years of experience helping her target clients achieve their goals.",
-                                    //     style: CustomTextStyles
-                                    //         .titleSmallfff7941eSemiBold15)
-                                  ]),
-                                  textAlign: TextAlign.center)),
-                          SizedBox(height: 22.v),
-                          Divider(indent: 24.h, endIndent: 24.h),
-                          SizedBox(height: 41.v),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,72 +132,223 @@ class CandidatesProfilePage extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                      Text("Education",
+                                      Text("About",
                                           style: CustomTextStyles
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 10.v),
+                                      Divider(
+                                        height: 2,
+                                      ),
+                                      SizedBox(height: 10.v),
                                       Text(
-                                          state.candidateProfileEntity
-                                                      ?.education.length ==
-                                                  0
-                                              ? ''
-                                              : state.candidateProfileEntity
-                                                      ?.education[0].title ??
-                                                  '',
+                                          state.candidateProfileEntity?.profiles
+                                                  .serviceDescription ??
+                                              '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
                                       SizedBox(height: 20.v),
-                                      Text("Experience",
+                                      state.candidateProfileEntity?.profiles
+                                                  .education.length ==
+                                              0
+                                          ? SizedBox()
+                                          : Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("Education",
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                Divider(
+                                                  height: 2,
+                                                ),
+                                                SizedBox(height: 10.v),
+                                                Text(
+                                                    state
+                                                                .candidateProfileEntity
+                                                                ?.profiles
+                                                                .education
+                                                                .length ==
+                                                            0
+                                                        ? ''
+                                                        : state
+                                                                .candidateProfileEntity
+                                                                ?.profiles
+                                                                .education[0]
+                                                                .title ??
+                                                            '',
+                                                    style: CustomTextStyles
+                                                        .bodyMediumPrimary14),
+                                                SizedBox(height: 20.v),
+                                              ],
+                                            ),
+
+                                      state.candidateProfileEntity?.profiles
+                                                  .experience.length ==
+                                              0
+                                          ? SizedBox()
+                                          : Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("Work Experience",
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                Divider(
+                                                  height: 2,
+                                                ),
+                                                SizedBox(height: 10.v),
+                                                ...List.generate(
+                                                    state
+                                                            .candidateProfileEntity
+                                                            ?.profiles
+                                                            .experience
+                                                            .length ??
+                                                        0, (index) {
+                                                  return Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 10),
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Row(
+                                                          children: [
+                                                            Text(
+                                                                state
+                                                                        .candidateProfileEntity
+                                                                        ?.profiles
+                                                                        .experience[
+                                                                            index]
+                                                                        .companyName ??
+                                                                    '',
+                                                                style: CustomTextStyles
+                                                                    .titleSmallPrimaryContainer),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Text(
+                                                                '(${(state.candidateProfileEntity?.profiles.experience[index].startYear)} - ${state.candidateProfileEntity?.profiles.experience[index].endYear ?? ''})',
+                                                                style: CustomTextStyles
+                                                                    .titleSmallPrimaryContainer),
+                                                          ],
+                                                        ),
+                                                        SizedBox(height: 5.v),
+                                                        Text(
+                                                            state
+                                                                    .candidateProfileEntity
+                                                                    ?.profiles
+                                                                    .experience[
+                                                                        index]
+                                                                    .desc ??
+                                                                '',
+                                                            style: CustomTextStyles
+                                                                .titleSmallPrimaryContainer),
+                                                      ],
+                                                    ),
+                                                  );
+                                                }),
+                                              ],
+                                            ),
+
+                                      // SizedBox(height: 20.v),
+                                      // Text("Work Photos",
+                                      //     style: CustomTextStyles
+                                      //         .titleSmallPrimaryContainer),
+                                      // SizedBox(height: 10.v),
+                                      // Divider(
+                                      //   height: 2,
+                                      // ),
+                                      // SizedBox(height: 10.v),
+                                      // SizedBox(
+                                      //   height: 50,
+                                      //   child: ListView(
+                                      //     scrollDirection: Axis.horizontal,
+                                      //     children: [
+                                      //       ...List.generate(5, (index) {
+                                      //         return Padding(
+                                      //           padding: const EdgeInsets.symmetric(
+                                      //               horizontal: 3),
+                                      //           child: SizedBox(
+                                      //             width: 50,
+                                      //             height: 50,
+                                      //             child: CachedNetworkImage(
+                                      //               imageUrl:
+                                      //                   'https://picsum.photos/250?image=9',
+
+                                      //               //  state.jobSeekerJobList[index].profileImage,
+                                      //               fit: BoxFit.cover,
+
+                                      //               progressIndicatorBuilder:
+                                      //                   (context, url,
+                                      //                           downloadProgress) =>
+                                      //                       const Center(),
+                                      //               imageBuilder:
+                                      //                   (context, imageProvider) =>
+                                      //                       Container(
+                                      //                 // width: 50,
+                                      //                 // height: 50,
+                                      //                 decoration: BoxDecoration(
+                                      //                   // shape: BoxShape.circle,
+                                      //                   borderRadius:
+                                      //                       BorderRadius.circular(
+                                      //                           10),
+                                      //                   image: DecorationImage(
+                                      //                     image:
+                                      //                         imageProvider, // Use the provided imageProvider
+                                      //                     fit: BoxFit.cover,
+                                      //                   ),
+                                      //                 ),
+                                      //               ),
+                                      //               errorWidget:
+                                      //                   (context, url, error) =>
+                                      //                       const Icon(Icons.error),
+                                      //             ),
+                                      //           ),
+                                      //         );
+                                      //       })
+                                      //     ],
+                                      //   ),
+                                      // ),
+
+                                      // SizedBox(height: 40.v),
+                                      Text("Skills",
                                           style: CustomTextStyles
                                               .titleSmallPrimaryContainer),
-                                      SizedBox(height: 8.v),
-                                      Text(
-                                          state.candidateProfileEntity
-                                                      ?.experience.length ==
-                                                  0
-                                              ? ''
-                                              : state.candidateProfileEntity
-                                                      ?.experience[0].title ??
-                                                  '',
-                                          style: CustomTextStyles
-                                              .bodyMediumPrimary14),
-                                      SizedBox(height: 16.v),
-                                      GestureDetector(
-                                        onTap: () {
-                                          print(
-                                              'cans ${state.candidateProfileEntity?.skillAssessmentAverage}');
-                                        },
-                                        child: Text("Skills",
-                                            style: CustomTextStyles
-                                                .titleSmallPrimaryContainer),
+                                      SizedBox(height: 10.v),
+                                      Divider(
+                                        height: 2,
                                       ),
-                                      SizedBox(height: 9.v),
+                                      SizedBox(height: 10.v),
                                       Wrap(
                                           runSpacing: 6.v,
                                           spacing: 6.h,
                                           children: List<Widget>.generate(
                                               state
                                                       .candidateProfileEntity
-                                                      ?.artisanAssignedSkills
+                                                      ?.profiles
+                                                      .artisanAssignedSkills
                                                       .length ??
                                                   0,
                                               (index) => WaiteringItemWidget(
                                                   skill: state
                                                           .candidateProfileEntity
-                                                          ?.artisanAssignedSkills[
+                                                          ?.profiles
+                                                          .artisanAssignedSkills[
                                                               index]
                                                           .skill ??
                                                       ''))),
-                                      SizedBox(height: 17.v),
+                                      SizedBox(height: 20.v),
                                       Text("Skill Endorsement",
                                           style: CustomTextStyles
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 10.v),
                                       ...List.generate(
-                                          state
-                                                  .candidateProfileEntity
-                                                  ?.artisanAssignedSkills
-                                                  .length ??
+                                          state.candidateProfileEntity
+                                                  ?.employerRating.length ??
                                               0, (index) {
                                         return Column(
                                           crossAxisAlignment:
@@ -241,61 +357,182 @@ class CandidatesProfilePage extends StatelessWidget {
                                             Text(
                                                 state
                                                         .candidateProfileEntity
-                                                        ?.artisanAssignedSkills[
-                                                            index]
-                                                        .skill ??
+                                                        ?.employerRating[index]
+                                                        .skills ??
                                                     '',
                                                 style: CustomTextStyles
                                                     .bodyMediumPrimaryContainer),
-                                            SizedBox(height: 1.v),
-                                            LinearProgressIndicator(
-                                              value:
-                                                  0.5, // Progress value (0.0 to 1.0), null for indeterminate
-                                              backgroundColor: Colors
-                                                  .grey, // Background color of the indicator
-                                              color:
-                                                  Colors.blue, // Progress color
-                                              minHeight:
-                                                  5.0, // Optional: height of the indicator
+                                            SizedBox(height: 5.v),
+                                            GestureDetector(
+                                              onTap: () {
+                                                print(
+                                                    'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
+                                              },
+                                              child: LinearProgressIndicator(
+                                                value: ((state
+                                                            .candidateProfileEntity
+                                                            ?.employerRating[
+                                                                index]
+                                                            .employerRating[0]
+                                                            .average ??
+                                                        0) /
+                                                    100),
+                                                backgroundColor:
+                                                    Colors.grey[300],
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(Colors.blue),
+                                              ),
                                             ),
-                                            Container(
-                                                height: 14.v,
-                                                width: 380.h,
-                                                decoration: BoxDecoration(
-                                                    color: appTheme.gray700
-                                                        .withOpacity(0.18),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            2.h))),
+                                            // Container(
+                                            //     height: 14.v,
+                                            //     width: 380.h,
+                                            //     decoration: BoxDecoration(
+                                            //         color: appTheme.gray700
+                                            //             .withOpacity(0.18),
+                                            //         borderRadius:
+                                            //             BorderRadius.circular(
+                                            //                 2.h))),
                                             SizedBox(height: 7.v),
                                           ],
                                         );
-                                      })
+                                      }),
+                                      state
+                                                  .candidateProfileEntity
+                                                  ?.profiles
+                                                  .awardsAndCertificates
+                                                  .length ==
+                                              0
+                                          ? SizedBox()
+                                          : Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                SizedBox(height: 20.v),
+                                                Text("Awards & Certificates",
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                Divider(
+                                                  height: 2,
+                                                ),
+                                                SizedBox(height: 10.v),
+                                                Text(
+                                                    state
+                                                            .candidateProfileEntity
+                                                            ?.profiles
+                                                            .awardsAndCertificates[
+                                                                0]
+                                                            .title ??
+                                                        '',
+                                                    //  'Best Staff of the month - Mar, 2005',
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                              ],
+                                            ),
+
+                                      SizedBox(height: 20.v),
+
+                                      state.candidateProfileEntity
+                                                  ?.employerFeedback.length ==
+                                              0
+                                          ? SizedBox()
+                                          : Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("Employer Feedback",
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                Divider(
+                                                  height: 2,
+                                                ),
+                                                SizedBox(height: 10.v),
+                                                ...List.generate(
+                                                    state
+                                                            .candidateProfileEntity
+                                                            ?.employerFeedback
+                                                            .length ??
+                                                        0, (index) {
+                                                  return Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 10),
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            imageUrl:
+                                                                'https://picsum.photos/250?image=9',
+                                                            fit: BoxFit.cover,
+                                                            progressIndicatorBuilder:
+                                                                (context, url,
+                                                                        downloadProgress) =>
+                                                                    const Center(),
+                                                            imageBuilder: (context,
+                                                                    imageProvider) =>
+                                                                Container(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                                image:
+                                                                    DecorationImage(
+                                                                  image:
+                                                                      imageProvider,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            errorWidget: (context,
+                                                                    url,
+                                                                    error) =>
+                                                                const Icon(Icons
+                                                                    .error),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(state
+                                                                    .candidateProfileEntity
+                                                                    ?.employerFeedback[
+                                                                        index]
+                                                                    .fullName ??
+                                                                ''),
+                                                            Text(state
+                                                                    .candidateProfileEntity
+                                                                    ?.employerFeedback[
+                                                                        index]
+                                                                    .review ??
+                                                                ''),
+                                                          ],
+                                                        )
+                                                      ],
+                                                    ),
+                                                  );
+                                                }),
+                                              ],
+                                            ),
+
+                                      SizedBox(height: 50.v),
                                     ])),
                               ]),
-                          SizedBox(height: 7.v),
-                          SizedBox(height: 17.v),
-                          _buildReviews(context),
-                          SizedBox(height: 20.v),
-                          // SizedBox(
-                          //     width: 130.h,
-                          //     child: Divider(
-                          //         color: theme.colorScheme.primaryContainer
-                          //             .withOpacity(1)))
                         ]);
                       },
                     )))));
   }
 
-  /// Section Widget
-  // Widget _buildEducation(BuildContext context) {
-  //   return Padding(
-  //       padding: EdgeInsets.symmetric(horizontal: 3.h),
-  //       child:
-  //           );
-  // }
-
-  /// Section Widget
   Widget _buildReviews(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.h),
@@ -312,10 +549,5 @@ class CandidatesProfilePage extends StatelessWidget {
               width: 20.adaptSize,
               margin: EdgeInsets.only(top: 18.v, bottom: 8.v))
         ]));
-  }
-
-  /// Navigates back to the previous screen.
-  onTapImgArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }

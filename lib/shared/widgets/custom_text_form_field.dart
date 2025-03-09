@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
+// ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
     Key? key,
@@ -211,12 +212,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         ),
       ],
     );
-    // alignment != null
-    //     ? Align(
-    //         alignment: alignment ?? Alignment.center,
-    //         child: textFormFieldWidget(context),
-    //       )
-    //     : textFormFieldWidget(context);
   }
 
   Widget textFormFieldWidget(BuildContext context) => SizedBox(

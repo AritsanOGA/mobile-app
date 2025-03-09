@@ -19,7 +19,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
-              title: 'Applicant Profile', 
+              title: 'Applicant Profile',
             ),
             body: SingleChildScrollView(
                 child: Container(
@@ -104,7 +104,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                                         strokeAlignOutside))))
                                   ])),
                           SizedBox(height: 8.v),
-                          Text(state.candidateProfileEntity?.fullName ?? '',
+                          Text(state.candidateProfileEntity?.profiles.fullName ?? '',
                               style:
                                   CustomTextStyles.titleLargePrimarySemiBold),
                           SizedBox(height: 10.v),
@@ -116,13 +116,13 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                         left: 4.h, top: 2.v, bottom: 2.v),
                                     child: Text(
-                                        state.candidateProfileEntity?.city ??
+                                        state.candidateProfileEntity?.profiles.city ??
                                             '',
                                         style: CustomTextStyles.titleSmall15))
                               ]),
                           SizedBox(height: 12.v),
                           Text(
-                              "Job Preference: ${state.candidateProfileEntity?.jobPreference ?? ''}",
+                              "Job Preference: ${state.candidateProfileEntity?.profiles.jobPreference ?? ''}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
                           SizedBox(height: 14.v),
@@ -133,7 +133,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                 Padding(
                                     padding: EdgeInsets.only(left: 9.h),
                                     child: Text(
-                                        "${state.candidateProfileEntity?.phone ?? ''}",
+                                        "${state.candidateProfileEntity?.profiles.phone ?? ''}",
                                         style: CustomTextStyles
                                             .titleSmallPrimarySemiBold))
                               ]),
@@ -145,7 +145,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                   text: TextSpan(children: [
                                     TextSpan(
                                         text:
-                                            "${state.candidateProfileEntity?.serviceDescription ?? ''} ",
+                                            "${state.candidateProfileEntity?.profiles.serviceDescription ?? ''} ",
                                         style: CustomTextStyles
                                             .bodyMediumff666666),
                                     // TextSpan(
@@ -172,11 +172,11 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 10.v),
                                       Text(
-                                          state.candidateProfileEntity
-                                                      ?.education.length ==
+                                          state.candidateProfileEntity?.profiles.education.length ==
+                                                     
                                                   0
                                               ? ''
-                                              : state.candidateProfileEntity
+                                              : state.candidateProfileEntity?.profiles
                                                       ?.education[0].title ??
                                                   '',
                                           style: CustomTextStyles
@@ -187,11 +187,11 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                               .titleSmallPrimaryContainer),
                                       SizedBox(height: 8.v),
                                       Text(
-                                          state.candidateProfileEntity
+                                          state.candidateProfileEntity?.profiles
                                                       ?.experience.length ==
                                                   0
                                               ? ''
-                                              : state.candidateProfileEntity
+                                              : state.candidateProfileEntity?.profiles
                                                       ?.experience[0].title ??
                                                   '',
                                           style: CustomTextStyles
@@ -206,13 +206,13 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           spacing: 6.h,
                                           children: List<Widget>.generate(
                                               state
-                                                      .candidateProfileEntity
+                                                      .candidateProfileEntity?.profiles
                                                       ?.artisanAssignedSkills
                                                       .length ??
                                                   0,
                                               (index) => WaiteringItemWidget(
                                                   skill: state
-                                                          .candidateProfileEntity
+                                                          .candidateProfileEntity?.profiles
                                                           ?.artisanAssignedSkills[
                                                               index]
                                                           .skill ??
@@ -224,7 +224,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                       SizedBox(height: 10.v),
                                       ...List.generate(
                                           state
-                                                  .candidateProfileEntity
+                                                  .candidateProfileEntity?.profiles
                                                   ?.artisanAssignedSkills
                                                   .length ??
                                               0, (index) {
@@ -234,7 +234,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           children: [
                                             Text(
                                                 state
-                                                        .candidateProfileEntity
+                                                        .candidateProfileEntity?.profiles
                                                         ?.artisanAssignedSkills[
                                                             index]
                                                         .skill ??

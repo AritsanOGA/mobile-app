@@ -53,6 +53,7 @@ class ActivitiesTabContainerScreen extends HookWidget {
                                   .read<SettingBloc>()
                                   .add(SettingEvent.filteredActivities(index));
                               tabIndex.value = index;
+                    
                             },
                             child: Container(
                               width: 100,

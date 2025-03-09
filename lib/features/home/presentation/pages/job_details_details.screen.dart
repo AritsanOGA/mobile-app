@@ -160,7 +160,8 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           formatDateString(
-                              employerJobResponseEntity.applicationDeadline ?? ''),
+                              employerJobResponseEntity.applicationDeadline ??
+                                  ''),
                           style: CustomTextStyles.labelLargePrimaryContainer_2,
                         ),
                       ],

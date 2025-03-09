@@ -98,7 +98,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
     ) as Map<String, dynamic>;
     print('my cadi ${result}');
     return CandidateProfileModel.fromJson(
-      result['data']['profiles'] as Map<String, dynamic>,
+      result['data'] as Map<String, dynamic>,
     );
   }
 

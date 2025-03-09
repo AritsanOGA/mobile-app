@@ -64,19 +64,19 @@ class SearchDetailsScreen extends StatelessWidget {
                   ),
                   Center(
                     child: Text(
-                      state.searchJobDetail?.jobTitle ?? '',
+                      state.searchJobDetail?.jobDetails.jobTitle ?? '',
                       style: CustomTextStyles.titleLargefff7941e,
                     ),
                   ),
-                  // SizedBox(
-                  //   height: 5.h,
-                  // ),
-                  // Center(
-                  //   child: Text(
-                  //     state.searchJobDetail?.industry ?? '',
-                  //     style: CustomTextStyles.titleMediumff3a332cMedium,
-                  //   ),
-                  // ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Center(
+                    child: Text(
+                      state.searchJobDetail?.jobDetails.industry ?? '',
+                      style: CustomTextStyles.titleMediumff3a332cMedium,
+                    ),
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),
@@ -91,7 +91,7 @@ class SearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.hireType ?? '',
+                            state.searchJobDetail?.jobDetails.hireType ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -105,7 +105,7 @@ class SearchDetailsScreen extends StatelessWidget {
                           ),
                           Text(
                             AppFormatter.dateTimeFormatter.format(
-                                state.searchJobDetail?.createdAt ??
+                                state.searchJobDetail?.jobDetails.createdAt ??
                                     DateTime.now()),
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
@@ -120,7 +120,7 @@ class SearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.qualification ?? '',
+                            state.searchJobDetail?.jobDetails.qualification ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -142,7 +142,7 @@ class SearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.city ?? '',
+                            state.searchJobDetail?.jobDetails.city ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -156,7 +156,7 @@ class SearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.basicSalary ?? '',
+                            state.searchJobDetail?.jobDetails.basicSalary ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -170,7 +170,7 @@ class SearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.applicationDeadline ?? '',
+                            state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -189,7 +189,7 @@ class SearchDetailsScreen extends StatelessWidget {
                     height: 7.h,
                   ),
                   Text(
-                    state.searchJobDetail?.jobDescription ?? '',
+                    state.searchJobDetail?.jobDetails.jobDescription ?? '',
                   ),
                   SizedBox(
                     height: 20.h,
@@ -202,7 +202,7 @@ class SearchDetailsScreen extends StatelessWidget {
                     height: 7.h,
                   ),
                   Text(
-                    state.searchJobDetail?.position ?? '',
+                    state.searchJobDetail?.jobDetails.position ?? '',
                   ),
                   SizedBox(
                     height: 20.h,
@@ -215,7 +215,7 @@ class SearchDetailsScreen extends StatelessWidget {
                     height: 7.h,
                   ),
                   Text(
-                    state.searchJobDetail?.qualification ?? '',
+                    state.searchJobDetail?.jobDetails.qualification ?? '',
                   ),
                   SizedBox(
                     height: 20.h,
@@ -228,7 +228,7 @@ class SearchDetailsScreen extends StatelessWidget {
                     height: 7.h,
                   ),
                   Text(
-                    state.searchJobDetail?.accomodation ?? '',
+                    state.searchJobDetail?.jobDetails.accomodation ?? '',
                   ),
                   SizedBox(
                     height: 20.h,
@@ -241,7 +241,7 @@ class SearchDetailsScreen extends StatelessWidget {
                     height: 7.h,
                   ),
                   Text(
-                    state.searchJobDetail?.itSkills ?? '',
+                    state.searchJobDetail?.jobSkills ?? '',
                   ),
                   SizedBox(
                     height: 40.h,

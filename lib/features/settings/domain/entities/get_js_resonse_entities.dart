@@ -217,8 +217,9 @@ class ExperienceEntity extends Equatable {
   final String? startYear;
   final String? endYear;
   final String? desc;
-final String? companyName;
-  const ExperienceEntity({this.title, this.startYear, this.endYear, this.desc, this.companyName});
+  final String? companyName;
+  const ExperienceEntity(
+      {this.title, this.startYear, this.endYear, this.desc, this.companyName});
 
   @override
   List<Object?> get props => [title, startYear, endYear, desc, companyName];
@@ -240,7 +241,7 @@ class CustomerRatingEntity extends Equatable {
 }
 
 class SkillAssessmentEntity extends Equatable {
- // final double? average;
+  final int? average;
   final int? total;
   final int? employerId;
   final int? noOfEmployer;
@@ -248,8 +249,7 @@ class SkillAssessmentEntity extends Equatable {
   final String? skillType;
 
   const SkillAssessmentEntity(
-      {
-        //this.average,
+      {this.average,
       this.total,
       this.employerId,
       this.noOfEmployer,
@@ -257,10 +257,10 @@ class SkillAssessmentEntity extends Equatable {
       this.skillType});
 
   @override
-  List<Object?> get props =>
-      [
-        //average, 
-      total, employerId, noOfEmployer, skillId, skillType];
+  List<Object?> get props => [
+        average,
+        total, employerId, noOfEmployer, skillId, skillType
+      ];
 }
 
 class EducationEntity extends Equatable {
