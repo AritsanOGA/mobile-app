@@ -348,10 +348,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
                               EmployerSignUpState.loading,
                           text: "Submit",
                           onPressed: (() {
-                            if (state.file == null) {
-                              ToastUtils.showRedToast('Upload company logo');
-                            }
-
                             debugPrint(
                                 'state ${state.country?.id.toString()} ${'161'}  ${state.states.first.name}  ${state.state?.name}${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
                             if (formKey.currentState?.validate() ?? false) {
@@ -364,7 +360,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                         state: state.state?.name ??
                                             state.states.first.name,
                                         city: cityController.text,
-                                        companyLogo: state.file!,
+                                        companyLogo: state.file,
                                         gender: state.gender,
                                         country: state.country?.id.toString() ??
                                             '161',

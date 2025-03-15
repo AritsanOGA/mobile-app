@@ -222,7 +222,7 @@ class AuthRepositoryImpl implements AuthRepository {
       VerifyCodeEntity param) async {
     try {
       final result = await authRemoteDataSource.verifyForgotPasswordCode(param);
-    
+
       return const Right(true);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
@@ -246,6 +246,6 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<Either<Failure, SearchJobDetailEntity>> searchJobDetail(String jobId) {
-     return authRemoteDataSource.searchJobDetails(jobId).makeRequest();
+    return authRemoteDataSource.searchJobDetails(jobId).makeRequest();
   }
 }

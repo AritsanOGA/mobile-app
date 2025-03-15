@@ -13405,14 +13405,14 @@ mixin _$AuthState {
   String? get confirmPassword => throw _privateConstructorUsedError;
   String? get countryId => throw _privateConstructorUsedError;
   String? get jsGender => throw _privateConstructorUsedError;
-  DateTime? get dateOfBirth => throw _privateConstructorUsedError;
+  String? get dateOfBirth => throw _privateConstructorUsedError;
   int get selectedIndex => throw _privateConstructorUsedError;
   String get jobType => throw _privateConstructorUsedError;
   String? get jsState => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   File? get picture => throw _privateConstructorUsedError;
   String get educationalQualification => throw _privateConstructorUsedError;
-  String? get dateOFBirth => throw _privateConstructorUsedError;
+  DateTime? get dateOFBirths => throw _privateConstructorUsedError;
   String? get startYear => throw _privateConstructorUsedError;
   String? get endYear => throw _privateConstructorUsedError;
   String get employmentHistory => throw _privateConstructorUsedError;
@@ -13473,14 +13473,14 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -13530,14 +13530,14 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -13587,14 +13587,14 @@ mixin _$AuthState {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -13670,14 +13670,14 @@ abstract class $AuthStateCopyWith<$Res> {
       String? confirmPassword,
       String? countryId,
       String? jsGender,
-      DateTime? dateOfBirth,
+      String? dateOfBirth,
       int selectedIndex,
       String jobType,
       String? jsState,
       String? city,
       File? picture,
       String educationalQualification,
-      String? dateOFBirth,
+      DateTime? dateOFBirths,
       String? startYear,
       String? endYear,
       String employmentHistory,
@@ -13743,7 +13743,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? city = freezed,
     Object? picture = freezed,
     Object? educationalQualification = null,
-    Object? dateOFBirth = freezed,
+    Object? dateOFBirths = freezed,
     Object? startYear = freezed,
     Object? endYear = freezed,
     Object? employmentHistory = null,
@@ -13822,7 +13822,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
@@ -13847,10 +13847,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.educationalQualification
           : educationalQualification // ignore: cast_nullable_to_non_nullable
               as String,
-      dateOFBirth: freezed == dateOFBirth
-          ? _value.dateOFBirth
-          : dateOFBirth // ignore: cast_nullable_to_non_nullable
-              as String?,
+      dateOFBirths: freezed == dateOFBirths
+          ? _value.dateOFBirths
+          : dateOFBirths // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       startYear: freezed == startYear
           ? _value.startYear
           : startYear // ignore: cast_nullable_to_non_nullable
@@ -14006,14 +14006,14 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? confirmPassword,
       String? countryId,
       String? jsGender,
-      DateTime? dateOfBirth,
+      String? dateOfBirth,
       int selectedIndex,
       String jobType,
       String? jsState,
       String? city,
       File? picture,
       String educationalQualification,
-      String? dateOFBirth,
+      DateTime? dateOFBirths,
       String? startYear,
       String? endYear,
       String employmentHistory,
@@ -14077,7 +14077,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? city = freezed,
     Object? picture = freezed,
     Object? educationalQualification = null,
-    Object? dateOFBirth = freezed,
+    Object? dateOFBirths = freezed,
     Object? startYear = freezed,
     Object? endYear = freezed,
     Object? employmentHistory = null,
@@ -14156,7 +14156,7 @@ class __$$InitialImplCopyWithImpl<$Res>
       dateOfBirth: freezed == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
@@ -14181,10 +14181,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.educationalQualification
           : educationalQualification // ignore: cast_nullable_to_non_nullable
               as String,
-      dateOFBirth: freezed == dateOFBirth
-          ? _value.dateOFBirth
-          : dateOFBirth // ignore: cast_nullable_to_non_nullable
-              as String?,
+      dateOFBirths: freezed == dateOFBirths
+          ? _value.dateOFBirths
+          : dateOFBirths // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       startYear: freezed == startYear
           ? _value.startYear
           : startYear // ignore: cast_nullable_to_non_nullable
@@ -14342,7 +14342,7 @@ class _$InitialImpl implements _Initial {
       this.city,
       this.picture,
       this.educationalQualification = '--Select--',
-      this.dateOFBirth,
+      this.dateOFBirths,
       this.startYear,
       this.endYear,
       this.employmentHistory = '--Select--',
@@ -14484,7 +14484,7 @@ class _$InitialImpl implements _Initial {
   @override
   final String? jsGender;
   @override
-  final DateTime? dateOfBirth;
+  final String? dateOfBirth;
   @override
   @JsonKey()
   final int selectedIndex;
@@ -14501,7 +14501,7 @@ class _$InitialImpl implements _Initial {
   @JsonKey()
   final String educationalQualification;
   @override
-  final String? dateOFBirth;
+  final DateTime? dateOFBirths;
   @override
   final String? startYear;
   @override
@@ -14661,7 +14661,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirth: $dateOFBirth, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
   }
 
   @override
@@ -14695,8 +14695,8 @@ class _$InitialImpl implements _Initial {
             (identical(other.picture, picture) || other.picture == picture) &&
             (identical(other.educationalQualification, educationalQualification) ||
                 other.educationalQualification == educationalQualification) &&
-            (identical(other.dateOFBirth, dateOFBirth) ||
-                other.dateOFBirth == dateOFBirth) &&
+            (identical(other.dateOFBirths, dateOFBirths) ||
+                other.dateOFBirths == dateOFBirths) &&
             (identical(other.startYear, startYear) ||
                 other.startYear == startYear) &&
             (identical(other.endYear, endYear) || other.endYear == endYear) &&
@@ -14772,7 +14772,7 @@ class _$InitialImpl implements _Initial {
         city,
         picture,
         educationalQualification,
-        dateOFBirth,
+        dateOFBirths,
         startYear,
         endYear,
         employmentHistory,
@@ -14828,14 +14828,14 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -14889,7 +14889,7 @@ class _$InitialImpl implements _Initial {
         city,
         picture,
         educationalQualification,
-        dateOFBirth,
+        dateOFBirths,
         startYear,
         endYear,
         employmentHistory,
@@ -14939,14 +14939,14 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -15000,7 +15000,7 @@ class _$InitialImpl implements _Initial {
         city,
         picture,
         educationalQualification,
-        dateOFBirth,
+        dateOFBirths,
         startYear,
         endYear,
         employmentHistory,
@@ -15050,14 +15050,14 @@ class _$InitialImpl implements _Initial {
             String? confirmPassword,
             String? countryId,
             String? jsGender,
-            DateTime? dateOfBirth,
+            String? dateOfBirth,
             int selectedIndex,
             String jobType,
             String? jsState,
             String? city,
             File? picture,
             String educationalQualification,
-            String? dateOFBirth,
+            DateTime? dateOFBirths,
             String? startYear,
             String? endYear,
             String employmentHistory,
@@ -15113,7 +15113,7 @@ class _$InitialImpl implements _Initial {
           city,
           picture,
           educationalQualification,
-          dateOFBirth,
+          dateOFBirths,
           startYear,
           endYear,
           employmentHistory,
@@ -15192,14 +15192,14 @@ abstract class _Initial implements AuthState {
       final String? confirmPassword,
       final String? countryId,
       final String? jsGender,
-      final DateTime? dateOfBirth,
+      final String? dateOfBirth,
       final int selectedIndex,
       final String jobType,
       final String? jsState,
       final String? city,
       final File? picture,
       final String educationalQualification,
-      final String? dateOFBirth,
+      final DateTime? dateOFBirths,
       final String? startYear,
       final String? endYear,
       final String employmentHistory,
@@ -15255,7 +15255,7 @@ abstract class _Initial implements AuthState {
   @override
   String? get jsGender;
   @override
-  DateTime? get dateOfBirth;
+  String? get dateOfBirth;
   @override
   int get selectedIndex;
   @override
@@ -15269,7 +15269,7 @@ abstract class _Initial implements AuthState {
   @override
   String get educationalQualification;
   @override
-  String? get dateOFBirth;
+  DateTime? get dateOFBirths;
   @override
   String? get startYear;
   @override

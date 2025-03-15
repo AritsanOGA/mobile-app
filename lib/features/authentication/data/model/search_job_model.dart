@@ -19,24 +19,24 @@ class SearchJobModel extends SearchJobEntity {
     required super.url,
   });
 
-  /// **Convert JSON to Model**
+
   factory SearchJobModel.fromJson(Map<String, dynamic> json) {
     return SearchJobModel(
-      id: json["id"],
-      featured: json["featured"],
-      jobTitle: json["job_title"],
-      jobDescription: json["job_description"],
-      basicSalary: json["basic_salary"],
-      allowances: json["allowances"],
-      city: json["city"],
-      industry: json["industry"],
-      businessCategoryId: json["business_category_id"],
-      jobStatus: json["job_status"],
-      compensationType: json["compensation_type"],
+      id: json["id"] ?? 0,
+      featured: json["featured"] ?? 0,
+      jobTitle: json["job_title"] ?? '',
+      jobDescription: json["job_description"] ?? '',
+      basicSalary: json["basic_salary"] ?? '',
+      allowances: json["allowances"] ?? '',
+      city: json["city"] ?? '',
+      industry: json["industry"] ?? '',
+      businessCategoryId: json["business_category_id"] ?? '',
+      jobStatus: json["job_status"] ?? '',
+      compensationType: json["compensation_type"] ?? '',
       createdAt: DateTime.parse(json["created_at"]),
-      identity: json["identity"],
-      closed: json["closed"],
-      url: json["url"],
+      identity: json["identity"] ?? '',
+      closed: json["closed"] ?? 0,
+      url: json["url"] ?? '',
     );
   }
 

@@ -132,7 +132,7 @@ class PostJobOnePage extends HookWidget {
                                           state.skill,
                                       itemAsString:
                                           (SkillResponseEntity state) =>
-                                              state.name,
+                                              state.name ?? '',
                                       decoratorProps: DropDownDecoratorProps(
                                           decoration: InputDecoration(
                                         enabled: false,
@@ -156,7 +156,7 @@ class PostJobOnePage extends HookWidget {
                                             );
                                       },
                                       filterFn: (item, filter) {
-                                        return item.name
+                                        return item.name!
                                             .toLowerCase()
                                             .contains(filter.toLowerCase());
                                       },
@@ -177,7 +177,7 @@ class PostJobOnePage extends HookWidget {
                                           spacing: 8.0,
                                           children: selectedItems
                                               .map((item) => Chip(
-                                                    label: Text(item.name),
+                                                    label: Text(item.name ?? ''),
                                                     onDeleted: () {
                                                       selectedItems
                                                           .remove(item);

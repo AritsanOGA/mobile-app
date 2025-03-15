@@ -231,7 +231,7 @@ class CandidatesProfilePage extends StatelessWidget {
                                                               width: 5,
                                                             ),
                                                             Text(
-                                                                '(${(state.candidateProfileEntity?.profiles.experience[index].startYear)} - ${state.candidateProfileEntity?.profiles.experience[index].endYear ?? ''})',
+                                                                '(${(state.candidateProfileEntity?.profiles.experience[index].startYear ?? '')} - ${state.candidateProfileEntity?.profiles.experience[index].endYear ?? ''})',
                                                                 style: CustomTextStyles
                                                                     .titleSmallPrimaryContainer),
                                                           ],
@@ -342,61 +342,82 @@ class CandidatesProfilePage extends StatelessWidget {
                                                           .skill ??
                                                       ''))),
                                       SizedBox(height: 20.v),
-                                      Text("Skill Endorsement",
-                                          style: CustomTextStyles
-                                              .titleSmallPrimaryContainer),
-                                      SizedBox(height: 10.v),
-                                      ...List.generate(
-                                          state.candidateProfileEntity
-                                                  ?.employerRating.length ??
-                                              0, (index) {
-                                        return Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                                state
-                                                        .candidateProfileEntity
-                                                        ?.employerRating[index]
-                                                        .skills ??
-                                                    '',
-                                                style: CustomTextStyles
-                                                    .bodyMediumPrimaryContainer),
-                                            SizedBox(height: 5.v),
-                                            GestureDetector(
-                                              onTap: () {
-                                                print(
-                                                    'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
-                                              },
-                                              child: LinearProgressIndicator(
-                                                value: ((state
+                                      state
+                                                  .candidateProfileEntity
+                                                  ?.employerRating[0]
+                                                  .employerRating
+                                                  .length ==
+                                              0
+                                          ? SizedBox()
+                                          : Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("Skill Endorsement",
+                                                    style: CustomTextStyles
+                                                        .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                ...List.generate(
+                                                    state
                                                             .candidateProfileEntity
-                                                            ?.employerRating[
-                                                                index]
-                                                            .employerRating[0]
-                                                            .average ??
-                                                        0) /
-                                                    100),
-                                                backgroundColor:
-                                                    Colors.grey[300],
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(Colors.blue),
-                                              ),
+                                                            ?.employerRating
+                                                            .length ??
+                                                        0, (index) {
+                                                  return Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                          state
+                                                                  .candidateProfileEntity
+                                                                  ?.employerRating[
+                                                                      index]
+                                                                  .skills ??
+                                                              '',
+                                                          style: CustomTextStyles
+                                                              .bodyMediumPrimaryContainer),
+                                                      SizedBox(height: 5.v),
+                                                      GestureDetector(
+                                                        onTap: () {
+                                                          print(
+                                                              'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
+                                                        },
+                                                        child:
+                                                            LinearProgressIndicator(
+                                                          value: ((state
+                                                                      .candidateProfileEntity
+                                                                      ?.employerRating[
+                                                                          index]
+                                                                      .employerRating[
+                                                                          0]
+                                                                      .average ??
+                                                                  0) /
+                                                              100),
+                                                          backgroundColor:
+                                                              Colors.grey[300],
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                  Colors.blue),
+                                                        ),
+                                                      ),
+                                                      // Container(
+                                                      //     height: 14.v,
+                                                      //     width: 380.h,
+                                                      //     decoration: BoxDecoration(
+                                                      //         color: appTheme.gray700
+                                                      //             .withOpacity(0.18),
+                                                      //         borderRadius:
+                                                      //             BorderRadius.circular(
+                                                      //                 2.h))),
+                                                      SizedBox(height: 7.v),
+                                                    ],
+                                                  );
+                                                }),
+                                              ],
                                             ),
-                                            // Container(
-                                            //     height: 14.v,
-                                            //     width: 380.h,
-                                            //     decoration: BoxDecoration(
-                                            //         color: appTheme.gray700
-                                            //             .withOpacity(0.18),
-                                            //         borderRadius:
-                                            //             BorderRadius.circular(
-                                            //                 2.h))),
-                                            SizedBox(height: 7.v),
-                                          ],
-                                        );
-                                      }),
+
                                       state
                                                   .candidateProfileEntity
                                                   ?.profiles

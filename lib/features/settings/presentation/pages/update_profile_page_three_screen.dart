@@ -129,7 +129,7 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                             state.skill,
                                         itemAsString:
                                             (SkillResponseEntity state) =>
-                                                state.name,
+                                                state.name ?? '',
                                         decoratorProps:
                                             const DropDownDecoratorProps(
                                                 decoration: InputDecoration(
@@ -144,7 +144,7 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                               );
                                         },
                                         filterFn: (item, filter) {
-                                          return item.name
+                                          return item.name!
                                               .toLowerCase()
                                               .contains(filter.toLowerCase());
                                         },
@@ -165,7 +165,7 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                             spacing: 8.0,
                                             children: selectedItems
                                                 .map((item) => Chip(
-                                                      label: Text(item.name),
+                                                      label: Text(item.name ?? ''),
                                                       onDeleted: () {
                                                         selectedItems
                                                             .remove(item);

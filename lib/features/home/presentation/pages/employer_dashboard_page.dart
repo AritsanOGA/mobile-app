@@ -170,10 +170,7 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                   }
 
                   return Expanded(
-                    //   height: 200.h,
-                    // width: 400.v,
                     child: ListView.builder(
-                      // scrollDirection: Axis.horizontal,
                       itemCount: state.employerJobList.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(

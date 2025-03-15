@@ -168,16 +168,16 @@ class EmployerProfilePageScreen extends HookWidget {
                                 isBorderNone: true,
                               ),
                               SizedBox(height: 25.v),
-                              CustomTextFormField(
-                                title: 'Street Address',
-                                titleStyle:
-                                    CustomTextStyles.titleMediumMedium18,
-                                hintText: 'Enter address',
-                                controller: addressEditTextController,
-                                validator: FormValidation.stringValidation,
-                                isBorderNone: true,
-                              ),
-                              SizedBox(height: 25.v),
+                              // CustomTextFormField(
+                              //   title: 'Street Address',
+                              //   titleStyle:
+                              //       CustomTextStyles.titleMediumMedium18,
+                              //   hintText: 'Enter address',
+                              //   controller: addressEditTextController,
+                              //   validator: FormValidation.stringValidation,
+                              //   isBorderNone: true,
+                              // ),
+                              // SizedBox(height: 25.v),
                               BlocBuilder<AuthBloc, AuthState>(
                                 builder: (context, state) {
                                   return CustomDropDown<StateResponseEntity>(

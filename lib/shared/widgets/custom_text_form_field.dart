@@ -1,7 +1,6 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatefulWidget {
@@ -92,34 +91,34 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  final NumberFormat _formatter = NumberFormat("#,###");
+  // final NumberFormat _formatter = NumberFormat("#,###");
 
-  @override
-  void initState() {
-    super.initState();
-    widget.controller?.addListener(_formatInput);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   widget.controller?.addListener(_formatInput);
+  // }
 
-  void _formatInput() {
-    String text = widget.controller!.text;
+  // void _formatInput() {
+  //   String text = widget.controller!.text;
 
-    if (text.isEmpty || !RegExp(r'^\d+$').hasMatch(text.replaceAll(',', '')))
-      return;
+  //   if (text.isEmpty || !RegExp(r'^\d+$').hasMatch(text.replaceAll(',', '')))
+  //     return;
 
-    double value = double.tryParse(text.replaceAll(',', '')) ?? 0;
-    String formattedText = _formatter.format(value);
+  //   double value = double.tryParse(text.replaceAll(',', '')) ?? 0;
+  //   String formattedText = _formatter.format(value);
 
-    widget.controller!.value = TextEditingValue(
-      text: formattedText,
-      selection: TextSelection.collapsed(offset: formattedText.length),
-    );
-  }
+  //   widget.controller!.value = TextEditingValue(
+  //     text: formattedText,
+  //     selection: TextSelection.collapsed(offset: formattedText.length),
+  //   );
+  // }
 
-  @override
-  void dispose() {
-    widget.controller!.removeListener(_formatInput);
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   widget.controller!.removeListener(_formatInput);
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

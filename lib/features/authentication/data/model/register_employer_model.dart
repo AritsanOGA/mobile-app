@@ -32,23 +32,31 @@ class RegisterEmployerModel extends RegisterEmployerEntity {
           gender: entity.gender,
           phoneNumber: entity.phoneNumber);
 
-  Future<FormData> toJson() async => FormData.fromMap({
-        'logo': await MultipartFile.fromFile(
-          "${companyLogo?.path}",
-          filename: "${companyLogo?.path.split('/').last}",
-        ),
-        'email': email,
-        'password': password,
-        'confirm_password': password,
-        'country': country,
-        'fullname': fullName,
-        'company_name': companyName,
-        'state': state,
-        'city': city,
-        'gender': gender,
-        'phone': phoneNumber,
-        'title': officeTitle,
-      });
+  Future<FormData> toJson() async {
+    final Map<String, dynamic> formDataMap = {
+      'email': email,
+      'password': password,
+      'confirm_password': password,
+      'country': country,
+      'fullname': fullName,
+      'company_name': companyName,
+      'state': state,
+      'city': city,
+      'gender': gender,
+      'phone': phoneNumber,
+      'title': officeTitle,
+    };
+
+    if (companyLogo?.path != null) {
+      formDataMap['logo'] = await MultipartFile.fromFile(
+        "${companyLogo?.path}",
+        filename: "${companyLogo?.path.split('/').last}",
+      );
+    }
+
+    return FormData.fromMap(formDataMap);
+  }
+
   @override
   String toString() {
     // TODO: implement toString

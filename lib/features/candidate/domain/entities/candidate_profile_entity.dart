@@ -261,7 +261,7 @@ class CustomerRatingEntity extends Equatable {
 }
 
 class SkillAssessmentEntity extends Equatable {
-  final double? average;
+  final num? average;
   final int? total;
   final int? employerId;
   final int? noOfEmployer;

@@ -2,7 +2,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/skill_respon
 
 class SkillResponseModel extends SkillResponseEntity {
   SkillResponseModel(
-      {required super.id, required super.name, required super.categoryId});
+      { super.id,  super.name,  super.categoryId});
 
   factory SkillResponseModel.fromJson(Map<String, dynamic> json) =>
       SkillResponseModel(

@@ -59,6 +59,9 @@ Future<void> searchDialog(
                             );
 
                         context.read<AuthBloc>().add(
+                              AuthEvent.getSkills(null.toString()),
+                            );
+                        context.read<AuthBloc>().add(
                               AuthEvent.getSkills(value.id.toString()),
                             );
                       },
@@ -75,26 +78,29 @@ Future<void> searchDialog(
                                   category.id == (state.category?.id ?? 1),
                               orElse: () => state.skill.first)
                           : SkillResponseEntity(id: 1, name: '', categoryId: 0),
-                      itemLabel: (category) => category.name,
+                      itemLabel: (category) => category.name ?? '',
                       onChanged: (value) {
                         context.read<AuthBloc>().add(
                               AuthEvent.updateSkill(value!),
                             );
                       },
                     ),
-
-                    // CustomDropDown<SkillResponseEntity>(
-                    //   title: 'Select Job Skill',
-                    //   items: state.skill.isNotEmpty ? state.skill : [],
-                    //   selectedItem: state.singleSkill!, // No default value
-                    //   itemLabel: (skill) => skill.name,
-                    //   onChanged: (value) {
-                    //     context.read<AuthBloc>().add(
-                    //           AuthEvent.updateSkill(value!),
-                    //         );
-                    //   },
-                    // ),
-
+//                     CustomDropDown<SkillResponseEntity>(
+//   title: 'Select Job Skill',
+//   items: state.skill,
+//   selectedItem: state.skill.isNotEmpty
+//       ? state.skill.firstWhere(
+//           (category) =>
+//               category.id == (state.category?.id ?? 1),
+//           orElse: () => null) // ✅ Now returns `null` instead of auto-selecting first skill
+//       : null, // ✅ Ensures it's empty if no skills are available
+//   itemLabel: (category) => category.name,
+//   onChanged: (value) {
+//     context.read<AuthBloc>().add(
+//           AuthEvent.updateSkill(value),
+//         );
+//   },
+// ),
                     SizedBox(
                       height: 20.h,
                     ),

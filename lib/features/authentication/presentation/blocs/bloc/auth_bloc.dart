@@ -87,6 +87,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateEmploymentHistory>(_onUpdateEmploymentHistory);
     on<_UpdateSelectedEducationQualification>(
         _onUpdateSelectedEducationQualification);
+    on<_UpdateSelectedDate>(_onUpdateSelectedDate);
+  
     on<_UpdateSelectedGender>(_onUpdateSelectedGender);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);
@@ -316,6 +318,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final image = await _filePickerService.pickImage();
     if (image == null) return;
     emit(state.copyWith(file: File(image)));
+    if (image.endsWith('.png') || image.endsWith('.jpg')) {
+      emit(state.copyWith(picture: File(image)));
+
+      print('Selected file: ${image}');
+    } else {
+      print('extension $image');
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('inavlid tyoe');
+    }
+  }
+
+  FutureOr<void> _onUpdateSelectedDate(
+      _UpdateSelectedDate event, Emitter<AuthState> emit) {
+    emit(state.copyWith(dateOFBirths: event.value));
   }
 
   FutureOr<void> _onSelectPicture(
@@ -324,7 +340,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     if (image == null) return;
     if (image.endsWith('.png') || image.endsWith('.jpg')) {
       emit(state.copyWith(picture: File(image)));
-
       print('Selected file: ${image}');
     } else {
       print('extension $image');
