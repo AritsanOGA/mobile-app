@@ -17,7 +17,6 @@ class EmployerLoginPageScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // bool obscure = true;
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
@@ -28,9 +27,8 @@ class EmployerLoginPageScreen extends HookWidget {
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state.employerLoginState == EmployerLoginState.success) {
-              print('suceessnnn');
-              Navigator.pushReplacementNamed(
-                  context, AppRoutes.employerNavBarScreen);
+              Navigator.pushNamedAndRemoveUntil(
+                  context, AppRoutes.employerNavBarScreen, (router) => false);
             } else if (state.employerLoginState == EmployerLoginState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }

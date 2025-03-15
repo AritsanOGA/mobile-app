@@ -88,7 +88,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_UpdateSelectedEducationQualification>(
         _onUpdateSelectedEducationQualification);
     on<_UpdateSelectedDate>(_onUpdateSelectedDate);
-  
+
     on<_UpdateSelectedGender>(_onUpdateSelectedGender);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
     on<_UpdateSelectedCompanyLogo>(_onUpdateSelectedCompanyLogo);

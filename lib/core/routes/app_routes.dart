@@ -59,7 +59,7 @@ import '../../presentation/welcome_page_screen/welcome_page_screen.dart';
 
 class AppRoutes {
   static final navigatorKey = GlobalKey<NavigatorState>();
-  static const String splashScreen = '/splash_page_screen';
+  static const String splashScreen = '/';
   static const String welcomePageScreen = '/welcome_page_screen';
   static const String employerNavBarScreen = '/employer_navbar_screen';
   static const String jobSeekerNavBarScreen = '/job_seeker_navbar_screen';
@@ -217,6 +217,7 @@ class AppRoutes {
   static const String jsNotificationPage = '/js_notification_page';
   static const String notificationJobDetailsPage =
       '/notification_job_detail_page';
+  static const String employerDashboard = '/employer-dashboard';
   static Map<String, WidgetBuilder> routes = {
     // welcomePageScreen: (context) => WelcomePageScreen(),
     // signupOptionsPageScreen: (context) => SignupOptionsPageScreen(),
@@ -277,6 +278,10 @@ class AppRoutes {
       case splashScreen:
         return AppPageRouteBuilder(
           navigateTo: SplashPage(),
+        );
+      case employerDashboard:
+        return AppPageRouteBuilder(
+          navigateTo: EmployerDashboardPage(),
         );
       case welcomePageScreen:
         return AppPageRouteBuilder(

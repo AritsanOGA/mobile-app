@@ -23,7 +23,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
     animationController.repeat();
-    context.read<AuthBloc>().add(const AuthEvent.getUserData());
+    //  context.read<AuthBloc>().add(const AuthEvent.getUserData());
 
     super.initState();
   }
@@ -47,11 +47,14 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       builder: (context, _) {
         Future.delayed(const Duration(seconds: 3), () {
           if (UserService().authData == null) {
-            Navigator.pushNamed(context, AppRoutes.welcomePageScreen);
+            Navigator.pushNamedAndRemoveUntil(
+                context, AppRoutes.welcomePageScreen, (route) => false);
           } else if (UserService().authData!.user.role == 'Employer') {
-            Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+            Navigator.pushNamedAndRemoveUntil(
+                context, AppRoutes.employerNavBarScreen, (route) => false);
           } else {
-            Navigator.pushNamed(context, AppRoutes.jobSeekerNavBarScreen);
+            Navigator.pushNamedAndRemoveUntil(
+                context, AppRoutes.jobSeekerNavBarScreen, (route) => false);
           }
         });
         return Scaffold(
@@ -61,13 +64,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
               SizedBox(
                 height: 50.h,
               ),
-              // Center(
-              //   child: Image.asset(
-              //     AppAssetPath.logo,
-              //     width: AppSpacing.screenWidth(context) * .6,
-              //     fit: BoxFit.cover,
-              //   ),
-              // ),
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

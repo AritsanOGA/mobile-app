@@ -79,7 +79,7 @@ class ApiServiceImpl implements ApiService {
           print("ERROR [${e.response?.statusCode}]: ${e.requestOptions.uri}");
           print("Message: ${e.message}");
           print("Data: ${e.response?.data}");
-          handler.next(e); // Continue error handling
+          handler.next(e);
         },
         onRequest: (options, handler) {
           print("REQUEST: ${options.method} ${options.uri}");

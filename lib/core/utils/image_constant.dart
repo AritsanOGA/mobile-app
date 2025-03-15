@@ -4,8 +4,8 @@ class ImageConstant {
   static String svgPath = 'assets/svgs';
 
   // Welcome Page images
-  static String imgRectangle1 = '$imagePath/img_rectangle_1.png';
-
+  // static String imgRectangle1 = '$imagePath/img_rectangle_1.png';
+  static String imgRectangle1 = '$imagePath/splash1.jpeg';
   static String imgBxsHardHat = '$imagePath/img_bxs_hard_hat.svg';
 
   // Signu

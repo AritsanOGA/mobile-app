@@ -13,22 +13,27 @@ class WelcomePageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
-          height: 879.v,
-          width: double.maxFinite,
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              CustomImageView(
-                imagePath: ImageConstant.imgRectangle1,
-                height: 568.v,
-                width: 430.h,
-                alignment: Alignment.topCenter,
-              ),
-              _buildEmployerWelcome(context),
-            ],
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: SafeArea(
+        child: Scaffold(
+          body: SizedBox(
+            height: 879.v,
+            width: double.maxFinite,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                CustomImageView(
+                  imagePath: ImageConstant.imgRectangle1,
+                  height: 568.v,
+                  width: 430.h,
+                  alignment: Alignment.topCenter,
+                ),
+                _buildEmployerWelcome(context),
+              ],
+            ),
           ),
         ),
       ),
