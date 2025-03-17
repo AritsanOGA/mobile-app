@@ -1,5 +1,4 @@
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 
 /// A collection of pre-defined text styles for customizing text appearance,

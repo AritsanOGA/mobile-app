@@ -177,7 +177,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                                   0
                                               ? ''
                                               : state.candidateProfileEntity?.profiles
-                                                      ?.education[0].title ??
+                                                      .education[0].title ??
                                                   '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
@@ -188,11 +188,11 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                       SizedBox(height: 8.v),
                                       Text(
                                           state.candidateProfileEntity?.profiles
-                                                      ?.experience.length ==
+                                                      .experience.length ==
                                                   0
                                               ? ''
                                               : state.candidateProfileEntity?.profiles
-                                                      ?.experience[0].title ??
+                                                      .experience[0].title ??
                                                   '',
                                           style: CustomTextStyles
                                               .bodyMediumPrimary14),
@@ -207,13 +207,13 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           children: List<Widget>.generate(
                                               state
                                                       .candidateProfileEntity?.profiles
-                                                      ?.artisanAssignedSkills
+                                                      .artisanAssignedSkills
                                                       .length ??
                                                   0,
                                               (index) => WaiteringItemWidget(
                                                   skill: state
                                                           .candidateProfileEntity?.profiles
-                                                          ?.artisanAssignedSkills[
+                                                          .artisanAssignedSkills[
                                                               index]
                                                           .skill ??
                                                       ''))),
@@ -225,7 +225,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                       ...List.generate(
                                           state
                                                   .candidateProfileEntity?.profiles
-                                                  ?.artisanAssignedSkills
+                                                  .artisanAssignedSkills
                                                   .length ??
                                               0, (index) {
                                         return Column(
@@ -235,7 +235,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                             Text(
                                                 state
                                                         .candidateProfileEntity?.profiles
-                                                        ?.artisanAssignedSkills[
+                                                        .artisanAssignedSkills[
                                                             index]
                                                         .skill ??
                                                     '',

@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/presentation/login_options_page_screen/login_options_page_screen.dart';
 import 'package:artisan_oga/presentation/signup_options_page_screen/signup_options_page_screen.dart';
@@ -19,6 +20,7 @@ class WelcomePageScreen extends StatelessWidget {
       },
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: AppColors.kwhite,
           body: SizedBox(
             height: 879.v,
             width: double.maxFinite,

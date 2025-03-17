@@ -44,8 +44,10 @@ class ThemeHelper {
     var colorScheme =
         _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
     return ThemeData(
+      
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
+      
       textTheme: TextThemes.textTheme(colorScheme),
       scaffoldBackgroundColor: appTheme.gray50,
       elevatedButtonTheme: ElevatedButtonThemeData(

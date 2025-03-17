@@ -1,4 +1,3 @@
-import 'package:artisan_oga/features/payment/domain/entities/all_invoice_entity.dart';
 import 'package:artisan_oga/features/payment/domain/entities/no_of_candidate_entity.dart';
 
 class NoOfCandidateModel extends NoOfCandidateEntity {

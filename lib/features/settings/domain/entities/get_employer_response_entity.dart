@@ -12,6 +12,7 @@ class GetEmployerResponseEntity extends Equatable {
   final String? role;
   final dynamic businessName;
   final dynamic websiteAddress;
+  final dynamic image;
   final String? gender;
   final String? identity;
 
@@ -27,6 +28,7 @@ class GetEmployerResponseEntity extends Equatable {
     this.role,
     this.businessName,
     this.websiteAddress,
+    this.image,
     this.gender,
     this.identity,
   });
@@ -44,6 +46,7 @@ class GetEmployerResponseEntity extends Equatable {
         role,
         businessName,
         websiteAddress,
+        image,
         gender,
         identity,
       ];

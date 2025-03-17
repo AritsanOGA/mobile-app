@@ -14,6 +14,7 @@ class GetEmployerResponseModel extends GetEmployerResponseEntity {
       super.businessName,
       super.websiteAddress,
       super.gender,
+      super.image,
       super.identity});
 
   factory GetEmployerResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -29,6 +30,7 @@ class GetEmployerResponseModel extends GetEmployerResponseEntity {
           role: json["role"] ?? '',
           businessName: json["business_name"] ?? '',
           websiteAddress: json["website_address"] ?? '',
+          image: json["image"],
           gender: json["gender"] ?? '',
           identity: json["identity"] ?? '');
 }

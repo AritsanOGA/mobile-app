@@ -52,30 +52,61 @@ class EmployerSettingsPage extends HookWidget {
                                     //       width: 57.adaptSize,
                                     //       radius: BorderRadius.circular(28.h)),
                                     // ),
-                                    CachedNetworkImage(
-                                      imageUrl:
-                                          'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
-                                      fit: BoxFit.cover,
-                                      progressIndicatorBuilder:
-                                          (context, url, downloadProgress) =>
-                                              const Center(),
-                                      imageBuilder: (context, imageProvider) =>
-                                          Container(
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          // borderRadius: BorderRadius.circular(10),
-                                          image: DecorationImage(
-                                            image:
-                                                imageProvider, // Use the provided imageProvider
+
+                                    // CircleAvatar(
+                                    //   radius: 30, // Adjust size as needed
+                                    //   backgroundImage: state
+                                    //               .getEmployerResponseEntity
+                                    //               ?.image !=
+                                    //           null
+                                    //       ? NetworkImage(
+                                    //               //'http://54.159.228.215:8050/storage/logos/image_1742167507.jpg'
+                                    //               'http://${state.getEmployerResponseEntity?.image ?? ''}')
+                                    //           as ImageProvider
+                                    //       : AssetImage(
+                                    //           'assets/images/default_profile.png'),
+                                    // ),
+                                    state.getEmployerResponseEntity?.image !=
+                                            null
+                                        ? CachedNetworkImage(
+                                            imageUrl:
+                                                'http://${state.getEmployerResponseEntity?.image ?? ''}',
                                             fit: BoxFit.cover,
+                                            progressIndicatorBuilder: (context,
+                                                    url, downloadProgress) =>
+                                                const Center(),
+                                            imageBuilder:
+                                                (context, imageProvider) =>
+                                                    Container(
+                                              width: 50,
+                                              height: 50,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                // borderRadius: BorderRadius.circular(10),
+                                                image: DecorationImage(
+                                                  image:
+                                                      imageProvider, // Use the provided imageProvider
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    const Icon(Icons.error),
+                                          )
+                                        : Container(
+                                            padding: EdgeInsets.all(5),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    width: 2,
+                                                    color: AppColors.kblack)),
+                                            child: Icon(
+                                              color: Colors.black,
+                                              Icons.person,
+                                              size: 50,
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          const Icon(Icons.error),
-                                    ),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 15.h, top: 5.v, bottom: 5.v),
