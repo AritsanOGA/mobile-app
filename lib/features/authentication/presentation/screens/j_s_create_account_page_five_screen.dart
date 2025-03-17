@@ -160,7 +160,8 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                               spacing: 8.0,
                                               children: selectedItems
                                                   .map((item) => Chip(
-                                                        label: Text(item.name  ?? ''),
+                                                        label: Text(
+                                                            item.name ?? ''),
                                                         onDeleted: () {
                                                           selectedItems
                                                               .remove(item);

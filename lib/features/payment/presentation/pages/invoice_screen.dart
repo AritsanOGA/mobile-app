@@ -45,9 +45,9 @@ class InvoiceScreen extends HookWidget {
                   bloc: context.read<PaymentBloc>()
                     ..add(PaymentEvent.getInvoice()),
                   builder: (context, state) {
-                    // if (state.getInvoiceState == GetInvoiceState.loading) {
-                    //   return Center(child: CircularProgressIndicator());
-                    // }
+                    if (state.getInvoiceState == GetInvoiceState.loading) {
+                      return Center(child: CircularProgressIndicator());
+                    }
 
                     if (state.getInvoiceState == GetJobSeekerJobState.failure) {
                       return Center(child: Text('Error: '));
@@ -195,7 +195,7 @@ class InvoiceScreen extends HookWidget {
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
                                       Text(
-                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.amountWithVat ?? ''))}',
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.amountWithVat ?? '') ?? 0.0)}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -215,7 +215,7 @@ class InvoiceScreen extends HookWidget {
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
                                       Text(
-                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.balWithVat ?? ''))}',
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.balWithVat ?? '0') ?? 0.0)}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -235,7 +235,7 @@ class InvoiceScreen extends HookWidget {
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
                                       Text(
-                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.vat ?? ''))}',
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.vat ?? '0') ?? 0.0)}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -260,7 +260,7 @@ class InvoiceScreen extends HookWidget {
                                                     fontWeight:
                                                         FontWeight.w600)),
                                         Text(
-                                            '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? ''))}',
+                                            '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? '0') ?? 0.0)}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight:
@@ -307,7 +307,7 @@ class InvoiceScreen extends HookWidget {
                               TextSpan(text: " "),
                               TextSpan(
                                   text:
-                                      '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? ''))}',
+                                      '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? '0') ?? 0.0)}',
                                   style: theme.textTheme.bodyMedium?.copyWith(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15))

@@ -13,7 +13,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'j_s_create_account_page_five_screen.dart';
 
-// ignore_for_file: must_be_immutable
 class JSCreateAccountPageFourScreen extends HookWidget {
   final String email;
   JSCreateAccountPageFourScreen({required this.email, Key? key})

@@ -121,7 +121,8 @@ class PaymentHistoryScreen extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text('N ${state.payments[index].amount}',
+                                  Text(
+                                      'N ${NumberFormat("#,##0").format(double.tryParse(state.payments[index].amount))}',
                                       style: theme.textTheme.bodyMedium
                                           ?.copyWith(
                                               fontWeight: FontWeight.w600)),

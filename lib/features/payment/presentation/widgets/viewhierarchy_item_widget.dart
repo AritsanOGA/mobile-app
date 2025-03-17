@@ -197,6 +197,9 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                               'candidate': candidate
                             },
                           );
+
+                          print(
+                              'creat ${widget.identity} ${widget.planName} ${widget.planPrices} $candidate');
                         },
                         child: Container(
                           height: 40.h,

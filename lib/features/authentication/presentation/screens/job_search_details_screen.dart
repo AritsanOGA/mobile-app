@@ -36,7 +36,7 @@ class JobSearchDetailsScreen extends StatelessWidget {
           }
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -124,7 +124,8 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.qualification ?? '',
+                            state.searchJobDetail?.jobDetails.qualification ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -174,7 +175,9 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
+                            state.searchJobDetail?.jobDetails
+                                    .applicationDeadline ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -244,9 +247,12 @@ class JobSearchDetailsScreen extends StatelessWidget {
                   SizedBox(
                     height: 7.h,
                   ),
-                  Text(
-                    state.searchJobDetail?.jobSkills ?? '',
-                  ),
+                  ...List.generate(state.searchJobDetail?.jobSkills.length ?? 0,
+                      (index) {
+                    return Text(
+                      state.searchJobDetail?.jobSkills[index].skill ?? '',
+                    );
+                  }),
                   SizedBox(
                     height: 30.h,
                   ),

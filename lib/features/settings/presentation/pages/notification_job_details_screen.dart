@@ -243,9 +243,12 @@ class NotificationJobDetailsScreen extends StatelessWidget {
                   SizedBox(
                     height: 7.h,
                   ),
-                  Text(
-                    state.searchJobDetail?.jobSkills ?? '',
-                  ),
+                  ...List.generate(state.searchJobDetail?.jobSkills.length ?? 0,
+                      (index) {
+                    return Text(
+                      state.searchJobDetail?.jobSkills[index].skill ?? '',
+                    );
+                  }),
                   SizedBox(
                     height: 30.h,
                   ),

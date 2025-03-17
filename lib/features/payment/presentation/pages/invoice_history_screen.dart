@@ -155,7 +155,8 @@ class InvoiceHistoryScreen extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('N ${state.invoices[index].amount}',
+                                    Text(
+                                        'N ${NumberFormat("#,##0").format(double.tryParse(state.invoices[index].amount))}',
                                         style: theme.textTheme.bodyMedium
                                             ?.copyWith(
                                                 fontWeight: FontWeight.w600)),

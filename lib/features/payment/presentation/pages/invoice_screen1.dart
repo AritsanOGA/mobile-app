@@ -35,9 +35,9 @@ class Invoice1Screen extends StatelessWidget {
                   bloc: context.read<PaymentBloc>()
                     ..add(PaymentEvent.getInvoiceWithIdentity(identity)),
                   builder: (context, state) {
-                    // if (state.getInvoiceState == GetInvoiceState.loading) {
-                    //   return Center(child: CircularProgressIndicator());
-                    // }
+                    if (state.getInvoiceState == GetInvoiceState.loading) {
+                      return Center(child: CircularProgressIndicator());
+                    }
 
                     if (state.getInvoiceState == GetJobSeekerJobState.failure) {
                       return Center(child: Text('Error: '));
@@ -226,7 +226,7 @@ class Invoice1Screen extends StatelessWidget {
                                                         fontWeight:
                                                             FontWeight.w600)),
                                             Text(
-                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.amountWithVat ?? ''))}',
+                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.amountWithVat ?? '0') ?? 0.0)}',
                                                 style: theme
                                                     .textTheme.bodyMedium
                                                     ?.copyWith(
@@ -249,7 +249,7 @@ class Invoice1Screen extends StatelessWidget {
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
                                       Text(
-                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.balWithVat ?? ''))}',
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.balWithVat ?? '0') ?? 0.0)}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -269,7 +269,7 @@ class Invoice1Screen extends StatelessWidget {
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w600)),
                                       Text(
-                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.vat ?? ''))}',
+                                          '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.vat ?? '0') ?? 0.0)}',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   fontWeight: FontWeight.w700)),
@@ -294,7 +294,7 @@ class Invoice1Screen extends StatelessWidget {
                                                     fontWeight:
                                                         FontWeight.w600)),
                                         Text(
-                                            '₦ ${NumberFormat("#,##0.00", "en_US").format((double.tryParse(state.getInvoice?.balWithVat.toString() ?? "0") ?? 0) + (double.tryParse(state.getInvoice?.vat.toString() ?? "0") ?? 0))}',
+                                            '₦ ${NumberFormat("#,##0.00", "en_US").format((double.tryParse(state.getInvoice?.balWithVat.toString() ?? "0") ?? 0.0) + (double.tryParse(state.getInvoice?.vat.toString() ?? "0") ?? 0.0))}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight:
@@ -343,7 +343,7 @@ class Invoice1Screen extends StatelessWidget {
                                         TextSpan(text: " "),
                                         TextSpan(
                                             text:
-                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? ''))}',
+                                                '₦ ${NumberFormat("#,##0.00", "en_US").format(double.tryParse(state.getInvoice?.totalWithVat ?? '0') ?? 0.0)}',
                                             style: theme.textTheme.bodyMedium
                                                 ?.copyWith(
                                                     fontWeight: FontWeight.bold,

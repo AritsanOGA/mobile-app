@@ -74,6 +74,7 @@ class RegisterEmployerEntity extends Equatable {
         gender,
         city,
         state,
+        
         country,
         phoneNumber
       ];

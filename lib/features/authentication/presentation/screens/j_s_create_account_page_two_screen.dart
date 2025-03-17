@@ -274,8 +274,8 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                           await showDatePicker(
                                         context: context,
                                         initialDate: DateTime.now(),
-                                        firstDate: DateTime(2024),
-                                        lastDate: DateTime(2100),
+                                        firstDate: DateTime(1950),
+                                        lastDate: DateTime(2030),
                                       );
                                       dateOfBirthController.text =
                                           "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";

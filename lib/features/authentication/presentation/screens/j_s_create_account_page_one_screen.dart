@@ -223,31 +223,38 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                       onPressed: (() {
                                         if (state.picture == null) {
                                           ToastUtils.showRedToast(
-                                              'Upload company logo');
-                                        }
-                                        if (formKey.currentState?.validate() ??
-                                            false) {
-                                          context.read<AuthBloc>().add(AuthEvent
-                                              .updateRegisterJobSeekerRequest(
-                                                  registerJobSeekerRequest.copyWith(
-                                                      fullName:
-                                                          fullNameController
-                                                              .text,
-                                                      email:
-                                                          emailController.text,
-                                                      confirmPassword:
-                                                          confirmPasswordController
-                                                              .text,
-                                                      gender: state.gender,
-                                                      passport: state.picture,
-                                                      password:
-                                                          passwordController
-                                                              .text)));
-                                          Navigator.pushNamed(
-                                              context,
-                                              AppRoutes
-                                                  .jSCreateAccountPageTwoScreen,
-                                              arguments: emailController.text);
+                                              'Upload picture');
+                                        } else {
+                                          if (formKey.currentState
+                                                  ?.validate() ??
+                                              false) {
+                                            context.read<AuthBloc>().add(AuthEvent
+                                                .updateRegisterJobSeekerRequest(
+                                                    registerJobSeekerRequest
+                                                        .copyWith(
+                                                            fullName:
+                                                                fullNameController
+                                                                    .text,
+                                                            email:
+                                                                emailController
+                                                                    .text,
+                                                            confirmPassword:
+                                                                confirmPasswordController
+                                                                    .text,
+                                                            gender:
+                                                                state.gender,
+                                                            passport:
+                                                                state.picture,
+                                                            password:
+                                                                passwordController
+                                                                    .text)));
+                                            Navigator.pushNamed(
+                                                context,
+                                                AppRoutes
+                                                    .jSCreateAccountPageTwoScreen,
+                                                arguments:
+                                                    emailController.text);
+                                          }
                                         }
                                       }),
                                       text: "Next",

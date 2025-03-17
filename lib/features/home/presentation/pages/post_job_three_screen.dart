@@ -62,7 +62,7 @@ class PostJobThreeScreen extends HookWidget {
                             compensationType == 'Salary'
                                 ? Column(
                                     children: [
-                                      CustomTextFormField(
+                                      CustomFormattedTextFormField(
                                         title: 'Proposed Minimum Salary',
                                         textInputType: TextInputType.number,
                                         titleStyle: CustomTextStyles
@@ -74,7 +74,7 @@ class PostJobThreeScreen extends HookWidget {
                                         controller: minSalaryController,
                                       ),
                                       SizedBox(height: 30.v),
-                                      CustomTextFormField(
+                                      CustomFormattedTextFormField(
                                         textInputType: TextInputType.number,
                                         title: 'Proposed Maximum Salary',
                                         titleStyle: CustomTextStyles

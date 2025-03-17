@@ -6,7 +6,7 @@ class SearchJobDetailEntity extends Equatable {
     required this.jobSkills,
   });
   final SearchJobDetailsResultEntity jobDetails;
-  final String jobSkills;
+  final List<ArtisanAssignedSkillEntity> jobSkills;
 
   @override
   List<Object> get props => [
@@ -29,7 +29,7 @@ class SearchJobDetailsResultEntity extends Equatable {
     required this.industry,
     required this.createdAt,
     required this.jobTitle,
-    required this.itSkills,
+   
   });
   final String hireType;
   final String applicationDeadline;
@@ -43,7 +43,7 @@ class SearchJobDetailsResultEntity extends Equatable {
   final String jobTitle;
   final String industry;
   final DateTime createdAt;
-  final String itSkills;
+
 
   @override
   List<Object> get props => [
@@ -59,6 +59,15 @@ class SearchJobDetailsResultEntity extends Equatable {
         industry,
         createdAt,
         jobTitle,
-        itSkills,
+
       ];
+}
+
+class ArtisanAssignedSkillEntity extends Equatable {
+  final String? skill;
+
+  const ArtisanAssignedSkillEntity({this.skill});
+
+  @override
+  List<Object?> get props => [skill];
 }

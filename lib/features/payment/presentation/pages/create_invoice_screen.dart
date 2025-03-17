@@ -38,8 +38,6 @@ class CreateInvoiceScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return SafeArea(
       child: Scaffold(

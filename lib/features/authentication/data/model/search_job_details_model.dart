@@ -3,25 +3,25 @@ import 'package:artisan_oga/features/authentication/domain/entities/search_job_d
 class SearchJobDetailModel extends SearchJobDetailEntity {
   const SearchJobDetailModel({
     required super.jobDetails,
-    required super.jobSkills,
+    required List<ArtisanAssignedSkillModel> super.jobSkills,
   });
 
   factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
+    final skillList = json['job_skills'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['job_skills'] as List,
+          )
+        : <Map<String, dynamic>>[];
     return SearchJobDetailModel(
       jobDetails: SearchJobDetailsResultModel.fromJson(json["result"]),
-      jobSkills: json["job_skills"],
+      jobSkills: skillList.isNotEmpty
+          ? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast()
+          : [],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {"result": jobDetails, "job_skills": jobSkills};
-  }
-
-  factory SearchJobDetailModel.fromEntity(SearchJobDetailEntity entity) {
-    return SearchJobDetailModel(
-      jobDetails: entity.jobDetails,
-      jobSkills: entity.jobSkills,
-    );
   }
 }
 
@@ -39,7 +39,6 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
     required super.jobTitle,
     required super.industry,
     required super.createdAt,
-    required super.itSkills,
   });
 
   factory SearchJobDetailsResultModel.fromJson(Map<String, dynamic> json) {
@@ -56,7 +55,6 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       jobTitle: json['job_title'] ?? '',
       industry: json['industry'] ?? '',
       createdAt: DateTime.parse(json['created_at']),
-      itSkills: json["it_skills"],
     );
   }
 
@@ -81,7 +79,6 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       SearchJobDetailsResultEntity entity) {
     return SearchJobDetailsResultModel(
       hireType: entity.hireType,
-      itSkills: entity.itSkills,
       applicationDeadline: entity.applicationDeadline,
       city: entity.city,
       basicSalary: entity.basicSalary,
@@ -95,4 +92,24 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       createdAt: entity.createdAt,
     );
   }
+}
+
+class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {
+  ArtisanAssignedSkillModel({
+    required super.skill,
+  });
+
+  factory ArtisanAssignedSkillModel.fromEntity(
+          ArtisanAssignedSkillEntity entity) =>
+      ArtisanAssignedSkillModel(
+        skill: entity.skill,
+      );
+  factory ArtisanAssignedSkillModel.fromJson(Map<String, dynamic> json) =>
+      ArtisanAssignedSkillModel(
+        skill: json["skills"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "skills": skill,
+      };
 }
