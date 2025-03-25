@@ -59,13 +59,6 @@ class SuccessfulJobPostedPage extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 34.v),
-                    SizedBox(
-                      width: 130.h,
-                      child: Divider(
-                        color:
-                            theme.colorScheme.primaryContainer.withOpacity(1),
-                      ),
-                    ),
                   ],
                 ),
               ),

@@ -1,4 +1,3 @@
-
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:dio/dio.dart';
 
@@ -27,10 +26,6 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
     required super.dateOFBirth,
     required super.skill,
   });
-
-
-
-
 
   factory UpdateJobSeekerModel.fromEntity(UpdateJobSeekerProfileEntity entity) {
     return UpdateJobSeekerModel(

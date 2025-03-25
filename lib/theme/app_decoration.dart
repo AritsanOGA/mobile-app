@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter/material.dart';
 
 class AppDecoration {
   // Brown decorations

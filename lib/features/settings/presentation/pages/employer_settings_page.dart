@@ -66,8 +66,7 @@ class EmployerSettingsPage extends HookWidget {
                                     //       : AssetImage(
                                     //           'assets/images/default_profile.png'),
                                     // ),
-                                    state.getEmployerResponseEntity?.image !=
-                                            null
+                                    state.getEmployerResponseEntity?.image != ''
                                         ? CachedNetworkImage(
                                             imageUrl:
                                                 'http://${state.getEmployerResponseEntity?.image ?? ''}',

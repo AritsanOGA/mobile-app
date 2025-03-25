@@ -37,11 +37,11 @@ class LoginOptionsPageScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 32.v),
-                CustomImageView(
-                  imagePath: ImageConstant.imgCba516f14b444,
-                  height: 79.v,
-                  width: 242.h,
-                ),
+                // CustomImageView(
+                //   imagePath: ImageConstant.imgCba516f14b444,
+                //   height: 79.v,
+                //   width: 242.h,
+                // ),
                 Spacer(),
                 CustomElevatedButton(
                   onPressed: (() {

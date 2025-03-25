@@ -20,154 +20,152 @@ class EmployerLoginPageScreen extends HookWidget {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.kwhite,
-        // resizeToAvoidBottomInset: false,
-        body: BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state) {
-            if (state.employerLoginState == EmployerLoginState.success) {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, AppRoutes.employerNavBarScreen, (router) => false);
-            } else if (state.employerLoginState == EmployerLoginState.failure) {
-              ToastUtils.showRedToast(state.errorMessage ?? '');
-            }
-          },
-          builder: (context, state) {
-            return Form(
-              key: formKey,
-              child: SizedBox(
-                width: double.maxFinite,
-                height: double.maxFinite,
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom,
+    return Scaffold(
+      backgroundColor: AppColors.kwhite,
+      // resizeToAvoidBottomInset: false,
+      body: BlocConsumer<AuthBloc, AuthState>(
+        listener: (context, state) {
+          if (state.employerLoginState == EmployerLoginState.success) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, AppRoutes.employerNavBarScreen, (router) => false);
+          } else if (state.employerLoginState == EmployerLoginState.failure) {
+            ToastUtils.showRedToast(state.errorMessage ?? '');
+          }
+        },
+        builder: (context, state) {
+          return Form(
+            key: formKey,
+            child: SizedBox(
+              width: double.maxFinite,
+              height: double.maxFinite,
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: Container(
+                  width: double.maxFinite,
+                  height: double.maxFinite,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 25.h,
+                    vertical: 12.v,
                   ),
-                  child: Container(
-                    width: double.maxFinite,
-                    height: double.maxFinite,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 25.h,
-                      vertical: 12.v,
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 59.v),
-                        Text(
-                          "Log in",
-                          style: theme.textTheme.headlineSmall,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 59.v),
+                      Text(
+                        "Log in",
+                        style: theme.textTheme.headlineSmall,
+                      ),
+                      SizedBox(height: 17.v),
+                      Text(
+                        "Login to your account as an employer",
+                        style: CustomTextStyles.bodyMediumGray700_2,
+                      ),
+                      SizedBox(height: 60.v),
+                      CustomTextFormField(
+                        title: 'Email',
+                        controller: emailController,
+                        hintText: "example@gmail.com",
+                        hintStyle: theme.textTheme.titleSmall!,
+                        textInputType: TextInputType.emailAddress,
+                        validator: FormValidation.emailValidation,
+                      ),
+                      SizedBox(height: 25.v),
+                      CustomTextFormField(
+                        title: 'Password',
+                        controller: passwordController,
+                        hintText: "*************",
+                        hintStyle: theme.textTheme.titleSmall!,
+                        textInputAction: TextInputAction.done,
+                        textInputType: TextInputType.visiblePassword,
+                        validator: FormValidation.passwordValidation,
+                        isPassword: true,
+                        isObscure: true,
+                        obscureText: true,
+                        suffixConstraints: BoxConstraints(
+                          maxHeight: 48.v,
                         ),
-                        SizedBox(height: 17.v),
-                        Text(
-                          "Login to your account as an employer",
-                          style: CustomTextStyles.bodyMediumGray700_2,
+                        contentPadding: EdgeInsets.only(
+                          left: 20.h,
+                          top: 15.v,
+                          bottom: 15.v,
                         ),
-                        SizedBox(height: 60.v),
-                        CustomTextFormField(
-                          title: 'Email',
-                          controller: emailController,
-                          hintText: "example@gmail.com",
-                          hintStyle: theme.textTheme.titleSmall!,
-                          textInputType: TextInputType.emailAddress,
-                          validator: FormValidation.emailValidation,
-                        ),
-                        SizedBox(height: 25.v),
-                        CustomTextFormField(
-                          title: 'Password',
-                          controller: passwordController,
-                          hintText: "*************",
-                          hintStyle: theme.textTheme.titleSmall!,
-                          textInputAction: TextInputAction.done,
-                          textInputType: TextInputType.visiblePassword,
-                          validator: FormValidation.passwordValidation,
-                          isPassword: true,
-                          isObscure: true,
-                          obscureText: true,
-                          suffixConstraints: BoxConstraints(
-                            maxHeight: 48.v,
-                          ),
-                          contentPadding: EdgeInsets.only(
-                            left: 20.h,
-                            top: 15.v,
-                            bottom: 15.v,
-                          ),
-                        ),
-                        SizedBox(height: 19.v),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, AppRoutes.forgotPasswordScreen);
-                          },
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              "Forgot Password?",
-                              style:
-                                  CustomTextStyles.titleSmallPrimary_1.copyWith(
-                                decoration: TextDecoration.underline,
-                              ),
+                      ),
+                      SizedBox(height: 19.v),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.forgotPasswordScreen);
+                        },
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "Forgot Password?",
+                            style:
+                                CustomTextStyles.titleSmallPrimary_1.copyWith(
+                              decoration: TextDecoration.underline,
                             ),
                           ),
                         ),
-                        SizedBox(height: 41.v),
-                        BlocBuilder<AuthBloc, AuthState>(
-                          builder: (context, state) {
-                            return CustomElevatedButton(
-                              isBusy: state.employerLoginState ==
-                                  EmployerLoginState.loading,
-                              onPressed: () {
-                                if (formKey.currentState?.validate() ?? false) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.loginUser(
-                                          LoginEntity(
-                                            email: emailController.text.trim(),
-                                            password:
-                                                passwordController.text.trim(),
-                                          ),
+                      ),
+                      SizedBox(height: 41.v),
+                      BlocBuilder<AuthBloc, AuthState>(
+                        builder: (context, state) {
+                          return CustomElevatedButton(
+                            isBusy: state.employerLoginState ==
+                                EmployerLoginState.loading,
+                            onPressed: () {
+                              if (formKey.currentState?.validate() ?? false) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.loginUser(
+                                        LoginEntity(
+                                          email: emailController.text.trim(),
+                                          password:
+                                              passwordController.text.trim(),
                                         ),
-                                      );
-                                }
-                              },
-                              text: "Log in",
-                            );
-                          },
-                        ),
-                        SizedBox(height: 27.v),
-                        GestureDetector(
-                            child: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "Don’t have an account?",
-                                    style: CustomTextStyles.titleSmallff666666,
-                                  ),
-                                  TextSpan(
-                                    text: " ",
-                                  ),
-                                  TextSpan(
-                                    text: "Sign Up",
-                                    style: CustomTextStyles.titleSmallfff7941e,
-                                  ),
-                                ],
-                              ),
-                              textAlign: TextAlign.left,
+                                      ),
+                                    );
+                              }
+                            },
+                            text: "Log in",
+                          );
+                        },
+                      ),
+                      SizedBox(height: 27.v),
+                      GestureDetector(
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "Don’t have an account?",
+                                  style: CustomTextStyles.titleSmallff666666,
+                                ),
+                                TextSpan(
+                                  text: " ",
+                                ),
+                                TextSpan(
+                                  text: "Sign Up",
+                                  style: CustomTextStyles.titleSmallfff7941e,
+                                ),
+                              ],
                             ),
-                            onTap: (() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        EmployerSignUpPageScreen()),
-                              );
-                            }))
-                      ],
-                    ),
+                            textAlign: TextAlign.left,
+                          ),
+                          onTap: (() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      EmployerSignUpPageScreen()),
+                            );
+                          }))
+                    ],
                   ),
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

@@ -18,24 +18,23 @@ class WelcomePageScreen extends StatelessWidget {
       onWillPop: () async {
         return false;
       },
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: AppColors.kwhite,
-          body: SizedBox(
-            height: 879.v,
-            width: double.maxFinite,
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                CustomImageView(
-                  imagePath: ImageConstant.imgRectangle1,
-                  height: 568.v,
-                  width: 430.h,
-                  alignment: Alignment.topCenter,
-                ),
-                _buildEmployerWelcome(context),
-              ],
-            ),
+      child: Scaffold(
+        extendBody: true,
+        backgroundColor: AppColors.kwhite,
+        body: SizedBox(
+          height: 879.v,
+          width: double.maxFinite,
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              CustomImageView(
+                imagePath: ImageConstant.imgRectangle1,
+                height: 568.v,
+                width: 430.h,
+                alignment: Alignment.topCenter,
+              ),
+              _buildEmployerWelcome(context),
+            ],
           ),
         ),
       ),
@@ -152,13 +151,6 @@ class WelcomePageScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 54.v),
-            SizedBox(
-              width: 130.h,
-              child: Divider(
-                color: theme.colorScheme.onPrimary,
-              ),
-            ),
-            SizedBox(height: 4.v),
           ],
         ),
       ),
