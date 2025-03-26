@@ -393,9 +393,7 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                                                             compensationType:
                                                                 phoneNoTextController
                                                                     .text,
-                                                            countryId:
-                                                                dateOfBirthController
-                                                                    .text,
+                                                            countryId: 0,
                                                             state: '')));
                                                 Navigator.pushNamed(
                                                   context,

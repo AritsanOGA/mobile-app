@@ -41,31 +41,6 @@ class EmployerSettingsPage extends HookWidget {
                                   padding:
                                       EdgeInsets.only(left: 3.h, right: 4.h),
                                   child: Row(children: [
-                                    // GestureDetector(
-                                    //   onTap: () {
-                                    //     print(
-                                    //         'helllo ${state.getEmployerResponseEntity}');
-                                    //   },
-                                    //   child: CustomImageView(
-                                    //       imagePath: ImageConstant.imgEllipse38,
-                                    //       height: 57.adaptSize,
-                                    //       width: 57.adaptSize,
-                                    //       radius: BorderRadius.circular(28.h)),
-                                    // ),
-
-                                    // CircleAvatar(
-                                    //   radius: 30, // Adjust size as needed
-                                    //   backgroundImage: state
-                                    //               .getEmployerResponseEntity
-                                    //               ?.image !=
-                                    //           null
-                                    //       ? NetworkImage(
-                                    //               //'http://54.159.228.215:8050/storage/logos/image_1742167507.jpg'
-                                    //               'http://${state.getEmployerResponseEntity?.image ?? ''}')
-                                    //           as ImageProvider
-                                    //       : AssetImage(
-                                    //           'assets/images/default_profile.png'),
-                                    // ),
                                     state.getEmployerResponseEntity?.image != ''
                                         ? CachedNetworkImage(
                                             imageUrl:

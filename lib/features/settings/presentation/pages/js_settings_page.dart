@@ -1,7 +1,8 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,12 @@ class JSSettingsPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     useEffect(() {
-      context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
+      context.read<CandidatesBloc>()
+        ..add(CandidatesEvent.getCandidateProfile(
+            UserService().authData?.user.identity ?? ''));
       return null;
     }, []);
-    return BlocBuilder<SettingBloc, SettingState>(
+    return BlocBuilder<CandidatesBloc, CandidatesState>(
       builder: (context, state) {
         return SafeArea(
             child: Scaffold(
@@ -52,30 +55,49 @@ class JSSettingsPage extends HookWidget {
                                     //       width: 57.adaptSize,
                                     //       radius: BorderRadius.circular(28.h)),
                                     // ),
-                                    CachedNetworkImage(
-                                      imageUrl:
-                                          'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
-                                      fit: BoxFit.cover,
-                                      progressIndicatorBuilder:
-                                          (context, url, downloadProgress) =>
-                                              const Center(),
-                                      imageBuilder: (context, imageProvider) =>
-                                          Container(
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          // borderRadius: BorderRadius.circular(10),
-                                          image: DecorationImage(
-                                            image:
-                                                imageProvider, // Use the provided imageProvider
+                                    state.candidateProfileEntity?.passport != ''
+                                        ? CachedNetworkImage(
+                                            imageUrl: state
+                                                    .candidateProfileEntity
+                                                    ?.passport ??
+                                                '',
                                             fit: BoxFit.cover,
+                                            progressIndicatorBuilder: (context,
+                                                    url, downloadProgress) =>
+                                                const Center(),
+                                            imageBuilder:
+                                                (context, imageProvider) =>
+                                                    Container(
+                                              width: 70,
+                                              height: 70,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                // borderRadius: BorderRadius.circular(10),
+                                                image: DecorationImage(
+                                                  image:
+                                                      imageProvider, // Use the provided imageProvider
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    const Icon(Icons.error),
+                                          )
+                                        : Container(
+                                            padding: EdgeInsets.all(5),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    width: 2,
+                                                    color: AppColors.kblack)),
+                                            child: Icon(
+                                              color: Colors.black,
+                                              Icons.person,
+                                              size: 50,
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                      errorWidget: (context, url, error) =>
-                                          const Icon(Icons.error),
-                                    ),
+
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 15.h, top: 5.v, bottom: 5.v),
@@ -84,15 +106,15 @@ class JSSettingsPage extends HookWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                  state.getJobSeekerResponseEntity
-                                                          ?.fullName ??
+                                                  state.candidateProfileEntity
+                                                          ?.profiles.fullName ??
                                                       '',
                                                   style: CustomTextStyles
                                                       .titleLargePrimary),
                                               SizedBox(height: 1.v),
                                               Text(
-                                                  state.getJobSeekerResponseEntity
-                                                          ?.role ??
+                                                  state.candidateProfileEntity
+                                                          ?.profiles.role ??
                                                       '',
                                                   style: theme
                                                       .textTheme.titleSmall)
@@ -130,8 +152,8 @@ class JSSettingsPage extends HookWidget {
                               SizedBox(height: 32.v),
                               GestureDetector(
                                 onTap: () {
-                                  // Navigator.pushNamed(context,
-                                  //     AppRoutes.updateProfilePageOneScreen);
+                                  Navigator.pushNamed(context,
+                                      AppRoutes.updateProfilePageOneScreen);
                                 },
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 4.h),

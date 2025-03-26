@@ -3,13 +3,15 @@ import 'package:dio/dio.dart';
 
 class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
   const UpdateJobSeekerModel({
+    required super.jobPreference,
+    required super.passport,
     required super.fullName,
     required super.state,
     required super.city,
     required super.resume,
     required super.email,
     required super.phoneNumber,
-    required super.jobType,
+
     required super.streetAddress,
     required super.yearsOfExperience,
     required super.guarantorPhoneNumber,
@@ -29,9 +31,11 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
 
   factory UpdateJobSeekerModel.fromEntity(UpdateJobSeekerProfileEntity entity) {
     return UpdateJobSeekerModel(
+        jobPreference: entity.jobPreference,
+        passport: entity.passport,
         fullName: entity.fullName,
         email: entity.email,
-        jobType: entity.jobType,
+      
         guarantorPhoneNumber: entity.guarantorPhoneNumber,
         guarantorName: entity.guarantorName,
         guarantorEmail: entity.guarantorEmail,
@@ -53,33 +57,43 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
         guarantorAddress: entity.guarantorAddress);
   }
 
-  Future<FormData> toJson() async => FormData.fromMap({
-        'email': email,
-        'country_id': countryId,
-        'full_name': fullName,
-        'state': state,
-        'city': city,
-        'resume': resume?.path != null
-            ? await MultipartFile.fromFile(
-                "${resume?.path}",
-                filename: "${resume?.path.split('/').last}",
-              )
-            : 'i am null',
-        'identity': identity,
-        'phone': phoneNumber,
-        'date_of_birth': dateOFBirth,
-        'compensation_type': compensationType,
-        'categories': category,
-        'guarantor_name': guarantorName,
-        'guarantor_email': guarantorEmail,
-        'guarantor_address': guarantorAddress,
-        'job_preference': jobType,
-        'years_of_experience': yearsOfExperience,
-        'street_address': streetAddress,
-        'about_me': aboutMe,
-        "min_amount": minAmount,
-        "max_amount": maxAmount,
-        'guarantor_phone': guarantorPhoneNumber,
-        "skills": skill
-      });
+  Future<FormData> toJson() async {
+    final Map<String, dynamic> formDataMap = {
+      'country_id': countryId,
+      'full_name': fullName,
+      'state': state,
+      'city': city,
+      'identity': identity,
+      'phone': phoneNumber,
+      'date_of_birth': dateOFBirth,
+      'compensation_type': compensationType,
+      'category': category,
+      'guarantor_name': guarantorName,
+      'guarantor_email': guarantorEmail,
+      'guarantor_address': guarantorAddress,
+      'job_preference': jobPreference,
+      'years_of_experience': yearsOfExperience,
+      'street_address': streetAddress,
+      'about_me': aboutMe,
+      "min_amount": minAmount,
+      "max_amount": maxAmount,
+      'guarantor_phone': guarantorPhoneNumber,
+      "skills": skill
+    };
+
+    if (passport?.path != null) {
+      formDataMap['profile_image'] = await MultipartFile.fromFile(
+        "${passport?.path}",
+        filename: "${passport?.path.split('/').last}",
+      );
+    }
+
+    if (resume?.path != null) {
+      formDataMap['resume'] = await MultipartFile.fromFile(
+        "${resume?.path}",
+        filename: "${resume?.path.split('/').last}",
+      );
+    }
+    return FormData.fromMap(formDataMap);
+  }
 }

@@ -32,7 +32,7 @@ class SearchScreenPage extends HookWidget {
         body: BlocBuilder<AuthBloc, AuthState>(
           bloc: context.read<AuthBloc>()
             ..add(AuthEvent.searchJobs(
-                SearchJobDataEntity(category: 1, location: '', skill: ''))),
+                SearchJobDataEntity(location: '', skill: ''))),
           builder: (context, state) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.h),
@@ -45,10 +45,10 @@ class SearchScreenPage extends HookWidget {
                     ontap: () {
                       searchDialog(context, locationController);
                     },
-                    title: 'Location',
+                    title: 'Search for jobs',
                     readOnly: true,
                     controller: locationController,
-                    hintText: "Enter location",
+                    hintText: "Search...",
                     hintStyle: theme.textTheme.titleSmall!,
                   ),
                   state.searchJobState == SearchJobState.loading

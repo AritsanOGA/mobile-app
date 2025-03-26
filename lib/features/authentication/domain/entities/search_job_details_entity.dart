@@ -17,6 +17,7 @@ class SearchJobDetailEntity extends Equatable {
 
 class SearchJobDetailsResultEntity extends Equatable {
   const SearchJobDetailsResultEntity({
+    required this.id,
     required this.hireType,
     required this.applicationDeadline,
     required this.city,
@@ -29,8 +30,8 @@ class SearchJobDetailsResultEntity extends Equatable {
     required this.industry,
     required this.createdAt,
     required this.jobTitle,
-   
   });
+  final int id;
   final String hireType;
   final String applicationDeadline;
   final String city;
@@ -44,9 +45,9 @@ class SearchJobDetailsResultEntity extends Equatable {
   final String industry;
   final DateTime createdAt;
 
-
   @override
   List<Object> get props => [
+        id,
         hireType,
         applicationDeadline,
         city,
@@ -59,7 +60,6 @@ class SearchJobDetailsResultEntity extends Equatable {
         industry,
         createdAt,
         jobTitle,
-
       ];
 }
 

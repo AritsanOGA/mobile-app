@@ -178,47 +178,55 @@ class _DashboardPageState extends State<DashboardPage> {
                     child: ListView.builder(
                       itemCount: state.jobSeekerJobList.length,
                       itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: SizedBox(
-                            width: 50,
-                            height: 50,
-                            child: CachedNetworkImage(
-                              imageUrl: 'https://picsum.photos/250?image=9',
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.searchDetailsScreen,
+                                arguments:
+                                    state.jobSeekerJobList[index].identity);
+                          },
+                          child: ListTile(
+                            leading: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: CachedNetworkImage(
+                                imageUrl: 'https://picsum.photos/250?image=9',
 
-                              //  state.jobSeekerJobList[index].profileImage,
-                              fit: BoxFit.cover,
+                                //  state.jobSeekerJobList[index].profileImage,
+                                fit: BoxFit.cover,
 
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) =>
-                                      const Center(),
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                // width: 50,
-                                // height: 50,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  // borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image:
-                                        imageProvider, // Use the provided imageProvider
-                                    fit: BoxFit.cover,
+                                progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        const Center(),
+                                imageBuilder: (context, imageProvider) =>
+                                    Container(
+                                  // width: 50,
+                                  // height: 50,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    // borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                      image:
+                                          imageProvider, // Use the provided imageProvider
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.error),
                               ),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
                             ),
+                            title: Text(
+                              state.jobSeekerJobList[index].jobTitle ?? '',
+                              style: CustomTextStyles.titleMediumMedium18,
+                            ),
+                            subtitle: Text(
+                              state.jobSeekerJobList[index].workType ?? '',
+                              style:
+                                  CustomTextStyles.labelLargePrimaryContainer13,
+                            ),
+                            trailing: Icon(Icons.more_vert),
                           ),
-                          title: Text(
-                            state.jobSeekerJobList[index].jobTitle ?? '',
-                            style: CustomTextStyles.titleMediumMedium18,
-                          ),
-                          subtitle: Text(
-                            state.jobSeekerJobList[index].workType ?? '',
-                            style:
-                                CustomTextStyles.labelLargePrimaryContainer13,
-                          ),
-                          trailing: Icon(Icons.more_vert),
                         );
                       },
                     ),

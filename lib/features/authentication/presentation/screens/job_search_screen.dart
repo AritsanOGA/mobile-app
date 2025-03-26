@@ -103,15 +103,14 @@ class JobSearchScreen extends HookWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-
                   CustomTextFormField(
                     ontap: () {
                       searchDialog(context, locationController);
                     },
-                    title: 'Location',
+                    title: 'Search for jobs',
                     readOnly: true,
                     controller: locationController,
-                    hintText: "Enter location",
+                    hintText: "Search...",
                     hintStyle: theme.textTheme.titleSmall!,
                   ),
 

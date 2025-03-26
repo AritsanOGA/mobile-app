@@ -228,7 +228,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                                         dateOFBirth:
                                                             dateOfBirthController
                                                                 .text,
-                                                        jobType: '')));
+                                                        jobPreference: '')));
                                             Navigator.pushNamed(
                                               context,
                                               AppRoutes

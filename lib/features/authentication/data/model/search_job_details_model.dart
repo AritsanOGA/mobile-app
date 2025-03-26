@@ -27,6 +27,7 @@ class SearchJobDetailModel extends SearchJobDetailEntity {
 
 class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
   const SearchJobDetailsResultModel({
+    required super.id,
     required super.hireType,
     required super.applicationDeadline,
     required super.city,
@@ -43,6 +44,7 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
 
   factory SearchJobDetailsResultModel.fromJson(Map<String, dynamic> json) {
     return SearchJobDetailsResultModel(
+      id: json['id'] ,
       hireType: json['hire_type'] ?? '',
       applicationDeadline: json['application_deadline'] ?? '',
       city: json['city'] ?? '',
@@ -60,6 +62,7 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
 
   Map<String, dynamic> toJson() {
     return {
+      "id": id,
       "hire_type": hireType,
       "application_deadline": applicationDeadline,
       "city": city,
@@ -78,6 +81,7 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
   factory SearchJobDetailsResultModel.fromEntity(
       SearchJobDetailsResultEntity entity) {
     return SearchJobDetailsResultModel(
+      id: entity.id,
       hireType: entity.hireType,
       applicationDeadline: entity.applicationDeadline,
       city: entity.city,

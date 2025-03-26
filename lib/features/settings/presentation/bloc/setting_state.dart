@@ -3,7 +3,7 @@ part of 'setting_bloc.dart';
 @freezed
 class SettingState with _$SettingState {
   const factory SettingState.initial({
-   @Default(0) int selectedTabIndex,
+    @Default(0) int selectedTabIndex,
     @Default([]) List<ActivitiesEntity> filteredActivity,
     @Default([]) List<NotificationEntity> notification,
     @Default([]) List<ActivitiesEntity> activity,
@@ -29,7 +29,7 @@ class SettingState with _$SettingState {
         resume: null,
         email: '',
         phoneNumber: '',
-        jobType: '',
+  
         streetAddress: '',
         yearsOfExperience: '',
         guarantorPhoneNumber: '',
@@ -37,13 +37,15 @@ class SettingState with _$SettingState {
         guarantorEmail: '',
         category: '',
         identity: '',
-        countryId: '',
+        countryId: 0,
         aboutMe: '',
         compensationType: '',
         maxAmount: '',
         minAmount: '',
         dateOFBirth: '',
-        skill: '',
+        skill: [],
+        jobPreference: '',
+        passport: null,
         guarantorAddress: ''))
     UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
     // @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
