@@ -1,12 +1,16 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
@@ -21,6 +25,7 @@ import 'package:artisan_oga/features/settings/domain/usecases/js_notification_us
 import 'package:artisan_oga/features/settings/domain/usecases/update_employer_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -31,6 +36,10 @@ part 'setting_state.dart';
 
 class SettingBloc extends Bloc<SettingEvent, SettingState> {
   SettingBloc({
+    StateUseCase? stateUseCase,
+    CategoryUseCase? categoryUseCase,
+    FilePickerService? filePickerService,
+    SkillUseCase? skillUseCase,
     GetEmployerProfileUsecase? getEmployerProfileUseCase,
     GetJobSeekeProfileUsecase? getJobSeekerProfileUseCase,
     UpdateEmployerUseCase? updateEmployerProfileUseCase,
@@ -47,6 +56,10 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
         _getJobSeekerNotificationUsecase =
             getJobSeekerNotificationUsecase ?? locator(),
         _getActivitiesUsecase = getActivitiesUsecase ?? locator(),
+        _skillUseCase = skillUseCase ?? locator(),
+        _categoryUseCase = categoryUseCase ?? locator(),
+        _stateUseCase = stateUseCase ?? locator(),
+        _filePickerService = filePickerService ?? locator(),
         super(_Initial()) {
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
@@ -66,6 +79,9 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     on<_UpdateJobSeekerRequest>(_onUpdateJobSeekerRequest);
     on<_LoadActivities>(_onLoadActivities);
     on<_FilteredActivities>(_onFilterActivities);
+    on<_SelectPicture>(_onSelectPicture);
+    on<_SelectResume>(_onSelectResume);
+    on<_UpdateSelectedDate>(_onUpdateSelectedDate);
   }
 
   final GetEmployerProfileUsecase _getEmployerProfileUseCase;
@@ -75,6 +91,11 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
   final ChangePasswordUseCase _updatePasswordUseCase;
   final GetJobSeekerNotificationUsecase _getJobSeekerNotificationUsecase;
   final GetActivitiesUsecase _getActivitiesUsecase;
+  final FilePickerService _filePickerService;
+  final StateUseCase _stateUseCase;
+  final CategoryUseCase _categoryUseCase;
+
+  final SkillUseCase _skillUseCase;
 
   FutureOr<void> _onGetEmployerProfile(
       _GetEmployerProfile event, Emitter<SettingState> emit) async {
@@ -179,9 +200,10 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
 
   FutureOr<void> _onUpdateJobSeekerRequest(
       _UpdateJobSeekerRequest event, Emitter<SettingState> emit) {
-    //  emit(
-    //     state.copyWith(updateJobSeekerRequest: event.registerJobSeekerRequest),
-    //   );
+    emit(
+      state.copyWith(
+          updateJobSeekerProfileRequest: event.updateJobSeekerprofile),
+    );
   }
 
   FutureOr<void> _onGetJobSeekerNotification(
@@ -316,64 +338,91 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
 
   FutureOr<void> _onGetState(
       _GetState event, Emitter<SettingState> emit) async {
-    // emit(state.copyWith(getStateState: GetStateState.loading));
-    // final result = await _stateUseCase(event.id);
-    // result.fold(
-    //   (error) => emit(
-    //     state.copyWith(
-    //       getStateState: GetStateState.failure,
-    //       errorMessage: error.message,
-    //     ),
-    //   ),
-    //   (states) => emit(
-    //     state.copyWith(
-    //       states: states,
-    //       getStateState: GetStateState.success,
-    //     ),
-    //   ),
-    // );
-    // emit(state.copyWith(getStateState: GetStateState.idle));
+    emit(state.copyWith(getStateState: GetStateState.loading));
+    final result = await _stateUseCase(event.id);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getStateState: GetStateState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (states) => emit(
+        state.copyWith(
+          states: states,
+          getStateState: GetStateState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getStateState: GetStateState.idle));
   }
 
   FutureOr<void> _onGetCategory(
       _GetCategory event, Emitter<SettingState> emit) async {
-    //     emit(state.copyWith(getCategoryState: GetCategoryState.loading));
-    // final result = await _categoryUseCase(NoParams());
-    // result.fold(
-    //   (error) => emit(
-    //     state.copyWith(
-    //       getCategoryState: GetCategoryState.failure,
-    //       errorMessage: error.message,
-    //     ),
-    //   ),
-    //   (category) => emit(
-    //     state.copyWith(
-    //       categoryList: category,
-    //       getCategoryState: GetCategoryState.success,
-    //     ),
-    //   ),
-    // );
-    // emit(state.copyWith(getCategoryState: GetCategoryState.idle));
+    emit(state.copyWith(getCategoryState: GetCategoryState.loading));
+    final result = await _categoryUseCase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getCategoryState: GetCategoryState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (category) => emit(
+        state.copyWith(
+          categoryList: category,
+          getCategoryState: GetCategoryState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getCategoryState: GetCategoryState.idle));
   }
 
   FutureOr<void> _onGetSkill(
       _GetSkills event, Emitter<SettingState> emit) async {
-    //    emit(state.copyWith(getSkillState: GetSkillState.loading));
-    // final result = await _skillUseCase(event.id);
-    // result.fold(
-    //   (error) => emit(
-    //     state.copyWith(
-    //       getSkillState: GetSkillState.failure,
-    //       errorMessage: error.message,
-    //     ),
-    //   ),
-    //   (skills) => emit(
-    //     state.copyWith(
-    //       skill: skills,
-    //       getSkillState: GetSkillState.success,
-    //     ),
-    //   ),
-    // );
-    // emit(state.copyWith(getSkillState: GetSkillState.idle));
+    emit(state.copyWith(getSkillState: GetSkillState.loading));
+    final result = await _skillUseCase(event.id);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getSkillState: GetSkillState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (skills) => emit(
+        state.copyWith(
+          skill: skills,
+          getSkillState: GetSkillState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getSkillState: GetSkillState.idle));
+  }
+
+  FutureOr<void> _onSelectPicture(
+      _SelectPicture event, Emitter<SettingState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    if (image.endsWith('.png') || image.endsWith('.jpg')) {
+      emit(state.copyWith(picture: File(image)));
+      print('Selected file: ${image}');
+    } else {
+      print('extension $image');
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('inavlid tyoe');
+    }
+  }
+
+  FutureOr<void> _onSelectResume(
+      _SelectResume event, Emitter<SettingState> emit) async {
+    final resumeFile = await _filePickerService.pickFiles(['pdf']);
+
+    if (resumeFile == null) return;
+    emit(state.copyWith(resume: File(resumeFile)));
+  }
+
+  FutureOr<void> _onUpdateSelectedDate(
+      _UpdateSelectedDate event, Emitter<SettingState> emit) {
+    emit(state.copyWith(dateOfBirth: event.value));
   }
 }

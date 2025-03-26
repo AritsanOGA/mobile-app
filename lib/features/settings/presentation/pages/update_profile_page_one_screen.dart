@@ -1,9 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
-import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -148,7 +146,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                               style:
                                                   theme.textTheme.bodyMedium))),
                                   SizedBox(height: 10.v),
-                                  BlocBuilder<AuthBloc, AuthState>(
+                                  BlocBuilder<SettingBloc, SettingState>(
                                     builder: (context, state) {
                                       return Container(
                                           margin: EdgeInsets.only(right: 10.h),
@@ -167,8 +165,8 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                                 InkWell(
                                                     onTap: () {
                                                       context
-                                                          .read<AuthBloc>()
-                                                          .add(const AuthEvent
+                                                          .read<SettingBloc>()
+                                                          .add(const SettingEvent
                                                               .selectResume());
                                                     },
                                                     child: Container(
@@ -241,13 +239,13 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     isBorderNone: true,
                                     titleStyle:
                                         CustomTextStyles.titleMediumMedium18,
-                                    title: 'Select Job Type',
+                                    title: 'Job Type',
                                     items: state.jobTypeList,
                                     selectedItem: state.jobType,
                                     itemLabel: (gender) => gender,
                                     onChanged: (value) {
-                                      context.read<AuthBloc>().add(
-                                            AuthEvent.updateSelectedGender(
+                                      context.read<SettingBloc>().add(
+                                            SettingEvent.updateSelectedJobType(
                                                 value ?? ''),
                                           );
                                     },
@@ -266,15 +264,29 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     height: 25.v,
                                   ),
                                   CustomTextFormField(
-                                    isBorderNone: true,
-                                    hintText: 'MM/DD/YYYY',
-                                    title: 'Date of Birth',
+                                    ontap: () async {
+                                      DateTime? pickedDate =
+                                          await showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(2024),
+                                        lastDate: DateTime(2100),
+                                      );
+                                      dateOfBirthController.text =
+                                          "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
+
+                                      context.read<SettingBloc>().add(
+                                          SettingEvent.updateSelectedDate(
+                                              pickedDate));
+                                    },
+                                    hintText: 'YYYY-MM-DD',
                                     titleStyle:
                                         CustomTextStyles.titleMediumMedium18,
-                                    textInputType: TextInputType.number,
-                                    inputFormatters: [DateInputFormatter()],
-                                    controller: dateOfBirthController,
                                     validator: FormValidation.stringValidation,
+                                    isBorderNone: true,
+                                    readOnly: true,
+                                    title: 'Date of Birth',
+                                    controller: dateOfBirthController,
                                   ),
                                   SizedBox(
                                     height: 40,
@@ -294,8 +306,12 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                             context.read<SettingBloc>().add(
                                                 SettingEvent.updateJobSeekerRequest(
                                                     updateJobSeekerRequest.copyWith(
-                                                        passport: state
-                                                            .passport,
+                                                        identity: state
+                                                                .getJobSeekerResponseEntity
+                                                                ?.identity ??
+                                                            '',
+                                                        passport: state.picture,
+                                                        resume: state.resume,
                                                         fullName:
                                                             fullNameEditTextController
                                                                 .text,
@@ -314,6 +330,8 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                               AppRoutes
                                                   .updateProfilePageTwoScreen,
                                             );
+                                            print(
+                                                'update ${state.picture} ${state.resume} ${fullNameEditTextController.text} ${emailController.text} ${phoneNoTextController.text} ${dateOfBirthController.text} ${state.jobType}');
                                           }
                                         }),
                                         text: "Next",

@@ -14,6 +14,8 @@ class SettingEvent with _$SettingEvent {
   const factory SettingEvent.getEmployerProfile() = _GetEmployerProfile;
   const factory SettingEvent.getJobSeekerNotification() =
       _GetJobSeekerNotification;
+  const factory SettingEvent.updateSelectedDate(DateTime value) =
+      _UpdateSelectedDate;
   const factory SettingEvent.updateSelectedCategory(
       CategoryResponseEntity value) = _UpdateSelectedCategory;
   const factory SettingEvent.updateSelectedJobType(String value) =
@@ -24,7 +26,8 @@ class SettingEvent with _$SettingEvent {
       _UpdateSelectedCompensationType;
   const factory SettingEvent.updateState(StateResponseEntity value) =
       _UpdateState;
-
+  const factory SettingEvent.selectPicture() = _SelectPicture;
+  const factory SettingEvent.selectResume() = _SelectResume;
   const factory SettingEvent.updateJobSeekerProfile(
       UpdateJobSeekerProfileEntity entity) = _UpdateJobSeekerProfile;
   const factory SettingEvent.updateEmployerProfile(

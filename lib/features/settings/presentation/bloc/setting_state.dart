@@ -10,9 +10,12 @@ class SettingState with _$SettingState {
     @Default([]) List<SkillResponseEntity> skills,
     @Default([]) List<SkillResponseEntity> skill,
     @Default([]) List<CategoryResponseEntity> categoryList,
+    @Default([]) List<StateResponseEntity> states,
     StateResponseEntity? state,
     CategoryResponseEntity? category,
-    File? passport,
+    DateTime? dateOfBirth,
+    File? resume,
+    File? picture,
     @Default('--Select--') String jobType,
     @Default('--Select--') String compensationType,
     @Default(UpdateJobSeekerProfileState.idle)
@@ -27,6 +30,10 @@ class SettingState with _$SettingState {
     JobSeekerNotificationState jobSeekerNotificationState,
     @Default(ActvitiesState.idle) ActvitiesState activitiesState,
     String? errorMessage,
+    @Default(GetCategoryState.idle) GetCategoryState getCategoryState,
+    @Default(GetSkillState.idle) GetSkillState getSkillState,
+    @Default(GetCountryState.idle) GetCountryState getCountryState,
+    @Default(GetStateState.idle) GetStateState getStateState,
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
     GetEmployerResponseEntity? getEmployerResponseEntity,
     GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
@@ -58,6 +65,7 @@ class SettingState with _$SettingState {
     @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
     List<String> jobTypeList,
     @Default([
+      "--Select--",
       "Salary",
       "Pay per job",
     ])

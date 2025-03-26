@@ -3,7 +3,6 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
@@ -19,7 +18,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// ignore_for_file: must_be_immutable
 class UpdateProfilePageTwoScreen extends HookWidget {
   UpdateProfilePageTwoScreen({Key? key}) : super(key: key);
   var image;
@@ -28,7 +26,7 @@ class UpdateProfilePageTwoScreen extends HookWidget {
     final aboutMeTextController = useTextEditingController();
     final addressController = useTextEditingController();
     final phoneNoTextController = useTextEditingController();
-    final dateOfBirthController = useTextEditingController();
+    final cityController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       useEffect(() {
@@ -44,7 +42,7 @@ class UpdateProfilePageTwoScreen extends HookWidget {
             resizeToAvoidBottomInset: false,
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: 'Settings',
+              title: 'Edit Profile',
             ),
             body: BlocConsumer<SettingBloc, SettingState>(
               listener: (context, state) {
@@ -107,129 +105,13 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                                         title: 'About Me',
                                         titleStyle: CustomTextStyles
                                             .titleMediumMedium18,
-                                        hintText: 'Add a Job Description',
+                                        hintText: 'Describe yourself',
                                         controller: aboutMeTextController,
                                         validator:
                                             FormValidation.stringValidation,
                                         isBorderNone: true,
                                       ),
                                       SizedBox(height: 25.v),
-                                      Text('Country',
-                                          style: CustomTextStyles
-                                              .bodyMediumPrimaryContainer_1),
-                                      SizedBox(height: 7.v),
-                                      BlocBuilder<AuthBloc, AuthState>(
-                                          builder: (context, state) {
-                                        return Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            padding: const EdgeInsets.only(
-                                                left: 20, right: 5),
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: appTheme.gray500,
-                                                    width: 0.8),
-                                                borderRadius:
-                                                    BorderRadius.circular(8)),
-                                            child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  DropdownSearch<
-                                                      CountryResponseEntity>(
-                                                    items: (filter,
-                                                            infiniteScrollProps) =>
-                                                        state.countries,
-                                                    itemAsString:
-                                                        (CountryResponseEntity
-                                                                state) =>
-                                                            state.name ?? '',
-                                                    decoratorProps:
-                                                        const DropDownDecoratorProps(
-                                                            decoration:
-                                                                InputDecoration(
-                                                      border: InputBorder.none,
-                                                    )),
-                                                    onChanged:
-                                                        (CountryResponseEntity?
-                                                            newValue) {
-                                                      context
-                                                          .read<AuthBloc>()
-                                                          .add(
-                                                            AuthEvent
-                                                                .updateSelectedCountry(
-                                                                    newValue!),
-                                                          );
-                                                      context
-                                                          .read<AuthBloc>()
-                                                          .add(
-                                                            AuthEvent.getState(
-                                                                newValue.id
-                                                                    .toString()),
-                                                          );
-                                                    },
-                                                    filterFn: (item, filter) {
-                                                      return item.name
-                                                          .toLowerCase()
-                                                          .contains(filter
-                                                              .toLowerCase());
-                                                    },
-                                                    suffixProps:
-                                                        DropdownSuffixProps(
-                                                      dropdownButtonProps:
-                                                          DropdownButtonProps(
-                                                        selectedIcon: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  left: 20.0),
-                                                          child: SvgPicture
-                                                              .asset(AppAsset
-                                                                  .dropdown),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    compareFn:
-                                                        (item, selectedItem) {
-                                                      return item.id ==
-                                                          selectedItem.id;
-                                                    },
-                                                    dropdownBuilder: (context,
-                                                        selectedItem) {
-                                                      return Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 10),
-                                                        child: Text(
-                                                          state.country?.name ??
-                                                              'Select Country',
-                                                          style: selectedItem ==
-                                                                  null
-                                                              ? CustomTextStyles
-                                                                  .titleSmallPrimaryContainer_1
-                                                              : CustomTextStyles
-                                                                  .titleSmallPrimaryContainer_1,
-                                                        ),
-                                                      );
-                                                    },
-                                                    popupProps:
-                                                        const PopupProps.menu(
-                                                      showSearchBox: true,
-                                                      searchFieldProps:
-                                                          TextFieldProps(
-                                                        decoration:
-                                                            InputDecoration(
-                                                          border:
-                                                              OutlineInputBorder(),
-                                                          hintText: 'Search...',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ]));
-                                      }),
-                                      SizedBox(height: 30.v),
                                       Text('State of Residence',
                                           style: CustomTextStyles
                                               .bodyMediumPrimaryContainer_1),
@@ -338,36 +220,46 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                                                   ),
                                                 ]));
                                       }),
-                                      SizedBox(height: 30.v),
+                                      SizedBox(height: 25.v),
                                       CustomTextFormField(
                                         title: 'Address ',
                                         titleStyle: CustomTextStyles
                                             .titleMediumMedium18,
-                                        hintText: 'Add a Job Description',
+                                        hintText: 'Enter Address',
                                         controller: addressController,
                                         validator:
                                             FormValidation.stringValidation,
                                         isBorderNone: true,
                                       ),
                                       SizedBox(height: 25.v),
-                                      BlocBuilder<AuthBloc, AuthState>(
-                                        builder: (context, state) {
-                                          return CustomDropDown<String>(
-                                            title: 'Job Type',
-                                            items: state.jobTypeList,
-                                            selectedItem: state.jobType,
-                                            itemLabel: (gender) => gender,
-                                            onChanged: (value) {
-                                              context.read<AuthBloc>().add(
-                                                    AuthEvent
-                                                        .updateSelectedJobType(
-                                                            value ?? ''),
-                                                  );
-                                            },
-                                          );
-                                        },
+                                      CustomTextFormField(
+                                        title: 'City ',
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        hintText: 'Enter City',
+                                        controller: cityController,
+                                        validator:
+                                            FormValidation.stringValidation,
+                                        isBorderNone: true,
                                       ),
                                       SizedBox(height: 25.v),
+                                      CustomDropDown<String>(
+                                        isBorderNone: true,
+                                        titleStyle: CustomTextStyles
+                                            .titleMediumMedium18,
+                                        title: 'Compensation Type',
+                                        items: state.compensationTypeList,
+                                        selectedItem: state.compensationType,
+                                        itemLabel: (gender) => gender,
+                                        onChanged: (value) {
+                                          context.read<SettingBloc>().add(
+                                                SettingEvent
+                                                    .updateSelectedCompensationType(
+                                                        value ?? ''),
+                                              );
+                                        },
+                                      ),
+                                      SizedBox(height: 50.v),
                                       BlocSelector<SettingBloc, SettingState,
                                           UpdateJobSeekerProfileEntity>(
                                         selector: (state) {
@@ -376,33 +268,50 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                                         },
                                         builder:
                                             (context, updateJobSeekerRequest) {
-                                          return CustomElevatedButton(
-                                            onPressed: (() {
-                                              if (formKey.currentState
-                                                      ?.validate() ??
-                                                  false) {
-                                                context.read<SettingBloc>().add(
-                                                    SettingEvent.updateJobSeekerRequest(
-                                                        updateJobSeekerRequest.copyWith(
-                                                            aboutMe:
-                                                                aboutMeTextController
-                                                                    .text,
-                                                            streetAddress:
-                                                                addressController
-                                                                    .text,
-                                                            compensationType:
-                                                                phoneNoTextController
-                                                                    .text,
-                                                            countryId: 0,
-                                                            state: '')));
-                                                Navigator.pushNamed(
-                                                  context,
-                                                  AppRoutes
-                                                      .updateProfilePageThreeScreen,
-                                                );
-                                              }
-                                            }),
-                                            text: "Next",
+                                          return BlocBuilder<AuthBloc,
+                                              AuthState>(
+                                            builder: (context, authState) {
+                                              return CustomElevatedButton(
+                                                onPressed: (() {
+                                                  if (formKey.currentState
+                                                          ?.validate() ??
+                                                      false) {
+                                                    context
+                                                        .read<SettingBloc>()
+                                                        .add(SettingEvent
+                                                            .updateJobSeekerRequest(
+                                                                updateJobSeekerRequest
+                                                                    .copyWith(
+                                                          aboutMe:
+                                                              aboutMeTextController
+                                                                  .text,
+                                                          streetAddress:
+                                                              addressController
+                                                                  .text,
+                                                          compensationType: state
+                                                              .compensationType,
+                                                          city: cityController
+                                                              .text,
+                                                          countryId: 161,
+                                                          state: authState.state
+                                                                  ?.name ??
+                                                              authState.states
+                                                                  .first.name ??
+                                                              '',
+                                                        )));
+
+                                                    print(
+                                                        'update 2 ${addressController.text} ${aboutMeTextController.text} ${cityController.text} ${state.compensationType}  ${authState.state?.name} ${authState.states.first.name}');
+                                                    Navigator.pushNamed(
+                                                      context,
+                                                      AppRoutes
+                                                          .updateProfilePageThreeScreen,
+                                                    );
+                                                  }
+                                                }),
+                                                text: "Next",
+                                              );
+                                            },
                                           );
                                         },
                                       ),
