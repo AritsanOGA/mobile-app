@@ -482,41 +482,70 @@ class CandidatesProfilePage extends StatelessWidget {
                                                         vertical: 10),
                                                     child: Row(
                                                       children: [
-                                                        SizedBox(
-                                                          width: 50,
-                                                          height: 50,
-                                                          child:
-                                                              CachedNetworkImage(
-                                                            imageUrl:
-                                                                'https://picsum.photos/250?image=9',
-                                                            fit: BoxFit.cover,
-                                                            progressIndicatorBuilder:
-                                                                (context, url,
-                                                                        downloadProgress) =>
-                                                                    const Center(),
-                                                            imageBuilder: (context,
-                                                                    imageProvider) =>
-                                                                Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                                image:
-                                                                    DecorationImage(
-                                                                  image:
-                                                                      imageProvider,
-                                                                  fit: BoxFit
-                                                                      .cover,
+                                                        state
+                                                                    .candidateProfileEntity
+                                                                    ?.employerFeedback[
+                                                                        index]
+                                                                    .profileImage !=
+                                                                ''
+                                                            ? CachedNetworkImage(
+                                                                imageUrl: state
+                                                                        .candidateProfileEntity
+                                                                        ?.employerFeedback[
+                                                                            index]
+                                                                        .profileImage ??
+                                                                    '',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                                progressIndicatorBuilder:
+                                                                    (context,
+                                                                            url,
+                                                                            downloadProgress) =>
+                                                                        const Center(),
+                                                                imageBuilder:
+                                                                    (context,
+                                                                            imageProvider) =>
+                                                                        Container(
+                                                                  width: 30,
+                                                                  height: 30,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                    image:
+                                                                        DecorationImage(
+                                                                      image:
+                                                                          imageProvider,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                errorWidget: (context,
+                                                                        url,
+                                                                        error) =>
+                                                                    const Icon(Icons
+                                                                        .error),
+                                                              )
+                                                            : Container(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(5),
+                                                                decoration: BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                    border: Border.all(
+                                                                        width:
+                                                                            2,
+                                                                        color: AppColors
+                                                                            .kblack)),
+                                                                child: Icon(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  Icons.person,
+                                                                  size: 30,
                                                                 ),
                                                               ),
-                                                            ),
-                                                            errorWidget: (context,
-                                                                    url,
-                                                                    error) =>
-                                                                const Icon(Icons
-                                                                    .error),
-                                                          ),
-                                                        ),
                                                         SizedBox(
                                                           width: 10,
                                                         ),

@@ -1,6 +1,9 @@
 import 'package:artisan_oga/core/error/exceptions.dart';
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/core/extensions/extension.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/settings/data/data_source/settings_remote_data_source.dart';
 import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
@@ -105,5 +108,22 @@ class SettingsRepositoryImpl implements SettingsRepository {
   @override
   Future<Either<Failure, List<ActivitiesEntity>>> getActivities() {
     return settingsRemoteDataSource.getActivities().makeRequest();
+  }
+
+    @override
+  Future<Either<Failure, List<StateResponseEntity>>> getState(
+      String countryId) {
+    return settingsRemoteDataSource.getState(countryId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<CategoryResponseEntity>>> getCategory() {
+    return settingsRemoteDataSource.getCategory().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<SkillResponseEntity>>> getSkill(
+      String categoryId) {
+    return settingsRemoteDataSource.getSkill(categoryId).makeRequest();
   }
 }

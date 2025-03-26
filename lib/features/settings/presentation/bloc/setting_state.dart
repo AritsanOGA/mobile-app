@@ -7,6 +7,14 @@ class SettingState with _$SettingState {
     @Default([]) List<ActivitiesEntity> filteredActivity,
     @Default([]) List<NotificationEntity> notification,
     @Default([]) List<ActivitiesEntity> activity,
+    @Default([]) List<SkillResponseEntity> skills,
+    @Default([]) List<SkillResponseEntity> skill,
+    @Default([]) List<CategoryResponseEntity> categoryList,
+    StateResponseEntity? state,
+    CategoryResponseEntity? category,
+    File? passport,
+    @Default('--Select--') String jobType,
+    @Default('--Select--') String compensationType,
     @Default(UpdateJobSeekerProfileState.idle)
     UpdateJobSeekerProfileState updateJobSeekerProfileState,
     @Default(GetEmployerProfileState.idle)
@@ -29,7 +37,6 @@ class SettingState with _$SettingState {
         resume: null,
         email: '',
         phoneNumber: '',
-  
         streetAddress: '',
         yearsOfExperience: '',
         guarantorPhoneNumber: '',
@@ -48,7 +55,12 @@ class SettingState with _$SettingState {
         passport: null,
         guarantorAddress: ''))
     UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
-    // @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
-    // List<String> activitieCategory,
+    @Default(["--Select--", "Full Time", "Temporary", "Contract", "Part Time"])
+    List<String> jobTypeList,
+    @Default([
+      "Salary",
+      "Pay per job",
+    ])
+    List<String> compensationTypeList,
   }) = _Initial;
 }

@@ -56,10 +56,10 @@ class EmployerSettingsPage extends HookWidget {
                                               height: 50,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
-                                                // borderRadius: BorderRadius.circular(10),
+                                           
                                                 image: DecorationImage(
                                                   image:
-                                                      imageProvider, // Use the provided imageProvider
+                                                      imageProvider,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),

@@ -3,6 +3,12 @@ import 'dart:developer';
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
+import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/skill_response_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/state_response_model.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/settings/data/model/activities_model.dart';
 import 'package:artisan_oga/features/settings/data/model/change_password_model.dart';
 import 'package:artisan_oga/features/settings/data/model/get_employer_profile_model.dart';
@@ -26,6 +32,9 @@ abstract class SettingsRemoteDataSource {
   Future<bool> updateJobSeekerProfile(UpdateJobSeekerProfileEntity entity);
   Future<bool> updateEmployerProfile(UpdateEmployerProfileEntity entity);
   Future<bool> changePassword(ChangePasswordEntity entit);
+  Future<List<StateResponseEntity>> getState(String countryId);
+  Future<List<CategoryResponseEntity>> getCategory();
+  Future<List<SkillResponseEntity>> getSkill(String categoryId);
 }
 
 class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
@@ -125,6 +134,51 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
     return List<dynamic>.from(result['data'] as List)
         .map(
           (e) => ActivitiesModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<List<StateResponseEntity>> getState(String countryId) async {
+    final result = await api.get(
+        url: AppApiEndpoint.getState,
+        queryParameters: {"country_id": countryId}) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => StateResponseModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<List<CategoryResponseEntity>> getCategory() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getCategories,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => CategoryResponseModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<List<SkillResponseEntity>> getSkill(String categoryId) async {
+    final result = await api.get(
+        url: AppApiEndpoint.getSkills,
+        queryParameters: {"category_id": categoryId}) as Map<String, dynamic>;
+    print('categ ${categoryId}');
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => SkillResponseModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )

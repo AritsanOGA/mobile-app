@@ -294,28 +294,19 @@ class EducationEntity extends Equatable {
 }
 
 class EmployerFeedbackEntity extends Equatable {
-  final int id;
   final String fullName;
-  final String email;
-  final String review;
-  final String userId;
 
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final String review;
+  final String profileImage;
 
   const EmployerFeedbackEntity({
-    required this.id,
     required this.fullName,
-    required this.email,
     required this.review,
-    required this.userId,
-    required this.createdAt,
-    required this.updatedAt,
+    required this.profileImage,
   });
 
   @override
-  List<Object?> get props =>
-      [id, fullName, email, review, userId, createdAt, updatedAt];
+  List<Object?> get props => [fullName, review, profileImage];
 }
 
 class EmployerRatingEntity extends Equatable {

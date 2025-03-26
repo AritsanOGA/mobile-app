@@ -388,34 +388,28 @@ class SkillAssessmentModel extends SkillAssessmentEntity {
 
 class EmployerFeedbackModel extends EmployerFeedbackEntity {
   EmployerFeedbackModel({
-    required super.id,
+
     required super.fullName,
-    required super.email,
+
     required super.review,
-    required super.userId,
-    required super.createdAt,
-    required super.updatedAt,
+    required super.profileImage,
   });
 
   factory EmployerFeedbackModel.fromJson(Map<String, dynamic> json) =>
       EmployerFeedbackModel(
-        id: json["id"],
-        fullName: json["fullname"],
-        email: json["email"],
-        review: json["review"],
-        userId: json["user_id"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
-      );
+          
+          fullName: json["fullname"],
+         
+          review: json["review"],
+          
+          profileImage: json["profile_image"]);
 
   Map<String, dynamic> toJson() => {
-        "id": id,
+        
         "fullname": fullName,
-        "email": email,
+    
         "review": review,
-        "user_id": userId,
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
+        "profile_image": profileImage
       };
 }
 

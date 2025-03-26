@@ -22,9 +22,19 @@ mixin _$SettingEvent {
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -41,9 +51,17 @@ mixin _$SettingEvent {
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -59,9 +77,17 @@ mixin _$SettingEvent {
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -77,10 +103,21 @@ mixin _$SettingEvent {
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -96,10 +133,19 @@ mixin _$SettingEvent {
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -112,9 +158,18 @@ mixin _$SettingEvent {
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -190,9 +245,19 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -212,9 +277,17 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -233,9 +306,17 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -257,10 +338,21 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -279,10 +371,19 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -298,9 +399,18 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -370,9 +480,19 @@ class _$GetJobSeekerProfileImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -392,9 +512,17 @@ class _$GetJobSeekerProfileImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -413,9 +541,17 @@ class _$GetJobSeekerProfileImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -437,10 +573,21 @@ class _$GetJobSeekerProfileImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -459,10 +606,19 @@ class _$GetJobSeekerProfileImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -478,9 +634,18 @@ class _$GetJobSeekerProfileImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -548,9 +713,19 @@ class _$GetActivitiesImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -570,9 +745,17 @@ class _$GetActivitiesImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -591,9 +774,17 @@ class _$GetActivitiesImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -615,10 +806,21 @@ class _$GetActivitiesImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -637,10 +839,19 @@ class _$GetActivitiesImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -656,9 +867,18 @@ class _$GetActivitiesImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -726,9 +946,19 @@ class _$LoadActivitiesImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -748,9 +978,17 @@ class _$LoadActivitiesImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -769,9 +1007,17 @@ class _$LoadActivitiesImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -793,10 +1039,21 @@ class _$LoadActivitiesImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -815,10 +1072,19 @@ class _$LoadActivitiesImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -834,9 +1100,18 @@ class _$LoadActivitiesImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -852,6 +1127,765 @@ class _$LoadActivitiesImpl
 
 abstract class _LoadActivities implements SettingEvent {
   const factory _LoadActivities() = _$LoadActivitiesImpl;
+}
+
+/// @nodoc
+abstract class _$$GetCategoryImplCopyWith<$Res> {
+  factory _$$GetCategoryImplCopyWith(
+          _$GetCategoryImpl value, $Res Function(_$GetCategoryImpl) then) =
+      __$$GetCategoryImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetCategoryImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetCategoryImpl>
+    implements _$$GetCategoryImplCopyWith<$Res> {
+  __$$GetCategoryImplCopyWithImpl(
+      _$GetCategoryImpl _value, $Res Function(_$GetCategoryImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
+  const _$GetCategoryImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getCategory()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'SettingEvent.getCategory'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetCategoryImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getCategory();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getCategory?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getCategory != null) {
+      return getCategory();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getCategory != null) {
+      return getCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCategory implements SettingEvent {
+  const factory _GetCategory() = _$GetCategoryImpl;
+}
+
+/// @nodoc
+abstract class _$$GetSkillsImplCopyWith<$Res> {
+  factory _$$GetSkillsImplCopyWith(
+          _$GetSkillsImpl value, $Res Function(_$GetSkillsImpl) then) =
+      __$$GetSkillsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$GetSkillsImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetSkillsImpl>
+    implements _$$GetSkillsImplCopyWith<$Res> {
+  __$$GetSkillsImplCopyWithImpl(
+      _$GetSkillsImpl _value, $Res Function(_$GetSkillsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetSkillsImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
+  const _$GetSkillsImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getSkills(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.getSkills'))
+      ..add(DiagnosticsProperty('id', id));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSkillsImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSkillsImplCopyWith<_$GetSkillsImpl> get copyWith =>
+      __$$GetSkillsImplCopyWithImpl<_$GetSkillsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getSkills(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getSkills?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getSkills != null) {
+      return getSkills(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getSkills(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getSkills?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getSkills != null) {
+      return getSkills(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSkills implements SettingEvent {
+  const factory _GetSkills(final String id) = _$GetSkillsImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$GetSkillsImplCopyWith<_$GetSkillsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetStateImplCopyWith<$Res> {
+  factory _$$GetStateImplCopyWith(
+          _$GetStateImpl value, $Res Function(_$GetStateImpl) then) =
+      __$$GetStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$GetStateImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetStateImpl>
+    implements _$$GetStateImplCopyWith<$Res> {
+  __$$GetStateImplCopyWithImpl(
+      _$GetStateImpl _value, $Res Function(_$GetStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$GetStateImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
+  const _$GetStateImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getState(id: $id)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.getState'))
+      ..add(DiagnosticsProperty('id', id));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetStateImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetStateImplCopyWith<_$GetStateImpl> get copyWith =>
+      __$$GetStateImplCopyWithImpl<_$GetStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return getState(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return getState?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getState != null) {
+      return getState(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return getState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return getState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (getState != null) {
+      return getState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetState implements SettingEvent {
+  const factory _GetState(final String id) = _$GetStateImpl;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$$GetStateImplCopyWith<_$GetStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -934,9 +1968,19 @@ class _$FilteredActivitiesImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -956,9 +2000,17 @@ class _$FilteredActivitiesImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -977,9 +2029,17 @@ class _$FilteredActivitiesImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1001,10 +2061,21 @@ class _$FilteredActivitiesImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1023,10 +2094,19 @@ class _$FilteredActivitiesImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1042,9 +2122,18 @@ class _$FilteredActivitiesImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1119,9 +2208,19 @@ class _$GetEmployerProfileImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1141,9 +2240,17 @@ class _$GetEmployerProfileImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1162,9 +2269,17 @@ class _$GetEmployerProfileImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1186,10 +2301,21 @@ class _$GetEmployerProfileImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1208,10 +2334,19 @@ class _$GetEmployerProfileImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1227,9 +2362,18 @@ class _$GetEmployerProfileImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1301,9 +2445,19 @@ class _$GetJobSeekerNotificationImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1323,9 +2477,17 @@ class _$GetJobSeekerNotificationImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1344,9 +2506,17 @@ class _$GetJobSeekerNotificationImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1368,10 +2538,21 @@ class _$GetJobSeekerNotificationImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1390,10 +2571,19 @@ class _$GetJobSeekerNotificationImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1409,9 +2599,18 @@ class _$GetJobSeekerNotificationImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1427,6 +2626,1359 @@ class _$GetJobSeekerNotificationImpl
 
 abstract class _GetJobSeekerNotification implements SettingEvent {
   const factory _GetJobSeekerNotification() = _$GetJobSeekerNotificationImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedCategoryImplCopyWith<$Res> {
+  factory _$$UpdateSelectedCategoryImplCopyWith(
+          _$UpdateSelectedCategoryImpl value,
+          $Res Function(_$UpdateSelectedCategoryImpl) then) =
+      __$$UpdateSelectedCategoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CategoryResponseEntity value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedCategoryImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$UpdateSelectedCategoryImpl>
+    implements _$$UpdateSelectedCategoryImplCopyWith<$Res> {
+  __$$UpdateSelectedCategoryImplCopyWithImpl(
+      _$UpdateSelectedCategoryImpl _value,
+      $Res Function(_$UpdateSelectedCategoryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedCategoryImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as CategoryResponseEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedCategoryImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateSelectedCategory {
+  const _$UpdateSelectedCategoryImpl(this.value);
+
+  @override
+  final CategoryResponseEntity value;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.updateSelectedCategory(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.updateSelectedCategory'))
+      ..add(DiagnosticsProperty('value', value));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedCategoryImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedCategoryImplCopyWith<_$UpdateSelectedCategoryImpl>
+      get copyWith => __$$UpdateSelectedCategoryImplCopyWithImpl<
+          _$UpdateSelectedCategoryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCategory(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCategory?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCategory != null) {
+      return updateSelectedCategory(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return updateSelectedCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCategory != null) {
+      return updateSelectedCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedCategory implements SettingEvent {
+  const factory _UpdateSelectedCategory(final CategoryResponseEntity value) =
+      _$UpdateSelectedCategoryImpl;
+
+  CategoryResponseEntity get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedCategoryImplCopyWith<_$UpdateSelectedCategoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedJobTypeImplCopyWith<$Res> {
+  factory _$$UpdateSelectedJobTypeImplCopyWith(
+          _$UpdateSelectedJobTypeImpl value,
+          $Res Function(_$UpdateSelectedJobTypeImpl) then) =
+      __$$UpdateSelectedJobTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedJobTypeImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$UpdateSelectedJobTypeImpl>
+    implements _$$UpdateSelectedJobTypeImplCopyWith<$Res> {
+  __$$UpdateSelectedJobTypeImplCopyWithImpl(_$UpdateSelectedJobTypeImpl _value,
+      $Res Function(_$UpdateSelectedJobTypeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedJobTypeImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedJobTypeImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateSelectedJobType {
+  const _$UpdateSelectedJobTypeImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.updateSelectedJobType(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.updateSelectedJobType'))
+      ..add(DiagnosticsProperty('value', value));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedJobTypeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedJobTypeImplCopyWith<_$UpdateSelectedJobTypeImpl>
+      get copyWith => __$$UpdateSelectedJobTypeImplCopyWithImpl<
+          _$UpdateSelectedJobTypeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedJobType(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedJobType?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedJobType != null) {
+      return updateSelectedJobType(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedJobType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return updateSelectedJobType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedJobType != null) {
+      return updateSelectedJobType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedJobType implements SettingEvent {
+  const factory _UpdateSelectedJobType(final String value) =
+      _$UpdateSelectedJobTypeImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedJobTypeImplCopyWith<_$UpdateSelectedJobTypeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedSkillImplCopyWith<$Res> {
+  factory _$$UpdateSelectedSkillImplCopyWith(_$UpdateSelectedSkillImpl value,
+          $Res Function(_$UpdateSelectedSkillImpl) then) =
+      __$$UpdateSelectedSkillImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<SkillResponseEntity> value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedSkillImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$UpdateSelectedSkillImpl>
+    implements _$$UpdateSelectedSkillImplCopyWith<$Res> {
+  __$$UpdateSelectedSkillImplCopyWithImpl(_$UpdateSelectedSkillImpl _value,
+      $Res Function(_$UpdateSelectedSkillImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedSkillImpl(
+      null == value
+          ? _value._value
+          : value // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedSkillImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateSelectedSkill {
+  const _$UpdateSelectedSkillImpl(final List<SkillResponseEntity> value)
+      : _value = value;
+
+  final List<SkillResponseEntity> _value;
+  @override
+  List<SkillResponseEntity> get value {
+    if (_value is EqualUnmodifiableListView) return _value;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_value);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.updateSelectedSkill(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.updateSelectedSkill'))
+      ..add(DiagnosticsProperty('value', value));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedSkillImpl &&
+            const DeepCollectionEquality().equals(other._value, _value));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_value));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
+      __$$UpdateSelectedSkillImplCopyWithImpl<_$UpdateSelectedSkillImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedSkill(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedSkill?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedSkill != null) {
+      return updateSelectedSkill(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedSkill(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return updateSelectedSkill?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedSkill != null) {
+      return updateSelectedSkill(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedSkill implements SettingEvent {
+  const factory _UpdateSelectedSkill(final List<SkillResponseEntity> value) =
+      _$UpdateSelectedSkillImpl;
+
+  List<SkillResponseEntity> get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedSkillImplCopyWith<_$UpdateSelectedSkillImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedCompensationTypeImplCopyWith<$Res> {
+  factory _$$UpdateSelectedCompensationTypeImplCopyWith(
+          _$UpdateSelectedCompensationTypeImpl value,
+          $Res Function(_$UpdateSelectedCompensationTypeImpl) then) =
+      __$$UpdateSelectedCompensationTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedCompensationTypeImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res,
+        _$UpdateSelectedCompensationTypeImpl>
+    implements _$$UpdateSelectedCompensationTypeImplCopyWith<$Res> {
+  __$$UpdateSelectedCompensationTypeImplCopyWithImpl(
+      _$UpdateSelectedCompensationTypeImpl _value,
+      $Res Function(_$UpdateSelectedCompensationTypeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedCompensationTypeImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedCompensationTypeImpl
+    with DiagnosticableTreeMixin
+    implements _UpdateSelectedCompensationType {
+  const _$UpdateSelectedCompensationTypeImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.updateSelectedCompensationType(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SettingEvent.updateSelectedCompensationType'))
+      ..add(DiagnosticsProperty('value', value));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedCompensationTypeImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedCompensationTypeImplCopyWith<
+          _$UpdateSelectedCompensationTypeImpl>
+      get copyWith => __$$UpdateSelectedCompensationTypeImplCopyWithImpl<
+          _$UpdateSelectedCompensationTypeImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCompensationType(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCompensationType?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCompensationType != null) {
+      return updateSelectedCompensationType(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return updateSelectedCompensationType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return updateSelectedCompensationType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCompensationType != null) {
+      return updateSelectedCompensationType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedCompensationType implements SettingEvent {
+  const factory _UpdateSelectedCompensationType(final String value) =
+      _$UpdateSelectedCompensationTypeImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedCompensationTypeImplCopyWith<
+          _$UpdateSelectedCompensationTypeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateStateImplCopyWith<$Res> {
+  factory _$$UpdateStateImplCopyWith(
+          _$UpdateStateImpl value, $Res Function(_$UpdateStateImpl) then) =
+      __$$UpdateStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({StateResponseEntity value});
+}
+
+/// @nodoc
+class __$$UpdateStateImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$UpdateStateImpl>
+    implements _$$UpdateStateImplCopyWith<$Res> {
+  __$$UpdateStateImplCopyWithImpl(
+      _$UpdateStateImpl _value, $Res Function(_$UpdateStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateStateImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as StateResponseEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
+  const _$UpdateStateImpl(this.value);
+
+  @override
+  final StateResponseEntity value;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.updateState(value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.updateState'))
+      ..add(DiagnosticsProperty('value', value));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateStateImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateStateImplCopyWith<_$UpdateStateImpl> get copyWith =>
+      __$$UpdateStateImplCopyWithImpl<_$UpdateStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+  }) {
+    return updateState(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+  }) {
+    return updateState?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateState != null) {
+      return updateState(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+  }) {
+    return updateState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+  }) {
+    return updateState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    required TResult orElse(),
+  }) {
+    if (updateState != null) {
+      return updateState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateState implements SettingEvent {
+  const factory _UpdateState(final StateResponseEntity value) =
+      _$UpdateStateImpl;
+
+  StateResponseEntity get value;
+  @JsonKey(ignore: true)
+  _$$UpdateStateImplCopyWith<_$UpdateStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1510,9 +4062,19 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1532,9 +4094,17 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1553,9 +4123,17 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1577,10 +4155,21 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1599,10 +4188,19 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1618,9 +4216,18 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1724,9 +4331,19 @@ class _$UpdateEmployerProfileImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1746,9 +4363,17 @@ class _$UpdateEmployerProfileImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1767,9 +4392,17 @@ class _$UpdateEmployerProfileImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -1791,10 +4424,21 @@ class _$UpdateEmployerProfileImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -1813,10 +4457,19 @@ class _$UpdateEmployerProfileImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -1832,9 +4485,18 @@ class _$UpdateEmployerProfileImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -1937,9 +4599,19 @@ class _$UpdatePasswordImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -1959,9 +4631,17 @@ class _$UpdatePasswordImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -1980,9 +4660,17 @@ class _$UpdatePasswordImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -2004,10 +4692,21 @@ class _$UpdatePasswordImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -2026,10 +4725,19 @@ class _$UpdatePasswordImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -2045,9 +4753,18 @@ class _$UpdatePasswordImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -2154,9 +4871,19 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function() getJobSeekerProfile,
     required TResult Function() getActivities,
     required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
     required TResult Function(int selectedTabIndex) filteredActivities,
     required TResult Function() getEmployerProfile,
     required TResult Function() getJobSeekerNotification,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
     required TResult Function(UpdateJobSeekerProfileEntity entity)
         updateJobSeekerProfile,
     required TResult Function(UpdateEmployerProfileEntity entity)
@@ -2176,9 +4903,17 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function()? getJobSeekerProfile,
     TResult? Function()? getActivities,
     TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
     TResult? Function(int selectedTabIndex)? filteredActivities,
     TResult? Function()? getEmployerProfile,
     TResult? Function()? getJobSeekerNotification,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
     TResult? Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult? Function(UpdateEmployerProfileEntity entity)?
@@ -2197,9 +4932,17 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function()? getJobSeekerProfile,
     TResult Function()? getActivities,
     TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
     TResult Function(int selectedTabIndex)? filteredActivities,
     TResult Function()? getEmployerProfile,
     TResult Function()? getJobSeekerNotification,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
     TResult Function(UpdateJobSeekerProfileEntity entity)?
         updateJobSeekerProfile,
     TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
@@ -2221,10 +4964,21 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
     required TResult Function(_GetActivities value) getActivities,
     required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
     required TResult Function(_FilteredActivities value) filteredActivities,
     required TResult Function(_GetEmployerProfile value) getEmployerProfile,
     required TResult Function(_GetJobSeekerNotification value)
         getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
     required TResult Function(_UpdateJobSeekerProfile value)
         updateJobSeekerProfile,
     required TResult Function(_UpdateEmployerProfile value)
@@ -2243,10 +4997,19 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult? Function(_GetActivities value)? getActivities,
     TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
     TResult? Function(_FilteredActivities value)? filteredActivities,
     TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult? Function(_GetJobSeekerNotification value)?
         getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
     TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
@@ -2262,9 +5025,18 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
     TResult Function(_GetActivities value)? getActivities,
     TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
     TResult Function(_FilteredActivities value)? filteredActivities,
     TResult Function(_GetEmployerProfile value)? getEmployerProfile,
     TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
     TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
@@ -2297,6 +5069,15 @@ mixin _$SettingState {
   List<NotificationEntity> get notification =>
       throw _privateConstructorUsedError;
   List<ActivitiesEntity> get activity => throw _privateConstructorUsedError;
+  List<SkillResponseEntity> get skills => throw _privateConstructorUsedError;
+  List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
+  List<CategoryResponseEntity> get categoryList =>
+      throw _privateConstructorUsedError;
+  StateResponseEntity? get state => throw _privateConstructorUsedError;
+  CategoryResponseEntity? get category => throw _privateConstructorUsedError;
+  File? get passport => throw _privateConstructorUsedError;
+  String get jobType => throw _privateConstructorUsedError;
+  String get compensationType => throw _privateConstructorUsedError;
   UpdateJobSeekerProfileState get updateJobSeekerProfileState =>
       throw _privateConstructorUsedError;
   GetEmployerProfileState get getEmployerProfileState =>
@@ -2317,6 +5098,8 @@ mixin _$SettingState {
       throw _privateConstructorUsedError;
   UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest =>
       throw _privateConstructorUsedError;
+  List<String> get jobTypeList => throw _privateConstructorUsedError;
+  List<String> get compensationTypeList => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -2324,6 +5107,14 @@ mixin _$SettingState {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2334,7 +5125,9 @@ mixin _$SettingState {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -2345,6 +5138,14 @@ mixin _$SettingState {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2355,7 +5156,9 @@ mixin _$SettingState {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -2366,6 +5169,14 @@ mixin _$SettingState {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2376,7 +5187,9 @@ mixin _$SettingState {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)?
         initial,
     required TResult orElse(),
   }) =>
@@ -2414,6 +5227,14 @@ abstract class $SettingStateCopyWith<$Res> {
       List<ActivitiesEntity> filteredActivity,
       List<NotificationEntity> notification,
       List<ActivitiesEntity> activity,
+      List<SkillResponseEntity> skills,
+      List<SkillResponseEntity> skill,
+      List<CategoryResponseEntity> categoryList,
+      StateResponseEntity? state,
+      CategoryResponseEntity? category,
+      File? passport,
+      String jobType,
+      String compensationType,
       UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2424,7 +5245,9 @@ abstract class $SettingStateCopyWith<$Res> {
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
       GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest});
+      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+      List<String> jobTypeList,
+      List<String> compensationTypeList});
 }
 
 /// @nodoc
@@ -2444,6 +5267,14 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? filteredActivity = null,
     Object? notification = null,
     Object? activity = null,
+    Object? skills = null,
+    Object? skill = null,
+    Object? categoryList = null,
+    Object? state = freezed,
+    Object? category = freezed,
+    Object? passport = freezed,
+    Object? jobType = null,
+    Object? compensationType = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
@@ -2455,6 +5286,8 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
     Object? updateJobSeekerProfileRequest = null,
+    Object? jobTypeList = null,
+    Object? compensationTypeList = null,
   }) {
     return _then(_value.copyWith(
       selectedTabIndex: null == selectedTabIndex
@@ -2473,6 +5306,38 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.activity
           : activity // ignore: cast_nullable_to_non_nullable
               as List<ActivitiesEntity>,
+      skills: null == skills
+          ? _value.skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
+      skill: null == skill
+          ? _value.skill
+          : skill // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
+      categoryList: null == categoryList
+          ? _value.categoryList
+          : categoryList // ignore: cast_nullable_to_non_nullable
+              as List<CategoryResponseEntity>,
+      state: freezed == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as StateResponseEntity?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CategoryResponseEntity?,
+      passport: freezed == passport
+          ? _value.passport
+          : passport // ignore: cast_nullable_to_non_nullable
+              as File?,
+      jobType: null == jobType
+          ? _value.jobType
+          : jobType // ignore: cast_nullable_to_non_nullable
+              as String,
+      compensationType: null == compensationType
+          ? _value.compensationType
+          : compensationType // ignore: cast_nullable_to_non_nullable
+              as String,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -2517,6 +5382,14 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.updateJobSeekerProfileRequest
           : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
               as UpdateJobSeekerProfileEntity,
+      jobTypeList: null == jobTypeList
+          ? _value.jobTypeList
+          : jobTypeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      compensationTypeList: null == compensationTypeList
+          ? _value.compensationTypeList
+          : compensationTypeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -2534,6 +5407,14 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<ActivitiesEntity> filteredActivity,
       List<NotificationEntity> notification,
       List<ActivitiesEntity> activity,
+      List<SkillResponseEntity> skills,
+      List<SkillResponseEntity> skill,
+      List<CategoryResponseEntity> categoryList,
+      StateResponseEntity? state,
+      CategoryResponseEntity? category,
+      File? passport,
+      String jobType,
+      String compensationType,
       UpdateJobSeekerProfileState updateJobSeekerProfileState,
       GetEmployerProfileState getEmployerProfileState,
       GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2544,7 +5425,9 @@ abstract class _$$InitialImplCopyWith<$Res>
       UpdatePasswordState updatePasswordState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
       GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest});
+      UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+      List<String> jobTypeList,
+      List<String> compensationTypeList});
 }
 
 /// @nodoc
@@ -2562,6 +5445,14 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? filteredActivity = null,
     Object? notification = null,
     Object? activity = null,
+    Object? skills = null,
+    Object? skill = null,
+    Object? categoryList = null,
+    Object? state = freezed,
+    Object? category = freezed,
+    Object? passport = freezed,
+    Object? jobType = null,
+    Object? compensationType = null,
     Object? updateJobSeekerProfileState = null,
     Object? getEmployerProfileState = null,
     Object? getJobSeekerProfileState = null,
@@ -2573,6 +5464,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
     Object? updateJobSeekerProfileRequest = null,
+    Object? jobTypeList = null,
+    Object? compensationTypeList = null,
   }) {
     return _then(_$InitialImpl(
       selectedTabIndex: null == selectedTabIndex
@@ -2591,6 +5484,38 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._activity
           : activity // ignore: cast_nullable_to_non_nullable
               as List<ActivitiesEntity>,
+      skills: null == skills
+          ? _value._skills
+          : skills // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
+      skill: null == skill
+          ? _value._skill
+          : skill // ignore: cast_nullable_to_non_nullable
+              as List<SkillResponseEntity>,
+      categoryList: null == categoryList
+          ? _value._categoryList
+          : categoryList // ignore: cast_nullable_to_non_nullable
+              as List<CategoryResponseEntity>,
+      state: freezed == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as StateResponseEntity?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CategoryResponseEntity?,
+      passport: freezed == passport
+          ? _value.passport
+          : passport // ignore: cast_nullable_to_non_nullable
+              as File?,
+      jobType: null == jobType
+          ? _value.jobType
+          : jobType // ignore: cast_nullable_to_non_nullable
+              as String,
+      compensationType: null == compensationType
+          ? _value.compensationType
+          : compensationType // ignore: cast_nullable_to_non_nullable
+              as String,
       updateJobSeekerProfileState: null == updateJobSeekerProfileState
           ? _value.updateJobSeekerProfileState
           : updateJobSeekerProfileState // ignore: cast_nullable_to_non_nullable
@@ -2635,6 +5560,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.updateJobSeekerProfileRequest
           : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
               as UpdateJobSeekerProfileEntity,
+      jobTypeList: null == jobTypeList
+          ? _value._jobTypeList
+          : jobTypeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      compensationTypeList: null == compensationTypeList
+          ? _value._compensationTypeList
+          : compensationTypeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -2647,6 +5580,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       final List<ActivitiesEntity> filteredActivity = const [],
       final List<NotificationEntity> notification = const [],
       final List<ActivitiesEntity> activity = const [],
+      final List<SkillResponseEntity> skills = const [],
+      final List<SkillResponseEntity> skill = const [],
+      final List<CategoryResponseEntity> categoryList = const [],
+      this.state,
+      this.category,
+      this.passport,
+      this.jobType = '--Select--',
+      this.compensationType = '--Select--',
       this.updateJobSeekerProfileState = UpdateJobSeekerProfileState.idle,
       this.getEmployerProfileState = GetEmployerProfileState.idle,
       this.getJobSeekerProfileState = GetJobSeekerProfileState.idle,
@@ -2664,7 +5605,6 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           resume: null,
           email: '',
           phoneNumber: '',
-          
           streetAddress: '',
           yearsOfExperience: '',
           guarantorPhoneNumber: '',
@@ -2681,10 +5621,26 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           skill: [],
           jobPreference: '',
           passport: null,
-          guarantorAddress: '')})
+          guarantorAddress: ''),
+      final List<String> jobTypeList = const [
+        "--Select--",
+        "Full Time",
+        "Temporary",
+        "Contract",
+        "Part Time"
+      ],
+      final List<String> compensationTypeList = const [
+        "Salary",
+        "Pay per job"
+      ]})
       : _filteredActivity = filteredActivity,
         _notification = notification,
-        _activity = activity;
+        _activity = activity,
+        _skills = skills,
+        _skill = skill,
+        _categoryList = categoryList,
+        _jobTypeList = jobTypeList,
+        _compensationTypeList = compensationTypeList;
 
   @override
   @JsonKey()
@@ -2717,6 +5673,45 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     return EqualUnmodifiableListView(_activity);
   }
 
+  final List<SkillResponseEntity> _skills;
+  @override
+  @JsonKey()
+  List<SkillResponseEntity> get skills {
+    if (_skills is EqualUnmodifiableListView) return _skills;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skills);
+  }
+
+  final List<SkillResponseEntity> _skill;
+  @override
+  @JsonKey()
+  List<SkillResponseEntity> get skill {
+    if (_skill is EqualUnmodifiableListView) return _skill;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skill);
+  }
+
+  final List<CategoryResponseEntity> _categoryList;
+  @override
+  @JsonKey()
+  List<CategoryResponseEntity> get categoryList {
+    if (_categoryList is EqualUnmodifiableListView) return _categoryList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categoryList);
+  }
+
+  @override
+  final StateResponseEntity? state;
+  @override
+  final CategoryResponseEntity? category;
+  @override
+  final File? passport;
+  @override
+  @JsonKey()
+  final String jobType;
+  @override
+  @JsonKey()
+  final String compensationType;
   @override
   @JsonKey()
   final UpdateJobSeekerProfileState updateJobSeekerProfileState;
@@ -2747,10 +5742,28 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @JsonKey()
   final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest;
+  final List<String> _jobTypeList;
+  @override
+  @JsonKey()
+  List<String> get jobTypeList {
+    if (_jobTypeList is EqualUnmodifiableListView) return _jobTypeList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_jobTypeList);
+  }
+
+  final List<String> _compensationTypeList;
+  @override
+  @JsonKey()
+  List<String> get compensationTypeList {
+    if (_compensationTypeList is EqualUnmodifiableListView)
+      return _compensationTypeList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_compensationTypeList);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingState.initial(selectedTabIndex: $selectedTabIndex, filteredActivity: $filteredActivity, notification: $notification, activity: $activity, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, activitiesState: $activitiesState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest)';
+    return 'SettingState.initial(selectedTabIndex: $selectedTabIndex, filteredActivity: $filteredActivity, notification: $notification, activity: $activity, skills: $skills, skill: $skill, categoryList: $categoryList, state: $state, category: $category, passport: $passport, jobType: $jobType, compensationType: $compensationType, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, activitiesState: $activitiesState, errorMessage: $errorMessage, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest, jobTypeList: $jobTypeList, compensationTypeList: $compensationTypeList)';
   }
 
   @override
@@ -2762,6 +5775,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       ..add(DiagnosticsProperty('filteredActivity', filteredActivity))
       ..add(DiagnosticsProperty('notification', notification))
       ..add(DiagnosticsProperty('activity', activity))
+      ..add(DiagnosticsProperty('skills', skills))
+      ..add(DiagnosticsProperty('skill', skill))
+      ..add(DiagnosticsProperty('categoryList', categoryList))
+      ..add(DiagnosticsProperty('state', state))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('passport', passport))
+      ..add(DiagnosticsProperty('jobType', jobType))
+      ..add(DiagnosticsProperty('compensationType', compensationType))
       ..add(DiagnosticsProperty(
           'updateJobSeekerProfileState', updateJobSeekerProfileState))
       ..add(DiagnosticsProperty(
@@ -2780,7 +5801,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       ..add(DiagnosticsProperty(
           'getJobSeekerResponseEntity', getJobSeekerResponseEntity))
       ..add(DiagnosticsProperty(
-          'updateJobSeekerProfileRequest', updateJobSeekerProfileRequest));
+          'updateJobSeekerProfileRequest', updateJobSeekerProfileRequest))
+      ..add(DiagnosticsProperty('jobTypeList', jobTypeList))
+      ..add(DiagnosticsProperty('compensationTypeList', compensationTypeList));
   }
 
   @override
@@ -2795,6 +5818,18 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             const DeepCollectionEquality()
                 .equals(other._notification, _notification) &&
             const DeepCollectionEquality().equals(other._activity, _activity) &&
+            const DeepCollectionEquality().equals(other._skills, _skills) &&
+            const DeepCollectionEquality().equals(other._skill, _skill) &&
+            const DeepCollectionEquality()
+                .equals(other._categoryList, _categoryList) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.passport, passport) ||
+                other.passport == passport) &&
+            (identical(other.jobType, jobType) || other.jobType == jobType) &&
+            (identical(other.compensationType, compensationType) ||
+                other.compensationType == compensationType) &&
             (identical(other.updateJobSeekerProfileState, updateJobSeekerProfileState) ||
                 other.updateJobSeekerProfileState ==
                     updateJobSeekerProfileState) &&
@@ -2819,30 +5854,44 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             (identical(other.getJobSeekerResponseEntity, getJobSeekerResponseEntity) ||
                 other.getJobSeekerResponseEntity ==
                     getJobSeekerResponseEntity) &&
-            (identical(other.updateJobSeekerProfileRequest,
-                    updateJobSeekerProfileRequest) ||
+            (identical(other.updateJobSeekerProfileRequest, updateJobSeekerProfileRequest) ||
                 other.updateJobSeekerProfileRequest ==
-                    updateJobSeekerProfileRequest));
+                    updateJobSeekerProfileRequest) &&
+            const DeepCollectionEquality()
+                .equals(other._jobTypeList, _jobTypeList) &&
+            const DeepCollectionEquality()
+                .equals(other._compensationTypeList, _compensationTypeList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      selectedTabIndex,
-      const DeepCollectionEquality().hash(_filteredActivity),
-      const DeepCollectionEquality().hash(_notification),
-      const DeepCollectionEquality().hash(_activity),
-      updateJobSeekerProfileState,
-      getEmployerProfileState,
-      getJobSeekerProfileState,
-      updateEmployerProfileState,
-      jobSeekerNotificationState,
-      activitiesState,
-      errorMessage,
-      updatePasswordState,
-      getEmployerResponseEntity,
-      getJobSeekerResponseEntity,
-      updateJobSeekerProfileRequest);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        selectedTabIndex,
+        const DeepCollectionEquality().hash(_filteredActivity),
+        const DeepCollectionEquality().hash(_notification),
+        const DeepCollectionEquality().hash(_activity),
+        const DeepCollectionEquality().hash(_skills),
+        const DeepCollectionEquality().hash(_skill),
+        const DeepCollectionEquality().hash(_categoryList),
+        state,
+        category,
+        passport,
+        jobType,
+        compensationType,
+        updateJobSeekerProfileState,
+        getEmployerProfileState,
+        getJobSeekerProfileState,
+        updateEmployerProfileState,
+        jobSeekerNotificationState,
+        activitiesState,
+        errorMessage,
+        updatePasswordState,
+        getEmployerResponseEntity,
+        getJobSeekerResponseEntity,
+        updateJobSeekerProfileRequest,
+        const DeepCollectionEquality().hash(_jobTypeList),
+        const DeepCollectionEquality().hash(_compensationTypeList)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -2858,6 +5907,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2868,7 +5925,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)
         initial,
   }) {
     return initial(
@@ -2876,6 +5935,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         filteredActivity,
         notification,
         activity,
+        skills,
+        skill,
+        categoryList,
+        state,
+        category,
+        passport,
+        jobType,
+        compensationType,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
@@ -2886,7 +5953,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         updatePasswordState,
         getEmployerResponseEntity,
         getJobSeekerResponseEntity,
-        updateJobSeekerProfileRequest);
+        updateJobSeekerProfileRequest,
+        jobTypeList,
+        compensationTypeList);
   }
 
   @override
@@ -2897,6 +5966,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2907,7 +5984,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)?
         initial,
   }) {
     return initial?.call(
@@ -2915,6 +5994,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         filteredActivity,
         notification,
         activity,
+        skills,
+        skill,
+        categoryList,
+        state,
+        category,
+        passport,
+        jobType,
+        compensationType,
         updateJobSeekerProfileState,
         getEmployerProfileState,
         getJobSeekerProfileState,
@@ -2925,7 +6012,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         updatePasswordState,
         getEmployerResponseEntity,
         getJobSeekerResponseEntity,
-        updateJobSeekerProfileRequest);
+        updateJobSeekerProfileRequest,
+        jobTypeList,
+        compensationTypeList);
   }
 
   @override
@@ -2936,6 +6025,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             List<ActivitiesEntity> filteredActivity,
             List<NotificationEntity> notification,
             List<ActivitiesEntity> activity,
+            List<SkillResponseEntity> skills,
+            List<SkillResponseEntity> skill,
+            List<CategoryResponseEntity> categoryList,
+            StateResponseEntity? state,
+            CategoryResponseEntity? category,
+            File? passport,
+            String jobType,
+            String compensationType,
             UpdateJobSeekerProfileState updateJobSeekerProfileState,
             GetEmployerProfileState getEmployerProfileState,
             GetJobSeekerProfileState getJobSeekerProfileState,
@@ -2946,7 +6043,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             UpdatePasswordState updatePasswordState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest)?
+            UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+            List<String> jobTypeList,
+            List<String> compensationTypeList)?
         initial,
     required TResult orElse(),
   }) {
@@ -2956,6 +6055,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           filteredActivity,
           notification,
           activity,
+          skills,
+          skill,
+          categoryList,
+          state,
+          category,
+          passport,
+          jobType,
+          compensationType,
           updateJobSeekerProfileState,
           getEmployerProfileState,
           getJobSeekerProfileState,
@@ -2966,7 +6073,9 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           updatePasswordState,
           getEmployerResponseEntity,
           getJobSeekerResponseEntity,
-          updateJobSeekerProfileRequest);
+          updateJobSeekerProfileRequest,
+          jobTypeList,
+          compensationTypeList);
     }
     return orElse();
   }
@@ -3002,22 +6111,31 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
 abstract class _Initial implements SettingState {
   const factory _Initial(
-          {final int selectedTabIndex,
-          final List<ActivitiesEntity> filteredActivity,
-          final List<NotificationEntity> notification,
-          final List<ActivitiesEntity> activity,
-          final UpdateJobSeekerProfileState updateJobSeekerProfileState,
-          final GetEmployerProfileState getEmployerProfileState,
-          final GetJobSeekerProfileState getJobSeekerProfileState,
-          final UpdateEmployerProfileState updateEmployerProfileState,
-          final JobSeekerNotificationState jobSeekerNotificationState,
-          final ActvitiesState activitiesState,
-          final String? errorMessage,
-          final UpdatePasswordState updatePasswordState,
-          final GetEmployerResponseEntity? getEmployerResponseEntity,
-          final GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
-          final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest}) =
-      _$InitialImpl;
+      {final int selectedTabIndex,
+      final List<ActivitiesEntity> filteredActivity,
+      final List<NotificationEntity> notification,
+      final List<ActivitiesEntity> activity,
+      final List<SkillResponseEntity> skills,
+      final List<SkillResponseEntity> skill,
+      final List<CategoryResponseEntity> categoryList,
+      final StateResponseEntity? state,
+      final CategoryResponseEntity? category,
+      final File? passport,
+      final String jobType,
+      final String compensationType,
+      final UpdateJobSeekerProfileState updateJobSeekerProfileState,
+      final GetEmployerProfileState getEmployerProfileState,
+      final GetJobSeekerProfileState getJobSeekerProfileState,
+      final UpdateEmployerProfileState updateEmployerProfileState,
+      final JobSeekerNotificationState jobSeekerNotificationState,
+      final ActvitiesState activitiesState,
+      final String? errorMessage,
+      final UpdatePasswordState updatePasswordState,
+      final GetEmployerResponseEntity? getEmployerResponseEntity,
+      final GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
+      final List<String> jobTypeList,
+      final List<String> compensationTypeList}) = _$InitialImpl;
 
   @override
   int get selectedTabIndex;
@@ -3027,6 +6145,22 @@ abstract class _Initial implements SettingState {
   List<NotificationEntity> get notification;
   @override
   List<ActivitiesEntity> get activity;
+  @override
+  List<SkillResponseEntity> get skills;
+  @override
+  List<SkillResponseEntity> get skill;
+  @override
+  List<CategoryResponseEntity> get categoryList;
+  @override
+  StateResponseEntity? get state;
+  @override
+  CategoryResponseEntity? get category;
+  @override
+  File? get passport;
+  @override
+  String get jobType;
+  @override
+  String get compensationType;
   @override
   UpdateJobSeekerProfileState get updateJobSeekerProfileState;
   @override
@@ -3049,6 +6183,10 @@ abstract class _Initial implements SettingState {
   GetJobSeekerResponseEntity? get getJobSeekerResponseEntity;
   @override
   UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest;
+  @override
+  List<String> get jobTypeList;
+  @override
+  List<String> get compensationTypeList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

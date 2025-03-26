@@ -93,8 +93,8 @@ class UpdateProfilePageOneScreen extends HookWidget {
                           child: Column(children: [
                             SizedBox(height: 16.v),
                             SizedBox(
-                                height: 184.adaptSize,
-                                width: 184.adaptSize,
+                                height: 110.adaptSize,
+                                width: 110.adaptSize,
                                 child: Stack(
                                     alignment: Alignment.bottomRight,
                                     children: [
@@ -108,8 +108,8 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                                   BorderRadius.circular(92.h),
                                               alignment: Alignment.center)
                                           : Container(
-                                              width: 200,
-                                              height: 200,
+                                              width: 150,
+                                              height: 150,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 image: DecorationImage(
@@ -123,12 +123,11 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                           //  pickImage();
                                         }),
                                         child: CustomIconButton(
-                                            height: 57.adaptSize,
-                                            width: 57.adaptSize,
+                                            height: 40.adaptSize,
+                                            width: 40.adaptSize,
                                             padding: EdgeInsets.all(7.h),
                                             decoration: IconButtonStyleHelper
                                                 .fillPrimaryTL28,
-                                            alignment: Alignment.bottomRight,
                                             child: Icon(
                                               Icons.add,
                                               color: Colors.white,
@@ -136,11 +135,88 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                             )),
                                       )
                                     ])),
-                            SizedBox(height: 43.v),
+                            SizedBox(height: 25.v),
                             Container(
                                 padding: EdgeInsets.symmetric(horizontal: 25.h),
                                 child: Column(children: [
                                   SizedBox(height: 16.v),
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                          padding: EdgeInsets.only(left: 3.h),
+                                          child: Text("Upload Your CV",
+                                              style:
+                                                  theme.textTheme.bodyMedium))),
+                                  SizedBox(height: 10.v),
+                                  BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      return Container(
+                                          margin: EdgeInsets.only(right: 10.h),
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 6.v, horizontal: 5.v),
+                                          decoration: AppDecoration
+                                              .outlineBlueGray
+                                              .copyWith(
+                                                  borderRadius:
+                                                      BorderRadiusStyle
+                                                          .roundedBorder7),
+                                          child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                InkWell(
+                                                    onTap: () {
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(const AuthEvent
+                                                              .selectResume());
+                                                    },
+                                                    child: Container(
+                                                        height: 30,
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        5),
+                                                            color: Colors.grey
+                                                                .withOpacity(
+                                                                    0.4)),
+                                                        child: Center(
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .symmetric(
+                                                                    horizontal:
+                                                                        10),
+                                                            child: Text(
+                                                                'Choose File',
+                                                                style: theme
+                                                                    .textTheme
+                                                                    .labelMedium
+                                                                    ?.copyWith(
+                                                                        color: const Color
+                                                                            .fromARGB(
+                                                                            255,
+                                                                            88,
+                                                                            49,
+                                                                            49))),
+                                                          ),
+                                                        ))),
+                                                SizedBox(width: 5.v),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 5.v, right: 5.v),
+                                                  child: Text(
+                                                      state.resume == null
+                                                          ? "No file chosen"
+                                                          : "File selected",
+                                                      style: theme.textTheme
+                                                          .labelLarge),
+                                                )
+                                              ]));
+                                    },
+                                  ),
+                                  SizedBox(height: 25.v),
                                   CustomTextFormField(
                                     title: 'Full Name',
                                     titleStyle:
@@ -161,20 +237,19 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     isBorderNone: true,
                                   ),
                                   SizedBox(height: 25.v),
-                                  BlocBuilder<AuthBloc, AuthState>(
-                                    builder: (context, state) {
-                                      return CustomDropDown<String>(
-                                        title: 'Job Type',
-                                        items: state.jobTypeList,
-                                        selectedItem: state.jobType,
-                                        itemLabel: (gender) => gender,
-                                        onChanged: (value) {
-                                          context.read<AuthBloc>().add(
-                                                AuthEvent.updateSelectedJobType(
-                                                    value ?? ''),
-                                              );
-                                        },
-                                      );
+                                  CustomDropDown<String>(
+                                    isBorderNone: true,
+                                    titleStyle:
+                                        CustomTextStyles.titleMediumMedium18,
+                                    title: 'Select Job Type',
+                                    items: state.jobTypeList,
+                                    selectedItem: state.jobType,
+                                    itemLabel: (gender) => gender,
+                                    onChanged: (value) {
+                                      context.read<AuthBloc>().add(
+                                            AuthEvent.updateSelectedGender(
+                                                value ?? ''),
+                                          );
                                     },
                                   ),
                                   SizedBox(height: 25.v),
@@ -188,11 +263,14 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     isBorderNone: true,
                                   ),
                                   SizedBox(
-                                    height: 40,
+                                    height: 25.v,
                                   ),
                                   CustomTextFormField(
+                                    isBorderNone: true,
                                     hintText: 'MM/DD/YYYY',
                                     title: 'Date of Birth',
+                                    titleStyle:
+                                        CustomTextStyles.titleMediumMedium18,
                                     textInputType: TextInputType.number,
                                     inputFormatters: [DateInputFormatter()],
                                     controller: dateOfBirthController,
@@ -216,19 +294,21 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                             context.read<SettingBloc>().add(
                                                 SettingEvent.updateJobSeekerRequest(
                                                     updateJobSeekerRequest.copyWith(
+                                                        passport: state
+                                                            .passport,
                                                         fullName:
                                                             fullNameEditTextController
                                                                 .text,
-                                                        email:
-                                                            emailController
-                                                                .text,
+                                                        email: emailController
+                                                            .text,
                                                         phoneNumber:
                                                             phoneNoTextController
                                                                 .text,
                                                         dateOFBirth:
                                                             dateOfBirthController
                                                                 .text,
-                                                        jobPreference: '')));
+                                                        jobPreference:
+                                                            state.jobType)));
                                             Navigator.pushNamed(
                                               context,
                                               AppRoutes
@@ -241,13 +321,6 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     },
                                   ),
                                   SizedBox(height: 25.v),
-                                  SizedBox(
-                                      width: 130.h,
-                                      child: Divider(
-                                          color: theme
-                                              .colorScheme.primaryContainer
-                                              .withOpacity(1))),
-                                  SizedBox(height: 12.v)
                                 ]))
                           ])))),
             );

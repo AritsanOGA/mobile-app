@@ -1,8 +1,12 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
@@ -44,6 +48,14 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
             getJobSeekerNotificationUsecase ?? locator(),
         _getActivitiesUsecase = getActivitiesUsecase ?? locator(),
         super(_Initial()) {
+    on<_GetState>(_onGetState);
+    on<_GetCategory>(_onGetCategory);
+    on<_GetSkills>(_onGetSkill);
+    on<_UpdateState>(_onUpdateState);
+    on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
+    on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
+    on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
+    on<_UpdateSelectedCompensationType>(_onUpdateSelectedCompensationType);
     on<_GetJobSeekerProfile>(_onGetJobSeekerProfile);
     on<_GetEmployerProfile>(_onGetEmployerProfile);
     on<_GetActivities>(_onGetActivities);
@@ -243,7 +255,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     print("Total Activities: ${state.activity.length}");
     print("Total Activities: ${state.filteredActivity.length}");
     List<ActivitiesEntity> filteredList;
-    // int selectedIndex = event.selectedTabIndex ?? -1;
+
     switch (event.selectedTabIndex) {
       case 0:
         filteredList = List.from(state.activity);
@@ -260,10 +272,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
         filteredList =
             state.activity.where((activity) => activity.approved == 2).toList();
         break;
-      // case 4:
-      //   filteredList =
-      //       state.activity.where((activity) => activity.approved == 3).toList();
-      //   break;
+
       default:
         if (event.selectedTabIndex == 4) {
           filteredList = state.activity
@@ -272,15 +281,99 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
         } else {
           filteredList = List.from(state.activity);
         }
-      //  filteredList = List.from(state.activity);
     }
 
     emit(state.copyWith(
       filteredActivity: List.from(filteredList),
       selectedTabIndex: event.selectedTabIndex,
     ));
-    // emit(state.copyWith(
-    //     filteredActivity: filteredList,
-    //     selectedTabIndex: event.selectedTabIndex));
+  }
+
+  FutureOr<void> _onUpdateState(
+      _UpdateState event, Emitter<SettingState> emit) {
+    emit(state.copyWith(state: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedCategory(
+      _UpdateSelectedCategory event, Emitter<SettingState> emit) {
+    emit(state.copyWith(category: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedCompensationType(
+      _UpdateSelectedCompensationType event, Emitter<SettingState> emit) {
+    emit(state.copyWith(compensationType: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedJobType(
+      _UpdateSelectedJobType event, Emitter<SettingState> emit) {
+    emit(state.copyWith(jobType: event.value));
+  }
+
+  FutureOr<void> _onUpdateSelectedSkill(
+      _UpdateSelectedSkill event, Emitter<SettingState> emit) {
+    emit(state.copyWith(skills: event.value));
+  }
+
+  FutureOr<void> _onGetState(
+      _GetState event, Emitter<SettingState> emit) async {
+    // emit(state.copyWith(getStateState: GetStateState.loading));
+    // final result = await _stateUseCase(event.id);
+    // result.fold(
+    //   (error) => emit(
+    //     state.copyWith(
+    //       getStateState: GetStateState.failure,
+    //       errorMessage: error.message,
+    //     ),
+    //   ),
+    //   (states) => emit(
+    //     state.copyWith(
+    //       states: states,
+    //       getStateState: GetStateState.success,
+    //     ),
+    //   ),
+    // );
+    // emit(state.copyWith(getStateState: GetStateState.idle));
+  }
+
+  FutureOr<void> _onGetCategory(
+      _GetCategory event, Emitter<SettingState> emit) async {
+    //     emit(state.copyWith(getCategoryState: GetCategoryState.loading));
+    // final result = await _categoryUseCase(NoParams());
+    // result.fold(
+    //   (error) => emit(
+    //     state.copyWith(
+    //       getCategoryState: GetCategoryState.failure,
+    //       errorMessage: error.message,
+    //     ),
+    //   ),
+    //   (category) => emit(
+    //     state.copyWith(
+    //       categoryList: category,
+    //       getCategoryState: GetCategoryState.success,
+    //     ),
+    //   ),
+    // );
+    // emit(state.copyWith(getCategoryState: GetCategoryState.idle));
+  }
+
+  FutureOr<void> _onGetSkill(
+      _GetSkills event, Emitter<SettingState> emit) async {
+    //    emit(state.copyWith(getSkillState: GetSkillState.loading));
+    // final result = await _skillUseCase(event.id);
+    // result.fold(
+    //   (error) => emit(
+    //     state.copyWith(
+    //       getSkillState: GetSkillState.failure,
+    //       errorMessage: error.message,
+    //     ),
+    //   ),
+    //   (skills) => emit(
+    //     state.copyWith(
+    //       skill: skills,
+    //       getSkillState: GetSkillState.success,
+    //     ),
+    //   ),
+    // );
+    // emit(state.copyWith(getSkillState: GetSkillState.idle));
   }
 }
