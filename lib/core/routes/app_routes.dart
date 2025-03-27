@@ -39,7 +39,6 @@ import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page
 import 'package:artisan_oga/features/settings/presentation/pages/notification_job_details_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_screen.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_two_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -540,10 +539,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: const SuccessfulJobApplicationPage(),
         );
-      case updateProfilePageThreeScreen:
-        return AppPageRouteBuilder(
-          navigateTo: UpdateProfilePageThreeScreen(),
-        );
+      // case updateProfilePageThreeScreen:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: UpdateProfilePageThreeScreen(),
+      //   );
       case updateProfilePageTwoScreen:
         return AppPageRouteBuilder(
           navigateTo: UpdateProfilePageTwoScreen(),

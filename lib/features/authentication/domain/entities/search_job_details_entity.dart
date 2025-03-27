@@ -1,19 +1,19 @@
 import 'package:equatable/equatable.dart';
 
-class SearchJobDetailEntity extends Equatable {
-  const SearchJobDetailEntity({
-    required this.jobDetails,
-    required this.jobSkills,
-  });
-  final SearchJobDetailsResultEntity jobDetails;
-  final List<ArtisanAssignedSkillEntity> jobSkills;
+// class SearchJobDetailEntity extends Equatable {
+//   const SearchJobDetailEntity({
+//     required this.jobDetails,
+//     required this.jobSkills,
+//   });
+//   final SearchJobDetailsResultEntity jobDetails;
+//   final List<ArtisanAssignedSkillEntity> jobSkills;
 
-  @override
-  List<Object> get props => [
-        jobDetails,
-        jobSkills,
-      ];
-}
+//   @override
+//   List<Object> get props => [
+//         jobDetails,
+//         jobSkills,
+//       ];
+// }
 
 class SearchJobDetailsResultEntity extends Equatable {
   const SearchJobDetailsResultEntity({
@@ -30,6 +30,8 @@ class SearchJobDetailsResultEntity extends Equatable {
     required this.industry,
     required this.createdAt,
     required this.jobTitle,
+      required this.jobSkills,
+    
   });
   final int id;
   final String hireType;
@@ -44,6 +46,7 @@ class SearchJobDetailsResultEntity extends Equatable {
   final String jobTitle;
   final String industry;
   final DateTime createdAt;
+  final List<ArtisanAssignedSkillEntity> jobSkills;
 
   @override
   List<Object> get props => [
@@ -60,6 +63,7 @@ class SearchJobDetailsResultEntity extends Equatable {
         industry,
         createdAt,
         jobTitle,
+        jobSkills
       ];
 }
 

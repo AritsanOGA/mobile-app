@@ -6,7 +6,7 @@ class AuthState with _$AuthState {
     @Default('--Select--') String gender,
     CountryResponseEntity? country,
     StateResponseEntity? state,
-    SearchJobDetailEntity? searchJobDetail,
+    SearchJobDetailsResultEntity? searchJobDetail,
     String? jsCountry,
     File? file,
     String? errorMessage,

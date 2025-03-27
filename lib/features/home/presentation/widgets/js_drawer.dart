@@ -4,6 +4,7 @@ import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth
 import 'package:artisan_oga/features/settings/presentation/pages/activities_tab_container_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -154,12 +155,11 @@ class JSDrawer extends StatelessWidget {
             SizedBox(height: 41.v),
             GestureDetector(
                 onTap: (() {
-                  // // Navigator.pop(context);
-                  // Navigator.push(
-                  //     context,
-                  //     PageTransition(
-                  //         type: PageTransitionType.rightToLeft,
-                  //         child: UpdateProfilePageOneScreen()));
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: UpdateProfilePageOneScreen()));
                 }),
                 child: Row(
                   children: [

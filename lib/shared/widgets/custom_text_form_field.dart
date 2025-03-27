@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-
 class CustomTextFormField extends StatefulWidget {
   CustomTextFormField({
     Key? key,
@@ -35,6 +34,7 @@ class CustomTextFormField extends StatefulWidget {
     this.inputFormatters,
     required this.title,
     this.ontap,
+    this.maxLength,
   }) : super(
           key: key,
         );
@@ -86,6 +86,7 @@ class CustomTextFormField extends StatefulWidget {
   final FormFieldValidator<String>? validator;
 
   final bool? readOnly;
+  final int? maxLength;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -133,6 +134,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         SizedBox(
           width: widget.width ?? double.maxFinite,
           child: TextFormField(
+            maxLength: widget.maxLength,
             onTap: widget.ontap,
             readOnly: widget.readOnly!,
             inputFormatters: widget.inputFormatters,
@@ -368,10 +370,12 @@ class CustomFormattedTextFormField extends StatefulWidget {
   final bool? readOnly;
 
   @override
-  State<CustomFormattedTextFormField> createState() => _CustomFormattedTextFormFieldState();
+  State<CustomFormattedTextFormField> createState() =>
+      _CustomFormattedTextFormFieldState();
 }
 
-class _CustomFormattedTextFormFieldState extends State<CustomFormattedTextFormField> {
+class _CustomFormattedTextFormFieldState
+    extends State<CustomFormattedTextFormField> {
   final NumberFormat _formatter = NumberFormat("#,###");
 
   @override

@@ -11,6 +11,7 @@ import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -96,7 +97,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                 child: Stack(
                                     alignment: Alignment.bottomRight,
                                     children: [
-                                      image == null
+                                      state.picture == null
                                           ? CustomImageView(
                                               imagePath:
                                                   ImageConstant.imgEllipse40,
@@ -111,14 +112,17 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 image: DecorationImage(
-                                                  image: FileImage(image!),
+                                                  image:
+                                                      FileImage(state.picture!),
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
                                       GestureDetector(
                                         onTap: (() {
-                                          //  pickImage();
+                                          context.read<SettingBloc>().add(
+                                              const SettingEvent
+                                                  .selectPicture());
                                         }),
                                         child: CustomIconButton(
                                             height: 40.adaptSize,
@@ -219,7 +223,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     title: 'Full Name',
                                     titleStyle:
                                         CustomTextStyles.titleMediumMedium18,
-                                    hintText: 'Add a Job Description',
+                                    hintText: 'Enter full name',
                                     controller: fullNameEditTextController,
                                     validator: FormValidation.stringValidation,
                                     isBorderNone: true,
@@ -229,7 +233,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     title: 'Email Address',
                                     titleStyle:
                                         CustomTextStyles.titleMediumMedium18,
-                                    hintText: 'Add a Job Description',
+                                    hintText: 'Enter email address',
                                     controller: emailController,
                                     validator: FormValidation.stringValidation,
                                     isBorderNone: true,
@@ -252,10 +256,14 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                   ),
                                   SizedBox(height: 25.v),
                                   CustomTextFormField(
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(11),
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
                                     title: 'Phone Number',
                                     titleStyle:
                                         CustomTextStyles.titleMediumMedium18,
-                                    hintText: 'Add a Job Description',
+                                    hintText: 'Enter phone number',
                                     controller: phoneNoTextController,
                                     validator: FormValidation.stringValidation,
                                     isBorderNone: true,

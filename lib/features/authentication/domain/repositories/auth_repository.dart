@@ -24,7 +24,7 @@ abstract class AuthRepository {
   Future<Either<Failure, List<CountryResponseEntity>>> getCountries();
   Future<Either<Failure, List<SearchJobEntity>>> searchJob(
       SearchJobDataEntity entity);
-  Future<Either<Failure, SearchJobDetailEntity>> searchJobDetail(String jobId);
+  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(String jobId);
   Future<Either<Failure, List<StateResponseEntity>>> getState(String countryId);
   Future<Either<Failure, List<CategoryResponseEntity>>> getCategory();
   Future<Either<Failure, List<SkillResponseEntity>>> getSkill(

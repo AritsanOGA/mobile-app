@@ -13397,7 +13397,7 @@ mixin _$AuthState {
   String get gender => throw _privateConstructorUsedError;
   CountryResponseEntity? get country => throw _privateConstructorUsedError;
   StateResponseEntity? get state => throw _privateConstructorUsedError;
-  SearchJobDetailEntity? get searchJobDetail =>
+  SearchJobDetailsResultEntity? get searchJobDetail =>
       throw _privateConstructorUsedError;
   String? get jsCountry => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
@@ -13466,7 +13466,7 @@ mixin _$AuthState {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13523,7 +13523,7 @@ mixin _$AuthState {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13580,7 +13580,7 @@ mixin _$AuthState {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -13663,7 +13663,7 @@ abstract class $AuthStateCopyWith<$Res> {
       {String gender,
       CountryResponseEntity? country,
       StateResponseEntity? state,
-      SearchJobDetailEntity? searchJobDetail,
+      SearchJobDetailsResultEntity? searchJobDetail,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -13794,7 +13794,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       searchJobDetail: freezed == searchJobDetail
           ? _value.searchJobDetail
           : searchJobDetail // ignore: cast_nullable_to_non_nullable
-              as SearchJobDetailEntity?,
+              as SearchJobDetailsResultEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -13999,7 +13999,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       {String gender,
       CountryResponseEntity? country,
       StateResponseEntity? state,
-      SearchJobDetailEntity? searchJobDetail,
+      SearchJobDetailsResultEntity? searchJobDetail,
       String? jsCountry,
       File? file,
       String? errorMessage,
@@ -14128,7 +14128,7 @@ class __$$InitialImplCopyWithImpl<$Res>
       searchJobDetail: freezed == searchJobDetail
           ? _value.searchJobDetail
           : searchJobDetail // ignore: cast_nullable_to_non_nullable
-              as SearchJobDetailEntity?,
+              as SearchJobDetailsResultEntity?,
       jsCountry: freezed == jsCountry
           ? _value.jsCountry
           : jsCountry // ignore: cast_nullable_to_non_nullable
@@ -14470,7 +14470,7 @@ class _$InitialImpl implements _Initial {
   @override
   final StateResponseEntity? state;
   @override
-  final SearchJobDetailEntity? searchJobDetail;
+  final SearchJobDetailsResultEntity? searchJobDetail;
   @override
   final String? jsCountry;
   @override
@@ -14821,7 +14821,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -14932,7 +14932,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -15043,7 +15043,7 @@ class _$InitialImpl implements _Initial {
             String gender,
             CountryResponseEntity? country,
             StateResponseEntity? state,
-            SearchJobDetailEntity? searchJobDetail,
+            SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
             String? errorMessage,
@@ -15185,7 +15185,7 @@ abstract class _Initial implements AuthState {
       {final String gender,
       final CountryResponseEntity? country,
       final StateResponseEntity? state,
-      final SearchJobDetailEntity? searchJobDetail,
+      final SearchJobDetailsResultEntity? searchJobDetail,
       final String? jsCountry,
       final File? file,
       final String? errorMessage,
@@ -15241,7 +15241,7 @@ abstract class _Initial implements AuthState {
   @override
   StateResponseEntity? get state;
   @override
-  SearchJobDetailEntity? get searchJobDetail;
+  SearchJobDetailsResultEntity? get searchJobDetail;
   @override
   String? get jsCountry;
   @override

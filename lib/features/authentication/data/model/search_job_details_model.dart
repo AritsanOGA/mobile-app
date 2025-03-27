@@ -1,29 +1,29 @@
 import 'package:artisan_oga/features/authentication/domain/entities/search_job_details_entity.dart';
 
-class SearchJobDetailModel extends SearchJobDetailEntity {
-  const SearchJobDetailModel({
-    required super.jobDetails,
-    required List<ArtisanAssignedSkillModel> super.jobSkills,
-  });
+// class SearchJobDetailModel extends SearchJobDetailEntity {
+//   const SearchJobDetailModel({
+//     required super.jobDetails,
+//     required List<ArtisanAssignedSkillModel> super.jobSkills,
+//   });
 
-  factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
-    final skillList = json['job_skills'] != null
-        ? List<Map<String, dynamic>>.from(
-            json['job_skills'] as List,
-          )
-        : <Map<String, dynamic>>[];
-    return SearchJobDetailModel(
-      jobDetails: SearchJobDetailsResultModel.fromJson(json["result"]),
-      jobSkills: skillList.isNotEmpty
-          ? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast()
-          : [],
-    );
-  }
+//   factory SearchJobDetailModel.fromJson(Map<String, dynamic> json) {
+//     final skillList = json['job_skills'] != null
+//         ? List<Map<String, dynamic>>.from(
+//             json['job_skills'] as List,
+//           )
+//         : <Map<String, dynamic>>[];
+//     return SearchJobDetailModel(
+//       jobDetails: SearchJobDetailsResultModel.fromJson(json["result"]),
+//       jobSkills: skillList.isNotEmpty
+//           ? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast()
+//           : [],
+//     );
+//   }
 
-  Map<String, dynamic> toJson() {
-    return {"result": jobDetails, "job_skills": jobSkills};
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     return {"result": jobDetails, "job_skills": jobSkills};
+//   }
+// }
 
 class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
   const SearchJobDetailsResultModel({
@@ -40,11 +40,17 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
     required super.jobTitle,
     required super.industry,
     required super.createdAt,
+    required List<ArtisanAssignedSkillModel> super.jobSkills,
   });
 
   factory SearchJobDetailsResultModel.fromJson(Map<String, dynamic> json) {
+    final skillList = json['job_skills'] != null
+        ? List<Map<String, dynamic>>.from(
+            json['job_skills'] as List,
+          )
+        : <Map<String, dynamic>>[];
     return SearchJobDetailsResultModel(
-      id: json['id'] ,
+      id: json['id'],
       hireType: json['hire_type'] ?? '',
       applicationDeadline: json['application_deadline'] ?? '',
       city: json['city'] ?? '',
@@ -57,6 +63,9 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       jobTitle: json['job_title'] ?? '',
       industry: json['industry'] ?? '',
       createdAt: DateTime.parse(json['created_at']),
+      jobSkills: skillList.isNotEmpty
+          ? skillList.map(ArtisanAssignedSkillModel.fromJson).toList().cast()
+          : [],
     );
   }
 
@@ -74,28 +83,30 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       "level_of_education": qualification,
       "job_title": jobTitle,
       "industry": industry,
-      "created_at": createdAt
+      "created_at": createdAt,
+      "job_skills": jobSkills
     };
   }
 
-  factory SearchJobDetailsResultModel.fromEntity(
-      SearchJobDetailsResultEntity entity) {
-    return SearchJobDetailsResultModel(
-      id: entity.id,
-      hireType: entity.hireType,
-      applicationDeadline: entity.applicationDeadline,
-      city: entity.city,
-      basicSalary: entity.basicSalary,
-      description: entity.description,
-      position: entity.position,
-      jobDescription: entity.jobDescription,
-      accomodation: entity.accomodation,
-      qualification: entity.qualification,
-      jobTitle: entity.jobTitle,
-      industry: entity.industry,
-      createdAt: entity.createdAt,
-    );
-  }
+//   factory SearchJobDetailsResultModel.fromEntity(
+//       SearchJobDetailsResultEntity entity) {
+//     return SearchJobDetailsResultModel(
+//       id: entity.id,
+//       hireType: entity.hireType,
+//       applicationDeadline: entity.applicationDeadline,
+//       city: entity.city,
+//       basicSalary: entity.basicSalary,
+//       description: entity.description,
+//       position: entity.position,
+//       jobDescription: entity.jobDescription,
+//       accomodation: entity.accomodation,
+//       qualification: entity.qualification,
+//       jobTitle: entity.jobTitle,
+//       industry: entity.industry,
+//       createdAt: entity.createdAt,
+//       jobSkills: entity.jobSkills,
+//     );
+//   }
 }
 
 class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {

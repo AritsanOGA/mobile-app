@@ -1,4 +1,3 @@
-import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
@@ -7,16 +6,16 @@ import 'package:artisan_oga/features/authentication/domain/entities/state_respon
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_three_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:page_transition/page_transition.dart';
 
 class UpdateProfilePageTwoScreen extends HookWidget {
   UpdateProfilePageTwoScreen({Key? key}) : super(key: key);
@@ -112,114 +111,35 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                                         isBorderNone: true,
                                       ),
                                       SizedBox(height: 25.v),
-                                      Text('State of Residence',
-                                          style: CustomTextStyles
-                                              .bodyMediumPrimaryContainer_1),
-                                      SizedBox(height: 7.v),
                                       BlocBuilder<AuthBloc, AuthState>(
-                                          builder: (context, state) {
-                                        return Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            padding: const EdgeInsets.only(
-                                                left: 20, right: 5),
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: appTheme.gray500,
-                                                    width: 0.8),
-                                                borderRadius:
-                                                    BorderRadius.circular(8)),
-                                            child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  DropdownSearch<
-                                                      StateResponseEntity>(
-                                                    items: (filter,
-                                                            infiniteScrollProps) =>
-                                                        state.states,
-                                                    itemAsString:
-                                                        (StateResponseEntity
-                                                                state) =>
-                                                            state.name ?? '',
-                                                    decoratorProps:
-                                                        const DropDownDecoratorProps(
-                                                            decoration:
-                                                                InputDecoration(
-                                                      border: InputBorder.none,
-                                                    )),
-                                                    onChanged:
-                                                        (StateResponseEntity?
-                                                            newValue) {
-                                                      context
-                                                          .read<AuthBloc>()
-                                                          .add(
-                                                            AuthEvent
-                                                                .updateSelectedState(
-                                                                    newValue!),
-                                                          );
-                                                    },
-                                                    compareFn:
-                                                        (item, selectedItem) {
-                                                      return item.id ==
-                                                          selectedItem.id;
-                                                    },
-                                                    filterFn: (item, filter) {
-                                                      return item.name!
-                                                          .toLowerCase()
-                                                          .contains(filter
-                                                              .toLowerCase());
-                                                    },
-                                                    suffixProps:
-                                                        DropdownSuffixProps(
-                                                      dropdownButtonProps:
-                                                          DropdownButtonProps(
-                                                        selectedIcon: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  left: 20.0),
-                                                          child: SvgPicture
-                                                              .asset(AppAsset
-                                                                  .dropdown),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    dropdownBuilder: (context,
-                                                        selectedItem) {
-                                                      return Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(top: 10),
-                                                        child: Text(
-                                                          state.state?.name ??
-                                                              'Select State',
-                                                          style: selectedItem ==
-                                                                  null
-                                                              ? CustomTextStyles
-                                                                  .titleSmallPrimaryContainer_1
-                                                              : CustomTextStyles
-                                                                  .titleSmallPrimaryContainer_1,
-                                                        ),
-                                                      );
-                                                    },
-                                                    popupProps:
-                                                        const PopupProps.menu(
-                                                      showSearchBox: true,
-                                                      searchFieldProps:
-                                                          TextFieldProps(
-                                                        decoration:
-                                                            InputDecoration(
-                                                          border:
-                                                              OutlineInputBorder(),
-                                                          hintText: 'Search...',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ]));
-                                      }),
+                                        builder: (context, state) {
+                                          return CustomDropDown<
+                                              StateResponseEntity>(
+                                            title: 'State of Residence',
+                                            isBorderNone: true,
+                                            titleStyle: CustomTextStyles
+                                                .titleMediumMedium18,
+                                            items: state.states,
+                                            selectedItem: state
+                                                    .states.isNotEmpty
+                                                ? state.states.firstWhere(
+                                                    (state) =>
+                                                        state.id == (state.id),
+                                                    orElse: () =>
+                                                        state.states.first)
+                                                : StateResponseEntity(
+                                                    id: 1098, name: 'Djelfa'),
+                                            itemLabel: (state) => state.name!,
+                                            onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                                    AuthEvent
+                                                        .updateSelectedState(
+                                                            value!),
+                                                  );
+                                            },
+                                          );
+                                        },
+                                      ),
                                       SizedBox(height: 25.v),
                                       CustomTextFormField(
                                         title: 'Address ',
@@ -302,11 +222,18 @@ class UpdateProfilePageTwoScreen extends HookWidget {
 
                                                     print(
                                                         'update 2 ${addressController.text} ${aboutMeTextController.text} ${cityController.text} ${state.compensationType}  ${authState.state?.name} ${authState.states.first.name}');
-                                                    Navigator.pushNamed(
-                                                      context,
-                                                      AppRoutes
-                                                          .updateProfilePageThreeScreen,
-                                                    );
+                                                    Navigator.push(
+                                                        context,
+                                                        PageTransition(
+                                                            type:
+                                                                PageTransitionType
+                                                                    .rightToLeft,
+                                                            duration:
+                                                                Durations.long1,
+                                                            child: UpdateProfilePageThreeScreen(
+                                                                compensationType:
+                                                                    state
+                                                                        .compensationType)));
                                                   }
                                                 }),
                                                 text: "Next",
