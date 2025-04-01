@@ -277,16 +277,16 @@ class InvoiceScreen extends HookWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                          'For enquiries and complaints, kindly visit',
+                                          'For inquiries and complaints, kindly send an email to ',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
-                                                  fontSize: 10,
+                                                  fontSize: 8,
                                                   fontWeight: FontWeight.w500)),
-                                      Text('hr@artisanoga.com',
+                                      Text('finance@artisanoga.com',
                                           style: theme.textTheme.bodyMedium
                                               ?.copyWith(
                                                   color: AppColors.kwhite,
-                                                  fontSize: 10))
+                                                  fontSize: 8))
                                     ],
                                   ),
                                 ),
@@ -333,7 +333,7 @@ class InvoiceScreen extends HookWidget {
                                   SizedBox(
                                     height: 20.h,
                                   ),
-                                  Row(
+                                  Column(
                                     children: [
                                       Padding(
                                           padding: EdgeInsets.only(right: 74.h),
@@ -353,6 +353,37 @@ class InvoiceScreen extends HookWidget {
                                                       ),
                                                     );
                                               })),
+                                      SizedBox(
+                                        height: 20.h,
+                                      ),
+                                      state.typeOfCurrencyBank ==
+                                              'Naira Accounts'
+                                          ? Column(
+                                              children: [
+                                                CustomDropDown<String>(
+                                                  title: "Naira Account",
+                                                  items: state.nairaAccountList,
+                                                  selectedItem:
+                                                      state.nairaAccount,
+                                                  itemLabel: (history) =>
+                                                      history,
+                                                  onChanged: (value) {
+                                                    context
+                                                        .read<PaymentBloc>()
+                                                        .add(
+                                                          PaymentEvent
+                                                              .updateNairaAccount(
+                                                                  value ?? ''),
+                                                        );
+                                                    print('ssss ${value}');
+                                                  },
+                                                ),
+                                                SizedBox(
+                                                  height: 20.h,
+                                                ),
+                                              ],
+                                            )
+                                          : SizedBox(),
                                       CustomRadioButton(
                                           text: "Dollar Acounts",
                                           value:
@@ -368,43 +399,89 @@ class InvoiceScreen extends HookWidget {
                                                   ),
                                                 );
                                           }),
+                                      SizedBox(
+                                        height: 20.h,
+                                      ),
+                                      state.typeOfCurrencyBank ==
+                                              'Dollar Accounts'
+                                          ? Column(
+                                              children: [
+                                                CustomDropDown<String>(
+                                                  title: "Dollar Account",
+                                                  items:
+                                                      state.dollarAccountList,
+                                                  selectedItem:
+                                                      state.dollarAccount,
+                                                  itemLabel: (history) =>
+                                                      history,
+                                                  onChanged: (value) {
+                                                    context
+                                                        .read<PaymentBloc>()
+                                                        .add(
+                                                          PaymentEvent
+                                                              .updateDollarAccount(
+                                                                  value ?? ''),
+                                                        );
+                                                    print('dolla ${value}');
+                                                  },
+                                                ),
+                                                SizedBox(
+                                                  height: 20.h,
+                                                ),
+                                              ],
+                                            )
+                                          : SizedBox(),
+                                      CustomRadioButton(
+                                          text: "Euro Acount",
+                                          value:
+                                              state.typeOfCurrencyBankList[2],
+                                          groupValue: state.typeOfCurrencyBank,
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 1.v),
+                                          onChange: (value) {
+                                            context.read<PaymentBloc>().add(
+                                                  PaymentEvent
+                                                      .updateTypeOfCurrencyBank(
+                                                    value,
+                                                  ),
+                                                );
+                                          }),
+                                      SizedBox(
+                                        height: 20.h,
+                                      ),
+                                      state.typeOfCurrencyBank ==
+                                              'Euro Accounts'
+                                          ? Column(
+                                              children: [
+                                                CustomDropDown<String>(
+                                                  title: "Euro Account",
+                                                  items: state.euroAccountList,
+                                                  selectedItem:
+                                                      state.euroAccount,
+                                                  itemLabel: (history) =>
+                                                      history,
+                                                  onChanged: (value) {
+                                                    context
+                                                        .read<PaymentBloc>()
+                                                        .add(
+                                                          PaymentEvent
+                                                              .updateEuroAccount(
+                                                                  value ?? ''),
+                                                        );
+                                                    print('dolla ${value}');
+                                                  },
+                                                ),
+                                                SizedBox(
+                                                  height: 20.h,
+                                                ),
+                                              ],
+                                            )
+                                          : SizedBox(),
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 15.h,
+                                    height: 20.h,
                                   ),
-                                  state.typeOfCurrencyBank == 'Naira Accounts'
-                                      ? CustomDropDown<String>(
-                                          title: "Naira Account",
-                                          items: state.nairaAccountList,
-                                          selectedItem: state.nairaAccount,
-                                          itemLabel: (history) => history,
-                                          onChanged: (value) {
-                                            context.read<PaymentBloc>().add(
-                                                  PaymentEvent
-                                                      .updateNairaAccount(
-                                                          value ?? ''),
-                                                );
-                                            print('ssss ${value}');
-                                          },
-                                        )
-                                      : SizedBox(),
-                                  state.typeOfCurrencyBank == 'Dollar Accounts'
-                                      ? CustomDropDown<String>(
-                                          title: "Dollar Account",
-                                          items: state.dollarAccountList,
-                                          selectedItem: state.dollarAccount,
-                                          itemLabel: (history) => history,
-                                          onChanged: (value) {
-                                            context.read<PaymentBloc>().add(
-                                                  PaymentEvent
-                                                      .updateDollarAccount(
-                                                          value ?? ''),
-                                                );
-                                            print('dolla ${value}');
-                                          },
-                                        )
-                                      : SizedBox()
                                 ],
                               )
                             : SizedBox(),
@@ -431,7 +508,10 @@ class InvoiceScreen extends HookWidget {
                               String bankName =
                                   state.typeOfCurrencyBank == 'Naira Accounts'
                                       ? state.nairaAccount
-                                      : state.dollarAccount;
+                                      : state.typeOfCurrencyBank ==
+                                              'Dollar Accounts'
+                                          ? state.dollarAccount
+                                          : state.euroAccount;
                               print(' ${state.typeOfCurrencyBank}');
                               print('mybank ${bankName}');
                               accountDetailsDialg(

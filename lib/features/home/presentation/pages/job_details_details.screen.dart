@@ -5,7 +5,6 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,28 +39,34 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: CachedNetworkImage(
-                      imageUrl: 'https://picsum.photos/250?image=9',
-                      fit: BoxFit.cover,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) => const Center(),
-                      imageBuilder: (context, imageProvider) => Container(
-                        width: 75,
-                        height: 75,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          // borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: CachedNetworkImageProvider(
-                                'https://picsum.photos/250?image=9'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(ImageConstant.jobImage),
                     ),
                   ),
+                  // Center(
+                  //   child: CachedNetworkImage(
+                  //     imageUrl: 'https://picsum.photos/250?image=9',
+                  //     fit: BoxFit.cover,
+                  //     progressIndicatorBuilder:
+                  //         (context, url, downloadProgress) => const Center(),
+                  //     imageBuilder: (context, imageProvider) => Container(
+                  //       width: 75,
+                  //       height: 75,
+                  //       decoration: BoxDecoration(
+                  //         shape: BoxShape.circle,
+                  //         // borderRadius: BorderRadius.circular(10),
+                  //         image: DecorationImage(
+                  //           image: CachedNetworkImageProvider(
+                  //               'https://picsum.photos/250?image=9'),
+                  //           fit: BoxFit.cover,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     errorWidget: (context, url, error) =>
+                  //         const Icon(Icons.error),
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 10.h,
                   ),
@@ -123,8 +128,7 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.qualification ??
-                                '',
+                            state.searchJobDetail?.qualification ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -174,8 +178,7 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.applicationDeadline ??
-                                '',
+                            state.searchJobDetail?.applicationDeadline ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),

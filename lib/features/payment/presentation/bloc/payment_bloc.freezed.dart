@@ -36,6 +36,7 @@ mixin _$PaymentEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -60,6 +61,7 @@ mixin _$PaymentEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -84,6 +86,7 @@ mixin _$PaymentEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -110,6 +113,7 @@ mixin _$PaymentEvent {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -134,6 +138,7 @@ mixin _$PaymentEvent {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -156,6 +161,7 @@ mixin _$PaymentEvent {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -238,6 +244,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -265,6 +272,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -292,6 +300,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -324,6 +333,7 @@ class _$StartedImpl implements _Started {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -351,6 +361,7 @@ class _$StartedImpl implements _Started {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -376,6 +387,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -475,6 +487,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -502,6 +515,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -529,6 +543,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -561,6 +576,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -588,6 +604,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -613,6 +630,7 @@ class _$TransferPaymentImpl implements _TransferPayment {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -717,6 +735,7 @@ class _$CardPaymentImpl implements _CardPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -744,6 +763,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -771,6 +791,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -803,6 +824,7 @@ class _$CardPaymentImpl implements _CardPayment {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -830,6 +852,7 @@ class _$CardPaymentImpl implements _CardPayment {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -855,6 +878,7 @@ class _$CardPaymentImpl implements _CardPayment {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -959,6 +983,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -986,6 +1011,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1013,6 +1039,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1045,6 +1072,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -1072,6 +1100,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1097,6 +1126,7 @@ class _$PostInvoiceImpl implements _PostInvoice {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1174,6 +1204,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -1201,6 +1232,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1228,6 +1260,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1260,6 +1293,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -1287,6 +1321,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1312,6 +1347,7 @@ class _$GetInvoiceImpl implements _GetInvoice {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1414,6 +1450,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -1441,6 +1478,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1468,6 +1506,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1500,6 +1539,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -1527,6 +1567,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1552,6 +1593,7 @@ class _$GetInvoiceWithIdentityImpl implements _GetInvoiceWithIdentity {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1630,6 +1672,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -1657,6 +1700,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1684,6 +1728,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1716,6 +1761,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -1743,6 +1789,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1768,6 +1815,7 @@ class _$GetAllInvoiceImpl implements _GetAllInvoice {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -1867,6 +1915,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -1894,6 +1943,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1921,6 +1971,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -1953,6 +2004,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -1980,6 +2032,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2005,6 +2058,7 @@ class _$GetNoOfCandidateImpl implements _GetNoOfCandidate {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2082,6 +2136,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -2109,6 +2164,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2136,6 +2192,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2168,6 +2225,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -2195,6 +2253,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2220,6 +2279,7 @@ class _$GetAllPaymentImpl implements _GetAllPayment {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2319,6 +2379,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -2346,6 +2407,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2373,6 +2435,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2405,6 +2468,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -2432,6 +2496,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2457,6 +2522,7 @@ class _$VerifyPaymentImpl implements _VerifyPayment {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2580,6 +2646,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -2607,6 +2674,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2634,6 +2702,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2666,6 +2735,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -2693,6 +2763,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2718,6 +2789,7 @@ class _$UpdatePricePercentImpl implements _UpdatePricePercent {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2825,6 +2897,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -2852,6 +2925,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2879,6 +2953,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -2911,6 +2986,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -2938,6 +3014,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -2963,6 +3040,7 @@ class _$UpdatePaymentMethodImpl implements _UpdatePaymentMethod {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3070,6 +3148,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -3097,6 +3176,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3124,6 +3204,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3156,6 +3237,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -3183,6 +3265,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3208,6 +3291,7 @@ class _$UpdateTypeOfCurrencyBankImpl implements _UpdateTypeOfCurrencyBank {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3313,6 +3397,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -3340,6 +3425,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3367,6 +3453,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3399,6 +3486,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -3426,6 +3514,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3451,6 +3540,7 @@ class _$UpdateDollarAccountImpl implements _UpdateDollarAccount {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3556,6 +3646,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -3583,6 +3674,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3610,6 +3702,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3642,6 +3735,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -3669,6 +3763,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3694,6 +3789,7 @@ class _$UpdateNairaAccountImpl implements _UpdateNairaAccount {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3713,6 +3809,255 @@ abstract class _UpdateNairaAccount implements PaymentEvent {
   String get value;
   @JsonKey(ignore: true)
   _$$UpdateNairaAccountImplCopyWith<_$UpdateNairaAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateEuroAccountImplCopyWith<$Res> {
+  factory _$$UpdateEuroAccountImplCopyWith(_$UpdateEuroAccountImpl value,
+          $Res Function(_$UpdateEuroAccountImpl) then) =
+      __$$UpdateEuroAccountImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateEuroAccountImplCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res, _$UpdateEuroAccountImpl>
+    implements _$$UpdateEuroAccountImplCopyWith<$Res> {
+  __$$UpdateEuroAccountImplCopyWithImpl(_$UpdateEuroAccountImpl _value,
+      $Res Function(_$UpdateEuroAccountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateEuroAccountImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateEuroAccountImpl implements _UpdateEuroAccount {
+  const _$UpdateEuroAccountImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'PaymentEvent.updateEuroAccount(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateEuroAccountImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateEuroAccountImplCopyWith<_$UpdateEuroAccountImpl> get copyWith =>
+      __$$UpdateEuroAccountImplCopyWithImpl<_$UpdateEuroAccountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(TransferPaymentDetailsEntity param)
+        transferPayment,
+    required TResult Function(CardPaymentDetailsEntity param) cardPayment,
+    required TResult Function(PostInvoiceEntity param) postInvoice,
+    required TResult Function() getInvoice,
+    required TResult Function(String identity) getInvoiceWithIdentity,
+    required TResult Function() getAllInvoice,
+    required TResult Function(String jobId) getNoOfCandidate,
+    required TResult Function() getAllPayment,
+    required TResult Function(String transactionId) verifyPayment,
+    required TResult Function(
+            String value, double totalPrice, double percentage)
+        updatePricePercent,
+    required TResult Function(String value) updatePaymentMethod,
+    required TResult Function(String value) updateTypeOfCurrencyBank,
+    required TResult Function(String value) updateDollarAccount,
+    required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
+    required TResult Function(BuildContext context, String value, String amount,
+            Customer customer)
+        initializeTransactionEvent,
+    required TResult Function(String value) verifyTransactionEvent,
+  }) {
+    return updateEuroAccount(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult? Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult? Function(PostInvoiceEntity param)? postInvoice,
+    TResult? Function()? getInvoice,
+    TResult? Function(String identity)? getInvoiceWithIdentity,
+    TResult? Function()? getAllInvoice,
+    TResult? Function(String jobId)? getNoOfCandidate,
+    TResult? Function()? getAllPayment,
+    TResult? Function(String transactionId)? verifyPayment,
+    TResult? Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult? Function(String value)? updatePaymentMethod,
+    TResult? Function(String value)? updateTypeOfCurrencyBank,
+    TResult? Function(String value)? updateDollarAccount,
+    TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
+    TResult? Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
+    TResult? Function(String value)? verifyTransactionEvent,
+  }) {
+    return updateEuroAccount?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(TransferPaymentDetailsEntity param)? transferPayment,
+    TResult Function(CardPaymentDetailsEntity param)? cardPayment,
+    TResult Function(PostInvoiceEntity param)? postInvoice,
+    TResult Function()? getInvoice,
+    TResult Function(String identity)? getInvoiceWithIdentity,
+    TResult Function()? getAllInvoice,
+    TResult Function(String jobId)? getNoOfCandidate,
+    TResult Function()? getAllPayment,
+    TResult Function(String transactionId)? verifyPayment,
+    TResult Function(String value, double totalPrice, double percentage)?
+        updatePricePercent,
+    TResult Function(String value)? updatePaymentMethod,
+    TResult Function(String value)? updateTypeOfCurrencyBank,
+    TResult Function(String value)? updateDollarAccount,
+    TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
+    TResult Function(BuildContext context, String value, String amount,
+            Customer customer)?
+        initializeTransactionEvent,
+    TResult Function(String value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (updateEuroAccount != null) {
+      return updateEuroAccount(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_TransferPayment value) transferPayment,
+    required TResult Function(_CardPayment value) cardPayment,
+    required TResult Function(_PostInvoice value) postInvoice,
+    required TResult Function(_GetInvoice value) getInvoice,
+    required TResult Function(_GetInvoiceWithIdentity value)
+        getInvoiceWithIdentity,
+    required TResult Function(_GetAllInvoice value) getAllInvoice,
+    required TResult Function(_GetNoOfCandidate value) getNoOfCandidate,
+    required TResult Function(_GetAllPayment value) getAllPayment,
+    required TResult Function(_VerifyPayment value) verifyPayment,
+    required TResult Function(_UpdatePricePercent value) updatePricePercent,
+    required TResult Function(_UpdatePaymentMethod value) updatePaymentMethod,
+    required TResult Function(_UpdateTypeOfCurrencyBank value)
+        updateTypeOfCurrencyBank,
+    required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
+    required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
+    required TResult Function(_InitializeTransactionEvent value)
+        initializeTransactionEvent,
+    required TResult Function(_VerifyTransactionEvent value)
+        verifyTransactionEvent,
+  }) {
+    return updateEuroAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_TransferPayment value)? transferPayment,
+    TResult? Function(_CardPayment value)? cardPayment,
+    TResult? Function(_PostInvoice value)? postInvoice,
+    TResult? Function(_GetInvoice value)? getInvoice,
+    TResult? Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
+    TResult? Function(_GetAllInvoice value)? getAllInvoice,
+    TResult? Function(_GetNoOfCandidate value)? getNoOfCandidate,
+    TResult? Function(_GetAllPayment value)? getAllPayment,
+    TResult? Function(_VerifyPayment value)? verifyPayment,
+    TResult? Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult? Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult? Function(_UpdateTypeOfCurrencyBank value)?
+        updateTypeOfCurrencyBank,
+    TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
+    TResult? Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+  }) {
+    return updateEuroAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_TransferPayment value)? transferPayment,
+    TResult Function(_CardPayment value)? cardPayment,
+    TResult Function(_PostInvoice value)? postInvoice,
+    TResult Function(_GetInvoice value)? getInvoice,
+    TResult Function(_GetInvoiceWithIdentity value)? getInvoiceWithIdentity,
+    TResult Function(_GetAllInvoice value)? getAllInvoice,
+    TResult Function(_GetNoOfCandidate value)? getNoOfCandidate,
+    TResult Function(_GetAllPayment value)? getAllPayment,
+    TResult Function(_VerifyPayment value)? verifyPayment,
+    TResult Function(_UpdatePricePercent value)? updatePricePercent,
+    TResult Function(_UpdatePaymentMethod value)? updatePaymentMethod,
+    TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
+    TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
+    TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
+    TResult Function(_InitializeTransactionEvent value)?
+        initializeTransactionEvent,
+    TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
+    required TResult orElse(),
+  }) {
+    if (updateEuroAccount != null) {
+      return updateEuroAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateEuroAccount implements PaymentEvent {
+  const factory _UpdateEuroAccount(final String value) =
+      _$UpdateEuroAccountImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateEuroAccountImplCopyWith<_$UpdateEuroAccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3829,6 +4174,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -3856,6 +4202,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3883,6 +4230,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -3915,6 +4263,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -3942,6 +4291,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -3967,6 +4317,7 @@ class _$InitializeTransactionEventImpl implements _InitializeTransactionEvent {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -4080,6 +4431,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     required TResult Function(String value) updateTypeOfCurrencyBank,
     required TResult Function(String value) updateDollarAccount,
     required TResult Function(String value) updateNairaAccount,
+    required TResult Function(String value) updateEuroAccount,
     required TResult Function(BuildContext context, String value, String amount,
             Customer customer)
         initializeTransactionEvent,
@@ -4107,6 +4459,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult? Function(String value)? updateTypeOfCurrencyBank,
     TResult? Function(String value)? updateDollarAccount,
     TResult? Function(String value)? updateNairaAccount,
+    TResult? Function(String value)? updateEuroAccount,
     TResult? Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -4134,6 +4487,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult Function(String value)? updateTypeOfCurrencyBank,
     TResult Function(String value)? updateDollarAccount,
     TResult Function(String value)? updateNairaAccount,
+    TResult Function(String value)? updateEuroAccount,
     TResult Function(BuildContext context, String value, String amount,
             Customer customer)?
         initializeTransactionEvent,
@@ -4166,6 +4520,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
         updateTypeOfCurrencyBank,
     required TResult Function(_UpdateDollarAccount value) updateDollarAccount,
     required TResult Function(_UpdateNairaAccount value) updateNairaAccount,
+    required TResult Function(_UpdateEuroAccount value) updateEuroAccount,
     required TResult Function(_InitializeTransactionEvent value)
         initializeTransactionEvent,
     required TResult Function(_VerifyTransactionEvent value)
@@ -4193,6 +4548,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
         updateTypeOfCurrencyBank,
     TResult? Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult? Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult? Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult? Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult? Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -4218,6 +4574,7 @@ class _$VerifyTransactionEventImpl implements _VerifyTransactionEvent {
     TResult Function(_UpdateTypeOfCurrencyBank value)? updateTypeOfCurrencyBank,
     TResult Function(_UpdateDollarAccount value)? updateDollarAccount,
     TResult Function(_UpdateNairaAccount value)? updateNairaAccount,
+    TResult Function(_UpdateEuroAccount value)? updateEuroAccount,
     TResult Function(_InitializeTransactionEvent value)?
         initializeTransactionEvent,
     TResult Function(_VerifyTransactionEvent value)? verifyTransactionEvent,
@@ -4254,6 +4611,7 @@ mixin _$PaymentState {
   String? get errorMessage => throw _privateConstructorUsedError;
   String get dollarAccount => throw _privateConstructorUsedError;
   String get nairaAccount => throw _privateConstructorUsedError;
+  String get euroAccount => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   double? get percentage => throw _privateConstructorUsedError;
   double? get amount => throw _privateConstructorUsedError;
@@ -4278,6 +4636,7 @@ mixin _$PaymentState {
   List<String> get paymentMethodList => throw _privateConstructorUsedError;
   List<String> get dollarAccountList => throw _privateConstructorUsedError;
   List<String> get nairaAccountList => throw _privateConstructorUsedError;
+  List<String> get euroAccountList => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -4291,6 +4650,7 @@ mixin _$PaymentState {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -4309,7 +4669,8 @@ mixin _$PaymentState {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)
+            List<String> nairaAccountList,
+            List<String> euroAccountList)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -4326,6 +4687,7 @@ mixin _$PaymentState {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -4344,7 +4706,8 @@ mixin _$PaymentState {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)?
+            List<String> nairaAccountList,
+            List<String> euroAccountList)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -4361,6 +4724,7 @@ mixin _$PaymentState {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -4379,7 +4743,8 @@ mixin _$PaymentState {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)?
+            List<String> nairaAccountList,
+            List<String> euroAccountList)?
         initial,
     required TResult orElse(),
   }) =>
@@ -4423,6 +4788,7 @@ abstract class $PaymentStateCopyWith<$Res> {
       String? errorMessage,
       String dollarAccount,
       String nairaAccount,
+      String euroAccount,
       double? price,
       double? percentage,
       double? amount,
@@ -4441,7 +4807,8 @@ abstract class $PaymentStateCopyWith<$Res> {
       List<String> typeOfCurrencyBankList,
       List<String> paymentMethodList,
       List<String> dollarAccountList,
-      List<String> nairaAccountList});
+      List<String> nairaAccountList,
+      List<String> euroAccountList});
 }
 
 /// @nodoc
@@ -4467,6 +4834,7 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
     Object? errorMessage = freezed,
     Object? dollarAccount = null,
     Object? nairaAccount = null,
+    Object? euroAccount = null,
     Object? price = freezed,
     Object? percentage = freezed,
     Object? amount = freezed,
@@ -4486,6 +4854,7 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
     Object? paymentMethodList = null,
     Object? dollarAccountList = null,
     Object? nairaAccountList = null,
+    Object? euroAccountList = null,
   }) {
     return _then(_value.copyWith(
       getInvoice: freezed == getInvoice
@@ -4527,6 +4896,10 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
       nairaAccount: null == nairaAccount
           ? _value.nairaAccount
           : nairaAccount // ignore: cast_nullable_to_non_nullable
+              as String,
+      euroAccount: null == euroAccount
+          ? _value.euroAccount
+          : euroAccount // ignore: cast_nullable_to_non_nullable
               as String,
       price: freezed == price
           ? _value.price
@@ -4604,6 +4977,10 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
           ? _value.nairaAccountList
           : nairaAccountList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      euroAccountList: null == euroAccountList
+          ? _value.euroAccountList
+          : euroAccountList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -4627,6 +5004,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? errorMessage,
       String dollarAccount,
       String nairaAccount,
+      String euroAccount,
       double? price,
       double? percentage,
       double? amount,
@@ -4645,7 +5023,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<String> typeOfCurrencyBankList,
       List<String> paymentMethodList,
       List<String> dollarAccountList,
-      List<String> nairaAccountList});
+      List<String> nairaAccountList,
+      List<String> euroAccountList});
 }
 
 /// @nodoc
@@ -4669,6 +5048,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? errorMessage = freezed,
     Object? dollarAccount = null,
     Object? nairaAccount = null,
+    Object? euroAccount = null,
     Object? price = freezed,
     Object? percentage = freezed,
     Object? amount = freezed,
@@ -4688,6 +5068,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? paymentMethodList = null,
     Object? dollarAccountList = null,
     Object? nairaAccountList = null,
+    Object? euroAccountList = null,
   }) {
     return _then(_$InitialImpl(
       getInvoice: freezed == getInvoice
@@ -4729,6 +5110,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       nairaAccount: null == nairaAccount
           ? _value.nairaAccount
           : nairaAccount // ignore: cast_nullable_to_non_nullable
+              as String,
+      euroAccount: null == euroAccount
+          ? _value.euroAccount
+          : euroAccount // ignore: cast_nullable_to_non_nullable
               as String,
       price: freezed == price
           ? _value.price
@@ -4806,6 +5191,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._nairaAccountList
           : nairaAccountList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      euroAccountList: null == euroAccountList
+          ? _value._euroAccountList
+          : euroAccountList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -4824,6 +5213,7 @@ class _$InitialImpl implements _Initial {
       this.errorMessage,
       this.dollarAccount = "--Select--",
       this.nairaAccount = "--Select--",
+      this.euroAccount = "--Select--",
       this.price,
       this.percentage,
       this.amount,
@@ -4841,7 +5231,8 @@ class _$InitialImpl implements _Initial {
       final List<String> payingAllList = const ["75", "100"],
       final List<String> typeOfCurrencyBankList = const [
         "Naira Accounts",
-        "Dollar Accounts"
+        "Dollar Accounts",
+        "Euro Accounts"
       ],
       final List<String> paymentMethodList = const [
         "--Select--",
@@ -4850,21 +5241,22 @@ class _$InitialImpl implements _Initial {
       ],
       final List<String> dollarAccountList = const [
         "--Select--",
-        "ACCESS Bank",
-        "Zenith Bank"
+        "ACCESS Bank"
       ],
       final List<String> nairaAccountList = const [
         "--Select--",
         "ZENITH BANK",
         "UBA"
-      ]})
+      ],
+      final List<String> euroAccountList = const ["--Select--", "ZENITH BANK"]})
       : _invoices = invoices,
         _payments = payments,
         _payingAllList = payingAllList,
         _typeOfCurrencyBankList = typeOfCurrencyBankList,
         _paymentMethodList = paymentMethodList,
         _dollarAccountList = dollarAccountList,
-        _nairaAccountList = nairaAccountList;
+        _nairaAccountList = nairaAccountList,
+        _euroAccountList = euroAccountList;
 
   @override
   final GetInvoiceEntity? getInvoice;
@@ -4902,6 +5294,9 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final String nairaAccount;
+  @override
+  @JsonKey()
+  final String euroAccount;
   @override
   final double? price;
   @override
@@ -4988,9 +5383,18 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_nairaAccountList);
   }
 
+  final List<String> _euroAccountList;
+  @override
+  @JsonKey()
+  List<String> get euroAccountList {
+    if (_euroAccountList is EqualUnmodifiableListView) return _euroAccountList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_euroAccountList);
+  }
+
   @override
   String toString() {
-    return 'PaymentState.initial(getInvoice: $getInvoice, noOfCandidateEntity: $noOfCandidateEntity, invoices: $invoices, payments: $payments, verifyFlutterwavePaymentEntity: $verifyFlutterwavePaymentEntity, payingAll: $payingAll, typeOfCurrencyBank: $typeOfCurrencyBank, errorMessage: $errorMessage, dollarAccount: $dollarAccount, nairaAccount: $nairaAccount, price: $price, percentage: $percentage, amount: $amount, balance: $balance, selectedPercentage: $selectedPercentage, paymentMethod: $paymentMethod, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState, getAllInvoiceState: $getAllInvoiceState, getAllPaymentState: $getAllPaymentState, noOfCandidateState: $noOfCandidateState, flutterwavePaymentState: $flutterwavePaymentState, payingAllList: $payingAllList, typeOfCurrencyBankList: $typeOfCurrencyBankList, paymentMethodList: $paymentMethodList, dollarAccountList: $dollarAccountList, nairaAccountList: $nairaAccountList)';
+    return 'PaymentState.initial(getInvoice: $getInvoice, noOfCandidateEntity: $noOfCandidateEntity, invoices: $invoices, payments: $payments, verifyFlutterwavePaymentEntity: $verifyFlutterwavePaymentEntity, payingAll: $payingAll, typeOfCurrencyBank: $typeOfCurrencyBank, errorMessage: $errorMessage, dollarAccount: $dollarAccount, nairaAccount: $nairaAccount, euroAccount: $euroAccount, price: $price, percentage: $percentage, amount: $amount, balance: $balance, selectedPercentage: $selectedPercentage, paymentMethod: $paymentMethod, postInvoiceState: $postInvoiceState, transferPaymentState: $transferPaymentState, cardPaymentState: $cardPaymentState, getInvoiceState: $getInvoiceState, getAllInvoiceState: $getAllInvoiceState, getAllPaymentState: $getAllPaymentState, noOfCandidateState: $noOfCandidateState, flutterwavePaymentState: $flutterwavePaymentState, payingAllList: $payingAllList, typeOfCurrencyBankList: $typeOfCurrencyBankList, paymentMethodList: $paymentMethodList, dollarAccountList: $dollarAccountList, nairaAccountList: $nairaAccountList, euroAccountList: $euroAccountList)';
   }
 
   @override
@@ -5018,6 +5422,8 @@ class _$InitialImpl implements _Initial {
                 other.dollarAccount == dollarAccount) &&
             (identical(other.nairaAccount, nairaAccount) ||
                 other.nairaAccount == nairaAccount) &&
+            (identical(other.euroAccount, euroAccount) ||
+                other.euroAccount == euroAccount) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.percentage, percentage) ||
                 other.percentage == percentage) &&
@@ -5053,7 +5459,9 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality()
                 .equals(other._dollarAccountList, _dollarAccountList) &&
             const DeepCollectionEquality()
-                .equals(other._nairaAccountList, _nairaAccountList));
+                .equals(other._nairaAccountList, _nairaAccountList) &&
+            const DeepCollectionEquality()
+                .equals(other._euroAccountList, _euroAccountList));
   }
 
   @override
@@ -5069,6 +5477,7 @@ class _$InitialImpl implements _Initial {
         errorMessage,
         dollarAccount,
         nairaAccount,
+        euroAccount,
         price,
         percentage,
         amount,
@@ -5087,7 +5496,8 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_typeOfCurrencyBankList),
         const DeepCollectionEquality().hash(_paymentMethodList),
         const DeepCollectionEquality().hash(_dollarAccountList),
-        const DeepCollectionEquality().hash(_nairaAccountList)
+        const DeepCollectionEquality().hash(_nairaAccountList),
+        const DeepCollectionEquality().hash(_euroAccountList)
       ]);
 
   @JsonKey(ignore: true)
@@ -5110,6 +5520,7 @@ class _$InitialImpl implements _Initial {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -5128,7 +5539,8 @@ class _$InitialImpl implements _Initial {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)
+            List<String> nairaAccountList,
+            List<String> euroAccountList)
         initial,
   }) {
     return initial(
@@ -5142,6 +5554,7 @@ class _$InitialImpl implements _Initial {
         errorMessage,
         dollarAccount,
         nairaAccount,
+        euroAccount,
         price,
         percentage,
         amount,
@@ -5160,7 +5573,8 @@ class _$InitialImpl implements _Initial {
         typeOfCurrencyBankList,
         paymentMethodList,
         dollarAccountList,
-        nairaAccountList);
+        nairaAccountList,
+        euroAccountList);
   }
 
   @override
@@ -5177,6 +5591,7 @@ class _$InitialImpl implements _Initial {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -5195,7 +5610,8 @@ class _$InitialImpl implements _Initial {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)?
+            List<String> nairaAccountList,
+            List<String> euroAccountList)?
         initial,
   }) {
     return initial?.call(
@@ -5209,6 +5625,7 @@ class _$InitialImpl implements _Initial {
         errorMessage,
         dollarAccount,
         nairaAccount,
+        euroAccount,
         price,
         percentage,
         amount,
@@ -5227,7 +5644,8 @@ class _$InitialImpl implements _Initial {
         typeOfCurrencyBankList,
         paymentMethodList,
         dollarAccountList,
-        nairaAccountList);
+        nairaAccountList,
+        euroAccountList);
   }
 
   @override
@@ -5244,6 +5662,7 @@ class _$InitialImpl implements _Initial {
             String? errorMessage,
             String dollarAccount,
             String nairaAccount,
+            String euroAccount,
             double? price,
             double? percentage,
             double? amount,
@@ -5262,7 +5681,8 @@ class _$InitialImpl implements _Initial {
             List<String> typeOfCurrencyBankList,
             List<String> paymentMethodList,
             List<String> dollarAccountList,
-            List<String> nairaAccountList)?
+            List<String> nairaAccountList,
+            List<String> euroAccountList)?
         initial,
     required TResult orElse(),
   }) {
@@ -5278,6 +5698,7 @@ class _$InitialImpl implements _Initial {
           errorMessage,
           dollarAccount,
           nairaAccount,
+          euroAccount,
           price,
           percentage,
           amount,
@@ -5296,7 +5717,8 @@ class _$InitialImpl implements _Initial {
           typeOfCurrencyBankList,
           paymentMethodList,
           dollarAccountList,
-          nairaAccountList);
+          nairaAccountList,
+          euroAccountList);
     }
     return orElse();
   }
@@ -5342,6 +5764,7 @@ abstract class _Initial implements PaymentState {
       final String? errorMessage,
       final String dollarAccount,
       final String nairaAccount,
+      final String euroAccount,
       final double? price,
       final double? percentage,
       final double? amount,
@@ -5360,7 +5783,8 @@ abstract class _Initial implements PaymentState {
       final List<String> typeOfCurrencyBankList,
       final List<String> paymentMethodList,
       final List<String> dollarAccountList,
-      final List<String> nairaAccountList}) = _$InitialImpl;
+      final List<String> nairaAccountList,
+      final List<String> euroAccountList}) = _$InitialImpl;
 
   @override
   GetInvoiceEntity? get getInvoice;
@@ -5382,6 +5806,8 @@ abstract class _Initial implements PaymentState {
   String get dollarAccount;
   @override
   String get nairaAccount;
+  @override
+  String get euroAccount;
   @override
   double? get price;
   @override
@@ -5420,6 +5846,8 @@ abstract class _Initial implements PaymentState {
   List<String> get dollarAccountList;
   @override
   List<String> get nairaAccountList;
+  @override
+  List<String> get euroAccountList;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

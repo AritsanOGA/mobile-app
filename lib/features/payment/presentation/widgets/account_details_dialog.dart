@@ -26,7 +26,6 @@ accountDetailsDialg(
                 context,
                 AppRoutes.invoiceSuccessScreen,
               );
-              // ToastUtils.showRedToast(state.errorMessage ?? '');
             } else if (state.transferPaymentState ==
                 TransferPaymentState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -60,35 +59,8 @@ accountDetailsDialg(
                             SizedBox(
                               height: 20.h,
                             ),
-                            bank == 'ZENITH BANK'
+                            bank == 'UBA BANK'
                                 ? Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Artisan Oga Ltd'),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        '1015255690',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        'ZENITH BANK',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                    ],
-                                  )
-                                : Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
@@ -114,6 +86,54 @@ accountDetailsDialg(
                                                 fontSize: 15),
                                       ),
                                     ],
+                                  )
+                                : Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Artisan Oga Ltd'),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        '1015255690',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        'ZENITH BANK',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15),
+                                      ),
+                                      // Text('Artisan Oga Ltd'),
+                                      // SizedBox(
+                                      //   height: 3.h,
+                                      // ),
+                                      // Text(
+                                      //   '1020641475',
+                                      //   style: theme.textTheme.bodyMedium
+                                      //       ?.copyWith(
+                                      //           fontWeight: FontWeight.bold,
+                                      //           fontSize: 15),
+                                      // ),
+                                      // SizedBox(
+                                      //   height: 3.h,
+                                      // ),
+                                      // Text(
+                                      //   'UBA',
+                                      //   style: theme.textTheme.bodyMedium
+                                      //       ?.copyWith(
+                                      //           fontWeight: FontWeight.bold,
+                                      //           fontSize: 15),
+                                      // ),
+                                    ],
                                   ),
                             SizedBox(
                               height: 20.h,
@@ -132,97 +152,165 @@ accountDetailsDialg(
                                 })
                           ],
                         )
-                      : Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            Center(
-                              child: Text(
-                                'Dollar Accounts',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20.h,
-                            ),
-                            bank == 'ACCESS Bank'
-                                ? Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Artisan Oga Ltd'),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        'ACCESS BANK',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        '1862512766',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 15.h,
-                                      ),
-                                    ],
-                                  )
-                                : Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Artisan Oga Ltd'),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        'Zenith Bank',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 3.h,
-                                      ),
-                                      Text(
-                                        '5080430125',
-                                        style: theme.textTheme.bodyMedium
-                                            ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                      ),
-                                    ],
+                      : accountCurrency == 'Dollar Accounts'
+                          ? Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Dollar Accounts',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
                                   ),
-                            SizedBox(
-                              height: 20.h,
+                                ),
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                bank == 'ACCESS Bank'
+                                    ? Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('Artisan Oga Ltd'),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            'ACCESS BANK',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            '1862512766',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                          SizedBox(
+                                            height: 15.h,
+                                          ),
+                                        ],
+                                      )
+                                    : SizedBox(),
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                CustomElevatedButton(
+                                    text: 'Confirm',
+                                    isBusy: state.transferPaymentState ==
+                                        TransferPaymentState.loading,
+                                    onPressed: () {
+                                      context.read<PaymentBloc>().add(
+                                          PaymentEvent.transferPayment(
+                                              TransferPaymentDetailsEntity(
+                                                  identity: identity,
+                                                  amount: total,
+                                                  bank: bank)));
+                                    })
+                              ],
+                            )
+                          : Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                Center(
+                                  child: Text(
+                                    'Euro Accounts',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                bank == 'ACCESS Bank'
+                                    ? Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('Artisan Oga Ltd'),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            'ACCESS BANK',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            '1862512766',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                          SizedBox(
+                                            height: 15.h,
+                                          ),
+                                        ],
+                                      )
+                                    : Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('Artisan Oga Ltd'),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            'Zenith Bank',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                          SizedBox(
+                                            height: 3.h,
+                                          ),
+                                          Text(
+                                            '5080430125',
+                                            style: theme.textTheme.bodyMedium
+                                                ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                          ),
+                                        ],
+                                      ),
+                                SizedBox(
+                                  height: 20.h,
+                                ),
+                                CustomElevatedButton(
+                                    text: 'Confirm',
+                                    isBusy: state.transferPaymentState ==
+                                        TransferPaymentState.loading,
+                                    onPressed: () {
+                                      context.read<PaymentBloc>().add(
+                                          PaymentEvent.transferPayment(
+                                              TransferPaymentDetailsEntity(
+                                                  identity: identity,
+                                                  amount: total,
+                                                  bank: bank)));
+                                    })
+                              ],
                             ),
-                            CustomElevatedButton(
-                                text: 'Confirm',
-                                isBusy: state.transferPaymentState ==
-                                    TransferPaymentState.loading,
-                                onPressed: () {
-                                  context.read<PaymentBloc>().add(
-                                      PaymentEvent.transferPayment(
-                                          TransferPaymentDetailsEntity(
-                                              identity: identity,
-                                              amount: total,
-                                              bank: bank)));
-                                })
-                          ],
-                        ),
                 ));
           },
         );

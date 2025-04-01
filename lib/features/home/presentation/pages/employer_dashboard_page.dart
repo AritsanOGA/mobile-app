@@ -4,14 +4,13 @@ import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/post_job_one_page.dart';
-import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/employer_drawer.dart';
+import 'package:artisan_oga/features/home/presentation/widgets/employer_job_widget.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
-
 import '../../../../core/services/default.dart';
 import '../../../../shared/widgets/custom_outlined_button.dart';
 import '../widgets/userprofilelist_item_widget.dart';

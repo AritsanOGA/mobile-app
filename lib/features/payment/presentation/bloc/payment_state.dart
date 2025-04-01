@@ -13,6 +13,7 @@ class PaymentState with _$PaymentState {
     String? errorMessage,
     @Default("--Select--") String dollarAccount,
     @Default("--Select--") String nairaAccount,
+      @Default("--Select--") String euroAccount,
     double? price,
     double? percentage,
     double? amount,
@@ -34,10 +35,7 @@ class PaymentState with _$PaymentState {
       "100",
     ])
     List<String> payingAllList,
-    @Default([
-      "Naira Accounts",
-      "Dollar Accounts",
-    ])
+    @Default(["Naira Accounts", "Dollar Accounts", "Euro Accounts"])
     List<String> typeOfCurrencyBankList,
     @Default([
       "--Select--",
@@ -48,7 +46,6 @@ class PaymentState with _$PaymentState {
     @Default([
       "--Select--",
       "ACCESS Bank",
-      "Zenith Bank",
     ])
     List<String> dollarAccountList,
     @Default([
@@ -57,5 +54,10 @@ class PaymentState with _$PaymentState {
       "UBA",
     ])
     List<String> nairaAccountList,
+    @Default([
+      "--Select--",
+      "ZENITH BANK",
+    ])
+    List<String> euroAccountList,
   }) = _Initial;
 }

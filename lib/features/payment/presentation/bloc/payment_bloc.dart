@@ -69,7 +69,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
 
     on<_UpdateTypeOfCurrencyBank>(_onUpdateTypeOfCurrencyBank);
     on<_UpdateNairaAccount>(_onUpdateNairaAccount);
-
+    on<_UpdateEuroAccount>(_onUpdateEuroAccount);
     on<_UpdateDollarAccount>(_onUpdateDollarAccount);
     on<_InitializeTransactionEvent>(_onInitializeTransaction);
 
@@ -181,6 +181,11 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   FutureOr<void> _onUpdateNairaAccount(
       _UpdateNairaAccount event, Emitter<PaymentState> emit) {
     emit(state.copyWith(nairaAccount: event.value));
+  }
+
+  FutureOr<void> _onUpdateEuroAccount(
+      _UpdateEuroAccount event, Emitter<PaymentState> emit) {
+    emit(state.copyWith(euroAccount: event.value));
   }
 
   FutureOr<void> _onUpdateDollarAccount(

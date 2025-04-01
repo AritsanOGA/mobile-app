@@ -37,6 +37,9 @@ class PaymentEvent with _$PaymentEvent {
   const factory PaymentEvent.updateNairaAccount(
     String value,
   ) = _UpdateNairaAccount;
+  const factory PaymentEvent.updateEuroAccount(
+    String value,
+  ) = _UpdateEuroAccount;
   const factory PaymentEvent.initializeTransactionEvent(
     BuildContext context,
     String value,

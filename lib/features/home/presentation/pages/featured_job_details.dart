@@ -7,7 +7,6 @@ import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,30 +39,36 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: CachedNetworkImage(
-                    imageUrl: 'https://picsum.photos/250?image=9',
-
-                    //  state.jobSeekerJobList[index].profileImage,
-                    fit: BoxFit.cover,
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => const Center(),
-                    imageBuilder: (context, imageProvider) => Container(
-                      width: 75,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        // borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                              'https://picsum.photos/250?image=9'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(ImageConstant.jobImage),
                   ),
                 ),
+                // Center(
+                //   child: CachedNetworkImage(
+                //     imageUrl: 'https://picsum.photos/250?image=9',
+
+                //     //  state.jobSeekerJobList[index].profileImage,
+                //     fit: BoxFit.cover,
+                //     progressIndicatorBuilder:
+                //         (context, url, downloadProgress) => const Center(),
+                //     imageBuilder: (context, imageProvider) => Container(
+                //       width: 75,
+                //       height: 75,
+                //       decoration: BoxDecoration(
+                //         shape: BoxShape.circle,
+                //         // borderRadius: BorderRadius.circular(10),
+                //         image: DecorationImage(
+                //           image: CachedNetworkImageProvider(
+                //               'https://picsum.photos/250?image=9'),
+                //           fit: BoxFit.cover,
+                //         ),
+                //       ),
+                //     ),
+                //     errorWidget: (context, url, error) =>
+                //         const Icon(Icons.error),
+                //   ),
+                // ),
                 SizedBox(
                   height: 10.h,
                 ),
