@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
     animationController.repeat();
-    //  context.read<AuthBloc>().add(const AuthEvent.getUserData());
+   // context.read<AuthBloc>().add(const AuthEvent.getUserData());
 
     super.initState();
   }
@@ -58,9 +58,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             Navigator.pushNamedAndRemoveUntil(
                 context, AppRoutes.jobSeekerNavBarScreen, (route) => false);
           }
-
-        }
-        );
+        });
         return AnnotatedRegion(
           value: SystemUiOverlayStyle(
               statusBarColor: AppColors.kwhite,

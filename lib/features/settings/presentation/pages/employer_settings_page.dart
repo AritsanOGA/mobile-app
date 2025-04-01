@@ -47,7 +47,7 @@ class EmployerSettingsPage extends HookWidget {
                                                 'http://${state.getEmployerResponseEntity?.image ?? ''}',
                                             fit: BoxFit.cover,
                                             progressIndicatorBuilder: (context,
-                                                    url, downloadProgress) =>
+                                                     url, downloadProgress) =>
                                                 const Center(),
                                             imageBuilder:
                                                 (context, imageProvider) =>

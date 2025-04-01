@@ -52,57 +52,41 @@ class JSProfilePage extends HookWidget {
                     //   return Center(child: Text('No items found.'));
                     // }
                     return Column(children: [
-                      SizedBox(height: 26.v),
-                      SizedBox(
-                          height: 75.adaptSize,
-                          width: 75.adaptSize,
-                          child: Stack(
-                              alignment: Alignment.bottomRight,
-                              children: [
-                                CachedNetworkImage(
-                                  imageUrl:
-                                      // state.candidateProfileEntity
-                                      //         ?.profileImage ??
-                                      'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
-
-                                  //  state.jobSeekerJobList[index].profileImage,
-                                  fit: BoxFit.cover,
-
-                                  progressIndicatorBuilder:
-                                      (context, url, downloadProgress) =>
-                                          const Center(),
-                                  imageBuilder: (context, imageProvider) =>
-                                      Container(
-                                    width: 70,
-                                    height: 70,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
+                      state.candidateProfileEntity?.passport != ''
+                          ? CachedNetworkImage(
+                              imageUrl:
+                                  '${state.candidateProfileEntity?.passport ?? ''}',
+                              fit: BoxFit.cover,
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) =>
+                                      const Center(),
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                width: 700,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: imageProvider,
+                                    fit: BoxFit.cover,
                                   ),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
                                 ),
-                                Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Container(
-                                        height: 12.adaptSize,
-                                        width: 12.adaptSize,
-                                        margin: EdgeInsets.only(
-                                            right: 6.h, bottom: 1.v),
-                                        decoration: BoxDecoration(
-                                            color: theme.colorScheme.primary,
-                                            borderRadius:
-                                                BorderRadius.circular(6.h),
-                                            border: Border.all(
-                                                color: appTheme.gray5001,
-                                                width: 2.h,
-                                                strokeAlign:
-                                                    strokeAlignOutside))))
-                              ])),
+                              ),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      width: 2, color: AppColors.kblack)),
+                              child: Icon(
+                                color: Colors.black,
+                                Icons.person,
+                                size: 70,
+                              ),
+                            ),
                       SizedBox(height: 8.v),
                       Text(
                           state.candidateProfileEntity?.profiles.fullName ?? '',
