@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_leading_image.dart';
-import 'package:artisan_oga/widgets/app_bar/appbar_subtitle.dart';
-import 'package:artisan_oga/widgets/app_bar/custom_app_bar.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/appbar_subtitle.dart';
+import 'package:artisan_oga/shared/widgets/app_bar/custom_app_bar.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class FormTransferPageOneScreen extends StatelessWidget {
@@ -113,6 +113,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSelectBankvalue(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: selectBankvalueController,
         hintText: "Select Bank",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -121,6 +122,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildTypeofPayment(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: typeofPaymentController,
         hintText: "Type of Payment",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -129,6 +131,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSelectPackagevalue(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: selectPackagevalueController,
         hintText: "Select Package",
         hintStyle: CustomTextStyles.bodyMediumGray700);
@@ -145,6 +148,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 9.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: dateController,
                   hintText: "e.g 10 candidates",
@@ -163,6 +167,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 9.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: amountController,
                   hintText: "e.g NGN 25,000.00",
@@ -188,6 +193,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 8.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: nameController,
                   hintText: "Enter depositor’s name",
@@ -208,6 +214,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
                   style: CustomTextStyles.bodyMediumPrimaryContainer_1),
               SizedBox(height: 10.v),
               CustomTextFormField(
+                  title: 'Password',
                   width: 180.h,
                   controller: locationController,
                   hintText: "Enter your Location",
@@ -225,6 +232,7 @@ class FormTransferPageOneScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildInputTeller(BuildContext context) {
     return CustomTextFormField(
+        title: 'Password',
         controller: inputTellerController,
         hintText: "Input Teller",
         hintStyle: CustomTextStyles.bodyMediumGray700,
@@ -233,7 +241,10 @@ class FormTransferPageOneScreen extends StatelessWidget {
 
   /// Section Widget
   Widget _buildSubmit(BuildContext context) {
-    return CustomElevatedButton(text: "Submit");
+    return CustomElevatedButton(
+      text: "Submit",
+      onPressed: () {},
+    );
   }
 
   /// Navigates back to the previous screen.

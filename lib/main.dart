@@ -1,15 +1,25 @@
+import 'package:artisan_oga/core/routes/app_routes.dart';
+import 'package:artisan_oga/core/utils/size_utils.dart';
+import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
+import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
+import 'package:artisan_oga/features/payment/presentation/bloc/payment_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
+import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'core/app_export.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Hive.initFlutter();
+  await Future.wait(
+    [init(), Hive.initFlutter()],
+  );
+
   await Hive.openBox("artisan");
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -30,17 +40,38 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          theme: theme,
-          title: 'artisan_oga',
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.welcomePageScreen,
-          routes: AppRoutes.routes,
-          builder: EasyLoading.init(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => AuthBloc(),
+        ),
+        BlocProvider(
+          create: (_) => HomeBloc(),
+        ),
+        BlocProvider(
+          create: (_) => SettingBloc(),
+        ),
+        BlocProvider(
+          create: (_) => CandidatesBloc(),
+        ),
+        BlocProvider(
+          create: (_) => PaymentBloc(),
+        ),
+      ],
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return MaterialApp(
+            theme: theme,
+            title: 'artisan_oga',
+            debugShowCheckedModeBanner: false,
+            navigatorKey: AppRoutes.navigatorKey,
+            onGenerateRoute: AppRoutes.generateRoute,
+            initialRoute: AppRoutes.welcomePageScreen,
+            // routes: AppRoutes.routes,
+            // builder: EasyLoading.init(),
+          );
+        },
+      ),
     );
   }
 }

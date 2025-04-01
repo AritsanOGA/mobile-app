@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:flutter/material.dart';
 
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key})
@@ -167,7 +167,7 @@ class AppNavigationScreen extends StatelessWidget {
                           context,
                           screenTitle: "change password Page",
                           onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.changePasswordPageScreen),
+                              context, AppRoutes.employerPasswordChangeScreen),
                         ),
                         _buildScreenTitle(
                           context,
@@ -287,7 +287,7 @@ class AppNavigationScreen extends StatelessWidget {
                           context,
                           screenTitle: "change password Page One",
                           onTapScreenTitle: () => onTapScreenTitle(
-                              context, AppRoutes.changePasswordPageOneScreen),
+                              context, AppRoutes.employerPasswordChangeScreen),
                         ),
                         _buildScreenTitle(
                           context,

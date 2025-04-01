@@ -2,27 +2,45 @@ name: artisan_oga
 description: A new Flutter project.
 version: 1.0.0+1
 environment: 
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=3.4.3 <4.0.0'
+  #sdk: '>=2.12.0 <3.0.0'
 dependencies: 
   flutter: 
     sdk: flutter
-  cached_network_image: ^3.3.0
+  cached_network_image: ^3.4.1
   flutter_svg: ^2.0.9
-  flutter_svg_provider: ^1.0.7
-  intl: ^0.18.0
+  #flutter_svg_provider: ^1.0.7
+  intl: ^0.19.0
   hive_flutter: ^1.1.0
   hive: ^2.1.0
-  dio: ^5.4.3+1
-  file_picker: ^6.1.1
+  dio: ^5.3.2
+  file_picker: ^6.1.1 
   image_picker: ^1.0.4
+  cupertino_will_pop_scope: ^1.2.1
   flutter_easyloading: ^3.0.5
   path_provider: ^2.1.2
   fluttertoast: ^8.0.8
-  date_picker_plus: ^3.0.0
-  syncfusion_flutter_datepicker: ^23.2.4
-  flutterwave_standard: ^1.0.8
+  #date_picker_plus: ^3.0.0
+  #syncfusion_flutter_datepicker: ^23.2.4
+  #flutterwave_standard: ^1.0.9
   loading_animation_widget: ^1.2.1
   page_transition: "^2.1.0"
+  logger: ^2.4.0
+  connectivity_plus: ^6.1.0
+  equatable: ^2.0.5
+  dartz: ^0.10.1
+  freezed_annotation: ^2.4.4
+  flutter_bloc: ^8.1.5
+  get_it: ^8.0.2
+  shared_preferences: ^2.3.3
+  flutter_hooks: ^0.20.5
+  pinput: ^5.0.0
+  dropdown_search: 6.0.0
+  timeago: ^3.7.0
+  multiselect: ^0.1.1
+  dash: ^1.0.5
+  flutterwave_standard: ^1.0.8
+
   
   
 
@@ -31,6 +49,10 @@ dev_dependencies:
   flutter_test: 
     sdk: flutter
   flutter_launcher_icons: "^0.13.1"
+  freezed: ^2.5.1
+  build_runner: ^2.4.9
+  
+  
 
 
 flutter_launcher_icons:
@@ -44,6 +66,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - assets/svgs/
   fonts: 
     - family: Poppins
       fonts: 

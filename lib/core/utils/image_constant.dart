@@ -1,17 +1,25 @@
 class ImageConstant {
   // Image folder path
   static String imagePath = 'assets/images';
+  static String svgPath = 'assets/svgs';
 
   // Welcome Page images
-  static String imgRectangle1 = '$imagePath/img_rectangle_1.png';
-
+  // static String imgRectangle1 = '$imagePath/img_rectangle_1.png';
+  static String imgRectangle1 = '$imagePath/splash1.jpeg';
+  static String jobImage = '$imagePath/job_image.jpeg';
   static String imgBxsHardHat = '$imagePath/img_bxs_hard_hat.svg';
 
-  // Signup Options Page images
+  // Signu
+  static String bigLogo = '$imagePath/big_logo.png';
+  static String locationImage = '$imagePath/location.png';
+  static String time = '$imagePath/time.png';
+  static String money = '$imagePath/money.png';
+  static String doc = '$imagePath/doc.png';
   static String imgEmployerRegister = '$imagePath/img_employer_register.png';
 
   // Login Options Page images
   static String imgEmployerLogin = '$imagePath/img_employer_login.png';
+  static String delivery = '$imagePath/delivery.png';
 
   // Employer Dashboard Page images
   static String imgSolarMenuDotsBold =
@@ -26,7 +34,10 @@ class ImageConstant {
   static String imgVector = '$imagePath/img_vector.svg';
 
   static String imgMapPin = '$imagePath/img_map_pin.svg';
-
+  static String jobType = '$svgPath/job-type.svg';
+  static String location = '$svgPath/location.svg';
+  static String star = '$svgPath/star.svg';
+  static String whatsapp = '$imagePath/whatsapp.png';
   static String imgVectorPrimarycontainer =
       '$imagePath/img_vector_primarycontainer.svg';
 
@@ -58,7 +69,10 @@ class ImageConstant {
 
   // pay with card Page images
   static String imgTelevision = '$imagePath/img_television.svg';
+  static String lock = '$svgPath/lock.svg';
+  static String artisanSmallLogo = '$imagePath/artisanoga_logo.png';
 
+  static String userPlus = '$svgPath/user_plus.svg';
   static String imgEleyecloseSecondarycontainer =
       '$imagePath/img_eleyeclose_secondarycontainer.svg';
 

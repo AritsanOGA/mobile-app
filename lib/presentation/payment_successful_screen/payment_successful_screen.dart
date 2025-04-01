@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 
 class PaymentSuccessfulScreen extends StatelessWidget {
   const PaymentSuccessfulScreen({Key? key})
@@ -50,6 +50,7 @@ class PaymentSuccessfulScreen extends StatelessWidget {
               ),
               CustomElevatedButton(
                 text: "Continue",
+                onPressed: () {},
               ),
               SizedBox(height: 68.v),
               SizedBox(

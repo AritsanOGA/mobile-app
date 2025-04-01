@@ -1,8 +1,8 @@
+import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/presentation/login_options_page_screen/login_options_page_screen.dart';
 import 'package:artisan_oga/presentation/signup_options_page_screen/signup_options_page_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
 import 'package:page_transition/page_transition.dart';
 
 class WelcomePageScreen extends StatelessWidget {
@@ -13,8 +13,13 @@ class WelcomePageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
       child: Scaffold(
+        extendBody: true,
+        // backgroundColor: AppColors.kwhite,
         body: SizedBox(
           height: 879.v,
           width: double.maxFinite,
@@ -145,13 +150,6 @@ class WelcomePageScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 54.v),
-            SizedBox(
-              width: 130.h,
-              child: Divider(
-                color: theme.colorScheme.onPrimary,
-              ),
-            ),
-            SizedBox(height: 4.v),
           ],
         ),
       ),

@@ -1,5 +1,7 @@
-import 'dart:ui';
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../../core/app_export.dart';
 
 String _appTheme = "primary";
@@ -45,6 +47,14 @@ class ThemeHelper {
     var colorScheme =
         _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: AppColors.kwhite,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: AppColors.kwhite,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+      ),
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
       textTheme: TextThemes.textTheme(colorScheme),
@@ -80,8 +90,8 @@ class ThemeHelper {
         ),
       ),
       radioTheme: RadioThemeData(
-        fillColor: MaterialStateColor.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateColor.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return appTheme.gray5001;
           }
           return colorScheme.onSurface;
@@ -92,8 +102,8 @@ class ThemeHelper {
         ),
       ),
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateColor.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateColor.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return appTheme.gray5001;
           }
           return colorScheme.onSurface;

@@ -1,13 +1,12 @@
+import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/presentation/awards/view.dart';
 import 'package:artisan_oga/presentation/education/view.dart';
 import 'package:artisan_oga/presentation/experience/view.dart';
-import 'package:artisan_oga/presentation/j_s_login_page_screen/j_s_login_page_screen.dart';
-import 'package:artisan_oga/presentation/update_profile_page_one_screen/update_profile_page_one_screen.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_bottom_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hive/hive.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SettingsPageTwoScreen extends StatefulWidget {
@@ -18,12 +17,6 @@ class SettingsPageTwoScreen extends StatefulWidget {
 }
 
 class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
-  var employer_info = Hive.box("artisan").get("employer_user_data");
-
-  var js_info = Hive.box("artisan").get("jobseeker_user_data");
-
-  var userRole = Hive.box("artisan").get("user_role");
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -156,31 +149,32 @@ class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
             SizedBox(height: 15.v),
             Divider(),
             SizedBox(height: 31.v),
-            GestureDetector(
-                onTap: (() {
-                  Hive.box("artisan").put("employer_user_data", null);
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                return GestureDetector(
+                    onTap: (() {
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.removeUserData());
 
-                  Hive.box("artisan").put("jobseeker_user_data", null);
-
-                  Hive.box("artisan").put("user_role", null);
-
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => JSLoginPageScreen()),
-                  );
-                }),
-                child: Padding(
-                    padding: EdgeInsets.only(left: 3.h),
-                    child: Row(children: [
-                      SvgPicture.asset("assets/images/logout-2-svgrepo-com.svg",
-                          height: 22.adaptSize, width: 22.adaptSize),
-                      Padding(
-                          padding: EdgeInsets.only(left: 14.h),
-                          child: Text("Log out",
-                              style: CustomTextStyles
-                                  .titleMediumPrimaryContainerMedium_1))
-                    ]))),
+                      Navigator.pushNamedAndRemoveUntil(context,
+                          AppRoutes.jSLoginPageScreen, (route) => false);
+                    }),
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 3.h),
+                        child: Row(children: [
+                          SvgPicture.asset(
+                              "assets/images/logout-2-svgrepo-com.svg",
+                              height: 22.adaptSize,
+                              width: 22.adaptSize),
+                          Padding(
+                              padding: EdgeInsets.only(left: 14.h),
+                              child: Text("Log out",
+                                  style: CustomTextStyles
+                                      .titleMediumPrimaryContainerMedium_1))
+                        ])));
+              },
+            ),
             SizedBox(height: 15.v)
           ])),
     ));
@@ -202,11 +196,11 @@ class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                  userRole == "Employer"
-                                      ? employer_info["data"]["name"].toString()
-                                      : js_info["data"]["full_name"].toString(),
-                                  style: CustomTextStyles.titleLargePrimary),
+                              // Text(
+                              //     userRole == "Employer"
+                              //         ? employer_info["data"]["name"].toString()
+                              //         : js_info["data"]["full_name"].toString(),
+                              //     style: CustomTextStyles.titleLargePrimary),
                             ]))
                   ])),
           CustomImageView(

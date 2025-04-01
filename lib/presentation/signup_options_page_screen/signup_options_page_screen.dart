@@ -1,12 +1,8 @@
-import 'package:artisan_oga/presentation/employer_sign_uppage_screen/employer_sign_uppage_screen.dart';
-import 'package:artisan_oga/presentation/j_s_create_account_page_two_screen/j_s_create_account_page_two_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-
-import '../j_s_create_account_page_screen/j_s_create_account_page_screen.dart';
-import '../j_s_create_account_page_three_screen/j_s_create_account_page_three_screen.dart';
 
 class SignupOptionsPageScreen extends StatelessWidget {
   const SignupOptionsPageScreen({Key? key})
@@ -54,26 +50,21 @@ class SignupOptionsPageScreen extends StatelessWidget {
                             type: PageTransitionType.rightToLeft,
                             child: EmployerSignUpPageScreen()));
                   }),
-                  height: 51.v,
                   text: "Register as an Employer",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle:
-                      CustomTextStyles.titleLargeOnPrimaryContainer,
                 ),
                 SizedBox(height: 16.v),
                 CustomElevatedButton(
                   onPressed: (() {
-                    Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            duration: Durations.long1,
-                            child: JSCreateAccountPageThreeScreen()));
+                    Navigator.pushNamed(context, AppRoutes.jobSearch);
+                    // Navigator.push(
+                    //     context,
+                    //     PageTransition(
+                    //         type: PageTransitionType.rightToLeft,
+                    //         duration: Durations.long1,
+                    //         child: JSCreateAccountPageOneScreen()));
                   }),
-                  height: 51.v,
+                  // height: 51.v,
                   text: "Register as a job seeker",
-                  buttonStyle: CustomButtonStyles.outlineGray,
-                  buttonTextStyle: CustomTextStyles.titleLargeGray50,
                 ),
                 SizedBox(height: 63.v),
                 SizedBox(

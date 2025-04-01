@@ -1,14 +1,7 @@
-import 'dart:io';
-
-import 'package:artisan_oga/presentation/dashboard_screen/dashboard_screen.dart';
-import 'package:artisan_oga/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class JSCreateAccountSuccess extends StatelessWidget {
   @override

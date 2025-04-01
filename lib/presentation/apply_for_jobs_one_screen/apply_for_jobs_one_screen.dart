@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 
 class ApplyForJobsOneScreen extends StatelessWidget {
   const ApplyForJobsOneScreen({Key? key})
@@ -182,10 +182,10 @@ class ApplyForJobsOneScreen extends StatelessWidget {
               ),
               SizedBox(height: 9.v),
               CustomElevatedButton(
-                text: "Apply Now",
-                margin: EdgeInsets.only(left: 1.h),
-                buttonTextStyle:
-                    CustomTextStyles.titleLargeOnPrimaryContainerSemiBold,
+                text: "Apply Now", onPressed: () {},
+
+                // buttonTextStyle:
+                //     CustomTextStyles.titleLargeOnPrimaryContainerSemiBold,
               ),
               SizedBox(height: 25.v),
               Align(

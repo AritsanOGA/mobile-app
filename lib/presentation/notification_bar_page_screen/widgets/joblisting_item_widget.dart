@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
 class JoblistingItemWidget extends StatelessWidget {
@@ -97,15 +97,12 @@ class JoblistingItemWidget extends StatelessWidget {
   /// Section Widget
   Widget _buildJobListingButton(BuildContext context) {
     return CustomElevatedButton(
-      height: 34.v,
-      width: 86.h,
-      text: "View Job",
-      margin: EdgeInsets.only(
-        left: 20.h,
-        top: 50.v,
-      ),
-      buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-      buttonTextStyle: CustomTextStyles.titleSmallGray50,
+      // height: 34.v,
+      // width: 86.h,
+      // text: "View Job",
+      // buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+      // buttonTextStyle: CustomTextStyles.titleSmallGray50,
+      text: '', onPressed: () {},
     );
   }
 }
