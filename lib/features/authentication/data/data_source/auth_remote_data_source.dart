@@ -253,7 +253,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         url: AppApiEndpoint.searchJobDetails,
         body: {"identity": jobId}) as Map<String, dynamic>;
 
-    print('API Response: $result');
     return SearchJobDetailsResultModel.fromJson(
       result['data'][0] as Map<String, dynamic>,
     );

@@ -238,7 +238,7 @@ class JobSearchDetailsScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    'Required Skill',
+                    'Required Skill ${state.searchJobDetail?.jobSkills.length}',
                     style: CustomTextStyles.titleMediumMedium18,
                   ),
                   SizedBox(

@@ -337,7 +337,8 @@ class CandidatesProfilePage extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text("Skill Endorsement",
+                                                Text(
+                                                    "Skill Endorsement ${state.candidateProfileEntity?.employerRating[0].employerRating[0].average}",
                                                     style: CustomTextStyles
                                                         .titleSmallPrimaryContainer),
                                                 SizedBox(height: 10.v),
@@ -362,39 +363,50 @@ class CandidatesProfilePage extends StatelessWidget {
                                                           style: CustomTextStyles
                                                               .bodyMediumPrimaryContainer),
                                                       SizedBox(height: 5.v),
-                                                      GestureDetector(
-                                                        onTap: () {
-                                                          print(
-                                                              'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
-                                                        },
-                                                        child:
-                                                            LinearProgressIndicator(
-                                                          value: ((state
-                                                                      .candidateProfileEntity
-                                                                      ?.employerRating[
-                                                                          index]
-                                                                      .employerRating[
-                                                                          0]
-                                                                      .average ??
-                                                                  0) /
-                                                              100),
-                                                          backgroundColor:
-                                                              Colors.grey[300],
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                      Color>(
-                                                                  Colors.blue),
-                                                        ),
-                                                      ),
-                                                      // Container(
-                                                      //     height: 14.v,
-                                                      //     width: 380.h,
-                                                      //     decoration: BoxDecoration(
-                                                      //         color: appTheme.gray700
-                                                      //             .withOpacity(0.18),
-                                                      //         borderRadius:
-                                                      //             BorderRadius.circular(
-                                                      //                 2.h))),
+                                                      state
+                                                                  .candidateProfileEntity
+                                                                  ?.employerRating[
+                                                                      index]
+                                                                  .employerRating
+                                                                  .length ==
+                                                              0
+                                                          ? SizedBox()
+                                                          : GestureDetector(
+                                                              onTap: () {
+                                                                print(
+                                                                    'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
+                                                              },
+                                                              child:
+                                                                  LinearProgressIndicator(
+                                                                value: ((state
+                                                                            .candidateProfileEntity
+                                                                            ?.employerRating[index]
+                                                                            .employerRating[0]
+                                                                            .average ??
+                                                                        0) /
+                                                                    100),
+                                                                backgroundColor:
+                                                                    Colors.grey[
+                                                                        300],
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                            Color>(
+                                                                        Colors
+                                                                            .blue),
+                                                              ),
+                                                            ),
+                                                      Container(
+                                                          height: 14.v,
+                                                          width: 380.h,
+                                                          decoration: BoxDecoration(
+                                                              color: appTheme
+                                                                  .gray700
+                                                                  .withOpacity(
+                                                                      0.18),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          2.h))),
                                                       SizedBox(height: 7.v),
                                                     ],
                                                   );

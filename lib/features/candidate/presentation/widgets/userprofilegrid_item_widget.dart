@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -57,7 +58,73 @@ class _UserprofilegridItemWidgetState extends State<UserprofilegridItemWidget> {
           ),
           Positioned(
             top: 40,
-            child: CachedNetworkImage(
+             child: 
+            //  state
+            //                                                         .candidateProfileEntity
+            //                                                         ?.employerFeedback[
+            //                                                             index]
+            //                                                         .profileImage !=
+            //                                                     ''
+            //                                                 ? CachedNetworkImage(
+            //                                                     imageUrl: state
+            //                                                             .candidateProfileEntity
+            //                                                             ?.employerFeedback[
+            //                                                                 index]
+            //                                                             .profileImage ??
+            //                                                         '',
+            //                                                     fit: BoxFit
+            //                                                         .cover,
+            //                                                     progressIndicatorBuilder:
+            //                                                         (context,
+            //                                                                 url,
+            //                                                                 downloadProgress) =>
+            //                                                             const Center(),
+            //                                                     imageBuilder:
+            //                                                         (context,
+            //                                                                 imageProvider) =>
+            //                                                             Container(
+            //                                                       width: 30,
+            //                                                       height: 30,
+            //                                                       decoration:
+            //                                                           BoxDecoration(
+            //                                                         shape: BoxShape
+            //                                                             .circle,
+            //                                                         image:
+            //                                                             DecorationImage(
+            //                                                           image:
+            //                                                               imageProvider,
+            //                                                           fit: BoxFit
+            //                                                               .cover,
+            //                                                         ),
+            //                                                       ),
+            //                                                     ),
+            //                                                     errorWidget: (context,
+            //                                                             url,
+            //                                                             error) =>
+            //                                                         const Icon(Icons
+            //                                                             .error),
+            //                                                   )
+            //                                                 : Container(
+            //                                                     padding:
+            //                                                         EdgeInsets
+            //                                                             .all(5),
+            //                                                     decoration: BoxDecoration(
+            //                                                         shape: BoxShape
+            //                                                             .circle,
+            //                                                         border: Border.all(
+            //                                                             width:
+            //                                                                 2,
+            //                                                             color: AppColors
+            //                                                                 .kblack)),
+            //                                                     child: Icon(
+            //                                                       color: Colors
+            //                                                           .black,
+            //                                                       Icons.person,
+            //                                                       size: 30,
+            //                                                     ),
+            //                                                   ),
+            
+            CachedNetworkImage(
               imageUrl:
                   'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
 

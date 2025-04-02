@@ -5,7 +5,6 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
-import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -253,22 +252,22 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
                 SizedBox(
                   height: 30.h,
                 ),
-                BlocBuilder<HomeBloc, HomeState>(
-                  builder: (context, state) {
-                    return CustomElevatedButton(
-                        isBusy:
-                            state.applyForJobState == ApplyForJobState.loading,
-                        text: 'Apply Now',
-                        onPressed: () {
-                          context.read<HomeBloc>()
-                            ..add(HomeEvent.applyForJob(
-                                featuredJobResponseEntity.id.toString()));
-                        });
-                  },
-                ),
-                SizedBox(
-                  height: 40.h,
-                ),
+                // BlocBuilder<HomeBloc, HomeState>(
+                //   builder: (context, state) {
+                //     return CustomElevatedButton(
+                //         isBusy:
+                //             state.applyForJobState == ApplyForJobState.loading,
+                //         text: 'Apply Now',
+                //         onPressed: () {
+                //           context.read<HomeBloc>()
+                //             ..add(HomeEvent.applyForJob(
+                //                 featuredJobResponseEntity.id.toString()));
+                //         });
+                //   },
+                // ),
+                // SizedBox(
+                //   height: 40.h,
+                // ),
               ],
             ),
           ),

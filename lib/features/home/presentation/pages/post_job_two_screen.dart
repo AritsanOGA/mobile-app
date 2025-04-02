@@ -223,11 +223,11 @@ class PostJobTwoScreen extends HookWidget {
                             Divider(),
                             SizedBox(height: 23.v),
                             CustomTextFormField(
-                              title: 'How many Hirees?',
+                              title: 'How many Hires?',
                               textInputType: TextInputType.number,
                               validator: FormValidation.stringValidation,
                               titleStyle: CustomTextStyles.titleMediumMedium18,
-                              hintText: 'Enter number hires for this opening',
+                              hintText: 'How many do you want to hire?',
                               controller: hireesNumberController,
                               isBorderNone: true,
                             ),

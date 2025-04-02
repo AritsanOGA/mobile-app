@@ -44,9 +44,9 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
   });
 
   factory SearchJobDetailsResultModel.fromJson(Map<String, dynamic> json) {
-    final skillList = json['job_skills'] != null
+    final skillList = json['job_assigned_skills'] != null
         ? List<Map<String, dynamic>>.from(
-            json['job_skills'] as List,
+            json['job_assigned_skills'] as List,
           )
         : <Map<String, dynamic>>[];
     return SearchJobDetailsResultModel(
@@ -84,7 +84,7 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       "job_title": jobTitle,
       "industry": industry,
       "created_at": createdAt,
-      "job_skills": jobSkills
+      "job_assigned_skills": jobSkills
     };
   }
 

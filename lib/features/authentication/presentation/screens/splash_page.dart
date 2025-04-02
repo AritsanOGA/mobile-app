@@ -25,7 +25,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
     animationController.repeat();
-   // context.read<AuthBloc>().add(const AuthEvent.getUserData());
+    // context.read<AuthBloc>().add(const AuthEvent.getUserData());
 
     super.initState();
   }
