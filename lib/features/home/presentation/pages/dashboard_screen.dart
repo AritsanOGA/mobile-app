@@ -7,7 +7,6 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/js_drawer.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -189,31 +188,12 @@ class _DashboardPageState extends State<DashboardPage> {
                             leading: SizedBox(
                               width: 50,
                               height: 50,
-                              child: CachedNetworkImage(
-                                imageUrl: 'https://picsum.photos/250?image=9',
-
-                                //  state.jobSeekerJobList[index].profileImage,
-                                fit: BoxFit.cover,
-
-                                progressIndicatorBuilder:
-                                    (context, url, downloadProgress) =>
-                                        const Center(),
-                                imageBuilder: (context, imageProvider) =>
-                                    Container(
-                                  // width: 50,
-                                  // height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    // borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                      image:
-                                          imageProvider, // Use the provided imageProvider
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                              child: Center(
+                                child: CircleAvatar(
+                                  radius: 40,
+                                  backgroundImage:
+                                      AssetImage(ImageConstant.jobImage),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    const Icon(Icons.error),
                               ),
                             ),
                             title: Text(

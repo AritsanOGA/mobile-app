@@ -78,7 +78,7 @@ class EmployerLoginPageScreen extends HookWidget {
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
-                        validator: FormValidation.passwordValidation,
+                        // validator: FormValidation.passwordValidation,
                         isPassword: true,
                         isObscure: true,
                         obscureText: true,

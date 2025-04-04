@@ -98,14 +98,19 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                     alignment: Alignment.bottomRight,
                                     children: [
                                       state.picture == null
-                                          ? CustomImageView(
-                                              imagePath:
-                                                  ImageConstant.imgEllipse40,
-                                              height: 184.adaptSize,
-                                              width: 184.adaptSize,
-                                              radius:
-                                                  BorderRadius.circular(92.h),
-                                              alignment: Alignment.center)
+                                          ? Container(
+                                              padding: EdgeInsets.all(5),
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(
+                                                      width: 2,
+                                                      color: AppColors.kblack)),
+                                              child: Icon(
+                                                color: AppColors.kblack,
+                                                Icons.person,
+                                                size: 90,
+                                              ),
+                                            )
                                           : Container(
                                               width: 150,
                                               height: 150,

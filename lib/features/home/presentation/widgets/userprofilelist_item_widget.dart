@@ -1,7 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable
 class UserprofilelistItemWidget extends StatefulWidget {
@@ -51,42 +51,45 @@ class _UserprofilelistItemWidgetState extends State<UserprofilelistItemWidget> {
               SizedBox(height: 6.v),
               Row(
                 children: [
-                  // CachedNetworkImage(
-                  //   imageUrl: widget.image,
-                  //   fit: BoxFit.cover,
-                  //   progressIndicatorBuilder:
-                  //       (context, url, downloadProgress) => const Center(),
-                  //   imageBuilder: (context, imageProvider) => Container(
-                  //     width: 180,
-                  //     height: 220,
-                  //     decoration: BoxDecoration(
-                  //       // border: Border.all(
-                  //       //   width: 4,
-                  //       //   color: iSentmage ? AppColors.kPrimaryColor : AppColors.plainWhite,
-                  //       // ),
-                  //       // borderRadius: BorderRadius.circular(16),
-                  //       image: DecorationImage(
-                  //         image: CachedNetworkImageProvider(widget.image),
-                  //         fit: BoxFit.cover,
-                  //       ),
-                  //     ),
-                  //   ),
-                  //   errorWidget: (context, url, error) =>
-                  //       const Icon(Icons.error),
-                  // ),
-                  Container(
-                      child: ClipOval(
-                          child: SvgPicture.asset(
-                    "assets/images/user-profile-svgrepo-com (2).svg",
-                    height: 47.adaptSize,
-                    width: 47.adaptSize,
-                    alignment: Alignment.topCenter,
-                  ))),
+                  widget.image != ''
+                      ? CachedNetworkImage(
+                          imageUrl: widget.image,
+                          fit: BoxFit.cover,
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  const Center(),
+                          imageBuilder: (context, imageProvider) => Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: imageProvider,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        )
+                      : Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                  width: 2, color: AppColors.kblack)),
+                          child: Icon(
+                            color: Colors.black,
+                            Icons.person,
+                            size: 30,
+                          ),
+                        ),
+                  SizedBox(width: 7.v),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 180.h,
+                        width: 170.h,
                         child: Text(
                           softWrap: false,
                           widget.fullName,

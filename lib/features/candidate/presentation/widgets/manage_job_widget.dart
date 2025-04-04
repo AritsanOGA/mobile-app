@@ -18,10 +18,11 @@ class ManageJobWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Image.asset(
-              'assets/images/job-info-svgrepo-com.png',
-              width: 39.h,
-              height: 42.v,
+            Center(
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: AssetImage(ImageConstant.jobImage),
+              ),
             ),
             Padding(
                 padding: EdgeInsets.only(left: 16.h, top: 5.v),

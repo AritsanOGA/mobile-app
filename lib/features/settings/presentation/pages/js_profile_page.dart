@@ -336,6 +336,8 @@ class JSProfilePage extends HookWidget {
                                           0
                                       ? SizedBox()
                                       : Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text("Skill Endorsement",
                                                 style: CustomTextStyles
@@ -361,39 +363,52 @@ class JSProfilePage extends HookWidget {
                                                       style: CustomTextStyles
                                                           .bodyMediumPrimaryContainer),
                                                   SizedBox(height: 5.v),
-                                                  // GestureDetector(
-                                                  //   onTap: () {
-                                                  //     // print(
-                                                  //     //     'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
-                                                  //   },
-                                                  //   child:
-                                                  //       LinearProgressIndicator(
-                                                  //     value: ((state
-                                                  //                 .candidateProfileEntity
-                                                  //                 ?.employerRating[
-                                                  //                     index]
-                                                  //                 .employerRating[
-                                                  //                     0]
-                                                  //                 .average ??
-                                                  //             0) /
-                                                  //         100),
-                                                  //     backgroundColor:
-                                                  //         Colors.grey[300],
-                                                  //     valueColor:
-                                                  //         AlwaysStoppedAnimation<
-                                                  //                 Color>(
-                                                  //             Colors.blue),
-                                                  //   ),
-                                                  // ),
-                                                  // Container(
-                                                  //     height: 14.v,
-                                                  //     width: 380.h,
-                                                  //     decoration: BoxDecoration(
-                                                  //         color: appTheme.gray700
-                                                  //             .withOpacity(0.18),
-                                                  //         borderRadius:
-                                                  //             BorderRadius.circular(
-                                                  //                 2.h))),
+                                                  state
+                                                              .candidateProfileEntity
+                                                              ?.employerRating[
+                                                                  index]
+                                                              .employerRating
+                                                              .length ==
+                                                          0
+                                                      ? SizedBox()
+                                                      : GestureDetector(
+                                                          onTap: () {
+                                                            // print(
+                                                            //     'hii ${state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble()} ${((state.candidateProfileEntity?.employerRating[index].employerRating[0].average?.toDouble() ?? 0) / 100)}');
+                                                          },
+                                                          child:
+                                                              LinearProgressIndicator(
+                                                            value: ((state
+                                                                        .candidateProfileEntity
+                                                                        ?.employerRating[
+                                                                            index]
+                                                                        .employerRating[
+                                                                            0]
+                                                                        .average ??
+                                                                    0) /
+                                                                100),
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .grey[300],
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                    Colors
+                                                                        .blue),
+                                                          ),
+                                                        ),
+                                                  Container(
+                                                      height: 14.v,
+                                                      width: 380.h,
+                                                      decoration: BoxDecoration(
+                                                          color: appTheme
+                                                              .gray700
+                                                              .withOpacity(
+                                                                  0.18),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      2.h))),
                                                   SizedBox(height: 7.v),
                                                 ],
                                               );
@@ -450,76 +465,130 @@ class JSProfilePage extends HookWidget {
                                               height: 2,
                                             ),
                                             SizedBox(height: 10.v),
-                                            ...List.generate(
-                                                state
+                                            state
                                                         .candidateProfileEntity
                                                         ?.employerFeedback
-                                                        .length ??
-                                                    0, (index) {
-                                              return Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        vertical: 10),
-                                                child: Row(
-                                                  children: [
-                                                    SizedBox(
-                                                      width: 50,
-                                                      height: 50,
-                                                      child: CachedNetworkImage(
-                                                        imageUrl:
-                                                            'https://picsum.photos/250?image=9',
-                                                        fit: BoxFit.cover,
-                                                        progressIndicatorBuilder:
-                                                            (context, url,
-                                                                    downloadProgress) =>
-                                                                const Center(),
-                                                        imageBuilder: (context,
-                                                                imageProvider) =>
-                                                            Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            image:
-                                                                DecorationImage(
-                                                              image:
-                                                                  imageProvider,
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        errorWidget: (context,
-                                                                url, error) =>
-                                                            const Icon(
-                                                                Icons.error),
+                                                        .length ==
+                                                    0
+                                                ? SizedBox()
+                                                : Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text("Employer Feedback",
+                                                          style: CustomTextStyles
+                                                              .titleSmallPrimaryContainer),
+                                                      SizedBox(height: 10.v),
+                                                      Divider(
+                                                        height: 2,
                                                       ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Text(state
-                                                                .candidateProfileEntity
-                                                                ?.employerFeedback[
-                                                                    index]
-                                                                .fullName ??
-                                                            ''),
-                                                        Text(state
-                                                                .candidateProfileEntity
-                                                                ?.employerFeedback[
-                                                                    index]
-                                                                .review ??
-                                                            ''),
-                                                      ],
-                                                    )
-                                                  ],
-                                                ),
-                                              );
-                                            }),
+                                                      SizedBox(height: 10.v),
+                                                      ...List.generate(
+                                                          state
+                                                                  .candidateProfileEntity
+                                                                  ?.employerFeedback
+                                                                  .length ??
+                                                              0, (index) {
+                                                        return Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                                  vertical: 10),
+                                                          child: Row(
+                                                            children: [
+                                                              state
+                                                                          .candidateProfileEntity
+                                                                          ?.employerFeedback[
+                                                                              index]
+                                                                          .profileImage !=
+                                                                      ''
+                                                                  ? CachedNetworkImage(
+                                                                      imageUrl: state
+                                                                              .candidateProfileEntity
+                                                                              ?.employerFeedback[index]
+                                                                              .profileImage ??
+                                                                          '',
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                      progressIndicatorBuilder: (context,
+                                                                              url,
+                                                                              downloadProgress) =>
+                                                                          const Center(),
+                                                                      imageBuilder:
+                                                                          (context, imageProvider) =>
+                                                                              Container(
+                                                                        width:
+                                                                            30,
+                                                                        height:
+                                                                            30,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                          image:
+                                                                              DecorationImage(
+                                                                            image:
+                                                                                imageProvider,
+                                                                            fit:
+                                                                                BoxFit.cover,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      errorWidget: (context,
+                                                                              url,
+                                                                              error) =>
+                                                                          const Icon(
+                                                                              Icons.error),
+                                                                    )
+                                                                  : Container(
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              5),
+                                                                      decoration: BoxDecoration(
+                                                                          shape: BoxShape
+                                                                              .circle,
+                                                                          border: Border.all(
+                                                                              width: 2,
+                                                                              color: AppColors.kblack)),
+                                                                      child:
+                                                                          Icon(
+                                                                        color: Colors
+                                                                            .black,
+                                                                        Icons
+                                                                            .person,
+                                                                        size:
+                                                                            30,
+                                                                      ),
+                                                                    ),
+                                                              SizedBox(
+                                                                width: 10,
+                                                              ),
+                                                              Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(state
+                                                                          .candidateProfileEntity
+                                                                          ?.employerFeedback[
+                                                                              index]
+                                                                          .fullName ??
+                                                                      ''),
+                                                                  Text(state
+                                                                          .candidateProfileEntity
+                                                                          ?.employerFeedback[
+                                                                              index]
+                                                                          .review ??
+                                                                      ''),
+                                                                ],
+                                                              )
+                                                            ],
+                                                          ),
+                                                        );
+                                                      }),
+                                                    ],
+                                                  ),
                                           ],
                                         ),
 
