@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/services/local_storage.dart';
@@ -73,8 +74,59 @@ final locator = GetIt.instance;
 
 Future<void> init() async {
   final sharedPref = await SharedPreferences.getInstance();
+  // _dio.options.baseUrl = AppApiEndpoint.baseUri.toString();
+  // _dio.options.sendTimeout = Duration(seconds: AppApiEndpoint.sendTimeout);
+  // _dio.options.receiveTimeout =
+  //     Duration(seconds: AppApiEndpoint.receiveTimeout);
+
+  // _dio.interceptors.add(
+
+  // );
+
   locator
-    ..registerLazySingleton<Dio>(() => Dio())
+    ..registerLazySingleton<Dio>(() => Dio(BaseOptions(
+        baseUrl: AppApiEndpoint.baseUri.toString(),
+        sendTimeout: Duration(seconds: AppApiEndpoint.sendTimeout),
+        receiveTimeout: Duration(seconds: AppApiEndpoint.receiveTimeout)))
+      ..interceptors.add(
+        InterceptorsWrapper(
+          onError: (e, handler) async {
+            //if (e.response!.data['message'] == 'Unauthenticated') {
+            //   await refreshToken();
+
+            //   String refreshTokens =
+            //       localStorage.getFromDisk('refreshToken').toString();
+            //   print('neereftoken$refreshTokens');
+            //   e.requestOptions.headers['Authorization'] = 'Bearer $refreshTokens';
+
+            //   return handler.resolve(await _retry(e.requestOptions));
+            // }
+            print("ERROR [${e.response?.statusCode}]: ${e.requestOptions.uri}");
+            print("Message: ${e.message}");
+            print("Data: ${e.response?.data}");
+            handler.next(e);
+          },
+          onRequest: (options, handler) {
+         //   options.headers.addAll({'Authorization': ''});
+            final path = options.uri.path;
+            if (path.endsWith('verify')) {
+              options.baseUrl = 'https://api.flutterwave.com';
+            }
+            print("REQUEST: ${options.method} ${options.uri}");
+            print("Headers: ${options.headers}");
+            print("Body: ${options.data}");
+
+            handler.next(options);
+          },
+          onResponse: (response, handler) {
+            print(
+                "RESPONSE [${response.statusCode}]: ${response.requestOptions.uri}");
+            print("Headers: ${response.headers}");
+            print("Data: ${response.data}");
+            handler.next(response);
+          },
+        ),
+      ))
     ..registerLazySingleton(Connectivity.new)
     ..registerSingleton<Logger>(Logger())
 

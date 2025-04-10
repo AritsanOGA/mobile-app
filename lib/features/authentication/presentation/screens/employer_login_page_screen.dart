@@ -23,17 +23,16 @@ class EmployerLoginPageScreen extends HookWidget {
     return Scaffold(
       backgroundColor: AppColors.kwhite,
       // resizeToAvoidBottomInset: false,
-      body: BlocConsumer<AuthBloc, AuthState>(
-        listener: (context, state) {
-          if (state.employerLoginState == EmployerLoginState.success) {
-            Navigator.pushNamedAndRemoveUntil(
-                context, AppRoutes.employerNavBarScreen, (router) => false);
-          } else if (state.employerLoginState == EmployerLoginState.failure) {
-            ToastUtils.showRedToast(state.errorMessage ?? '');
-          }
-        },
-        builder: (context, state) {
-          return Form(
+      body: BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state.employerLoginState == EmployerLoginState.success) {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, AppRoutes.employerNavBarScreen, (router) => false);
+            } else if (state.employerLoginState == EmployerLoginState.failure) {
+              ToastUtils.showRedToast(state.errorMessage ?? '');
+            }
+          },
+          child: Form(
             key: formKey,
             child: SizedBox(
               width: double.maxFinite,
@@ -78,7 +77,7 @@ class EmployerLoginPageScreen extends HookWidget {
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
-                        // validator: FormValidation.passwordValidation,
+                        validator: FormValidation.passwordValidation,
                         isPassword: true,
                         isObscure: true,
                         obscureText: true,
@@ -164,9 +163,7 @@ class EmployerLoginPageScreen extends HookWidget {
                 ),
               ),
             ),
-          );
-        },
-      ),
+          )),
     );
   }
 }

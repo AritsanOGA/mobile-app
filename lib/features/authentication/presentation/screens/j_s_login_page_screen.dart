@@ -114,20 +114,22 @@ class JSLoginPageScreen extends HookWidget {
                             isBusy: state.employerLoginState ==
                                 EmployerLoginState.loading,
                             onPressed: () {
+                              if (formKey.currentState?.validate() ?? false) {
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.loginUser(
+                                        LoginEntity(
+                                          email: emailController.text.trim(),
+                                          password:
+                                              passwordController.text.trim(),
+                                        ),
+                                      ),
+                                    );
+                              }
                               // Navigator.push(
                               //     context,
                               //     MaterialPageRoute(
                               //         builder: (context) =>
                               //             EmployerDashboardPage()));
-                              context.read<AuthBloc>().add(
-                                    AuthEvent.loginUser(
-                                      LoginEntity(
-                                        email: emailController.text.trim(),
-                                        password:
-                                            passwordController.text.trim(),
-                                      ),
-                                    ),
-                                  );
                             },
                             text: "Log in",
                           );

@@ -30,7 +30,7 @@ class SearchJobModel extends SearchJobEntity {
       allowances: json["allowances"] ?? '',
       city: json["city"] ?? '',
       industry: json["industry"] ?? '',
-      businessCategoryId: json["business_category_id"] ?? '',
+      businessCategoryId: json["business_category_id"] ?? 0,
       jobStatus: json["job_status"] ?? '',
       compensationType: json["compensation_type"] ?? '',
       createdAt: DateTime.parse(json["created_at"]),

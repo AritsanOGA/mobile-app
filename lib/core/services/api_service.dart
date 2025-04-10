@@ -15,42 +15,42 @@ import 'package:logger/logger.dart';
 abstract class ApiService {
   //? For making get request to the endpoint
   Future<dynamic> get({
-    required Uri url,
+    required String url,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   });
 
   //? For making post request to the endpoint
   Future<dynamic> post({
-    required Uri url,
+    required String url,
     required dynamic body,
     Map<String, String> headers,
   });
 
   //? For making put request to the endpoint
   Future<dynamic> put({
-    required Uri url,
+    required String url,
     required dynamic body,
     Map<String, String> headers,
   });
 
   //? For making patch request to the endpoint
   Future<dynamic> patch({
-    required Uri url,
+    required String url,
     required Map<String, dynamic> body,
     Map<String, String> headers,
   });
 
   //? For making delete request to the endpoint
   Future<dynamic> delete({
-    required Uri url,
+    required String url,
     Map<String, dynamic>? queryParameters,
     Map<String, String> headers,
   });
 // y [MapEntry(email: jaiyeola@yopmail.com), MapEntry(password: Jaiyeola20.), MapEntry(password_confirmation: Jaiyeola20.), MapEntry(country: 4), MapEntry(fullname: Jaiyeloa Adam), MapEntry(states: Adrar), MapEntry(city: epe), MapEntry(gender: Male), MapEntry(phone: 09055899858), MapEntry(DateOfBirth: 01/01/2002), MapEntry(employment_history: No Employment History), MapEntry(company_name: ), MapEntry(end_year: ), MapEntry(start_year: ), MapEntry(job_title: ), MapEntry(job_description: ), MapEntry(education_qualification: No Education), MapEntry(school_name: ), MapEntry(year_of_graduation: ), MapEntry(award_title: ), MapEntry(course_name: ), MapEntry(categories: 5), MapEntry(artisan_skills: Child Care ), MapEntry(guarantor_name: gbenga), MapEntry(guarantor_email: gbenga@yopmail.com), MapEntry(guarantor_address: gbenga@yopmail.com), MapEntry(job_type: Full Time), MapEntry(years_of_experience: 7), MapEntry(StreetAddress: epe), MapEntry(service_description: build app), MapEntry(guarantor_phone: 09078487477)]
   //? For downloading file from the endpoint
   Future<void> download({
-    required Uri url,
+    required String url,
     required String path,
     required Map<String, String> header,
   });
@@ -58,45 +58,6 @@ abstract class ApiService {
 
 class ApiServiceImpl implements ApiService {
   ApiServiceImpl(this._dio, this.localStorage) {
-    _dio.options.baseUrl = AppApiEndpoint.baseUri.toString();
-    _dio.options.sendTimeout = Duration(seconds: AppApiEndpoint.sendTimeout);
-    _dio.options.receiveTimeout =
-        Duration(seconds: AppApiEndpoint.receiveTimeout);
-
-    _dio.interceptors.add(
-      InterceptorsWrapper(
-        onError: (e, handler) async {
-          //if (e.response!.data['message'] == 'Unauthenticated') {
-          //   await refreshToken();
-
-          //   String refreshTokens =
-          //       localStorage.getFromDisk('refreshToken').toString();
-          //   print('neereftoken$refreshTokens');
-          //   e.requestOptions.headers['Authorization'] = 'Bearer $refreshTokens';
-
-          //   return handler.resolve(await _retry(e.requestOptions));
-          // }
-          print("ERROR [${e.response?.statusCode}]: ${e.requestOptions.uri}");
-          print("Message: ${e.message}");
-          print("Data: ${e.response?.data}");
-          handler.next(e);
-        },
-        onRequest: (options, handler) {
-          print("REQUEST: ${options.method} ${options.uri}");
-          print("Headers: ${options.headers}");
-          print("Body: ${options.data}");
-
-          handler.next(options);
-        },
-        onResponse: (response, handler) {
-          print(
-              "RESPONSE [${response.statusCode}]: ${response.requestOptions.uri}");
-          print("Headers: ${response.headers}");
-          print("Data: ${response.data}");
-          handler.next(response);
-        },
-      ),
-    );
 
     _log.i('Api constructed and DIO setup register');
   }
@@ -106,7 +67,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<dynamic> get({
-    required Uri url,
+    required String url,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
   }) async {
@@ -156,7 +117,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<dynamic> post({
-    required Uri url,
+    required String url,
     required dynamic body,
     Map<String, String>? headers,
   }) async {
@@ -209,7 +170,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<dynamic> put({
-    required Uri url,
+    required String url,
     required dynamic body,
     Map<String, String>? headers,
   }) async {
@@ -239,7 +200,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<dynamic> patch({
-    required Uri url,
+    required String url,
     required Map<String, dynamic> body,
     Map<String, String>? headers,
   }) async {
@@ -266,7 +227,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<dynamic> delete({
-    required Uri url,
+    required String url,
     Map<String, dynamic>? queryParameters,
     Map<String, String>? headers,
   }) async {
@@ -290,7 +251,7 @@ class ApiServiceImpl implements ApiService {
 
   @override
   Future<void> download({
-    required Uri url,
+    required String url,
     required String path,
     required Map<String, String> header,
   }) async {

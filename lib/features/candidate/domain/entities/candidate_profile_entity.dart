@@ -45,7 +45,7 @@ class ProfileEntity extends Equatable {
   final String? state;
   final String? locationAddress;
   final String? deliveryAddress;
-  final String? businessCategory;
+
   final dynamic businessName;
   final dynamic facebook;
   final dynamic instagram;
@@ -74,7 +74,7 @@ class ProfileEntity extends Equatable {
   final String? guarantorPhone;
   final String? guarantorEmail;
   final int? referredByLink;
-  final String? referredByWho;
+
   final List<AwardsAndCertificateEntity> awardsAndCertificates;
   final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
   final List<AwardsAndCertificateEntity> education;
@@ -107,7 +107,6 @@ class ProfileEntity extends Equatable {
     this.state,
     this.locationAddress,
     this.deliveryAddress,
-    this.businessCategory,
     this.businessName,
     this.facebook,
     this.instagram,
@@ -136,7 +135,7 @@ class ProfileEntity extends Equatable {
     this.guarantorPhone,
     this.guarantorEmail,
     this.referredByLink,
-    this.referredByWho,
+
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
@@ -171,7 +170,6 @@ class ProfileEntity extends Equatable {
         state,
         locationAddress,
         deliveryAddress,
-        businessCategory,
         businessName,
         facebook,
         instagram,
@@ -200,7 +198,7 @@ class ProfileEntity extends Equatable {
         guarantorPhone,
         guarantorEmail,
         referredByLink,
-        referredByWho,
+        
         awardsAndCertificates,
         artisanAssignedSkills,
         education,
@@ -234,7 +232,7 @@ class ArtisanAssignedSkillEntity extends Equatable {
 
 class ExperienceEntity extends Equatable {
   final String? title;
-  final String? startYear;
+  final int? startYear;
   final String? endYear;
   final String? desc;
   final String? companyName;

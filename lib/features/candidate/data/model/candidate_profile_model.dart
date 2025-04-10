@@ -63,7 +63,6 @@ class Profiles extends ProfileEntity {
     required super.state,
     required super.locationAddress,
     required super.deliveryAddress,
-    required super.businessCategory,
     required super.businessName,
     required super.facebook,
     required super.instagram,
@@ -92,7 +91,6 @@ class Profiles extends ProfileEntity {
     required super.guarantorPhone,
     required super.guarantorEmail,
     required super.referredByLink,
-    required super.referredByWho,
     required List<AwardsAndCertificateModel> super.awardsAndCertificates,
     required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
     required List<AwardsAndCertificateModel> super.education,
@@ -161,7 +159,7 @@ class Profiles extends ProfileEntity {
       state: json["state"],
       locationAddress: json["location_address"],
       deliveryAddress: json["delivery_address"],
-      businessCategory: json["business_category"],
+
       businessName: json["business_name"],
       facebook: json["facebook"],
       instagram: json["instagram"],
@@ -194,7 +192,7 @@ class Profiles extends ProfileEntity {
       guarantorPhone: json["guarantor_phone"],
       guarantorEmail: json["guarantor_email"],
       referredByLink: json["referred_by_link"],
-      referredByWho: json["referred_by_who"],
+
       awardsAndCertificates: awardList.isNotEmpty
           ? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast()
           : [],
@@ -277,7 +275,7 @@ class ExperienceModel extends ExperienceEntity {
         title: entity.title,
         desc: entity.desc,
         startYear: entity.startYear,
-        endYear: entity.startYear,
+        endYear: entity.endYear,
         companyName: entity.companyName,
       );
   factory ExperienceModel.fromJson(Map<String, dynamic> json) =>
@@ -388,29 +386,19 @@ class SkillAssessmentModel extends SkillAssessmentEntity {
 
 class EmployerFeedbackModel extends EmployerFeedbackEntity {
   EmployerFeedbackModel({
-
     required super.fullName,
-
     required super.review,
     required super.profileImage,
   });
 
   factory EmployerFeedbackModel.fromJson(Map<String, dynamic> json) =>
       EmployerFeedbackModel(
-          
           fullName: json["fullname"],
-         
           review: json["review"],
-          
           profileImage: json["profile_image"]);
 
-  Map<String, dynamic> toJson() => {
-        
-        "fullname": fullName,
-    
-        "review": review,
-        "profile_image": profileImage
-      };
+  Map<String, dynamic> toJson() =>
+      {"fullname": fullName, "review": review, "profile_image": profileImage};
 }
 
 class EmployerRatingModel extends EmployerRatingEntity {

@@ -95,14 +95,12 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
       String transactionId) async {
     final String flutterwaveSecretTestKey =
         'FLWSECK_TEST-4c5080741c3da4bb967f0ef7aef9c10a-X';
-    final result = await api.get(
-        url: Uri.parse(
-            'https://api.flutterwave.com/v3/transactions/${transactionId}/verify'),
-        headers: {
-          'Authorization': 'Bearer $flutterwaveSecretTestKey',
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        });
+    final result = await api
+        .get(url: '/v3/transactions/${transactionId}/verify', headers: {
+      'Authorization': 'Bearer $flutterwaveSecretTestKey',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    });
 
     return VerifyFlutterwavePaymentModel.fromJson(
       result['data'] as Map<String, dynamic>,

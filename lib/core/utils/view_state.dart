@@ -1,5 +1,5 @@
 enum EmployerLoginState { idle, loading, success, failure }
-
+enum ViewState { idle, loading, success, failure }
 enum JobSeekerLoginState { idle, loading, success, failure }
 
 enum EmployerVerifyCodeState { idle, loading, success, failure }
