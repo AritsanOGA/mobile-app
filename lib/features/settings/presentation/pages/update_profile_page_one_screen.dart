@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/settings/domain/entities/update_js_profile_entity.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -10,6 +12,7 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_icon_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,17 +21,20 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 // ignore_for_file: must_be_immutable
 class UpdateProfilePageOneScreen extends HookWidget {
   UpdateProfilePageOneScreen({Key? key}) : super(key: key);
-  var image;
+
+  var imageUrl;
   @override
   Widget build(BuildContext context) {
     final fullNameEditTextController = useTextEditingController();
     final emailController = useTextEditingController();
     final phoneNoTextController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
+
     final formKey = useMemoized(GlobalKey<FormState>.new);
 
     useEffect(() {
-      context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
+      context.read<AuthBloc>().add(const AuthEvent.getUserData());
+
       return null;
     }, []);
 
@@ -39,15 +45,19 @@ class UpdateProfilePageOneScreen extends HookWidget {
           title: 'Settings',
         ),
         body: BlocConsumer<SettingBloc, SettingState>(
+          bloc: context.read<SettingBloc>()
+            ..add(SettingEvent.getCandidateProfile(
+                UserService().authData?.user.identity ?? '')),
           listener: (context, state) {
-            if (state.getJobSeekerProfileState ==
-                GetJobSeekerProfileState.success) {
-              final profile = state.getJobSeekerResponseEntity;
+            if (state.getCandidateProfileState == ViewState.success) {
+              final profile = state.candidateProfileEntity;
+
               if (profile != null) {
-                fullNameEditTextController.text = profile.fullName ?? '';
-                emailController.text = profile.email ?? '';
-                phoneNoTextController.text = profile.phone ?? '';
-                //dateOfBirthController.text = profile.dateOfBirth ?? '';
+                fullNameEditTextController.text =
+                    profile.profiles.fullName ?? '';
+                emailController.text = profile.profiles.email ?? '';
+                phoneNoTextController.text = profile.profiles.phone ?? '';
+                imageUrl = profile.passport;
               }
             }
             if (state.updateJobSeekerProfileState ==
@@ -61,18 +71,15 @@ class UpdateProfilePageOneScreen extends HookWidget {
             }
           },
           builder: (context, state) {
-            if (state.getEmployerProfileState ==
-                GetEmployerProfileState.loading) {
+            if (state.getCandidateProfileState == ViewState.loading) {
               return Center(child: CircularProgressIndicator());
             }
 
-            if (state.getEmployerProfileState ==
-                GetEmployerProfileState.failure) {
+            if (state.getCandidateProfileState == ViewState.failure) {
               return Center(child: Text('Error: '));
             }
 
-            if (state.getEmployerProfileState ==
-                GetEmployerProfileState.success) {
+            if (state.getCandidateProfileState == ViewState.success) {
               final nameController = TextEditingController(
                   text: state.getEmployerResponseEntity?.fullName);
               final emailController = TextEditingController(
@@ -97,32 +104,59 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                 child: Stack(
                                     alignment: Alignment.bottomRight,
                                     children: [
-                                      state.picture == null
-                                          ? Container(
-                                              padding: EdgeInsets.all(5),
-                                              decoration: BoxDecoration(
+                                      imageUrl != ''
+                                          ? CachedNetworkImage(
+                                              imageUrl:
+                                                  '${state.candidateProfileEntity?.passport ?? ''}',
+                                              fit: BoxFit.cover,
+                                              progressIndicatorBuilder:
+                                                  (context, url,
+                                                          downloadProgress) =>
+                                                      const Center(),
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Container(
+                                                width: 100,
+                                                height: 100,
+                                                decoration: BoxDecoration(
                                                   shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                      width: 2,
-                                                      color: AppColors.kblack)),
-                                              child: Icon(
-                                                color: AppColors.kblack,
-                                                Icons.person,
-                                                size: 90,
-                                              ),
-                                            )
-                                          : Container(
-                                              width: 150,
-                                              height: 150,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  image:
-                                                      FileImage(state.picture!),
-                                                  fit: BoxFit.cover,
+                                                  image: DecorationImage(
+                                                    image: imageProvider,
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      const Icon(Icons.error),
+                                            )
+                                          : state.picture == null
+                                              ? Container(
+                                                  padding: EdgeInsets.all(5),
+                                                  decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          width: 2,
+                                                          color: AppColors
+                                                              .kblack)),
+                                                  child: Icon(
+                                                    color: AppColors.kblack,
+                                                    Icons.person,
+                                                    size: 90,
+                                                  ),
+                                                )
+                                              : Container(
+                                                  width: 150,
+                                                  height: 150,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    image: DecorationImage(
+                                                      image: FileImage(
+                                                          state.picture!),
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
                                       GestureDetector(
                                         onTap: (() {
                                           context.read<SettingBloc>().add(
@@ -318,26 +352,32 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                               false) {
                                             context.read<SettingBloc>().add(
                                                 SettingEvent.updateJobSeekerRequest(
-                                                    updateJobSeekerRequest.copyWith(
-                                                        identity: state
-                                                                .getJobSeekerResponseEntity
-                                                                ?.identity ??
-                                                            '',
-                                                        passport: state.picture,
-                                                        resume: state.resume,
-                                                        fullName:
-                                                            fullNameEditTextController
-                                                                .text,
-                                                        email: emailController
-                                                            .text,
-                                                        phoneNumber:
-                                                            phoneNoTextController
-                                                                .text,
-                                                        dateOFBirth:
-                                                            dateOfBirthController
-                                                                .text,
-                                                        jobPreference:
-                                                            state.jobType)));
+                                                    updateJobSeekerRequest
+                                                        .copyWith(
+                                                            identity:
+                                                                UserService()
+                                                                        .authData
+                                                                        ?.user
+                                                                        .identity ??
+                                                                    '',
+                                                            passport: state
+                                                                .picture,
+                                                            resume:
+                                                                state.resume,
+                                                            fullName:
+                                                                fullNameEditTextController
+                                                                    .text,
+                                                            email:
+                                                                emailController
+                                                                    .text,
+                                                            phoneNumber:
+                                                                phoneNoTextController
+                                                                    .text,
+                                                            dateOFBirth:
+                                                                dateOfBirthController
+                                                                    .text,
+                                                            jobPreference: state
+                                                                .jobType)));
                                             Navigator.pushNamed(
                                               context,
                                               AppRoutes

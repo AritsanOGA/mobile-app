@@ -326,6 +326,19 @@ class PostJobTwoScreen extends HookWidget {
                                                     value),
                                           );
                                     })),
+                            Padding(
+                                padding: EdgeInsets.only(top: 11.v),
+                                child: CustomRadioButton(
+                                    text: "Negotiable",
+                                    value: state.compensationTypeList[2],
+                                    groupValue: state.compensationType,
+                                    onChange: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent
+                                                .updateSelectedCompensationType(
+                                                    value),
+                                          );
+                                    })),
                             SizedBox(height: 40.v),
                             BlocSelector<HomeBloc, HomeState, PostJobEntity>(
                               selector: (state) {

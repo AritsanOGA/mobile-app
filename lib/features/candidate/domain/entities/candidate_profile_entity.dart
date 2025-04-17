@@ -45,7 +45,6 @@ class ProfileEntity extends Equatable {
   final String? state;
   final String? locationAddress;
   final String? deliveryAddress;
-
   final dynamic businessName;
   final dynamic facebook;
   final dynamic instagram;

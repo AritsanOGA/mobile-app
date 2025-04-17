@@ -62,8 +62,8 @@ class JSProfilePage extends HookWidget {
                                       const Center(),
                               imageBuilder: (context, imageProvider) =>
                                   Container(
-                                width: 700,
-                                height: 70,
+                                width: 100,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: DecorationImage(
@@ -87,7 +87,7 @@ class JSProfilePage extends HookWidget {
                                 size: 70,
                               ),
                             ),
-                      SizedBox(height: 8.v),
+                      SizedBox(height: 10.v),
                       Text(
                           state.candidateProfileEntity?.profiles.fullName ?? '',
                           style: CustomTextStyles.titleLargePrimarySemiBold),
@@ -328,12 +328,15 @@ class JSProfilePage extends HookWidget {
                                                       .skill ??
                                                   ''))),
                                   SizedBox(height: 20.v),
-                                  state
-                                              .candidateProfileEntity
-                                              ?.employerRating[0]
-                                              .employerRating
-                                              .length ==
-                                          0
+                                  state.candidateProfileEntity?.employerRating
+                                                  .length ==
+                                              0 ||
+                                          state
+                                                  .candidateProfileEntity
+                                                  ?.employerRating[0]
+                                                  .employerRating
+                                                  .length ==
+                                              0
                                       ? SizedBox()
                                       : Column(
                                           crossAxisAlignment:

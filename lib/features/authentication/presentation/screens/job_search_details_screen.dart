@@ -141,7 +141,15 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             'Pay',
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
-                          Text(
+                           state.searchJobDetail?.compensationType ==
+                                        'payperjob' ||
+                                    state.searchJobDetail?.compensationType ==
+                                        'Negotiable'
+                                ? Text('Pay per job',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                    ))
+                                :    Text(
                             state.searchJobDetail?.basicSalary ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
@@ -220,7 +228,7 @@ class JobSearchDetailsScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   Text(
-                    'Required Skill ${state.searchJobDetail?.jobSkills.length}',
+                    'Required Skill',
                     style: CustomTextStyles.titleMediumMedium18,
                   ),
                   SizedBox(

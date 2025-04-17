@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
@@ -27,15 +28,14 @@ class UpdateProfilePageTwoScreen extends HookWidget {
     final phoneNoTextController = useTextEditingController();
     final cityController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
+
     useEffect(() {
-      useEffect(() {
-        context.read<SettingBloc>().add(SettingEvent.getJobSeekerProfile());
-        return null;
-      }, []);
+      context.read<AuthBloc>().add(const AuthEvent.getUserData());
       context.read<AuthBloc>().add(AuthEvent.getCountries());
       context.read<AuthBloc>().add(AuthEvent.getState('161'));
       return null;
     }, []);
+
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -44,15 +44,18 @@ class UpdateProfilePageTwoScreen extends HookWidget {
               title: 'Edit Profile',
             ),
             body: BlocConsumer<SettingBloc, SettingState>(
+              bloc: context.read<SettingBloc>()
+                ..add(SettingEvent.getCandidateProfile(
+                    UserService().authData?.user.identity ?? '')),
               listener: (context, state) {
-                if (state.getJobSeekerProfileState ==
-                    GetJobSeekerProfileState.success) {
-                  final profile = state.getJobSeekerResponseEntity;
+                if (state.getCandidateProfileState == ViewState.success) {
+                  final profile = state.candidateProfileEntity;
                   if (profile != null) {
-                    // fullNameEditTextController.text = profile.fullName ?? '';
-                    // emailController.text = profile.email ?? '';
-                    // phoneNoTextController.text = profile.phone ?? '';
-                    // dateOfBirthController.text = profile.dateOfBirth ?? '';
+                    aboutMeTextController.text = profile.profiles.about ?? '';
+                    addressController.text =
+                        profile.profiles.streetAddress ?? '';
+                    phoneNoTextController.text = profile.profiles.phone ?? '';
+                    cityController.text = profile.profiles.city ?? '';
                   }
                 }
                 if (state.updateJobSeekerProfileState ==
@@ -66,13 +69,11 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                 }
               },
               builder: (context, state) {
-                if (state.getEmployerProfileState ==
-                    GetEmployerProfileState.loading) {
+                if (state.getCandidateProfileState == ViewState.loading) {
                   return Center(child: CircularProgressIndicator());
                 }
 
-                if (state.getEmployerProfileState ==
-                    GetEmployerProfileState.failure) {
+                if (state.getCandidateProfileState == ViewState.failure) {
                   return Center(child: Text('Error: '));
                 }
 

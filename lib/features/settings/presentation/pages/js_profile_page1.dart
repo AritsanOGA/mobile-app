@@ -21,8 +21,7 @@ class JSProfilePage1 extends StatelessWidget {
         title: '',
       ),
       body: BlocBuilder<SettingBloc, SettingState>(
-        bloc: context.read<SettingBloc>()
-          ..add(SettingEvent.getJobSeekerProfile()),
+    
         builder: (context, state) {
           if (state.getJobSeekerProfileState ==
               GetJobSeekerProfileState.loading) {

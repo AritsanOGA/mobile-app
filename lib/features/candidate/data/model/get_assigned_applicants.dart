@@ -70,7 +70,7 @@ class UserModel extends UserEntity {
       phone: json["phone"],
       workExperience: json["work_experience"],
       identity: json["identity"],
-      image: json["image"]);
+      image: json["profile_image"]);
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -79,6 +79,6 @@ class UserModel extends UserEntity {
         "phone": phone,
         "work_experience": workExperience,
         "identity": identity,
-        "image": image
+        "profile_image": image
       };
 }

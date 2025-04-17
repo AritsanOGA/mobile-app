@@ -29,11 +29,9 @@ class EmployerProfilePageScreen extends HookWidget {
     final companyNameController = useTextEditingController();
     final phoneNoController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
+
     useEffect(() {
-      useEffect(() {
-        context.read<SettingBloc>().add(SettingEvent.getEmployerProfile());
-        return null;
-      }, []);
+      context.read<SettingBloc>().add(SettingEvent.getEmployerProfile());
       context.read<AuthBloc>().add(
             AuthEvent.getState('161'),
           );

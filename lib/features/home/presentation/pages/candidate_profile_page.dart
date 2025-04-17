@@ -56,7 +56,7 @@ class CandidatesProfilePage extends StatelessWidget {
                                           const Center(),
                                   imageBuilder: (context, imageProvider) =>
                                       Container(
-                                    width: 700,
+                                    width: 70,
                                     height: 70,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,

@@ -24,14 +24,14 @@ class SearchJobDetailsResultEntity extends Equatable {
     required this.basicSalary,
     required this.description,
     required this.position,
+    required this.compensationType,
     required this.jobDescription,
     required this.qualification,
     required this.accomodation,
     required this.industry,
     required this.createdAt,
     required this.jobTitle,
-      required this.jobSkills,
-    
+    required this.jobSkills,
   });
   final int id;
   final String hireType;
@@ -40,6 +40,7 @@ class SearchJobDetailsResultEntity extends Equatable {
   final String basicSalary;
   final String description;
   final String position;
+  final String compensationType;
   final String jobDescription;
   final String accomodation;
   final String qualification;
@@ -57,6 +58,7 @@ class SearchJobDetailsResultEntity extends Equatable {
         basicSalary,
         description,
         position,
+        compensationType,
         jobDescription,
         qualification,
         accomodation,

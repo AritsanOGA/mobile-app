@@ -31,6 +31,7 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
     required super.hireType,
     required super.applicationDeadline,
     required super.city,
+    required super.compensationType,
     required super.basicSalary,
     required super.description,
     required super.position,
@@ -51,9 +52,11 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
         : <Map<String, dynamic>>[];
     return SearchJobDetailsResultModel(
       id: json['id'],
+      compensationType: json['compensation_type'],
       hireType: json['hire_type'] ?? '',
       applicationDeadline: json['application_deadline'] ?? '',
       city: json['city'] ?? '',
+      
       basicSalary: json['basic_salary'] ?? '',
       description: json['description'] ?? '',
       position: json['position'] ?? '',
@@ -84,29 +87,11 @@ class SearchJobDetailsResultModel extends SearchJobDetailsResultEntity {
       "job_title": jobTitle,
       "industry": industry,
       "created_at": createdAt,
-      "job_assigned_skills": jobSkills
+      "job_assigned_skills": jobSkills,
+      "compensation_type": compensationType
     };
   }
 
-//   factory SearchJobDetailsResultModel.fromEntity(
-//       SearchJobDetailsResultEntity entity) {
-//     return SearchJobDetailsResultModel(
-//       id: entity.id,
-//       hireType: entity.hireType,
-//       applicationDeadline: entity.applicationDeadline,
-//       city: entity.city,
-//       basicSalary: entity.basicSalary,
-//       description: entity.description,
-//       position: entity.position,
-//       jobDescription: entity.jobDescription,
-//       accomodation: entity.accomodation,
-//       qualification: entity.qualification,
-//       jobTitle: entity.jobTitle,
-//       industry: entity.industry,
-//       createdAt: entity.createdAt,
-//       jobSkills: entity.jobSkills,
-//     );
-//   }
 }
 
 class ArtisanAssignedSkillModel extends ArtisanAssignedSkillEntity {

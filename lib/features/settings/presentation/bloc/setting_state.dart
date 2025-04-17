@@ -35,9 +35,12 @@ class SettingState with _$SettingState {
     @Default(GetCountryState.idle) GetCountryState getCountryState,
     @Default(GetStateState.idle) GetStateState getStateState,
     @Default(UpdatePasswordState.idle) UpdatePasswordState updatePasswordState,
+    @Default(ViewState.idle) ViewState getCandidateProfileState,
     GetEmployerResponseEntity? getEmployerResponseEntity,
     GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+    CandidateProfileEntity? candidateProfileEntity,
     @Default(UpdateJobSeekerProfileEntity(
+
         fullName: '',
         state: '',
         city: '',

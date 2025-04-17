@@ -137,7 +137,15 @@ class NotificationJobDetailsScreen extends StatelessWidget {
                             'Pay',
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
-                          Text(
+                         state.searchJobDetail?.compensationType ==
+                                        'payperjob' ||
+                                    state.searchJobDetail?.compensationType ==
+                                        'Negotiable'
+                                ? Text('Pay per job',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                    ))
+                                :      Text(
                             state.searchJobDetail?.basicSalary ?? '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,

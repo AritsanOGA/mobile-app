@@ -54,10 +54,7 @@ class HomeState with _$HomeState {
       PostJobEntity postJobRequest,
       @Default(["Contract", "Full time", "Part_time", "Temporary"])
       List<String> jobtypeList,
-      @Default([
-        "Salary",
-        "Pay per job",
-      ])
+      @Default(["Salary", "Pay per job", "Negotiable"])
       List<String> compensationTypeList,
       @Default(["Onsite", "Hybrid", "Remote"]) List<String> workModeList,
       @Default(["BSC", "BA", "MSC", "OND", "HND", "SSCE", "NONE"])

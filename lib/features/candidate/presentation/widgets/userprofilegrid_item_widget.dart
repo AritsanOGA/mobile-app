@@ -65,8 +65,8 @@ class _UserprofilegridItemWidgetState extends State<UserprofilegridItemWidget> {
                     progressIndicatorBuilder:
                         (context, url, downloadProgress) => const Center(),
                     imageBuilder: (context, imageProvider) => Container(
-                      width: 40,
-                      height: 40,
+                      width: 60,
+                      height: 60,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(

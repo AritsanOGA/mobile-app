@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// ignore: must_be_immutable
 class ViewhierarchyItemWidget extends StatefulWidget {
   final String identity;
   final String planName;
@@ -35,8 +34,6 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
               elevation: 3,
               borderRadius: BorderRadius.circular(20),
               child: Container(
-                //  height: 430.h,
-                //width: 180.v,
                 padding: EdgeInsets.symmetric(
                   horizontal: 3.h,
                   vertical: 15.v,
@@ -197,9 +194,6 @@ class _ViewhierarchyItemWidgetState extends State<ViewhierarchyItemWidget> {
                               'candidate': candidate
                             },
                           );
-
-                          print(
-                              'creat ${widget.identity} ${widget.planName} ${widget.planPrices} $candidate');
                         },
                         child: Container(
                           height: 40.h,
