@@ -317,7 +317,7 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                         context: context,
                                         initialDate: DateTime.now(),
                                         firstDate: DateTime(2024),
-                                        lastDate: DateTime(2100),
+                                        lastDate: DateTime.now(),
                                       );
                                       dateOfBirthController.text =
                                           "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
