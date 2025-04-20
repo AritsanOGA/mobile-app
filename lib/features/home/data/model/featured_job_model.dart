@@ -26,7 +26,6 @@ class FeaturedJobResponseModel extends FeaturedJobResponseEntity {
     super.hireType,
     super.quantity,
     super.businessCategoryName,
-    super.businessCategoryId,
     super.ageRange,
     super.gender,
     super.experience,
@@ -76,7 +75,7 @@ class FeaturedJobResponseModel extends FeaturedJobResponseEntity {
         hireType: json["hire_type"],
         quantity: json["quantity"],
         businessCategoryName: json["business_category_name"],
-        businessCategoryId: json["business_category_id"],
+    
         ageRange: json["age_range"],
         gender: json["gender"],
         experience: json["experience"],

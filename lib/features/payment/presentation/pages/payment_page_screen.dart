@@ -39,7 +39,7 @@ class PaymentPageScreen extends StatelessWidget {
   Widget _buildViewHierarchy(BuildContext context) {
     var planNames = ["Silver", "Gold", "Platinum"];
 
-    var planPrices = ["25,000", "35,000", "50,000"];
+    var planPrices = ["35,000", "50,000", "80,000"];
     return GridView.builder(
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

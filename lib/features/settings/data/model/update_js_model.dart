@@ -11,7 +11,6 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
     required super.resume,
     required super.email,
     required super.phoneNumber,
-
     required super.streetAddress,
     required super.yearsOfExperience,
     required super.guarantorPhoneNumber,
@@ -35,7 +34,6 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
         passport: entity.passport,
         fullName: entity.fullName,
         email: entity.email,
-      
         guarantorPhoneNumber: entity.guarantorPhoneNumber,
         guarantorName: entity.guarantorName,
         guarantorEmail: entity.guarantorEmail,
@@ -78,8 +76,13 @@ class UpdateJobSeekerModel extends UpdateJobSeekerProfileEntity {
       "min_amount": minAmount,
       "max_amount": maxAmount,
       'guarantor_phone': guarantorPhoneNumber,
-      "skills": skill
+      "skills": skill.join(", ")
     };
+    print('my model $skill');
+
+    // for (int i = 0; i < skill.length; i++) {
+    //   formDataMap['skills[$i]'] = skill[i];
+    // }
 
     if (passport?.path != null) {
       formDataMap['profile_image'] = await MultipartFile.fromFile(

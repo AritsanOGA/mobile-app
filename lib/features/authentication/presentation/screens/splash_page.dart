@@ -24,11 +24,13 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   void initState() {
+  
     animationController.repeat();
     // context.read<AuthBloc>().add(const AuthEvent.getUserData());
 
     super.initState();
   }
+
 
   late AnimationController animationController = AnimationController(
     vsync: this,

@@ -3,6 +3,7 @@ import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_respons
 class JobSeekerJobResponseModel extends JobSeekerJobResponseEntity {
   JobSeekerJobResponseModel({
     super.id,
+    super.jobIdentity,
     super.identity,
     super.userId,
     super.jobTitle,
@@ -17,6 +18,7 @@ class JobSeekerJobResponseModel extends JobSeekerJobResponseEntity {
   factory JobSeekerJobResponseModel.fromJson(Map<String, dynamic> json) =>
       JobSeekerJobResponseModel(
         id: json["id"],
+        jobIdentity: json["job_identity"],
         identity: json["identity"],
         userId: json["user_id"],
         jobTitle: json["job_title"],

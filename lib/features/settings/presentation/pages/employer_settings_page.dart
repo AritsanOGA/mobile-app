@@ -41,14 +41,18 @@ class EmployerSettingsPage extends HookWidget {
                                   padding:
                                       EdgeInsets.only(left: 3.h, right: 4.h),
                                   child: Row(children: [
-                                    state.getEmployerResponseEntity?.image != ''
+                                    state.getEmployerResponseEntity?.image !=
+                                            null
                                         ? CachedNetworkImage(
                                             imageUrl:
                                                 'http://${state.getEmployerResponseEntity?.image ?? ''}',
                                             fit: BoxFit.cover,
                                             progressIndicatorBuilder: (context,
-                                                     url, downloadProgress) =>
-                                                const Center(),
+                                                    url, downloadProgress) =>
+                                                const Center(
+                                              child:
+                                                  CircularProgressIndicator(),
+                                            ),
                                             imageBuilder:
                                                 (context, imageProvider) =>
                                                     Container(
@@ -56,10 +60,8 @@ class EmployerSettingsPage extends HookWidget {
                                               height: 50,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
-                                           
                                                 image: DecorationImage(
-                                                  image:
-                                                      imageProvider,
+                                                  image: imageProvider,
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),

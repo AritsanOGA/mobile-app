@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -218,6 +217,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onGetCountries(
       _GetCountries event, Emitter<AuthState> emit) async {
+    if (state.countries.isNotEmpty) return;
     emit(state.copyWith(getCountryState: GetCountryState.loading));
     final result = await _countryUseCase(NoParams());
     result.fold(

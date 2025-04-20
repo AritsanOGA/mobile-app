@@ -9,7 +9,7 @@ class SearchJobEntity extends Equatable {
   final String? allowances;
   final String city;
   final String industry;
-  final String businessCategoryId;
+  final int businessCategoryId;
   final String jobStatus;
   final String compensationType;
   final DateTime createdAt;

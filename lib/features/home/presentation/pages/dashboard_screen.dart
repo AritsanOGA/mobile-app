@@ -1,22 +1,14 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
-import 'package:artisan_oga/core/services/candidates.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/widgets/js_drawer.dart';
 import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-import '../../../../core/services/default.dart';
-import '../../../../core/utils/app_formatter.dart';
-import '../../../../shared/widgets/custom_outlined_button.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -183,37 +175,18 @@ class _DashboardPageState extends State<DashboardPage> {
                             Navigator.pushNamed(
                                 context, AppRoutes.searchDetailsScreen,
                                 arguments:
-                                    state.jobSeekerJobList[index].identity);
+                                    state.jobSeekerJobList[index].jobIdentity);
                           },
                           child: ListTile(
                             leading: SizedBox(
                               width: 50,
                               height: 50,
-                              child: CachedNetworkImage(
-                                imageUrl: 'https://picsum.photos/250?image=9',
-
-                                //  state.jobSeekerJobList[index].profileImage,
-                                fit: BoxFit.cover,
-
-                                progressIndicatorBuilder:
-                                    (context, url, downloadProgress) =>
-                                        const Center(),
-                                imageBuilder: (context, imageProvider) =>
-                                    Container(
-                                  // width: 50,
-                                  // height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    // borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                      image:
-                                          imageProvider, // Use the provided imageProvider
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                              child: Center(
+                                child: CircleAvatar(
+                                  radius: 40,
+                                  backgroundImage:
+                                      AssetImage(ImageConstant.jobImage),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    const Icon(Icons.error),
                               ),
                             ),
                             title: Text(
@@ -303,251 +276,6 @@ class _DashboardPageState extends State<DashboardPage> {
                   ])),
           Spacer(),
         ]));
-  }
-
-  /// Section Widget
-  Widget _jobsForYouHeader(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      width: double.maxFinite,
-      child: Column(
-        //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Jobs For You",
-            style: CustomTextStyles.titleMediumPrimaryContainer18,
-          ),
-          SizedBox(height: 10),
-          Text(
-            "Jobs you have been matched with",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildJobProfileList(BuildContext context, var data) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: SizedBox(
-        height: 230.v,
-        child: ListView.separated(
-          padding: EdgeInsets.only(left: 25.h),
-          scrollDirection: Axis.horizontal,
-          separatorBuilder: (
-            context,
-            index,
-          ) {
-            return SizedBox(
-              width: 8.h,
-            );
-          },
-          itemCount: data.length,
-          itemBuilder: (context, index) {
-            return Container(
-              width: MediaQuery.sizeOf(context).width * 0.7,
-              padding: EdgeInsets.all(10),
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 225, 225, 224).withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Job title",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 13)),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(data[index]["job_title"].toString(),
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 13))
-                  ]),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget buildJobsForJS(BuildContext context) {
-    return Expanded(
-        child: FutureBuilder<dynamic>(
-            future: Candidates().getJobsForYou("5252"),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
-              }
-
-              if (snapshot.hasData) {
-                final data = snapshot.data!;
-
-                if (data.length > 0) {
-                  return ListView.builder(
-                    itemCount: data.length, // Display the widget 4 times
-                    itemBuilder: (context, index) {
-                      return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20.h),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 2.h, right: 112.h),
-                                    child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [])),
-                                SizedBox(height: 29.v),
-                                _buildJobInformation(
-                                    context,
-                                    data[index]["job_title"],
-                                    data[index]["basic_salary"],
-                                    data[index]["status"],
-                                    data[index]["industry"]),
-                                SizedBox(height: 21.v),
-                                Padding(
-                                    padding: EdgeInsets.only(),
-                                    child: Row(children: [
-                                      CustomImageView(
-                                          imagePath: ImageConstant.imgOiPeople,
-                                          height: 21.adaptSize,
-                                          width: 21.adaptSize),
-                                    ])),
-                                SizedBox(height: 23.v),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 4.h),
-                                    child: Text("Job Description",
-                                        style: CustomTextStyles
-                                            .titleMediumPrimaryContainerMedium_1)),
-                                SizedBox(height: 7.v),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 4.h),
-                                    child: Text(
-                                        removeHtmlTags(
-                                            data[index]["job_description"]),
-                                        //  maxLines: 4,
-                                        // overflow: TextOverflow.ellipsis,
-                                        style: CustomTextStyles
-                                            .bodyMediumPrimaryContainer)),
-                                SizedBox(height: 18.v),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 4.h),
-                                    child: Text("Posted By:",
-                                        style: CustomTextStyles
-                                            .titleMediumPrimaryContainerMedium_1)),
-                                SizedBox(height: 10.v),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 4.h),
-                                    child: Text(data[index]["industry"],
-                                        maxLines: 4,
-                                        overflow: TextOverflow.ellipsis,
-                                        style:
-                                            TextStyle(color: Colors.orange))),
-                                SizedBox(height: 23.v),
-                                CustomOutlinedButton(
-                                    onPressed: (() {
-                                      EasyLoading.show();
-                                      Default()
-                                          .applyForJob(
-                                              user_id: '',
-                                              // jobseekerInfo["data"]
-                                              //         ["id"]
-                                              //     .toString(),
-                                              job_id:
-                                                  data[index]["id"].toString())
-                                          .then((value) => {
-                                                if (value == "success")
-                                                  {
-                                                    EasyLoading.dismiss(),
-                                                    Fluttertoast.showToast(
-                                                        msg:
-                                                            "Job application successful",
-                                                        toastLength:
-                                                            Toast.LENGTH_SHORT,
-                                                        gravity:
-                                                            ToastGravity.CENTER,
-                                                        timeInSecForIosWeb: 1,
-                                                        backgroundColor:
-                                                            const Color
-                                                                    .fromARGB(
-                                                                    255,
-                                                                    86,
-                                                                    86,
-                                                                    86)
-                                                                .withOpacity(
-                                                                    0.6),
-                                                        textColor: Colors.white,
-                                                        fontSize: 16.0),
-                                                    // Navigator.push(
-                                                    //   context,
-                                                    //   MaterialPageRoute(
-                                                    //       builder: (context) =>
-                                                    //           SuccessfulJobApplocationScreen()),
-                                                    // )
-                                                  }
-                                                else
-                                                  {
-                                                    EasyLoading.dismiss(),
-                                                    Fluttertoast.showToast(
-                                                        msg: value,
-                                                        toastLength:
-                                                            Toast.LENGTH_SHORT,
-                                                        gravity:
-                                                            ToastGravity.CENTER,
-                                                        timeInSecForIosWeb: 1,
-                                                        backgroundColor:
-                                                            const Color
-                                                                    .fromARGB(
-                                                                    255,
-                                                                    86,
-                                                                    86,
-                                                                    86)
-                                                                .withOpacity(
-                                                                    0.6),
-                                                        textColor: Colors.white,
-                                                        fontSize: 16.0),
-                                                  }
-                                              });
-                                    }),
-                                    width: 153.h,
-                                    text: "Apply For Job",
-                                    margin: EdgeInsets.only(left: 4.h)),
-                                SizedBox(height: 10.v),
-                                Divider(indent: 4.h, endIndent: 6.h),
-                              ])); // Replace with your own widget
-                    },
-                  );
-                } else {
-                  return Center(
-                    child: Text(
-                      "You have not been matched with any jobs",
-                      style: TextStyle(color: Colors.orange),
-                    ),
-                  );
-                }
-              } else {
-                return Center(
-                  child: Text(
-                    "An error occured. Please refresh",
-                    style: TextStyle(color: Colors.orange),
-                  ),
-                );
-              }
-            }));
   }
 }
 

@@ -1,7 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/image_constant.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
-import 'package:artisan_oga/shared/widgets/custom_image_view.dart';
 import 'package:artisan_oga/theme/custom_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,11 +33,12 @@ class EmployerJobWidget extends StatelessWidget {
         child: Column(
           children: [
             Row(children: [
-              CustomImageView(
-                  imagePath: "assets/images/job-info-svgrepo-com.png",
-                  height: 39.v,
-                  width: 42.h,
-                  alignment: Alignment.center),
+              Center(
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage(ImageConstant.jobImage),
+                ),
+              ),
               SizedBox(
                 width: 15.v,
               ),
@@ -52,7 +52,7 @@ class EmployerJobWidget extends StatelessWidget {
                     Text(applicationDeadline,
                         style: CustomTextStyles.titleSmallGray50001),
                     SizedBox(
-                      width: 175,
+                      width: 170,
                     ),
                     Row(
                       children: [

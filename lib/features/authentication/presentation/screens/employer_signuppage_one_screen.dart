@@ -27,11 +27,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
     final phoneController = useTextEditingController();
     final companyNameController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
-    useEffect(() {
-      context.read<AuthBloc>().add(AuthEvent.getCountries());
-      context.read<AuthBloc>().add(AuthEvent.getState('161'));
-      return null;
-    }, []);
 
     return SafeArea(
         child: Scaffold(
@@ -39,18 +34,21 @@ class EmployerSignuppageOneScreen extends HookWidget {
             appBar: CustomAppBar(
               title: 'Register',
             ),
-            body: BlocConsumer<AuthBloc, AuthState>(
-              listener: (context, state) {
-                if (state.employerSignUpState == EmployerSignUpState.success) {
-                  Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
-                      arguments: email);
-                } else if (state.employerSignUpState ==
-                    EmployerSignUpState.failure) {
-                  ToastUtils.showRedToast(state.errorMessage ?? '');
-                }
-              },
-              builder: (context, state) {
-                return SingleChildScrollView(
+            body: BlocListener<AuthBloc, AuthState>(
+                bloc: context.read<AuthBloc>()
+                  ..add(AuthEvent.getCountries())
+                  ..add(AuthEvent.getState('161')),
+                listener: (context, state) {
+                  if (state.employerSignUpState ==
+                      EmployerSignUpState.success) {
+                    Navigator.pushNamed(context, AppRoutes.verifyEmployerScreen,
+                        arguments: email);
+                  } else if (state.employerSignUpState ==
+                      EmployerSignUpState.failure) {
+                    ToastUtils.showRedToast(state.errorMessage ?? '');
+                  }
+                },
+                child: SingleChildScrollView(
                     child: Form(
                   key: formKey,
                   child: Container(
@@ -343,37 +341,43 @@ class EmployerSignuppageOneScreen extends HookWidget {
                           },
                         ),
                         SizedBox(height: 35.v),
-                        CustomElevatedButton(
-                          isBusy: state.employerSignUpState ==
-                              EmployerSignUpState.loading,
-                          text: "Submit",
-                          onPressed: (() {
-                            debugPrint(
-                                'state ${state.country?.id.toString()} ${'161'}  ${state.states.first.name}  ${state.state?.name}${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
-                            if (formKey.currentState?.validate() ?? false) {
-                              context.read<AuthBloc>().add(
-                                    AuthEvent.registerEmployer(
-                                      state.registerEmployerRequest.copyWith(
-                                        fullName: fullNameController.text,
-                                        officeTitle: officeTitleController.text,
-                                        companyName: companyNameController.text,
-                                        state: state.state?.name ??
-                                            state.states.first.name,
-                                        city: cityController.text,
-                                        companyLogo: state.file,
-                                        gender: state.gender,
-                                        country: state.country?.id.toString() ??
-                                            '161',
-                                        phoneNumber: phoneController.text,
-                                      ),
-                                    ),
-                                  );
-                            }
-                          }),
+                        BlocBuilder<AuthBloc, AuthState>(
+                          builder: (context, state) {
+                            return CustomElevatedButton(
+                              isBusy: state.employerSignUpState ==
+                                  EmployerSignUpState.loading,
+                              text: "Submit",
+                              onPressed: (() {
+                                debugPrint(
+                                    'state ${state.country?.id.toString()} ${'161'}  ${state.states.first.name}  ${state.state?.name}${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
+                                if (formKey.currentState?.validate() ?? false) {
+                                  context.read<AuthBloc>().add(
+                                        AuthEvent.registerEmployer(
+                                          state.registerEmployerRequest
+                                              .copyWith(
+                                            fullName: fullNameController.text,
+                                            officeTitle:
+                                                officeTitleController.text,
+                                            companyName:
+                                                companyNameController.text,
+                                            state: state.state?.name ??
+                                                state.states.first.name,
+                                            city: cityController.text,
+                                            companyLogo: state.file,
+                                            gender: state.gender,
+                                            country:
+                                                state.country?.id.toString() ??
+                                                    '161',
+                                            phoneNumber: phoneController.text,
+                                          ),
+                                        ),
+                                      );
+                                }
+                              }),
+                            );
+                          },
                         )
                       ])),
-                ));
-              },
-            )));
+                )))));
   }
 }

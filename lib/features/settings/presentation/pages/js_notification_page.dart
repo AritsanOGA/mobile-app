@@ -3,7 +3,6 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/settings/presentation/bloc/setting_bloc.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -53,28 +52,12 @@ class _JsNotificationPageState extends State<JsNotificationPage> {
                       children: [
                         Row(
                           children: [
-                            CachedNetworkImage(
-                              imageUrl: 'https://picsum.photos/250?image=9',
-                              fit: BoxFit.cover,
-                              progressIndicatorBuilder:
-                                  (context, url, downloadProgress) =>
-                                      const Center(),
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  // shape: BoxShape.circle,
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: CachedNetworkImageProvider(
-                                        'https://picsum.photos/250?image=9'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                            Center(
+                              child: CircleAvatar(
+                                //   radius: 20,
+                                backgroundImage:
+                                    AssetImage(ImageConstant.jobImage),
                               ),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
                             ),
                             SizedBox(
                               width: 10,

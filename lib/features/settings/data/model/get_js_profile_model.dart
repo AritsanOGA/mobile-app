@@ -26,7 +26,6 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
     required super.state,
     required super.locationAddress,
     required super.deliveryAddress,
-    required super.businessCategory,
     required super.businessName,
     required super.facebook,
     required super.instagram,
@@ -55,7 +54,6 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
     required super.guarantorPhone,
     required super.guarantorEmail,
     required super.referredByLink,
-    required super.referredByWho,
     required List<AwardsAndCertificateModel> super.awardsAndCertificates,
     required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
     required List<AwardsAndCertificateModel> super.education,
@@ -124,7 +122,7 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
       state: json["state"],
       locationAddress: json["location_address"],
       deliveryAddress: json["delivery_address"],
-      businessCategory: json["business_category"],
+
       businessName: json["business_name"],
       facebook: json["facebook"],
       instagram: json["instagram"],
@@ -157,7 +155,7 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
       guarantorPhone: json["guarantor_phone"],
       guarantorEmail: json["guarantor_email"],
       referredByLink: json["referred_by_link"],
-      referredByWho: json["referred_by_who"],
+
       awardsAndCertificates: awardList.isNotEmpty
           ? awardList.map(AwardsAndCertificateModel.fromJson).toList().cast()
           : [],
@@ -237,7 +235,7 @@ class GetJobSeekerResponseModel extends GetJobSeekerResponseEntity {
         "guarantor_phone": guarantorPhone,
         "guarantor_email": guarantorEmail,
         "referred_by_link": referredByLink,
-        "referred_by_who": referredByWho,
+
       };
 }
 
@@ -295,7 +293,7 @@ class ExperienceModel extends ExperienceEntity {
         title: entity.title,
         desc: entity.desc,
         startYear: entity.startYear,
-        endYear: entity.startYear,
+        endYear: entity.endYear,
         companyName: entity.companyName,
       );
   factory ExperienceModel.fromJson(Map<String, dynamic> json) =>

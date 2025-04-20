@@ -52,24 +52,25 @@ class UserModel extends UserEntity {
     required super.phone,
     required super.workExperience,
     required super.identity,
+    required super.image,
   });
 
   factory UserModel.fromEntity(UserEntity entity) => UserModel(
-        id: entity.id,
-        fullName: entity.fullName,
-        availability: entity.availability,
-        phone: entity.phone,
-        workExperience: entity.workExperience,
-        identity: entity.identity,
-      );
+      id: entity.id,
+      fullName: entity.fullName,
+      availability: entity.availability,
+      phone: entity.phone,
+      workExperience: entity.workExperience,
+      identity: entity.identity,
+      image: entity.image);
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json["id"],
-        fullName: json["full_name"],
-        availability: json["availability"],
-        phone: json["phone"],
-        workExperience: json["work_experience"],
-        identity: json["identity"],
-      );
+      id: json["id"],
+      fullName: json["full_name"],
+      availability: json["availability"],
+      phone: json["phone"],
+      workExperience: json["work_experience"],
+      identity: json["identity"],
+      image: json["profile_image"]);
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -78,5 +79,6 @@ class UserModel extends UserEntity {
         "phone": phone,
         "work_experience": workExperience,
         "identity": identity,
+        "profile_image": image
       };
 }

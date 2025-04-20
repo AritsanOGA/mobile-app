@@ -5,84 +5,84 @@ class AppApiEndpoint {
   static const int receiveTimeout = 50000;
   static const int sendTimeout = 50000;
 
-  static Uri baseUri = Uri.parse("http://54.159.228.215:8050/api/v1");
+  static const String baseUri = "https://artisanoga.com/";
 
 //Auth
-  static Uri employerSignup = baseUri.replace(path: '/api/v1/employer/signup/');
-  static Uri candidateSignup =
-      baseUri.replace(path: '/api/v1/candidate/signup');
-  static Uri login = baseUri.replace(path: '/api/v1/login');
-  static Uri refreshToken = baseUri.replace(path: '/api/v1/refresh-token');
-  static Uri getCountry = baseUri.replace(path: '/api/v1/countries');
-  static Uri getState = baseUri.replace(path: '/api/v1/countries/states');
+  static const String employerSignup =  '/api/v1/employer/signup/';
+  static const String candidateSignup =
+       '/api/v1/candidate/signup';
+  static const String login =  '/api/v1/login';
+  static const String refreshToken =  '/api/v1/refresh-token';
+  static const String getCountry =  '/api/v1/countries';
+  static const String getState =  '/api/v1/countries/states';
 
-  static Uri getCategories = baseUri.replace(path: '/api/v1/categories');
-  static Uri getSkills = baseUri.replace(path: '/api/v1/categories/skills');
-  static Uri searchJobs = baseUri.replace(path: '/api/v1/search/jobs');
-  static Uri searchJobDetails = baseUri.replace(path: '/api/v1/job-details');
-  static Uri verifyCode = baseUri.replace(path: '/api/v1/verify-code');
-  static Uri changePassword = baseUri.replace(path: '/api/v1/change-password');
-  static Uri verifyForgotPasswordCode =
-      baseUri.replace(path: '/api/v1/verify-password-reset-code');
-  static Uri forgotPassword = baseUri.replace(path: '/api/v1/forget-password');
-  static Uri resetPassword = baseUri.replace(path: '/api/v1/reset-password');
+  static const String getCategories =  '/api/v1/categories';
+  static const String getSkills =  '/api/v1/categories/skills';
+  static const String searchJobs =  '/api/v1/search/jobs';
+  static const String searchJobDetails =  '/api/v1/job-details';
+  static const String verifyCode =  '/api/v1/verify-code';
+  static const String changePassword =  '/api/v1/change-password';
+  static const String verifyForgotPasswordCode =
+       '/api/v1/verify-password-reset-code';
+  static const String forgotPassword =  '/api/v1/forget-password';
+  static const String resetPassword =  '/api/v1/reset-password';
 
   //! Dashboard
-  static Uri getFeaturedCandidates =
-      baseUri.replace(path: '/api/v1/featured-candidates');
-  static Uri jobSeekerJob =
-      baseUri.replace(path: '/api/v1/candidate/jobs-for-you');
-  static Uri employerJob =
-      baseUri.replace(path: '/api/v1/employer/get-all-jobs');
-  static Uri featuredJob = baseUri.replace(path: '/api/v1/featured-jobs');
-  static Uri postJob = baseUri.replace(path: '/api/v1/employer/post-a-job');
-  static Uri getAllJobs = baseUri.replace(path: '/api/v1/job/get-all-jobs');
-  static Uri applyForJob = baseUri.replace(path: '/api/v1/candidate/job/apply');
+  static const String getFeaturedCandidates =
+       '/api/v1/featured-candidates';
+  static const String jobSeekerJob =
+       '/api/v1/candidate/jobs-for-you';
+  static const String employerJob =
+       '/api/v1/employer/get-all-jobs';
+  static const String featuredJob =  '/api/v1/featured-jobs';
+  static const String postJob =  '/api/v1/employer/post-a-job';
+  static const String getAllJobs =  '/api/v1/job/get-all-jobs';
+  static const String applyForJob =  '/api/v1/candidate/job/apply';
 
   //! Settings
 
-  static Uri updateCandidateProfile =
-      baseUri.replace(path: '/api/v1/candidate/update-profile');
-  static Uri updateEmployerProfile =
-      baseUri.replace(path: '/api/v1/employer/update-profile');
-  static Uri updatePassword = baseUri.replace(path: '/api/v1/update-password');
-  static Uri getEmployerProfile =
-      baseUri.replace(path: '/api/v1/employer/profile');
+  static const String updateCandidateProfile =
+       '/api/v1/candidate/update-profile';
+  static const String updateEmployerProfile =
+       '/api/v1/employer/update-profile';
+  static const String updatePassword =  '/api/v1/update-password';
+  static const String getEmployerProfile =
+       '/api/v1/employer/profile';
 
-  static Uri getJobSeekerProfile =
-      baseUri.replace(path: '/api/v1/candidate/profile');
-  static Uri getJobSeekerNotification =
-      baseUri.replace(path: '/api/v1/candidate/notifications');
-       static Uri jsActivities =
-      baseUri.replace(path: '/api/v1/candidate/jobs-for-you');
+  static const String getJobSeekerProfile =
+       '/api/v1/candidate/profile';
+  static const String getJobSeekerNotification =
+       '/api/v1/candidate/notifications';
+       static const String jsActivities =
+       '/api/v1/candidate/jobs-for-you';
 
 //! Candidates
-  static Uri getAssignedCandidate =
-      baseUri.replace(path: '/api/v1/employer/assigned-applicants');
-  static Uri acceptCandidate =
-      baseUri.replace(path: '/api/v1/employer/accept-candidate');
-  static Uri rejectCandidate =
-      baseUri.replace(path: '/api/v1/employer/reject-candidate');
-  static Uri rejectCandidateWithoutInterview = baseUri.replace(
-      path: '/api/v1/employer/reject-candidate-without-interview');
-  static Uri candidateProfile =
-      baseUri.replace(path: '/api/v1/candidate/get-profile');
-  static Uri getCandidateSkill =
-      baseUri.replace(path: 'api/v1/employer/candidate/technical-skills');
+  static const String getAssignedCandidate =
+       '/api/v1/employer/assigned-applicants';
+  static const String acceptCandidate =
+       '/api/v1/employer/accept-candidate';
+  static const String rejectCandidate =
+       '/api/v1/employer/reject-candidate';
+  static const String rejectCandidateWithoutInterview = 
+       '/api/v1/employer/reject-candidate-without-interview';
+  static const String candidateProfile =
+       '/api/v1/candidate/get-profile';
+  static const String getCandidateSkill =
+       'api/v1/employer/candidate/technical-skills';
 
   //! Employer
-  static Uri getInvoice = baseUri.replace(path: '/api/v1/employer/invoice');
-  static Uri getInvoices =
-      baseUri.replace(path: '/api/v1/employer/get-invoices');
+  static const String getInvoice =  '/api/v1/employer/invoice';
+  static const String getInvoices =
+       '/api/v1/employer/get-invoices';
 
-  static Uri getPayments = baseUri.replace(path: '/api/v1/employer/payments');
-  static Uri noOfCandidate =
-      baseUri.replace(path: '/api/v1/employer/get-no-of-candidates');
-  static Uri bankPayment =
-      baseUri.replace(path: '/api/v1/employer/bank-payment');
-  static Uri generateInvoice =
-      baseUri.replace(path: 'api/v1/employer/generate-invoice');
+  static const String getPayments =  '/api/v1/employer/payments';
+  static const String noOfCandidate =
+       '/api/v1/employer/get-no-of-candidates';
+  static const String bankPayment =
+       '/api/v1/employer/bank-payment';
+  static const String generateInvoice =
+       'api/v1/employer/generate-invoice';
 
-  static Uri cardPayment =
-      baseUri.replace(path: 'api/v1/employer/card-payment');
+  static const String cardPayment =
+       'api/v1/employer/card-payment';
 }

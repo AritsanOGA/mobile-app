@@ -33,7 +33,7 @@ class JobSearchScreen extends HookWidget {
         body: BlocBuilder<AuthBloc, AuthState>(
           bloc: context.read<AuthBloc>()
             ..add(AuthEvent.searchJobs(
-                SearchJobDataEntity(category: 1, location: '', skill: ''))),
+                SearchJobDataEntity(location: '', skill: ''))),
           builder: (context, state) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.h),
@@ -185,17 +185,32 @@ class JobSearchScreen extends HookWidget {
                                                   SizedBox(
                                                     width: 10.v,
                                                   ),
-                                                  Text(
-                                                      state
-                                                          .searchJobEntity[
-                                                              index]
-                                                          .basicSalary,
-                                                      style: theme
-                                                          .textTheme.bodyMedium
-                                                          ?.copyWith(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      )),
+                                                  state.searchJobEntity[index]
+                                                                  .compensationType ==
+                                                              'payperjob' ||
+                                                          state
+                                                                  .searchJobEntity[
+                                                                      index]
+                                                                  .compensationType ==
+                                                              'Negotiable'
+                                                      ? Text('Pay per job',
+                                                          style: theme.textTheme
+                                                              .bodyMedium
+                                                              ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ))
+                                                      : Text(
+                                                          state
+                                                              .searchJobEntity[
+                                                                  index]
+                                                              .basicSalary,
+                                                          style: theme.textTheme
+                                                              .bodyMedium
+                                                              ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          )),
                                                 ],
                                               ),
                                               SizedBox(

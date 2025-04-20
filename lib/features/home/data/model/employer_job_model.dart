@@ -122,7 +122,7 @@ class EmployerJobResponseModel extends EmployerJobResponseEntity {
         hireType: json["hire_type"],
         quantity: json["quantity"],
         businessCategoryName: json["business_category_name"],
-        businessCategoryId: json["business_category_id"],
+      
         ageRange: json["age_range"],
         gender: json["gender"],
         experience: json["experience"],

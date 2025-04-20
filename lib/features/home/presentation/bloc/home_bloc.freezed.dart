@@ -9077,7 +9077,11 @@ class _$InitialImpl implements _Initial {
         "Part_time",
         "Temporary"
       ],
-      final List<String> compensationTypeList = const ["Salary", "Pay per job"],
+      final List<String> compensationTypeList = const [
+        "Salary",
+        "Pay per job",
+        "Negotiable"
+      ],
       final List<String> workModeList = const ["Onsite", "Hybrid", "Remote"],
       final List<String> levelOfEducationList = const [
         "BSC",

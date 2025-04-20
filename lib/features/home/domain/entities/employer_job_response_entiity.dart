@@ -24,7 +24,7 @@ class EmployerJobResponseEntity extends Equatable {
   final String? hireType;
   final dynamic quantity;
   final dynamic businessCategoryName;
-  final String? businessCategoryId;
+  
   final dynamic ageRange;
   final String? gender;
   final String? experience;
@@ -71,7 +71,7 @@ class EmployerJobResponseEntity extends Equatable {
     this.hireType,
     this.quantity,
     this.businessCategoryName,
-    this.businessCategoryId,
+
     this.ageRange,
     this.gender,
     this.experience,
@@ -121,7 +121,7 @@ class EmployerJobResponseEntity extends Equatable {
         hireType,
         quantity,
         businessCategoryName,
-        businessCategoryId,
+        
         ageRange,
         gender,
         experience,

@@ -10,24 +10,25 @@ import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Future.wait(
-    [init(), Hive.initFlutter()],
+    [
+      init(),
+    ],
   );
 
-  await Hive.openBox("artisan");
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]);
 
   ///Please update theme as per your need if required.
   ThemeHelper().changeTheme('primary');
-  Hive.box("artisan").put("new_job_data", []);
+ 
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor:

@@ -122,17 +122,32 @@ class SearchScreenPage extends HookWidget {
                                                   SizedBox(
                                                     width: 10.v,
                                                   ),
-                                                  Text(
-                                                      state
-                                                          .searchJobEntity[
-                                                              index]
-                                                          .basicSalary,
-                                                      style: theme
-                                                          .textTheme.bodyMedium
-                                                          ?.copyWith(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      )),
+                                                  state.searchJobEntity[index]
+                                                                  .compensationType ==
+                                                              'payperjob' ||
+                                                          state
+                                                                  .searchJobEntity[
+                                                                      index]
+                                                                  .compensationType ==
+                                                              'Negotiable'
+                                                      ? Text('Pay per job',
+                                                          style: theme.textTheme
+                                                              .bodyMedium
+                                                              ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ))
+                                                      : Text(
+                                                          state
+                                                              .searchJobEntity[
+                                                                  index]
+                                                              .basicSalary,
+                                                          style: theme.textTheme
+                                                              .bodyMedium
+                                                              ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          )),
                                                 ],
                                               ),
                                               SizedBox(

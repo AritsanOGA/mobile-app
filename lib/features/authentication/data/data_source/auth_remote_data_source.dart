@@ -254,7 +254,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         body: {"identity": jobId}) as Map<String, dynamic>;
 
     return SearchJobDetailsResultModel.fromJson(
-      result['data'][0] as Map<String, dynamic>,
+      result['data']as Map<String, dynamic>,
     );
   }
 }

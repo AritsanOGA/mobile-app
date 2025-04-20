@@ -54,7 +54,7 @@ class GetJobSeekerResponseEntity extends Equatable {
   final String? guarantorPhone;
   final String? guarantorEmail;
   final int? referredByLink;
-  final String? referredByWho;
+
   final List<AwardsAndCertificateEntity> awardsAndCertificates;
   final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
   final List<AwardsAndCertificateEntity> education;
@@ -116,7 +116,6 @@ class GetJobSeekerResponseEntity extends Equatable {
     this.guarantorPhone,
     this.guarantorEmail,
     this.referredByLink,
-    this.referredByWho,
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
@@ -180,7 +179,6 @@ class GetJobSeekerResponseEntity extends Equatable {
         guarantorPhone,
         guarantorEmail,
         referredByLink,
-        referredByWho,
         awardsAndCertificates,
         artisanAssignedSkills,
         education,
@@ -214,7 +212,7 @@ class ArtisanAssignedSkillEntity extends Equatable {
 
 class ExperienceEntity extends Equatable {
   final String? title;
-  final String? startYear;
+  final int? startYear;
   final String? endYear;
   final String? desc;
   final String? companyName;
@@ -257,10 +255,8 @@ class SkillAssessmentEntity extends Equatable {
       this.skillType});
 
   @override
-  List<Object?> get props => [
-        average,
-        total, employerId, noOfEmployer, skillId, skillType
-      ];
+  List<Object?> get props =>
+      [average, total, employerId, noOfEmployer, skillId, skillType];
 }
 
 class EducationEntity extends Equatable {

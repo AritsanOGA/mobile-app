@@ -32,7 +32,7 @@ class AcceptRejectPageScreen extends HookWidget {
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: 'Applicants',
+              title: 'Applicant',
             ),
             body: BlocBuilder<CandidatesBloc, CandidatesState>(
               bloc: context.read<CandidatesBloc>()
@@ -45,48 +45,43 @@ class AcceptRejectPageScreen extends HookWidget {
                         EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
                     child: Column(children: [
                       SizedBox(height: 26.v),
-                      // Align(
-                      //     alignment: Alignment.centerLeft,
-                      //     child: Row(
-                      //         crossAxisAlignment: CrossAxisAlignment.start,
-                      //         children: [
-                      //           CustomImageView(
-                      //               imagePath: ImageConstant.imgArrowLeftOnprimary,
-                      //               height: 16.adaptSize,
-                      //               width: 16.adaptSize,
-                      //               margin: EdgeInsets.only(top: 3.v, bottom: 5.v),
-                      //               onTap: () {
-                      //                 // onTapImgArrowLeft(context);
-                      //               }),
-                      //           Padding(
-                      //               padding: EdgeInsets.only(left: 126.h),
-                      //               child: Text("Applicants",
-                      //                   style: theme.textTheme.titleLarge))
-                      //         ])),
+
                       SizedBox(height: 35.v),
-                      CachedNetworkImage(
-                        imageUrl:
-                            'https://storage.googleapis.com/kunpexchange-6a590.appspot.com/cities_post/600c520b-321f-4155-a9f7-6a06cb137466download (4).jpeg',
-
-                        //  state.jobSeekerJobList[index].profileImage,
-                        fit: BoxFit.cover,
-
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) => const Center(),
-                        imageBuilder: (context, imageProvider) => Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: imageProvider,
+                      getAssignedApplicantsEntity.users.image != ''
+                          ? CachedNetworkImage(
+                              imageUrl: getAssignedApplicantsEntity.users.image,
                               fit: BoxFit.cover,
+                              progressIndicatorBuilder:
+                                  (context, url, downloadProgress) =>
+                                      const Center(),
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: imageProvider,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              errorWidget: (context, url, error) =>
+                                  const Icon(Icons.error),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      width: 2, color: AppColors.kblack)),
+                              child: Icon(
+                                color: Colors.black,
+                                Icons.person,
+                                size: 70,
+                              ),
                             ),
-                          ),
-                        ),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                      ),
+
                       SizedBox(height: 8.v),
                       Text(getAssignedApplicantsEntity.users.fullName,
                           style: CustomTextStyles.titleLargePrimarySemiBold),

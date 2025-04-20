@@ -56,7 +56,7 @@ class CandidatesProfilePage extends StatelessWidget {
                                           const Center(),
                                   imageBuilder: (context, imageProvider) =>
                                       Container(
-                                    width: 700,
+                                    width: 70,
                                     height: 70,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
@@ -326,12 +326,15 @@ class CandidatesProfilePage extends StatelessWidget {
                                                           .skill ??
                                                       ''))),
                                       SizedBox(height: 20.v),
-                                      state
-                                                  .candidateProfileEntity
-                                                  ?.employerRating[0]
-                                                  .employerRating
-                                                  .length ==
-                                              0
+                                      (state.candidateProfileEntity
+                                                      ?.employerRating.length ==
+                                                  0) ||
+                                              (state
+                                                      .candidateProfileEntity
+                                                      ?.employerRating[0]
+                                                      .employerRating
+                                                      .length ==
+                                                  0)
                                           ? SizedBox()
                                           : Column(
                                               crossAxisAlignment:

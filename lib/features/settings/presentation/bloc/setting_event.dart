@@ -37,4 +37,6 @@ class SettingEvent with _$SettingEvent {
   const factory SettingEvent.updateJobSeekerRequest(
           UpdateJobSeekerProfileEntity updateJobSeekerprofile) =
       _UpdateJobSeekerRequest;
+  const factory SettingEvent.getCandidateProfile(String jobId) =
+      _GetCandidateProfile;
 }

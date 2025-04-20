@@ -275,7 +275,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                         context: context,
                                         initialDate: DateTime.now(),
                                         firstDate: DateTime(1950),
-                                        lastDate: DateTime(2030),
+                                        lastDate: DateTime.now(),
                                       );
                                       dateOfBirthController.text =
                                           "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";

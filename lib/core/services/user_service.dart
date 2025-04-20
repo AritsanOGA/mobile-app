@@ -34,4 +34,5 @@ class UserService {
     final authLocal = locator<AuthLocalDataSource>();
     authData = await authLocal.getUser();
   }
+
 }

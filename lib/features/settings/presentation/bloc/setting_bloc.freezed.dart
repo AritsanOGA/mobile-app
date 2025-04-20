@@ -46,6 +46,7 @@ mixin _$SettingEvent {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +76,7 @@ mixin _$SettingEvent {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,6 +105,7 @@ mixin _$SettingEvent {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +140,7 @@ mixin _$SettingEvent {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,6 +169,7 @@ mixin _$SettingEvent {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -192,6 +197,7 @@ mixin _$SettingEvent {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -287,6 +293,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return started();
   }
@@ -319,6 +326,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return started?.call();
   }
@@ -350,6 +358,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -390,6 +399,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return started(this);
   }
@@ -421,6 +431,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return started?.call(this);
   }
@@ -451,6 +462,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -540,6 +552,7 @@ class _$GetJobSeekerProfileImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getJobSeekerProfile();
   }
@@ -572,6 +585,7 @@ class _$GetJobSeekerProfileImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getJobSeekerProfile?.call();
   }
@@ -603,6 +617,7 @@ class _$GetJobSeekerProfileImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getJobSeekerProfile != null) {
@@ -643,6 +658,7 @@ class _$GetJobSeekerProfileImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getJobSeekerProfile(this);
   }
@@ -674,6 +690,7 @@ class _$GetJobSeekerProfileImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getJobSeekerProfile?.call(this);
   }
@@ -704,6 +721,7 @@ class _$GetJobSeekerProfileImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getJobSeekerProfile != null) {
@@ -791,6 +809,7 @@ class _$GetActivitiesImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getActivities();
   }
@@ -823,6 +842,7 @@ class _$GetActivitiesImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getActivities?.call();
   }
@@ -854,6 +874,7 @@ class _$GetActivitiesImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getActivities != null) {
@@ -894,6 +915,7 @@ class _$GetActivitiesImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getActivities(this);
   }
@@ -925,6 +947,7 @@ class _$GetActivitiesImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getActivities?.call(this);
   }
@@ -955,6 +978,7 @@ class _$GetActivitiesImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getActivities != null) {
@@ -1042,6 +1066,7 @@ class _$LoadActivitiesImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return loadActivities();
   }
@@ -1074,6 +1099,7 @@ class _$LoadActivitiesImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return loadActivities?.call();
   }
@@ -1105,6 +1131,7 @@ class _$LoadActivitiesImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (loadActivities != null) {
@@ -1145,6 +1172,7 @@ class _$LoadActivitiesImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return loadActivities(this);
   }
@@ -1176,6 +1204,7 @@ class _$LoadActivitiesImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return loadActivities?.call(this);
   }
@@ -1206,6 +1235,7 @@ class _$LoadActivitiesImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (loadActivities != null) {
@@ -1291,6 +1321,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getCategory();
   }
@@ -1323,6 +1354,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getCategory?.call();
   }
@@ -1354,6 +1386,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -1394,6 +1427,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getCategory(this);
   }
@@ -1425,6 +1459,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getCategory?.call(this);
   }
@@ -1455,6 +1490,7 @@ class _$GetCategoryImpl with DiagnosticableTreeMixin implements _GetCategory {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -1568,6 +1604,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getSkills(id);
   }
@@ -1600,6 +1637,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getSkills?.call(id);
   }
@@ -1631,6 +1669,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -1671,6 +1710,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getSkills(this);
   }
@@ -1702,6 +1742,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getSkills?.call(this);
   }
@@ -1732,6 +1773,7 @@ class _$GetSkillsImpl with DiagnosticableTreeMixin implements _GetSkills {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -1850,6 +1892,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getState(id);
   }
@@ -1882,6 +1925,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getState?.call(id);
   }
@@ -1913,6 +1957,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -1953,6 +1998,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getState(this);
   }
@@ -1984,6 +2030,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getState?.call(this);
   }
@@ -2014,6 +2061,7 @@ class _$GetStateImpl with DiagnosticableTreeMixin implements _GetState {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -2136,6 +2184,7 @@ class _$FilteredActivitiesImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return filteredActivities(selectedTabIndex);
   }
@@ -2168,6 +2217,7 @@ class _$FilteredActivitiesImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return filteredActivities?.call(selectedTabIndex);
   }
@@ -2199,6 +2249,7 @@ class _$FilteredActivitiesImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (filteredActivities != null) {
@@ -2239,6 +2290,7 @@ class _$FilteredActivitiesImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return filteredActivities(this);
   }
@@ -2270,6 +2322,7 @@ class _$FilteredActivitiesImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return filteredActivities?.call(this);
   }
@@ -2300,6 +2353,7 @@ class _$FilteredActivitiesImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (filteredActivities != null) {
@@ -2394,6 +2448,7 @@ class _$GetEmployerProfileImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getEmployerProfile();
   }
@@ -2426,6 +2481,7 @@ class _$GetEmployerProfileImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getEmployerProfile?.call();
   }
@@ -2457,6 +2513,7 @@ class _$GetEmployerProfileImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getEmployerProfile != null) {
@@ -2497,6 +2554,7 @@ class _$GetEmployerProfileImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getEmployerProfile(this);
   }
@@ -2528,6 +2586,7 @@ class _$GetEmployerProfileImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getEmployerProfile?.call(this);
   }
@@ -2558,6 +2617,7 @@ class _$GetEmployerProfileImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getEmployerProfile != null) {
@@ -2649,6 +2709,7 @@ class _$GetJobSeekerNotificationImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return getJobSeekerNotification();
   }
@@ -2681,6 +2742,7 @@ class _$GetJobSeekerNotificationImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return getJobSeekerNotification?.call();
   }
@@ -2712,6 +2774,7 @@ class _$GetJobSeekerNotificationImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getJobSeekerNotification != null) {
@@ -2752,6 +2815,7 @@ class _$GetJobSeekerNotificationImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return getJobSeekerNotification(this);
   }
@@ -2783,6 +2847,7 @@ class _$GetJobSeekerNotificationImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return getJobSeekerNotification?.call(this);
   }
@@ -2813,6 +2878,7 @@ class _$GetJobSeekerNotificationImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (getJobSeekerNotification != null) {
@@ -2929,6 +2995,7 @@ class _$UpdateSelectedDateImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateSelectedDate(value);
   }
@@ -2961,6 +3028,7 @@ class _$UpdateSelectedDateImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateSelectedDate?.call(value);
   }
@@ -2992,6 +3060,7 @@ class _$UpdateSelectedDateImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -3032,6 +3101,7 @@ class _$UpdateSelectedDateImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateSelectedDate(this);
   }
@@ -3063,6 +3133,7 @@ class _$UpdateSelectedDateImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateSelectedDate?.call(this);
   }
@@ -3093,6 +3164,7 @@ class _$UpdateSelectedDateImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -3217,6 +3289,7 @@ class _$UpdateSelectedCategoryImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateSelectedCategory(value);
   }
@@ -3249,6 +3322,7 @@ class _$UpdateSelectedCategoryImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateSelectedCategory?.call(value);
   }
@@ -3280,6 +3354,7 @@ class _$UpdateSelectedCategoryImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -3320,6 +3395,7 @@ class _$UpdateSelectedCategoryImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateSelectedCategory(this);
   }
@@ -3351,6 +3427,7 @@ class _$UpdateSelectedCategoryImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateSelectedCategory?.call(this);
   }
@@ -3381,6 +3458,7 @@ class _$UpdateSelectedCategoryImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -3504,6 +3582,7 @@ class _$UpdateSelectedJobTypeImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateSelectedJobType(value);
   }
@@ -3536,6 +3615,7 @@ class _$UpdateSelectedJobTypeImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateSelectedJobType?.call(value);
   }
@@ -3567,6 +3647,7 @@ class _$UpdateSelectedJobTypeImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -3607,6 +3688,7 @@ class _$UpdateSelectedJobTypeImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateSelectedJobType(this);
   }
@@ -3638,6 +3720,7 @@ class _$UpdateSelectedJobTypeImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateSelectedJobType?.call(this);
   }
@@ -3668,6 +3751,7 @@ class _$UpdateSelectedJobTypeImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -3797,6 +3881,7 @@ class _$UpdateSelectedSkillImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateSelectedSkill(value);
   }
@@ -3829,6 +3914,7 @@ class _$UpdateSelectedSkillImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateSelectedSkill?.call(value);
   }
@@ -3860,6 +3946,7 @@ class _$UpdateSelectedSkillImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -3900,6 +3987,7 @@ class _$UpdateSelectedSkillImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateSelectedSkill(this);
   }
@@ -3931,6 +4019,7 @@ class _$UpdateSelectedSkillImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateSelectedSkill?.call(this);
   }
@@ -3961,6 +4050,7 @@ class _$UpdateSelectedSkillImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -4088,6 +4178,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateSelectedCompensationType(value);
   }
@@ -4120,6 +4211,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateSelectedCompensationType?.call(value);
   }
@@ -4151,6 +4243,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedCompensationType != null) {
@@ -4191,6 +4284,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateSelectedCompensationType(this);
   }
@@ -4222,6 +4316,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateSelectedCompensationType?.call(this);
   }
@@ -4252,6 +4347,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateSelectedCompensationType != null) {
@@ -4372,6 +4468,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateState(value);
   }
@@ -4404,6 +4501,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateState?.call(value);
   }
@@ -4435,6 +4533,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateState != null) {
@@ -4475,6 +4574,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateState(this);
   }
@@ -4506,6 +4606,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateState?.call(this);
   }
@@ -4536,6 +4637,7 @@ class _$UpdateStateImpl with DiagnosticableTreeMixin implements _UpdateState {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateState != null) {
@@ -4629,6 +4731,7 @@ class _$SelectPictureImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return selectPicture();
   }
@@ -4661,6 +4764,7 @@ class _$SelectPictureImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return selectPicture?.call();
   }
@@ -4692,6 +4796,7 @@ class _$SelectPictureImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (selectPicture != null) {
@@ -4732,6 +4837,7 @@ class _$SelectPictureImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return selectPicture(this);
   }
@@ -4763,6 +4869,7 @@ class _$SelectPictureImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return selectPicture?.call(this);
   }
@@ -4793,6 +4900,7 @@ class _$SelectPictureImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (selectPicture != null) {
@@ -4878,6 +4986,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return selectResume();
   }
@@ -4910,6 +5019,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return selectResume?.call();
   }
@@ -4941,6 +5051,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (selectResume != null) {
@@ -4981,6 +5092,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return selectResume(this);
   }
@@ -5012,6 +5124,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return selectResume?.call(this);
   }
@@ -5042,6 +5155,7 @@ class _$SelectResumeImpl with DiagnosticableTreeMixin implements _SelectResume {
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (selectResume != null) {
@@ -5160,6 +5274,7 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateJobSeekerProfile(entity);
   }
@@ -5192,6 +5307,7 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateJobSeekerProfile?.call(entity);
   }
@@ -5223,6 +5339,7 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateJobSeekerProfile != null) {
@@ -5263,6 +5380,7 @@ class _$UpdateJobSeekerProfileImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateJobSeekerProfile(this);
   }
@@ -5294,6 +5412,7 @@ class _$UpdateJobSeekerProfileImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateJobSeekerProfile?.call(this);
   }
@@ -5324,6 +5443,7 @@ class _$UpdateJobSeekerProfileImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateJobSeekerProfile != null) {
@@ -5447,6 +5567,7 @@ class _$UpdateEmployerProfileImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateEmployerProfile(entity);
   }
@@ -5479,6 +5600,7 @@ class _$UpdateEmployerProfileImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateEmployerProfile?.call(entity);
   }
@@ -5510,6 +5632,7 @@ class _$UpdateEmployerProfileImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateEmployerProfile != null) {
@@ -5550,6 +5673,7 @@ class _$UpdateEmployerProfileImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateEmployerProfile(this);
   }
@@ -5581,6 +5705,7 @@ class _$UpdateEmployerProfileImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateEmployerProfile?.call(this);
   }
@@ -5611,6 +5736,7 @@ class _$UpdateEmployerProfileImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateEmployerProfile != null) {
@@ -5733,6 +5859,7 @@ class _$UpdatePasswordImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updatePassword(entity);
   }
@@ -5765,6 +5892,7 @@ class _$UpdatePasswordImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updatePassword?.call(entity);
   }
@@ -5796,6 +5924,7 @@ class _$UpdatePasswordImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updatePassword != null) {
@@ -5836,6 +5965,7 @@ class _$UpdatePasswordImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updatePassword(this);
   }
@@ -5867,6 +5997,7 @@ class _$UpdatePasswordImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updatePassword?.call(this);
   }
@@ -5897,6 +6028,7 @@ class _$UpdatePasswordImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updatePassword != null) {
@@ -6023,6 +6155,7 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function(
             UpdateJobSeekerProfileEntity updateJobSeekerprofile)
         updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
   }) {
     return updateJobSeekerRequest(updateJobSeekerprofile);
   }
@@ -6055,6 +6188,7 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function(ChangePasswordEntity entity)? updatePassword,
     TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
   }) {
     return updateJobSeekerRequest?.call(updateJobSeekerprofile);
   }
@@ -6086,6 +6220,7 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function(ChangePasswordEntity entity)? updatePassword,
     TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
         updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateJobSeekerRequest != null) {
@@ -6126,6 +6261,7 @@ class _$UpdateJobSeekerRequestImpl
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_UpdateJobSeekerRequest value)
         updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
   }) {
     return updateJobSeekerRequest(this);
   }
@@ -6157,6 +6293,7 @@ class _$UpdateJobSeekerRequestImpl
     TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
   }) {
     return updateJobSeekerRequest?.call(this);
   }
@@ -6187,6 +6324,7 @@ class _$UpdateJobSeekerRequestImpl
     TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     required TResult orElse(),
   }) {
     if (updateJobSeekerRequest != null) {
@@ -6205,6 +6343,298 @@ abstract class _UpdateJobSeekerRequest implements SettingEvent {
   @JsonKey(ignore: true)
   _$$UpdateJobSeekerRequestImplCopyWith<_$UpdateJobSeekerRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCandidateProfileImplCopyWith<$Res> {
+  factory _$$GetCandidateProfileImplCopyWith(_$GetCandidateProfileImpl value,
+          $Res Function(_$GetCandidateProfileImpl) then) =
+      __$$GetCandidateProfileImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String jobId});
+}
+
+/// @nodoc
+class __$$GetCandidateProfileImplCopyWithImpl<$Res>
+    extends _$SettingEventCopyWithImpl<$Res, _$GetCandidateProfileImpl>
+    implements _$$GetCandidateProfileImplCopyWith<$Res> {
+  __$$GetCandidateProfileImplCopyWithImpl(_$GetCandidateProfileImpl _value,
+      $Res Function(_$GetCandidateProfileImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? jobId = null,
+  }) {
+    return _then(_$GetCandidateProfileImpl(
+      null == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCandidateProfileImpl
+    with DiagnosticableTreeMixin
+    implements _GetCandidateProfile {
+  const _$GetCandidateProfileImpl(this.jobId);
+
+  @override
+  final String jobId;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingEvent.getCandidateProfile(jobId: $jobId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingEvent.getCandidateProfile'))
+      ..add(DiagnosticsProperty('jobId', jobId));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCandidateProfileImpl &&
+            (identical(other.jobId, jobId) || other.jobId == jobId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, jobId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCandidateProfileImplCopyWith<_$GetCandidateProfileImpl> get copyWith =>
+      __$$GetCandidateProfileImplCopyWithImpl<_$GetCandidateProfileImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getJobSeekerProfile,
+    required TResult Function() getActivities,
+    required TResult Function() loadActivities,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function(String id) getState,
+    required TResult Function(int selectedTabIndex) filteredActivities,
+    required TResult Function() getEmployerProfile,
+    required TResult Function() getJobSeekerNotification,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function() selectPicture,
+    required TResult Function() selectResume,
+    required TResult Function(UpdateJobSeekerProfileEntity entity)
+        updateJobSeekerProfile,
+    required TResult Function(UpdateEmployerProfileEntity entity)
+        updateEmployerProfile,
+    required TResult Function(ChangePasswordEntity entity) updatePassword,
+    required TResult Function(
+            UpdateJobSeekerProfileEntity updateJobSeekerprofile)
+        updateJobSeekerRequest,
+    required TResult Function(String jobId) getCandidateProfile,
+  }) {
+    return getCandidateProfile(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getJobSeekerProfile,
+    TResult? Function()? getActivities,
+    TResult? Function()? loadActivities,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(String id)? getState,
+    TResult? Function(int selectedTabIndex)? filteredActivities,
+    TResult? Function()? getEmployerProfile,
+    TResult? Function()? getJobSeekerNotification,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function()? selectPicture,
+    TResult? Function()? selectResume,
+    TResult? Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult? Function(UpdateEmployerProfileEntity entity)?
+        updateEmployerProfile,
+    TResult? Function(ChangePasswordEntity entity)? updatePassword,
+    TResult? Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    TResult? Function(String jobId)? getCandidateProfile,
+  }) {
+    return getCandidateProfile?.call(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getJobSeekerProfile,
+    TResult Function()? getActivities,
+    TResult Function()? loadActivities,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function(String id)? getState,
+    TResult Function(int selectedTabIndex)? filteredActivities,
+    TResult Function()? getEmployerProfile,
+    TResult Function()? getJobSeekerNotification,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function()? selectPicture,
+    TResult Function()? selectResume,
+    TResult Function(UpdateJobSeekerProfileEntity entity)?
+        updateJobSeekerProfile,
+    TResult Function(UpdateEmployerProfileEntity entity)? updateEmployerProfile,
+    TResult Function(ChangePasswordEntity entity)? updatePassword,
+    TResult Function(UpdateJobSeekerProfileEntity updateJobSeekerprofile)?
+        updateJobSeekerRequest,
+    TResult Function(String jobId)? getCandidateProfile,
+    required TResult orElse(),
+  }) {
+    if (getCandidateProfile != null) {
+      return getCandidateProfile(jobId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetJobSeekerProfile value) getJobSeekerProfile,
+    required TResult Function(_GetActivities value) getActivities,
+    required TResult Function(_LoadActivities value) loadActivities,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_FilteredActivities value) filteredActivities,
+    required TResult Function(_GetEmployerProfile value) getEmployerProfile,
+    required TResult Function(_GetJobSeekerNotification value)
+        getJobSeekerNotification,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectPicture value) selectPicture,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateJobSeekerProfile value)
+        updateJobSeekerProfile,
+    required TResult Function(_UpdateEmployerProfile value)
+        updateEmployerProfile,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_UpdateJobSeekerRequest value)
+        updateJobSeekerRequest,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+  }) {
+    return getCandidateProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult? Function(_GetActivities value)? getActivities,
+    TResult? Function(_LoadActivities value)? loadActivities,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_FilteredActivities value)? filteredActivities,
+    TResult? Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult? Function(_GetJobSeekerNotification value)?
+        getJobSeekerNotification,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectPicture value)? selectPicture,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult? Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+  }) {
+    return getCandidateProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetJobSeekerProfile value)? getJobSeekerProfile,
+    TResult Function(_GetActivities value)? getActivities,
+    TResult Function(_LoadActivities value)? loadActivities,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_FilteredActivities value)? filteredActivities,
+    TResult Function(_GetEmployerProfile value)? getEmployerProfile,
+    TResult Function(_GetJobSeekerNotification value)? getJobSeekerNotification,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectPicture value)? selectPicture,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateJobSeekerProfile value)? updateJobSeekerProfile,
+    TResult Function(_UpdateEmployerProfile value)? updateEmployerProfile,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_UpdateJobSeekerRequest value)? updateJobSeekerRequest,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    required TResult orElse(),
+  }) {
+    if (getCandidateProfile != null) {
+      return getCandidateProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCandidateProfile implements SettingEvent {
+  const factory _GetCandidateProfile(final String jobId) =
+      _$GetCandidateProfileImpl;
+
+  String get jobId;
+  @JsonKey(ignore: true)
+  _$$GetCandidateProfileImplCopyWith<_$GetCandidateProfileImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6245,9 +6675,12 @@ mixin _$SettingState {
   GetStateState get getStateState => throw _privateConstructorUsedError;
   UpdatePasswordState get updatePasswordState =>
       throw _privateConstructorUsedError;
+  ViewState get getCandidateProfileState => throw _privateConstructorUsedError;
   GetEmployerResponseEntity? get getEmployerResponseEntity =>
       throw _privateConstructorUsedError;
   GetJobSeekerResponseEntity? get getJobSeekerResponseEntity =>
+      throw _privateConstructorUsedError;
+  CandidateProfileEntity? get candidateProfileEntity =>
       throw _privateConstructorUsedError;
   UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest =>
       throw _privateConstructorUsedError;
@@ -6283,8 +6716,10 @@ mixin _$SettingState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)
@@ -6321,8 +6756,10 @@ mixin _$SettingState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)?
@@ -6359,8 +6796,10 @@ mixin _$SettingState {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)?
@@ -6424,8 +6863,10 @@ abstract class $SettingStateCopyWith<$Res> {
       GetCountryState getCountryState,
       GetStateState getStateState,
       UpdatePasswordState updatePasswordState,
+      ViewState getCandidateProfileState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
       GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      CandidateProfileEntity? candidateProfileEntity,
       UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
       List<String> jobTypeList,
       List<String> compensationTypeList});
@@ -6471,8 +6912,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
     Object? getCountryState = null,
     Object? getStateState = null,
     Object? updatePasswordState = null,
+    Object? getCandidateProfileState = null,
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
+    Object? candidateProfileEntity = freezed,
     Object? updateJobSeekerProfileRequest = null,
     Object? jobTypeList = null,
     Object? compensationTypeList = null,
@@ -6586,6 +7029,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.updatePasswordState
           : updatePasswordState // ignore: cast_nullable_to_non_nullable
               as UpdatePasswordState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       getEmployerResponseEntity: freezed == getEmployerResponseEntity
           ? _value.getEmployerResponseEntity
           : getEmployerResponseEntity // ignore: cast_nullable_to_non_nullable
@@ -6594,6 +7041,10 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
           ? _value.getJobSeekerResponseEntity
           : getJobSeekerResponseEntity // ignore: cast_nullable_to_non_nullable
               as GetJobSeekerResponseEntity?,
+      candidateProfileEntity: freezed == candidateProfileEntity
+          ? _value.candidateProfileEntity
+          : candidateProfileEntity // ignore: cast_nullable_to_non_nullable
+              as CandidateProfileEntity?,
       updateJobSeekerProfileRequest: null == updateJobSeekerProfileRequest
           ? _value.updateJobSeekerProfileRequest
           : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
@@ -6646,8 +7097,10 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetCountryState getCountryState,
       GetStateState getStateState,
       UpdatePasswordState updatePasswordState,
+      ViewState getCandidateProfileState,
       GetEmployerResponseEntity? getEmployerResponseEntity,
       GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      CandidateProfileEntity? candidateProfileEntity,
       UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
       List<String> jobTypeList,
       List<String> compensationTypeList});
@@ -6691,8 +7144,10 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getCountryState = null,
     Object? getStateState = null,
     Object? updatePasswordState = null,
+    Object? getCandidateProfileState = null,
     Object? getEmployerResponseEntity = freezed,
     Object? getJobSeekerResponseEntity = freezed,
+    Object? candidateProfileEntity = freezed,
     Object? updateJobSeekerProfileRequest = null,
     Object? jobTypeList = null,
     Object? compensationTypeList = null,
@@ -6806,6 +7261,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.updatePasswordState
           : updatePasswordState // ignore: cast_nullable_to_non_nullable
               as UpdatePasswordState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       getEmployerResponseEntity: freezed == getEmployerResponseEntity
           ? _value.getEmployerResponseEntity
           : getEmployerResponseEntity // ignore: cast_nullable_to_non_nullable
@@ -6814,6 +7273,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.getJobSeekerResponseEntity
           : getJobSeekerResponseEntity // ignore: cast_nullable_to_non_nullable
               as GetJobSeekerResponseEntity?,
+      candidateProfileEntity: freezed == candidateProfileEntity
+          ? _value.candidateProfileEntity
+          : candidateProfileEntity // ignore: cast_nullable_to_non_nullable
+              as CandidateProfileEntity?,
       updateJobSeekerProfileRequest: null == updateJobSeekerProfileRequest
           ? _value.updateJobSeekerProfileRequest
           : updateJobSeekerProfileRequest // ignore: cast_nullable_to_non_nullable
@@ -6861,8 +7324,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       this.getCountryState = GetCountryState.idle,
       this.getStateState = GetStateState.idle,
       this.updatePasswordState = UpdatePasswordState.idle,
+      this.getCandidateProfileState = ViewState.idle,
       this.getEmployerResponseEntity,
       this.getJobSeekerResponseEntity,
+      this.candidateProfileEntity,
       this.updateJobSeekerProfileRequest = const UpdateJobSeekerProfileEntity(
           fullName: '',
           state: '',
@@ -7028,9 +7493,14 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @JsonKey()
   final UpdatePasswordState updatePasswordState;
   @override
+  @JsonKey()
+  final ViewState getCandidateProfileState;
+  @override
   final GetEmployerResponseEntity? getEmployerResponseEntity;
   @override
   final GetJobSeekerResponseEntity? getJobSeekerResponseEntity;
+  @override
+  final CandidateProfileEntity? candidateProfileEntity;
   @override
   @JsonKey()
   final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest;
@@ -7055,7 +7525,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingState.initial(selectedTabIndex: $selectedTabIndex, filteredActivity: $filteredActivity, notification: $notification, activity: $activity, skills: $skills, skill: $skill, categoryList: $categoryList, states: $states, state: $state, category: $category, dateOfBirth: $dateOfBirth, resume: $resume, picture: $picture, jobType: $jobType, compensationType: $compensationType, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, activitiesState: $activitiesState, errorMessage: $errorMessage, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, updatePasswordState: $updatePasswordState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest, jobTypeList: $jobTypeList, compensationTypeList: $compensationTypeList)';
+    return 'SettingState.initial(selectedTabIndex: $selectedTabIndex, filteredActivity: $filteredActivity, notification: $notification, activity: $activity, skills: $skills, skill: $skill, categoryList: $categoryList, states: $states, state: $state, category: $category, dateOfBirth: $dateOfBirth, resume: $resume, picture: $picture, jobType: $jobType, compensationType: $compensationType, updateJobSeekerProfileState: $updateJobSeekerProfileState, getEmployerProfileState: $getEmployerProfileState, getJobSeekerProfileState: $getJobSeekerProfileState, updateEmployerProfileState: $updateEmployerProfileState, jobSeekerNotificationState: $jobSeekerNotificationState, activitiesState: $activitiesState, errorMessage: $errorMessage, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, updatePasswordState: $updatePasswordState, getCandidateProfileState: $getCandidateProfileState, getEmployerResponseEntity: $getEmployerResponseEntity, getJobSeekerResponseEntity: $getJobSeekerResponseEntity, candidateProfileEntity: $candidateProfileEntity, updateJobSeekerProfileRequest: $updateJobSeekerProfileRequest, jobTypeList: $jobTypeList, compensationTypeList: $compensationTypeList)';
   }
 
   @override
@@ -7096,9 +7566,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       ..add(DiagnosticsProperty('getStateState', getStateState))
       ..add(DiagnosticsProperty('updatePasswordState', updatePasswordState))
       ..add(DiagnosticsProperty(
+          'getCandidateProfileState', getCandidateProfileState))
+      ..add(DiagnosticsProperty(
           'getEmployerResponseEntity', getEmployerResponseEntity))
       ..add(DiagnosticsProperty(
           'getJobSeekerResponseEntity', getJobSeekerResponseEntity))
+      ..add(
+          DiagnosticsProperty('candidateProfileEntity', candidateProfileEntity))
       ..add(DiagnosticsProperty(
           'updateJobSeekerProfileRequest', updateJobSeekerProfileRequest))
       ..add(DiagnosticsProperty('jobTypeList', jobTypeList))
@@ -7159,11 +7633,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
                 other.getStateState == getStateState) &&
             (identical(other.updatePasswordState, updatePasswordState) ||
                 other.updatePasswordState == updatePasswordState) &&
+            (identical(other.getCandidateProfileState, getCandidateProfileState) ||
+                other.getCandidateProfileState == getCandidateProfileState) &&
             (identical(other.getEmployerResponseEntity, getEmployerResponseEntity) ||
                 other.getEmployerResponseEntity == getEmployerResponseEntity) &&
-            (identical(
-                    other.getJobSeekerResponseEntity, getJobSeekerResponseEntity) ||
+            (identical(other.getJobSeekerResponseEntity, getJobSeekerResponseEntity) ||
                 other.getJobSeekerResponseEntity == getJobSeekerResponseEntity) &&
+            (identical(other.candidateProfileEntity, candidateProfileEntity) || other.candidateProfileEntity == candidateProfileEntity) &&
             (identical(other.updateJobSeekerProfileRequest, updateJobSeekerProfileRequest) || other.updateJobSeekerProfileRequest == updateJobSeekerProfileRequest) &&
             const DeepCollectionEquality().equals(other._jobTypeList, _jobTypeList) &&
             const DeepCollectionEquality().equals(other._compensationTypeList, _compensationTypeList));
@@ -7199,8 +7675,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getCountryState,
         getStateState,
         updatePasswordState,
+        getCandidateProfileState,
         getEmployerResponseEntity,
         getJobSeekerResponseEntity,
+        candidateProfileEntity,
         updateJobSeekerProfileRequest,
         const DeepCollectionEquality().hash(_jobTypeList),
         const DeepCollectionEquality().hash(_compensationTypeList)
@@ -7243,8 +7721,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)
@@ -7278,8 +7758,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getCountryState,
         getStateState,
         updatePasswordState,
+        getCandidateProfileState,
         getEmployerResponseEntity,
         getJobSeekerResponseEntity,
+        candidateProfileEntity,
         updateJobSeekerProfileRequest,
         jobTypeList,
         compensationTypeList);
@@ -7316,8 +7798,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)?
@@ -7351,8 +7835,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getCountryState,
         getStateState,
         updatePasswordState,
+        getCandidateProfileState,
         getEmployerResponseEntity,
         getJobSeekerResponseEntity,
+        candidateProfileEntity,
         updateJobSeekerProfileRequest,
         jobTypeList,
         compensationTypeList);
@@ -7389,8 +7875,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
             GetCountryState getCountryState,
             GetStateState getStateState,
             UpdatePasswordState updatePasswordState,
+            ViewState getCandidateProfileState,
             GetEmployerResponseEntity? getEmployerResponseEntity,
             GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+            CandidateProfileEntity? candidateProfileEntity,
             UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
             List<String> jobTypeList,
             List<String> compensationTypeList)?
@@ -7426,8 +7914,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
           getCountryState,
           getStateState,
           updatePasswordState,
+          getCandidateProfileState,
           getEmployerResponseEntity,
           getJobSeekerResponseEntity,
+          candidateProfileEntity,
           updateJobSeekerProfileRequest,
           jobTypeList,
           compensationTypeList);
@@ -7493,8 +7983,10 @@ abstract class _Initial implements SettingState {
       final GetCountryState getCountryState,
       final GetStateState getStateState,
       final UpdatePasswordState updatePasswordState,
+      final ViewState getCandidateProfileState,
       final GetEmployerResponseEntity? getEmployerResponseEntity,
       final GetJobSeekerResponseEntity? getJobSeekerResponseEntity,
+      final CandidateProfileEntity? candidateProfileEntity,
       final UpdateJobSeekerProfileEntity updateJobSeekerProfileRequest,
       final List<String> jobTypeList,
       final List<String> compensationTypeList}) = _$InitialImpl;
@@ -7554,9 +8046,13 @@ abstract class _Initial implements SettingState {
   @override
   UpdatePasswordState get updatePasswordState;
   @override
+  ViewState get getCandidateProfileState;
+  @override
   GetEmployerResponseEntity? get getEmployerResponseEntity;
   @override
   GetJobSeekerResponseEntity? get getJobSeekerResponseEntity;
+  @override
+  CandidateProfileEntity? get candidateProfileEntity;
   @override
   UpdateJobSeekerProfileEntity get updateJobSeekerProfileRequest;
   @override

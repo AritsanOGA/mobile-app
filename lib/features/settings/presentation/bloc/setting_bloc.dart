@@ -11,6 +11,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/state_respon
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/change_password_entity.dart';
 import 'package:artisan_oga/features/settings/domain/entities/get_employer_response_entity.dart';
@@ -47,6 +49,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     ChangePasswordUseCase? updatePasswordUseCase,
     GetJobSeekerNotificationUsecase? getJobSeekerNotificationUsecase,
     GetActivitiesUsecase? getActivitiesUsecase,
+    CandidateProfileUseCase? candidateProfileUsecase,
   })  : _getEmployerProfileUseCase = getEmployerProfileUseCase ?? locator(),
         _getJobSeekerProfileUseCase = getJobSeekerProfileUseCase ?? locator(),
         _updateEmployerProfileUseCase =
@@ -60,6 +63,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
         _categoryUseCase = categoryUseCase ?? locator(),
         _stateUseCase = stateUseCase ?? locator(),
         _filePickerService = filePickerService ?? locator(),
+        _candidateProfileUseCase = candidateProfileUsecase ?? locator(),
         super(_Initial()) {
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
@@ -82,6 +86,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
     on<_SelectPicture>(_onSelectPicture);
     on<_SelectResume>(_onSelectResume);
     on<_UpdateSelectedDate>(_onUpdateSelectedDate);
+    on<_GetCandidateProfile>(_onGetCandidateProfile);
   }
 
   final GetEmployerProfileUsecase _getEmployerProfileUseCase;
@@ -94,6 +99,7 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
   final FilePickerService _filePickerService;
   final StateUseCase _stateUseCase;
   final CategoryUseCase _categoryUseCase;
+  final CandidateProfileUseCase _candidateProfileUseCase;
 
   final SkillUseCase _skillUseCase;
 
@@ -424,5 +430,26 @@ class SettingBloc extends Bloc<SettingEvent, SettingState> {
   FutureOr<void> _onUpdateSelectedDate(
       _UpdateSelectedDate event, Emitter<SettingState> emit) {
     emit(state.copyWith(dateOfBirth: event.value));
+  }
+
+  FutureOr<void> _onGetCandidateProfile(
+      _GetCandidateProfile event, Emitter<SettingState> emit) async {
+    emit(state.copyWith(getCandidateProfileState: ViewState.loading));
+    final result = await _candidateProfileUseCase(event.jobId);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getCandidateProfileState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateProfileEntity) => emit(
+        state.copyWith(
+          candidateProfileEntity: candidateProfileEntity,
+          getCandidateProfileState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(getCandidateProfileState: ViewState.idle));
   }
 }

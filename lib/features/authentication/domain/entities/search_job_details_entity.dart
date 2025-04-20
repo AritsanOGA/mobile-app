@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
 
-// class SearchJobDetailEntity extends Equatable {
-//   const SearchJobDetailEntity({
-//     required this.jobDetails,
-//     required this.jobSkills,
-//   });
-//   final SearchJobDetailsResultEntity jobDetails;
-//   final List<ArtisanAssignedSkillEntity> jobSkills;
-
-//   @override
-//   List<Object> get props => [
-//         jobDetails,
-//         jobSkills,
-//       ];
-// }
-
 class SearchJobDetailsResultEntity extends Equatable {
   const SearchJobDetailsResultEntity({
+    required this.jobDetails,
+    required this.jobSkills,
+  });
+  final SearchJobDetailEntity jobDetails;
+  final List<ArtisanAssignedSkillEntity> jobSkills;
+
+  @override
+  List<Object> get props => [
+        jobDetails,
+        jobSkills,
+      ];
+}
+
+class SearchJobDetailEntity extends Equatable {
+  const SearchJobDetailEntity({
     required this.id,
     required this.hireType,
     required this.applicationDeadline,
@@ -24,14 +24,15 @@ class SearchJobDetailsResultEntity extends Equatable {
     required this.basicSalary,
     required this.description,
     required this.position,
+    required this.compensationType,
     required this.jobDescription,
     required this.qualification,
     required this.accomodation,
     required this.industry,
     required this.createdAt,
     required this.jobTitle,
-      required this.jobSkills,
-    
+
+    /// required this.jobSkills,
   });
   final int id;
   final String hireType;
@@ -40,13 +41,14 @@ class SearchJobDetailsResultEntity extends Equatable {
   final String basicSalary;
   final String description;
   final String position;
+  final String compensationType;
   final String jobDescription;
   final String accomodation;
   final String qualification;
   final String jobTitle;
   final String industry;
   final DateTime createdAt;
-  final List<ArtisanAssignedSkillEntity> jobSkills;
+//  final List<ArtisanAssignedSkillEntity> jobSkills;
 
   @override
   List<Object> get props => [
@@ -57,13 +59,14 @@ class SearchJobDetailsResultEntity extends Equatable {
         basicSalary,
         description,
         position,
+        compensationType,
         jobDescription,
         qualification,
         accomodation,
         industry,
         createdAt,
         jobTitle,
-        jobSkills
+        // jobSkills
       ];
 }
 

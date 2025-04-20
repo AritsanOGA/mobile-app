@@ -50,24 +50,22 @@ class ActivitiesPageState extends State<ActivitiesPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 48.v,
-                      width: 53.h,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 7.h,
-                        vertical: 11.v,
-                      ),
-                      decoration: AppDecoration.fillPrimaryContainer.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder7,
-                      ),
-                      child: CustomImageView(
-                        imagePath:
-                            ImageConstant.imgDownloadRemovebgPreview26x39,
-                        height: 26.v,
-                        width: 39.h,
-                        alignment: Alignment.center,
-                      ),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage(ImageConstant.jobImage),
                     ),
+
+                    // Container(
+                    //     height: 48.v,
+                    //     width: 53.h,
+                    //     padding: EdgeInsets.symmetric(
+                    //         // horizontal: 7.h,
+                    //         // vertical: 11.v,
+                    //         ),
+                    //     decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //           image: AssetImage(ImageConstant.jobImage)),
+                    //     )),
                     Padding(
                       padding: EdgeInsets.only(
                         left: 8.h,
@@ -127,7 +125,6 @@ class ActivitiesPageState extends State<ActivitiesPage>
                   ],
                 ),
               ),
-              SizedBox(height: 25.v),
               Padding(
                 padding: EdgeInsets.only(left: 10.h),
                 child: Row(
