@@ -19,7 +19,6 @@ class WelcomePageScreen extends StatelessWidget {
       },
       child: Scaffold(
         extendBody: true,
-        // backgroundColor: AppColors.kwhite,
         body: SizedBox(
           height: 879.v,
           width: double.maxFinite,

@@ -62,7 +62,7 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                 if (settingState.getCandidateProfileState ==
                     ViewState.success) {
                   final profile = settingState.candidateProfileEntity;
-                  print('my own profile $profile');
+
                   if (profile != null) {
                     mimAmountController.text = profile.profiles.minAmount ?? '';
                     maxAmountController.text = profile.profiles.maxAmount ?? '';
@@ -352,7 +352,6 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                               UpdateJobSeekerProfileState
                                                   .loading,
                                           onPressed: () {
-                                           
                                             if (formKey.currentState
                                                     ?.validate() ??
                                                 false) {
@@ -376,7 +375,9 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                                                 mimAmountController
                                                                     .text,
                                                             category: authState
-                                                                .category?.name,
+                                                                    .category
+                                                                    ?.name ??
+                                                                'Fashion',
                                                             yearsOfExperience:
                                                                 yearsController
                                                                     .text,
@@ -392,7 +393,9 @@ class UpdateProfilePageThreeScreen extends HookWidget {
                                                           updateJobSeekerRequest
                                                               .copyWith(
                                                             category: authState
-                                                                .category?.name,
+                                                                    .category
+                                                                    ?.name ??
+                                                                'Fashion',
                                                             yearsOfExperience:
                                                                 yearsController
                                                                     .text,

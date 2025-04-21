@@ -133,8 +133,8 @@ class ApiServiceImpl implements ApiService {
         data: body,
         options: Options(
           headers: headers,
-          // followRedirects: false,
-          // validateStatus: (status) => true,
+          followRedirects: false,
+          validateStatus: (status) => true,
         ),
       );
 

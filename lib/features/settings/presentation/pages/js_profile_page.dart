@@ -209,7 +209,7 @@ class JSProfilePage extends HookWidget {
                                                                     ?.profiles
                                                                     .experience[
                                                                         index]
-                                                                    .companyName ??
+                                                                    .title ??
                                                                 '',
                                                             style: CustomTextStyles
                                                                 .titleSmallPrimaryContainer),
@@ -460,13 +460,6 @@ class JSProfilePage extends HookWidget {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text("Employer Feedback",
-                                                style: CustomTextStyles
-                                                    .titleSmallPrimaryContainer),
-                                            SizedBox(height: 10.v),
-                                            Divider(
-                                              height: 2,
-                                            ),
                                             SizedBox(height: 10.v),
                                             state
                                                         .candidateProfileEntity

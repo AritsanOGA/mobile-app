@@ -51,7 +51,8 @@ class UpdateProfilePageTwoScreen extends HookWidget {
                 if (state.getCandidateProfileState == ViewState.success) {
                   final profile = state.candidateProfileEntity;
                   if (profile != null) {
-                    aboutMeTextController.text = profile.profiles.about ?? '';
+                    aboutMeTextController.text =
+                        profile.profiles.serviceDescription ?? '';
                     addressController.text =
                         profile.profiles.streetAddress ?? '';
                     phoneNoTextController.text = profile.profiles.phone ?? '';

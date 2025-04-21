@@ -4,6 +4,7 @@ class JobSeekerJobResponseEntity extends Equatable {
   const JobSeekerJobResponseEntity({
     this.id,
     this.userId,
+    this.jobIdentity,
     this.identity,
     this.jobTitle,
     this.jobDescription,
@@ -16,6 +17,7 @@ class JobSeekerJobResponseEntity extends Equatable {
 
   final int? id;
   final int? userId;
+  final String? jobIdentity;
   final String? identity;
   final String? jobTitle;
   final String? jobDescription;
@@ -28,6 +30,7 @@ class JobSeekerJobResponseEntity extends Equatable {
   @override
   List<Object?> get props => [
         id,
+        jobIdentity,
         identity,
         userId,
         jobTitle,

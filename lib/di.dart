@@ -107,7 +107,7 @@ Future<void> init() async {
             handler.next(e);
           },
           onRequest: (options, handler) {
-         //   options.headers.addAll({'Authorization': ''});
+            //   options.headers.addAll({'Authorization': ''});
             final path = options.uri.path;
             if (path.endsWith('verify')) {
               options.baseUrl = 'https://api.flutterwave.com';

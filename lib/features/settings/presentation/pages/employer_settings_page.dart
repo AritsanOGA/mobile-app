@@ -49,7 +49,10 @@ class EmployerSettingsPage extends HookWidget {
                                             fit: BoxFit.cover,
                                             progressIndicatorBuilder: (context,
                                                     url, downloadProgress) =>
-                                                const Center(),
+                                                const Center(
+                                              child:
+                                                  CircularProgressIndicator(),
+                                            ),
                                             imageBuilder:
                                                 (context, imageProvider) =>
                                                     Container(

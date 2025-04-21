@@ -95,6 +95,7 @@ class SettingsRemoteDataSourceImpl implements SettingsRemoteDataSource {
   Future<bool> updateJobSeekerProfile(
       UpdateJobSeekerProfileEntity entity) async {
     final formData = await UpdateJobSeekerModel.fromEntity(entity).toJson();
+    log('okaytype ${formData.fields.runtimeType}');
     log('okay ${formData.fields}');
     log('okay ${formData.files}');
     final result = await api.post(
