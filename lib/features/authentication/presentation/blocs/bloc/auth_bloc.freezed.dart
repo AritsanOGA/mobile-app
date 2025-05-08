@@ -60,6 +60,7 @@ mixin _$AuthEvent {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +103,7 @@ mixin _$AuthEvent {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,6 +146,7 @@ mixin _$AuthEvent {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -196,6 +199,7 @@ mixin _$AuthEvent {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -241,6 +245,7 @@ mixin _$AuthEvent {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -285,6 +290,7 @@ mixin _$AuthEvent {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -415,6 +421,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedCountry(value);
   }
@@ -460,6 +467,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedCountry?.call(value);
   }
@@ -505,6 +513,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCountry != null) {
@@ -563,6 +572,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedCountry(this);
   }
@@ -611,6 +621,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedCountry?.call(this);
   }
@@ -658,6 +669,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCountry != null) {
@@ -785,6 +797,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedGender(value);
   }
@@ -830,6 +843,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedGender?.call(value);
   }
@@ -875,6 +889,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -933,6 +948,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedGender(this);
   }
@@ -981,6 +997,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedGender?.call(this);
   }
@@ -1028,6 +1045,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedGender != null) {
@@ -1154,6 +1172,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedState(value);
   }
@@ -1199,6 +1218,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedState?.call(value);
   }
@@ -1244,6 +1264,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedState != null) {
@@ -1302,6 +1323,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedState(this);
   }
@@ -1350,6 +1372,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedState?.call(this);
   }
@@ -1397,6 +1420,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedState != null) {
@@ -1523,6 +1547,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedCity(value);
   }
@@ -1568,6 +1593,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedCity?.call(value);
   }
@@ -1613,6 +1639,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCity != null) {
@@ -1671,6 +1698,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedCity(this);
   }
@@ -1719,6 +1747,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedCity?.call(this);
   }
@@ -1766,6 +1795,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCity != null) {
@@ -1892,6 +1922,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedDate(value);
   }
@@ -1937,6 +1968,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedDate?.call(value);
   }
@@ -1982,6 +2014,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -2040,6 +2073,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedDate(this);
   }
@@ -2088,6 +2122,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedDate?.call(this);
   }
@@ -2135,6 +2170,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedDate != null) {
@@ -2263,6 +2299,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedCategory(value);
   }
@@ -2308,6 +2345,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedCategory?.call(value);
   }
@@ -2353,6 +2391,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -2411,6 +2450,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedCategory(this);
   }
@@ -2459,6 +2499,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedCategory?.call(this);
   }
@@ -2506,6 +2547,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCategory != null) {
@@ -2631,6 +2673,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return searchJobs(value);
   }
@@ -2676,6 +2719,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return searchJobs?.call(value);
   }
@@ -2721,6 +2765,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (searchJobs != null) {
@@ -2779,6 +2824,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return searchJobs(this);
   }
@@ -2827,6 +2873,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return searchJobs?.call(this);
   }
@@ -2874,6 +2921,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (searchJobs != null) {
@@ -3006,6 +3054,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedSkill(value);
   }
@@ -3051,6 +3100,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedSkill?.call(value);
   }
@@ -3096,6 +3146,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -3154,6 +3205,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedSkill(this);
   }
@@ -3202,6 +3254,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedSkill?.call(this);
   }
@@ -3249,6 +3302,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedSkill != null) {
@@ -3374,6 +3428,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSkill(value);
   }
@@ -3419,6 +3474,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSkill?.call(value);
   }
@@ -3464,6 +3520,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSkill != null) {
@@ -3522,6 +3579,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSkill(this);
   }
@@ -3570,6 +3628,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSkill?.call(this);
   }
@@ -3617,6 +3676,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSkill != null) {
@@ -3744,6 +3804,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedJobType(value);
   }
@@ -3789,6 +3850,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedJobType?.call(value);
   }
@@ -3834,6 +3896,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -3892,6 +3955,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedJobType(this);
   }
@@ -3940,6 +4004,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedJobType?.call(this);
   }
@@ -3987,6 +4052,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedJobType != null) {
@@ -4118,6 +4184,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedEducationQualification(value);
   }
@@ -4163,6 +4230,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedEducationQualification?.call(value);
   }
@@ -4208,6 +4276,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedEducationQualification != null) {
@@ -4266,6 +4335,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedEducationQualification(this);
   }
@@ -4314,6 +4384,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedEducationQualification?.call(this);
   }
@@ -4361,6 +4432,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedEducationQualification != null) {
@@ -4490,6 +4562,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateEmploymentHistory(value);
   }
@@ -4535,6 +4608,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateEmploymentHistory?.call(value);
   }
@@ -4580,6 +4654,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateEmploymentHistory != null) {
@@ -4638,6 +4713,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateEmploymentHistory(this);
   }
@@ -4686,6 +4762,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateEmploymentHistory?.call(this);
   }
@@ -4733,6 +4810,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateEmploymentHistory != null) {
@@ -4861,6 +4939,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedCompanyLogo(value);
   }
@@ -4906,6 +4985,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedCompanyLogo?.call(value);
   }
@@ -4951,6 +5031,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCompanyLogo != null) {
@@ -5009,6 +5090,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedCompanyLogo(this);
   }
@@ -5057,6 +5139,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedCompanyLogo?.call(this);
   }
@@ -5104,6 +5187,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedCompanyLogo != null) {
@@ -5203,6 +5287,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return selectCompanyLogo();
   }
@@ -5248,6 +5333,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return selectCompanyLogo?.call();
   }
@@ -5293,6 +5379,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (selectCompanyLogo != null) {
@@ -5351,6 +5438,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return selectCompanyLogo(this);
   }
@@ -5399,6 +5487,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return selectCompanyLogo?.call(this);
   }
@@ -5446,6 +5535,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (selectCompanyLogo != null) {
@@ -5539,6 +5629,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return selectPicture();
   }
@@ -5584,6 +5675,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return selectPicture?.call();
   }
@@ -5629,6 +5721,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (selectPicture != null) {
@@ -5687,6 +5780,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return selectPicture(this);
   }
@@ -5735,6 +5829,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return selectPicture?.call(this);
   }
@@ -5782,6 +5877,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (selectPicture != null) {
@@ -5875,6 +5971,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return selectResume();
   }
@@ -5920,6 +6017,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return selectResume?.call();
   }
@@ -5965,6 +6063,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (selectResume != null) {
@@ -6023,6 +6122,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return selectResume(this);
   }
@@ -6071,6 +6171,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return selectResume?.call(this);
   }
@@ -6118,6 +6219,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (selectResume != null) {
@@ -6240,6 +6342,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedIsChecked(value);
   }
@@ -6285,6 +6388,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedIsChecked?.call(value);
   }
@@ -6330,6 +6434,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedIsChecked != null) {
@@ -6388,6 +6493,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedIsChecked(this);
   }
@@ -6436,6 +6542,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedIsChecked?.call(this);
   }
@@ -6483,6 +6590,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedIsChecked != null) {
@@ -6611,6 +6719,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedPassport(value);
   }
@@ -6656,6 +6765,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedPassport?.call(value);
   }
@@ -6701,6 +6811,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedPassport != null) {
@@ -6759,6 +6870,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedPassport(this);
   }
@@ -6807,6 +6919,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedPassport?.call(this);
   }
@@ -6854,6 +6967,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedPassport != null) {
@@ -6981,6 +7095,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateSelectedResume(value);
   }
@@ -7026,6 +7141,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateSelectedResume?.call(value);
   }
@@ -7071,6 +7187,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedResume != null) {
@@ -7129,6 +7246,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateSelectedResume(this);
   }
@@ -7177,6 +7295,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateSelectedResume?.call(this);
   }
@@ -7224,6 +7343,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateSelectedResume != null) {
@@ -7349,6 +7469,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return verifyCode(value);
   }
@@ -7394,6 +7515,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return verifyCode?.call(value);
   }
@@ -7439,6 +7561,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -7497,6 +7620,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return verifyCode(this);
   }
@@ -7545,6 +7669,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return verifyCode?.call(this);
   }
@@ -7592,6 +7717,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (verifyCode != null) {
@@ -7716,6 +7842,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return loginUser(param);
   }
@@ -7761,6 +7888,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return loginUser?.call(param);
   }
@@ -7806,6 +7934,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (loginUser != null) {
@@ -7864,6 +7993,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return loginUser(this);
   }
@@ -7912,6 +8042,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return loginUser?.call(this);
   }
@@ -7959,6 +8090,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (loginUser != null) {
@@ -8084,6 +8216,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updatePassword(param);
   }
@@ -8129,6 +8262,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updatePassword?.call(param);
   }
@@ -8174,6 +8308,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updatePassword != null) {
@@ -8232,6 +8367,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updatePassword(this);
   }
@@ -8280,6 +8416,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updatePassword?.call(this);
   }
@@ -8327,6 +8464,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updatePassword != null) {
@@ -8453,6 +8591,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return forgotPassword(param);
   }
@@ -8498,6 +8637,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return forgotPassword?.call(param);
   }
@@ -8543,6 +8683,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (forgotPassword != null) {
@@ -8601,6 +8742,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return forgotPassword(this);
   }
@@ -8649,6 +8791,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return forgotPassword?.call(this);
   }
@@ -8696,6 +8839,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (forgotPassword != null) {
@@ -8824,6 +8968,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return verifyForgotPasswordCode(param);
   }
@@ -8869,6 +9014,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return verifyForgotPasswordCode?.call(param);
   }
@@ -8914,6 +9060,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (verifyForgotPasswordCode != null) {
@@ -8972,6 +9119,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return verifyForgotPasswordCode(this);
   }
@@ -9020,6 +9168,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return verifyForgotPasswordCode?.call(this);
   }
@@ -9067,6 +9216,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (verifyForgotPasswordCode != null) {
@@ -9166,6 +9316,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return getCountries();
   }
@@ -9211,6 +9362,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return getCountries?.call();
   }
@@ -9256,6 +9408,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -9314,6 +9467,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return getCountries(this);
   }
@@ -9362,6 +9516,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return getCountries?.call(this);
   }
@@ -9409,6 +9564,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (getCountries != null) {
@@ -9528,6 +9684,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return getState(id);
   }
@@ -9573,6 +9730,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return getState?.call(id);
   }
@@ -9618,6 +9776,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -9676,6 +9835,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return getState(this);
   }
@@ -9724,6 +9884,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return getState?.call(this);
   }
@@ -9771,6 +9932,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (getState != null) {
@@ -9896,6 +10058,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return searchJobDetails(jobId);
   }
@@ -9941,6 +10104,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return searchJobDetails?.call(jobId);
   }
@@ -9986,6 +10150,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (searchJobDetails != null) {
@@ -10044,6 +10209,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return searchJobDetails(this);
   }
@@ -10092,6 +10258,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return searchJobDetails?.call(this);
   }
@@ -10139,6 +10306,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (searchJobDetails != null) {
@@ -10237,6 +10405,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return getCategory();
   }
@@ -10282,6 +10451,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return getCategory?.call();
   }
@@ -10327,6 +10497,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -10385,6 +10556,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return getCategory(this);
   }
@@ -10433,6 +10605,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return getCategory?.call(this);
   }
@@ -10480,6 +10653,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (getCategory != null) {
@@ -10606,6 +10780,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateRegisterEmployerRequest(registerEmployerRequest);
   }
@@ -10651,6 +10826,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateRegisterEmployerRequest?.call(registerEmployerRequest);
   }
@@ -10696,6 +10872,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateRegisterEmployerRequest != null) {
@@ -10754,6 +10931,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateRegisterEmployerRequest(this);
   }
@@ -10802,6 +10980,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateRegisterEmployerRequest?.call(this);
   }
@@ -10849,6 +11028,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateRegisterEmployerRequest != null) {
@@ -10983,6 +11163,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return updateRegisterJobSeekerRequest(registerJobSeekerRequest);
   }
@@ -11028,6 +11209,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return updateRegisterJobSeekerRequest?.call(registerJobSeekerRequest);
   }
@@ -11073,6 +11255,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (updateRegisterJobSeekerRequest != null) {
@@ -11131,6 +11314,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return updateRegisterJobSeekerRequest(this);
   }
@@ -11179,6 +11363,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return updateRegisterJobSeekerRequest?.call(this);
   }
@@ -11226,6 +11411,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (updateRegisterJobSeekerRequest != null) {
@@ -11353,6 +11539,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return getSkills(id);
   }
@@ -11398,6 +11585,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return getSkills?.call(id);
   }
@@ -11443,6 +11631,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -11501,6 +11690,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return getSkills(this);
   }
@@ -11549,6 +11739,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return getSkills?.call(this);
   }
@@ -11596,6 +11787,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (getSkills != null) {
@@ -11721,6 +11913,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return registerEmployer(param);
   }
@@ -11766,6 +11959,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return registerEmployer?.call(param);
   }
@@ -11811,6 +12005,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (registerEmployer != null) {
@@ -11869,6 +12064,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return registerEmployer(this);
   }
@@ -11917,6 +12113,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return registerEmployer?.call(this);
   }
@@ -11964,6 +12161,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (registerEmployer != null) {
@@ -12090,6 +12288,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return registerJobSeeker(param);
   }
@@ -12135,6 +12334,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return registerJobSeeker?.call(param);
   }
@@ -12180,6 +12380,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (registerJobSeeker != null) {
@@ -12238,6 +12439,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return registerJobSeeker(this);
   }
@@ -12286,6 +12488,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return registerJobSeeker?.call(this);
   }
@@ -12333,6 +12536,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (registerJobSeeker != null) {
@@ -12432,6 +12636,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return getUserData();
   }
@@ -12477,6 +12682,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return getUserData?.call();
   }
@@ -12522,6 +12728,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (getUserData != null) {
@@ -12580,6 +12787,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return getUserData(this);
   }
@@ -12628,6 +12836,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return getUserData?.call(this);
   }
@@ -12675,6 +12884,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (getUserData != null) {
@@ -12768,6 +12978,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return removeUserData();
   }
@@ -12813,6 +13024,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return removeUserData?.call();
   }
@@ -12858,6 +13070,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (removeUserData != null) {
@@ -12916,6 +13129,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return removeUserData(this);
   }
@@ -12964,6 +13178,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return removeUserData?.call(this);
   }
@@ -13011,6 +13226,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (removeUserData != null) {
@@ -13131,6 +13347,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function() getUserData,
     required TResult Function() removeUserData,
     required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
   }) {
     return selectTab(index);
   }
@@ -13176,6 +13393,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function()? getUserData,
     TResult? Function()? removeUserData,
     TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
   }) {
     return selectTab?.call(index);
   }
@@ -13221,6 +13439,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function()? getUserData,
     TResult Function()? removeUserData,
     TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
     required TResult orElse(),
   }) {
     if (selectTab != null) {
@@ -13279,6 +13498,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(_GetUserData value) getUserData,
     required TResult Function(_RemoveUserData value) removeUserData,
     required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
   }) {
     return selectTab(this);
   }
@@ -13327,6 +13547,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(_GetUserData value)? getUserData,
     TResult? Function(_RemoveUserData value)? removeUserData,
     TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
   }) {
     return selectTab?.call(this);
   }
@@ -13374,6 +13595,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(_GetUserData value)? getUserData,
     TResult Function(_RemoveUserData value)? removeUserData,
     TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
     required TResult orElse(),
   }) {
     if (selectTab != null) {
@@ -13389,6 +13611,379 @@ abstract class _SelectTabEvent implements AuthEvent {
   int get index;
   @JsonKey(ignore: true)
   _$$SelectTabEventImplCopyWith<_$SelectTabEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectYearImplCopyWith<$Res> {
+  factory _$$SelectYearImplCopyWith(
+          _$SelectYearImpl value, $Res Function(_$SelectYearImpl) then) =
+      __$$SelectYearImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String index});
+}
+
+/// @nodoc
+class __$$SelectYearImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SelectYearImpl>
+    implements _$$SelectYearImplCopyWith<$Res> {
+  __$$SelectYearImplCopyWithImpl(
+      _$SelectYearImpl _value, $Res Function(_$SelectYearImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? index = null,
+  }) {
+    return _then(_$SelectYearImpl(
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectYearImpl implements _SelectYear {
+  const _$SelectYearImpl(this.index);
+
+  @override
+  final String index;
+
+  @override
+  String toString() {
+    return 'AuthEvent.selectYear(index: $index)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectYearImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectYearImplCopyWith<_$SelectYearImpl> get copyWith =>
+      __$$SelectYearImplCopyWithImpl<_$SelectYearImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SearchJobDataEntity value) searchJobs,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPicture,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function(UpdatePasswordEntity param) updatePassword,
+    required TResult Function(ForgotPasswordEntity param) forgotPassword,
+    required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(String jobId) searchJobDetails,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+    required TResult Function() getUserData,
+    required TResult Function() removeUserData,
+    required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
+  }) {
+    return selectYear(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SearchJobDataEntity value)? searchJobs,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPicture,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function(UpdatePasswordEntity param)? updatePassword,
+    TResult? Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(String jobId)? searchJobDetails,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult? Function()? getUserData,
+    TResult? Function()? removeUserData,
+    TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
+  }) {
+    return selectYear?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SearchJobDataEntity value)? searchJobs,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPicture,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function(UpdatePasswordEntity param)? updatePassword,
+    TResult Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(String jobId)? searchJobDetails,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult Function()? getUserData,
+    TResult Function()? removeUserData,
+    TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
+    required TResult orElse(),
+  }) {
+    if (selectYear != null) {
+      return selectYear(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_SearchJobs value) searchJobs,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPicture value) selectPicture,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_ForgotPassword value) forgotPassword,
+    required TResult Function(_verifyForgotPasswordCode value)
+        verifyForgotPasswordCode,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+    required TResult Function(_GetUserData value) getUserData,
+    required TResult Function(_RemoveUserData value) removeUserData,
+    required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
+  }) {
+    return selectYear(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_SearchJobs value)? searchJobs,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPicture value)? selectPicture,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
+    TResult? Function(_verifyForgotPasswordCode value)?
+        verifyForgotPasswordCode,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult? Function(_GetUserData value)? getUserData,
+    TResult? Function(_RemoveUserData value)? removeUserData,
+    TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
+  }) {
+    return selectYear?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_SearchJobs value)? searchJobs,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPicture value)? selectPicture,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_ForgotPassword value)? forgotPassword,
+    TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult Function(_GetUserData value)? getUserData,
+    TResult Function(_RemoveUserData value)? removeUserData,
+    TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
+    required TResult orElse(),
+  }) {
+    if (selectYear != null) {
+      return selectYear(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectYear implements AuthEvent {
+  const factory _SelectYear(final String index) = _$SelectYearImpl;
+
+  String get index;
+  @JsonKey(ignore: true)
+  _$$SelectYearImplCopyWith<_$SelectYearImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -13419,6 +14014,9 @@ mixin _$AuthState {
   List<SkillResponseEntity> get skills => throw _privateConstructorUsedError;
   List<SearchJobEntity> get searchJobEntity =>
       throw _privateConstructorUsedError;
+  List<String> get yearEnd => throw _privateConstructorUsedError;
+  String get selectedYear =>
+      throw _privateConstructorUsedError; // String? selectedYear,
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
   SkillResponseEntity? get singleSkill => throw _privateConstructorUsedError;
   RegisterEmployerEntity get registerEmployerRequest =>
@@ -13486,6 +14084,8 @@ mixin _$AuthState {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -13543,6 +14143,8 @@ mixin _$AuthState {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -13600,6 +14202,8 @@ mixin _$AuthState {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -13683,6 +14287,8 @@ abstract class $AuthStateCopyWith<$Res> {
       String employmentHistory,
       List<SkillResponseEntity> skills,
       List<SearchJobEntity> searchJobEntity,
+      List<String> yearEnd,
+      String selectedYear,
       CategoryResponseEntity? category,
       SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
@@ -13749,6 +14355,8 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? employmentHistory = null,
     Object? skills = null,
     Object? searchJobEntity = null,
+    Object? yearEnd = null,
+    Object? selectedYear = null,
     Object? category = freezed,
     Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
@@ -13871,6 +14479,14 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.searchJobEntity
           : searchJobEntity // ignore: cast_nullable_to_non_nullable
               as List<SearchJobEntity>,
+      yearEnd: null == yearEnd
+          ? _value.yearEnd
+          : yearEnd // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      selectedYear: null == selectedYear
+          ? _value.selectedYear
+          : selectedYear // ignore: cast_nullable_to_non_nullable
+              as String,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -14019,6 +14635,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       String employmentHistory,
       List<SkillResponseEntity> skills,
       List<SearchJobEntity> searchJobEntity,
+      List<String> yearEnd,
+      String selectedYear,
       CategoryResponseEntity? category,
       SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
@@ -14083,6 +14701,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? employmentHistory = null,
     Object? skills = null,
     Object? searchJobEntity = null,
+    Object? yearEnd = null,
+    Object? selectedYear = null,
     Object? category = freezed,
     Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
@@ -14205,6 +14825,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._searchJobEntity
           : searchJobEntity // ignore: cast_nullable_to_non_nullable
               as List<SearchJobEntity>,
+      yearEnd: null == yearEnd
+          ? _value._yearEnd
+          : yearEnd // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      selectedYear: null == selectedYear
+          ? _value.selectedYear
+          : selectedYear // ignore: cast_nullable_to_non_nullable
+              as String,
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -14348,6 +14976,8 @@ class _$InitialImpl implements _Initial {
       this.employmentHistory = '--Select--',
       final List<SkillResponseEntity> skills = const [],
       final List<SearchJobEntity> searchJobEntity = const [],
+      final List<String> yearEnd = const [],
+      this.selectedYear = '1980',
       this.category,
       this.singleSkill,
       this.registerEmployerRequest = const RegisterEmployerEntity(
@@ -14453,6 +15083,7 @@ class _$InitialImpl implements _Initial {
       this.searchJobDetailState = SearchJobDetailState.idle})
       : _skills = skills,
         _searchJobEntity = searchJobEntity,
+        _yearEnd = yearEnd,
         _states = states,
         _genders = genders,
         _levelOfEducationList = levelOfEducationList,
@@ -14527,6 +15158,19 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_searchJobEntity);
   }
 
+  final List<String> _yearEnd;
+  @override
+  @JsonKey()
+  List<String> get yearEnd {
+    if (_yearEnd is EqualUnmodifiableListView) return _yearEnd;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_yearEnd);
+  }
+
+  @override
+  @JsonKey()
+  final String selectedYear;
+// String? selectedYear,
   @override
   final CategoryResponseEntity? category;
   @override
@@ -14661,7 +15305,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, yearEnd: $yearEnd, selectedYear: $selectedYear, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
   }
 
   @override
@@ -14705,6 +15349,9 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._skills, _skills) &&
             const DeepCollectionEquality()
                 .equals(other._searchJobEntity, _searchJobEntity) &&
+            const DeepCollectionEquality().equals(other._yearEnd, _yearEnd) &&
+            (identical(other.selectedYear, selectedYear) ||
+                other.selectedYear == selectedYear) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.singleSkill, singleSkill) ||
@@ -14741,8 +15388,7 @@ class _$InitialImpl implements _Initial {
                 other.employerSignUpState == employerSignUpState) &&
             (identical(other.searchJobState, searchJobState) ||
                 other.searchJobState == searchJobState) &&
-            (identical(other.jobSeekerSignUpState, jobSeekerSignUpState) ||
-                other.jobSeekerSignUpState == jobSeekerSignUpState) &&
+            (identical(other.jobSeekerSignUpState, jobSeekerSignUpState) || other.jobSeekerSignUpState == jobSeekerSignUpState) &&
             (identical(other.getCategoryState, getCategoryState) || other.getCategoryState == getCategoryState) &&
             (identical(other.getSkillState, getSkillState) || other.getSkillState == getSkillState) &&
             (identical(other.getCountryState, getCountryState) || other.getCountryState == getCountryState) &&
@@ -14778,6 +15424,8 @@ class _$InitialImpl implements _Initial {
         employmentHistory,
         const DeepCollectionEquality().hash(_skills),
         const DeepCollectionEquality().hash(_searchJobEntity),
+        const DeepCollectionEquality().hash(_yearEnd),
+        selectedYear,
         category,
         singleSkill,
         registerEmployerRequest,
@@ -14841,6 +15489,8 @@ class _$InitialImpl implements _Initial {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -14895,6 +15545,8 @@ class _$InitialImpl implements _Initial {
         employmentHistory,
         skills,
         searchJobEntity,
+        yearEnd,
+        selectedYear,
         category,
         singleSkill,
         registerEmployerRequest,
@@ -14952,6 +15604,8 @@ class _$InitialImpl implements _Initial {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -15006,6 +15660,8 @@ class _$InitialImpl implements _Initial {
         employmentHistory,
         skills,
         searchJobEntity,
+        yearEnd,
+        selectedYear,
         category,
         singleSkill,
         registerEmployerRequest,
@@ -15063,6 +15719,8 @@ class _$InitialImpl implements _Initial {
             String employmentHistory,
             List<SkillResponseEntity> skills,
             List<SearchJobEntity> searchJobEntity,
+            List<String> yearEnd,
+            String selectedYear,
             CategoryResponseEntity? category,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
@@ -15119,6 +15777,8 @@ class _$InitialImpl implements _Initial {
           employmentHistory,
           skills,
           searchJobEntity,
+          yearEnd,
+          selectedYear,
           category,
           singleSkill,
           registerEmployerRequest,
@@ -15205,6 +15865,8 @@ abstract class _Initial implements AuthState {
       final String employmentHistory,
       final List<SkillResponseEntity> skills,
       final List<SearchJobEntity> searchJobEntity,
+      final List<String> yearEnd,
+      final String selectedYear,
       final CategoryResponseEntity? category,
       final SkillResponseEntity? singleSkill,
       final RegisterEmployerEntity registerEmployerRequest,
@@ -15281,6 +15943,10 @@ abstract class _Initial implements AuthState {
   @override
   List<SearchJobEntity> get searchJobEntity;
   @override
+  List<String> get yearEnd;
+  @override
+  String get selectedYear;
+  @override // String? selectedYear,
   CategoryResponseEntity? get category;
   @override
   SkillResponseEntity? get singleSkill;

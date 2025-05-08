@@ -26,6 +26,9 @@ class AuthState with _$AuthState {
     @Default('--Select--') String employmentHistory,
     @Default([]) List<SkillResponseEntity> skills,
     @Default([]) List<SearchJobEntity> searchJobEntity,
+    @Default([]) List<String> yearEnd,
+    @Default('1980') String selectedYear,
+    // String? selectedYear,
     CategoryResponseEntity? category,
     SkillResponseEntity? singleSkill,
     @Default(RegisterEmployerEntity(

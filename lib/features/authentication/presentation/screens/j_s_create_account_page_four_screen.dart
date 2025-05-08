@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
+import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
@@ -117,14 +118,33 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                             controller: startYearController,
                                           ),
                                           SizedBox(height: 30.v),
-                                          CustomTextFormField(
-                                            hintText: 'Enter End Year',
-                                            title: 'End Year',
-                                            textInputType: TextInputType.number,
-                                            validator:
-                                                FormValidation.stringValidation,
-                                            controller: endYearController,
+                                          BlocBuilder<AuthBloc, AuthState>(
+                                            builder: (context, state) {
+                                              return CustomDropDown<String>(
+                                                title: "End Year",
+                                                items: AppStrings
+                                                    .yearList1980to2025,
+                                                selectedItem: state.selectedYear
+                                                    .toString(),
+                                                itemLabel: (history) => history,
+                                                onChanged: (value) {
+                                                  context.read<AuthBloc>().add(
+                                                        AuthEvent.selectYear(
+                                                            value ?? ''),
+                                                      );
+                                                  print('ssss ${value}');
+                                                },
+                                              );
+                                            },
                                           ),
+                                          // CustomTextFormField(
+                                          //   hintText: 'Enter End Year',
+                                          //   title: 'End Year',
+                                          //   textInputType: TextInputType.number,
+                                          //   validator:
+                                          //       FormValidation.stringValidation,
+                                          //   controller: endYearController,
+                                          // ),
                                           SizedBox(height: 27.v),
                                           Padding(
                                               padding: EdgeInsets.symmetric(
@@ -160,12 +180,11 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                       onPressed: (() {
                                         if (formKey.currentState?.validate() ??
                                             false) {
-                                          context.read<AuthBloc>().add(AuthEvent
-                                              .updateRegisterJobSeekerRequest(
+                                          context.read<AuthBloc>().add(
+                                              AuthEvent.updateRegisterJobSeekerRequest(
                                                   registerJobSeekerRequest.copyWith(
-                                                      employmentHistory:
-                                                          state
-                                                              .employmentHistory,
+                                                      employmentHistory: state
+                                                          .employmentHistory,
                                                       companyName:
                                                           companyNameController
                                                               .text,
@@ -173,8 +192,9 @@ class JSCreateAccountPageFourScreen extends HookWidget {
                                                       startYear:
                                                           startYearController
                                                               .text,
-                                                      endYear: endYearController
-                                                          .text,
+                                                      endYear: state
+                                                          .selectedYear
+                                                          .toString(),
                                                       description:
                                                           descriptionController
                                                               .text)));

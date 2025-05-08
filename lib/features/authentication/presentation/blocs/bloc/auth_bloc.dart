@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -77,6 +78,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _verifyForgotPasswordUseCase = verifyForgotPasswordUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
+    on<_SelectYear>(_onSelectYear);
     on<_UpdateRegisterEmployerRequest>(_onUpdateRegisterEmployerRequest);
     on<_UpdateRegisterJobSeekerRequest>(_onUpdateRegisterJobSeekerRequest);
     on<_UpdateSelectedCity>(_onUpdateSelectedCity);
@@ -146,6 +148,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onUpdateSelectedGender(
       _UpdateSelectedGender event, Emitter<AuthState> emit) {
     emit(state.copyWith(gender: event.value));
+  }
+
+  FutureOr<void> _onSelectYear(_SelectYear event, Emitter<AuthState> emit) {
+    emit(state.copyWith(selectedYear: event.index));
   }
 
   FutureOr<void> _onUpdateSelectedCompanyLogo(

@@ -4,7 +4,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/search_job_d
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class SearchJobDetailUseCase implements UseCase<SearchJobDetailsResultEntity, String> {
+class SearchJobDetailUseCase
+    implements UseCase<SearchJobDetailsResultEntity, String> {
   SearchJobDetailUseCase(this.repository);
   final AuthRepository repository;
   @override

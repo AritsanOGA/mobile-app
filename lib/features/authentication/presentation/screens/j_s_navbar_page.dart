@@ -13,6 +13,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
   JobSeekerNavBarPage({super.key});
 
   final List<Widget> pages = [
+    // JSCreateAccountPageFourScreen(email: 'email'),
     DashboardPage(),
     SearchScreenPage(),
     JSSettingsPage()

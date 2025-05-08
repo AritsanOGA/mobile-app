@@ -129,7 +129,7 @@ class _DashboardPageState extends State<DashboardPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
-                  'Jobs for you',
+                  'My Jobs',
                   style: CustomTextStyles.titleLargeff3a332cSemiBold,
                 ),
               ),

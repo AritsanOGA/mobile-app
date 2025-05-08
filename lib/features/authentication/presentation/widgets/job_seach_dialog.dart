@@ -25,7 +25,7 @@ Future<void> searchDialog(
         builder: (context, state) {
           return AlertDialog(
               titlePadding: EdgeInsets.zero,
-              actionsPadding: EdgeInsets.zero,
+              actionsPadding: EdgeInsets.zero, 
               contentPadding: EdgeInsets.zero,
               backgroundColor: Colors.transparent,
               content: Container(

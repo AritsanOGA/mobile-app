@@ -232,7 +232,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 3.h),
-                                    child: Text("Upload Your CV",
+                                    child: Text("Upload Your CV  (Optional)",
                                         style: theme.textTheme.bodyMedium))),
                             SizedBox(height: 10.v),
                             BlocBuilder<AuthBloc, AuthState>(

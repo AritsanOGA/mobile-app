@@ -10,7 +10,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedState;
   const factory AuthEvent.updateSelectedCity(String value) =
       _UpdateSelectedCity;
-        const factory AuthEvent.updateSelectedDate(DateTime value) =
+  const factory AuthEvent.updateSelectedDate(DateTime value) =
       _UpdateSelectedDate;
   const factory AuthEvent.updateSelectedCategory(CategoryResponseEntity value) =
       _UpdateSelectedCategory;
@@ -62,4 +62,5 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.getUserData() = _GetUserData;
   const factory AuthEvent.removeUserData() = _RemoveUserData;
   const factory AuthEvent.selectTab(int index) = _SelectTabEvent;
+  const factory AuthEvent.selectYear(String index) = _SelectYear;
 }

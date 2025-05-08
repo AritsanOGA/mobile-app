@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
@@ -104,14 +106,30 @@ class SearchScreenPage extends HookWidget {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                           fontSize: 20)),
-                                              // SizedBox(
-                                              //   height: 3.h,
-                                              // ),
-                                              // Text(
-                                              //     state.searchJobEntity[index]
-                                              //         .industry,
-                                              //     style: theme
-                                              //         .textTheme.bodyMedium),
+                                              SizedBox(
+                                                height: 3.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('Company:'),
+                                                  SizedBox(
+                                                    width: 10.v,
+                                                  ),
+                                                  ImageFiltered(
+                                                    imageFilter:
+                                                        ImageFilter.blur(
+                                                            sigmaX: 3,
+                                                            sigmaY: 3),
+                                                    child: Text(
+                                                        state
+                                                            .searchJobEntity[
+                                                                index]
+                                                            .industry,
+                                                        style: theme.textTheme
+                                                            .bodyMedium),
+                                                  ),
+                                                ],
+                                              ),
                                               SizedBox(
                                                 height: 10.h,
                                               ),
