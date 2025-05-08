@@ -37,7 +37,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: '',
+              title: 'Personal Details',
             ),
             // resizeToAvoidBottomInset: false,
             body: BlocBuilder<AuthBloc, AuthState>(
@@ -48,11 +48,12 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                   child: Container(
                       width: double.maxFinite,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 22.h, vertical: 12.v),
+                        horizontal: 22.h,
+                      ),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 10.v),
+                            SizedBox(height: 25.v),
                             CustomTextFormField(
                                 title: 'Phone Number',
                                 controller: phoneController,
@@ -248,22 +249,13 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                       ]));
                             }),
                             SizedBox(height: 30.v),
-                            BlocBuilder<AuthBloc, AuthState>(
-                              builder: (context, state) {
-                                return CustomDropDown<String>(
-                                  title: 'Job Type',
-                                  items: state.jobTypeList,
-                                  selectedItem: state.jobType,
-                                  itemLabel: (gender) => gender,
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedJobType(
-                                              value ?? ''),
-                                        );
-                                  },
-                                );
-                              },
-                            ),
+                            CustomTextFormField(
+                                title: 'City',
+                                controller: cityController,
+                                textInputType: TextInputType.name,
+                                validator: FormValidation.stringValidation,
+                                hintText: "Enter City",
+                                hintStyle: theme.textTheme.titleSmall!),
                             SizedBox(height: 30.v),
                             Row(
                               children: [
@@ -296,15 +288,23 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                   width: 20.h,
                                 ),
                                 Expanded(
-                                  child: CustomTextFormField(
-                                      title: 'City',
-                                      controller: cityController,
-                                      textInputType: TextInputType.name,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      hintText: "Enter City",
-                                      hintStyle: theme.textTheme.titleSmall!),
-                                ),
+                                  child: BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      return CustomDropDown<String>(
+                                        title: 'Job Type',
+                                        items: state.jobTypeList,
+                                        selectedItem: state.jobType,
+                                        itemLabel: (gender) => gender,
+                                        onChanged: (value) {
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent.updateSelectedJobType(
+                                                    value ?? ''),
+                                              );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                )
                               ],
                             ),
                             SizedBox(height: 45.v),

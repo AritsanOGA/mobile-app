@@ -58,7 +58,6 @@ abstract class ApiService {
 
 class ApiServiceImpl implements ApiService {
   ApiServiceImpl(this._dio, this.localStorage) {
-
     _log.i('Api constructed and DIO setup register');
   }
   final _log = Logger();

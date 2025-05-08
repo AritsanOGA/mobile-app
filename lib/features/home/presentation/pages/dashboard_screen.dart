@@ -193,10 +193,45 @@ class _DashboardPageState extends State<DashboardPage> {
                               state.jobSeekerJobList[index].jobTitle ?? '',
                               style: CustomTextStyles.titleMediumMedium18,
                             ),
-                            subtitle: Text(
-                              state.jobSeekerJobList[index].workType ?? '',
-                              style:
-                                  CustomTextStyles.labelLargePrimaryContainer13,
+                            subtitle: Row(
+                              children: [
+                                Text(
+                                  state.jobSeekerJobList[index].workType ?? '',
+                                  style: CustomTextStyles
+                                      .labelLargePrimaryContainer13,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  width: 5,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppColors.kblack),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  state.jobSeekerJobList[index].status == '0'
+                                      ? 'Applied'
+                                      : state.jobSeekerJobList[index].status ==
+                                              '1'
+                                          ? 'Screened'
+                                          : state.jobSeekerJobList[index]
+                                                      .status ==
+                                                  '2'
+                                              ? 'Rejected'
+                                              : state.jobSeekerJobList[index]
+                                                          .status ==
+                                                      '5'
+                                                  ? 'Accepted'
+                                                  : '',
+                                  style: CustomTextStyles
+                                      .labelLargePrimaryContainer13,
+                                ),
+                              ],
                             ),
                             trailing: Icon(Icons.more_vert),
                           ),

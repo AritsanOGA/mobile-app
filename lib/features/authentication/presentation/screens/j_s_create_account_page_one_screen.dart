@@ -16,7 +16,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 class JSCreateAccountPageOneScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final fullNameController = useTextEditingController();
+    final firstNameController = useTextEditingController();
+    final lastNameController = useTextEditingController();
     final passwordController = useTextEditingController();
     final confirmPasswordController = useTextEditingController();
     final emailController = useTextEditingController();
@@ -46,17 +47,26 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                               child: Column(children: [
                                 SizedBox(height: 2.v),
                                 Text(
-                                    "Your personal data is safe with us, and no one\nelse will be able to see it.",
+                                    // "Your personal data is safe with us, and no one\nelse will be able to see it.",
+                                    "Our services are fast and simple",
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.center,
                                     style: theme.textTheme.bodyMedium),
                                 SizedBox(height: 35.v),
                                 CustomTextFormField(
-                                    title: 'Full Name',
-                                    controller: fullNameController,
+                                    title: 'First Name',
+                                    controller: firstNameController,
                                     validator: FormValidation.stringValidation,
-                                    hintText: "Enter Full Name",
+                                    hintText: "Enter First Name",
+                                    textInputType: TextInputType.name,
+                                    hintStyle: theme.textTheme.titleSmall!),
+                                SizedBox(height: 30.v),
+                                CustomTextFormField(
+                                    title: 'Last Name',
+                                    controller: lastNameController,
+                                    validator: FormValidation.stringValidation,
+                                    hintText: "Enter Last Name",
                                     textInputType: TextInputType.name,
                                     hintStyle: theme.textTheme.titleSmall!),
                                 SizedBox(height: 30.v),
@@ -221,6 +231,9 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                   builder: (context, registerJobSeekerRequest) {
                                     return CustomElevatedButton(
                                       onPressed: (() {
+                                        String fullName =
+                                            '${firstNameController.text} ${lastNameController.text}';
+                                        print('my full $fullName');
                                         if (state.picture == null) {
                                           ToastUtils.showRedToast(
                                               'Upload picture');
@@ -230,24 +243,18 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                               false) {
                                             context.read<AuthBloc>().add(AuthEvent
                                                 .updateRegisterJobSeekerRequest(
-                                                    registerJobSeekerRequest
-                                                        .copyWith(
-                                                            fullName:
-                                                                fullNameController
-                                                                    .text,
-                                                            email:
-                                                                emailController
-                                                                    .text,
-                                                            confirmPassword:
-                                                                confirmPasswordController
-                                                                    .text,
-                                                            gender:
-                                                                state.gender,
-                                                            passport:
-                                                                state.picture,
-                                                            password:
-                                                                passwordController
-                                                                    .text)));
+                                                    registerJobSeekerRequest.copyWith(
+                                                        fullName: fullName,
+                                                        email: emailController
+                                                            .text,
+                                                        confirmPassword:
+                                                            confirmPasswordController
+                                                                .text,
+                                                        gender: state.gender,
+                                                        passport: state.picture,
+                                                        password:
+                                                            passwordController
+                                                                .text)));
                                             Navigator.pushNamed(
                                                 context,
                                                 AppRoutes
