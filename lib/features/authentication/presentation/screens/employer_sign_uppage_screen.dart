@@ -7,6 +7,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/employe
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -46,12 +47,55 @@ class EmployerSignUpPageScreen extends HookWidget {
                                       "Hi, Kindly fill your information below",
                                       style: theme.textTheme.bodyMedium)),
                               SizedBox(height: 35.v),
-                              CustomTextFormField(
-                                  title: 'Email',
-                                  hintText: 'example@gmail.com',
-                                  controller: emailController,
-                                  textInputType: TextInputType.emailAddress,
-                                  validator: FormValidation.emailValidation),
+                              BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                                  return Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      CustomTextFormField(
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                AuthEvent.checkEmail(value));
+                                          },
+                                          title: 'Email',
+                                          hintText: 'example@gmail.com',
+                                          controller: emailController,
+                                          textInputType:
+                                              TextInputType.emailAddress,
+                                          validator:
+                                              FormValidation.emailValidation),
+                                      AnimatedSwitcher(
+                                        duration: Duration(milliseconds: 200),
+                                        child: state.isEmail == true
+                                            ? Text(
+                                                'This email has already been used',
+                                                key: ValueKey('error'),
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontSize: 12),
+                                              )
+                                            : SizedBox(
+                                                height: 0,
+                                                key: ValueKey(
+                                                    'empty')), // Reserve height
+                                      ),
+
+                                      // if (state.isEmail == true)
+                                      //   Padding(
+                                      //     padding: const EdgeInsets.only(
+                                      //         left: 12.0, top: 4),
+                                      //     child: Text(
+                                      //       'This email has already been used',
+                                      //       style: TextSle(
+                                      //           color: Colors.red,
+                                      //           fontSize: 12),
+                                      //     ),
+                                      //   ),
+                                    ],
+                                  );
+                                },
+                              ),
                               SizedBox(height: 30.v),
                               CustomTextFormField(
                                   title: 'Password',
@@ -82,43 +126,100 @@ class EmployerSignUpPageScreen extends HookWidget {
                                 },
                               ),
                               SizedBox(height: 45.v),
-                              BlocSelector<AuthBloc, AuthState,
-                                  RegisterEmployerEntity>(
-                                selector: (state) {
-                                  return state.registerEmployerRequest;
-                                },
-                                builder: (context, registerEmployerRequest) {
-                                  return CustomElevatedButton(
-                                    text: 'Next',
-                                    onPressed: () {
-                                      if (formKey.currentState?.validate() ??
-                                          false) {
-                                        print(
-                                            '${emailController.text} ${passwordController.text} ${confirmPasswordController.text}');
-                                        context.read<AuthBloc>().add(
-                                              AuthEvent
-                                                  .updateRegisterEmployerRequest(
-                                                registerEmployerRequest
-                                                    .copyWith(
-                                                  email: emailController.text,
-                                                  password:
-                                                      passwordController.text,
-                                                  confirmPassword:
-                                                      confirmPasswordController
-                                                          .text,
+                              BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, state) {
+                                  return BlocSelector<AuthBloc, AuthState,
+                                      RegisterEmployerEntity>(
+                                    selector: (state) =>
+                                        state.registerEmployerRequest,
+                                    builder:
+                                        (context, registerEmployerRequest) {
+                                      return CustomElevatedButton(
+                                        text: 'Next',
+                                        onPressed: () {
+                                          final isFormValid = formKey
+                                                  .currentState
+                                                  ?.validate() ??
+                                              false;
+
+                                          if (!isFormValid) return;
+
+                                          // Check if email has already been used
+                                          if (state.isEmail == true) {
+                                            ToastUtils.showRedToast(
+                                                'This email has already been used');
+                                            // Show an alert/snackbar instead of navigating
+
+                                            return; // ⛔ Prevent navigation
+                                          }
+
+                                          // Update Bloc state
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent
+                                                    .updateRegisterEmployerRequest(
+                                                  registerEmployerRequest
+                                                      .copyWith(
+                                                    email: emailController.text,
+                                                    password:
+                                                        passwordController.text,
+                                                    confirmPassword:
+                                                        confirmPasswordController
+                                                            .text,
+                                                  ),
                                                 ),
-                                              ),
-                                            );
-                                        Navigator.pushNamed(
+                                              );
+
+                                          // ✅ Safe to navigate
+                                          Navigator.pushNamed(
                                             context,
                                             AppRoutes
                                                 .employerSignuppageOneScreen,
-                                            arguments: emailController.text);
-                                      }
+                                            arguments: emailController.text,
+                                          );
+                                        },
+                                      );
                                     },
                                   );
                                 },
                               ),
+
+                              // BlocSelector<AuthBloc, AuthState,
+                              //     RegisterEmployerEntity>(
+                              //   selector: (state) {
+                              //     return state.registerEmployerRequest;
+                              //   },
+                              //   builder: (context, registerEmployerRequest) {
+                              //     return CustomElevatedButton(
+                              //       text: 'Next',
+                              //       onPressed: () {
+                              //         if (formKey.currentState?.validate() ??
+                              //             false) {
+                              //           print(
+                              //               '${emailController.text} ${passwordController.text} ${confirmPasswordController.text}');
+                              //           context.read<AuthBloc>().add(
+                              //                 AuthEvent
+                              //                     .updateRegisterEmployerRequest(
+                              //                   registerEmployerRequest
+                              //                       .copyWith(
+                              //                     email: emailController.text,
+                              //                     password:
+                              //                         passwordController.text,
+                              //                     confirmPassword:
+                              //                         confirmPasswordController
+                              //                             .text,
+                              //                   ),
+                              //                 ),
+                              //               );
+                              //           Navigator.pushNamed(
+                              //               context,
+                              //               AppRoutes
+                              //                   .employerSignuppageOneScreen,
+                              //               arguments: emailController.text);
+                              //         }
+                              //       },
+                              //     );
+                              //   },
+                              // ),
                               SizedBox(height: 27.v),
                               Align(
                                   alignment: Alignment.center,

@@ -156,18 +156,49 @@ class EmployerSignuppageOneScreen extends HookWidget {
                         SizedBox(height: 30.v),
                         Row(
                           children: [
-                            Expanded(
-                              child: CustomTextFormField(
-                                  title: 'Phone no',
-                                  textInputType: TextInputType.phone,
-                                  controller: phoneController,
-                                  inputFormatters: [
-                                    LengthLimitingTextInputFormatter(11),
-                                    FilteringTextInputFormatter.digitsOnly,
-                                  ],
-                                  validator: FormValidation.phoneValidation,
-                                  hintText: "eg 09033447788",
-                                  hintStyle: theme.textTheme.titleSmall!),
+                            BlocBuilder<AuthBloc, AuthState>(
+                              builder: (context, state) {
+                                return Expanded(
+                                  child: Column(
+                                    children: [
+                                      CustomTextFormField(
+                                          onChanged: (value) {
+                                            context.read<AuthBloc>().add(
+                                                AuthEvent.checkPhone(value));
+                                          },
+                                          title: 'Phone no',
+                                          textInputType: TextInputType.phone,
+                                          controller: phoneController,
+                                          inputFormatters: [
+                                            LengthLimitingTextInputFormatter(
+                                                11),
+                                            FilteringTextInputFormatter
+                                                .digitsOnly,
+                                          ],
+                                          validator:
+                                              FormValidation.phoneValidation,
+                                          hintText: "eg 09033447788",
+                                          hintStyle:
+                                              theme.textTheme.titleSmall!),
+                                      AnimatedSwitcher(
+                                        duration: Duration(milliseconds: 200),
+                                        child: state.isPhone == true
+                                            ? Text(
+                                                'This phone number has already been used',
+                                                key: ValueKey('error'),
+                                                style: TextStyle(
+                                                    color: Colors.red,
+                                                    fontSize: 12),
+                                              )
+                                            : SizedBox(
+                                                height: 0,
+                                                key: ValueKey(
+                                                    'empty')), // Reserve height
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
                             ),
                             SizedBox(width: 20.v),
                             Expanded(
@@ -348,31 +379,37 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                   EmployerSignUpState.loading,
                               text: "Submit",
                               onPressed: (() {
-                                debugPrint(
-                                    'state ${state.country?.id.toString()} ${'161'}  ${state.states.first.name}  ${state.state?.name}${state.file} ${fullNameController.text}  ${officeTitleController.text} ${companyNameController.text} ${state.gender} ${cityController.text} ${phoneController.text}');
-                                if (formKey.currentState?.validate() ?? false) {
-                                  context.read<AuthBloc>().add(
-                                        AuthEvent.registerEmployer(
-                                          state.registerEmployerRequest
-                                              .copyWith(
-                                            fullName: fullNameController.text,
-                                            officeTitle:
-                                                officeTitleController.text,
-                                            companyName:
-                                                companyNameController.text,
-                                            state: state.state?.name ??
-                                                state.states.first.name,
-                                            city: cityController.text,
-                                            companyLogo: state.file,
-                                            gender: state.gender,
-                                            country:
-                                                state.country?.id.toString() ??
-                                                    '161',
-                                            phoneNumber: phoneController.text,
-                                          ),
-                                        ),
-                                      );
+                                final isFormValid =
+                                    formKey.currentState?.validate() ?? false;
+
+                                if (!isFormValid) return;
+
+                                if (state.isPhone == true) {
+                                  ToastUtils.showRedToast(
+                                      'This phone number has already been used');
+
+                                  return;
                                 }
+                                context.read<AuthBloc>().add(
+                                      AuthEvent.registerEmployer(
+                                        state.registerEmployerRequest.copyWith(
+                                          fullName: fullNameController.text,
+                                          officeTitle:
+                                              officeTitleController.text,
+                                          companyName:
+                                              companyNameController.text,
+                                          state: state.state?.name ??
+                                              state.states.first.name,
+                                          city: cityController.text,
+                                          companyLogo: state.file,
+                                          gender: state.gender,
+                                          country:
+                                              state.country?.id.toString() ??
+                                                  '161',
+                                          phoneNumber: phoneController.text,
+                                        ),
+                                      ),
+                                    );
                               }),
                             );
                           },

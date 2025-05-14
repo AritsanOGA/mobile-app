@@ -245,7 +245,18 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(String jobId) {
+  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(
+      String jobId) {
     return authRemoteDataSource.searchJobDetails(jobId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> checkEmail(String email) async {
+    return authRemoteDataSource.checkEmail(email).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> checkPhone(String phone) {
+    return authRemoteDataSource.checkPhone(phone).makeRequest();
   }
 }

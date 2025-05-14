@@ -70,13 +70,62 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                     textInputType: TextInputType.name,
                                     hintStyle: theme.textTheme.titleSmall!),
                                 SizedBox(height: 30.v),
-                                CustomTextFormField(
-                                    title: 'Email Address',
-                                    controller: emailController,
-                                    hintText: "example@gmail.com",
-                                    validator: FormValidation.emailValidation,
-                                    hintStyle: theme.textTheme.titleSmall!,
-                                    textInputType: TextInputType.emailAddress),
+                                BlocBuilder<AuthBloc, AuthState>(
+                                  builder: (context, state) {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        CustomTextFormField(
+                                            onChanged: (value) {
+                                              context.read<AuthBloc>().add(
+                                                  AuthEvent.checkEmail(value));
+                                            },
+                                            title: 'Email',
+                                            hintText: 'example@gmail.com',
+                                            controller: emailController,
+                                            textInputType:
+                                                TextInputType.emailAddress,
+                                            validator:
+                                                FormValidation.emailValidation),
+                                        AnimatedSwitcher(
+                                          duration: Duration(milliseconds: 200),
+                                          child: state.isEmail == true
+                                              ? Text(
+                                                  'This email has already been used',
+                                                  key: ValueKey('error'),
+                                                  style: TextStyle(
+                                                      color: Colors.red,
+                                                      fontSize: 12),
+                                                )
+                                              : SizedBox(
+                                                  height: 0,
+                                                  key: ValueKey(
+                                                      'empty')), // Reserve height
+                                        ),
+
+                                        // if (state.isEmail == true)
+                                        //   Padding(
+                                        //     padding: const EdgeInsets.only(
+                                        //         left: 12.0, top: 4),
+                                        //     child: Text(
+                                        //       'This email has already been used',
+                                        //       style: TextSle(
+                                        //           color: Colors.red,
+                                        //           fontSize: 12),
+                                        //     ),
+                                        //   ),
+                                      ],
+                                    );
+                                  },
+                                ),
+                                // CustomTextFormField(
+                                //     title: 'Email Address',
+                                //     controller: emailController,
+                                //     hintText: "example@gmail.com",
+                                //     validator: FormValidation.emailValidation,
+                                //     hintStyle: theme.textTheme.titleSmall!,
+                                //     textInputType: TextInputType.emailAddress),
                                 SizedBox(height: 30.v),
                                 CustomTextFormField(
                                     title: 'Confirm Email Address',
@@ -223,27 +272,39 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                   ],
                                 ),
                                 SizedBox(height: 45.v),
-                                BlocSelector<AuthBloc, AuthState,
-                                    RegisterJobSeekerEntity>(
-                                  selector: (state) {
-                                    return state.registerJobSeekerRequest;
-                                  },
-                                  builder: (context, registerJobSeekerRequest) {
-                                    return CustomElevatedButton(
-                                      onPressed: (() {
-                                        String fullName =
-                                            '${firstNameController.text} ${lastNameController.text}';
-                                        print('my full $fullName');
-                                        if (state.picture == null) {
-                                          ToastUtils.showRedToast(
-                                              'Upload picture');
-                                        } else {
-                                          if (formKey.currentState
-                                                  ?.validate() ??
-                                              false) {
-                                            context.read<AuthBloc>().add(AuthEvent
-                                                .updateRegisterJobSeekerRequest(
-                                                    registerJobSeekerRequest.copyWith(
+                                BlocBuilder<AuthBloc, AuthState>(
+                                  builder: (context, state) {
+                                    return BlocSelector<AuthBloc, AuthState,
+                                        RegisterJobSeekerEntity>(
+                                      selector: (state) =>
+                                          state.registerJobSeekerRequest,
+                                      builder:
+                                          (context, registerJobSeekerRequest) {
+                                        return CustomElevatedButton(
+                                          onPressed: () {
+                                            String fullName =
+                                                '${firstNameController.text} ${lastNameController.text}';
+
+                                            if (state.picture == null) {
+                                              ToastUtils.showRedToast(
+                                                  'Upload picture');
+                                              return;
+                                            }
+
+                                            if (state.isEmail == true) {
+                                              ToastUtils.showRedToast(
+                                                  'This email has already been used');
+                                              return;
+                                            }
+
+                                            if (formKey.currentState
+                                                    ?.validate() ??
+                                                false) {
+                                              context.read<AuthBloc>().add(
+                                                    AuthEvent
+                                                        .updateRegisterJobSeekerRequest(
+                                                      registerJobSeekerRequest
+                                                          .copyWith(
                                                         fullName: fullName,
                                                         email: emailController
                                                             .text,
@@ -254,20 +315,72 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                         passport: state.picture,
                                                         password:
                                                             passwordController
-                                                                .text)));
-                                            Navigator.pushNamed(
+                                                                .text,
+                                                      ),
+                                                    ),
+                                                  );
+
+                                              Navigator.pushNamed(
                                                 context,
                                                 AppRoutes
                                                     .jSCreateAccountPageTwoScreen,
-                                                arguments:
-                                                    emailController.text);
-                                          }
-                                        }
-                                      }),
-                                      text: "Next",
+                                                arguments: emailController.text,
+                                              );
+                                            }
+                                          },
+                                          text: "Next",
+                                        );
+                                      },
                                     );
                                   },
                                 ),
+
+                                //  BlocSelector<AuthBloc, AuthState,
+                                //       RegisterJobSeekerEntity>(
+                                //     selector: (state) {
+                                //       return state.registerJobSeekerRequest;
+                                //     },
+                                //     builder: (context, registerJobSeekerRequest) {
+                                //       return CustomElevatedButton(
+                                //         onPressed: (() {
+                                //           String fullName =
+                                //               '${firstNameController.text} ${lastNameController.text}';
+                                //           print('my full $fullName');
+                                //           if (state.picture == null) {
+                                //             ToastUtils.showRedToast(
+                                //                 'Upload picture');
+                                //           } else {
+                                //             if (formKey.currentState
+                                //                      ?.validate() ??
+                                //                 false) {
+                                //               context.read<AuthBloc>().add(AuthEvent
+                                //                   .updateRegisterJobSeekerRequest(
+                                //                       registerJobSeekerRequest.copyWith(
+                                //                           fullName: fullName,
+                                //                           email: emailController
+                                //                               .text,
+                                //                           confirmPassword:
+                                //                               confirmPasswordController
+                                //                                   .text,
+                                //                           gender: state.gender,
+                                //                           passport: state.picture,
+                                //                           password:
+                                //                               passwordController
+                                //                                   .text)));
+                                //               Navigator.pushNamed(
+                                //                   context,
+                                //                   AppRoutes
+                                //                       .jSCreateAccountPageTwoScreen,
+                                //                   arguments:
+                                //                       emailController.text);
+                                //             }
+                                //           }
+                                //         }),
+                                //         text: "Next",
+                                //       );
+                                //     },
+                                //   ),
+
                                 SizedBox(height: 21.v),
                                 GestureDetector(
                                     onTap: (() {

@@ -18,6 +18,8 @@ import 'package:artisan_oga/features/authentication/domain/entities/skill_respon
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/update_password_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/verify_code_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/check_email_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/check_phone_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
@@ -59,6 +61,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       RemoveUserDataUseCase? removeUserDataUseCase,
       SearchJobDetailUseCase? searchJobDetailUseCase,
       SearchJobUseCase? searchJobUseCase,
+      CheckEmailUsecase? checkEmailUseCase,
+      CheckPhoneUsecase? checkPhoneUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
@@ -76,6 +80,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _searchJobUseCase = searchJobUseCase ?? locator(),
         _searchJobDetailsUseCase = searchJobDetailUseCase ?? locator(),
         _verifyForgotPasswordUseCase = verifyForgotPasswordUseCase ?? locator(),
+        _checkEmailUsecase = checkEmailUseCase ?? locator(),
+        _checkPhoneUsecase = checkPhoneUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_SelectYear>(_onSelectYear);
@@ -107,6 +113,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetCategory>(_onGetCategory);
     on<_GetSkills>(_onGetSkill);
     on<_VerifyCode>(_onVerifyCode);
+    on<_CheckEmail>(_onCheckEmail);
+    on<_CheckPhone>(_onCheckPhone);
     on<_GetUserData>(_onGetUserData);
     on<_RemoveUserData>(_onRemoveUserData);
     on<_UpdatePassword>(_onUpdatePassword);
@@ -132,6 +140,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final RemoveUserDataUseCase _removeUserDataUseCase;
   final SearchJobUseCase _searchJobUseCase;
   final SearchJobDetailUseCase _searchJobDetailsUseCase;
+  final CheckEmailUsecase _checkEmailUsecase;
+  final CheckPhoneUsecase _checkPhoneUsecase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -508,5 +518,47 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(searchJobDetailState: SearchJobDetailState.idle));
+  }
+
+  FutureOr<void> _onCheckEmail(
+      _CheckEmail event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(checkEmailState: ViewState.loading));
+    final result = await _checkEmailUsecase(event.email);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          checkEmailState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (email) => emit(
+        state.copyWith(
+          isEmail: email,
+          checkEmailState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(checkEmailState: ViewState.idle));
+  }
+
+  FutureOr<void> _onCheckPhone(
+      _CheckPhone event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(checkPhoneState: ViewState.loading));
+    final result = await _checkPhoneUsecase(event.phone);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          checkPhoneState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (phone) => emit(
+        state.copyWith(
+          isPhone: phone,
+          checkPhoneState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(checkPhoneState: ViewState.idle));
   }
 }

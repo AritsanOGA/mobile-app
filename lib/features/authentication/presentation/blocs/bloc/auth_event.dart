@@ -46,6 +46,8 @@ class AuthEvent with _$AuthEvent {
       _verifyForgotPasswordCode;
   const factory AuthEvent.getCountries() = _GetCountries;
   const factory AuthEvent.getState(String id) = _GetState;
+  const factory AuthEvent.checkEmail(String email) = _CheckEmail;
+  const factory AuthEvent.checkPhone(String phone) = _CheckPhone;
   const factory AuthEvent.searchJobDetails(String jobId) = _SearchJobDetails;
   const factory AuthEvent.getCategory() = _GetCategory;
   const factory AuthEvent.updateRegisterEmployerRequest(

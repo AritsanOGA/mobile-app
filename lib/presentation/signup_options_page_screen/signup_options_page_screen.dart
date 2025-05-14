@@ -22,7 +22,8 @@ class SignupOptionsPageScreen extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                ImageConstant.imgEmployerRegister,
+                'assets/images/onboarding1.jpeg',
+                //  ImageConstant.imgEmployerRegister,
               ),
               fit: BoxFit.cover,
             ),

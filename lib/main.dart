@@ -21,14 +21,12 @@ void main() async {
     ],
   );
 
-
   // SystemChrome.setPreferredOrientations([
   //   DeviceOrientation.portraitUp,
   // ]);
-
+// dart run build_runner build -d
   ///Please update theme as per your need if required.
   ThemeHelper().changeTheme('primary');
- 
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor:

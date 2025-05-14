@@ -16,6 +16,8 @@ import 'package:dartz/dartz.dart';
 
 abstract class AuthRepository {
   Future<Either<Failure, bool>> login(LoginEntity param);
+  Future<Either<Failure, bool>> checkEmail(String email);
+  Future<Either<Failure, bool>> checkPhone(String phone);
   Future<Either<Failure, bool>> registerEmployer(RegisterEmployerEntity param);
   Future<Either<Failure, bool>> registerJobSeeker(
       RegisterJobSeekerEntity param);
@@ -24,7 +26,8 @@ abstract class AuthRepository {
   Future<Either<Failure, List<CountryResponseEntity>>> getCountries();
   Future<Either<Failure, List<SearchJobEntity>>> searchJob(
       SearchJobDataEntity entity);
-  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(String jobId);
+  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(
+      String jobId);
   Future<Either<Failure, List<StateResponseEntity>>> getState(String countryId);
   Future<Either<Failure, List<CategoryResponseEntity>>> getCategory();
   Future<Either<Failure, List<SkillResponseEntity>>> getSkill(

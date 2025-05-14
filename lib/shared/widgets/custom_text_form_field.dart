@@ -35,6 +35,7 @@ class CustomTextFormField extends StatefulWidget {
     required this.title,
     this.ontap,
     this.maxLength,
+    this.onChanged
   }) : super(
           key: key,
         );
@@ -82,6 +83,7 @@ class CustomTextFormField extends StatefulWidget {
 
   final bool? filled;
   final Function()? ontap;
+ final Function(String)? onChanged;
 
   final FormFieldValidator<String>? validator;
 
@@ -134,6 +136,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         SizedBox(
           width: widget.width ?? double.maxFinite,
           child: TextFormField(
+            onChanged: widget.onChanged,
             maxLength: widget.maxLength,
             onTap: widget.ontap,
             readOnly: widget.readOnly!,
