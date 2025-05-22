@@ -18,21 +18,25 @@ class WelcomePageScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
+        backgroundColor: PrimaryColors().gray5001,
         extendBody: true,
-        body: SizedBox(
-          height: 879.v,
-          width: double.maxFinite,
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              CustomImageView(
-                imagePath: ImageConstant.imgRectangle1,
-                height: 568.v,
-                width: 430.h,
-                alignment: Alignment.topCenter,
-              ),
-              _buildEmployerWelcome(context),
-            ],
+        body: Padding(
+          padding: const EdgeInsets.only(top: 60),
+          child: SizedBox(
+            // height: 879.v,
+            //  width: double.maxFinite,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                CustomImageView(
+                  imagePath: ImageConstant.first_screen,
+                  // height: 568.v,
+                  // width: 430.h,
+                  alignment: Alignment.bottomCenter,
+                ),
+                _buildEmployerWelcome(context),
+              ],
+            ),
           ),
         ),
       ),
@@ -48,9 +52,9 @@ class WelcomePageScreen extends StatelessWidget {
           horizontal: 34.h,
           vertical: 8.v,
         ),
-        decoration: AppDecoration.fillGray5001.copyWith(
-          borderRadius: BorderRadiusStyle.customBorderTL37,
-        ),
+        // decoration: AppDecoration.fillGray5001.copyWith(
+        //   borderRadius: BorderRadiusStyle.customBorderTL37,
+        // ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
