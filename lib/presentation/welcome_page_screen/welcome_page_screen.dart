@@ -18,7 +18,7 @@ class WelcomePageScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-        backgroundColor: PrimaryColors().gray5001,
+        backgroundColor: Color(0xFFf6f6f6),
         extendBody: true,
         body: Padding(
           padding: const EdgeInsets.only(top: 60),

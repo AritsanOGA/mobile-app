@@ -103,18 +103,6 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                   key: ValueKey(
                                                       'empty')), // Reserve height
                                         ),
-
-                                        // if (state.isEmail == true)
-                                        //   Padding(
-                                        //     padding: const EdgeInsets.only(
-                                        //         left: 12.0, top: 4),
-                                        //     child: Text(
-                                        //       'This email has already been used',
-                                        //       style: TextSle(
-                                        //           color: Colors.red,
-                                        //           fontSize: 12),
-                                        //     ),
-                                        //   ),
                                       ],
                                     );
                                   },
@@ -320,12 +308,16 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                                     ),
                                                   );
 
-                                              Navigator.pushNamed(
-                                                context,
-                                                AppRoutes
-                                                    .jSCreateAccountPageTwoScreen,
-                                                arguments: emailController.text,
-                                              );
+                                              state.isEmail == true
+                                                  ? ToastUtils.showRedToast(
+                                                      'The email address has already been used')
+                                                  : Navigator.pushNamed(
+                                                      context,
+                                                      AppRoutes
+                                                          .jSCreateAccountPageTwoScreen,
+                                                      arguments:
+                                                          emailController.text,
+                                                    );
                                             }
                                           },
                                           text: "Next",

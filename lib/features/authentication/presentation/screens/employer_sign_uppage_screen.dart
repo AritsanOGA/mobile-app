@@ -147,7 +147,7 @@ class EmployerSignUpPageScreen extends HookWidget {
                                           // Check if email has already been used
                                           if (state.isEmail == true) {
                                             ToastUtils.showRedToast(
-                                                'This email has already been used');
+                                                'This email address has already been used');
                                             // Show an alert/snackbar instead of navigating
 
                                             return; // ⛔ Prevent navigation
