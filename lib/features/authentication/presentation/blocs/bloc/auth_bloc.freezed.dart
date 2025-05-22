@@ -15244,6 +15244,7 @@ mixin _$AuthState {
   String get selectedYear =>
       throw _privateConstructorUsedError; // String? selectedYear,
   CategoryResponseEntity? get category => throw _privateConstructorUsedError;
+  AuthResultEntity? get authEntity => throw _privateConstructorUsedError;
   SkillResponseEntity? get singleSkill => throw _privateConstructorUsedError;
   RegisterEmployerEntity get registerEmployerRequest =>
       throw _privateConstructorUsedError;
@@ -15317,6 +15318,7 @@ mixin _$AuthState {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -15380,6 +15382,7 @@ mixin _$AuthState {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -15443,6 +15446,7 @@ mixin _$AuthState {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -15532,6 +15536,7 @@ abstract class $AuthStateCopyWith<$Res> {
       List<String> yearEnd,
       String selectedYear,
       CategoryResponseEntity? category,
+      AuthResultEntity? authEntity,
       SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
       RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -15604,6 +15609,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? yearEnd = null,
     Object? selectedYear = null,
     Object? category = freezed,
+    Object? authEntity = freezed,
     Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
     Object? registerJobSeekerRequest = null,
@@ -15741,6 +15747,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
+      authEntity: freezed == authEntity
+          ? _value.authEntity
+          : authEntity // ignore: cast_nullable_to_non_nullable
+              as AuthResultEntity?,
       singleSkill: freezed == singleSkill
           ? _value.singleSkill
           : singleSkill // ignore: cast_nullable_to_non_nullable
@@ -15904,6 +15914,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<String> yearEnd,
       String selectedYear,
       CategoryResponseEntity? category,
+      AuthResultEntity? authEntity,
       SkillResponseEntity? singleSkill,
       RegisterEmployerEntity registerEmployerRequest,
       RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -15974,6 +15985,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? yearEnd = null,
     Object? selectedYear = null,
     Object? category = freezed,
+    Object? authEntity = freezed,
     Object? singleSkill = freezed,
     Object? registerEmployerRequest = null,
     Object? registerJobSeekerRequest = null,
@@ -16111,6 +16123,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryResponseEntity?,
+      authEntity: freezed == authEntity
+          ? _value.authEntity
+          : authEntity // ignore: cast_nullable_to_non_nullable
+              as AuthResultEntity?,
       singleSkill: freezed == singleSkill
           ? _value.singleSkill
           : singleSkill // ignore: cast_nullable_to_non_nullable
@@ -16269,6 +16285,7 @@ class _$InitialImpl implements _Initial {
       final List<String> yearEnd = const [],
       this.selectedYear = '1980',
       this.category,
+      this.authEntity,
       this.singleSkill,
       this.registerEmployerRequest = const RegisterEmployerEntity(
           email: '',
@@ -16468,6 +16485,8 @@ class _$InitialImpl implements _Initial {
   @override
   final CategoryResponseEntity? category;
   @override
+  final AuthResultEntity? authEntity;
+  @override
   final SkillResponseEntity? singleSkill;
   @override
   @JsonKey()
@@ -16611,7 +16630,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, yearEnd: $yearEnd, selectedYear: $selectedYear, category: $category, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, isPhone: $isPhone, isEmail: $isEmail, checkEmailState: $checkEmailState, checkPhoneState: $checkPhoneState, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, yearEnd: $yearEnd, selectedYear: $selectedYear, category: $category, authEntity: $authEntity, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, isChecked: $isChecked, isPhone: $isPhone, isEmail: $isEmail, checkEmailState: $checkEmailState, checkPhoneState: $checkPhoneState, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
   }
 
   @override
@@ -16660,6 +16679,8 @@ class _$InitialImpl implements _Initial {
                 other.selectedYear == selectedYear) &&
             (identical(other.category, category) ||
                 other.category == category) &&
+            (identical(other.authEntity, authEntity) ||
+                other.authEntity == authEntity) &&
             (identical(other.singleSkill, singleSkill) ||
                 other.singleSkill == singleSkill) &&
             (identical(other.registerEmployerRequest, registerEmployerRequest) ||
@@ -16737,6 +16758,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_yearEnd),
         selectedYear,
         category,
+        authEntity,
         singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
@@ -16806,6 +16828,7 @@ class _$InitialImpl implements _Initial {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -16866,6 +16889,7 @@ class _$InitialImpl implements _Initial {
         yearEnd,
         selectedYear,
         category,
+        authEntity,
         singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
@@ -16929,6 +16953,7 @@ class _$InitialImpl implements _Initial {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -16989,6 +17014,7 @@ class _$InitialImpl implements _Initial {
         yearEnd,
         selectedYear,
         category,
+        authEntity,
         singleSkill,
         registerEmployerRequest,
         registerJobSeekerRequest,
@@ -17052,6 +17078,7 @@ class _$InitialImpl implements _Initial {
             List<String> yearEnd,
             String selectedYear,
             CategoryResponseEntity? category,
+            AuthResultEntity? authEntity,
             SkillResponseEntity? singleSkill,
             RegisterEmployerEntity registerEmployerRequest,
             RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -17114,6 +17141,7 @@ class _$InitialImpl implements _Initial {
           yearEnd,
           selectedYear,
           category,
+          authEntity,
           singleSkill,
           registerEmployerRequest,
           registerJobSeekerRequest,
@@ -17206,6 +17234,7 @@ abstract class _Initial implements AuthState {
       final List<String> yearEnd,
       final String selectedYear,
       final CategoryResponseEntity? category,
+      final AuthResultEntity? authEntity,
       final SkillResponseEntity? singleSkill,
       final RegisterEmployerEntity registerEmployerRequest,
       final RegisterJobSeekerEntity registerJobSeekerRequest,
@@ -17290,6 +17319,8 @@ abstract class _Initial implements AuthState {
   String get selectedYear;
   @override // String? selectedYear,
   CategoryResponseEntity? get category;
+  @override
+  AuthResultEntity? get authEntity;
   @override
   SkillResponseEntity? get singleSkill;
   @override

@@ -3,7 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -388,7 +388,7 @@ class JSCreateAccountPageOneScreen extends HookWidget {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                JSLoginPageScreen()),
+                                                EmployerLoginPageScreen()),
                                       );
                                     }),
                                     child: RichText(

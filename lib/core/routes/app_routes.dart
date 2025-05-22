@@ -378,10 +378,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: EmployerSignUpPageScreen(),
         );
-      case jSLoginPageScreen:
-        return AppPageRouteBuilder(
-          navigateTo: JSLoginPageScreen(),
-        );
+      // case jSLoginPageScreen:
+      //   return AppPageRouteBuilder(
+      //     navigateTo: JSLoginPageScreen(),
+      //   );
 
       case employerSignuppageOneScreen:
         return AppPageRouteBuilder(

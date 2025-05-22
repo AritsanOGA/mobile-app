@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/search_job_data_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/widgets/job_seach_dialog.dart';
@@ -72,7 +73,7 @@ class JobSearchScreen extends HookWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => JSLoginPageScreen()),
+                                    builder: (context) => EmployerLoginPageScreen()),
                               );
                             },
                             child: Container(

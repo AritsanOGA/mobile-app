@@ -26,8 +26,11 @@ class EmployerLoginPageScreen extends HookWidget {
       body: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state.employerLoginState == EmployerLoginState.success) {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, AppRoutes.employerNavBarScreen, (router) => false);
+              state.authEntity?.user.role == 'Employer'
+                  ? Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.employerNavBarScreen, (router) => false)
+                  : Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.jobSeekerNavBarScreen, (router) => false);
             } else if (state.employerLoginState == EmployerLoginState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }
@@ -57,7 +60,7 @@ class EmployerLoginPageScreen extends HookWidget {
                       ),
                       SizedBox(height: 17.v),
                       Text(
-                        "Login to your account as an employer",
+                        "Login to your account",
                         style: CustomTextStyles.bodyMediumGray700_2,
                       ),
                       SizedBox(height: 60.v),

@@ -238,7 +238,7 @@ class CandidatesProfilePage extends StatelessWidget {
                                               ],
                                             ),
 
-                                      // SizedBox(height: 20.v),
+                                      SizedBox(height: 10.v),
                                       // Text("Work Photos",
                                       //     style: CustomTextStyles
                                       //         .titleSmallPrimaryContainer),
@@ -340,8 +340,7 @@ class CandidatesProfilePage extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text(
-                                                    "Skill Endorsement ${state.candidateProfileEntity?.employerRating[0].employerRating[0].average}",
+                                                Text("Skill Endorsement",
                                                     style: CustomTextStyles
                                                         .titleSmallPrimaryContainer),
                                                 SizedBox(height: 10.v),

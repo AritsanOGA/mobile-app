@@ -34,7 +34,7 @@ class JSPasswordChangeScreen extends HookWidget {
           listener: (context, state) {
             if (state.updatePasswordState == UpdatePasswordState.success) {
               ToastUtils.showGreenToast('Password Updated Successfully');
-              Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
+              Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
             } else if (state.updatePasswordState ==
                 UpdatePasswordState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -88,7 +88,7 @@ class JSPasswordChangeScreen extends HookWidget {
                                 title: 'Old Password',
                                 controller: oldPasswordController,
                                 isPassword: true,
-                                   validator: FormValidation.passwordValidation,
+                                validator: FormValidation.passwordValidation,
                                 hintText: "*********************",
                                 titleStyle: CustomTextStyles
                                     .titleMediumPrimaryContainer,
@@ -104,7 +104,7 @@ class JSPasswordChangeScreen extends HookWidget {
                             child: CustomTextFormField(
                                 isPassword: true,
                                 title: 'New Password',
-                                   validator: FormValidation.passwordValidation,
+                                validator: FormValidation.passwordValidation,
                                 controller: newpasswordController,
                                 hintText: "*********************",
                                 titleStyle: CustomTextStyles
@@ -123,7 +123,7 @@ class JSPasswordChangeScreen extends HookWidget {
                                 title: 'Confirm Password',
                                 controller: confirmpasswordController,
                                 hintText: "*********************",
-                                   validator: FormValidation.passwordValidation,
+                                validator: FormValidation.passwordValidation,
                                 titleStyle: CustomTextStyles
                                     .titleMediumPrimaryContainer,
                                 hintStyle: CustomTextStyles.titleMediumGray700,

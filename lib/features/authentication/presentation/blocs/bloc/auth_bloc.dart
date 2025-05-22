@@ -5,6 +5,7 @@ import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
@@ -206,8 +207,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         (error) => emit(state.copyWith(
             employerLoginState: EmployerLoginState.failure,
             errorMessage: error.message)),
-        (result) => emit(
-            state.copyWith(employerLoginState: EmployerLoginState.success)));
+        (result) => emit(state.copyWith(
+            employerLoginState: EmployerLoginState.success,
+            authEntity: result)));
     emit(state.copyWith(employerLoginState: EmployerLoginState.idle));
   }
 

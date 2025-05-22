@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/error/failure.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
@@ -15,7 +16,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/verify_code_
 import 'package:dartz/dartz.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, bool>> login(LoginEntity param);
+  Future<Either<Failure, AuthResultEntity>> login(LoginEntity param);
   Future<Either<Failure, bool>> checkEmail(String email);
   Future<Either<Failure, bool>> checkPhone(String phone);
   Future<Either<Failure, bool>> registerEmployer(RegisterEmployerEntity param);

@@ -36,7 +36,7 @@ class VerifyJobSeekerScreen extends HookWidget {
                 'onTap': () {
                   Navigator.pushNamed(
                     context,
-                    AppRoutes.jSLoginPageScreen,
+                    AppRoutes.employerLoginPageScreen,
                   );
                 },
               },

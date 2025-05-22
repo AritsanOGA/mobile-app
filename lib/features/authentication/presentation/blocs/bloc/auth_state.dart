@@ -30,6 +30,7 @@ class AuthState with _$AuthState {
     @Default('1980') String selectedYear,
     // String? selectedYear,
     CategoryResponseEntity? category,
+    AuthResultEntity? authEntity,
     SkillResponseEntity? singleSkill,
     @Default(RegisterEmployerEntity(
       email: '',

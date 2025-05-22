@@ -190,7 +190,7 @@ class JSDrawer extends StatelessWidget {
                         .add(const AuthEvent.removeUserData());
 
                     Navigator.pushNamedAndRemoveUntil(
-                        context, AppRoutes.jSLoginPageScreen, (route) => false);
+                        context, AppRoutes.employerLoginPageScreen, (route) => false);
                   },
                   child: Row(
                     children: [
