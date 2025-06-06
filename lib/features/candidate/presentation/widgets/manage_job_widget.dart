@@ -78,20 +78,20 @@ class ManageJobWidget extends StatelessWidget {
                 width: 24.adaptSize,
                 margin: EdgeInsets.only(top: 17.v, bottom: 23.v))
           ]),
-          SizedBox(height: 7.v),
-          Row(children: [
-            SvgPicture.asset(
-              ImageConstant.imgOiPeople,
-            ),
-            Padding(
-                padding: EdgeInsets.only(left: 9.h, top: 3.v),
-                child: Text(
-                    employerJobResponseEntity.jobMergingCount == 0 ||
-                            employerJobResponseEntity.jobMergingCount == 1
-                        ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
-                        : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
-                    style: CustomTextStyles.titleSmallPrimaryContainer_1)),
-          ]),
+          // SizedBox(height: 7.v),
+          // Row(children: [
+          //   SvgPicture.asset(
+          //     ImageConstant.imgOiPeople,
+          //   ),
+          //   Padding(
+          //       padding: EdgeInsets.only(left: 9.h, top: 3.v),
+          //       child: Text(
+          //           employerJobResponseEntity.jobMergingCount == 0 ||
+          //                   employerJobResponseEntity.jobMergingCount == 1
+          //               ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
+          //               : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
+          //           style: CustomTextStyles.titleSmallPrimaryContainer_1)),
+          // ]),
           // SizedBox(height: 7.v),
           // Row(children: [
           //   SvgPicture.asset(

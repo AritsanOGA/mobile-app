@@ -4,7 +4,9 @@ import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
+import 'package:artisan_oga/features/home/presentation/pages/edit_job_one_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -105,7 +107,8 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.qualification ?? '',
+                            state.searchJobDetail?.jobDetails.qualification ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -142,14 +145,17 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                           ),
                           state.searchJobDetail?.jobDetails.compensationType ==
                                       'payperjob' ||
-                                  state.searchJobDetail?.jobDetails.compensationType ==
+                                  state.searchJobDetail?.jobDetails
+                                          .compensationType ==
                                       'Negotiable'
                               ? Text('Pay per job',
                                   style: theme.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                   ))
                               : Text(
-                                  state.searchJobDetail?.jobDetails.basicSalary ?? '',
+                                  state.searchJobDetail?.jobDetails
+                                          .basicSalary ??
+                                      '',
                                   style: CustomTextStyles
                                       .labelLargePrimaryContainer_2,
                                 ),
@@ -163,7 +169,9 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
+                            state.searchJobDetail?.jobDetails
+                                    .applicationDeadline ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -242,9 +250,21 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                   SizedBox(
                     height: 30.h,
                   ),
-                  SizedBox(
-                    height: 40.h,
-                  ),
+                  // SizedBox(
+                  //   height: 40.h,
+                  // ),
+                  CustomElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditJobOneScreen(
+                                    employerJobResponseEntity:
+                                        employerJobResponseEntity,
+                                  )));
+                    },
+                    text: "Edit",
+                  )
                 ],
               ),
             ),

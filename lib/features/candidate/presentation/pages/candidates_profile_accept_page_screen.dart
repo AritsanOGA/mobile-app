@@ -208,7 +208,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                                                         ?.profiles
                                                                         .experience[
                                                                             index]
-                                                                        .companyName ??
+                                                                        .title ??
                                                                     '',
                                                                 style: CustomTextStyles
                                                                     .titleSmallPrimaryContainer),
@@ -341,6 +341,10 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                                 Text("Skill Endorsement",
                                                     style: CustomTextStyles
                                                         .titleSmallPrimaryContainer),
+                                                SizedBox(height: 10.v),
+                                                Divider(
+                                                  height: 2,
+                                                ),
                                                 SizedBox(height: 10.v),
                                                 ...List.generate(
                                                     state

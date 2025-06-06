@@ -21,7 +21,6 @@ class JSProfilePage1 extends StatelessWidget {
         title: '',
       ),
       body: BlocBuilder<SettingBloc, SettingState>(
-    
         builder: (context, state) {
           if (state.getJobSeekerProfileState ==
               GetJobSeekerProfileState.loading) {
@@ -63,6 +62,10 @@ class JSProfilePage1 extends StatelessWidget {
                 SizedBox(height: 20.v),
                 Text("Skill Endorsement",
                     style: CustomTextStyles.titleSmallPrimaryContainer),
+                SizedBox(height: 10.v),
+                Divider(
+                  height: 2,
+                ),
                 SizedBox(height: 10.v),
                 ...List.generate(
                     state.getJobSeekerResponseEntity?.artisanAssignedSkills

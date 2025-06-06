@@ -5,6 +5,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/presentation/signup_options_page_screen/signup_options_page_screen.dart';
+import 'package:artisan_oga/presentation/welcome_page_screen/welcome_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -157,8 +158,7 @@ class EmployerLoginPageScreen extends HookWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      SignupOptionsPageScreen()),
+                                  builder: (context) => WelcomePageScreen()),
                             );
                           }))
                     ],

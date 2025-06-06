@@ -1,6 +1,6 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
-import 'package:artisan_oga/presentation/signup_options_page_screen/signup_options_page_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -23,15 +23,11 @@ class WelcomePageScreen extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.only(top: 60),
           child: SizedBox(
-            // height: 879.v,
-            //  width: double.maxFinite,
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
                 CustomImageView(
                   imagePath: ImageConstant.first_screen,
-                  // height: 568.v,
-                  // width: 430.h,
                   alignment: Alignment.bottomCenter,
                 ),
                 _buildEmployerWelcome(context),
@@ -52,9 +48,6 @@ class WelcomePageScreen extends StatelessWidget {
           horizontal: 34.h,
           vertical: 8.v,
         ),
-        // decoration: AppDecoration.fillGray5001.copyWith(
-        //   borderRadius: BorderRadiusStyle.customBorderTL37,
-        // ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -118,12 +111,18 @@ class WelcomePageScreen extends StatelessWidget {
                     context,
                     PageTransition(
                         type: PageTransitionType.rightToLeft,
-                        duration: Durations.long1,
-                        child: SignupOptionsPageScreen()));
+                        child: EmployerSignUpPageScreen()));
               }),
-              text: "Let’s Get Started",
+              text: "Continue as an Employer",
             ),
-            SizedBox(height: 24.v),
+            SizedBox(height: 25.v),
+            CustomElevatedButton(
+              onPressed: (() {
+                Navigator.pushNamed(context, AppRoutes.jobSearch);
+              }),
+              text: "Continue as a Job Seeker",
+            ),
+            SizedBox(height: 30.v),
             GestureDetector(
               onTap: (() {
                 Navigator.push(
@@ -131,12 +130,6 @@ class WelcomePageScreen extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => EmployerLoginPageScreen()),
                 );
-                // Navigator.push(
-                //     context,
-                //     PageTransition(
-                //         type: PageTransitionType.rightToLeft,
-                //         duration: Durations.long1,
-                //         child: LoginOptionsPageScreen()));
               }),
               child: RichText(
                 text: TextSpan(
@@ -157,7 +150,7 @@ class WelcomePageScreen extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            SizedBox(height: 54.v),
+            SizedBox(height: 40.v),
           ],
         ),
       ),

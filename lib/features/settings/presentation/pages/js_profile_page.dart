@@ -346,6 +346,10 @@ class JSProfilePage extends HookWidget {
                                                 style: CustomTextStyles
                                                     .titleSmallPrimaryContainer),
                                             SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
+                                            ),
+                                            SizedBox(height: 10.v),
                                             ...List.generate(
                                                 state
                                                         .candidateProfileEntity
