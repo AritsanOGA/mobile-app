@@ -33,6 +33,7 @@ class AppApiEndpoint {
   static const String employerJob = '/api/v1/employer/get-all-jobs';
   static const String featuredJob = '/api/v1/featured-jobs';
   static const String postJob = '/api/v1/employer/post-a-job';
+  static const String editJob = '/api/v1/employer/update-jobs';
   static const String getAllJobs = '/api/v1/job/get-all-jobs';
   static const String applyForJob = '/api/v1/candidate/job/apply';
 

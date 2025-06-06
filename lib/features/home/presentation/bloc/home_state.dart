@@ -52,6 +52,33 @@ class HomeState with _$HomeState {
           officeAddress: '',
           applicationDeadline: ''))
       PostJobEntity postJobRequest,
+      @Default(EditJobEntity(
+          jobId: '',
+          jobTitle: '',
+          companyName: '',
+          category: '',
+          // workType: '',
+          jobDescription: '',
+          skills: '',
+          position: '',
+          hireType: '',
+          categoryId: 0,
+          yearsOfExperience: 0,
+          levelOfEducation: '',
+          // skillLevel: '',
+          maxAmount: 0,
+          minAmount: 0,
+          // country: '',
+          state: '',
+          city: '',
+          available: '',
+          availableFor: '',
+          compensationType: '',
+          gender: '',
+          // currency: '',
+          // officeAddress: '',
+          applicationDeadline: ''))
+      EditJobEntity editJobRequest,
       @Default(["Contract", "Full time", "Part_time", "Temporary"])
       List<String> jobtypeList,
       @Default(["Salary", "Pay per job", "Negotiable"])
@@ -75,6 +102,7 @@ class HomeState with _$HomeState {
       @Default(GetEmployerJobState.idle)
       GetEmployerJobState getEmployerJobState,
       @Default(PostJobState.idle) PostJobState postJobState,
+      @Default(ViewState.idle) ViewState editJobState,
       @Default(ApplyForJobState.idle) ApplyForJobState applyForJobState,
       @Default(GetCategoryState.idle) GetCategoryState getCategoryState,
       @Default(GetSkillState.idle) GetSkillState getSkillState,

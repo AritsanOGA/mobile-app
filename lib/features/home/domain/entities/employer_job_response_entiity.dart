@@ -24,7 +24,7 @@ class EmployerJobResponseEntity extends Equatable {
   final String? hireType;
   final dynamic quantity;
   final dynamic businessCategoryName;
-  
+
   final dynamic ageRange;
   final String? gender;
   final String? experience;
@@ -47,54 +47,52 @@ class EmployerJobResponseEntity extends Equatable {
   final String? workType;
   final int? country;
   final int? jobMergingCount;
-  const EmployerJobResponseEntity({
-    this.id,
-    this.commuteType,
-    this.invoiceId,
-    this.recruiterId,
-    this.closed,
-    this.identity,
-    this.status,
-    this.featured,
-    this.compensationType,
-    this.jobStatus,
-    this.userId,
-    this.jobTitle,
-    this.jobDescription,
-    this.url,
-    this.firstname,
-    this.lastname,
-    this.email,
-    this.phone,
-    this.industry,
-    this.position,
-    this.hireType,
-    this.quantity,
-    this.businessCategoryName,
-
-    this.ageRange,
-    this.gender,
-    this.experience,
-    this.levelOfEducation,
-    this.itSkills,
-    this.basicSalary,
-    this.minSalary,
-    this.maxSalary,
-    this.allowances,
-    this.state,
-    this.city,
-    this.hiredCount,
-    this.applicationDeadline,
-    this.officeAddress,
-    this.accommodationAvailable,
-    this.accommodationFor,
-    this.createdAt,
-    this.updatedAt,
-    this.topJobs,
-    this.workType,
-    this.country,
-    this.jobMergingCount
-  });
+  const EmployerJobResponseEntity(
+      {this.id,
+      this.commuteType,
+      this.invoiceId,
+      this.recruiterId,
+      this.closed,
+      this.identity,
+      this.status,
+      this.featured,
+      this.compensationType,
+      this.jobStatus,
+      this.userId,
+      this.jobTitle,
+      this.jobDescription,
+      this.url,
+      this.firstname,
+      this.lastname,
+      this.email,
+      this.phone,
+      this.industry,
+      this.position,
+      this.hireType,
+      this.quantity,
+      this.businessCategoryName,
+      this.ageRange,
+      this.gender,
+      this.experience,
+      this.levelOfEducation,
+      this.itSkills,
+      this.basicSalary,
+      this.minSalary,
+      this.maxSalary,
+      this.allowances,
+      this.state,
+      this.city,
+      this.hiredCount,
+      this.applicationDeadline,
+      this.officeAddress,
+      this.accommodationAvailable,
+      this.accommodationFor,
+      this.createdAt,
+      this.updatedAt,
+      this.topJobs,
+      this.workType,
+      this.country,
+      this.jobMergingCount});
 
   @override
   List<Object?> get props => [
@@ -121,7 +119,6 @@ class EmployerJobResponseEntity extends Equatable {
         hireType,
         quantity,
         businessCategoryName,
-        
         ageRange,
         gender,
         experience,

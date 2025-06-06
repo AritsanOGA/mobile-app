@@ -4,10 +4,10 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
-import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/features/home/presentation/pages/post_job_two_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/edit_job_two_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
@@ -89,6 +89,10 @@ class EditJobOneScreen extends HookWidget {
                                       orElse: () => state.categoryList.first)
                                   : CategoryResponseEntity(
                                       id: 1, name: 'Fashion'),
+//                               selectedItem: state.categoryList.firstWhere(
+//   (category) => category.id == employerJobResponseEntity.ca,
+//   orElse: () => state.categoryList.first,
+// ),
                               itemLabel: (category) => category.name,
                               onChanged: (value) {
                                 context.read<HomeBloc>().add(
@@ -120,10 +124,8 @@ class EditJobOneScreen extends HookWidget {
                                       elevatedButtonTheme:
                                           ElevatedButtonThemeData(
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor:
-                                              Colors.orange, // Button color
-                                          foregroundColor:
-                                              Colors.white, // Button text color
+                                          backgroundColor: Colors.orange,
+                                          foregroundColor: Colors.white,
                                         ),
                                       ),
                                       textButtonTheme: TextButtonThemeData(
@@ -144,7 +146,6 @@ class EditJobOneScreen extends HookWidget {
                                       decoratorProps: DropDownDecoratorProps(
                                           decoration: InputDecoration(
                                         enabled: false,
-                                        // border: InputBorder.none,
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                               color: appTheme.blueGray10001,
@@ -359,11 +360,11 @@ class EditJobOneScreen extends HookWidget {
                                       );
                                 })),
                         SizedBox(height: 40.v),
-                        BlocSelector<HomeBloc, HomeState, PostJobEntity>(
+                        BlocSelector<HomeBloc, HomeState, EditJobEntity>(
                           selector: (state) {
-                            return state.postJobRequest;
+                            return state.editJobRequest;
                           },
-                          builder: (context, postJobRequest) {
+                          builder: (context, editJobRequest) {
                             return CustomElevatedButton(
                               onPressed: (() {
                                 List<SkillResponseEntity> countries =
@@ -376,10 +377,10 @@ class EditJobOneScreen extends HookWidget {
                                   print(
                                       '${state.workMode} ${state.jobType} ${jobTitleController.text}');
                                   context.read<HomeBloc>().add(
-                                        HomeEvent.updatePostJobRequest(
-                                          postJobRequest.copyWith(
+                                        HomeEvent.updateEditJobRequest(
+                                          editJobRequest.copyWith(
                                               jobTitle: jobTitleController.text,
-                                              workType: state.workMode,
+                                              //workType: state.workMode,
                                               hireType: state.jobType,
                                               category: state.category?.name,
                                               categoryId: state.category?.id,
@@ -395,7 +396,7 @@ class EditJobOneScreen extends HookWidget {
                                       PageTransition(
                                           type: PageTransitionType.rightToLeft,
                                           duration: Durations.long1,
-                                          child: PostJobTwoScreen()));
+                                          child: EditPostJobTwoScreen()));
                                 }
                               }),
                               text: "Next",

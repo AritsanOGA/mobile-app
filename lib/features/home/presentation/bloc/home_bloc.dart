@@ -12,12 +12,14 @@ import 'package:artisan_oga/features/authentication/domain/usecases/get_category
 import 'package:artisan_oga/features/authentication/domain/usecases/skill_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/state_usecase.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/usecases/apply_for_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/edit_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_all_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_employer_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate.dart';
@@ -32,19 +34,20 @@ part 'home_event.dart';
 part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc({
-    GetFeaturedCandidateUseCase? getFeaturedCandidates,
-    GetJobSeekerJobsUseCase? getJobSeekerJobsUseCase,
-    GetEmployerJobUseCase? getEmployerJobUseCase,
-    GetFeatureJobUseCase? getFeatureJobUseCase,
-    PostJobUseCase? postJobUseCase,
-    ApplyForJobUseCase? applyForJobUseCase,
-    GetAllJobUseCase? getAllJobUseCase,
-    CountryUseCase? countryUseCase,
-    CategoryUseCase? categoryUseCase,
-    SkillUseCase? skillUseCase,
-    StateUseCase? stateUseCase,
-  })  : _getFeaturedCandidateseCase = getFeaturedCandidates ?? locator(),
+  HomeBloc(
+      {GetFeaturedCandidateUseCase? getFeaturedCandidates,
+      GetJobSeekerJobsUseCase? getJobSeekerJobsUseCase,
+      GetEmployerJobUseCase? getEmployerJobUseCase,
+      GetFeatureJobUseCase? getFeatureJobUseCase,
+      PostJobUseCase? postJobUseCase,
+      ApplyForJobUseCase? applyForJobUseCase,
+      GetAllJobUseCase? getAllJobUseCase,
+      CountryUseCase? countryUseCase,
+      CategoryUseCase? categoryUseCase,
+      SkillUseCase? skillUseCase,
+      StateUseCase? stateUseCase,
+      EditJobUseCase? editJobUseCase})
+      : _getFeaturedCandidateseCase = getFeaturedCandidates ?? locator(),
         _getEmployerJobUseCase = getEmployerJobUseCase ?? locator(),
         _jobSeekerJobsUseCase = getJobSeekerJobsUseCase ?? locator(),
         _getAllJobUseCase = getAllJobUseCase ?? locator(),
@@ -55,6 +58,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         _stateUseCase = stateUseCase ?? locator(),
         _categoryUseCase = categoryUseCase ?? locator(),
         _skillUseCase = skillUseCase ?? locator(),
+        _editJobUseCase = editJobUseCase ?? locator(),
         super(_Initial()) {
     on<_GetFeaturedCandidate>(_onGetFeaturedCandidate);
     on<_GetFeaturedJob>(_onGetFeaturedJob);
@@ -62,6 +66,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetAllJobs>(_onGetAllJobs);
     on<_GetJobSeekerJobs>(_onGetJobSeekerJobs);
     on<_PostJob>(_onPostJob);
+    on<_EditJob>(_onEditJob);
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
     on<_UpdateSelectedJobType>(_onUpdateSelectedJobType);
@@ -77,6 +82,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
     on<_ApplyForJob>(_onApplyForJob);
     on<_UpdatePostJobRequest>(_onUpdatePostJobRequest);
+    on<_UpdateEditJobRequest>(_onUpdateEditJobRequest);
     on<_GetCountries>(_onGetCountries);
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
@@ -93,6 +99,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final CountryUseCase _countryUseCase;
   final CategoryUseCase _categoryUseCase;
   final SkillUseCase _skillUseCase;
+  final EditJobUseCase _editJobUseCase;
   final StateUseCase _stateUseCase;
 
   FutureOr<void> _onGetFeaturedCandidate(event, Emitter<HomeState> emit) async {
@@ -213,6 +220,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(postJobState: PostJobState.idle));
   }
 
+  FutureOr<void> _onEditJob(_EditJob event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(editJobState: ViewState.loading));
+    await _editJobUseCase(event.param).then((value) {
+      value.fold(
+          (error) => emit(state.copyWith(editJobState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+                editJobState: ViewState.success,
+              )));
+    });
+    emit(state.copyWith(editJobState: ViewState.idle));
+  }
+
   FutureOr<void> _onApplyForJob(
       _ApplyForJob event, Emitter<HomeState> emit) async {
     emit(state.copyWith(applyForJobState: ApplyForJobState.loading));
@@ -225,6 +244,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
               )));
     });
     emit(state.copyWith(applyForJobState: ApplyForJobState.idle));
+  }
+
+  FutureOr<void> _onUpdateEditJobRequest(
+      _UpdateEditJobRequest event, Emitter<HomeState> emit) {
+    emit(
+      state.copyWith(
+        editJobRequest: event.editJobRequest,
+      ),
+    );
   }
 
   FutureOr<void> _onUpdatePostJobRequest(

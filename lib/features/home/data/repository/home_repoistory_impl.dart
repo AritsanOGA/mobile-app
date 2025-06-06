@@ -8,6 +8,7 @@ import 'package:artisan_oga/features/authentication/domain/entities/skill_respon
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
@@ -111,5 +112,10 @@ class HomeRepositoryImpl implements HomeRepository {
   Future<Either<Failure, List<SkillResponseEntity>>> getSkill(
       String categoryId) {
     return homeRemoteDataSource.getSkill(categoryId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> editJob(EditJobEntity entity) {
+    return homeRemoteDataSource.editJob(entity).makeRequest();
   }
 }
