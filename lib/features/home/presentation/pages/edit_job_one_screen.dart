@@ -57,14 +57,14 @@ class EditJobOneScreen extends HookWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                         //    SizedBox(height: 10.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 1.h),
-                                child: Text("Fields for Job Creation",
-                                    style: CustomTextStyles
-                                        .titleMediumPrimaryContainerMedium))),
-                        SizedBox(height: 23.v),
+                        // Align(
+                        //     alignment: Alignment.centerLeft,
+                        //     child: Padding(
+                        //         padding: EdgeInsets.only(left: 1.h),
+                        //         child: Text("Fields for Job Creation",
+                        //             style: CustomTextStyles
+                        //                 .titleMediumPrimaryContainerMedium))),
+                        //   SizedBox(height: 23.v),
                         CustomTextFormField(
                           title: 'Job title*',
                           textInputType: TextInputType.name,
@@ -367,10 +367,16 @@ class EditJobOneScreen extends HookWidget {
                           builder: (context, editJobRequest) {
                             return CustomElevatedButton(
                               onPressed: (() {
+                                print('cat ${state.category?.id.toString()}');
+
                                 List<SkillResponseEntity> countries =
                                     state.skills;
-                                String result = countries
-                                    .map((country) => country.name)
+                                List<String> result = countries
+                                    .map((country) => country.name ?? '')
+                                    .toList();
+
+                                String skillId = countries
+                                    .map((country) => country.id)
                                     .where((name) => name != null)
                                     .join(', ');
                                 if (formKey.currentState?.validate() ?? false) {
@@ -383,8 +389,10 @@ class EditJobOneScreen extends HookWidget {
                                               //workType: state.workMode,
                                               hireType: state.jobType,
                                               category: state.category?.name,
-                                              categoryId: state.category?.id,
+                                              categoryId:
+                                                  state.category?.id.toString(),
                                               skills: result,
+                                              jobSkillId: skillId,
                                               jobDescription:
                                                   jobDescriptionController
                                                       .text),
@@ -396,7 +404,10 @@ class EditJobOneScreen extends HookWidget {
                                       PageTransition(
                                           type: PageTransitionType.rightToLeft,
                                           duration: Durations.long1,
-                                          child: EditPostJobTwoScreen()));
+                                          child: EditPostJobTwoScreen(
+                                            employerJobResponseEntity:
+                                                employerJobResponseEntity,
+                                          )));
                                 }
                               }),
                               text: "Next",

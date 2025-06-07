@@ -4,7 +4,8 @@ import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
-import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/features/home/presentation/pages/edit_job_four_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
@@ -17,9 +18,15 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:page_transition/page_transition.dart';
 
 class EditPostJobThreeScreen extends HookWidget {
+  final EmployerJobResponseEntity employerJobResponseEntity;
+
   final String compensationType;
 
-  EditPostJobThreeScreen({super.key, required this.compensationType});
+  EditPostJobThreeScreen({
+    super.key,
+    required this.compensationType,
+    required this.employerJobResponseEntity,
+  });
   @override
   Widget build(BuildContext context) {
     final minSalaryController = useTextEditingController();
@@ -41,6 +48,15 @@ class EditPostJobThreeScreen extends HookWidget {
             backgroundColor: AppColors.kwhite,
             body: BlocBuilder<HomeBloc, HomeState>(
               builder: (context, state) {
+                maxSalaryController.text =
+                    employerJobResponseEntity.maxSalary.toString() ?? '';
+                minSalaryController.text =
+                    employerJobResponseEntity.minSalary.toString();
+                yearsOfExperienceController.text =
+                    employerJobResponseEntity.experience ?? '';
+                applicationDeadlineController.text =
+                    employerJobResponseEntity.applicationDeadline ?? '';
+
                 return Form(
                   key: formKey,
                   child: Container(
@@ -173,53 +189,55 @@ class EditPostJobThreeScreen extends HookWidget {
                                 : SizedBox(
                                     height: 80,
                                   ),
-                            BlocSelector<HomeBloc, HomeState, PostJobEntity>(
+                            BlocSelector<HomeBloc, HomeState, EditJobEntity>(
                               selector: (state) {
-                                return state.postJobRequest;
+                                return state.editJobRequest;
                               },
-                              builder: (context, postJobRequest) {
+                              builder: (context, editJobRequest) {
                                 return CustomElevatedButton(
                                   onPressed: (() {
+                                    print(
+                                        'my ${minSalaryController.text}  ${maxSalaryController.text}');
                                     if (formKey.currentState?.validate() ??
                                         false) {
                                       compensationType == 'Salary'
                                           ? context.read<HomeBloc>().add(
-                                                HomeEvent.updatePostJobRequest(
-                                                  postJobRequest.copyWith(
-                                                    maxAmount: int.parse(
+                                                HomeEvent.updateEditJobRequest(
+                                                  editJobRequest.copyWith(
+                                                    maxAmount:
                                                         maxSalaryController.text
                                                             .replaceAll(
-                                                                ',', '')),
-                                                    minAmount: int.parse(
+                                                                ',', ''),
+                                                    minAmount:
                                                         minSalaryController.text
                                                             .replaceAll(
-                                                                ',', '')),
+                                                                ',', ''),
                                                     applicationDeadline:
                                                         applicationDeadlineController
                                                             .text,
-                                                    country: state.country?.id
-                                                            .toString() ??
-                                                        '161',
-                                                    yearsOfExperience: int.parse(
+                                                    // country: state.country?.id
+                                                    //         .toString() ??
+                                                    //     '161',
+                                                    yearsOfExperience:
                                                         yearsOfExperienceController
-                                                            .text),
+                                                            .text,
                                                     state: state.state?.name ??
                                                         state.states.first.name,
                                                   ),
                                                 ),
                                               )
                                           : context.read<HomeBloc>().add(
-                                                HomeEvent.updatePostJobRequest(
-                                                  postJobRequest.copyWith(
+                                                HomeEvent.updateEditJobRequest(
+                                                  editJobRequest.copyWith(
                                                     applicationDeadline:
                                                         applicationDeadlineController
                                                             .text,
-                                                    country: state.country?.id
-                                                            .toString() ??
-                                                        '161',
-                                                    yearsOfExperience: int.parse(
+                                                    // country: state.country?.id
+                                                    //         .toString() ??
+                                                    //     '161',
+                                                    yearsOfExperience:
                                                         yearsOfExperienceController
-                                                            .text),
+                                                            .text,
                                                     state: state.state?.name ??
                                                         state.states.first.name,
                                                   ),
@@ -231,7 +249,10 @@ class EditPostJobThreeScreen extends HookWidget {
                                               type: PageTransitionType
                                                   .rightToLeft,
                                               duration: Durations.long1,
-                                              child: EditPostJobFourScreen()));
+                                              child: EditPostJobFourScreen(
+                                                employerJobResponseEntity:
+                                                    employerJobResponseEntity,
+                                              )));
                                     }
                                   }),
                                   text: "Next",
@@ -243,10 +264,5 @@ class EditPostJobThreeScreen extends HookWidget {
                 );
               },
             )));
-  }
-
-  /// Navigates back to the previous screen.
-  onTapImgArrowLeft(BuildContext context) {
-    Navigator.pop(context);
   }
 }

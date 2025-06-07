@@ -4,8 +4,9 @@ class EditJobEntity extends Equatable {
   const EditJobEntity({
     required this.jobId,
     required this.jobTitle,
+    required this.jobSkillId,
     required this.companyName,
-    required this.category,
+    // required this.category,
     // required this.workType,
     required this.jobDescription,
     required this.skills,
@@ -24,25 +25,27 @@ class EditJobEntity extends Equatable {
     required this.availableFor,
     required this.compensationType,
     required this.gender,
-    // required this.officeAddress,
+    required this.officeAddress,
     required this.applicationDeadline,
+    required this.quantity,
     // required this.currency,
   });
   final String jobId;
   final String jobTitle;
   final String companyName;
-  final String category;
+  //final String category;
+  final String jobSkillId;
   //final String workType;
   final String jobDescription;
-  final String skills;
+  final List<String> skills;
   final String position;
   final String hireType;
-  final int categoryId;
-  final int yearsOfExperience;
+  final String categoryId;
+  final String yearsOfExperience;
   final String levelOfEducation;
 //  final String skillLevel;
-  final int maxAmount;
-  final int minAmount;
+  final String maxAmount;
+  final String minAmount;
   //final String country;
   final String state;
   final String city;
@@ -50,8 +53,9 @@ class EditJobEntity extends Equatable {
   final String availableFor;
   final String compensationType;
   final String gender;
-//  final String officeAddress;
+  final String officeAddress;
   final String applicationDeadline;
+  final String quantity;
 //  final String currency;
 
   EditJobEntity copyWith({
@@ -61,15 +65,16 @@ class EditJobEntity extends Equatable {
     String? category,
     //  String? workType,
     String? jobDescription,
-    String? skills,
+    List<String>? skills,
     String? position,
     String? hireType,
-    int? categoryId,
-    int? yearsOfExperience,
+    String? jobSkillId,
+    String? categoryId,
+    String? yearsOfExperience,
     String? levelOfEducation,
     //   String? skillLevel,
-    int? maxAmount,
-    int? minAmount,
+    String? maxAmount,
+    String? minAmount,
     // String? country,
     String? state,
     String? city,
@@ -77,8 +82,9 @@ class EditJobEntity extends Equatable {
     String? availableFor,
     String? compensationType,
     String? gender,
-    // String? officeAddress,
+    String? officeAddress,
     String? applicationDeadline,
+    String? quantity,
     // String? currency
   }) {
     return EditJobEntity(
@@ -86,7 +92,8 @@ class EditJobEntity extends Equatable {
         // currency: currency ?? this.currency,
         jobTitle: jobTitle ?? this.jobTitle,
         companyName: companyName ?? this.companyName,
-        category: category ?? this.category,
+        // category: category ?? this.category,
+        jobSkillId: jobSkillId ?? this.jobSkillId,
         //  workType: workType ?? this.workType,
         jobDescription: jobDescription ?? this.jobDescription,
         skills: skills ?? this.skills,
@@ -105,7 +112,8 @@ class EditJobEntity extends Equatable {
         availableFor: availableFor ?? this.availableFor,
         compensationType: compensationType ?? this.compensationType,
         gender: gender ?? this.gender,
-        // officeAddress: officeAddress ?? this.officeAddress,
+        officeAddress: officeAddress ?? this.officeAddress,
+        quantity: quantity ?? this.quantity,
         applicationDeadline: applicationDeadline ?? this.applicationDeadline);
   }
 
@@ -113,7 +121,7 @@ class EditJobEntity extends Equatable {
   List<Object?> get props => [
         jobTitle,
         companyName,
-        category,
+        // category,
         //workType,
         jobDescription,
         skills,
@@ -132,7 +140,8 @@ class EditJobEntity extends Equatable {
         availableFor,
         compensationType,
         gender,
-        //  officeAddress,
+        officeAddress,
+        quantity,
         applicationDeadline,
       ];
 }

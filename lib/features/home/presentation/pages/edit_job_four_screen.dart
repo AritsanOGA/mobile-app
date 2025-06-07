@@ -2,7 +2,8 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -14,6 +15,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class EditPostJobFourScreen extends HookWidget {
+  final EmployerJobResponseEntity employerJobResponseEntity;
+
+  EditPostJobFourScreen({super.key, required this.employerJobResponseEntity});
+
   @override
   Widget build(BuildContext context) {
     final officeAddressController = useTextEditingController();
@@ -36,6 +41,9 @@ class EditPostJobFourScreen extends HookWidget {
                 }
               },
               builder: (context, state) {
+                cityController.text = employerJobResponseEntity.city ?? '';
+                officeAddressController.text =
+                    employerJobResponseEntity.officeAddress ?? '';
                 return Form(
                   key: formKey,
                   child: Container(
@@ -194,29 +202,31 @@ class EditPostJobFourScreen extends HookWidget {
                                     ]),
                                     textAlign: TextAlign.left))),
                         SizedBox(height: 40.v),
-                        BlocSelector<HomeBloc, HomeState, PostJobEntity>(
+                        BlocSelector<HomeBloc, HomeState, EditJobEntity>(
                           selector: (state) {
-                            return state.postJobRequest;
+                            return state.editJobRequest;
                           },
-                          builder: (context, postJobRequest) {
+                          builder: (context, editJobRequest) {
                             return CustomElevatedButton(
-                              isBusy:
-                                  state.postJobState == PostJobState.loading,
+                              isBusy: state.editJobState == ViewState.loading,
                               onPressed: (() {
                                 if (formKey.currentState?.validate() ?? false) {
                                   context.read<HomeBloc>().add(
-                                        HomeEvent.postJob(
-                                          postJobRequest.copyWith(
+                                        HomeEvent.editJob(
+                                          editJobRequest.copyWith(
+                                              jobId: employerJobResponseEntity
+                                                  .id
+                                                  .toString(),
                                               city: cityController.text,
-                                              officeAddress:
-                                                  officeAddressController.text,
+                                              // officeAddress:
+                                              //     officeAddressController.text,
                                               available: state.availablity,
                                               availableFor: state.package),
                                         ),
                                       );
                                 }
                               }),
-                              text: "Post Job",
+                              text: "Edit Job",
                             );
                           },
                         ),

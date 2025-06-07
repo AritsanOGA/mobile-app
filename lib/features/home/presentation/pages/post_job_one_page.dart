@@ -358,29 +358,29 @@ class PostJobOnePage extends HookWidget {
                           builder: (context, postJobRequest) {
                             return CustomElevatedButton(
                               onPressed: (() {
-                                List<SkillResponseEntity> countries =
+                                List<SkillResponseEntity> mySkill =
                                     state.skills;
-                                String result = countries
+                                String result = mySkill
                                     .map((country) => country.name)
                                     .where((name) => name != null)
                                     .join(', ');
                                 if (formKey.currentState?.validate() ?? false) {
                                   print(
                                       '${state.workMode} ${state.jobType} ${jobTitleController.text}');
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updatePostJobRequest(
-                                          postJobRequest.copyWith(
-                                              jobTitle: jobTitleController.text,
-                                              workType: state.workMode,
-                                              hireType: state.jobType,
-                                              category: state.category?.name,
-                                              categoryId: state.category?.id,
-                                              skills: result,
-                                              jobDescription:
-                                                  jobDescriptionController
-                                                      .text),
-                                        ),
-                                      );
+                                  // context.read<HomeBloc>().add(
+                                  //       HomeEvent.updatePostJobRequest(
+                                  //         postJobRequest.copyWith(
+                                  //             jobTitle: jobTitleController.text,
+                                  //             workType: state.workMode,
+                                  //             hireType: state.jobType,
+                                  //             category: state.category?.name,
+                                  //             categoryId: state.category?.id,
+                                  //             skills: state.skills,
+                                  //             jobDescription:
+                                  //                 jobDescriptionController
+                                  //                     .text),
+                                  //       ),
+                                  //     );
 
                                   Navigator.push(
                                       context,
