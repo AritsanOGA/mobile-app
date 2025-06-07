@@ -89,10 +89,6 @@ class EditJobOneScreen extends HookWidget {
                                       orElse: () => state.categoryList.first)
                                   : CategoryResponseEntity(
                                       id: 1, name: 'Fashion'),
-//                               selectedItem: state.categoryList.firstWhere(
-//   (category) => category.id == employerJobResponseEntity.ca,
-//   orElse: () => state.categoryList.first,
-// ),
                               itemLabel: (category) => category.name,
                               onChanged: (value) {
                                 context.read<HomeBloc>().add(
@@ -381,16 +377,21 @@ class EditJobOneScreen extends HookWidget {
                                     .join(', ');
                                 if (formKey.currentState?.validate() ?? false) {
                                   print(
-                                      '${state.workMode} ${state.jobType} ${jobTitleController.text}');
+                                      '${state.workMode} ${state.jobType} ${jobTitleController.text} ${state.category?.id} ${state.categoryList[0].id}');
                                   context.read<HomeBloc>().add(
                                         HomeEvent.updateEditJobRequest(
                                           editJobRequest.copyWith(
                                               jobTitle: jobTitleController.text,
-                                              //workType: state.workMode,
+                                              workType: state.workMode,
                                               hireType: state.jobType,
                                               category: state.category?.name,
-                                              categoryId:
-                                                  state.category?.id.toString(),
+                                              categoryId: state.category?.id
+                                                          .toString() ==
+                                                      null
+                                                  ? state.categoryList[0].id
+                                                      .toString()
+                                                  : state.category?.id
+                                                      .toString(),
                                               skills: result,
                                               jobSkillId: skillId,
                                               jobDescription:

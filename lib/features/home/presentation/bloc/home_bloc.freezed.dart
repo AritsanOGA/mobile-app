@@ -10104,10 +10104,12 @@ class _$InitialImpl implements _Initial {
       this.editJobRequest = const EditJobEntity(
           officeAddress: '',
           quantity: '',
+          country: '',
           jobId: '',
           jobSkillId: '',
           jobTitle: '',
           companyName: '',
+          workType: '',
           jobDescription: '',
           skills: [],
           position: '',

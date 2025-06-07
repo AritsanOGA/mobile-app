@@ -215,9 +215,9 @@ class EditPostJobThreeScreen extends HookWidget {
                                                     applicationDeadline:
                                                         applicationDeadlineController
                                                             .text,
-                                                    // country: state.country?.id
-                                                    //         .toString() ??
-                                                    //     '161',
+                                                    country: state.country?.id
+                                                            .toString() ??
+                                                        '161',
                                                     yearsOfExperience:
                                                         yearsOfExperienceController
                                                             .text,
@@ -232,9 +232,9 @@ class EditPostJobThreeScreen extends HookWidget {
                                                     applicationDeadline:
                                                         applicationDeadlineController
                                                             .text,
-                                                    // country: state.country?.id
-                                                    //         .toString() ??
-                                                    //     '161',
+                                                    country: state.country?.id
+                                                            .toString() ??
+                                                        '161',
                                                     yearsOfExperience:
                                                         yearsOfExperienceController
                                                             .text,

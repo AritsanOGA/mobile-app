@@ -33,10 +33,9 @@ class EditPostJobFourScreen extends HookWidget {
             backgroundColor: AppColors.kwhite,
             body: BlocConsumer<HomeBloc, HomeState>(
               listener: (context, state) {
-                if (state.postJobState == PostJobState.success) {
-                  Navigator.pushNamed(
-                      context, AppRoutes.successfulJobPostedPage);
-                } else if (state.postJobState == PostJobState.failure) {
+                if (state.editJobState == ViewState.success) {
+                  Navigator.pushNamed(context, AppRoutes.employerNavBarScreen);
+                } else if (state.editJobState == ViewState.failure) {
                   ToastUtils.showRedToast('Something went wrong');
                 }
               },
@@ -215,11 +214,11 @@ class EditPostJobFourScreen extends HookWidget {
                                         HomeEvent.editJob(
                                           editJobRequest.copyWith(
                                               jobId: employerJobResponseEntity
-                                                  .id
+                                                  .identity
                                                   .toString(),
                                               city: cityController.text,
-                                              // officeAddress:
-                                              //     officeAddressController.text,
+                                              officeAddress:
+                                                  officeAddressController.text,
                                               available: state.availablity,
                                               availableFor: state.package),
                                         ),

@@ -61,20 +61,16 @@ class WelcomePageScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomLeft,
                     child: SizedBox(
-                      width: 234.h,
+                      // width: 234.h,
                       child: RichText(
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "Unlock your ",
+                              text: "Find Work. Find Worker.\n",
                               style: CustomTextStyles.titleLargeff3a332c,
                             ),
                             TextSpan(
-                              text: "potential.",
-                              style: CustomTextStyles.titleLargeff3a332c,
-                            ),
-                            TextSpan(
-                              text: " Find the perfect fit.",
+                              text: "Fast and Easy.",
                               style: CustomTextStyles.titleLargeff3a332c,
                             ),
                           ],

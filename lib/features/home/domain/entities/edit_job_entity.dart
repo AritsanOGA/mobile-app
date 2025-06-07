@@ -7,7 +7,7 @@ class EditJobEntity extends Equatable {
     required this.jobSkillId,
     required this.companyName,
     // required this.category,
-    // required this.workType,
+    required this.workType,
     required this.jobDescription,
     required this.skills,
     required this.position,
@@ -18,7 +18,7 @@ class EditJobEntity extends Equatable {
     // required this.skillLevel,
     required this.maxAmount,
     required this.minAmount,
-    //  required this.country,
+    required this.country,
     required this.state,
     required this.city,
     required this.available,
@@ -35,7 +35,7 @@ class EditJobEntity extends Equatable {
   final String companyName;
   //final String category;
   final String jobSkillId;
-  //final String workType;
+  final String workType;
   final String jobDescription;
   final List<String> skills;
   final String position;
@@ -46,7 +46,7 @@ class EditJobEntity extends Equatable {
 //  final String skillLevel;
   final String maxAmount;
   final String minAmount;
-  //final String country;
+  final String country;
   final String state;
   final String city;
   final String available;
@@ -63,7 +63,7 @@ class EditJobEntity extends Equatable {
     String? jobId,
     String? companyName,
     String? category,
-    //  String? workType,
+    String? workType,
     String? jobDescription,
     List<String>? skills,
     String? position,
@@ -75,7 +75,7 @@ class EditJobEntity extends Equatable {
     //   String? skillLevel,
     String? maxAmount,
     String? minAmount,
-    // String? country,
+    String? country,
     String? state,
     String? city,
     String? available,
@@ -94,7 +94,7 @@ class EditJobEntity extends Equatable {
         companyName: companyName ?? this.companyName,
         // category: category ?? this.category,
         jobSkillId: jobSkillId ?? this.jobSkillId,
-        //  workType: workType ?? this.workType,
+        workType: workType ?? this.workType,
         jobDescription: jobDescription ?? this.jobDescription,
         skills: skills ?? this.skills,
         position: position ?? this.position,
@@ -105,7 +105,7 @@ class EditJobEntity extends Equatable {
         //skillLevel: skillLevel ?? this.skillLevel,
         maxAmount: maxAmount ?? this.maxAmount,
         minAmount: minAmount ?? this.minAmount,
-        // country: country ?? this.country,
+        country: country ?? this.country,
         state: state ?? this.state,
         city: city ?? this.city,
         available: available ?? this.available,
@@ -122,7 +122,7 @@ class EditJobEntity extends Equatable {
         jobTitle,
         companyName,
         // category,
-        //workType,
+        workType,
         jobDescription,
         skills,
         position,
@@ -133,7 +133,7 @@ class EditJobEntity extends Equatable {
         //skillLevel,
         maxAmount,
         minAmount,
-        // country,
+        country,
         state,
         city,
         available,

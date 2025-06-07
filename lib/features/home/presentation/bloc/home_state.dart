@@ -53,14 +53,15 @@ class HomeState with _$HomeState {
           applicationDeadline: ''))
       PostJobEntity postJobRequest,
       @Default(EditJobEntity(
-        officeAddress: '',
-        quantity: '',
+          officeAddress: '',
+          quantity: '',
+          country: '',
           jobId: '',
           jobSkillId: '',
           jobTitle: '',
           companyName: '',
           //category: '',
-          // workType: '',
+          workType: '',
           jobDescription: '',
           skills: [],
           position: '',

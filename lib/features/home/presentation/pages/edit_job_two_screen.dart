@@ -342,6 +342,9 @@ class EditPostJobTwoScreen extends HookWidget {
                                       context.read<HomeBloc>().add(
                                             HomeEvent.updateEditJobRequest(
                                               editJobRequest.copyWith(
+                                                  quantity:
+                                                      hireesNumberController
+                                                          .text,
                                                   //skillLevel: state.skillLevel,
                                                   levelOfEducation:
                                                       state.educationLevel,
