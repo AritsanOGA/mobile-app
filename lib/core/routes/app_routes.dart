@@ -24,6 +24,7 @@ import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_p
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/candidate_job_history_details_screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_history_screen.dart';
@@ -47,7 +48,6 @@ import '../../features/authentication/presentation/screens/employer_sign_uppage_
 import '../../features/authentication/presentation/screens/employer_signuppage_one_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_five_screen.dart';
 import '../../features/authentication/presentation/screens/j_s_create_account_page_four_screen.dart';
-import '../../features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import '../../features/home/presentation/pages/dashboard_screen.dart';
 import '../../features/home/presentation/pages/successful_job_application_screen.dart';
 import '../../presentation/login_options_page_screen/login_options_page_screen.dart';
@@ -203,6 +203,9 @@ class AppRoutes {
   static const String updateProfilePageThreeScreen =
       '/update_profile_page_three_screen';
   static const String jobSearch = '/job-search_screen';
+  static const String candidateJobSearchDetailsScreen =
+      '/candidate_job_search_details_screen';
+  static const String jobHistoryDetailsScreen = '/job_history_details_screen';
   static const String jobSearchDetailsScreen = '/job_search_details_screen';
   static const String searchDetailsScreen = '/search_details_screen';
   static const String appNavigationScreen = '/app_navigation_screen';
@@ -289,6 +292,12 @@ class AppRoutes {
       case jobSeekerNavBarScreen:
         return AppPageRouteBuilder(
           navigateTo: JobSeekerNavBarPage(),
+        );
+      case candidateJobSearchDetailsScreen:
+        return AppPageRouteBuilder(
+          navigateTo: CandidateJobHistoryDetailsScreen(
+            jobId: settings.arguments as String,
+          ),
         );
       case employerNavBarScreen:
         return AppPageRouteBuilder(

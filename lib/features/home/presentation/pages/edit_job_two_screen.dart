@@ -51,51 +51,64 @@ class EditPostJobTwoScreen extends HookWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                             SizedBox(height: 25.v),
-                            // Padding(
-                            //     padding: EdgeInsets.only(left: 3.h),
-                            //     child: Text("Skill Level",
-                            //         style:
-                            //             CustomTextStyles.titleMediumMedium18)),
-                            // SizedBox(height: 20.v),
-                            // CustomRadioButton(
-                            //     text: "Internship/Graduate Training",
-                            //     value: state.skillLevelList[0],
-                            //     groupValue: state.skillLevel,
-                            //     onChange: (value) {
-                            //       context.read<HomeBloc>().add(
-                            //             HomeEvent.updateSelectedSkillLevel(
-                            //                 value),
-                            //           );
-                            //     }),
-                            // Padding(
-                            //     padding:
-                            //         EdgeInsets.only(top: 11.v, right: 114.h),
-                            //     child: CustomRadioButton(
-                            //         text: "Semi-Skilled",
-                            //         value: state.skillLevelList[1],
-                            //         groupValue: state.skillLevel,
-                            //         padding:
-                            //             EdgeInsets.symmetric(vertical: 1.v),
-                            //         onChange: (value) {
-                            //           context.read<HomeBloc>().add(
-                            //                 HomeEvent.updateSelectedSkillLevel(
-                            //                     value),
-                            //               );
-                            //         })),
-                            // Padding(
-                            //     padding:
-                            //         EdgeInsets.only(top: 11.v, right: 85.h),
-                            //     child: CustomRadioButton(
-                            //         text: "Skilled",
-                            //         value: state.skillLevelList[2],
-                            //         groupValue: state.skillLevel,
-                            //         onChange: (value) {
-                            //           context.read<HomeBloc>().add(
-                            //                 HomeEvent.updateSelectedSkillLevel(
-                            //                     value),
-                            //               );
-                            //         })),
-                            // SizedBox(height: 25.v),
+                            Padding(
+                                padding: EdgeInsets.only(left: 3.h),
+                                child: Text("Skill Level",
+                                    style:
+                                        CustomTextStyles.titleMediumMedium18)),
+                            SizedBox(height: 20.v),
+                            CustomRadioButton(
+                                text: "Internship/Graduate Training",
+                                value: state.skillLevelList[0],
+                                groupValue: state.skillLevel,
+                                onChange: (value) {
+                                  context.read<HomeBloc>().add(
+                                        HomeEvent.updateSelectedSkillLevel(
+                                            value),
+                                      );
+                                }),
+                            Padding(
+                                padding:
+                                    EdgeInsets.only(top: 11.v, right: 114.h),
+                                child: CustomRadioButton(
+                                    text: "Semi-Skilled",
+                                    value: state.skillLevelList[1],
+                                    groupValue: state.skillLevel,
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 1.v),
+                                    onChange: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedSkillLevel(
+                                                value),
+                                          );
+                                    })),
+                            Padding(
+                                padding:
+                                    EdgeInsets.only(top: 11.v, right: 85.h),
+                                child: CustomRadioButton(
+                                    text: "Skilled",
+                                    value: state.skillLevelList[2],
+                                    groupValue: state.skillLevel,
+                                    onChange: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedSkillLevel(
+                                                value),
+                                          );
+                                    })),
+                            Padding(
+                                padding:
+                                    EdgeInsets.only(top: 11.v, right: 85.h),
+                                child: CustomRadioButton(
+                                    text: "Unskilled",
+                                    value: state.skillLevelList[3],
+                                    groupValue: state.skillLevel,
+                                    onChange: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedSkillLevel(
+                                                value),
+                                          );
+                                    })),
+                            SizedBox(height: 25.v),
                             Padding(
                                 padding: EdgeInsets.only(left: 3.h),
                                 child: Text("Academic Qualification",
@@ -345,7 +358,7 @@ class EditPostJobTwoScreen extends HookWidget {
                                                   quantity:
                                                       hireesNumberController
                                                           .text,
-                                                  //skillLevel: state.skillLevel,
+                                                  skillLevel: state.skillLevel,
                                                   levelOfEducation:
                                                       state.educationLevel,
                                                   position:

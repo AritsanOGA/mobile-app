@@ -69,7 +69,7 @@ class HomeState with _$HomeState {
           categoryId: '',
           yearsOfExperience: '',
           levelOfEducation: '',
-          // skillLevel: '',
+          skillLevel: '',
           maxAmount: '',
           minAmount: '',
           // country: '',
@@ -94,8 +94,12 @@ class HomeState with _$HomeState {
       @Default(["Male", "Female", "Both"]) List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
       @Default(0) int selectedIndex,
-      @Default(
-          ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
+      @Default([
+        "Internship/Graduate Training",
+        "Semi-Skilled",
+        "Skilled",
+        "Unskilled"
+      ])
       List<String> skillLevelList,
       @Default(GetFeaturedJobState.idle)
       GetFeaturedJobState getFeaturedJobState,

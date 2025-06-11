@@ -172,8 +172,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(
-                                context, AppRoutes.searchDetailsScreen,
+                            Navigator.pushNamed(context,
+                                AppRoutes.candidateJobSearchDetailsScreen,
                                 arguments:
                                     state.jobSeekerJobList[index].jobIdentity);
                           },

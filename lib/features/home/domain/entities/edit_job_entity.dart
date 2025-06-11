@@ -15,7 +15,7 @@ class EditJobEntity extends Equatable {
     required this.categoryId,
     required this.yearsOfExperience,
     required this.levelOfEducation,
-    // required this.skillLevel,
+    required this.skillLevel,
     required this.maxAmount,
     required this.minAmount,
     required this.country,
@@ -43,7 +43,7 @@ class EditJobEntity extends Equatable {
   final String categoryId;
   final String yearsOfExperience;
   final String levelOfEducation;
-//  final String skillLevel;
+  final String skillLevel;
   final String maxAmount;
   final String minAmount;
   final String country;
@@ -72,7 +72,7 @@ class EditJobEntity extends Equatable {
     String? categoryId,
     String? yearsOfExperience,
     String? levelOfEducation,
-    //   String? skillLevel,
+     String? skillLevel,
     String? maxAmount,
     String? minAmount,
     String? country,
@@ -102,7 +102,7 @@ class EditJobEntity extends Equatable {
         categoryId: categoryId ?? this.categoryId,
         yearsOfExperience: yearsOfExperience ?? this.yearsOfExperience,
         levelOfEducation: levelOfEducation ?? this.levelOfEducation,
-        //skillLevel: skillLevel ?? this.skillLevel,
+        skillLevel: skillLevel ?? this.skillLevel,
         maxAmount: maxAmount ?? this.maxAmount,
         minAmount: minAmount ?? this.minAmount,
         country: country ?? this.country,

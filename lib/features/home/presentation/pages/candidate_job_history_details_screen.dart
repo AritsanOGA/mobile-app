@@ -3,15 +3,14 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
-import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class JobHistoryDetailsScreen extends StatelessWidget {
-  final EmployerJobResponseEntity employerJobResponseEntity;
-  const JobHistoryDetailsScreen(
-      {super.key, required this.employerJobResponseEntity});
+import '../../../../shared/widgets/custom_appbar.dart';
+
+class CandidateJobHistoryDetailsScreen extends StatelessWidget {
+  final String jobId;
+  const CandidateJobHistoryDetailsScreen({super.key, required this.jobId});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,7 @@ class JobHistoryDetailsScreen extends StatelessWidget {
         title: '',
       ),
       body: BlocBuilder<AuthBloc, AuthState>(
-        bloc: context.read<AuthBloc>()
-          ..add(AuthEvent.searchJobDetails(
-              employerJobResponseEntity.identity.toString())),
+        bloc: context.read<AuthBloc>()..add(AuthEvent.searchJobDetails(jobId)),
         builder: (context, state) {
           if (state.searchJobDetailState == SearchJobDetailState.loading) {
             return Center(child: CircularProgressIndicator());
@@ -34,13 +31,13 @@ class JobHistoryDetailsScreen extends StatelessWidget {
           }
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
                     child: CircleAvatar(
-                      radius: 40,
+                      radius: 60,
                       backgroundImage: AssetImage(ImageConstant.jobImage),
                     ),
                   ),
@@ -246,7 +243,7 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                     );
                   }),
                   SizedBox(
-                    height: 30.h,
+                    height: 50.h,
                   ),
                 ],
               ),

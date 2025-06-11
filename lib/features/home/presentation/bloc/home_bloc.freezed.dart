@@ -10117,6 +10117,7 @@ class _$InitialImpl implements _Initial {
           categoryId: '',
           yearsOfExperience: '',
           levelOfEducation: '',
+          skillLevel: '',
           maxAmount: '',
           minAmount: '',
           state: '',
@@ -10158,7 +10159,8 @@ class _$InitialImpl implements _Initial {
       final List<String> skillLevelList = const [
         "Internship/Graduate Training",
         "Semi-Skilled",
-        "Skilled/Unskilled"
+        "Skilled",
+        "Unskilled"
       ],
       this.getFeaturedJobState = GetFeaturedJobState.idle,
       this.getFeaturedCandidateState = GetFeaturedCandidateState.idle,

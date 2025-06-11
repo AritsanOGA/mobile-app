@@ -105,6 +105,19 @@ class PostJobTwoScreen extends HookWidget {
                                                 value),
                                           );
                                     })),
+                            Padding(
+                                padding:
+                                    EdgeInsets.only(top: 11.v, right: 85.h),
+                                child: CustomRadioButton(
+                                    text: "Unskilled",
+                                    value: state.skillLevelList[3],
+                                    groupValue: state.skillLevel,
+                                    onChange: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedSkillLevel(
+                                                value),
+                                          );
+                                    })),
                             SizedBox(height: 25.v),
                             Padding(
                                 padding: EdgeInsets.only(left: 3.h),

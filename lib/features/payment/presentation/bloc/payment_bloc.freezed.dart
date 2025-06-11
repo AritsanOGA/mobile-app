@@ -5236,7 +5236,6 @@ class _$InitialImpl implements _Initial {
       ],
       final List<String> paymentMethodList = const [
         "--Select--",
-        "Pay With Card",
         "Bank Transfer"
       ],
       final List<String> dollarAccountList = const [

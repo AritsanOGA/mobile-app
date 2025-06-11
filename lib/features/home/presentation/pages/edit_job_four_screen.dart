@@ -225,7 +225,7 @@ class EditPostJobFourScreen extends HookWidget {
                                       );
                                 }
                               }),
-                              text: "Edit Job",
+                              text: "Update",
                             );
                           },
                         ),

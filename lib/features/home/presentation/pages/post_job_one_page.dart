@@ -367,20 +367,20 @@ class PostJobOnePage extends HookWidget {
                                 if (formKey.currentState?.validate() ?? false) {
                                   print(
                                       '${state.workMode} ${state.jobType} ${jobTitleController.text}');
-                                  // context.read<HomeBloc>().add(
-                                  //       HomeEvent.updatePostJobRequest(
-                                  //         postJobRequest.copyWith(
-                                  //             jobTitle: jobTitleController.text,
-                                  //             workType: state.workMode,
-                                  //             hireType: state.jobType,
-                                  //             category: state.category?.name,
-                                  //             categoryId: state.category?.id,
-                                  //             skills: state.skills,
-                                  //             jobDescription:
-                                  //                 jobDescriptionController
-                                  //                     .text),
-                                  //       ),
-                                  //     );
+                                  context.read<HomeBloc>().add(
+                                        HomeEvent.updatePostJobRequest(
+                                          postJobRequest.copyWith(
+                                              jobTitle: jobTitleController.text,
+                                              workType: state.workMode,
+                                              hireType: state.jobType,
+                                              category: state.category?.name,
+                                              categoryId: state.category?.id,
+                                              skills: result,
+                                              jobDescription:
+                                                  jobDescriptionController
+                                                      .text),
+                                        ),
+                                      );
 
                                   Navigator.push(
                                       context,
