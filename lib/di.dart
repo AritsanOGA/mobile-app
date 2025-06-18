@@ -6,6 +6,8 @@ import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
 import 'package:artisan_oga/features/authentication/data/reposItories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/check_email_usecase.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/check_phone_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
@@ -33,6 +35,7 @@ import 'package:artisan_oga/features/home/data/data_source/home_remote_data_sour
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
 import 'package:artisan_oga/features/home/domain/usecases/apply_for_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/edit_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_all_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_employer_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate.dart';
@@ -183,6 +186,10 @@ Future<void> init() async {
         () => CandidateProfileUseCase(locator()))
     ..registerLazySingleton<CandidateSkillUseCase>(
         () => CandidateSkillUseCase(locator()))
+    ..registerLazySingleton<CheckEmailUsecase>(
+        () => CheckEmailUsecase(locator()))
+    ..registerLazySingleton<CheckPhoneUsecase>(
+        () => CheckPhoneUsecase(locator()))
     ..registerLazySingleton<LoginUseCase>(() => LoginUseCase(locator()))
     ..registerLazySingleton<GetFeaturedCandidateUseCase>(
         () => GetFeaturedCandidateUseCase(locator()))
@@ -236,6 +243,8 @@ Future<void> init() async {
         () => VerifyPaymentUseCase(locator()))
     ..registerLazySingleton<SearchJobDetailUseCase>(
         () => SearchJobDetailUseCase(locator()))
+     ..registerLazySingleton<EditJobUseCase>(
+        () => EditJobUseCase(locator()))
     ..registerLazySingleton<RejectCandidateWithoutIntervieUseCase>(
         () => RejectCandidateWithoutIntervieUseCase(locator()))
     ..registerLazySingleton<SearchJobUseCase>(() => SearchJobUseCase(locator()))

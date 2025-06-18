@@ -129,7 +129,7 @@ class _DashboardPageState extends State<DashboardPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
-                  'Jobs for you',
+                  'My Jobs',
                   style: CustomTextStyles.titleLargeff3a332cSemiBold,
                 ),
               ),
@@ -172,8 +172,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(
-                                context, AppRoutes.searchDetailsScreen,
+                            Navigator.pushNamed(context,
+                                AppRoutes.candidateJobSearchDetailsScreen,
                                 arguments:
                                     state.jobSeekerJobList[index].jobIdentity);
                           },
@@ -193,10 +193,45 @@ class _DashboardPageState extends State<DashboardPage> {
                               state.jobSeekerJobList[index].jobTitle ?? '',
                               style: CustomTextStyles.titleMediumMedium18,
                             ),
-                            subtitle: Text(
-                              state.jobSeekerJobList[index].workType ?? '',
-                              style:
-                                  CustomTextStyles.labelLargePrimaryContainer13,
+                            subtitle: Row(
+                              children: [
+                                Text(
+                                  state.jobSeekerJobList[index].workType ?? '',
+                                  style: CustomTextStyles
+                                      .labelLargePrimaryContainer13,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  width: 5,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppColors.kblack),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  state.jobSeekerJobList[index].status == '0'
+                                      ? 'Applied'
+                                      : state.jobSeekerJobList[index].status ==
+                                              '1'
+                                          ? 'Screened'
+                                          : state.jobSeekerJobList[index]
+                                                      .status ==
+                                                  '2'
+                                              ? 'Rejected'
+                                              : state.jobSeekerJobList[index]
+                                                          .status ==
+                                                      '5'
+                                                  ? 'Accepted'
+                                                  : '',
+                                  style: CustomTextStyles
+                                      .labelLargePrimaryContainer13,
+                                ),
+                              ],
                             ),
                             trailing: Icon(Icons.more_vert),
                           ),

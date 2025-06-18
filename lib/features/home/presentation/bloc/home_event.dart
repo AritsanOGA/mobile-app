@@ -13,8 +13,11 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getAllJobs() = _GetAllJobs;
   const factory HomeEvent.getJobSeekerJobs() = _GetJobSeekerJobs;
   const factory HomeEvent.postJob(PostJobEntity param) = _PostJob;
+  const factory HomeEvent.editJob(EditJobEntity param) = _EditJob;
   const factory HomeEvent.updatePostJobRequest(PostJobEntity postJobRequest) =
       _UpdatePostJobRequest;
+  const factory HomeEvent.updateEditJobRequest(EditJobEntity editJobRequest) =
+      _UpdateEditJobRequest;
   const factory HomeEvent.updateSelectedDate(DateTime value) =
       _UpdateSelectedDate;
   const factory HomeEvent.applyForJob(String id) = _ApplyForJob;
@@ -47,5 +50,5 @@ class HomeEvent with _$HomeEvent {
       _UpdateCountry;
 
   const factory HomeEvent.updateState(StateResponseEntity value) = _UpdateState;
-    const factory HomeEvent.selectedDrawer(int index) = _SelectedDrawer;
+  const factory HomeEvent.selectedDrawer(int index) = _SelectedDrawer;
 }

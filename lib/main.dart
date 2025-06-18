@@ -21,14 +21,12 @@ void main() async {
     ],
   );
 
-
   // SystemChrome.setPreferredOrientations([
   //   DeviceOrientation.portraitUp,
   // ]);
-
+// dart run build_runner build -d
   ///Please update theme as per your need if required.
   ThemeHelper().changeTheme('primary');
- 
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor:
@@ -37,6 +35,10 @@ void main() async {
   ));
   runApp(MyApp());
 }
+//empl kimkam@yopmail.com Kim20.
+//empl - keeper@yopmail.com, 09022773344
+//cand - odeh@yopmail.com, Odeh20.
+// - kalu@yopmail.com , Kalu20.
 
 class MyApp extends StatelessWidget {
   @override
@@ -67,7 +69,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: AppRoutes.navigatorKey,
             onGenerateRoute: AppRoutes.generateRoute,
-            initialRoute: AppRoutes.welcomePageScreen,
+            initialRoute: AppRoutes.splashScreen,
             // routes: AppRoutes.routes,
             // builder: EasyLoading.init(),
           );

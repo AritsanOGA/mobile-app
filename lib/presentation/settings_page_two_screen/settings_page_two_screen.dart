@@ -1,9 +1,9 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:artisan_oga/presentation/awards/view.dart';
 import 'package:artisan_oga/presentation/education/view.dart';
 import 'package:artisan_oga/presentation/experience/view.dart';
-import 'package:artisan_oga/features/settings/presentation/pages/update_profile_page_one_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -158,7 +158,7 @@ class _SettingsPageTwoScreenState extends State<SettingsPageTwoScreen> {
                           .add(const AuthEvent.removeUserData());
 
                       Navigator.pushNamedAndRemoveUntil(context,
-                          AppRoutes.jSLoginPageScreen, (route) => false);
+                          AppRoutes.employerLoginPageScreen, (route) => false);
                     }),
                     child: Padding(
                         padding: EdgeInsets.only(left: 3.h),

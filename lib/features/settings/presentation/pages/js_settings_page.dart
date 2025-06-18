@@ -177,7 +177,7 @@ class JSSettingsPage extends HookWidget {
 
                                       Navigator.pushNamedAndRemoveUntil(
                                           context,
-                                          AppRoutes.jSLoginPageScreen,
+                                          AppRoutes.employerLoginPageScreen,
                                           (route) => false);
                                     },
                                     child: Padding(

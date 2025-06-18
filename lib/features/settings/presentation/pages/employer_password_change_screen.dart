@@ -125,7 +125,15 @@ class EmployerPasswordChangeScreen extends HookWidget {
                                 title: 'Confirm Password',
                                 controller: confirmpasswordController,
                                 hintText: "*********************",
-                                validator: FormValidation.passwordValidation,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please confirm your password';
+                                  }
+                                  if (value != newpasswordController.text) {
+                                    return 'Passwords do not match';
+                                  }
+                                  return null;
+                                },
                                 titleStyle: CustomTextStyles
                                     .titleMediumPrimaryContainer,
                                 hintStyle: CustomTextStyles.titleMediumGray700,
@@ -143,17 +151,20 @@ class EmployerPasswordChangeScreen extends HookWidget {
                               isBusy: state.updatePasswordState ==
                                   UpdatePasswordState.loading,
                               onPressed: () {
-                                context.read<SettingBloc>().add(
-                                      SettingEvent.updatePassword(
-                                        ChangePasswordEntity(
-                                            newPassword:
-                                                newpasswordController.text,
-                                            confirmNewPassword:
-                                                confirmpasswordController.text,
-                                            currentPassword:
-                                                oldPasswordController.text),
-                                      ),
-                                    );
+                                if (formKey.currentState!.validate()) {
+                                  context.read<SettingBloc>().add(
+                                        SettingEvent.updatePassword(
+                                          ChangePasswordEntity(
+                                              newPassword:
+                                                  newpasswordController.text,
+                                              confirmNewPassword:
+                                                  confirmpasswordController
+                                                      .text,
+                                              currentPassword:
+                                                  oldPasswordController.text),
+                                        ),
+                                      );
+                                }
                               },
                               text: "Save",
                             );

@@ -4,7 +4,7 @@ import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
+import 'package:artisan_oga/presentation/welcome_page_screen/welcome_page_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -26,8 +26,11 @@ class EmployerLoginPageScreen extends HookWidget {
       body: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state.employerLoginState == EmployerLoginState.success) {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, AppRoutes.employerNavBarScreen, (router) => false);
+              state.authEntity?.user.role == 'Employer'
+                  ? Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.employerNavBarScreen, (router) => false)
+                  : Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.jobSeekerNavBarScreen, (router) => false);
             } else if (state.employerLoginState == EmployerLoginState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }
@@ -57,7 +60,7 @@ class EmployerLoginPageScreen extends HookWidget {
                       ),
                       SizedBox(height: 17.v),
                       Text(
-                        "Login to your account as an employer",
+                        "Login to your account",
                         style: CustomTextStyles.bodyMediumGray700_2,
                       ),
                       SizedBox(height: 60.v),
@@ -154,8 +157,7 @@ class EmployerLoginPageScreen extends HookWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      EmployerSignUpPageScreen()),
+                                  builder: (context) => WelcomePageScreen()),
                             );
                           }))
                     ],

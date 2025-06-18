@@ -10,12 +10,14 @@ import 'package:artisan_oga/features/authentication/domain/entities/country_resp
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
 import 'package:artisan_oga/features/home/data/model/all_job_reponse_model.dart';
+import 'package:artisan_oga/features/home/data/model/edit_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/employer_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_candidate_model.dart';
 import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/job_seeker_job_response_model.dart';
 import 'package:artisan_oga/features/home/data/model/post_job_model.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
@@ -30,6 +32,7 @@ abstract class HomeRemoteDataSource {
   Future<List<AllJobResponseEntity>> getAllJobs();
   Future<bool> applyForJob(String id);
   Future<bool> postJob(PostJobEntity entity);
+  Future<bool> editJob(EditJobEntity entity);
   Future<List<CountryResponseEntity>> getCountries();
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
@@ -217,5 +220,16 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
           ),
         )
         .toList();
+  }
+
+  @override
+  Future<bool> editJob(EditJobEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.editJob,
+      headers: userService.authorizationHeader,
+      body: EditJobModel.fromEntity(entity).toJson(),
+    ) as Map<String, dynamic>;
+
+    return true;
   }
 }

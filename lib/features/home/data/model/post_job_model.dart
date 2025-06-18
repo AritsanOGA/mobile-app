@@ -75,7 +75,6 @@ class PostJobModel extends PostJobEntity {
         "office_address": officeAddress,
         "accommodation_available": available,
         "accommodation_for": available == 'No' ? '' : availableFor,
-        // "payment_method": paymentMethod,
         "currency": 'N',
         "compensation_type": compensationType,
         "country": country,

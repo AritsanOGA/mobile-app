@@ -29,7 +29,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
-
+      context.read<AuthBloc>().add(AuthEvent.getSkills('1'));
       return null;
     }, []);
     return SafeArea(
@@ -232,7 +232,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
                                     padding: EdgeInsets.only(left: 3.h),
-                                    child: Text("Upload Your CV",
+                                    child: Text("Upload Your CV  (Optional)",
                                         style: theme.textTheme.bodyMedium))),
                             SizedBox(height: 10.v),
                             BlocBuilder<AuthBloc, AuthState>(
@@ -333,7 +333,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                               registerJobSeekerRequest.copyWith(
                                                   category: state.category?.id
                                                           .toString() ??
-                                                      '',
+                                                      '1',
                                                   yearsOfExperience:
                                                       yearsController.text,
                                                   skill: result,

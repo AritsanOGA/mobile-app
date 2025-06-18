@@ -32,7 +32,7 @@ class PasswordResetPage extends HookWidget {
           listener: (context, state) {
             if (state.changePasswordState == ChangePasswordState.success) {
               print('suceess');
-              Navigator.pushNamed(context, AppRoutes.welcomePageScreen);
+              Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
             } else if (state.changePasswordState ==
                 ChangePasswordState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');

@@ -5,6 +5,7 @@ import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_local_datasource.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
@@ -47,13 +48,13 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> login(LoginEntity param) async {
+  Future<Either<Failure, AuthResultEntity>> login(LoginEntity param) async {
     try {
       final result = await authRemoteDataSource.login(param);
       await localDataSource.cacheUser(result);
       UserService().authData = result;
       print('detail ${UserService().authData}');
-      return const Right(true);
+      return Right(result);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message));
     } on CachedException catch (e) {
@@ -245,7 +246,18 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(String jobId) {
+  Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(
+      String jobId) {
     return authRemoteDataSource.searchJobDetails(jobId).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> checkEmail(String email) async {
+    return authRemoteDataSource.checkEmail(email).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> checkPhone(String phone) {
+    return authRemoteDataSource.checkPhone(phone).makeRequest();
   }
 }

@@ -23,7 +23,7 @@ class EmployerNavBarPage extends StatelessWidget {
         return Scaffold(
           backgroundColor: AppColors.kwhite,
           drawer: EmployerDrawer(),
-          body: pages[state.selectedIndex],
+          body: IndexedStack(index: state.selectedIndex, children: pages),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,
             onTap: (index) {

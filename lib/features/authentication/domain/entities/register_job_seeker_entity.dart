@@ -37,6 +37,7 @@ class RegisterJobSeekerEntity extends Equatable {
       required this.graduationYear,
       required this.courseName,
       required this.employmentHistory,
+      required this.referralCode,
       required this.yearOfGraduation});
 
   final String email;
@@ -73,6 +74,7 @@ class RegisterJobSeekerEntity extends Equatable {
   final String courseName;
   final String employmentHistory;
   final String yearOfGraduation;
+  final String referralCode;
 
   RegisterJobSeekerEntity copyWith({
     String? email,
@@ -109,8 +111,10 @@ class RegisterJobSeekerEntity extends Equatable {
     String? employmentHistory,
     String? guarantorPhoneNumber,
     String? yearOfGraduation,
+    String? referralCode,
   }) {
     return RegisterJobSeekerEntity(
+        referralCode: referralCode ?? this.referralCode,
         guarantorPhoneNumber: guarantorPhoneNumber ?? this.guarantorPhoneNumber,
         fullName: fullName ?? this.fullName,
         companyName: companyName ?? this.companyName,
@@ -140,7 +144,7 @@ class RegisterJobSeekerEntity extends Equatable {
         endYear: endYear ?? this.endYear,
         schoolName: schoolName ?? this.schoolName,
         educationalQualification:
-        educationalQualification ?? this.educationalQualification,
+            educationalQualification ?? this.educationalQualification,
         certificateObtained: certificateObtained ?? this.certificateObtained,
         graduationYear: graduationYear ?? this.graduationYear,
         courseName: courseName ?? this.courseName,
@@ -150,6 +154,7 @@ class RegisterJobSeekerEntity extends Equatable {
 
   @override
   List<Object?> get props => [
+        referralCode,
         email,
         password,
         fullName,

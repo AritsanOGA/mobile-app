@@ -1,11 +1,14 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/utils/image_constant.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
+import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
+import 'package:artisan_oga/features/home/presentation/pages/edit_job_one_screen.dart';
 import 'package:artisan_oga/theme/custom_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class EmployerJobWidget extends StatelessWidget {
+  final EmployerJobResponseEntity employerJobResponseEntity;
   final String jobTitle;
   final String hireType;
   final String location;
@@ -20,7 +23,8 @@ class EmployerJobWidget extends StatelessWidget {
       required this.location,
       required this.amount,
       required this.dateCreated,
-      required this.applicationDeadline});
+      required this.applicationDeadline,
+      required this.employerJobResponseEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +47,55 @@ class EmployerJobWidget extends StatelessWidget {
                 width: 15.v,
               ),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(jobTitle,
-                    style: CustomTextStyles.titleMediumSecondaryContainer),
-                // SizedBox(height: 5.h,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 150,
+                      child: Text(
+                          //'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
+                          jobTitle,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                              CustomTextStyles.titleMediumSecondaryContainer),
+                    ),
+                    SizedBox(
+                      width: 90,
+                    ),
+                    Row(
+                      children: [
+                        PopupMenuButton<String>(
+                          onSelected: (value) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => EditJobOneScreen(
+                                          employerJobResponseEntity:
+                                              employerJobResponseEntity,
+                                        )));
+                            print("Selected: $value");
+                          },
+                          itemBuilder: (BuildContext context) => [
+                            PopupMenuItem(
+                                value: 'edit',
+                                child: Text(
+                                  'Edit',
+                                  style: CustomTextStyles
+                                      .titleMediumPrimaryContainer,
+                                )),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(applicationDeadline,
                         style: CustomTextStyles.titleSmallGray50001),
                     SizedBox(
-                      width: 170,
+                      width: 190,
                     ),
                     Row(
                       children: [

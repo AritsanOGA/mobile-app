@@ -13,6 +13,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
   JobSeekerNavBarPage({super.key});
 
   final List<Widget> pages = [
+    // JSCreateAccountPageFourScreen(email: 'email'),
     DashboardPage(),
     SearchScreenPage(),
     JSSettingsPage()
@@ -25,7 +26,7 @@ class JobSeekerNavBarPage extends StatelessWidget {
         return Scaffold(
           backgroundColor: AppColors.kwhite,
           drawer: JSDrawer(),
-          body: pages[state.selectedIndex],
+          body: IndexedStack(index: state.selectedIndex, children: pages),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,
             onTap: (index) {

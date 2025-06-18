@@ -134,7 +134,6 @@ class ProfileEntity extends Equatable {
     this.guarantorPhone,
     this.guarantorEmail,
     this.referredByLink,
-
     required this.awardsAndCertificates,
     required this.artisanAssignedSkills,
     required this.education,
@@ -197,7 +196,6 @@ class ProfileEntity extends Equatable {
         guarantorPhone,
         guarantorEmail,
         referredByLink,
-        
         awardsAndCertificates,
         artisanAssignedSkills,
         education,

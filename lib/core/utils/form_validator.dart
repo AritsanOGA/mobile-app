@@ -9,6 +9,15 @@ class FormValidation {
     return validateEmail ? null : 'Enter valid email';
   }
 
+  static String? validateFullName(String? value) {
+    if (value == null) return 'Field cannot be empty';
+
+    if (value.isEmpty) return 'Field cannot be empty';
+
+    if (value.split(' ').length < 2) return 'Please enter your FULL NAME';
+    return null;
+  }
+
   static String? passwordValidation(String? password) {
     // Ensure password is not null
     if (password == null || password.isEmpty) {

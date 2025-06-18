@@ -52,6 +52,37 @@ class HomeState with _$HomeState {
           officeAddress: '',
           applicationDeadline: ''))
       PostJobEntity postJobRequest,
+      @Default(EditJobEntity(
+          officeAddress: '',
+          quantity: '',
+          country: '',
+          jobId: '',
+          jobSkillId: '',
+          jobTitle: '',
+          companyName: '',
+          //category: '',
+          workType: '',
+          jobDescription: '',
+          skills: [],
+          position: '',
+          hireType: '',
+          categoryId: '',
+          yearsOfExperience: '',
+          levelOfEducation: '',
+          skillLevel: '',
+          maxAmount: '',
+          minAmount: '',
+          // country: '',
+          state: '',
+          city: '',
+          available: '',
+          availableFor: '',
+          compensationType: '',
+          gender: '',
+          // currency: '',
+          // officeAddress: '',
+          applicationDeadline: ''))
+      EditJobEntity editJobRequest,
       @Default(["Contract", "Full time", "Part_time", "Temporary"])
       List<String> jobtypeList,
       @Default(["Salary", "Pay per job", "Negotiable"])
@@ -63,8 +94,12 @@ class HomeState with _$HomeState {
       @Default(["Male", "Female", "Both"]) List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
       @Default(0) int selectedIndex,
-      @Default(
-          ["Internship/Graduate Training", "Semi-Skilled", "Skilled/Unskilled"])
+      @Default([
+        "Internship/Graduate Training",
+        "Semi-Skilled",
+        "Skilled",
+        "Unskilled"
+      ])
       List<String> skillLevelList,
       @Default(GetFeaturedJobState.idle)
       GetFeaturedJobState getFeaturedJobState,
@@ -75,6 +110,7 @@ class HomeState with _$HomeState {
       @Default(GetEmployerJobState.idle)
       GetEmployerJobState getEmployerJobState,
       @Default(PostJobState.idle) PostJobState postJobState,
+      @Default(ViewState.idle) ViewState editJobState,
       @Default(ApplyForJobState.idle) ApplyForJobState applyForJobState,
       @Default(GetCategoryState.idle) GetCategoryState getCategoryState,
       @Default(GetSkillState.idle) GetSkillState getSkillState,

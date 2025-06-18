@@ -88,8 +88,7 @@ class JSProfilePage extends HookWidget {
                               ),
                             ),
                       SizedBox(height: 10.v),
-                      Text(
-                          state.candidateProfileEntity?.profiles.fullName ?? '',
+                      Text(UserService().authData?.user.fullName ?? '',
                           style: CustomTextStyles.titleLargePrimarySemiBold),
                       SizedBox(height: 10.v),
                       Row(
@@ -345,6 +344,10 @@ class JSProfilePage extends HookWidget {
                                             Text("Skill Endorsement",
                                                 style: CustomTextStyles
                                                     .titleSmallPrimaryContainer),
+                                            SizedBox(height: 10.v),
+                                            Divider(
+                                              height: 2,
+                                            ),
                                             SizedBox(height: 10.v),
                                             ...List.generate(
                                                 state

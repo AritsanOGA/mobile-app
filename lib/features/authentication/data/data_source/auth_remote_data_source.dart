@@ -36,7 +36,8 @@ abstract class AuthRemoteDataSource {
   Future<AuthResultEntity> refreshToken(LoginEntity entity);
   Future<bool> registerEmployer(RegisterEmployerEntity entity);
   Future<bool> registerJobSeeker(RegisterJobSeekerEntity entity);
-
+  Future<bool> checkEmail(String email);
+  Future<bool> checkPhone(String phoneNo);
   Future<List<CountryResponseEntity>> getCountries();
   Future<List<SearchJobEntity>> searchJobs(SearchJobDataEntity entity);
   Future<SearchJobDetailsResultEntity> searchJobDetails(String jobId);
@@ -254,7 +255,21 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         body: {"identity": jobId}) as Map<String, dynamic>;
 
     return SearchJobDetailsResultModel.fromJson(
-      result['data']as Map<String, dynamic>,
+      result['data'] as Map<String, dynamic>,
     );
+  }
+
+  @override
+  Future<bool> checkEmail(String email) async {
+    final result = await api
+        .get(url: AppApiEndpoint.checkEmail, queryParameters: {"email": email});
+    return result['data'];
+  }
+
+  @override
+  Future<bool> checkPhone(String phoneNo) async {
+    final result = await api.get(
+        url: AppApiEndpoint.checkPhone, queryParameters: {"phone": phoneNo});
+    return result['data'];
   }
 }

@@ -182,6 +182,8 @@ class _EmployerDashboardPageState extends State<EmployerDashboardPage> {
                             );
                           },
                           child: EmployerJobWidget(
+                              employerJobResponseEntity:
+                                  state.employerJobList[index],
                               jobTitle:
                                   state.employerJobList[index].jobTitle ?? '',
                               hireType:

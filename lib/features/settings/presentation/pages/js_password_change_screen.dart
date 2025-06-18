@@ -34,7 +34,7 @@ class JSPasswordChangeScreen extends HookWidget {
           listener: (context, state) {
             if (state.updatePasswordState == UpdatePasswordState.success) {
               ToastUtils.showGreenToast('Password Updated Successfully');
-              Navigator.pushNamed(context, AppRoutes.jSLoginPageScreen);
+              Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
             } else if (state.updatePasswordState ==
                 UpdatePasswordState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
@@ -88,7 +88,7 @@ class JSPasswordChangeScreen extends HookWidget {
                                 title: 'Old Password',
                                 controller: oldPasswordController,
                                 isPassword: true,
-                                   validator: FormValidation.passwordValidation,
+                                validator: FormValidation.passwordValidation,
                                 hintText: "*********************",
                                 titleStyle: CustomTextStyles
                                     .titleMediumPrimaryContainer,
@@ -104,7 +104,7 @@ class JSPasswordChangeScreen extends HookWidget {
                             child: CustomTextFormField(
                                 isPassword: true,
                                 title: 'New Password',
-                                   validator: FormValidation.passwordValidation,
+                                validator: FormValidation.passwordValidation,
                                 controller: newpasswordController,
                                 hintText: "*********************",
                                 titleStyle: CustomTextStyles
@@ -123,7 +123,15 @@ class JSPasswordChangeScreen extends HookWidget {
                                 title: 'Confirm Password',
                                 controller: confirmpasswordController,
                                 hintText: "*********************",
-                                   validator: FormValidation.passwordValidation,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please confirm your password';
+                                  }
+                                  if (value != newpasswordController.text) {
+                                    return 'Passwords do not match';
+                                  }
+                                  return null;
+                                },
                                 titleStyle: CustomTextStyles
                                     .titleMediumPrimaryContainer,
                                 hintStyle: CustomTextStyles.titleMediumGray700,
@@ -140,17 +148,20 @@ class JSPasswordChangeScreen extends HookWidget {
                               isBusy: state.updatePasswordState ==
                                   UpdatePasswordState.loading,
                               onPressed: () {
-                                context.read<SettingBloc>().add(
-                                      SettingEvent.updatePassword(
-                                        ChangePasswordEntity(
-                                            newPassword:
-                                                newpasswordController.text,
-                                            confirmNewPassword:
-                                                confirmpasswordController.text,
-                                            currentPassword:
-                                                oldPasswordController.text),
-                                      ),
-                                    );
+                                if (formKey.currentState!.validate()) {
+                                  context.read<SettingBloc>().add(
+                                        SettingEvent.updatePassword(
+                                          ChangePasswordEntity(
+                                              newPassword:
+                                                  newpasswordController.text,
+                                              confirmNewPassword:
+                                                  confirmpasswordController
+                                                      .text,
+                                              currentPassword:
+                                                  oldPasswordController.text),
+                                        ),
+                                      );
+                                }
                               },
                               text: "Save",
                             );

@@ -10,6 +10,7 @@ import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +26,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
   Widget build(BuildContext context) {
     final streetaddressController = useTextEditingController();
     final cityController = useTextEditingController();
+    final referralCodeController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
     final phoneController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
@@ -37,7 +39,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
         child: Scaffold(
             backgroundColor: AppColors.kwhite,
             appBar: CustomAppBar(
-              title: '',
+              title: 'Personal Details',
             ),
             // resizeToAvoidBottomInset: false,
             body: BlocBuilder<AuthBloc, AuthState>(
@@ -48,22 +50,54 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                   child: Container(
                       width: double.maxFinite,
                       padding: EdgeInsets.symmetric(
-                          horizontal: 22.h, vertical: 12.v),
+                        horizontal: 22.h,
+                      ),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 10.v),
-                            CustomTextFormField(
-                                title: 'Phone Number',
-                                controller: phoneController,
-                                hintText: "e.g 0703 345 1345",
-                                textInputType: TextInputType.phone,
-                                inputFormatters: [
-                                  LengthLimitingTextInputFormatter(11),
-                                  FilteringTextInputFormatter.digitsOnly,
-                                ],
-                                validator: FormValidation.phoneValidation,
-                                hintStyle: theme.textTheme.titleSmall!),
+                            SizedBox(height: 25.v),
+                            BlocBuilder<AuthBloc, AuthState>(
+                              builder: (context, state) {
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CustomTextFormField(
+                                        onChanged: (value) {
+                                          context
+                                              .read<AuthBloc>()
+                                              .add(AuthEvent.checkPhone(value));
+                                        },
+                                        title: 'Phone Number',
+                                        controller: phoneController,
+                                        hintText: "e.g 0703 345 1345",
+                                        textInputType: TextInputType.phone,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(11),
+                                          FilteringTextInputFormatter
+                                              .digitsOnly,
+                                        ],
+                                        validator:
+                                            FormValidation.phoneValidation,
+                                        hintStyle: theme.textTheme.titleSmall!),
+                                    AnimatedSwitcher(
+                                      duration: Duration(milliseconds: 200),
+                                      child: state.isPhone == true
+                                          ? Text(
+                                              'This phone number has already been used',
+                                              key: ValueKey('error'),
+                                              style: TextStyle(
+                                                  color: Colors.red,
+                                                  fontSize: 12),
+                                            )
+                                          : SizedBox(
+                                              height: 0,
+                                              key: ValueKey(
+                                                  'empty')), // Reserve height
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
                             SizedBox(height: 30.v),
                             CustomTextFormField(
                                 title: 'Street Address',
@@ -248,21 +282,32 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                       ]));
                             }),
                             SizedBox(height: 30.v),
-                            BlocBuilder<AuthBloc, AuthState>(
-                              builder: (context, state) {
-                                return CustomDropDown<String>(
-                                  title: 'Job Type',
-                                  items: state.jobTypeList,
-                                  selectedItem: state.jobType,
-                                  itemLabel: (gender) => gender,
-                                  onChanged: (value) {
-                                    context.read<AuthBloc>().add(
-                                          AuthEvent.updateSelectedJobType(
-                                              value ?? ''),
-                                        );
-                                  },
-                                );
-                              },
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CustomTextFormField(
+                                      title: 'City',
+                                      controller: cityController,
+                                      textInputType: TextInputType.name,
+                                      validator:
+                                          FormValidation.stringValidation,
+                                      hintText: "Enter City",
+                                      hintStyle: theme.textTheme.titleSmall!),
+                                ),
+                                SizedBox(
+                                  width: 20.h,
+                                ),
+                                Expanded(
+                                  child: CustomTextFormField(
+                                      title: 'Referral Code',
+                                      controller: referralCodeController,
+                                      textInputType: TextInputType.name,
+                                      validator:
+                                          FormValidation.stringValidation,
+                                      hintText: "Enter Referral Code",
+                                      hintStyle: theme.textTheme.titleSmall!),
+                                ),
+                              ],
                             ),
                             SizedBox(height: 30.v),
                             Row(
@@ -296,59 +341,125 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                   width: 20.h,
                                 ),
                                 Expanded(
-                                  child: CustomTextFormField(
-                                      title: 'City',
-                                      controller: cityController,
-                                      textInputType: TextInputType.name,
-                                      validator:
-                                          FormValidation.stringValidation,
-                                      hintText: "Enter City",
-                                      hintStyle: theme.textTheme.titleSmall!),
-                                ),
+                                  child: BlocBuilder<AuthBloc, AuthState>(
+                                    builder: (context, state) {
+                                      return CustomDropDown<String>(
+                                        title: 'Job Type',
+                                        items: state.jobTypeList,
+                                        selectedItem: state.jobType,
+                                        itemLabel: (gender) => gender,
+                                        onChanged: (value) {
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent.updateSelectedJobType(
+                                                    value ?? ''),
+                                              );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                )
                               ],
                             ),
                             SizedBox(height: 45.v),
-                            BlocSelector<AuthBloc, AuthState,
-                                RegisterJobSeekerEntity>(
-                              selector: (state) {
-                                return state.registerJobSeekerRequest;
-                              },
-                              builder: (context, registerJobSeekerRequest) {
-                                return CustomElevatedButton(
-                                  onPressed: (() {
-                                    print(
-                                        'hiboo ${dateOfBirthController.text}');
-                                    if (formKey.currentState?.validate() ??
-                                        false) {
-                                      context.read<AuthBloc>().add(AuthEvent
-                                          .updateRegisterJobSeekerRequest(
-                                              registerJobSeekerRequest.copyWith(
-                                                  phoneNumber:
-                                                      phoneController.text,
-                                                  streetAddress:
-                                                      streetaddressController
-                                                          .text,
-                                                  state: state.state?.name ??
-                                                      state.states.first.name,
-                                                  country: state.country?.id
-                                                          .toString() ??
-                                                      '161',
-                                                  jobType: state.jobType,
-                                                  city: cityController.text,
-                                                  dateOFBirth:
-                                                      dateOfBirthController
-                                                          .text)));
-                                      Navigator.pushNamed(
-                                          context,
-                                          AppRoutes
-                                              .jSCreateAccountPageThreeScreen,
-                                          arguments: email);
-                                    }
-                                  }),
-                                  text: "Next",
+                            BlocBuilder<AuthBloc, AuthState>(
+                              builder: (context, state) {
+                                return BlocSelector<AuthBloc, AuthState,
+                                    RegisterJobSeekerEntity>(
+                                  selector: (state) =>
+                                      state.registerJobSeekerRequest,
+                                  builder: (context, registerJobSeekerRequest) {
+                                    return CustomElevatedButton(
+                                      onPressed: () {
+                                        if (state.isPhone == true) {
+                                          ToastUtils.showRedToast(
+                                              'This phone number has already been used');
+                                          return;
+                                        }
+
+                                        if (formKey.currentState?.validate() ??
+                                            false) {
+                                          context.read<AuthBloc>().add(
+                                                AuthEvent
+                                                    .updateRegisterJobSeekerRequest(
+                                                  registerJobSeekerRequest
+                                                      .copyWith(
+                                                    referralCode:
+                                                        referralCodeController
+                                                            .text,
+                                                    phoneNumber:
+                                                        phoneController.text,
+                                                    streetAddress:
+                                                        streetaddressController
+                                                            .text,
+                                                    state: state.state?.name ??
+                                                        state.states.first.name,
+                                                    country: state.country?.id
+                                                            .toString() ??
+                                                        '161',
+                                                    jobType: state.jobType,
+                                                    city: cityController.text,
+                                                    dateOFBirth:
+                                                        dateOfBirthController
+                                                            .text,
+                                                  ),
+                                                ),
+                                              );
+
+                                          Navigator.pushNamed(
+                                            context,
+                                            AppRoutes
+                                                .jSCreateAccountPageThreeScreen,
+                                            arguments: email,
+                                          );
+                                        }
+                                      },
+                                      text: "Next",
+                                    );
+                                  },
                                 );
                               },
                             ),
+                            // BlocSelector<AuthBloc, AuthState,
+                            //     RegisterJobSeekerEntity>(
+                            //   selector: (state) {
+                            //     return state.registerJobSeekerRequest;
+                            //   },
+                            //   builder: (context, registerJobSeekerRequest) {
+                            //     return CustomElevatedButton(
+                            //       onPressed: (() {
+                            //         print(
+                            //             'hiboo ${dateOfBirthController.text}');
+                            //         if (formKey.currentState?.validate() ??
+                            //             false) {
+                            //           context.read<AuthBloc>().add(AuthEvent
+                            //               .updateRegisterJobSeekerRequest(
+                            //                   registerJobSeekerRequest.copyWith(
+                            //                       phoneNumber:
+                            //                           phoneController.text,
+                            //                       streetAddress:
+                            //                           streetaddressController
+                            //                               .text,
+                            //                       state: state.state?.name ??
+                            //                           state.states.first.name,
+                            //                       country: state.country?.id
+                            //                               .toString() ??
+                            //                           '161',
+                            //                       jobType: state.jobType,
+                            //                       city: cityController.text,
+                            //                       dateOFBirth:
+                            //                           dateOfBirthController
+                            //                               .text)));
+                            //           Navigator.pushNamed(
+                            //               context,
+                            //               AppRoutes
+                            //                   .jSCreateAccountPageThreeScreen,
+                            //               arguments: email);
+                            //         }
+                            //       }),
+                            //       text: "Next",
+                            //     );
+                            //   },
+                            // ),
                             SizedBox(height: 40.v),
                           ])),
                 ));

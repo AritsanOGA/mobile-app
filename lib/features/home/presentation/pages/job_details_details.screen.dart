@@ -105,7 +105,8 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.qualification ?? '',
+                            state.searchJobDetail?.jobDetails.qualification ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -142,14 +143,17 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                           ),
                           state.searchJobDetail?.jobDetails.compensationType ==
                                       'payperjob' ||
-                                  state.searchJobDetail?.jobDetails.compensationType ==
+                                  state.searchJobDetail?.jobDetails
+                                          .compensationType ==
                                       'Negotiable'
                               ? Text('Pay per job',
                                   style: theme.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w500,
                                   ))
                               : Text(
-                                  state.searchJobDetail?.jobDetails.basicSalary ?? '',
+                                  state.searchJobDetail?.jobDetails
+                                          .basicSalary ??
+                                      '',
                                   style: CustomTextStyles
                                       .labelLargePrimaryContainer_2,
                                 ),
@@ -163,7 +167,9 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
+                            state.searchJobDetail?.jobDetails
+                                    .applicationDeadline ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -241,9 +247,6 @@ class JobHistoryDetailsScreen extends StatelessWidget {
                   }),
                   SizedBox(
                     height: 30.h,
-                  ),
-                  SizedBox(
-                    height: 40.h,
                   ),
                 ],
               ),

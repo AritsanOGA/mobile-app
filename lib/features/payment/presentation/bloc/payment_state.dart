@@ -13,7 +13,7 @@ class PaymentState with _$PaymentState {
     String? errorMessage,
     @Default("--Select--") String dollarAccount,
     @Default("--Select--") String nairaAccount,
-      @Default("--Select--") String euroAccount,
+    @Default("--Select--") String euroAccount,
     double? price,
     double? percentage,
     double? amount,
@@ -39,7 +39,7 @@ class PaymentState with _$PaymentState {
     List<String> typeOfCurrencyBankList,
     @Default([
       "--Select--",
-      "Pay With Card",
+      //"Pay With Card",
       "Bank Transfer",
     ])
     List<String> paymentMethodList,

@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
+import 'package:artisan_oga/features/home/presentation/pages/edit_job_one_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,9 +30,43 @@ class ManageJobWidget extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(employerJobResponseEntity.jobTitle ?? '',
-                          style:
-                              CustomTextStyles.titleMediumSecondaryContainer),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: 150,
+                            child: Text(
+                                employerJobResponseEntity.jobTitle ?? '',
+                                overflow: TextOverflow.ellipsis,
+                                style: CustomTextStyles
+                                    .titleMediumSecondaryContainer),
+                          ),
+                          SizedBox(
+                            width: 50,
+                          ),
+                          PopupMenuButton<String>(
+                            onSelected: (value) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => EditJobOneScreen(
+                                            employerJobResponseEntity:
+                                                employerJobResponseEntity,
+                                          )));
+                              print("Selected: $value");
+                            },
+                            itemBuilder: (BuildContext context) => [
+                              PopupMenuItem(
+                                  value: 'edit',
+                                  child: Text(
+                                    'Edit',
+                                    style: CustomTextStyles
+                                        .titleMediumPrimaryContainer,
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
                       Text(
                           "${employerJobResponseEntity.city} (${employerJobResponseEntity.commuteType})",
                           style: CustomTextStyles.titleSmallGray50001),
@@ -78,20 +113,20 @@ class ManageJobWidget extends StatelessWidget {
                 width: 24.adaptSize,
                 margin: EdgeInsets.only(top: 17.v, bottom: 23.v))
           ]),
-          SizedBox(height: 7.v),
-          Row(children: [
-            SvgPicture.asset(
-              ImageConstant.imgOiPeople,
-            ),
-            Padding(
-                padding: EdgeInsets.only(left: 9.h, top: 3.v),
-                child: Text(
-                    employerJobResponseEntity.jobMergingCount == 0 ||
-                            employerJobResponseEntity.jobMergingCount == 1
-                        ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
-                        : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
-                    style: CustomTextStyles.titleSmallPrimaryContainer_1)),
-          ]),
+          // SizedBox(height: 7.v),
+          // Row(children: [
+          //   SvgPicture.asset(
+          //     ImageConstant.imgOiPeople,
+          //   ),
+          //   Padding(
+          //       padding: EdgeInsets.only(left: 9.h, top: 3.v),
+          //       child: Text(
+          //           employerJobResponseEntity.jobMergingCount == 0 ||
+          //                   employerJobResponseEntity.jobMergingCount == 1
+          //               ? "${employerJobResponseEntity.jobMergingCount ?? 0}  applicant"
+          //               : "${employerJobResponseEntity.jobMergingCount ?? 0}  applicants",
+          //           style: CustomTextStyles.titleSmallPrimaryContainer_1)),
+          // ]),
           // SizedBox(height: 7.v),
           // Row(children: [
           //   SvgPicture.asset(

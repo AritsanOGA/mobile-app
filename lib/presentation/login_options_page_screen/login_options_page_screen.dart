@@ -1,7 +1,6 @@
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:flutter/material.dart';
 
 import '../../features/authentication/presentation/screens/employer_login_page_screen.dart';
 
@@ -60,11 +59,11 @@ class LoginOptionsPageScreen extends StatelessWidget {
                 SizedBox(height: 16.v),
                 CustomElevatedButton(
                   onPressed: (() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => JSLoginPageScreen()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => JSLoginPageScreen()),
+                    // );
                   }),
                   text: "Login as a job seeker",
                 ),
