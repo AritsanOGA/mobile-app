@@ -88,8 +88,7 @@ class JSProfilePage extends HookWidget {
                               ),
                             ),
                       SizedBox(height: 10.v),
-                      Text(
-                          state.candidateProfileEntity?.profiles.fullName ?? '',
+                      Text(UserService().authData?.user.fullName ?? '',
                           style: CustomTextStyles.titleLargePrimarySemiBold),
                       SizedBox(height: 10.v),
                       Row(

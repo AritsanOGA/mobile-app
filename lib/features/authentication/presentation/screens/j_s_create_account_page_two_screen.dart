@@ -26,6 +26,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
   Widget build(BuildContext context) {
     final streetaddressController = useTextEditingController();
     final cityController = useTextEditingController();
+    final referralCodeController = useTextEditingController();
     final dateOfBirthController = useTextEditingController();
     final phoneController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
@@ -281,13 +282,33 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                       ]));
                             }),
                             SizedBox(height: 30.v),
-                            CustomTextFormField(
-                                title: 'City',
-                                controller: cityController,
-                                textInputType: TextInputType.name,
-                                validator: FormValidation.stringValidation,
-                                hintText: "Enter City",
-                                hintStyle: theme.textTheme.titleSmall!),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CustomTextFormField(
+                                      title: 'City',
+                                      controller: cityController,
+                                      textInputType: TextInputType.name,
+                                      validator:
+                                          FormValidation.stringValidation,
+                                      hintText: "Enter City",
+                                      hintStyle: theme.textTheme.titleSmall!),
+                                ),
+                                SizedBox(
+                                  width: 20.h,
+                                ),
+                                Expanded(
+                                  child: CustomTextFormField(
+                                      title: 'Referral Code',
+                                      controller: referralCodeController,
+                                      textInputType: TextInputType.name,
+                                      validator:
+                                          FormValidation.stringValidation,
+                                      hintText: "Enter Referral Code",
+                                      hintStyle: theme.textTheme.titleSmall!),
+                                ),
+                              ],
+                            ),
                             SizedBox(height: 30.v),
                             Row(
                               children: [
@@ -362,6 +383,9 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                                     .updateRegisterJobSeekerRequest(
                                                   registerJobSeekerRequest
                                                       .copyWith(
+                                                    referralCode:
+                                                        referralCodeController
+                                                            .text,
                                                     phoneNumber:
                                                         phoneController.text,
                                                     streetAddress:

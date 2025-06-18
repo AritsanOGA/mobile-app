@@ -16334,6 +16334,7 @@ class _$InitialImpl implements _Initial {
           courseName: '',
           employmentHistory: '',
           guarantorPhoneNumber: '',
+          referralCode: '',
           yearOfGraduation: ''),
       this.resume,
       final List<StateResponseEntity> states = const [],

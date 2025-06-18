@@ -36,10 +36,12 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       required super.courseName,
       required super.employmentHistory,
       required super.guarantorPhoneNumber,
+      required super.referralCode,
       required super.yearOfGraduation});
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
       RegisterJobSeekerModel(
+          referralCode: entity.referralCode,
           email: entity.email,
           password: entity.password,
           confirmPassword: entity.confirmPassword,
@@ -124,6 +126,7 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       'StreetAddress': streetAddress,
       'service_description': describeYourRole,
       'guarantor_phone': guarantorPhoneNumber,
+      'referral': referralCode,
     };
 
     if (passport?.path != null) {

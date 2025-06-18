@@ -81,6 +81,7 @@ class AuthState with _$AuthState {
         courseName: '',
         employmentHistory: '',
         guarantorPhoneNumber: '',
+        referralCode: '',
         yearOfGraduation: ''))
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,

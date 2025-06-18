@@ -89,7 +89,6 @@ class EmployerJobWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                // SizedBox(height: 5.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

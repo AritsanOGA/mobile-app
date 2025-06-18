@@ -399,7 +399,6 @@ class EditJobOneScreen extends HookWidget {
                                                       .text),
                                         ),
                                       );
-
                                   Navigator.push(
                                       context,
                                       PageTransition(
