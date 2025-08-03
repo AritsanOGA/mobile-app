@@ -6,6 +6,17 @@ class CandidatesState with _$CandidatesState {
       {AcceptCandidateEntity? acceptCandidateEntity,
       @Default(AcceptCandidateState.idle)
       AcceptCandidateState acceptCandidateState,
+      @Default(ViewState.idle) ViewState addExperienceState,
+      @Default(ViewState.idle) ViewState updateExperienceState,
+      @Default(ViewState.idle) ViewState deleteExperienceState,
+      @Default(ViewState.idle) ViewState getExperienceState,
+      @Default(ViewState.idle) ViewState addEducationState,
+      @Default(ViewState.idle) ViewState deleteEducationeState,
+      @Default(ViewState.idle) ViewState updateEducationState,
+      @Default(ViewState.idle) ViewState getEducationeState,
+      @Default(ViewState.idle) ViewState uploadWorkIdState,
+      @Default(ViewState.idle) ViewState uploadWorkPhotoState,
+      @Default(ViewState.idle) ViewState deleteWorkPhotoState,
       @Default(RejectCandidateState.idle)
       RejectCandidateState rejectCandidateState,
       @Default(GetAssignedCandidateState.idle)
@@ -22,6 +33,8 @@ class CandidatesState with _$CandidatesState {
       int? skillIndex,
       @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       @Default([]) List<CandidateSkillEntity> candidateSkillList,
+      @Default([]) List<GetExperienceEntity> getExperienceEntity,
+      @Default([]) List<GetEducationEntity> getEducationEntity,
       @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
       List<String> dropdownValues,
       @Default('1') String dropdownValue,

@@ -5,6 +5,8 @@ import 'package:artisan_oga/features/candidate/domain/entities/add_experience_en
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
@@ -22,10 +24,10 @@ abstract class CandidateRepository {
   Future<Either<Failure, bool>> addExperience(AddExperienceEntity entity);
   Future<Either<Failure, bool>> updateExperience(AddExperienceEntity entity);
   Future<Either<Failure, bool>> deleteExperience(String identity);
-  Future<Either<Failure, List<AddExperienceEntity>>> getExperience();
+  Future<Either<Failure, List<GetExperienceEntity>>> getExperience();
   Future<Either<Failure, bool>> addEducation(AddEducationEntity entity);
   Future<Either<Failure, bool>> deleteEducation(String identity);
-  Future<Either<Failure, List<AddEducationEntity>>> getEducation();
+  Future<Either<Failure, List<GetEducationEntity>>> getEducation();
   Future<Either<Failure, bool>> updateEducation(AddEducationEntity entity);
   Future<Either<Failure, bool>> deleteWorkPhoto(String identity);
   Future<Either<Failure, bool>> uploadIdCard(UploadIDCardEntity entity);

@@ -9,6 +9,8 @@ import 'package:artisan_oga/features/candidate/data/model/add_experience_model.d
 import 'package:artisan_oga/features/candidate/data/model/candidate_profile_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/data/model/get_education_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/get_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/upload_id_card_model.dart';
@@ -18,6 +20,8 @@ import 'package:artisan_oga/features/candidate/domain/entities/add_experience_en
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
@@ -37,11 +41,11 @@ abstract class CandidateRemoteSource {
   Future<bool> addEducation(AddEducationEntity entity);
   Future<bool> updateEducation(AddEducationEntity entity);
   Future<bool> deleteEducation(String identity);
-  Future<List<AddEducationEntity>> getEducation();
+  Future<List<GetEducationEntity>> getEducation();
   Future<bool> addExperience(AddExperienceEntity entity);
   Future<bool> updateExperience(AddExperienceEntity entity);
   Future<bool> deleteExperience(String identity);
-  Future<List<AddExperienceEntity>> getExperience();
+  Future<List<GetExperienceEntity>> getExperience();
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -163,7 +167,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<List<AddEducationEntity>> getEducation() async {
+  Future<List<GetEducationEntity>> getEducation() async {
     final result = await api.get(
       url: AppApiEndpoint.getEducation,
       headers: userService.authorizationHeader,
@@ -171,7 +175,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => AddEducationModel.fromJson(
+          (e) => GetEducationModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )
@@ -229,7 +233,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<List<AddExperienceEntity>> getExperience() async {
+  Future<List<GetExperienceEntity>> getExperience() async {
     final result = await api.get(
       url: AppApiEndpoint.getExperience,
       headers: userService.authorizationHeader,
@@ -237,7 +241,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => AddExperienceModel.fromJson(
+          (e) => GetExperienceModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )

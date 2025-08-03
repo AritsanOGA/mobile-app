@@ -8,6 +8,21 @@ class CandidatesEvent with _$CandidatesEvent {
       _AcceptCandidate;
   const factory CandidatesEvent.rejectCandidate(RejectCandidateEntity param) =
       _RejectCandidate;
+  const factory CandidatesEvent.addExperience(AddExperienceEntity param) =
+      _AddExperience;
+  const factory CandidatesEvent.updateExperience(AddExperienceEntity param) =
+      _UpdateExperience;
+  const factory CandidatesEvent.getExperience() = _GetExperience;
+  const factory CandidatesEvent.deleteExperience(String identity) =
+      _DeleteExperience;
+
+  const factory CandidatesEvent.addEducation(AddEducationEntity param) =
+      _AddEducation;
+  const factory CandidatesEvent.updateEducation(AddEducationEntity param) =
+      _UpdateEducation;
+  const factory CandidatesEvent.getEducation() = _GetEducation;
+  const factory CandidatesEvent.deleteEducation(String identity) =
+      _DeleteEducation;
   const factory CandidatesEvent.rejectCandidateWithoutInterview(
           RejectCandidateWithoutInterviewEntity param) =
       _RejectCandidateWithoutInterview;
