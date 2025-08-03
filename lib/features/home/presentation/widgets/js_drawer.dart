@@ -1,6 +1,8 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidate_education_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidate_experience_page.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/activities_tab_container_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page.dart';
@@ -81,7 +83,7 @@ class JSDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 38.v),
+            // SizedBox(height: 38.v),
             // Row(
             //   children: [
             //     SvgPicture.asset(
@@ -99,7 +101,79 @@ class JSDrawer extends StatelessWidget {
             //     ),
             //   ],
             // ),
-            //  SizedBox(height: 39.v),
+            SizedBox(height: 39.v),
+            Row(
+              children: [
+                SvgPicture.asset(
+                  ImageConstant.imgSearchPrimarycontainer,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 10.h,
+                    top: 3.v,
+                  ),
+                  child: Text(
+                    "Work Photo",
+                    style: CustomTextStyles.titleSmall20,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 39.v),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: CandidateEducationPage()));
+              },
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    ImageConstant.imgSearchPrimarycontainer,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 10.h,
+                      top: 3.v,
+                    ),
+                    child: Text(
+                      "Education",
+                      style: CustomTextStyles.titleSmall20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 39.v),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: CandidateExperiencePage()));
+              },
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    ImageConstant.imgSearchPrimarycontainer,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 10.h,
+                      top: 3.v,
+                    ),
+                    child: Text(
+                      "Experience",
+                      style: CustomTextStyles.titleSmall20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 39.v),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -189,8 +263,8 @@ class JSDrawer extends StatelessWidget {
                         .read<AuthBloc>()
                         .add(const AuthEvent.removeUserData());
 
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, AppRoutes.employerLoginPageScreen, (route) => false);
+                    Navigator.pushNamedAndRemoveUntil(context,
+                        AppRoutes.employerLoginPageScreen, (route) => false);
                   },
                   child: Row(
                     children: [

@@ -1,14 +1,13 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
-import 'package:cupertino_will_pop_scope/cupertino_will_pop_scope.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../authentication/presentation/blocs/bloc/auth_bloc.dart';
 
-class SuccessfulJobPostedPage extends StatelessWidget {
-  const SuccessfulJobPostedPage({Key? key})
+class HireMeSuccessPage extends StatelessWidget {
+  const HireMeSuccessPage({Key? key})
       : super(
           key: key,
         );
@@ -33,19 +32,21 @@ class SuccessfulJobPostedPage extends StatelessWidget {
                   SvgPicture.asset(ImageConstant.imgVectorPrimary),
                   SizedBox(height: 23.v),
                   Text(
-                    "Job posted successfully",
-                    style: CustomTextStyles.titleMediumPrimaryContainer18,
+                    "Request Sent",
+                    style: CustomTextStyles.titleLargePrimarySemiBold,
                   ),
                   SizedBox(height: 15.v),
+                  Text(
+                    "Our Client service officer will contact you as soon as possible.",
+                    textAlign: TextAlign.center,
+                    style: CustomTextStyles.titleSmallPrimaryContainer,
+                  ),
                   Spacer(
                     flex: 56,
                   ),
                   CustomElevatedButton(
                     text: "Back to Home",
                     onPressed: () {
-                      context.read<AuthBloc>().add(AuthEvent.selectTab(0));
-                      Navigator.pop(context);
-                      Navigator.pop(context);
                       Navigator.pop(context);
                       Navigator.pop(context);
                     },

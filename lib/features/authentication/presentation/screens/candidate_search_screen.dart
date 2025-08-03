@@ -239,14 +239,11 @@ class CandidateSearchScreen extends HookWidget {
                                               ),
                                               GestureDetector(
                                                 onTap: () {
-                                                  Navigator.pushNamed(
-                                                    context,
-                                                    AppRoutes
-                                                        .jobSearchDetailsScreen,
-                                                    arguments: state
-                                                        .candidateSearch[index]
-                                                        .identity,
-                                                  );
+                                                  Navigator.pushNamed(context,
+                                                      AppRoutes.hireMeScreen,
+                                                      arguments:
+                                                          state.candidateSearch[
+                                                              index]);
                                                 },
                                                 child: Container(
                                                   height: 40.h,

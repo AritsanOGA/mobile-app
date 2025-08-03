@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/country_usee
 import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/hire_me_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
@@ -232,6 +233,7 @@ Future<void> init() async {
         () => GetInvoiceUsecase(locator()))
     ..registerLazySingleton<PostInvoiceUseCase>(
         () => PostInvoiceUseCase(locator()))
+    ..registerLazySingleton<HireMeUseCase>(() => HireMeUseCase(locator()))
     ..registerLazySingleton<TransferPaymentUseCase>(
         () => TransferPaymentUseCase(locator()))
     ..registerLazySingleton<GetAllInvoiceUsecase>(

@@ -302,8 +302,8 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                       title: 'Referral Code',
                                       controller: referralCodeController,
                                       textInputType: TextInputType.name,
-                                      validator:
-                                          FormValidation.stringValidation,
+                                      // validator:
+                                      //     FormValidation.stringValidation,
                                       hintText: "Enter Referral Code",
                                       hintStyle: theme.textTheme.titleSmall!),
                                 ),

@@ -1,10 +1,13 @@
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class CandidateRepository {
@@ -16,6 +19,17 @@ abstract class CandidateRepository {
       String identityId);
   Future<Either<Failure, bool>> acceptCandidate(AcceptCandidateEntity entity);
   Future<Either<Failure, bool>> rejectCandidate(RejectCandidateEntity entity);
+  Future<Either<Failure, bool>> addExperience(AddExperienceEntity entity);
+  Future<Either<Failure, bool>> updateExperience(AddExperienceEntity entity);
+  Future<Either<Failure, bool>> deleteExperience(String identity);
+  Future<Either<Failure, List<AddExperienceEntity>>> getExperience();
+  Future<Either<Failure, bool>> addEducation(AddEducationEntity entity);
+  Future<Either<Failure, bool>> deleteEducation(String identity);
+  Future<Either<Failure, List<AddEducationEntity>>> getEducation();
+  Future<Either<Failure, bool>> updateEducation(AddEducationEntity entity);
+  Future<Either<Failure, bool>> deleteWorkPhoto(String identity);
+  Future<Either<Failure, bool>> uploadIdCard(UploadIDCardEntity entity);
+  Future<Either<Failure, bool>> uploadWorkPhoto(AcceptCandidateEntity entity);
   Future<Either<Failure, bool>> rejectCandidateWithoutInterview(
       RejectCandidateWithoutInterviewEntity entity);
 }

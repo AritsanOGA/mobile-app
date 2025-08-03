@@ -286,7 +286,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<List<CandidateSearchEntity>> candidateSearch() async {
     final result = await api.get(
       url: AppApiEndpoint.candidateSearch,
-      headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data']['data'] as List)

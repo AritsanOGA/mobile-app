@@ -65,6 +65,9 @@ class AppApiEndpoint {
 
   //! Employer
   static const String getInvoice = '/api/v1/employer/invoice';
+    static const String deleteWorkPhoto = '/api/v1/candidate/delete/work-photo';
+      static const String uploadWorkPhoto = '/api/v1/candidate/upload-work-photos';
+          static const String uploadIdCard = '/api/v1/candidate/upload-id-card';
   static const String getInvoices = '/api/v1/employer/get-invoices';
 
   static const String getPayments = '/api/v1/employer/payments';
@@ -73,4 +76,22 @@ class AppApiEndpoint {
   static const String generateInvoice = 'api/v1/employer/generate-invoice';
 
   static const String cardPayment = 'api/v1/employer/card-payment';
+  static const String addExperience = 'api/v1/candidate/profile/experience/add';
+  static const String getExperience = 'api/v1/candidate/profile/experience';
+  static const String deleteExperience =
+      'api/v1/candidate/profile/experience/delete';
+  static const String updateExperience =
+      'api/v1/candidate/profile/experience/update';
+
+  static const String addAward = 'api/v1/candidate/profile/awards/add';
+  static const String getAward = 'api/v1/candidate/profile/awards';
+  static const String deleteAward = 'api/v1/candidate/profile/awards/delete';
+  static const String updateAward = 'api/v1/candidate/profile/awards/update';
+
+  static const String addEducation = 'api/v1/candidate/profile/education/add';
+  static const String getEducation = 'api/v1/candidate/profile/education';
+  static const String deleteEducation =
+      'api/v1/candidate/profile/education/delete';
+  static const String updateEducation =
+      'api/v1/candidate/profile/education/update';
 }

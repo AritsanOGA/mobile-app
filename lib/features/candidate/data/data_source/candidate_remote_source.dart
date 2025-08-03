@@ -1,18 +1,26 @@
+import 'dart:io';
+
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/candidate/data/model/accept_candidate_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/add_education_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/add_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_profile_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/upload_id_card_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
@@ -23,6 +31,17 @@ abstract class CandidateRemoteSource {
       RejectCandidateWithoutInterviewEntity entity);
 
   Future<bool> acceptCandidate(AcceptCandidateEntity entity);
+  Future<bool> deleteWorkPhoto(String identity);
+  Future<bool> uploadWorkPhotos(List<File> workPhotos);
+  Future<bool> uploadIdCard(UploadIDCardEntity entity);
+  Future<bool> addEducation(AddEducationEntity entity);
+  Future<bool> updateEducation(AddEducationEntity entity);
+  Future<bool> deleteEducation(String identity);
+  Future<List<AddEducationEntity>> getEducation();
+  Future<bool> addExperience(AddExperienceEntity entity);
+  Future<bool> updateExperience(AddExperienceEntity entity);
+  Future<bool> deleteExperience(String identity);
+  Future<List<AddExperienceEntity>> getExperience();
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -40,7 +59,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
         url: AppApiEndpoint.acceptCandidate,
         body: AcceptCandidateModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
-    print('what $result');
+
     return true;
   }
 
@@ -108,6 +127,128 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
     final result = await api.post(
         url: AppApiEndpoint.rejectCandidateWithoutInterview,
         body: RejectCandidateWithoutInterviewModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> addEducation(AddEducationEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.addEducation,
+        body: AddEducationModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> deleteEducation(String identity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.deleteEducation,
+        body: {"identity": identity},
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> deleteWorkPhoto(String identity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.deleteWorkPhoto,
+        body: {"identity": identity},
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<List<AddEducationEntity>> getEducation() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getEducation,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => AddEducationModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<bool> updateEducation(AddEducationEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.updateEducation,
+        body: AddEducationModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> uploadIdCard(UploadIDCardEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.uploadIdCard,
+        body: UploadIDCardModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> uploadWorkPhotos(List<File> workPhotos) async {
+    final result = await api.post(
+        url: AppApiEndpoint.uploadWorkPhoto,
+        body: {"work_photos": workPhotos},
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> addExperience(AddExperienceEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.addExperience,
+        body: AddExperienceModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> deleteExperience(String identity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.deleteExperience,
+        body: {"identity": identity},
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<List<AddExperienceEntity>> getExperience() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getExperience,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => AddExperienceModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<bool> updateExperience(AddExperienceEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.updateExperience,
+        body: AddExperienceModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;

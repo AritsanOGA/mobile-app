@@ -1,7 +1,10 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/candidate_search_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/candidate_search_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_nav_bar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/forgot_password_page.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/hire_me_page.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/hire_me_success_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
@@ -21,11 +24,11 @@ import 'package:artisan_oga/features/candidate/presentation/pages/search_details
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
+import 'package:artisan_oga/features/home/presentation/pages/candidate_job_history_details_screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
-import 'package:artisan_oga/features/home/presentation/pages/candidate_job_history_details_screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_history_screen.dart';
@@ -164,7 +167,7 @@ class AppRoutes {
   static const String jSLoginPageScreen = '/j_s_login_page_screen';
 
   static const String dashboardScreen = '/dashboard_screen';
-
+  static const String hireMeScreen = '/hire_me_screen';
   static const String paymentHistoryScreen = '/payment_history_screen';
 
   static const String invoiceHistoryScreen = '/invoice_history_screen';
@@ -218,6 +221,7 @@ class AppRoutes {
   static const String resetPasswordScreen = '/reset_password_screen';
   static const String jsProfilePage = '/js_profile_page';
   static const String jsNotificationPage = '/js_notification_page';
+  static const String hireMeSuccessPage = '/hire_me_success_page';
   static const String notificationJobDetailsPage =
       '/notification_job_detail_page';
   static const String employerDashboard = '/employer-dashboard';
@@ -323,6 +327,10 @@ class AppRoutes {
       case jsNotificationPage:
         return AppPageRouteBuilder(
           navigateTo: JsNotificationPage(),
+        );
+      case hireMeSuccessPage:
+        return AppPageRouteBuilder(
+          navigateTo: HireMeSuccessPage(),
         );
       case notificationJobDetailsPage:
         return AppPageRouteBuilder(
@@ -539,6 +547,13 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: PasswordResetPage(
             email: settings.arguments as String,
+          ),
+        );
+      case hireMeScreen:
+        final candidateSearch = settings.arguments as CandidateSearchEntity;
+        return AppPageRouteBuilder(
+          navigateTo: HireMePage(
+            candidateSearch: candidateSearch,
           ),
         );
       case successfulJobPostedPage:
