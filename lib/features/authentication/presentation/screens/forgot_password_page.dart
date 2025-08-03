@@ -16,7 +16,6 @@ class ForgotPasswordPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool obscure = true;
     final emailController = useTextEditingController();
 
     final formKey = useMemoized(GlobalKey<FormState>.new);
@@ -27,7 +26,6 @@ class ForgotPasswordPage extends HookWidget {
         body: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state.forgotPasswordState == ForgotPasswordState.success) {
-         
               Navigator.pushNamed(context, AppRoutes.verifyForgotPasswordScreen,
                   arguments: emailController.text);
             } else if (state.forgotPasswordState ==

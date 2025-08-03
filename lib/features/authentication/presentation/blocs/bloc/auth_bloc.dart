@@ -6,9 +6,11 @@ import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/candidate_search_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/hire_me_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
@@ -25,6 +27,7 @@ import 'package:artisan_oga/features/authentication/domain/usecases/country_usee
 import 'package:artisan_oga/features/authentication/domain/usecases/forgot_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_category_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/get_user_usecases.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/hire_me_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/login_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_employer_usecases.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/register_job_seeker_usecase.dart';
@@ -39,6 +42,7 @@ import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../domain/usecases/candidate_search_usecase.dart';
 import '../../../domain/usecases/search_job_detals_usecase.dart';
 
 part 'auth_bloc.freezed.dart';
@@ -64,10 +68,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       SearchJobUseCase? searchJobUseCase,
       CheckEmailUsecase? checkEmailUseCase,
       CheckPhoneUsecase? checkPhoneUseCase,
+      CandidateSearchUsecase? candidateSearchUsecase,
+      HireMeUseCase? hireMeUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
         _loginUseCase = loginUseCase ?? locator(),
+        _candidateSearchUsecase = candidateSearchUsecase ?? locator(),
         _countryUseCase = countryUseCase ?? locator(),
         _stateUseCase = stateUseCase ?? locator(),
         _categoryUseCase = categoryUseCase ?? locator(),
@@ -83,6 +90,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _verifyForgotPasswordUseCase = verifyForgotPasswordUseCase ?? locator(),
         _checkEmailUsecase = checkEmailUseCase ?? locator(),
         _checkPhoneUsecase = checkPhoneUseCase ?? locator(),
+        _hireMeUsecase = hireMeUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_SelectYear>(_onSelectYear);
@@ -113,7 +121,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_GetState>(_onGetState);
     on<_GetCategory>(_onGetCategory);
     on<_GetSkills>(_onGetSkill);
+    on<_CandidateSearch>(_onCandidateSearch);
     on<_VerifyCode>(_onVerifyCode);
+    on<_HireMe>(_onHireMe);
     on<_CheckEmail>(_onCheckEmail);
     on<_CheckPhone>(_onCheckPhone);
     on<_GetUserData>(_onGetUserData);
@@ -141,8 +151,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final RemoveUserDataUseCase _removeUserDataUseCase;
   final SearchJobUseCase _searchJobUseCase;
   final SearchJobDetailUseCase _searchJobDetailsUseCase;
+  final CandidateSearchUsecase _candidateSearchUsecase;
   final CheckEmailUsecase _checkEmailUsecase;
   final CheckPhoneUsecase _checkPhoneUsecase;
+  final HireMeUseCase _hireMeUsecase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -562,5 +574,45 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(checkPhoneState: ViewState.idle));
+  }
+
+  FutureOr<void> _onCandidateSearch(
+      _CandidateSearch event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(candidateSearchState: ViewState.loading));
+    final result = await _candidateSearchUsecase(NoParams());
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          candidateSearchState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateSearch) => emit(
+        state.copyWith(
+          candidateSearch: candidateSearch,
+          candidateSearchState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(candidateSearchState: ViewState.idle));
+  }
+
+  FutureOr<void> _onHireMe(_HireMe event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(hireMeState: ViewState.loading));
+    final result = await _hireMeUsecase(event.param);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          hireMeState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateSearch) => emit(
+        state.copyWith(
+          hireMeState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(hireMeState: ViewState.idle));
   }
 }

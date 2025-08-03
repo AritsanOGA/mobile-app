@@ -124,6 +124,7 @@ class ImageConstant {
   // Message Page images
   static String imgPlus = '$imagePath/img_plus.svg';
 
+  static String category = '$svgPath/category.svg';
   static String imgEllipse8 = '$imagePath/img_ellipse_8.png';
 
   static String imgEllipse12 = '$imagePath/img_ellipse_12.png';

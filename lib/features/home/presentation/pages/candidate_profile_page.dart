@@ -448,7 +448,6 @@ class CandidatesProfilePage extends StatelessWidget {
                                                                 0]
                                                             .title ??
                                                         '',
-                                                    //  'Best Staff of the month - Mar, 2005',
                                                     style: CustomTextStyles
                                                         .titleSmallPrimaryContainer),
                                               ],

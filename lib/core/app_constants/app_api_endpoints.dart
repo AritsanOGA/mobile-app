@@ -5,7 +5,7 @@ class AppApiEndpoint {
   static const int receiveTimeout = 50000;
   static const int sendTimeout = 50000;
 
-  static const String baseUri = "https://artisanoga.com/";
+  static const String baseUri = "https://dev.artisanoga.com/";
 
 //Auth
   static const String employerSignup = '/api/v1/employer/signup/';
@@ -18,6 +18,7 @@ class AppApiEndpoint {
   static const String getCategories = '/api/v1/categories';
   static const String getSkills = '/api/v1/categories/skills';
   static const String searchJobs = '/api/v1/search/jobs';
+  static const String candidateSearch = '/api/v1/employer/candidates';
   static const String searchJobDetails = '/api/v1/job-details';
   static const String verifyCode = '/api/v1/verify-code';
   static const String changePassword = '/api/v1/change-password';
@@ -27,6 +28,7 @@ class AppApiEndpoint {
   static const String resetPassword = '/api/v1/reset-password';
   static const String checkEmail = '/api/v1/check-email';
   static const String checkPhone = '/api/v1/check-phone';
+  static const String hireMe = '/api/v1/employer/hire-me';
   //! Dashboard
   static const String getFeaturedCandidates = '/api/v1/featured-candidates';
   static const String jobSeekerJob = '/api/v1/candidate/jobs-for-you';

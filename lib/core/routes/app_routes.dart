@@ -1,4 +1,5 @@
 import 'package:artisan_oga/core/routes/app_page_routes.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/candidate_search_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_nav_bar_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/forgot_password_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
@@ -66,7 +67,7 @@ class AppRoutes {
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
   static const String successScreen = '/success_page_screen';
-
+  static const String candidateSearchScreen = '/candidate_search_screen';
   static const String invoiceSuccessScreen = '/invoice_success_screen';
   static const String successfulApplicationScreen =
       '/success_application_screen';
@@ -552,6 +553,10 @@ class AppRoutes {
       //   return AppPageRouteBuilder(
       //     navigateTo: UpdateProfilePageThreeScreen(),
       //   );
+      case candidateSearchScreen:
+        return AppPageRouteBuilder(
+          navigateTo: CandidateSearchScreen(),
+        );
       case updateProfilePageTwoScreen:
         return AppPageRouteBuilder(
           navigateTo: UpdateProfilePageTwoScreen(),

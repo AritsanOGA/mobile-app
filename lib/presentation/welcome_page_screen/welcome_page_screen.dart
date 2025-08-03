@@ -1,9 +1,7 @@
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
 class WelcomePageScreen extends StatelessWidget {
   const WelcomePageScreen({Key? key})
@@ -96,18 +94,14 @@ class WelcomePageScreen extends StatelessWidget {
                 "Connecting Talent with Opportunity: Your Next Career Move Starts Here",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
+              textAlign: TextAlign.center,
                 style: CustomTextStyles.bodyMediumGray700_1,
               ),
             ),
             SizedBox(height: 48.v),
             CustomElevatedButton(
               onPressed: (() {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: EmployerSignUpPageScreen()));
+                Navigator.pushNamed(context, AppRoutes.candidateSearchScreen);
               }),
               text: "Continue as an Employer",
             ),

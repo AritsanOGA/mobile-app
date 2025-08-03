@@ -1,8 +1,10 @@
 import 'package:artisan_oga/core/error/failure.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/candidate_search_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/hire_me_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
@@ -24,7 +26,9 @@ abstract class AuthRepository {
       RegisterJobSeekerEntity param);
   Future<Either<Failure, bool>> getUserData();
   Future<Either<Failure, bool>> removeUser();
+  Future<Either<Failure, bool>> hireMe(HireMeEntity entity);
   Future<Either<Failure, List<CountryResponseEntity>>> getCountries();
+  Future<Either<Failure, List<CandidateSearchEntity>>> candidateSearch();
   Future<Either<Failure, List<SearchJobEntity>>> searchJob(
       SearchJobDataEntity entity);
   Future<Either<Failure, SearchJobDetailsResultEntity>> searchJobDetail(

@@ -6,6 +6,7 @@ import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/data_source/auth_remote_data_source.dart';
 import 'package:artisan_oga/features/authentication/data/reposItories/auth_repository_impl.dart';
 import 'package:artisan_oga/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:artisan_oga/features/authentication/domain/usecases/candidate_search_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/check_email_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/check_phone_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/country_useecase.dart';
@@ -141,9 +142,7 @@ Future<void> init() async {
 
     //data sources
     ..registerLazySingleton<AuthRemoteDataSource>(
-        () => AuthRemoteDataSourceImpl(
-              locator(),
-            ))
+        () => AuthRemoteDataSourceImpl(locator(), UserService()))
     ..registerLazySingleton<CandidateRemoteSource>(
         () => CandidateRemoteSourceImpl(locator(), UserService()))
     ..registerLazySingleton<SettingsRemoteDataSource>(
@@ -243,8 +242,7 @@ Future<void> init() async {
         () => VerifyPaymentUseCase(locator()))
     ..registerLazySingleton<SearchJobDetailUseCase>(
         () => SearchJobDetailUseCase(locator()))
-     ..registerLazySingleton<EditJobUseCase>(
-        () => EditJobUseCase(locator()))
+    ..registerLazySingleton<EditJobUseCase>(() => EditJobUseCase(locator()))
     ..registerLazySingleton<RejectCandidateWithoutIntervieUseCase>(
         () => RejectCandidateWithoutIntervieUseCase(locator()))
     ..registerLazySingleton<SearchJobUseCase>(() => SearchJobUseCase(locator()))
@@ -257,5 +255,7 @@ Future<void> init() async {
     ..registerLazySingleton<GetActivitiesUsecase>(
         () => GetActivitiesUsecase(locator()))
     ..registerLazySingleton<GetJobSeekerNotificationUsecase>(
-        () => GetJobSeekerNotificationUsecase(locator()));
+        () => GetJobSeekerNotificationUsecase(locator()))
+    ..registerLazySingleton<CandidateSearchUsecase>(
+        () => CandidateSearchUsecase(locator()));
 }

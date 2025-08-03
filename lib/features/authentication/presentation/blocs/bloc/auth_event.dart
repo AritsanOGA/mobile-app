@@ -38,6 +38,7 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedResume;
   const factory AuthEvent.verifyCode(VerifyCodeEntity value) = _VerifyCode;
   const factory AuthEvent.loginUser(LoginEntity param) = _LoginUser;
+  const factory AuthEvent.hireMe(HireMeEntity param) = _HireMe;
   const factory AuthEvent.updatePassword(UpdatePasswordEntity param) =
       _UpdatePassword;
   const factory AuthEvent.forgotPassword(ForgotPasswordEntity param) =
@@ -45,6 +46,7 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.verifyForgotPasswordCode(VerifyCodeEntity param) =
       _verifyForgotPasswordCode;
   const factory AuthEvent.getCountries() = _GetCountries;
+  const factory AuthEvent.candidateSearch() = _CandidateSearch;
   const factory AuthEvent.getState(String id) = _GetState;
   const factory AuthEvent.checkEmail(String email) = _CheckEmail;
   const factory AuthEvent.checkPhone(String phone) = _CheckPhone;

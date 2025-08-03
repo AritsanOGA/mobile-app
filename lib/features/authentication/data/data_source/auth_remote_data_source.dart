@@ -2,10 +2,13 @@ import 'dart:developer';
 
 import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/authentication/data/model/auth_result_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/candidate_search_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/category_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/country_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/forgot_password_model.dart';
+import 'package:artisan_oga/features/authentication/data/model/hire_me_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/login_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_employer_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/register_job_seeker_model.dart';
@@ -17,9 +20,11 @@ import 'package:artisan_oga/features/authentication/data/model/state_response_mo
 import 'package:artisan_oga/features/authentication/data/model/update_password_model.dart';
 import 'package:artisan_oga/features/authentication/data/model/verify_code_model.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/auth_result_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/candidate_search_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/forgot_password_entity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/hire_me_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_employer_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/register_job_seeker_entity.dart';
@@ -47,14 +52,18 @@ abstract class AuthRemoteDataSource {
   Future<bool> verifyCode(VerifyCodeEntity entity);
   Future<bool> forgotPassword(ForgotPasswordEntity entity);
   Future<bool> updatePassword(UpdatePasswordEntity entity);
+  Future<List<CandidateSearchEntity>> candidateSearch();
   Future<bool> verifyForgotPasswordCode(VerifyCodeEntity entity);
+  Future<bool> hireMe(HireMeEntity entity);
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   AuthRemoteDataSourceImpl(
     this.api,
+    this.userService,
   );
   final ApiService api;
+  final UserService userService;
 
   @override
   Future<AuthResultEntity> login(LoginEntity entity) async {
@@ -271,5 +280,30 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final result = await api.get(
         url: AppApiEndpoint.checkPhone, queryParameters: {"phone": phoneNo});
     return result['data'];
+  }
+
+  @override
+  Future<List<CandidateSearchEntity>> candidateSearch() async {
+    final result = await api.get(
+      url: AppApiEndpoint.candidateSearch,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data']['data'] as List)
+        .map(
+          (e) => CandidateSearchModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<bool> hireMe(HireMeEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.hireMe,
+      body: HireMeModel.fromEntity(entity).toJson(),
+    );
+    return true;
   }
 }
