@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_education_ent
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 import 'package:dartz/dartz.dart';
 
@@ -26,7 +27,7 @@ abstract class CandidateRepository {
   Future<Either<Failure, bool>> acceptCandidate(AcceptCandidateEntity entity);
   Future<Either<Failure, bool>> rejectCandidate(RejectCandidateEntity entity);
   Future<Either<Failure, bool>> addExperience(AddExperienceEntity entity);
-  Future<Either<Failure, bool>> updateExperience(AddExperienceEntity entity);
+  Future<Either<Failure, bool>> updateExperience(UpdateExperienceEntity entity);
   Future<Either<Failure, bool>> deleteExperience(String identity);
   Future<Either<Failure, List<GetExperienceEntity>>> getExperience();
   Future<Either<Failure, bool>> addEducation(AddEducationEntity entity);

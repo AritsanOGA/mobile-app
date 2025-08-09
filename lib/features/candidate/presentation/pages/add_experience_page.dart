@@ -43,12 +43,12 @@ class AddCandidateExperiencePage extends HookWidget {
       ),
       body: BlocListener<CandidatesBloc, CandidatesState>(
         listener: (context, state) {
-          if (state.addEducationState == ViewState.success) {
+          if (state.addExperienceState == ViewState.success) {
             Navigator.pushNamed(
               context,
               AppRoutes.successScreen2,
               arguments: {
-                'message': 'Uploaded Successfully',
+                'message': 'Added Successfully',
                 'onTap': () {
                   // Navigator.pop(context);
                   // Navigator.pop(context);
@@ -59,7 +59,7 @@ class AddCandidateExperiencePage extends HookWidget {
                 },
               },
             );
-          } else if (state.addEducationState == ViewState.failure) {
+          } else if (state.addExperienceState == ViewState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
@@ -102,6 +102,7 @@ class AddCandidateExperiencePage extends HookWidget {
                         validator: FormValidation.stringValidation,
                       ),
                     ),
+                    SizedBox(width: 15.h),
                     Expanded(
                       child: CustomTextFormField(
                         title: 'End year',
@@ -124,9 +125,10 @@ class AddCandidateExperiencePage extends HookWidget {
                         hintText: "Phone",
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
+                        //  validator: FormValidation.stringValidation,
                       ),
                     ),
+                    SizedBox(width: 15.h),
                     Expanded(
                       child: CustomTextFormField(
                         title: 'I.G Handle',
@@ -153,17 +155,18 @@ class AddCandidateExperiencePage extends HookWidget {
                 BlocBuilder<CandidatesBloc, CandidatesState>(
                   builder: (context, state) {
                     return CustomElevatedButton(
-                      isBusy: state.addEducationState == ViewState.loading,
+                      isBusy: state.addExperienceState == ViewState.loading,
                       onPressed: () {
                         if (formKey.currentState?.validate() ?? false) {
                           context.read<CandidatesBloc>().add(
                                 CandidatesEvent.addExperience(
                                   AddExperienceEntity(
-                                    title: '',
+                                    responsibilities:
+                                        descriptionController.text,
                                     role: roleCeontroller.text,
                                     yearEnd: endYearController.text,
                                     startYear: startYearController.text,
-                                    serviceDescription: '',
+                                    companyName: employerNameController.text,
                                     userId: UserService()
                                             .authData
                                             ?.user

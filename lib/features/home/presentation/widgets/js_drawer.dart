@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidate_education_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidate_experience_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidate_work_photo_page.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/activities_tab_container_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_password_change_screen.dart';
 import 'package:artisan_oga/features/settings/presentation/pages/js_profile_page.dart';
@@ -102,22 +103,31 @@ class JSDrawer extends StatelessWidget {
             //   ],
             // ),
             SizedBox(height: 39.v),
-            Row(
-              children: [
-                SvgPicture.asset(
-                  ImageConstant.imgSearchPrimarycontainer,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.h,
-                    top: 3.v,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: CandidateWorkPhotoPage()));
+              },
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    ImageConstant.imgSearchPrimarycontainer,
                   ),
-                  child: Text(
-                    "Work Photo",
-                    style: CustomTextStyles.titleSmall20,
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 10.h,
+                      top: 3.v,
+                    ),
+                    child: Text(
+                      "Work Photo",
+                      style: CustomTextStyles.titleSmall20,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 39.v),
             GestureDetector(

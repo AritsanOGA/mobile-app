@@ -2,18 +2,20 @@ import 'package:equatable/equatable.dart';
 
 class AddEducationEntity extends Equatable {
   const AddEducationEntity({
-    required this.userId,
-    required this.title,
-    required this.courseName,
-    required this.description,
-    required this.year,
+    this.userId,
+    this.title,
+    this.courseName,
+    this.description,
+    this.year,
+    this.identity,
   });
 
-  final String userId;
-  final String title;
-  final String courseName;
-  final String description;
-  final String year;
+  final String? userId;
+  final String? title;
+  final String? courseName;
+  final String? description;
+  final String? year;
+  final String? identity;
 
   @override
   List<Object?> get props => [
@@ -22,5 +24,6 @@ class AddEducationEntity extends Equatable {
         courseName,
         description,
         year,
+        identity
       ];
 }

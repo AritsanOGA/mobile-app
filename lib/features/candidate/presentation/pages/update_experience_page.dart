@@ -1,11 +1,8 @@
-import 'package:artisan_oga/core/routes/app_routes.dart';
-import 'package:artisan_oga/core/services/user_service.dart';
-import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
-import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
@@ -22,13 +19,15 @@ class UpdateCandidateExperiencePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final employerNameController = useTextEditingController();
-    final roleCeontroller = useTextEditingController();
-    final startYearController = useTextEditingController();
+    final employerNameController = useTextEditingController(text: entity.title);
+    final roleCeontroller = useTextEditingController(text: entity.purpose);
+    final startYearController =
+        useTextEditingController(text: entity.startYear.toString());
     final endYearController = useTextEditingController();
     final phoneCeontroller = useTextEditingController();
     final ighandleController = useTextEditingController();
-    final descriptionController = useTextEditingController();
+    final descriptionController =
+        useTextEditingController(text: entity.description);
     final formKey = useMemoized(GlobalKey<FormState>.new);
 
     useEffect(() {
@@ -39,27 +38,27 @@ class UpdateCandidateExperiencePage extends HookWidget {
     return Scaffold(
       appBar: CustomAppBar(
         titleStatus: false,
-        title: 'New Experience',
+        title: 'Update Experience',
       ),
       body: BlocListener<CandidatesBloc, CandidatesState>(
         listener: (context, state) {
-          if (state.addEducationState == ViewState.success) {
-            Navigator.pushNamed(
-              context,
-              AppRoutes.successScreen2,
-              arguments: {
-                'message': 'Uploaded Successfully',
-                'onTap': () {
-                  // Navigator.pop(context);
-                  // Navigator.pop(context);
-                  Navigator.pushNamed(
-                    context,
-                    AppRoutes.jobSeekerNavBarScreen,
-                  );
-                },
-              },
-            );
-          } else if (state.addEducationState == ViewState.failure) {
+          if (state.updateExperienceState == ViewState.success) {
+            // Navigator.pushNamed(
+            //   context,
+            //   AppRoutes.successScreen2,
+            //   arguments: {
+            //     'message': 'Uploaded Successfully',
+            //     'onTap': () {
+            //       // Navigator.pop(context);
+            //       // Navigator.pop(context);
+            //       Navigator.pushNamed(
+            //         context,
+            //         AppRoutes.jobSeekerNavBarScreen,
+            //       );
+            //     },
+            //   },
+            // );
+          } else if (state.updateExperienceState == ViewState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
@@ -78,7 +77,6 @@ class UpdateCandidateExperiencePage extends HookWidget {
                   hintText: "Employer Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -87,7 +85,6 @@ class UpdateCandidateExperiencePage extends HookWidget {
                   hintText: "Role",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 Row(
@@ -99,9 +96,9 @@ class UpdateCandidateExperiencePage extends HookWidget {
                         hintText: "Start Year",
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
                       ),
                     ),
+                    SizedBox(height: 25.v),
                     Expanded(
                       child: CustomTextFormField(
                         title: 'End year',
@@ -109,7 +106,6 @@ class UpdateCandidateExperiencePage extends HookWidget {
                         hintText: "End year",
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
                       ),
                     ),
                   ],
@@ -124,9 +120,9 @@ class UpdateCandidateExperiencePage extends HookWidget {
                         hintText: "Phone",
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
                       ),
                     ),
+                    SizedBox(height: 25.v),
                     Expanded(
                       child: CustomTextFormField(
                         title: 'I.G Handle',
@@ -134,7 +130,6 @@ class UpdateCandidateExperiencePage extends HookWidget {
                         hintText: "I.G Handle",
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
                       ),
                     ),
                   ],
@@ -147,30 +142,23 @@ class UpdateCandidateExperiencePage extends HookWidget {
                   hintText: "Start Description",
                   textInputType: TextInputType.name,
                   hintStyle: theme.textTheme.titleSmall!,
-                  validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 50.v),
                 BlocBuilder<CandidatesBloc, CandidatesState>(
                   builder: (context, state) {
                     return CustomElevatedButton(
-                      isBusy: state.addEducationState == ViewState.loading,
+                      isBusy: state.updateExperienceState == ViewState.loading,
                       onPressed: () {
                         if (formKey.currentState?.validate() ?? false) {
                           context.read<CandidatesBloc>().add(
-                                CandidatesEvent.addExperience(
-                                  AddExperienceEntity(
-                                    title: '',
-                                    role: roleCeontroller.text,
-                                    yearEnd: endYearController.text,
-                                    startYear: startYearController.text,
-                                    serviceDescription: '',
-                                    userId: UserService()
-                                            .authData
-                                            ?.user
-                                            .id
-                                            .toString() ??
-                                        '',
-                                  ),
+                                CandidatesEvent.updateExperience(
+                                  UpdateExperienceEntity(
+                                      title: employerNameController.text,
+                                      role: roleCeontroller.text,
+                                      endYear: endYearController.text,
+                                      startYear: startYearController.text,
+                                      description: descriptionController.text,
+                                      identity: entity.identity),
                                 ),
                               );
                         }

@@ -1,29 +1,35 @@
 import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 
 class AddExperienceModel extends AddExperienceEntity {
-   AddExperienceModel({
+  AddExperienceModel({
     required super.userId,
-    required super.title,
+    required super.companyName,
     required super.role,
-    required super.serviceDescription,
+    required super.responsibilities,
     required super.startYear,
     required super.yearEnd,
+    required super.identity,
+    required super.title,
   });
   factory AddExperienceModel.fromEntity(AddExperienceEntity entity) =>
       AddExperienceModel(
-        serviceDescription: entity.serviceDescription,
+        title: entity.title,
+        identity: entity.identity,
+        responsibilities: entity.responsibilities,
         userId: entity.userId,
         role: entity.role,
-        title: entity.title,
+        companyName: entity.companyName,
         startYear: entity.startYear,
         yearEnd: entity.yearEnd,
       );
   factory AddExperienceModel.fromJson(Map<String, dynamic> json) {
     return AddExperienceModel(
-      userId: json['user_id'],
       title: json['title'],
+      identity: json['identity'],
+      userId: json['user_id'],
+      companyName: json['company_name'],
       role: json['role'],
-      serviceDescription: json['service_description'],
+      responsibilities: json['responsibilities'],
       startYear: json['start_year'],
       yearEnd: json['year_end'],
     );
@@ -32,9 +38,9 @@ class AddExperienceModel extends AddExperienceEntity {
   Map<String, dynamic> toJson() {
     return {
       'user_id': userId,
-      'title': title,
+      'company_name': companyName,
       'role': role,
-      'service_description': serviceDescription,
+      'responsibilities': responsibilities,
       'start_year': startYear,
       'year_end': yearEnd,
     };

@@ -7,24 +7,25 @@ class AddEducationModel extends AddEducationEntity {
     required super.courseName,
     required super.description,
     required super.year,
+    required super.identity,
   });
   factory AddEducationModel.fromEntity(AddEducationEntity entity) =>
       AddEducationModel(
-        courseName: entity.courseName,
-        userId: entity.userId,
-        title: entity.title,
-        description: entity.description,
-        year: entity.year,
-      );
+          courseName: entity.courseName,
+          userId: entity.userId,
+          title: entity.title,
+          description: entity.description,
+          year: entity.year,
+          identity: entity.identity);
 
   factory AddEducationModel.fromJson(Map<String, dynamic> json) {
     return AddEducationModel(
-      userId: json['user_id'],
-      title: json['title'],
-      courseName: json['role'],
-      description: json['description'],
-      year: json['year'],
-    );
+        userId: json['user_id'],
+        title: json['title'],
+        courseName: json['role'],
+        description: json['description'],
+        year: json['year'],
+        identity: json['identity']);
   }
 
   Map<String, dynamic> toJson() {
@@ -34,6 +35,7 @@ class AddEducationModel extends AddEducationEntity {
       'course_name': courseName,
       'description': description,
       'year': year,
+      'identity': identity
     };
   }
 }

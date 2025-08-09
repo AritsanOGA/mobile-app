@@ -45,7 +45,7 @@ class AddCandidateEducationPage extends HookWidget {
               context,
               AppRoutes.successScreen2,
               arguments: {
-                'message': 'Uploaded Successfully',
+                'message': 'Added Successfully',
                 'onTap': () {
                   // Navigator.pop(context);
                   // Navigator.pop(context);

@@ -15,6 +15,7 @@ import 'package:artisan_oga/features/candidate/data/model/get_education_model.da
 import 'package:artisan_oga/features/candidate/data/model/get_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/update_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/upload_id_card_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
@@ -28,6 +29,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_education_ent
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 
 abstract class CandidateRemoteSource {
@@ -47,7 +49,7 @@ abstract class CandidateRemoteSource {
   Future<bool> deleteEducation(String identity);
   Future<List<GetEducationEntity>> getEducation();
   Future<bool> addExperience(AddExperienceEntity entity);
-  Future<bool> updateExperience(AddExperienceEntity entity);
+  Future<bool> updateExperience(UpdateExperienceEntity entity);
   Future<bool> deleteExperience(String identity);
   Future<List<GetExperienceEntity>> getExperience();
 
@@ -259,10 +261,10 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<bool> updateExperience(AddExperienceEntity entity) async {
+  Future<bool> updateExperience(UpdateExperienceEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.updateExperience,
-        body: AddExperienceModel.fromEntity(entity).toJson(),
+        body: UpdateExperienceModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;

@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_education_ent
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_experience_usecase.dart';
@@ -270,7 +271,7 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   FutureOr<void> _onUpdateExperience(
       _UpdateExperience event, Emitter<CandidatesState> emit) async {
     emit(state.copyWith(updateExperienceState: ViewState.loading));
-    final result = await _getExperienceUsecase(NoParams());
+    final result = await _updateExperienceUsecase(event.param);
     result.fold(
         (error) =>
             emit(state.copyWith(updateExperienceState: ViewState.failure)),

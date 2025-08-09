@@ -1,9 +1,7 @@
 import 'package:artisan_oga/core/routes/app_routes.dart';
-import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
-import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
@@ -35,7 +33,7 @@ class UpdateCandidateEducationPage extends HookWidget {
       ),
       body: BlocListener<CandidatesBloc, CandidatesState>(
         listener: (context, state) {
-          if (state.addEducationState == ViewState.success) {
+          if (state.updateEducationState == ViewState.success) {
             Navigator.pushNamed(
               context,
               AppRoutes.successScreen2,
@@ -49,7 +47,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                 },
               },
             );
-          } else if (state.addEducationState == ViewState.failure) {
+          } else if (state.updateEducationState == ViewState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
@@ -68,7 +66,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "School Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
+                 // validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -77,7 +75,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Course Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
+                //  validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -86,7 +84,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Year",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.number,
-                  validator: FormValidation.stringValidation,
+               //   validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -95,13 +93,13 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Certificate Obtained Eg Hnd, Bsc, Diploma etc",
                   textInputType: TextInputType.name,
                   hintStyle: theme.textTheme.titleSmall!,
-                  validator: FormValidation.stringValidation,
+               //   validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 50.v),
                 BlocBuilder<CandidatesBloc, CandidatesState>(
                   builder: (context, state) {
                     return CustomElevatedButton(
-                      isBusy: state.addEducationState == ViewState.loading,
+                      isBusy: state.updateEducationState == ViewState.loading,
                       onPressed: () {
                         if (formKey.currentState?.validate() ?? false) {
                           context.read<CandidatesBloc>().add(
@@ -109,12 +107,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                                   AddEducationEntity(
                                       courseName: courseNamCeontroller.text,
                                       title: certificateController.text,
-                                      userId: UserService()
-                                              .authData
-                                              ?.user
-                                              .id
-                                              .toString() ??
-                                          '',
+                                      identity: entity.identity,
                                       description: courseNamCeontroller.text,
                                       year: yearController.text),
                                 ),

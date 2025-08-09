@@ -23,6 +23,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_experience_en
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/add_candidate_education_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/add_experience_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/add_work_photo_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/search_details_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/success_screen2.dart';
@@ -143,6 +144,8 @@ class AppRoutes {
       '/message_page_chatting_one_screen';
 
   static const String settingsPage = '/settings_page';
+
+  static const String addWorkPhotoPage = '/add_work_photo_page';
 
   static const String jSPasswordChangeScreen = '/jS-password-change-screen';
 
@@ -382,6 +385,10 @@ class AppRoutes {
       case signupOptionsPageScreen:
         return AppPageRouteBuilder(
           navigateTo: const SignupOptionsPageScreen(),
+        );
+      case addWorkPhotoPage:
+        return AppPageRouteBuilder(
+          navigateTo: const AddWorkPhotoPage(),
         );
       case addEducationPage:
         return AppPageRouteBuilder(

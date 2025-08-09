@@ -2,28 +2,36 @@ import 'package:equatable/equatable.dart';
 
 class AddExperienceEntity extends Equatable {
   const AddExperienceEntity({
-    required this.userId,
-    required this.title,
-    required this.role,
-    required this.serviceDescription,
-    required this.startYear,
-    required this.yearEnd,
+    this.userId,
+    this.companyName,
+    this.role,
+    this.igHandle,
+    this.responsibilities,
+    this.startYear,
+    this.title,
+    this.yearEnd,
+    this.identity,
   });
 
-  final String userId;
-  final String title;
-  final String role;
-  final String serviceDescription;
-  final String startYear;
-  final String yearEnd;
+  final String? userId;
+  final String? companyName;
+  final String? role;
+  final String? title;
+  final String? igHandle;
+  final String? responsibilities;
+  final String? startYear;
+  final String? yearEnd;
+  final String? identity;
 
   @override
   List<Object?> get props => [
         userId,
-        title,
+        companyName,
         role,
-        serviceDescription,
+        title,
+        responsibilities,
         startYear,
         yearEnd,
+        identity
       ];
 }

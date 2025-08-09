@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -65,11 +66,27 @@ class CandidateExperiencePage extends HookWidget {
                                   state.getExperienceEntity[index].title ?? '',
                                   style: CustomTextStyles.titleSmallSemiBold,
                                 ),
-                                Text(
-                                  '${state.getExperienceEntity[index].startYear} - ${state.getExperienceEntity[index].yearEnd}',
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      AppRoutes.updateExperienceScreen,
+                                      arguments:
+                                          state.getExperienceEntity[index],
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    ImageConstant.edit,
+                                    width: 22,
+                                    height: 22,
+                                  ),
+                                )
                               ],
+                            ),
+                            SizedBox(height: 5.v),
+                            Text(
+                              '${state.getExperienceEntity[index].startYear} - ${state.getExperienceEntity[index].yearEnd}',
+                              style: CustomTextStyles.titleSmallSemiBold,
                             ),
                             SizedBox(height: 5.v),
                             Row(
@@ -86,12 +103,13 @@ class CandidateExperiencePage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('My handle'),
+                                Text('Verified'),
                                 GestureDetector(
                                     onTap: () {
                                       deleteExperience(
                                           context,
-                                          state.getExperienceEntity[index].id
+                                          state.getExperienceEntity[index]
+                                              .identity
                                               .toString());
                                     },
                                     child: Image.asset(ImageConstant.delete))
@@ -122,71 +140,104 @@ class CandidateExperiencePage extends HookWidget {
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
-        return AlertDialog(
-            titlePadding: EdgeInsets.zero,
-            actionsPadding: EdgeInsets.zero,
-            contentPadding: EdgeInsets.zero,
-            // backgroundColor: Colors.transparent,
-            content: Container(
-              height: 200,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                children: [
-                  Text(
-                    'Are you sure you want to remove this Education?',
-                    style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
-                  ),
-                  SizedBox(height: 20.v),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          context.read<CandidatesBloc>().add(
-                                CandidatesEvent.deleteExperience(
-                                  identity,
+        return BlocListener<CandidatesBloc, CandidatesState>(
+          listener: (context, state) {
+            if (state.deleteExperienceState == ViewState.success) {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.successScreen2,
+                arguments: {
+                  'message': 'Deleted Successfully',
+                  'onTap': () {
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.jobSeekerNavBarScreen,
+                    );
+                  },
+                },
+              );
+            } else if (state.deleteExperienceState == ViewState.failure) {
+              ToastUtils.showRedToast(state.errorMessage ?? '');
+            }
+          },
+          child: AlertDialog(
+              titlePadding: EdgeInsets.zero,
+              actionsPadding: EdgeInsets.zero,
+              contentPadding: EdgeInsets.zero,
+              content: Container(
+                height: 200,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20.v),
+                    Text(
+                      textAlign: TextAlign.center,
+                      'Are you sure you want to remove this experience?',
+                      style:
+                          CustomTextStyles.titleMediumPrimaryContainerMedium_1,
+                    ),
+                    SizedBox(height: 40.v),
+                    Row(
+                      children: [
+                        BlocBuilder<CandidatesBloc, CandidatesState>(
+                          builder: (context, state) {
+                            return GestureDetector(
+                              onTap: () {
+                                context.read<CandidatesBloc>().add(
+                                      CandidatesEvent.deleteExperience(
+                                        identity,
+                                      ),
+                                    );
+                              },
+                              child: Container(
+                                height: 40,
+                                width: 130,
+                                decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: state.deleteExperienceState ==
+                                          ViewState.loading
+                                      ? CircularProgressIndicator(
+                                          color: AppColors.kwhite,
+                                        )
+                                      : Text(
+                                          'Yes',
+                                          style: TextStyle(
+                                              color: AppColors.kwhite),
+                                        ),
                                 ),
-                              );
-                        },
-                        child: Container(
-                          height: 40,
-                          width: 130,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Center(
-                            child: Text(
-                              'Yes',
-                              style: TextStyle(color: AppColors.kwhite),
+                              ),
+                            );
+                          },
+                        ),
+                        SizedBox(width: 14.v),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 130,
+                            decoration: BoxDecoration(
+                                color: Colors.grey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Center(
+                              child: Text(
+                                'No',
+                                style: TextStyle(color: AppColors.kblack),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 14.v),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          height: 40,
-                          width: 130,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Center(
-                            child: Text(
-                              'No',
-                              style: TextStyle(color: AppColors.kblack),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ));
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              )),
+        );
       },
     );
   }

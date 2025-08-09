@@ -10,7 +10,7 @@ class CandidatesEvent with _$CandidatesEvent {
       _RejectCandidate;
   const factory CandidatesEvent.addExperience(AddExperienceEntity param) =
       _AddExperience;
-  const factory CandidatesEvent.updateExperience(AddExperienceEntity param) =
+  const factory CandidatesEvent.updateExperience(UpdateExperienceEntity param) =
       _UpdateExperience;
   const factory CandidatesEvent.getExperience() = _GetExperience;
   const factory CandidatesEvent.deleteExperience(String identity) =
