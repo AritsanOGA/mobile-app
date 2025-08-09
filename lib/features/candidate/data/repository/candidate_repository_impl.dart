@@ -17,6 +17,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
@@ -187,8 +188,8 @@ class CandidateRepositoryImpl implements CandidateRepository {
   }
 
   @override
-  Future<Either<Failure, List<GetExperienceEntity>>> getWorkPhoto() {
-    return candidateRemoteSource.getWorkPhoto().makeRequest();
+  Future<Either<Failure, List<GetWorkPhotoEntity>>> getWorkPhotos() {
+    return candidateRemoteSource.getWorkPhotos().makeRequest();
   }
 
   @override

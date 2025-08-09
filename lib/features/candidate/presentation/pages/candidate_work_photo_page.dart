@@ -24,88 +24,104 @@ class CandidateWorkPhotoPage extends HookWidget {
         titleStatus: false,
         title: '',
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20.v),
-            CustomOutlinedButton(
-                height: 46.v,
-                width: 200.h,
-                text: "Add work photo",
-                margin: EdgeInsets.only(left: 22.h),
-                onPressed: () {
-                  Navigator.pushNamed(context, AppRoutes.addWorkPhotoPage);
-                },
-                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-                buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
-                  fontSize: 19.fSize,
-                  color: AppColors.kwhite,
-                  fontWeight: FontWeight.w700,
-                )),
-            SizedBox(height: 20.v),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: BlocBuilder<CandidatesBloc, CandidatesState>(
+        bloc: context.read<CandidatesBloc>()
+          ..add(CandidatesEvent.getWorkPhotos()),
+        builder: (context, state) {
+          if (state.getExperienceState == ViewState.loading) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (state.getExperienceState == ViewState.failure) {
+            return Center(child: Text('Error: '));
+          }
+
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 22.h, vertical: 12.v),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Images',
-                  style: CustomTextStyles.titleSmallSemiBold,
+                SizedBox(height: 20.v),
+                CustomOutlinedButton(
+                    height: 46.v,
+                    width: 200.h,
+                    text: "Add work photo",
+                    // margin: EdgeInsets.only(left: 22.h),
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.addWorkPhotoPage);
+                    },
+                    buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+                    buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                      fontSize: 19.fSize,
+                      color: AppColors.kwhite,
+                      fontWeight: FontWeight.w700,
+                    )),
+                SizedBox(height: 20.v),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Images',
+                      style: CustomTextStyles.titleSmallSemiBold,
+                    ),
+                    Text(
+                      'Actions',
+                      style: CustomTextStyles.titleSmallSemiBold,
+                    ),
+                  ],
                 ),
-                Text(
-                  'Actions',
-                  style: CustomTextStyles.titleSmallSemiBold,
-                ),
+                SizedBox(height: 20.v),
+                ...List.generate(state.getWorkPhotoEntity.length, (index) {
+                  return Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(state.getWorkPhotoEntity[index].name),
+                          // CachedNetworkImage(
+                          //         imageUrl: widget.image,
+                          //         fit: BoxFit.cover,
+                          //         progressIndicatorBuilder:
+                          //             (context, url, downloadProgress) =>
+                          //                 const Center(),
+                          //         imageBuilder: (context, imageProvider) => Container(
+                          //           width: 40,
+                          //           height: 40,
+                          //           decoration: BoxDecoration(
+                          //             shape: BoxShape.circle,
+                          //             image: DecorationImage(
+                          //               image: imageProvider,
+                          //               fit: BoxFit.cover,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //         errorWidget: (context, url, error) =>
+                          //             const Icon(Icons.error),
+                          //       )
+
+                          GestureDetector(
+                              onTap: () {
+                                deleteWorkPhoto(
+                                    context,
+                                    state.getWorkPhotoEntity[index].identity
+                                        .toString());
+                              },
+                              child: Image.asset(ImageConstant.delete))
+                        ],
+                      ),
+                      SizedBox(height: 14.v),
+                      Divider(
+                        height: 2,
+                        color: theme.primaryColor,
+                      ),
+                      SizedBox(height: 20.v),
+                    ],
+                  );
+                })
               ],
             ),
-            SizedBox(height: 20.v),
-            ...List.generate(3, (index) {
-              return Column(
-                children: [
-                  Row(
-                    children: [
-                      // CachedNetworkImage(
-                      //         imageUrl: widget.image,
-                      //         fit: BoxFit.cover,
-                      //         progressIndicatorBuilder:
-                      //             (context, url, downloadProgress) =>
-                      //                 const Center(),
-                      //         imageBuilder: (context, imageProvider) => Container(
-                      //           width: 40,
-                      //           height: 40,
-                      //           decoration: BoxDecoration(
-                      //             shape: BoxShape.circle,
-                      //             image: DecorationImage(
-                      //               image: imageProvider,
-                      //               fit: BoxFit.cover,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //         errorWidget: (context, url, error) =>
-                      //             const Icon(Icons.error),
-                      //       )
-
-                      GestureDetector(
-                          onTap: () {
-                            // deleteWorkPhoto(
-                            //     context,
-                            //     state.getExperienceEntity[index].identity
-                            //         .toString());
-                          },
-                          child: Image.asset(ImageConstant.delete))
-                    ],
-                  ),
-                  SizedBox(height: 14.v),
-                  Divider(
-                    height: 2,
-                    color: theme.primaryColor,
-                  ),
-                  SizedBox(height: 20.v),
-                ],
-              );
-            })
-          ],
-        ),
+          );
+        },
       ),
     );
   }
@@ -117,7 +133,7 @@ class CandidateWorkPhotoPage extends HookWidget {
       builder: (BuildContext context) {
         return BlocListener<CandidatesBloc, CandidatesState>(
           listener: (context, state) {
-            if (state.deleteEducationeState == ViewState.success) {
+            if (state.deleteWorkPhotoState == ViewState.success) {
               Navigator.pushNamed(
                 context,
                 AppRoutes.successScreen2,
@@ -131,7 +147,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                   },
                 },
               );
-            } else if (state.deleteEducationeState == ViewState.failure) {
+            } else if (state.deleteWorkPhotoState == ViewState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }
           },
@@ -149,7 +165,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                     SizedBox(height: 20.v),
                     Text(
                       textAlign: TextAlign.center,
-                      'Are you sure you want to remove this education?',
+                      'Are you sure you want to remove this photo?',
                       style:
                           CustomTextStyles.titleMediumPrimaryContainerMedium_1,
                     ),
@@ -161,7 +177,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                             return GestureDetector(
                               onTap: () {
                                 context.read<CandidatesBloc>().add(
-                                      CandidatesEvent.deleteEducation(
+                                      CandidatesEvent.deleteWorkPhoto(
                                         identity,
                                       ),
                                     );
@@ -173,7 +189,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                                     color: Colors.red,
                                     borderRadius: BorderRadius.circular(5)),
                                 child: Center(
-                                  child: state.deleteEducationeState ==
+                                  child: state.deleteWorkPhotoState ==
                                           ViewState.loading
                                       ? CircularProgressIndicator(
                                           color: AppColors.kwhite,

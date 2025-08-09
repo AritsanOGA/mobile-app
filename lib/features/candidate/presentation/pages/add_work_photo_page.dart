@@ -66,10 +66,9 @@ class AddWorkPhotoPage extends HookWidget {
                         children: [
                           InkWell(
                               onTap: () {
-                                // context
-                                //     .read<SettingBloc>()
-                                //     .add(const SettingEvent
-                                //         .selectResume());
+                                context.read<CandidatesBloc>().add(
+                                    CandidatesEvent.selectWorkPhotos(
+                                        state.photos));
                               },
                               child: Container(
                                   height: 30,
@@ -90,10 +89,10 @@ class AddWorkPhotoPage extends HookWidget {
                           SizedBox(width: 5.v),
                           Padding(
                             padding: EdgeInsets.only(top: 5.v, right: 5.v),
-                            child: Text('',
-                                // state.resume == null
-                                //     ? "No file chosen"
-                                //     : "File selected",
+                            child: Text(
+                                state.photos.isEmpty
+                                    ? "No file chosen"
+                                    : "Files selected",
                                 style: theme.textTheme.labelLarge),
                           )
                         ])),
@@ -107,21 +106,9 @@ class AddWorkPhotoPage extends HookWidget {
                   width: 150,
                   isBusy: state.uploadWorkPhotoState == ViewState.loading,
                   onPressed: () {
-                    // context.read<CandidatesBloc>().add(
-                    //       CandidatesEvent.addEducation(
-                    //         AddEducationEntity(
-                    //             courseName: courseNamCeontroller.text,
-                    //             title: certificateController.text,
-                    //             userId: UserService()
-                    //                     .authData
-                    //                     ?.user
-                    //                     .id
-                    //                     .toString() ??
-                    //                 '',
-                    //             description: courseNamCeontroller.text,
-                    //             year: yearController.text),
-                    //       ),
-                    //     );
+                    context.read<CandidatesBloc>().add(
+                          CandidatesEvent.uploadWorkPhoto(state.photos),
+                        );
                   },
                   text: "Submit",
                 ),

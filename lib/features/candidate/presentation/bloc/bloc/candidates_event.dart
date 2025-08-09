@@ -18,6 +18,13 @@ class CandidatesEvent with _$CandidatesEvent {
 
   const factory CandidatesEvent.addEducation(AddEducationEntity param) =
       _AddEducation;
+  const factory CandidatesEvent.getWorkPhotos() = _GetWorkPhotos;
+  const factory CandidatesEvent.deleteWorkPhoto(String identity) =
+      _DeleteWorkPhoto;
+  const factory CandidatesEvent.selectWorkPhotos(List<File> photos) =
+      _SelectWorkPhotos;
+  const factory CandidatesEvent.uploadWorkPhoto(List<File> photos) =
+      _UploadWorkPhoto;
   const factory CandidatesEvent.updateEducation(AddEducationEntity param) =
       _UpdateEducation;
   const factory CandidatesEvent.getEducation() = _GetEducation;

@@ -8,6 +8,7 @@ class CandidateSearchEntity extends Equatable {
     required this.city,
     required this.availability,
     required this.profileImage,
+    required this.categoryName
   });
 
   final int id;
@@ -16,6 +17,7 @@ class CandidateSearchEntity extends Equatable {
   final String city;
   final String availability;
   final String profileImage;
+  final String categoryName;
 
   @override
   List<Object?> get props => [
@@ -25,5 +27,6 @@ class CandidateSearchEntity extends Equatable {
         city,
         availability,
         profileImage,
+        categoryName
       ];
 }

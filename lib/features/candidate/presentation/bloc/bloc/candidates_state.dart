@@ -16,6 +16,7 @@ class CandidatesState with _$CandidatesState {
       @Default(ViewState.idle) ViewState getEducationeState,
       @Default(ViewState.idle) ViewState uploadWorkIdState,
       @Default(ViewState.idle) ViewState uploadWorkPhotoState,
+      @Default(ViewState.idle) ViewState getWorkPhotoState,
       @Default(ViewState.idle) ViewState deleteWorkPhotoState,
       @Default(RejectCandidateState.idle)
       RejectCandidateState rejectCandidateState,
@@ -31,10 +32,12 @@ class CandidatesState with _$CandidatesState {
       String? jobId,
       String? skillRating,
       int? skillIndex,
+      @Default([]) List<File> photos,
       @Default([]) List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       @Default([]) List<CandidateSkillEntity> candidateSkillList,
       @Default([]) List<GetExperienceEntity> getExperienceEntity,
       @Default([]) List<GetEducationEntity> getEducationEntity,
+      @Default([]) List<GetWorkPhotoEntity> getWorkPhotoEntity,
       @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
       List<String> dropdownValues,
       @Default('1') String dropdownValue,

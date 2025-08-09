@@ -13,6 +13,7 @@ import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicant
 import 'package:artisan_oga/features/candidate/data/model/get_awards_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_education_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_experience_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/get_work_photo_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/update_experience_model.dart';
@@ -27,6 +28,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
@@ -57,7 +59,7 @@ abstract class CandidateRemoteSource {
   Future<bool> updateAwards(AddAwardEntity entity);
   Future<bool> deleteAwards(String identity);
   Future<List<GetAwardEntity>> getAwards();
-  Future<List<GetExperienceEntity>> getWorkPhoto();
+  Future<List<GetWorkPhotoEntity>> getWorkPhotos();
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -307,15 +309,15 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<List<GetExperienceEntity>> getWorkPhoto() async {
+  Future<List<GetWorkPhotoEntity>> getWorkPhotos() async {
     final result = await api.get(
-      url: AppApiEndpoint.getExperience,
+      url: AppApiEndpoint.getWorkPhoto,
       headers: userService.authorizationHeader,
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data'] as List)
         .map(
-          (e) => GetExperienceModel.fromJson(
+          (e) => GetWorkPhotoModel.fromJson(
             e as Map<String, dynamic>,
           ),
         )

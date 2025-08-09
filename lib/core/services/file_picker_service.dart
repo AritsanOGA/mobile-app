@@ -38,4 +38,38 @@ class FilePickerService {
       return null;
     }
   }
+
+  // Future<List<String>?> pickImages() async {
+  // try {
+  //   final paths = await ImagePicker().(source: ImageSource.gallery,);
+  //   return paths?.path;
+  // } on PlatformException catch (e) {
+  //   log.e('Unsupported operation$e');
+  //   return null;
+  // } catch (e) {
+  //   log.e(e.toString());
+  //   return null;
+  // }
+  // }
+
+  Future<List<String>> pickImages({
+    int? imageQuality, // 0-100 (optional compression on some platforms)
+    double? maxWidth,
+    double? maxHeight,
+  }) async {
+    try {
+      final List<XFile> files = await ImagePicker().pickMultiImage(
+        imageQuality: imageQuality,
+        maxWidth: maxWidth,
+        maxHeight: maxHeight,
+      );
+      return files.map((f) => f.path).toList(growable: false);
+    } on PlatformException catch (e) {
+      log.e('Unsupported operation: $e');
+      return [];
+    } catch (e) {
+      log.e(e.toString());
+      return [];
+    }
+  }
 }

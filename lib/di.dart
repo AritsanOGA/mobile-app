@@ -34,13 +34,16 @@ import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/delete_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/get_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_photo_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
@@ -283,5 +286,12 @@ Future<void> init() async {
     ..registerLazySingleton<GetJobSeekerNotificationUsecase>(
         () => GetJobSeekerNotificationUsecase(locator()))
     ..registerLazySingleton<CandidateSearchUsecase>(
-        () => CandidateSearchUsecase(locator()));
+        () => CandidateSearchUsecase(locator()))
+
+     ..registerLazySingleton<DeleteWorkPhotoUsecase>(
+        () => DeleteWorkPhotoUsecase(locator()))
+    ..registerLazySingleton<UploadWorkPhotoUsecase>(
+        () => UploadWorkPhotoUsecase(locator()))
+    ..registerLazySingleton<GetWorkPhotoUsecase>(
+        () => GetWorkPhotoUsecase(locator()));
 }

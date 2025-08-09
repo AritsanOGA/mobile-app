@@ -90,7 +90,7 @@ class CandidateSearchScreen extends HookWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  Text('Find New Relevant Jobs',
+                  Text('Find New Talents',
                       style: theme.textTheme.bodyMedium?.copyWith(
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
@@ -206,7 +206,11 @@ class CandidateSearchScreen extends HookWidget {
                                                       SizedBox(
                                                         width: 10.v,
                                                       ),
-                                                      Text('Fashion',
+                                                      Text(
+                                                          state
+                                                              .candidateSearch[
+                                                                  index]
+                                                              .categoryName,
                                                           style: theme.textTheme
                                                               .bodyMedium
                                                               ?.copyWith(

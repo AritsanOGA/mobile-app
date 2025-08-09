@@ -11,6 +11,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
@@ -37,7 +38,7 @@ abstract class CandidateRepository {
   Future<Either<Failure, bool>> addAwards(AddAwardEntity entity);
   Future<Either<Failure, bool>> deleteAwards(String identity);
   Future<Either<Failure, List<GetAwardEntity>>> getAwards();
-  Future<Either<Failure, List<GetExperienceEntity>>> getWorkPhoto();
+  Future<Either<Failure, List<GetWorkPhotoEntity>>> getWorkPhotos();
   Future<Either<Failure, bool>> updateAwards(AddAwardEntity entity);
   Future<Either<Failure, bool>> deleteWorkPhoto(String identity);
   Future<Either<Failure, bool>> uploadIdCard(UploadIDCardEntity entity);

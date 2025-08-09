@@ -25,6 +25,10 @@ mixin _$CandidatesEvent {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -47,6 +51,10 @@ mixin _$CandidatesEvent {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -69,6 +77,10 @@ mixin _$CandidatesEvent {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -92,6 +104,10 @@ mixin _$CandidatesEvent {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -113,6 +129,10 @@ mixin _$CandidatesEvent {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -134,6 +154,10 @@ mixin _$CandidatesEvent {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -239,6 +263,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -264,6 +292,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -289,6 +321,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -318,6 +354,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -342,6 +382,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -366,6 +410,10 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -467,6 +515,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -492,6 +544,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -517,6 +573,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -546,6 +606,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -570,6 +634,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -594,6 +662,10 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -694,6 +766,10 @@ class _$AddExperienceImpl implements _AddExperience {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -719,6 +795,10 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -744,6 +824,10 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -773,6 +857,10 @@ class _$AddExperienceImpl implements _AddExperience {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -797,6 +885,10 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -821,6 +913,10 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -922,6 +1018,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -947,6 +1047,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -972,6 +1076,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -1001,6 +1109,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -1025,6 +1137,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -1049,6 +1165,10 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -1123,6 +1243,10 @@ class _$GetExperienceImpl implements _GetExperience {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -1148,6 +1272,10 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -1173,6 +1301,10 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -1202,6 +1334,10 @@ class _$GetExperienceImpl implements _GetExperience {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -1226,6 +1362,10 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -1250,6 +1390,10 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -1346,6 +1490,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -1371,6 +1519,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -1396,6 +1548,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -1425,6 +1581,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -1449,6 +1609,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -1473,6 +1637,10 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -1573,6 +1741,10 @@ class _$AddEducationImpl implements _AddEducation {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -1598,6 +1770,10 @@ class _$AddEducationImpl implements _AddEducation {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -1623,6 +1799,10 @@ class _$AddEducationImpl implements _AddEducation {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -1652,6 +1832,10 @@ class _$AddEducationImpl implements _AddEducation {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -1676,6 +1860,10 @@ class _$AddEducationImpl implements _AddEducation {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -1700,6 +1888,10 @@ class _$AddEducationImpl implements _AddEducation {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -1726,6 +1918,993 @@ abstract class _AddEducation implements CandidatesEvent {
   AddEducationEntity get param;
   @JsonKey(ignore: true)
   _$$AddEducationImplCopyWith<_$AddEducationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetWorkPhotosImplCopyWith<$Res> {
+  factory _$$GetWorkPhotosImplCopyWith(
+          _$GetWorkPhotosImpl value, $Res Function(_$GetWorkPhotosImpl) then) =
+      __$$GetWorkPhotosImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetWorkPhotosImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$GetWorkPhotosImpl>
+    implements _$$GetWorkPhotosImplCopyWith<$Res> {
+  __$$GetWorkPhotosImplCopyWithImpl(
+      _$GetWorkPhotosImpl _value, $Res Function(_$GetWorkPhotosImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetWorkPhotosImpl implements _GetWorkPhotos {
+  const _$GetWorkPhotosImpl();
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.getWorkPhotos()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetWorkPhotosImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return getWorkPhotos();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return getWorkPhotos?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (getWorkPhotos != null) {
+      return getWorkPhotos();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return getWorkPhotos(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return getWorkPhotos?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (getWorkPhotos != null) {
+      return getWorkPhotos(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetWorkPhotos implements CandidatesEvent {
+  const factory _GetWorkPhotos() = _$GetWorkPhotosImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteWorkPhotoImplCopyWith<$Res> {
+  factory _$$DeleteWorkPhotoImplCopyWith(_$DeleteWorkPhotoImpl value,
+          $Res Function(_$DeleteWorkPhotoImpl) then) =
+      __$$DeleteWorkPhotoImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String identity});
+}
+
+/// @nodoc
+class __$$DeleteWorkPhotoImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$DeleteWorkPhotoImpl>
+    implements _$$DeleteWorkPhotoImplCopyWith<$Res> {
+  __$$DeleteWorkPhotoImplCopyWithImpl(
+      _$DeleteWorkPhotoImpl _value, $Res Function(_$DeleteWorkPhotoImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? identity = null,
+  }) {
+    return _then(_$DeleteWorkPhotoImpl(
+      null == identity
+          ? _value.identity
+          : identity // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
+  const _$DeleteWorkPhotoImpl(this.identity);
+
+  @override
+  final String identity;
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.deleteWorkPhoto(identity: $identity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteWorkPhotoImpl &&
+            (identical(other.identity, identity) ||
+                other.identity == identity));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, identity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteWorkPhotoImplCopyWith<_$DeleteWorkPhotoImpl> get copyWith =>
+      __$$DeleteWorkPhotoImplCopyWithImpl<_$DeleteWorkPhotoImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return deleteWorkPhoto(identity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return deleteWorkPhoto?.call(identity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (deleteWorkPhoto != null) {
+      return deleteWorkPhoto(identity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return deleteWorkPhoto(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return deleteWorkPhoto?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (deleteWorkPhoto != null) {
+      return deleteWorkPhoto(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteWorkPhoto implements CandidatesEvent {
+  const factory _DeleteWorkPhoto(final String identity) = _$DeleteWorkPhotoImpl;
+
+  String get identity;
+  @JsonKey(ignore: true)
+  _$$DeleteWorkPhotoImplCopyWith<_$DeleteWorkPhotoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectWorkPhotosImplCopyWith<$Res> {
+  factory _$$SelectWorkPhotosImplCopyWith(_$SelectWorkPhotosImpl value,
+          $Res Function(_$SelectWorkPhotosImpl) then) =
+      __$$SelectWorkPhotosImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<File> photos});
+}
+
+/// @nodoc
+class __$$SelectWorkPhotosImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$SelectWorkPhotosImpl>
+    implements _$$SelectWorkPhotosImplCopyWith<$Res> {
+  __$$SelectWorkPhotosImplCopyWithImpl(_$SelectWorkPhotosImpl _value,
+      $Res Function(_$SelectWorkPhotosImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? photos = null,
+  }) {
+    return _then(_$SelectWorkPhotosImpl(
+      null == photos
+          ? _value._photos
+          : photos // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
+  const _$SelectWorkPhotosImpl(final List<File> photos) : _photos = photos;
+
+  final List<File> _photos;
+  @override
+  List<File> get photos {
+    if (_photos is EqualUnmodifiableListView) return _photos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_photos);
+  }
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.selectWorkPhotos(photos: $photos)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectWorkPhotosImpl &&
+            const DeepCollectionEquality().equals(other._photos, _photos));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_photos));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectWorkPhotosImplCopyWith<_$SelectWorkPhotosImpl> get copyWith =>
+      __$$SelectWorkPhotosImplCopyWithImpl<_$SelectWorkPhotosImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return selectWorkPhotos(photos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return selectWorkPhotos?.call(photos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (selectWorkPhotos != null) {
+      return selectWorkPhotos(photos);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return selectWorkPhotos(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return selectWorkPhotos?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (selectWorkPhotos != null) {
+      return selectWorkPhotos(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectWorkPhotos implements CandidatesEvent {
+  const factory _SelectWorkPhotos(final List<File> photos) =
+      _$SelectWorkPhotosImpl;
+
+  List<File> get photos;
+  @JsonKey(ignore: true)
+  _$$SelectWorkPhotosImplCopyWith<_$SelectWorkPhotosImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadWorkPhotoImplCopyWith<$Res> {
+  factory _$$UploadWorkPhotoImplCopyWith(_$UploadWorkPhotoImpl value,
+          $Res Function(_$UploadWorkPhotoImpl) then) =
+      __$$UploadWorkPhotoImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<File> photos});
+}
+
+/// @nodoc
+class __$$UploadWorkPhotoImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$UploadWorkPhotoImpl>
+    implements _$$UploadWorkPhotoImplCopyWith<$Res> {
+  __$$UploadWorkPhotoImplCopyWithImpl(
+      _$UploadWorkPhotoImpl _value, $Res Function(_$UploadWorkPhotoImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? photos = null,
+  }) {
+    return _then(_$UploadWorkPhotoImpl(
+      null == photos
+          ? _value._photos
+          : photos // ignore: cast_nullable_to_non_nullable
+              as List<File>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
+  const _$UploadWorkPhotoImpl(final List<File> photos) : _photos = photos;
+
+  final List<File> _photos;
+  @override
+  List<File> get photos {
+    if (_photos is EqualUnmodifiableListView) return _photos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_photos);
+  }
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.uploadWorkPhoto(photos: $photos)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadWorkPhotoImpl &&
+            const DeepCollectionEquality().equals(other._photos, _photos));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_photos));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadWorkPhotoImplCopyWith<_$UploadWorkPhotoImpl> get copyWith =>
+      __$$UploadWorkPhotoImplCopyWithImpl<_$UploadWorkPhotoImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return uploadWorkPhoto(photos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return uploadWorkPhoto?.call(photos);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (uploadWorkPhoto != null) {
+      return uploadWorkPhoto(photos);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return uploadWorkPhoto(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return uploadWorkPhoto?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (uploadWorkPhoto != null) {
+      return uploadWorkPhoto(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UploadWorkPhoto implements CandidatesEvent {
+  const factory _UploadWorkPhoto(final List<File> photos) =
+      _$UploadWorkPhotoImpl;
+
+  List<File> get photos;
+  @JsonKey(ignore: true)
+  _$$UploadWorkPhotoImplCopyWith<_$UploadWorkPhotoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1801,6 +2980,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -1826,6 +3009,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -1851,6 +3038,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -1880,6 +3071,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -1904,6 +3099,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -1928,6 +3127,10 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -2002,6 +3205,10 @@ class _$GetEducationImpl implements _GetEducation {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -2027,6 +3234,10 @@ class _$GetEducationImpl implements _GetEducation {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -2052,6 +3263,10 @@ class _$GetEducationImpl implements _GetEducation {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -2081,6 +3296,10 @@ class _$GetEducationImpl implements _GetEducation {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -2105,6 +3324,10 @@ class _$GetEducationImpl implements _GetEducation {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -2129,6 +3352,10 @@ class _$GetEducationImpl implements _GetEducation {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -2225,6 +3452,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -2250,6 +3481,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -2275,6 +3510,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -2304,6 +3543,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -2328,6 +3571,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -2352,6 +3599,10 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -2457,6 +3708,10 @@ class _$RejectCandidateWithoutInterviewImpl
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -2482,6 +3737,10 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -2507,6 +3766,10 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -2536,6 +3799,10 @@ class _$RejectCandidateWithoutInterviewImpl
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -2560,6 +3827,10 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -2584,6 +3855,10 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -2688,6 +3963,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -2713,6 +3992,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -2738,6 +4021,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -2767,6 +4054,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -2791,6 +4082,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -2815,6 +4110,10 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -2917,6 +4216,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -2942,6 +4245,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -2967,6 +4274,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -2996,6 +4307,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -3020,6 +4335,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -3044,6 +4363,10 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -3153,6 +4476,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -3178,6 +4505,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -3203,6 +4534,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -3232,6 +4567,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -3256,6 +4595,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -3280,6 +4623,10 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -3382,6 +4729,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -3407,6 +4758,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -3432,6 +4787,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -3461,6 +4820,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -3485,6 +4848,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -3509,6 +4876,10 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -3619,6 +4990,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     required TResult Function() getExperience,
     required TResult Function(String identity) deleteExperience,
     required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(AddEducationEntity param) updateEducation,
     required TResult Function() getEducation,
     required TResult Function(String identity) deleteEducation,
@@ -3644,6 +5019,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult? Function()? getExperience,
     TResult? Function(String identity)? deleteExperience,
     TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(AddEducationEntity param)? updateEducation,
     TResult? Function()? getEducation,
     TResult? Function(String identity)? deleteEducation,
@@ -3669,6 +5048,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult Function()? getExperience,
     TResult Function(String identity)? deleteExperience,
     TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(AddEducationEntity param)? updateEducation,
     TResult Function()? getEducation,
     TResult Function(String identity)? deleteEducation,
@@ -3698,6 +5081,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     required TResult Function(_GetExperience value) getExperience,
     required TResult Function(_DeleteExperience value) deleteExperience,
     required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UpdateEducation value) updateEducation,
     required TResult Function(_GetEducation value) getEducation,
     required TResult Function(_DeleteEducation value) deleteEducation,
@@ -3722,6 +5109,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult? Function(_GetExperience value)? getExperience,
     TResult? Function(_DeleteExperience value)? deleteExperience,
     TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UpdateEducation value)? updateEducation,
     TResult? Function(_GetEducation value)? getEducation,
     TResult? Function(_DeleteEducation value)? deleteEducation,
@@ -3746,6 +5137,10 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult Function(_GetExperience value)? getExperience,
     TResult Function(_DeleteExperience value)? deleteExperience,
     TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UpdateEducation value)? updateEducation,
     TResult Function(_GetEducation value)? getEducation,
     TResult Function(_DeleteEducation value)? deleteEducation,
@@ -3792,6 +5187,7 @@ mixin _$CandidatesState {
   ViewState get getEducationeState => throw _privateConstructorUsedError;
   ViewState get uploadWorkIdState => throw _privateConstructorUsedError;
   ViewState get uploadWorkPhotoState => throw _privateConstructorUsedError;
+  ViewState get getWorkPhotoState => throw _privateConstructorUsedError;
   ViewState get deleteWorkPhotoState => throw _privateConstructorUsedError;
   RejectCandidateState get rejectCandidateState =>
       throw _privateConstructorUsedError;
@@ -3808,6 +5204,7 @@ mixin _$CandidatesState {
   String? get jobId => throw _privateConstructorUsedError;
   String? get skillRating => throw _privateConstructorUsedError;
   int? get skillIndex => throw _privateConstructorUsedError;
+  List<File> get photos => throw _privateConstructorUsedError;
   List<GetAssignedApplicantsEntity> get getAssignedCandidateList =>
       throw _privateConstructorUsedError;
   List<CandidateSkillEntity> get candidateSkillList =>
@@ -3815,6 +5212,8 @@ mixin _$CandidatesState {
   List<GetExperienceEntity> get getExperienceEntity =>
       throw _privateConstructorUsedError;
   List<GetEducationEntity> get getEducationEntity =>
+      throw _privateConstructorUsedError;
+  List<GetWorkPhotoEntity> get getWorkPhotoEntity =>
       throw _privateConstructorUsedError;
   List<String> get dropdownValues => throw _privateConstructorUsedError;
   String get dropdownValue => throw _privateConstructorUsedError;
@@ -3836,6 +5235,7 @@ mixin _$CandidatesState {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -3847,10 +5247,12 @@ mixin _$CandidatesState {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -3873,6 +5275,7 @@ mixin _$CandidatesState {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -3884,10 +5287,12 @@ mixin _$CandidatesState {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -3910,6 +5315,7 @@ mixin _$CandidatesState {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -3921,10 +5327,12 @@ mixin _$CandidatesState {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -3974,6 +5382,7 @@ abstract class $CandidatesStateCopyWith<$Res> {
       ViewState getEducationeState,
       ViewState uploadWorkIdState,
       ViewState uploadWorkPhotoState,
+      ViewState getWorkPhotoState,
       ViewState deleteWorkPhotoState,
       RejectCandidateState rejectCandidateState,
       GetAssignedCandidateState getAssignedCandidateState,
@@ -3984,10 +5393,12 @@ abstract class $CandidatesStateCopyWith<$Res> {
       String? jobId,
       String? skillRating,
       int? skillIndex,
+      List<File> photos,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       List<CandidateSkillEntity> candidateSkillList,
       List<GetExperienceEntity> getExperienceEntity,
       List<GetEducationEntity> getEducationEntity,
+      List<GetWorkPhotoEntity> getWorkPhotoEntity,
       List<String> dropdownValues,
       String dropdownValue,
       List<String> dropdownList,
@@ -4019,6 +5430,7 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? getEducationeState = null,
     Object? uploadWorkIdState = null,
     Object? uploadWorkPhotoState = null,
+    Object? getWorkPhotoState = null,
     Object? deleteWorkPhotoState = null,
     Object? rejectCandidateState = null,
     Object? getAssignedCandidateState = null,
@@ -4029,10 +5441,12 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? jobId = freezed,
     Object? skillRating = freezed,
     Object? skillIndex = freezed,
+    Object? photos = null,
     Object? getAssignedCandidateList = null,
     Object? candidateSkillList = null,
     Object? getExperienceEntity = null,
     Object? getEducationEntity = null,
+    Object? getWorkPhotoEntity = null,
     Object? dropdownValues = null,
     Object? dropdownValue = null,
     Object? dropdownList = null,
@@ -4087,6 +5501,10 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.uploadWorkPhotoState
           : uploadWorkPhotoState // ignore: cast_nullable_to_non_nullable
               as ViewState,
+      getWorkPhotoState: null == getWorkPhotoState
+          ? _value.getWorkPhotoState
+          : getWorkPhotoState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       deleteWorkPhotoState: null == deleteWorkPhotoState
           ? _value.deleteWorkPhotoState
           : deleteWorkPhotoState // ignore: cast_nullable_to_non_nullable
@@ -4128,6 +5546,10 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.skillIndex
           : skillIndex // ignore: cast_nullable_to_non_nullable
               as int?,
+      photos: null == photos
+          ? _value.photos
+          : photos // ignore: cast_nullable_to_non_nullable
+              as List<File>,
       getAssignedCandidateList: null == getAssignedCandidateList
           ? _value.getAssignedCandidateList
           : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
@@ -4144,6 +5566,10 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.getEducationEntity
           : getEducationEntity // ignore: cast_nullable_to_non_nullable
               as List<GetEducationEntity>,
+      getWorkPhotoEntity: null == getWorkPhotoEntity
+          ? _value.getWorkPhotoEntity
+          : getWorkPhotoEntity // ignore: cast_nullable_to_non_nullable
+              as List<GetWorkPhotoEntity>,
       dropdownValues: null == dropdownValues
           ? _value.dropdownValues
           : dropdownValues // ignore: cast_nullable_to_non_nullable
@@ -4185,6 +5611,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       ViewState getEducationeState,
       ViewState uploadWorkIdState,
       ViewState uploadWorkPhotoState,
+      ViewState getWorkPhotoState,
       ViewState deleteWorkPhotoState,
       RejectCandidateState rejectCandidateState,
       GetAssignedCandidateState getAssignedCandidateState,
@@ -4195,10 +5622,12 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? jobId,
       String? skillRating,
       int? skillIndex,
+      List<File> photos,
       List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       List<CandidateSkillEntity> candidateSkillList,
       List<GetExperienceEntity> getExperienceEntity,
       List<GetEducationEntity> getEducationEntity,
+      List<GetWorkPhotoEntity> getWorkPhotoEntity,
       List<String> dropdownValues,
       String dropdownValue,
       List<String> dropdownList,
@@ -4228,6 +5657,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getEducationeState = null,
     Object? uploadWorkIdState = null,
     Object? uploadWorkPhotoState = null,
+    Object? getWorkPhotoState = null,
     Object? deleteWorkPhotoState = null,
     Object? rejectCandidateState = null,
     Object? getAssignedCandidateState = null,
@@ -4238,10 +5668,12 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? jobId = freezed,
     Object? skillRating = freezed,
     Object? skillIndex = freezed,
+    Object? photos = null,
     Object? getAssignedCandidateList = null,
     Object? candidateSkillList = null,
     Object? getExperienceEntity = null,
     Object? getEducationEntity = null,
+    Object? getWorkPhotoEntity = null,
     Object? dropdownValues = null,
     Object? dropdownValue = null,
     Object? dropdownList = null,
@@ -4296,6 +5728,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.uploadWorkPhotoState
           : uploadWorkPhotoState // ignore: cast_nullable_to_non_nullable
               as ViewState,
+      getWorkPhotoState: null == getWorkPhotoState
+          ? _value.getWorkPhotoState
+          : getWorkPhotoState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       deleteWorkPhotoState: null == deleteWorkPhotoState
           ? _value.deleteWorkPhotoState
           : deleteWorkPhotoState // ignore: cast_nullable_to_non_nullable
@@ -4337,6 +5773,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.skillIndex
           : skillIndex // ignore: cast_nullable_to_non_nullable
               as int?,
+      photos: null == photos
+          ? _value._photos
+          : photos // ignore: cast_nullable_to_non_nullable
+              as List<File>,
       getAssignedCandidateList: null == getAssignedCandidateList
           ? _value._getAssignedCandidateList
           : getAssignedCandidateList // ignore: cast_nullable_to_non_nullable
@@ -4353,6 +5793,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._getEducationEntity
           : getEducationEntity // ignore: cast_nullable_to_non_nullable
               as List<GetEducationEntity>,
+      getWorkPhotoEntity: null == getWorkPhotoEntity
+          ? _value._getWorkPhotoEntity
+          : getWorkPhotoEntity // ignore: cast_nullable_to_non_nullable
+              as List<GetWorkPhotoEntity>,
       dropdownValues: null == dropdownValues
           ? _value._dropdownValues
           : dropdownValues // ignore: cast_nullable_to_non_nullable
@@ -4389,6 +5833,7 @@ class _$InitialImpl implements _Initial {
       this.getEducationeState = ViewState.idle,
       this.uploadWorkIdState = ViewState.idle,
       this.uploadWorkPhotoState = ViewState.idle,
+      this.getWorkPhotoState = ViewState.idle,
       this.deleteWorkPhotoState = ViewState.idle,
       this.rejectCandidateState = RejectCandidateState.idle,
       this.getAssignedCandidateState = GetAssignedCandidateState.idle,
@@ -4400,11 +5845,13 @@ class _$InitialImpl implements _Initial {
       this.jobId,
       this.skillRating,
       this.skillIndex,
+      final List<File> photos = const [],
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList =
           const [],
       final List<CandidateSkillEntity> candidateSkillList = const [],
       final List<GetExperienceEntity> getExperienceEntity = const [],
       final List<GetEducationEntity> getEducationEntity = const [],
+      final List<GetWorkPhotoEntity> getWorkPhotoEntity = const [],
       final List<String> dropdownValues = const [
         '1',
         '2',
@@ -4431,10 +5878,12 @@ class _$InitialImpl implements _Initial {
         '10'
       ],
       this.candidateProfileEntity})
-      : _getAssignedCandidateList = getAssignedCandidateList,
+      : _photos = photos,
+        _getAssignedCandidateList = getAssignedCandidateList,
         _candidateSkillList = candidateSkillList,
         _getExperienceEntity = getExperienceEntity,
         _getEducationEntity = getEducationEntity,
+        _getWorkPhotoEntity = getWorkPhotoEntity,
         _dropdownValues = dropdownValues,
         _dropdownList = dropdownList;
 
@@ -4475,6 +5924,9 @@ class _$InitialImpl implements _Initial {
   final ViewState uploadWorkPhotoState;
   @override
   @JsonKey()
+  final ViewState getWorkPhotoState;
+  @override
+  @JsonKey()
   final ViewState deleteWorkPhotoState;
   @override
   @JsonKey()
@@ -4500,6 +5952,15 @@ class _$InitialImpl implements _Initial {
   final String? skillRating;
   @override
   final int? skillIndex;
+  final List<File> _photos;
+  @override
+  @JsonKey()
+  List<File> get photos {
+    if (_photos is EqualUnmodifiableListView) return _photos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_photos);
+  }
+
   final List<GetAssignedApplicantsEntity> _getAssignedCandidateList;
   @override
   @JsonKey()
@@ -4540,6 +6001,16 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_getEducationEntity);
   }
 
+  final List<GetWorkPhotoEntity> _getWorkPhotoEntity;
+  @override
+  @JsonKey()
+  List<GetWorkPhotoEntity> get getWorkPhotoEntity {
+    if (_getWorkPhotoEntity is EqualUnmodifiableListView)
+      return _getWorkPhotoEntity;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_getWorkPhotoEntity);
+  }
+
   final List<String> _dropdownValues;
   @override
   @JsonKey()
@@ -4566,7 +6037,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, skillRating: $skillRating, skillIndex: $skillIndex, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, dropdownValues: $dropdownValues, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, getWorkPhotoState: $getWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, skillRating: $skillRating, skillIndex: $skillIndex, photos: $photos, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, getWorkPhotoEntity: $getWorkPhotoEntity, dropdownValues: $dropdownValues, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -4598,14 +6069,15 @@ class _$InitialImpl implements _Initial {
                 other.uploadWorkIdState == uploadWorkIdState) &&
             (identical(other.uploadWorkPhotoState, uploadWorkPhotoState) ||
                 other.uploadWorkPhotoState == uploadWorkPhotoState) &&
+            (identical(other.getWorkPhotoState, getWorkPhotoState) ||
+                other.getWorkPhotoState == getWorkPhotoState) &&
             (identical(other.deleteWorkPhotoState, deleteWorkPhotoState) ||
                 other.deleteWorkPhotoState == deleteWorkPhotoState) &&
             (identical(other.rejectCandidateState, rejectCandidateState) ||
                 other.rejectCandidateState == rejectCandidateState) &&
             (identical(other.getAssignedCandidateState, getAssignedCandidateState) ||
                 other.getAssignedCandidateState == getAssignedCandidateState) &&
-            (identical(
-                    other.getCandidateProfileState, getCandidateProfileState) ||
+            (identical(other.getCandidateProfileState, getCandidateProfileState) ||
                 other.getCandidateProfileState == getCandidateProfileState) &&
             (identical(other.getCandidateSkillState, getCandidateSkillState) ||
                 other.getCandidateSkillState == getCandidateSkillState) &&
@@ -4619,6 +6091,7 @@ class _$InitialImpl implements _Initial {
                 other.skillRating == skillRating) &&
             (identical(other.skillIndex, skillIndex) ||
                 other.skillIndex == skillIndex) &&
+            const DeepCollectionEquality().equals(other._photos, _photos) &&
             const DeepCollectionEquality().equals(
                 other._getAssignedCandidateList, _getAssignedCandidateList) &&
             const DeepCollectionEquality()
@@ -4627,6 +6100,8 @@ class _$InitialImpl implements _Initial {
                 .equals(other._getExperienceEntity, _getExperienceEntity) &&
             const DeepCollectionEquality()
                 .equals(other._getEducationEntity, _getEducationEntity) &&
+            const DeepCollectionEquality()
+                .equals(other._getWorkPhotoEntity, _getWorkPhotoEntity) &&
             const DeepCollectionEquality()
                 .equals(other._dropdownValues, _dropdownValues) &&
             (identical(other.dropdownValue, dropdownValue) ||
@@ -4652,6 +6127,7 @@ class _$InitialImpl implements _Initial {
         getEducationeState,
         uploadWorkIdState,
         uploadWorkPhotoState,
+        getWorkPhotoState,
         deleteWorkPhotoState,
         rejectCandidateState,
         getAssignedCandidateState,
@@ -4662,10 +6138,12 @@ class _$InitialImpl implements _Initial {
         jobId,
         skillRating,
         skillIndex,
+        const DeepCollectionEquality().hash(_photos),
         const DeepCollectionEquality().hash(_getAssignedCandidateList),
         const DeepCollectionEquality().hash(_candidateSkillList),
         const DeepCollectionEquality().hash(_getExperienceEntity),
         const DeepCollectionEquality().hash(_getEducationEntity),
+        const DeepCollectionEquality().hash(_getWorkPhotoEntity),
         const DeepCollectionEquality().hash(_dropdownValues),
         dropdownValue,
         const DeepCollectionEquality().hash(_dropdownList),
@@ -4694,6 +6172,7 @@ class _$InitialImpl implements _Initial {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -4705,10 +6184,12 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -4728,6 +6209,7 @@ class _$InitialImpl implements _Initial {
         getEducationeState,
         uploadWorkIdState,
         uploadWorkPhotoState,
+        getWorkPhotoState,
         deleteWorkPhotoState,
         rejectCandidateState,
         getAssignedCandidateState,
@@ -4738,10 +6220,12 @@ class _$InitialImpl implements _Initial {
         jobId,
         skillRating,
         skillIndex,
+        photos,
         getAssignedCandidateList,
         candidateSkillList,
         getExperienceEntity,
         getEducationEntity,
+        getWorkPhotoEntity,
         dropdownValues,
         dropdownValue,
         dropdownList,
@@ -4764,6 +6248,7 @@ class _$InitialImpl implements _Initial {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -4775,10 +6260,12 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -4798,6 +6285,7 @@ class _$InitialImpl implements _Initial {
         getEducationeState,
         uploadWorkIdState,
         uploadWorkPhotoState,
+        getWorkPhotoState,
         deleteWorkPhotoState,
         rejectCandidateState,
         getAssignedCandidateState,
@@ -4808,10 +6296,12 @@ class _$InitialImpl implements _Initial {
         jobId,
         skillRating,
         skillIndex,
+        photos,
         getAssignedCandidateList,
         candidateSkillList,
         getExperienceEntity,
         getEducationEntity,
+        getWorkPhotoEntity,
         dropdownValues,
         dropdownValue,
         dropdownList,
@@ -4834,6 +6324,7 @@ class _$InitialImpl implements _Initial {
             ViewState getEducationeState,
             ViewState uploadWorkIdState,
             ViewState uploadWorkPhotoState,
+            ViewState getWorkPhotoState,
             ViewState deleteWorkPhotoState,
             RejectCandidateState rejectCandidateState,
             GetAssignedCandidateState getAssignedCandidateState,
@@ -4845,10 +6336,12 @@ class _$InitialImpl implements _Initial {
             String? jobId,
             String? skillRating,
             int? skillIndex,
+            List<File> photos,
             List<GetAssignedApplicantsEntity> getAssignedCandidateList,
             List<CandidateSkillEntity> candidateSkillList,
             List<GetExperienceEntity> getExperienceEntity,
             List<GetEducationEntity> getEducationEntity,
+            List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<String> dropdownValues,
             String dropdownValue,
             List<String> dropdownList,
@@ -4870,6 +6363,7 @@ class _$InitialImpl implements _Initial {
           getEducationeState,
           uploadWorkIdState,
           uploadWorkPhotoState,
+          getWorkPhotoState,
           deleteWorkPhotoState,
           rejectCandidateState,
           getAssignedCandidateState,
@@ -4880,10 +6374,12 @@ class _$InitialImpl implements _Initial {
           jobId,
           skillRating,
           skillIndex,
+          photos,
           getAssignedCandidateList,
           candidateSkillList,
           getExperienceEntity,
           getEducationEntity,
+          getWorkPhotoEntity,
           dropdownValues,
           dropdownValue,
           dropdownList,
@@ -4935,6 +6431,7 @@ abstract class _Initial implements CandidatesState {
       final ViewState getEducationeState,
       final ViewState uploadWorkIdState,
       final ViewState uploadWorkPhotoState,
+      final ViewState getWorkPhotoState,
       final ViewState deleteWorkPhotoState,
       final RejectCandidateState rejectCandidateState,
       final GetAssignedCandidateState getAssignedCandidateState,
@@ -4946,10 +6443,12 @@ abstract class _Initial implements CandidatesState {
       final String? jobId,
       final String? skillRating,
       final int? skillIndex,
+      final List<File> photos,
       final List<GetAssignedApplicantsEntity> getAssignedCandidateList,
       final List<CandidateSkillEntity> candidateSkillList,
       final List<GetExperienceEntity> getExperienceEntity,
       final List<GetEducationEntity> getEducationEntity,
+      final List<GetWorkPhotoEntity> getWorkPhotoEntity,
       final List<String> dropdownValues,
       final String dropdownValue,
       final List<String> dropdownList,
@@ -4980,6 +6479,8 @@ abstract class _Initial implements CandidatesState {
   @override
   ViewState get uploadWorkPhotoState;
   @override
+  ViewState get getWorkPhotoState;
+  @override
   ViewState get deleteWorkPhotoState;
   @override
   RejectCandidateState get rejectCandidateState;
@@ -5000,6 +6501,8 @@ abstract class _Initial implements CandidatesState {
   @override
   int? get skillIndex;
   @override
+  List<File> get photos;
+  @override
   List<GetAssignedApplicantsEntity> get getAssignedCandidateList;
   @override
   List<CandidateSkillEntity> get candidateSkillList;
@@ -5007,6 +6510,8 @@ abstract class _Initial implements CandidatesState {
   List<GetExperienceEntity> get getExperienceEntity;
   @override
   List<GetEducationEntity> get getEducationEntity;
+  @override
+  List<GetWorkPhotoEntity> get getWorkPhotoEntity;
   @override
   List<String> get dropdownValues;
   @override

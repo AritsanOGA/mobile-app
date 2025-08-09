@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:artisan_oga/core/services/file_picker_service.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
@@ -11,6 +13,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_e
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
@@ -21,13 +24,17 @@ import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/delete_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/get_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_photo_usecase.dart';
+import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -36,23 +43,27 @@ part 'candidates_event.dart';
 part 'candidates_state.dart';
 
 class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
-  CandidatesBloc({
-    AcceptCandidateUseCase? acceptCandidateUsecase,
-    RejectCandidateUseCase? rejectCandidateUseCase,
-    GetAssignedCandidateUseCase? getAssignedCandidateUseCase,
-    CandidateProfileUseCase? candidateProfileUseCase,
-    RejectCandidateWithoutIntervieUseCase?
-        rejectCandidateWithoutIntervieUseCase,
-    CandidateSkillUseCase? candidateSkillUseCase,
-    AddEducationUsecase? addEducationUsecase,
-    AddExperienceUsecase? addExperienceUsecase,
-    UpdateEducationUsecase? updateEducationUsecase,
-    UpdateExperienceUsecase? updateExperienceUsecase,
-    GetEducationUsecase? getEducationUsecase,
-    GetExperienceUsecase? getExperienceUsecase,
-    DeleteEducationUsecase? deleteEducationUsecase,
-    DeleteExperienceUsecase? deleteExperienceUsecase,
-  })  : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
+  CandidatesBloc(
+      {AcceptCandidateUseCase? acceptCandidateUsecase,
+      RejectCandidateUseCase? rejectCandidateUseCase,
+      GetAssignedCandidateUseCase? getAssignedCandidateUseCase,
+      CandidateProfileUseCase? candidateProfileUseCase,
+      RejectCandidateWithoutIntervieUseCase?
+          rejectCandidateWithoutIntervieUseCase,
+      FilePickerService? filePickerService,
+      CandidateSkillUseCase? candidateSkillUseCase,
+      AddEducationUsecase? addEducationUsecase,
+      AddExperienceUsecase? addExperienceUsecase,
+      UpdateEducationUsecase? updateEducationUsecase,
+      UpdateExperienceUsecase? updateExperienceUsecase,
+      GetEducationUsecase? getEducationUsecase,
+      GetExperienceUsecase? getExperienceUsecase,
+      DeleteEducationUsecase? deleteEducationUsecase,
+      DeleteExperienceUsecase? deleteExperienceUsecase,
+      UploadWorkPhotoUsecase? uploadWorkPhotoUsecase,
+      DeleteWorkPhotoUsecase? deleteWorkPhotoUsecase,
+      GetWorkPhotoUsecase? getWorkPhotoUsecase})
+      : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
         _getAssignedCandidateUseCase = getAssignedCandidateUseCase ?? locator(),
         _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
@@ -67,6 +78,10 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
         _updateExperienceUsecase = updateExperienceUsecase ?? locator(),
         _getEducationUsecase = getEducationUsecase ?? locator(),
         _getExperienceUsecase = getExperienceUsecase ?? locator(),
+        _deleteWorkPhotoUsecase = deleteWorkPhotoUsecase ?? locator(),
+        _uploadWorkPhotoUsecase = uploadWorkPhotoUsecase ?? locator(),
+        _getWorkPhotoUsecase = getWorkPhotoUsecase ?? locator(),
+        _filePickerService = filePickerService ?? locator(),
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
@@ -81,6 +96,10 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_GetEducation>(_onGetEducation);
     on<_UpdateExperience>(_onUpdateExperience);
     on<_UpdateEducation>(_onUpdateEducation);
+    on<_GetWorkPhotos>(_onGetWorkPhotos);
+    on<_UploadWorkPhoto>(_onUploadWorkPhoto);
+    on<_DeleteWorkPhoto>(_onDeleteWorkPhoto);
+    on<_SelectWorkPhotos>(_onSelectWorkPhotos);
     on<_DeleteExperience>(_onDeleteExperience);
     on<_DeleteEducation>(_onDeleteEducation);
     on<_InitializeSkills>(_onInitializeSkills);
@@ -93,6 +112,7 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final CandidateProfileUseCase _candidateProfileUseCase;
   final RejectCandidateWithoutIntervieUseCase
       _rejectCandidateWithoutIntervieUseCase;
+  final FilePickerService _filePickerService;
   final AddEducationUsecase _addEducationUsecase;
   final AddExperienceUsecase _addExperienceUsecase;
   final UpdateEducationUsecase _updateEducationUsecase;
@@ -101,6 +121,9 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final GetExperienceUsecase _getExperienceUsecase;
   final DeleteEducationUsecase _deleteEducationUsecase;
   final DeleteExperienceUsecase _deleteExperienceUsecase;
+  final UploadWorkPhotoUsecase _uploadWorkPhotoUsecase;
+  final DeleteWorkPhotoUsecase _deleteWorkPhotoUsecase;
+  final GetWorkPhotoUsecase _getWorkPhotoUsecase;
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -268,6 +291,46 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     emit(state.copyWith(addEducationState: ViewState.idle));
   }
 
+  FutureOr<void> _onGetWorkPhotos(
+      _GetWorkPhotos event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(getWorkPhotoState: ViewState.loading));
+    final result = await _getWorkPhotoUsecase(NoParams());
+    result.fold(
+        (error) => emit(state.copyWith(getWorkPhotoState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+            getWorkPhotoState: ViewState.success, getWorkPhotoEntity: result)));
+
+    emit(state.copyWith(getWorkPhotoState: ViewState.idle));
+  }
+
+  FutureOr<void> _onDeleteWorkPhoto(
+      _DeleteWorkPhoto event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(deleteWorkPhotoState: ViewState.loading));
+    final result = await _deleteWorkPhotoUsecase(event.identity);
+    result.fold(
+        (error) =>
+            emit(state.copyWith(deleteWorkPhotoState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              deleteWorkPhotoState: ViewState.success,
+            )));
+
+    emit(state.copyWith(deleteWorkPhotoState: ViewState.idle));
+  }
+
+  FutureOr<void> _onUploadWorkPhoto(
+      _UploadWorkPhoto event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(uploadWorkPhotoState: ViewState.loading));
+    final result = await _uploadWorkPhotoUsecase(event.photos);
+    result.fold(
+        (error) =>
+            emit(state.copyWith(uploadWorkPhotoState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              uploadWorkPhotoState: ViewState.success,
+            )));
+
+    emit(state.copyWith(uploadWorkPhotoState: ViewState.idle));
+  }
+
   FutureOr<void> _onUpdateExperience(
       _UpdateExperience event, Emitter<CandidatesState> emit) async {
     emit(state.copyWith(updateExperienceState: ViewState.loading));
@@ -350,5 +413,38 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
             )));
 
     emit(state.copyWith(getEducationeState: ViewState.idle));
+  }
+
+  FutureOr<void> _onSelectWorkPhotos(
+      _SelectWorkPhotos event, Emitter<CandidatesState> emit) async {
+    // This will return List<String>
+    final images = await _filePickerService.pickImages();
+
+    if (images.isEmpty) return;
+
+    // Filter allowed extensions
+    final allowedExtensions = ['.png', '.jpg', '.jpeg'];
+
+    final validImages = images.where((path) {
+      final ext = path.toLowerCase();
+      return allowedExtensions.any((allowed) => ext.endsWith(allowed));
+    }).toList();
+
+    if (validImages.isEmpty) {
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('Invalid file types selected.');
+      return;
+    }
+
+    // Convert to File objects
+    final files = validImages.map((path) => File(path)).toList();
+
+    // Assuming your state has a field like `workPhotos: List<File>`
+    emit(state.copyWith(photos: files));
+
+    // Debug print
+    for (var f in files) {
+      print('Selected file: ${f.path}');
+    }
   }
 }
