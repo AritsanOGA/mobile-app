@@ -2,21 +2,23 @@ import 'package:equatable/equatable.dart';
 
 class GetExperienceEntity extends Equatable {
   const GetExperienceEntity({
-    required this.id,
-    required this.userId,
-    required this.title,
-    required this.purpose,
-    required this.description,
-    required this.startYear,
-    required this.yearEnd,
+    this.id,
+    this.userId,
+    this.title,
+    this.purpose,
+    this.description,
+    this.startYear,
+    this.yearEnd,
+    this.identity,
   });
-  final String id;
-  final String userId;
-  final String title;
-  final String purpose;
-  final String description;
-  final String startYear;
-  final String yearEnd;
+  final int? id;
+  final String? userId;
+  final String? title;
+  final String? purpose;
+  final String? description;
+  final int? startYear;
+  final String? yearEnd;
+  final String? identity;
 
   @override
   List<Object?> get props => [
@@ -26,5 +28,6 @@ class GetExperienceEntity extends Equatable {
         description,
         startYear,
         yearEnd,
+        identity,
       ];
 }

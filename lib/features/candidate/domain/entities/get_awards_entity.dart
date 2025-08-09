@@ -1,14 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-class GetEducationEntity extends Equatable {
-  const GetEducationEntity({
+class GetAwardEntity extends Equatable {
+  const GetAwardEntity({
     required this.id,
     required this.userId,
     required this.title,
     required this.purpose,
     required this.description,
     required this.year,
-    required this.identity,
   });
   final int id;
   final String userId;
@@ -16,7 +15,6 @@ class GetEducationEntity extends Equatable {
   final String purpose;
   final String description;
   final String year;
-  final String identity;
 
   @override
   List<Object?> get props => [
@@ -26,6 +24,5 @@ class GetEducationEntity extends Equatable {
         purpose,
         description,
         year,
-        identity
       ];
 }

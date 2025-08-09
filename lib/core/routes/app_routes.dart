@@ -18,9 +18,16 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_forgot_password_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/add_candidate_education_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/add_experience_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidates_profile_accept_page_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/search_details_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/success_screen2.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/update_Education_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/update_experience_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -70,6 +77,7 @@ class AppRoutes {
 
   static const String loginOptionsPageScreen = '/login_options_page_screen';
   static const String successScreen = '/success_page_screen';
+  static const String successScreen2 = '/success_page_screen2';
   static const String candidateSearchScreen = '/candidate_search_screen';
   static const String invoiceSuccessScreen = '/invoice_success_screen';
   static const String successfulApplicationScreen =
@@ -204,6 +212,10 @@ class AppRoutes {
   static const String updateProfilePageOneScreen =
       '/update_profile_page_one_screen';
 
+  static const String updateEducationScreen = '/update_education_screen';
+
+  static const String updateExperienceScreen = '/update_experience_screen';
+
   static const String updateProfilePageThreeScreen =
       '/update_profile_page_three_screen';
   static const String jobSearch = '/job-search_screen';
@@ -222,6 +234,8 @@ class AppRoutes {
   static const String jsProfilePage = '/js_profile_page';
   static const String jsNotificationPage = '/js_notification_page';
   static const String hireMeSuccessPage = '/hire_me_success_page';
+  static const String addEducationPage = '/add_education_page';
+  static const String addExperiencePage = '/add_experience_page';
   static const String notificationJobDetailsPage =
       '/notification_job_detail_page';
   static const String employerDashboard = '/employer-dashboard';
@@ -312,6 +326,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: InvoiceHistoryScreen(),
         );
+      case addExperiencePage:
+        return AppPageRouteBuilder(
+          navigateTo: AddCandidateExperiencePage(),
+        );
       case paymentHistoryScreen:
         return AppPageRouteBuilder(
           navigateTo: PaymentHistoryScreen(),
@@ -332,6 +350,10 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: HireMeSuccessPage(),
         );
+      case hireMeSuccessPage:
+        return AppPageRouteBuilder(
+          navigateTo: HireMeSuccessPage(),
+        );
       case notificationJobDetailsPage:
         return AppPageRouteBuilder(
           navigateTo: NotificationJobDetailsScreen(
@@ -347,9 +369,23 @@ class AppRoutes {
             onTap: args['onTap'] as VoidCallback,
           ),
         );
+
+      case successScreen2:
+        final args = settings.arguments as Map<String, dynamic>;
+
+        return AppPageRouteBuilder(
+          navigateTo: SuccessScreen2(
+            message: args['message'] as String,
+            onTap: args['onTap'] as VoidCallback,
+          ),
+        );
       case signupOptionsPageScreen:
         return AppPageRouteBuilder(
           navigateTo: const SignupOptionsPageScreen(),
+        );
+      case addEducationPage:
+        return AppPageRouteBuilder(
+          navigateTo: const AddCandidateEducationPage(),
         );
       case loginOptionsPageScreen:
         return AppPageRouteBuilder(
@@ -378,6 +414,20 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: JobSearchDetailsScreen(
             jobId: settings.arguments as String,
+          ),
+        );
+      case updateEducationScreen:
+        final data = settings.arguments as GetEducationEntity;
+        return AppPageRouteBuilder(
+          navigateTo: UpdateCandidateEducationPage(
+            entity: data,
+          ),
+        );
+      case updateExperienceScreen:
+        final data = settings.arguments as GetExperienceEntity;
+        return AppPageRouteBuilder(
+          navigateTo: UpdateCandidateExperiencePage(
+            entity: data,
           ),
         );
       case searchDetailsScreen:

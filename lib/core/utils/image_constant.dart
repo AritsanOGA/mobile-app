@@ -189,6 +189,8 @@ class ImageConstant {
 
   static String imgRectangle190 = '$imagePath/img_rectangle_190.png';
 
+  static String delete = '$imagePath/delete.png';
+  static String edit = '$imagePath/edit.png';
   // Apply for Jobs One images
   static String imgBitcoinIconsVerifyFilled =
       '$imagePath/img_bitcoin_icons_verify_filled.svg';

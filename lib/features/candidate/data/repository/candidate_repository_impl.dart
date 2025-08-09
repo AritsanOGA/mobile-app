@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:artisan_oga/core/app_constants/app_strings.dart';
 import 'package:artisan_oga/core/error/exceptions.dart';
@@ -7,11 +8,13 @@ import 'package:artisan_oga/core/extensions/extension.dart';
 import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote_source.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
@@ -149,25 +152,46 @@ class CandidateRepositoryImpl implements CandidateRepository {
 
   @override
   Future<Either<Failure, bool>> updateEducation(AddEducationEntity entity) {
-    // TODO: implement updateEducation
-    throw UnimplementedError();
+    return candidateRemoteSource.updateEducation(entity).makeRequest();
   }
 
   @override
   Future<Either<Failure, bool>> updateExperience(AddExperienceEntity entity) {
-    // TODO: implement updateExperience
-    throw UnimplementedError();
+    return candidateRemoteSource.updateExperience(entity).makeRequest();
   }
 
   @override
   Future<Either<Failure, bool>> uploadIdCard(UploadIDCardEntity entity) {
-    // TODO: implement uploadIdCard
-    throw UnimplementedError();
+    return candidateRemoteSource.uploadIdCard(entity).makeRequest();
   }
 
   @override
-  Future<Either<Failure, bool>> uploadWorkPhoto(AcceptCandidateEntity entity) {
-    // TODO: implement uploadWorkPhoto
-    throw UnimplementedError();
+  Future<Either<Failure, bool>> uploadWorkPhoto(List<File> workPhotos) {
+    return candidateRemoteSource.uploadWorkPhotos(workPhotos).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> addAwards(AddAwardEntity entity) {
+    return candidateRemoteSource.addAwards(entity).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> deleteAwards(String identity) {
+    return candidateRemoteSource.deleteAwards(identity).makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<GetAwardEntity>>> getAwards() {
+    return candidateRemoteSource.getAwards().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, List<GetExperienceEntity>>> getWorkPhoto() {
+    return candidateRemoteSource.getWorkPhoto().makeRequest();
+  }
+
+  @override
+  Future<Either<Failure, bool>> updateAwards(AddAwardEntity entity) {
+    return candidateRemoteSource.updateAwards(entity).makeRequest();
   }
 }

@@ -4,22 +4,26 @@ import 'package:artisan_oga/core/app_constants/app_api_endpoints.dart';
 import 'package:artisan_oga/core/services/api_service.dart';
 import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/features/candidate/data/model/accept_candidate_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/add_award_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/add_education_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/add_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_profile_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/candidate_skill_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/data/model/get_awards_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_education_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/get_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/upload_id_card_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
@@ -46,6 +50,12 @@ abstract class CandidateRemoteSource {
   Future<bool> updateExperience(AddExperienceEntity entity);
   Future<bool> deleteExperience(String identity);
   Future<List<GetExperienceEntity>> getExperience();
+
+  Future<bool> addAwards(AddAwardEntity entity);
+  Future<bool> updateAwards(AddAwardEntity entity);
+  Future<bool> deleteAwards(String identity);
+  Future<List<GetAwardEntity>> getAwards();
+  Future<List<GetExperienceEntity>> getWorkPhoto();
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -253,6 +263,68 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
     final result = await api.post(
         url: AppApiEndpoint.updateExperience,
         body: AddExperienceModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> addAwards(AddAwardEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.addAward,
+        body: AddAwardModel.fromEntity(entity).toJson(),
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<bool> deleteAwards(String identity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.deleteAward,
+        body: {"identtiy": identity},
+        headers: userService.authorizationHeader);
+
+    return true;
+  }
+
+  @override
+  Future<List<GetAwardEntity>> getAwards() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getAward,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => GetAwardModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<List<GetExperienceEntity>> getWorkPhoto() async {
+    final result = await api.get(
+      url: AppApiEndpoint.getExperience,
+      headers: userService.authorizationHeader,
+    ) as Map<String, dynamic>;
+
+    return List<dynamic>.from(result['data'] as List)
+        .map(
+          (e) => GetExperienceModel.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  @override
+  Future<bool> updateAwards(AddAwardEntity entity) async {
+    final result = await api.post(
+        url: AppApiEndpoint.updateAward,
+        body: AddAwardModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;
