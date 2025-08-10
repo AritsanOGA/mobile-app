@@ -116,7 +116,8 @@ class SearchDetailsScreen extends StatelessWidget {
                               style: CustomTextStyles.titleSmallSemiBold,
                             ),
                             Text(
-                              state.searchJobDetail?.jobDetails.qualification ?? '',
+                              state.searchJobDetail?.jobDetails.qualification ??
+                                  '',
                               style:
                                   CustomTextStyles.labelLargePrimaryContainer_2,
                             ),
@@ -151,16 +152,20 @@ class SearchDetailsScreen extends StatelessWidget {
                               'Pay',
                               style: CustomTextStyles.titleSmallSemiBold,
                             ),
-                            state.searchJobDetail?.jobDetails.compensationType ==
+                            state.searchJobDetail?.jobDetails
+                                            .compensationType ==
                                         'payperjob' ||
-                                    state.searchJobDetail?.jobDetails.compensationType ==
+                                    state.searchJobDetail?.jobDetails
+                                            .compensationType ==
                                         'Negotiable'
                                 ? Text('Pay per job',
                                     style: theme.textTheme.bodyMedium?.copyWith(
                                       fontWeight: FontWeight.w500,
                                     ))
                                 : Text(
-                                    state.searchJobDetail?.jobDetails.basicSalary ?? '',
+                                    state.searchJobDetail?.jobDetails
+                                            .basicSalary ??
+                                        '',
                                     style: CustomTextStyles
                                         .labelLargePrimaryContainer_2,
                                   ),
@@ -174,7 +179,9 @@ class SearchDetailsScreen extends StatelessWidget {
                               style: CustomTextStyles.titleSmallSemiBold,
                             ),
                             Text(
-                              state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
+                              state.searchJobDetail?.jobDetails
+                                      .applicationDeadline ??
+                                  '',
                               style:
                                   CustomTextStyles.labelLargePrimaryContainer_2,
                             ),
@@ -260,10 +267,13 @@ class SearchDetailsScreen extends StatelessWidget {
                                 ApplyForJobState.loading,
                             text: 'Apply Now',
                             onPressed: () {
-                              context.read<HomeBloc>()
-                                ..add(HomeEvent.applyForJob(
-                                    state.searchJobDetail?.jobDetails.id.toString() ??
-                                        ''));
+                              uploadWordID(context);
+
+                              //     arguments: state);
+                              // context.read<HomeBloc>()
+                              //   ..add(HomeEvent.applyForJob(
+                              //       state.searchJobDetail?.jobDetails.id.toString() ??
+                              //           ''));
                             });
                       },
                     ),
@@ -277,6 +287,73 @@ class SearchDetailsScreen extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+
+  Future<void> uploadWordID(
+    context,
+  ) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+            titlePadding: EdgeInsets.zero,
+            actionsPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.zero,
+            content: Container(
+              height: 250,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                children: [
+                  SizedBox(height: 20.v),
+                  Text(
+                    textAlign: TextAlign.center,
+                    'Please upload your ID card to complete verification. ',
+                    style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
+                  ),
+                  SizedBox(height: 40.v),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, AppRoutes.addWorkIDPage);
+                    },
+                    child: Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text(
+                          'Yes',
+                          style: TextStyle(color: AppColors.kwhite),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.v),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text(
+                          'No',
+                          style: TextStyle(color: AppColors.kblack),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ));
+      },
     );
   }
 }

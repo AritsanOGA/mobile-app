@@ -21,6 +21,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_appl
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/add_awards_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/add_candidate_education_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/add_experience_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/add_work_photo_page.dart';
@@ -29,6 +30,7 @@ import 'package:artisan_oga/features/candidate/presentation/pages/search_details
 import 'package:artisan_oga/features/candidate/presentation/pages/success_screen2.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/update_Education_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/update_experience_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/upload_work_id_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
 import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.dart';
@@ -147,6 +149,7 @@ class AppRoutes {
 
   static const String addWorkPhotoPage = '/add_work_photo_page';
 
+  static const String addWorkIDPage = '/add_work_id_page';
   static const String jSPasswordChangeScreen = '/jS-password-change-screen';
 
   static const String updateProfilePageScreen = '/update_profile_page_screen';
@@ -176,7 +179,8 @@ class AppRoutes {
       '/verification_page_one_screen';
 
   static const String jSLoginPageScreen = '/j_s_login_page_screen';
-
+  static const String addAwardScreen = '/add_award_screen';
+  static const String updateAwardScreen = '/update_award_screen';
   static const String dashboardScreen = '/dashboard_screen';
   static const String hireMeScreen = '/hire_me_screen';
   static const String paymentHistoryScreen = '/payment_history_screen';
@@ -329,6 +333,15 @@ class AppRoutes {
         return AppPageRouteBuilder(
           navigateTo: InvoiceHistoryScreen(),
         );
+
+      case updateAwardScreen:
+        return AppPageRouteBuilder(
+          navigateTo: WelcomePageScreen(),
+        );
+      case addAwardScreen:
+        return AppPageRouteBuilder(
+          navigateTo: AddAwardsPage(),
+        );
       case addExperiencePage:
         return AppPageRouteBuilder(
           navigateTo: AddCandidateExperiencePage(),
@@ -385,6 +398,10 @@ class AppRoutes {
       case signupOptionsPageScreen:
         return AppPageRouteBuilder(
           navigateTo: const SignupOptionsPageScreen(),
+        );
+      case addWorkIDPage:
+        return AppPageRouteBuilder(
+          navigateTo: const UploadWorkIDPage(),
         );
       case addWorkPhotoPage:
         return AppPageRouteBuilder(

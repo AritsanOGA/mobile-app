@@ -2,42 +2,29 @@ import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity
 import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 
 class AddAwardModel extends AddAwardEntity {
-   AddAwardModel({
-    required super.userId,
+  AddAwardModel({
+    required super.certificate,
     required super.title,
-    required super.role,
-    required super.serviceDescription,
-    required super.startYear,
-    required super.yearEnd,
+    required super.identity,
   });
-  factory AddAwardModel.fromEntity(AddAwardEntity entity) =>
-      AddAwardModel(
-        serviceDescription: entity.serviceDescription,
-        userId: entity.userId,
-        role: entity.role,
+  factory AddAwardModel.fromEntity(AddAwardEntity entity) => AddAwardModel(
+        identity: entity.identity,
+        certificate: entity.certificate,
         title: entity.title,
-        startYear: entity.startYear,
-        yearEnd: entity.yearEnd,
       );
   factory AddAwardModel.fromJson(Map<String, dynamic> json) {
     return AddAwardModel(
-      userId: json['user_id'],
+      certificate: json['certificate'],
       title: json['title'],
-      role: json['role'],
-      serviceDescription: json['service_description'],
-      startYear: json['start_year'],
-      yearEnd: json['year_end'],
+      identity: json['identity'],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'user_id': userId,
+      'identity': identity,
       'title': title,
-      'role': role,
-      'service_description': serviceDescription,
-      'start_year': startYear,
-      'year_end': yearEnd,
+      'certificate': certificate,
     };
   }
 }

@@ -1,29 +1,22 @@
+import 'dart:io';
+
 import 'package:equatable/equatable.dart';
 
 class AddAwardEntity extends Equatable {
   const AddAwardEntity({
-    required this.userId,
-    required this.title,
-    required this.role,
-    required this.serviceDescription,
-    required this.startYear,
-    required this.yearEnd,
+     this.certificate,
+     this.title,
+     this.identity,
   });
 
-  final String userId;
-  final String title;
-  final String role;
-  final String serviceDescription;
-  final String startYear;
-  final String yearEnd;
+  final File? certificate;
+  final String? title;
+  final String? identity;
 
   @override
   List<Object?> get props => [
-        userId,
+        certificate,
         title,
-        role,
-        serviceDescription,
-        startYear,
-        yearEnd,
+        identity,
       ];
 }

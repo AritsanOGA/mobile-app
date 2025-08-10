@@ -28,21 +28,26 @@ import 'package:artisan_oga/features/candidate/data/data_source/candidate_remote
 import 'package:artisan_oga/features/candidate/data/repository/candidate_repository_impl.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/add_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/delete_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/get_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/update_award_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_id_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_photo_usecase.dart';
 import 'package:artisan_oga/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:artisan_oga/features/home/data/repository/home_repoistory_impl.dart';
@@ -271,7 +276,7 @@ Future<void> init() async {
         () => GetEducationUsecase(locator()))
     ..registerLazySingleton<GetExperienceUsecase>(
         () => GetExperienceUsecase(locator()))
-        ..registerLazySingleton<AddEducationUsecase>(
+    ..registerLazySingleton<AddEducationUsecase>(
         () => AddEducationUsecase(locator()))
     ..registerLazySingleton<AddExperienceUsecase>(
         () => AddExperienceUsecase(locator()))
@@ -287,11 +292,18 @@ Future<void> init() async {
         () => GetJobSeekerNotificationUsecase(locator()))
     ..registerLazySingleton<CandidateSearchUsecase>(
         () => CandidateSearchUsecase(locator()))
-
-     ..registerLazySingleton<DeleteWorkPhotoUsecase>(
+    ..registerLazySingleton<AddAwardUsecase>(() => AddAwardUsecase(locator()))
+    ..registerLazySingleton<GetAwardsUsecase>(() => GetAwardsUsecase(locator()))
+    ..registerLazySingleton<UpdateAwardUsecase>(
+        () => UpdateAwardUsecase(locator()))
+    ..registerLazySingleton<DeleteAwardUsecase>(
+        () => DeleteAwardUsecase(locator()))
+    ..registerLazySingleton<DeleteWorkPhotoUsecase>(
         () => DeleteWorkPhotoUsecase(locator()))
     ..registerLazySingleton<UploadWorkPhotoUsecase>(
         () => UploadWorkPhotoUsecase(locator()))
+    ..registerLazySingleton<UploadWorkIDUsecase>(
+        () => UploadWorkIDUsecase(locator()))
     ..registerLazySingleton<GetWorkPhotoUsecase>(
         () => GetWorkPhotoUsecase(locator()));
 }

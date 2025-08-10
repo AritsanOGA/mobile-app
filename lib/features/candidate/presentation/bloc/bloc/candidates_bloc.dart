@@ -6,33 +6,41 @@ import 'package:artisan_oga/core/utils/usecase.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_skill_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/add_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/delete_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/get_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_work_photo_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/reject_candidate_without_interview_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/update_award_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/update_experience_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_id_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/upload_work_photo_usecase.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
@@ -57,11 +65,16 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       UpdateEducationUsecase? updateEducationUsecase,
       UpdateExperienceUsecase? updateExperienceUsecase,
       GetEducationUsecase? getEducationUsecase,
+      AddAwardUsecase? addAwardUsecase,
+      GetAwardsUsecase? getAwardsUsecase,
+      DeleteAwardUsecase? deleteAwardUsecase,
+      UpdateAwardUsecase? updateAwardUsecase,
       GetExperienceUsecase? getExperienceUsecase,
       DeleteEducationUsecase? deleteEducationUsecase,
       DeleteExperienceUsecase? deleteExperienceUsecase,
       UploadWorkPhotoUsecase? uploadWorkPhotoUsecase,
       DeleteWorkPhotoUsecase? deleteWorkPhotoUsecase,
+      UploadWorkIDUsecase? uploadWorkIDUsecase,
       GetWorkPhotoUsecase? getWorkPhotoUsecase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
@@ -81,7 +94,12 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
         _deleteWorkPhotoUsecase = deleteWorkPhotoUsecase ?? locator(),
         _uploadWorkPhotoUsecase = uploadWorkPhotoUsecase ?? locator(),
         _getWorkPhotoUsecase = getWorkPhotoUsecase ?? locator(),
+        _uploadWorkIDUsecase = uploadWorkIDUsecase ?? locator(),
         _filePickerService = filePickerService ?? locator(),
+        _getAwardsUsecase = getAwardsUsecase ?? locator(),
+        _deleteAwardUsecase = deleteAwardUsecase ?? locator(),
+        _addAwardUsecase = addAwardUsecase ?? locator(),
+        _updateAwardUsecase = updateAwardUsecase ?? locator(),
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
@@ -92,14 +110,21 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_RejectCandidateWithoutInterview>(_onRejectCandidateWithoutInterview);
     on<_AddExperience>(_onAddExperience);
     on<_AddEducation>(_onAddEducation);
+    on<_AddAward>(_onAddAward);
+    on<_GetAward>(_onGetAward);
+    on<_DeleteAward>(_onDeleteAward);
+    on<_UpdateAward>(_onUpdateAward);
     on<_GetExperience>(_onGetExperience);
     on<_GetEducation>(_onGetEducation);
     on<_UpdateExperience>(_onUpdateExperience);
     on<_UpdateEducation>(_onUpdateEducation);
     on<_GetWorkPhotos>(_onGetWorkPhotos);
     on<_UploadWorkPhoto>(_onUploadWorkPhoto);
+    on<_UploadWorkId>(_onUploadWorkId);
     on<_DeleteWorkPhoto>(_onDeleteWorkPhoto);
     on<_SelectWorkPhotos>(_onSelectWorkPhotos);
+    on<_SelectWorkId>(_onSelectWorkId);
+    on<_SelectAward>(_onSelectAward);
     on<_DeleteExperience>(_onDeleteExperience);
     on<_DeleteEducation>(_onDeleteEducation);
     on<_InitializeSkills>(_onInitializeSkills);
@@ -124,6 +149,11 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final UploadWorkPhotoUsecase _uploadWorkPhotoUsecase;
   final DeleteWorkPhotoUsecase _deleteWorkPhotoUsecase;
   final GetWorkPhotoUsecase _getWorkPhotoUsecase;
+  final UploadWorkIDUsecase _uploadWorkIDUsecase;
+  final AddAwardUsecase _addAwardUsecase;
+  final GetAwardsUsecase _getAwardsUsecase;
+  final DeleteAwardUsecase _deleteAwardUsecase;
+  final UpdateAwardUsecase _updateAwardUsecase;
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -219,17 +249,6 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       ),
     );
     emit(state.copyWith(getCandidateSkillState: GetCandidateSkillState.idle));
-  }
-
-  FutureOr<void> _onInitializeSkills(
-      _InitializeSkills event, Emitter<CandidatesState> emit) {
-    final initialDropdownValues =
-        List<String>.filled(event.candidateSkills.length, '1');
-
-    emit(state.copyWith(
-      candidateSkillList: event.candidateSkills,
-      dropdownValues: initialDropdownValues,
-    ));
   }
 
   FutureOr<void> _onUpdateSkillRating(
@@ -446,5 +465,114 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     for (var f in files) {
       print('Selected file: ${f.path}');
     }
+  }
+
+  FutureOr<void> _onSelectWorkId(
+      _SelectWorkId event, Emitter<CandidatesState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    if (image.endsWith('.png') ||
+        image.endsWith('.jpg') ||
+        image.endsWith('.jpeg')) {
+      emit(state.copyWith(workId: File(image)));
+      print('Selected file: ${image}');
+    } else {
+      print('extension $image');
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('inavlid tyoe');
+    }
+  }
+
+  FutureOr<void> _onUploadWorkId(
+      _UploadWorkId event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(uploadWorkIdState: ViewState.loading));
+    final result = await _uploadWorkIDUsecase(event.entity);
+    result.fold(
+        (error) => emit(state.copyWith(uploadWorkIdState: ViewState.failure)),
+        (education) => emit(state.copyWith(
+              uploadWorkIdState: ViewState.success,
+            )));
+
+    emit(state.copyWith(uploadWorkIdState: ViewState.idle));
+  }
+
+  FutureOr<void> _onSelectAward(
+      _SelectAward event, Emitter<CandidatesState> emit) async {
+    final image = await _filePickerService.pickImage();
+    if (image == null) return;
+    if (image.endsWith('.png') ||
+        image.endsWith('.jpg') ||
+        image.endsWith('.jpeg')) {
+      emit(state.copyWith(award: File(image)));
+      print('Selected file: ${image}');
+    } else {
+      print('extension $image');
+      ToastUtils.showRedToast('Only PNG and JPG images are allowed.');
+      print('inavlid tyoe');
+    }
+  }
+
+  FutureOr<void> _onAddAward(
+      _AddAward event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(addAwardsState: ViewState.loading));
+    final result = await _addAwardUsecase(event.param);
+    result.fold(
+        (error) => emit(state.copyWith(addAwardsState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              addAwardsState: ViewState.success,
+            )));
+
+    emit(state.copyWith(addAwardsState: ViewState.idle));
+  }
+
+  FutureOr<void> _onGetAward(
+      _GetAward event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(getAwardsState: ViewState.loading));
+    final result = await _getAwardsUsecase(NoParams());
+    result.fold(
+        (error) => emit(state.copyWith(getAwardsState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              getAwardsEntity: result,
+              getAwardsState: ViewState.success,
+            )));
+
+    emit(state.copyWith(getAwardsState: ViewState.idle));
+  }
+
+  FutureOr<void> _onDeleteAward(
+      _DeleteAward event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(deleteAwardsState: ViewState.loading));
+    final result = await _deleteAwardUsecase(event.identity);
+    result.fold(
+        (error) => emit(state.copyWith(deleteAwardsState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              deleteAwardsState: ViewState.success,
+            )));
+
+    emit(state.copyWith(deleteAwardsState: ViewState.idle));
+  }
+
+  FutureOr<void> _onUpdateAward(
+      _UpdateAward event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(updateAwardsState: ViewState.loading));
+    final result = await _updateAwardUsecase(event.param);
+    result.fold(
+        (error) => emit(state.copyWith(updateAwardsState: ViewState.failure)),
+        (result) => emit(state.copyWith(
+              updateAwardsState: ViewState.success,
+            )));
+
+    emit(state.copyWith(updateAwardsState: ViewState.idle));
+  }
+
+  FutureOr<void> _onInitializeSkills(
+      _InitializeSkills event, Emitter<CandidatesState> emit) {
+    final initialDropdownValues =
+        List<String>.filled(event.candidateSkills.length, '1');
+
+    emit(state.copyWith(
+      candidateSkillList: event.candidateSkills,
+      dropdownValues: initialDropdownValues,
+    ));
   }
 }

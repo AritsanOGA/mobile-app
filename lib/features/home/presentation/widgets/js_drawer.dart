@@ -1,6 +1,7 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/candidate_awards_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidate_education_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidate_experience_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/candidate_work_photo_page.dart';
@@ -29,226 +30,226 @@ class JSDrawer extends StatelessWidget {
           vertical: 82.v,
         ),
         decoration: AppDecoration.outlineBlack900,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomImageView(
-              imagePath: ImageConstant.imgX,
-              height: 24.adaptSize,
-              width: 24.adaptSize,
-            ),
-            SizedBox(height: 32.v),
-            Row(
-              children: [
-                SvgPicture.asset(
-                  ImageConstant.imgHome,
-                  color: AppColors.kblack,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 10.h,
-                    top: 4.v,
-                  ),
-                  child: Text(
-                    "Dashboard",
-                    style: CustomTextStyles.titleSmall15,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: ActivitiesTabContainerScreen()));
-              },
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    ImageConstant.imgBriefcase,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 13.h,
-                      bottom: 3.v,
-                    ),
-                    child: Text(
-                      "Activities",
-                      style: CustomTextStyles.titleSmall20,
-                    ),
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomImageView(
+                imagePath: ImageConstant.imgX,
+                height: 24.adaptSize,
+                width: 24.adaptSize,
               ),
-            ),
-            // SizedBox(height: 38.v),
-            // Row(
-            //   children: [
-            //     SvgPicture.asset(
-            //       ImageConstant.imgSearchPrimarycontainer,
-            //     ),
-            //     Padding(
-            //       padding: EdgeInsets.only(
-            //         left: 10.h,
-            //         top: 3.v,
-            //       ),
-            //       child: Text(
-            //         "Messages",
-            //         style: CustomTextStyles.titleSmall20,
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: CandidateWorkPhotoPage()));
-              },
-              child: Row(
+              SizedBox(height: 32.v),
+              Row(
                 children: [
                   SvgPicture.asset(
-                    ImageConstant.imgSearchPrimarycontainer,
+                    ImageConstant.imgHome,
+                    color: AppColors.kblack,
                   ),
                   Padding(
                     padding: EdgeInsets.only(
                       left: 10.h,
-                      top: 3.v,
+                      top: 4.v,
                     ),
                     child: Text(
-                      "Work Photo",
-                      style: CustomTextStyles.titleSmall20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: CandidateEducationPage()));
-              },
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    ImageConstant.imgSearchPrimarycontainer,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.h,
-                      top: 3.v,
-                    ),
-                    child: Text(
-                      "Education",
-                      style: CustomTextStyles.titleSmall20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: CandidateExperiencePage()));
-              },
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    ImageConstant.imgSearchPrimarycontainer,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.h,
-                      top: 3.v,
-                    ),
-                    child: Text(
-                      "Experience",
-                      style: CustomTextStyles.titleSmall20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 39.v),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: JSPasswordChangeScreen()));
-              },
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    ImageConstant.lock,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 13.h),
-                    child: Text(
-                      "Change Password",
+                      "Dashboard",
                       style: CustomTextStyles.titleSmall15,
                     ),
                   ),
                 ],
               ),
-            ),
-            SizedBox(height: 39.v),
-
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: JSProfilePage()));
-              },
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    ImageConstant.imgUserPrimarycontainer,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.h,
-                      bottom: 3.v,
-                    ),
-                    child: Text(
-                      "View Profile",
-                      style: CustomTextStyles.titleSmall20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 41.v),
-            GestureDetector(
-                onTap: (() {
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
                   Navigator.push(
                       context,
                       PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: UpdateProfilePageOneScreen()));
-                }),
+                          child: ActivitiesTabContainerScreen()));
+                },
                 child: Row(
                   children: [
                     SvgPicture.asset(
-                      ImageConstant.userPlus,
+                      ImageConstant.imgBriefcase,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 13.h,
+                        bottom: 3.v,
+                      ),
+                      child: Text(
+                        "Activities",
+                        style: CustomTextStyles.titleSmall20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // SizedBox(height: 38.v),
+              // Row(
+              //   children: [
+              //     SvgPicture.asset(
+              //       ImageConstant.imgSearchPrimarycontainer,
+              //     ),
+              //     Padding(
+              //       padding: EdgeInsets.only(
+              //         left: 10.h,
+              //         top: 3.v,
+              //       ),
+              //       child: Text(
+              //         "Messages",
+              //         style: CustomTextStyles.titleSmall20,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: CandidateWorkPhotoPage()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgSearchPrimarycontainer,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Work Photo",
+                        style: CustomTextStyles.titleSmall20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: CandidateEducationPage()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgSearchPrimarycontainer,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Education",
+                        style: CustomTextStyles.titleSmall20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: CandidateExperiencePage()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgSearchPrimarycontainer,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Experience",
+                        style: CustomTextStyles.titleSmall20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: CandidateAwardsPage()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgSearchPrimarycontainer,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.h,
+                        top: 3.v,
+                      ),
+                      child: Text(
+                        "Awards",
+                        style: CustomTextStyles.titleSmall20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 39.v),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: JSPasswordChangeScreen()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.lock,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 13.h),
+                      child: Text(
+                        "Change Password",
+                        style: CustomTextStyles.titleSmall15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 39.v),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: JSProfilePage()));
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      ImageConstant.imgUserPrimarycontainer,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -256,48 +257,77 @@ class JSDrawer extends StatelessWidget {
                         bottom: 3.v,
                       ),
                       child: Text(
-                        "Update Profile",
-                        style: CustomTextStyles.titleSmall15,
+                        "View Profile",
+                        style: CustomTextStyles.titleSmall20,
                       ),
                     ),
                   ],
-                )),
-            SizedBox(height: 39.v),
+                ),
+              ),
 
-            //SizedBox(height: 39.v),
-            BlocBuilder<AuthBloc, AuthState>(
-              builder: (context, state) {
-                return GestureDetector(
-                  onTap: () {
-                    context
-                        .read<AuthBloc>()
-                        .add(const AuthEvent.removeUserData());
-
-                    Navigator.pushNamedAndRemoveUntil(context,
-                        AppRoutes.employerLoginPageScreen, (route) => false);
-                  },
+              SizedBox(height: 41.v),
+              GestureDetector(
+                  onTap: (() {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: UpdateProfilePageOneScreen()));
+                  }),
                   child: Row(
                     children: [
                       SvgPicture.asset(
-                        ImageConstant.imgThumbsUp,
+                        ImageConstant.userPlus,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 9.h,
-                          top: 3.v,
+                          left: 10.h,
+                          bottom: 3.v,
                         ),
                         child: Text(
-                          "Logout",
-                          style: CustomTextStyles.titleSmall20,
+                          "Update Profile",
+                          style: CustomTextStyles.titleSmall15,
                         ),
                       ),
                     ],
-                  ),
-                );
-              },
-            ),
-            SizedBox(height: 39.v),
-          ],
+                  )),
+              SizedBox(height: 39.v),
+
+              //SizedBox(height: 39.v),
+              BlocBuilder<AuthBloc, AuthState>(
+                builder: (context, state) {
+                  return GestureDetector(
+                    onTap: () {
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.removeUserData());
+
+                      Navigator.pushNamedAndRemoveUntil(context,
+                          AppRoutes.employerLoginPageScreen, (route) => false);
+                    },
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          ImageConstant.imgThumbsUp,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 9.h,
+                            top: 3.v,
+                          ),
+                          child: Text(
+                            "Logout",
+                            style: CustomTextStyles.titleSmall20,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 39.v),
+            ],
+          ),
         ),
       ),
     );
