@@ -5,6 +5,7 @@ import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -20,7 +21,8 @@ class CandidateAwardsPage extends HookWidget {
         title: '',
       ),
       body: BlocBuilder<CandidatesBloc, CandidatesState>(
-        bloc: context.read<CandidatesBloc>()..add(CandidatesEvent.getAward()),
+        bloc: context.read<CandidatesBloc>()
+          ..add(CandidatesEvent.getWorkPhotos()),
         builder: (context, state) {
           if (state.getAwardsState == ViewState.loading) {
             return Center(child: CircularProgressIndicator());
@@ -48,7 +50,7 @@ class CandidateAwardsPage extends HookWidget {
                     fontWeight: FontWeight.w700,
                   )),
               SizedBox(height: 15.v),
-              ...List.generate(state.getAwardsEntity.length, (index) {
+              ...List.generate(state.getWorkPhotoEntity.length, (index) {
                 return Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,18 +63,16 @@ class CandidateAwardsPage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  '${state.getAwardsEntity[index].title} '
-                                  '(${state.getAwardsEntity[index].year})',
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                Text('${state.getAwardsEntity[index].purpose} ',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16)),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
                                       context,
                                       AppRoutes.updateEducationScreen,
-                                      arguments:
-                                          state.getEducationEntity[index],
+                                      arguments: state.getAwardsEntity[index],
                                     );
                                   },
                                   child: Image.asset(
@@ -87,17 +87,33 @@ class CandidateAwardsPage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  state.getAwardsEntity[index].purpose,
-                                  style: CustomTextStyles.titleSmallSemiBold,
+                                CachedNetworkImage(
+                                  imageUrl: '',
+                                  fit: BoxFit.cover,
+                                  progressIndicatorBuilder:
+                                      (context, url, downloadProgress) =>
+                                          const Center(),
+                                  imageBuilder: (context, imageProvider) =>
+                                      Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: imageProvider,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error),
                                 ),
                                 GestureDetector(
                                     onTap: () {
-                                      // deleteEducation(
-                                      //     context,
-                                      //     state.getAwardsEntity[index]
-                                      //         .identity
-                                      //   .toString());
+                                      deleteAwards(
+                                          context,
+                                          state.getAwardsEntity[index].identity
+                                              .toString());
                                     },
                                     child: Image.asset(
                                       ImageConstant.delete,
@@ -106,8 +122,6 @@ class CandidateAwardsPage extends HookWidget {
                                     ))
                               ],
                             ),
-                            SizedBox(height: 5.v),
-                            Text('Bsc'),
                           ],
                         ),
                       ),
@@ -128,14 +142,14 @@ class CandidateAwardsPage extends HookWidget {
     );
   }
 
-  Future<void> deleteEducation(context, String identity) async {
+  Future<void> deleteAwards(context, String identity) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
       builder: (BuildContext context) {
         return BlocListener<CandidatesBloc, CandidatesState>(
           listener: (context, state) {
-            if (state.deleteEducationeState == ViewState.success) {
+            if (state.deleteAwardsState == ViewState.success) {
               Navigator.pushNamed(
                 context,
                 AppRoutes.successScreen2,
@@ -149,7 +163,7 @@ class CandidateAwardsPage extends HookWidget {
                   },
                 },
               );
-            } else if (state.deleteEducationeState == ViewState.failure) {
+            } else if (state.deleteAwardsState == ViewState.failure) {
               ToastUtils.showRedToast(state.errorMessage ?? '');
             }
           },
@@ -167,7 +181,7 @@ class CandidateAwardsPage extends HookWidget {
                     SizedBox(height: 20.v),
                     Text(
                       textAlign: TextAlign.center,
-                      'Are you sure you want to remove this education?',
+                      'Are you sure you want to remove this award?',
                       style:
                           CustomTextStyles.titleMediumPrimaryContainerMedium_1,
                     ),
@@ -179,7 +193,7 @@ class CandidateAwardsPage extends HookWidget {
                             return GestureDetector(
                               onTap: () {
                                 context.read<CandidatesBloc>().add(
-                                      CandidatesEvent.deleteEducation(
+                                      CandidatesEvent.deleteAward(
                                         identity,
                                       ),
                                     );
@@ -191,7 +205,7 @@ class CandidateAwardsPage extends HookWidget {
                                     color: Colors.red,
                                     borderRadius: BorderRadius.circular(5)),
                                 child: Center(
-                                  child: state.deleteEducationeState ==
+                                  child: state.deleteAwardsState ==
                                           ViewState.loading
                                       ? CircularProgressIndicator(
                                           color: AppColors.kwhite,

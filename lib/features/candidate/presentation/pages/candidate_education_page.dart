@@ -48,7 +48,7 @@ class CandidateEducationPage extends HookWidget {
                     color: AppColors.kwhite,
                     fontWeight: FontWeight.w700,
                   )),
-              SizedBox(height: 15.v),
+              SizedBox(height: 30.v),
               ...List.generate(state.getEducationEntity.length, (index) {
                 return Container(
                   child: Column(
@@ -63,10 +63,11 @@ class CandidateEducationPage extends HookWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '${state.getEducationEntity[index].title} '
-                                  '(${state.getEducationEntity[index].year})',
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                    '${state.getEducationEntity[index].title}'
+                                    '(${state.getEducationEntity[index].year})',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16)),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
@@ -88,10 +89,10 @@ class CandidateEducationPage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  state.getEducationEntity[index].purpose,
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                Text(state.getEducationEntity[index].purpose,
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16)),
                                 GestureDetector(
                                     onTap: () {
                                       deleteEducation(
@@ -108,7 +109,9 @@ class CandidateEducationPage extends HookWidget {
                               ],
                             ),
                             SizedBox(height: 5.v),
-                            Text('Bsc'),
+                            Text('Bsc',
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w600, fontSize: 14)),
                           ],
                         ),
                       ),

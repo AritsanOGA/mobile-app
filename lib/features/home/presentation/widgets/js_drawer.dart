@@ -115,8 +115,8 @@ class JSDrawer extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    SvgPicture.asset(
-                      ImageConstant.imgSearchPrimarycontainer,
+                    Image.asset(
+                      ImageConstant.workphoto,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -142,8 +142,8 @@ class JSDrawer extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    SvgPicture.asset(
-                      ImageConstant.imgSearchPrimarycontainer,
+                    Image.asset(
+                      ImageConstant.education,
                     ),
                     Padding(
                       padding: EdgeInsets.only(
@@ -169,8 +169,8 @@ class JSDrawer extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    SvgPicture.asset(
-                      ImageConstant.imgSearchPrimarycontainer,
+                    Image.asset(
+                      ImageConstant.experience,
                     ),
                     Padding(
                       padding: EdgeInsets.only(

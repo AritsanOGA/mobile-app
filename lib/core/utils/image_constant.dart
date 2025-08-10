@@ -188,7 +188,9 @@ class ImageConstant {
   static String imgRectangle196 = '$imagePath/img_rectangle_196.png';
 
   static String imgRectangle190 = '$imagePath/img_rectangle_190.png';
-
+  static String workphoto = '$imagePath/work_photo.png';
+  static String experience = '$imagePath/experience.png';
+  static String education = '$imagePath/education.png';
   static String delete = '$imagePath/delete.png';
   static String edit = '$imagePath/edit.png';
   // Apply for Jobs One images

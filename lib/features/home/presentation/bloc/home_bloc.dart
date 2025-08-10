@@ -18,6 +18,7 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 import 'package:artisan_oga/features/home/domain/usecases/apply_for_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/edit_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_all_usecase.dart';
@@ -26,6 +27,7 @@ import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_job_seeker_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/post_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/post_job_without_login_usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -46,6 +48,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       CategoryUseCase? categoryUseCase,
       SkillUseCase? skillUseCase,
       StateUseCase? stateUseCase,
+      PostJobWithoutLoginUsecase? postJobWithoutLoginUsecase,
       EditJobUseCase? editJobUseCase})
       : _getFeaturedCandidateseCase = getFeaturedCandidates ?? locator(),
         _getEmployerJobUseCase = getEmployerJobUseCase ?? locator(),
@@ -59,6 +62,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         _categoryUseCase = categoryUseCase ?? locator(),
         _skillUseCase = skillUseCase ?? locator(),
         _editJobUseCase = editJobUseCase ?? locator(),
+        _postJobWithoutLoginUsecase = postJobWithoutLoginUsecase ?? locator(),
         super(_Initial()) {
     on<_GetFeaturedCandidate>(_onGetFeaturedCandidate);
     on<_GetFeaturedJob>(_onGetFeaturedJob);
@@ -66,6 +70,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetAllJobs>(_onGetAllJobs);
     on<_GetJobSeekerJobs>(_onGetJobSeekerJobs);
     on<_PostJob>(_onPostJob);
+    on<_PostJobWithoutLogin>(_onPostJobWithoutLogin);
     on<_EditJob>(_onEditJob);
     on<_UpdateSelectedCategory>(_onUpdateSelectedCategory);
     on<_UpdateSelectedSkill>(_onUpdateSelectedSkill);
@@ -81,6 +86,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
     on<_ApplyForJob>(_onApplyForJob);
+    on<_UpdatePostJobWithoutLoginRequest>(_onUpdatePostJobWithoutLoginRequest);
     on<_UpdatePostJobRequest>(_onUpdatePostJobRequest);
     on<_UpdateEditJobRequest>(_onUpdateEditJobRequest);
     on<_GetCountries>(_onGetCountries);
@@ -101,6 +107,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final SkillUseCase _skillUseCase;
   final EditJobUseCase _editJobUseCase;
   final StateUseCase _stateUseCase;
+  final PostJobWithoutLoginUsecase _postJobWithoutLoginUsecase;
 
   FutureOr<void> _onGetFeaturedCandidate(event, Emitter<HomeState> emit) async {
     emit(state.copyWith(
@@ -412,5 +419,28 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _onSelectedDrawer(
       _SelectedDrawer event, Emitter<HomeState> emit) {
     emit(state.copyWith(selectedIndex: event.index));
+  }
+
+  FutureOr<void> _onUpdatePostJobWithoutLoginRequest(
+      _UpdatePostJobWithoutLoginRequest event, Emitter<HomeState> emit) {
+    emit(
+      state.copyWith(
+        postJobWithoutLoginRequest: event.postJobRequestWithoutLogin,
+      ),
+    );
+  }
+
+  FutureOr<void> _onPostJobWithoutLogin(
+      _PostJobWithoutLogin event, Emitter<HomeState> emit) async {
+    emit(state.copyWith(postJobWithoutLoginState: ViewState.loading));
+    await _postJobWithoutLoginUsecase(event.param).then((value) {
+      value.fold(
+          (error) =>
+              emit(state.copyWith(postJobWithoutLoginState: ViewState.failure)),
+          (result) => emit(state.copyWith(
+                postJobWithoutLoginState: ViewState.success,
+              )));
+    });
+    emit(state.copyWith(postJobWithoutLoginState: ViewState.idle));
   }
 }

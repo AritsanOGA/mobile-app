@@ -9,26 +9,26 @@ class GetAwardModel extends GetAwardEntity {
     required super.purpose,
     required super.description,
     required super.year,
+    required super.identity,
   });
-  factory GetAwardModel.fromEntity(GetEducationEntity entity) =>
-      GetAwardModel(
-        id: entity.id,
-        purpose: entity.purpose,
-        userId: entity.userId,
-        title: entity.title,
-        description: entity.description,
-        year: entity.year,
-      );
+  factory GetAwardModel.fromEntity(GetEducationEntity entity) => GetAwardModel(
+      id: entity.id,
+      purpose: entity.purpose,
+      userId: entity.userId,
+      title: entity.title,
+      description: entity.description,
+      year: entity.year,
+      identity: entity.identity);
 
   factory GetAwardModel.fromJson(Map<String, dynamic> json) {
     return GetAwardModel(
-      id: json['id'],
-      userId: json['user_id'],
-      title: json['title'],
-      purpose: json['purpose'],
-      description: json['desc'],
-      year: json['year'],
-    );
+        id: json['id'],
+        userId: json['user_id'],
+        title: json['title'],
+        purpose: json['purpose'],
+        description: json['desc'],
+        year: json['year'],
+        identity: json['identity']);
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +39,7 @@ class GetAwardModel extends GetAwardEntity {
       'purpose': purpose,
       'desc': description,
       'year': year,
+      'identity': identity
     };
   }
 }

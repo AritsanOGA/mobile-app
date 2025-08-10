@@ -102,7 +102,7 @@ class CandidateSearchScreen extends HookWidget {
                     ontap: () {
                       searchDialog(context, locationController);
                     },
-                    title: 'Search for jobs',
+                    title: 'Search for talents',
                     readOnly: true,
                     controller: locationController,
                     hintText: "Search...",

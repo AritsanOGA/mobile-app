@@ -48,7 +48,7 @@ class CandidateExperiencePage extends HookWidget {
                     color: AppColors.kwhite,
                     fontWeight: FontWeight.w700,
                   )),
-              SizedBox(height: 15.v),
+              SizedBox(height: 30.v),
               ...List.generate(state.getExperienceEntity.length, (index) {
                 return Container(
                   child: Column(
@@ -63,9 +63,11 @@ class CandidateExperiencePage extends HookWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  state.getExperienceEntity[index].title ?? '',
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                    state.getExperienceEntity[index].title ??
+                                        '',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16)),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
@@ -85,25 +87,31 @@ class CandidateExperiencePage extends HookWidget {
                             ),
                             SizedBox(height: 5.v),
                             Text(
-                              '${state.getExperienceEntity[index].startYear} - ${state.getExperienceEntity[index].yearEnd}',
-                              style: CustomTextStyles.titleSmallSemiBold,
-                            ),
+                                '${state.getExperienceEntity[index].startYear} - ${state.getExperienceEntity[index].yearEnd}',
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w600, fontSize: 16)),
                             SizedBox(height: 5.v),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  state.getExperienceEntity[index].purpose ??
-                                      '',
-                                  style: CustomTextStyles.titleSmallSemiBold,
-                                ),
+                                    state.getExperienceEntity[index].purpose ??
+                                        '',
+                                    style: theme.textTheme.bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14)),
                               ],
                             ),
                             SizedBox(height: 5.v),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Verified'),
+                                Text(
+                                  'Verified',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14),
+                                ),
                                 GestureDetector(
                                     onTap: () {
                                       deleteExperience(

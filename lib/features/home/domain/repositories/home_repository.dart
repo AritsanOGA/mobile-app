@@ -10,6 +10,7 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class HomeRepository {
@@ -26,6 +27,6 @@ abstract class HomeRepository {
       String categoryId);
   Future<Either<Failure, bool>> applyForJob(String id);
   Future<Either<Failure, bool>> postJob(PostJobEntity entity);
-
+  Future<Either<Failure, bool>> postJobWithoutLogin(PostJobWithoutLoginEntity entity);
   Future<Either<Failure, bool>> editJob(EditJobEntity entity);
 }

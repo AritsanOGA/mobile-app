@@ -41,7 +41,7 @@ class CandidateWorkPhotoPage extends HookWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 20.v),
+                // SizedBox(height: 20.v),
                 CustomOutlinedButton(
                     height: 46.v,
                     width: 200.h,
@@ -56,7 +56,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                       color: AppColors.kwhite,
                       fontWeight: FontWeight.w700,
                     )),
-                SizedBox(height: 20.v),
+                SizedBox(height: 30.v),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -74,10 +74,15 @@ class CandidateWorkPhotoPage extends HookWidget {
                 ...List.generate(state.getWorkPhotoEntity.length, (index) {
                   return Column(
                     children: [
+                      Divider(
+                        height: 2,
+                        color: theme.primaryColor,
+                      ),
+                      SizedBox(height: 14.v),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(state.getWorkPhotoEntity[index].name),
+                          Text(state.getWorkPhotoEntity[index].name,),
                           // CachedNetworkImage(
                           //         imageUrl: widget.image,
                           //         fit: BoxFit.cover,
@@ -108,11 +113,6 @@ class CandidateWorkPhotoPage extends HookWidget {
                               },
                               child: Image.asset(ImageConstant.delete))
                         ],
-                      ),
-                      SizedBox(height: 14.v),
-                      Divider(
-                        height: 2,
-                        color: theme.primaryColor,
                       ),
                       SizedBox(height: 20.v),
                     ],

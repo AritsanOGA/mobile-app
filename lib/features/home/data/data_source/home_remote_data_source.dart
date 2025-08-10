@@ -16,6 +16,7 @@ import 'package:artisan_oga/features/home/data/model/featured_candidate_model.da
 import 'package:artisan_oga/features/home/data/model/featured_job_model.dart';
 import 'package:artisan_oga/features/home/data/model/job_seeker_job_response_model.dart';
 import 'package:artisan_oga/features/home/data/model/post_job_model.dart';
+import 'package:artisan_oga/features/home/data/model/post_job_without_login_model.dart';
 import 'package:artisan_oga/features/home/domain/entities/all_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/edit_job_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/employer_job_response_entiity.dart';
@@ -23,6 +24,7 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<FeaturedCandidatesEntity>> getFeaturedCandidates();
@@ -37,6 +39,7 @@ abstract class HomeRemoteDataSource {
   Future<List<StateResponseEntity>> getState(String countryId);
   Future<List<CategoryResponseEntity>> getCategory();
   Future<List<SkillResponseEntity>> getSkill(String categoryId);
+  Future<bool> postJobWithoutLogin(PostJobWithoutLoginEntity entity);
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -228,6 +231,16 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
       url: AppApiEndpoint.editJob,
       headers: userService.authorizationHeader,
       body: EditJobModel.fromEntity(entity).toJson(),
+    ) as Map<String, dynamic>;
+
+    return true;
+  }
+
+  @override
+  Future<bool> postJobWithoutLogin(PostJobWithoutLoginEntity entity) async {
+    final result = await api.post(
+      url: AppApiEndpoint.postJobWithoutLogin,
+      body: PostJobWithoutLoginModel.fromEntity(entity).toJson(),
     ) as Map<String, dynamic>;
 
     return true;

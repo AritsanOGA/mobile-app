@@ -13,9 +13,14 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.getAllJobs() = _GetAllJobs;
   const factory HomeEvent.getJobSeekerJobs() = _GetJobSeekerJobs;
   const factory HomeEvent.postJob(PostJobEntity param) = _PostJob;
+  const factory HomeEvent.postJobWithoutLogin(PostJobWithoutLoginEntity param) =
+      _PostJobWithoutLogin;
   const factory HomeEvent.editJob(EditJobEntity param) = _EditJob;
   const factory HomeEvent.updatePostJobRequest(PostJobEntity postJobRequest) =
       _UpdatePostJobRequest;
+  const factory HomeEvent.updatePostJobWithoutLoginRequest(
+          PostJobWithoutLoginEntity postJobRequestWithoutLogin) =
+      _UpdatePostJobWithoutLoginRequest;
   const factory HomeEvent.updateEditJobRequest(EditJobEntity editJobRequest) =
       _UpdateEditJobRequest;
   const factory HomeEvent.updateSelectedDate(DateTime value) =

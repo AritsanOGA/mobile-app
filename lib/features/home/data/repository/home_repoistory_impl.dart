@@ -14,6 +14,7 @@ import 'package:artisan_oga/features/home/domain/entities/featured_job_entity.da
 import 'package:artisan_oga/features/home/domain/entities/features_candiddate_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/job_seeker_job_response_entity.dart';
 import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 import 'package:artisan_oga/features/home/domain/repositories/home_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -117,5 +118,10 @@ class HomeRepositoryImpl implements HomeRepository {
   @override
   Future<Either<Failure, bool>> editJob(EditJobEntity entity) {
     return homeRemoteDataSource.editJob(entity).makeRequest();
+  }
+  
+  @override
+  Future<Either<Failure, bool>> postJobWithoutLogin(PostJobWithoutLoginEntity entity) {
+     return homeRemoteDataSource.postJobWithoutLogin(entity).makeRequest();
   }
 }

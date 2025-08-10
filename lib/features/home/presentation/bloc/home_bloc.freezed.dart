@@ -25,9 +25,14 @@ mixin _$HomeEvent {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -62,8 +67,11 @@ mixin _$HomeEvent {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -95,8 +103,11 @@ mixin _$HomeEvent {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -130,8 +141,11 @@ mixin _$HomeEvent {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -171,8 +185,11 @@ mixin _$HomeEvent {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -208,8 +225,11 @@ mixin _$HomeEvent {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -300,9 +320,14 @@ class _$StartedImpl implements _Started {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -340,8 +365,11 @@ class _$StartedImpl implements _Started {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -376,8 +404,11 @@ class _$StartedImpl implements _Started {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -417,8 +448,11 @@ class _$StartedImpl implements _Started {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -461,8 +495,11 @@ class _$StartedImpl implements _Started {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -501,8 +538,11 @@ class _$StartedImpl implements _Started {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -585,9 +625,14 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -625,8 +670,11 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -661,8 +709,11 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -702,8 +753,11 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -746,8 +800,11 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -786,8 +843,11 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -869,9 +929,14 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -909,8 +974,11 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -945,8 +1013,11 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -986,8 +1057,11 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -1030,8 +1104,11 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -1070,8 +1147,11 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -1153,9 +1233,14 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -1193,8 +1278,11 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -1229,8 +1317,11 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -1270,8 +1361,11 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -1314,8 +1408,11 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -1354,8 +1451,11 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -1437,9 +1537,14 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -1477,8 +1582,11 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -1513,8 +1621,11 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -1554,8 +1665,11 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -1598,8 +1712,11 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -1638,8 +1755,11 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -1721,9 +1841,14 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -1761,8 +1886,11 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -1797,8 +1925,11 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -1838,8 +1969,11 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -1882,8 +2016,11 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -1922,8 +2059,11 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -2031,9 +2171,14 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -2071,8 +2216,11 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -2107,8 +2255,11 @@ class _$PostJobImpl implements _PostJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -2148,8 +2299,11 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -2192,8 +2346,11 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -2232,8 +2389,11 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -2272,6 +2432,343 @@ abstract class _PostJob implements HomeEvent {
   PostJobEntity get param;
   @JsonKey(ignore: true)
   _$$PostJobImplCopyWith<_$PostJobImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PostJobWithoutLoginImplCopyWith<$Res> {
+  factory _$$PostJobWithoutLoginImplCopyWith(_$PostJobWithoutLoginImpl value,
+          $Res Function(_$PostJobWithoutLoginImpl) then) =
+      __$$PostJobWithoutLoginImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostJobWithoutLoginEntity param});
+}
+
+/// @nodoc
+class __$$PostJobWithoutLoginImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$PostJobWithoutLoginImpl>
+    implements _$$PostJobWithoutLoginImplCopyWith<$Res> {
+  __$$PostJobWithoutLoginImplCopyWithImpl(_$PostJobWithoutLoginImpl _value,
+      $Res Function(_$PostJobWithoutLoginImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? param = null,
+  }) {
+    return _then(_$PostJobWithoutLoginImpl(
+      null == param
+          ? _value.param
+          : param // ignore: cast_nullable_to_non_nullable
+              as PostJobWithoutLoginEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
+  const _$PostJobWithoutLoginImpl(this.param);
+
+  @override
+  final PostJobWithoutLoginEntity param;
+
+  @override
+  String toString() {
+    return 'HomeEvent.postJobWithoutLogin(param: $param)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PostJobWithoutLoginImpl &&
+            (identical(other.param, param) || other.param == param));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, param);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PostJobWithoutLoginImplCopyWith<_$PostJobWithoutLoginImpl> get copyWith =>
+      __$$PostJobWithoutLoginImplCopyWithImpl<_$PostJobWithoutLoginImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
+    required TResult Function(EditJobEntity param) editJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(EditJobEntity editJobRequest)
+        updateEditJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(String id) applyForJob,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value) updateSelectedWorkMode,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedSkillLevel,
+    required TResult Function(String value) updateSelectedEducationlevel,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedPackage,
+    required TResult Function(String value) updateSelectedAvailability,
+    required TResult Function(CountryResponseEntity value) updateCountry,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
+  }) {
+    return postJobWithoutLogin(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult? Function(EditJobEntity param)? editJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(String id)? applyForJob,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedWorkMode,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedSkillLevel,
+    TResult? Function(String value)? updateSelectedEducationlevel,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedPackage,
+    TResult? Function(String value)? updateSelectedAvailability,
+    TResult? Function(CountryResponseEntity value)? updateCountry,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
+  }) {
+    return postJobWithoutLogin?.call(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult Function(EditJobEntity param)? editJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(String id)? applyForJob,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedWorkMode,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedSkillLevel,
+    TResult Function(String value)? updateSelectedEducationlevel,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedPackage,
+    TResult Function(String value)? updateSelectedAvailability,
+    TResult Function(CountryResponseEntity value)? updateCountry,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (postJobWithoutLogin != null) {
+      return postJobWithoutLogin(param);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
+    required TResult Function(_EditJob value) editJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_ApplyForJob value) applyForJob,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedWorkMode value)
+        updateSelectedWorkMode,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedSkillLevel value)
+        updateSelectedSkillLevel,
+    required TResult Function(_UpdateSelectedEducationLevel value)
+        updateSelectedEducationlevel,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedPackage value)
+        updateSelectedPackage,
+    required TResult Function(_UpdateSelectedAvailability value)
+        updateSelectedAvailability,
+    required TResult Function(_UpdateCountry value) updateCountry,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
+  }) {
+    return postJobWithoutLogin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult? Function(_EditJob value)? editJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedSkillLevel value)?
+        updateSelectedSkillLevel,
+    TResult? Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult? Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult? Function(_UpdateCountry value)? updateCountry,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
+  }) {
+    return postJobWithoutLogin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult Function(_EditJob value)? editJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
+    TResult Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult Function(_UpdateCountry value)? updateCountry,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (postJobWithoutLogin != null) {
+      return postJobWithoutLogin(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PostJobWithoutLogin implements HomeEvent {
+  const factory _PostJobWithoutLogin(final PostJobWithoutLoginEntity param) =
+      _$PostJobWithoutLoginImpl;
+
+  PostJobWithoutLoginEntity get param;
+  @JsonKey(ignore: true)
+  _$$PostJobWithoutLoginImplCopyWith<_$PostJobWithoutLoginImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2346,9 +2843,14 @@ class _$EditJobImpl implements _EditJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -2386,8 +2888,11 @@ class _$EditJobImpl implements _EditJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -2422,8 +2927,11 @@ class _$EditJobImpl implements _EditJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -2463,8 +2971,11 @@ class _$EditJobImpl implements _EditJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -2507,8 +3018,11 @@ class _$EditJobImpl implements _EditJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -2547,8 +3061,11 @@ class _$EditJobImpl implements _EditJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -2664,9 +3181,14 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -2704,8 +3226,11 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -2740,8 +3265,11 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -2781,8 +3309,11 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -2825,8 +3356,11 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -2865,8 +3399,11 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -2906,6 +3443,353 @@ abstract class _UpdatePostJobRequest implements HomeEvent {
   PostJobEntity get postJobRequest;
   @JsonKey(ignore: true)
   _$$UpdatePostJobRequestImplCopyWith<_$UpdatePostJobRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdatePostJobWithoutLoginRequestImplCopyWith<$Res> {
+  factory _$$UpdatePostJobWithoutLoginRequestImplCopyWith(
+          _$UpdatePostJobWithoutLoginRequestImpl value,
+          $Res Function(_$UpdatePostJobWithoutLoginRequestImpl) then) =
+      __$$UpdatePostJobWithoutLoginRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PostJobWithoutLoginEntity postJobRequestWithoutLogin});
+}
+
+/// @nodoc
+class __$$UpdatePostJobWithoutLoginRequestImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res,
+        _$UpdatePostJobWithoutLoginRequestImpl>
+    implements _$$UpdatePostJobWithoutLoginRequestImplCopyWith<$Res> {
+  __$$UpdatePostJobWithoutLoginRequestImplCopyWithImpl(
+      _$UpdatePostJobWithoutLoginRequestImpl _value,
+      $Res Function(_$UpdatePostJobWithoutLoginRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postJobRequestWithoutLogin = null,
+  }) {
+    return _then(_$UpdatePostJobWithoutLoginRequestImpl(
+      null == postJobRequestWithoutLogin
+          ? _value.postJobRequestWithoutLogin
+          : postJobRequestWithoutLogin // ignore: cast_nullable_to_non_nullable
+              as PostJobWithoutLoginEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePostJobWithoutLoginRequestImpl
+    implements _UpdatePostJobWithoutLoginRequest {
+  const _$UpdatePostJobWithoutLoginRequestImpl(this.postJobRequestWithoutLogin);
+
+  @override
+  final PostJobWithoutLoginEntity postJobRequestWithoutLogin;
+
+  @override
+  String toString() {
+    return 'HomeEvent.updatePostJobWithoutLoginRequest(postJobRequestWithoutLogin: $postJobRequestWithoutLogin)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePostJobWithoutLoginRequestImpl &&
+            (identical(other.postJobRequestWithoutLogin,
+                    postJobRequestWithoutLogin) ||
+                other.postJobRequestWithoutLogin ==
+                    postJobRequestWithoutLogin));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, postJobRequestWithoutLogin);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePostJobWithoutLoginRequestImplCopyWith<
+          _$UpdatePostJobWithoutLoginRequestImpl>
+      get copyWith => __$$UpdatePostJobWithoutLoginRequestImplCopyWithImpl<
+          _$UpdatePostJobWithoutLoginRequestImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
+    required TResult Function(EditJobEntity param) editJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(EditJobEntity editJobRequest)
+        updateEditJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(String id) applyForJob,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value) updateSelectedWorkMode,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedSkillLevel,
+    required TResult Function(String value) updateSelectedEducationlevel,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedPackage,
+    required TResult Function(String value) updateSelectedAvailability,
+    required TResult Function(CountryResponseEntity value) updateCountry,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
+  }) {
+    return updatePostJobWithoutLoginRequest(postJobRequestWithoutLogin);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult? Function(EditJobEntity param)? editJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(String id)? applyForJob,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedWorkMode,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedSkillLevel,
+    TResult? Function(String value)? updateSelectedEducationlevel,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedPackage,
+    TResult? Function(String value)? updateSelectedAvailability,
+    TResult? Function(CountryResponseEntity value)? updateCountry,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
+  }) {
+    return updatePostJobWithoutLoginRequest?.call(postJobRequestWithoutLogin);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult Function(EditJobEntity param)? editJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(String id)? applyForJob,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedWorkMode,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedSkillLevel,
+    TResult Function(String value)? updateSelectedEducationlevel,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedPackage,
+    TResult Function(String value)? updateSelectedAvailability,
+    TResult Function(CountryResponseEntity value)? updateCountry,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (updatePostJobWithoutLoginRequest != null) {
+      return updatePostJobWithoutLoginRequest(postJobRequestWithoutLogin);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
+    required TResult Function(_EditJob value) editJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_ApplyForJob value) applyForJob,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedWorkMode value)
+        updateSelectedWorkMode,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedSkillLevel value)
+        updateSelectedSkillLevel,
+    required TResult Function(_UpdateSelectedEducationLevel value)
+        updateSelectedEducationlevel,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedPackage value)
+        updateSelectedPackage,
+    required TResult Function(_UpdateSelectedAvailability value)
+        updateSelectedAvailability,
+    required TResult Function(_UpdateCountry value) updateCountry,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
+  }) {
+    return updatePostJobWithoutLoginRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult? Function(_EditJob value)? editJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedSkillLevel value)?
+        updateSelectedSkillLevel,
+    TResult? Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult? Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult? Function(_UpdateCountry value)? updateCountry,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
+  }) {
+    return updatePostJobWithoutLoginRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult Function(_EditJob value)? editJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
+    TResult Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult Function(_UpdateCountry value)? updateCountry,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (updatePostJobWithoutLoginRequest != null) {
+      return updatePostJobWithoutLoginRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdatePostJobWithoutLoginRequest implements HomeEvent {
+  const factory _UpdatePostJobWithoutLoginRequest(
+          final PostJobWithoutLoginEntity postJobRequestWithoutLogin) =
+      _$UpdatePostJobWithoutLoginRequestImpl;
+
+  PostJobWithoutLoginEntity get postJobRequestWithoutLogin;
+  @JsonKey(ignore: true)
+  _$$UpdatePostJobWithoutLoginRequestImplCopyWith<
+          _$UpdatePostJobWithoutLoginRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2983,9 +3867,14 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -3023,8 +3912,11 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -3059,8 +3951,11 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -3100,8 +3995,11 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -3144,8 +4042,11 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -3184,8 +4085,11 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -3300,9 +4204,14 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -3340,8 +4249,11 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -3376,8 +4288,11 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -3417,8 +4332,11 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -3461,8 +4379,11 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -3501,8 +4422,11 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -3616,9 +4540,14 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -3656,8 +4585,11 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -3692,8 +4624,11 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -3733,8 +4668,11 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -3777,8 +4715,11 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -3817,8 +4758,11 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -3905,9 +4849,14 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -3945,8 +4894,11 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -3981,8 +4933,11 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -4022,8 +4977,11 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -4066,8 +5024,11 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -4106,8 +5067,11 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -4215,9 +5179,14 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -4255,8 +5224,11 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -4291,8 +5263,11 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -4332,8 +5307,11 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -4376,8 +5354,11 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -4416,8 +5397,11 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -4504,9 +5488,14 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -4544,8 +5533,11 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -4580,8 +5572,11 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -4621,8 +5616,11 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -4665,8 +5663,11 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -4705,8 +5706,11 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -4814,9 +5818,14 @@ class _$GetStateImpl implements _GetState {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -4854,8 +5863,11 @@ class _$GetStateImpl implements _GetState {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -4890,8 +5902,11 @@ class _$GetStateImpl implements _GetState {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -4931,8 +5946,11 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -4975,8 +5993,11 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -5015,8 +6036,11 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -5132,9 +6156,14 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -5172,8 +6201,11 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -5208,8 +6240,11 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -5249,8 +6284,11 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -5293,8 +6331,11 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -5333,8 +6374,11 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -5450,9 +6494,14 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -5490,8 +6539,11 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -5526,8 +6578,11 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -5567,8 +6622,11 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -5611,8 +6669,11 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -5651,8 +6712,11 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -5769,9 +6833,14 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -5809,8 +6878,11 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -5845,8 +6917,11 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -5886,8 +6961,11 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -5930,8 +7008,11 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -5970,8 +7051,11 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -6087,9 +7171,14 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -6127,8 +7216,11 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -6163,8 +7255,11 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -6204,8 +7299,11 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -6248,8 +7346,11 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -6288,8 +7389,11 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -6408,9 +7512,14 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -6448,8 +7557,11 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -6484,8 +7596,11 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -6525,8 +7640,11 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -6569,8 +7687,11 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -6609,8 +7730,11 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -6728,9 +7852,14 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -6768,8 +7897,11 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -6804,8 +7936,11 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -6845,8 +7980,11 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -6889,8 +8027,11 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -6929,8 +8070,11 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -7049,9 +8193,14 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -7089,8 +8238,11 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -7125,8 +8277,11 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -7166,8 +8321,11 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -7210,8 +8368,11 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -7250,8 +8411,11 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -7374,9 +8538,14 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -7414,8 +8583,11 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -7450,8 +8622,11 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -7491,8 +8666,11 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -7535,8 +8713,11 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -7575,8 +8756,11 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -7692,9 +8876,14 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -7732,8 +8921,11 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -7768,8 +8960,11 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -7809,8 +9004,11 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -7853,8 +9051,11 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -7893,8 +9094,11 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -8011,9 +9215,14 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -8051,8 +9260,11 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -8087,8 +9299,11 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -8128,8 +9343,11 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -8172,8 +9390,11 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -8212,8 +9433,11 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -8327,9 +9551,14 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -8367,8 +9596,11 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -8403,8 +9635,11 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -8444,8 +9679,11 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -8488,8 +9726,11 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -8528,8 +9769,11 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -8643,9 +9887,14 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -8683,8 +9932,11 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -8719,8 +9971,11 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -8760,8 +10015,11 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -8804,8 +10062,11 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -8844,8 +10105,11 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -8960,9 +10224,14 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     required TResult Function() getAllJobs,
     required TResult Function() getJobSeekerJobs,
     required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
     required TResult Function(EditJobEntity param) editJob,
     required TResult Function(PostJobEntity postJobRequest)
         updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(EditJobEntity editJobRequest)
         updateEditJobRequest,
     required TResult Function(DateTime value) updateSelectedDate,
@@ -9000,8 +10269,11 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult? Function()? getAllJobs,
     TResult? Function()? getJobSeekerJobs,
     TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult? Function(EditJobEntity param)? editJob,
     TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult? Function(DateTime value)? updateSelectedDate,
     TResult? Function(String id)? applyForJob,
@@ -9036,8 +10308,11 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult Function()? getAllJobs,
     TResult Function()? getJobSeekerJobs,
     TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
     TResult Function(EditJobEntity param)? editJob,
     TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
     TResult Function(DateTime value)? updateSelectedDate,
     TResult Function(String id)? applyForJob,
@@ -9077,8 +10352,11 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     required TResult Function(_GetAllJobs value) getAllJobs,
     required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
     required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
     required TResult Function(_EditJob value) editJob,
     required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
     required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
     required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
     required TResult Function(_ApplyForJob value) applyForJob,
@@ -9121,8 +10399,11 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult? Function(_GetAllJobs value)? getAllJobs,
     TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult? Function(_EditJob value)? editJob,
     TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult? Function(_ApplyForJob value)? applyForJob,
@@ -9161,8 +10442,11 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult Function(_GetAllJobs value)? getAllJobs,
     TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
     TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
     TResult Function(_EditJob value)? editJob,
     TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
     TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
     TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
     TResult Function(_ApplyForJob value)? applyForJob,
@@ -9237,6 +10521,8 @@ mixin _$HomeState {
   CountryResponseEntity? get country => throw _privateConstructorUsedError;
   StateResponseEntity? get state => throw _privateConstructorUsedError;
   PostJobEntity get postJobRequest => throw _privateConstructorUsedError;
+  PostJobWithoutLoginEntity get postJobWithoutLoginRequest =>
+      throw _privateConstructorUsedError;
   EditJobEntity get editJobRequest => throw _privateConstructorUsedError;
   List<String> get jobtypeList => throw _privateConstructorUsedError;
   List<String> get compensationTypeList => throw _privateConstructorUsedError;
@@ -9256,6 +10542,7 @@ mixin _$HomeState {
   GetEmployerJobState get getEmployerJobState =>
       throw _privateConstructorUsedError;
   PostJobState get postJobState => throw _privateConstructorUsedError;
+  ViewState get postJobWithoutLoginState => throw _privateConstructorUsedError;
   ViewState get editJobState => throw _privateConstructorUsedError;
   ApplyForJobState get applyForJobState => throw _privateConstructorUsedError;
   GetCategoryState get getCategoryState => throw _privateConstructorUsedError;
@@ -9290,6 +10577,7 @@ mixin _$HomeState {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -9305,6 +10593,7 @@ mixin _$HomeState {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -9342,6 +10631,7 @@ mixin _$HomeState {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -9357,6 +10647,7 @@ mixin _$HomeState {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -9394,6 +10685,7 @@ mixin _$HomeState {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -9409,6 +10701,7 @@ mixin _$HomeState {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -9472,6 +10765,7 @@ abstract class $HomeStateCopyWith<$Res> {
       CountryResponseEntity? country,
       StateResponseEntity? state,
       PostJobEntity postJobRequest,
+      PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       EditJobEntity editJobRequest,
       List<String> jobtypeList,
       List<String> compensationTypeList,
@@ -9487,6 +10781,7 @@ abstract class $HomeStateCopyWith<$Res> {
       GetJobSeekerJobState getJobSeekerJobState,
       GetEmployerJobState getEmployerJobState,
       PostJobState postJobState,
+      ViewState postJobWithoutLoginState,
       ViewState editJobState,
       ApplyForJobState applyForJobState,
       GetCategoryState getCategoryState,
@@ -9533,6 +10828,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? country = freezed,
     Object? state = freezed,
     Object? postJobRequest = null,
+    Object? postJobWithoutLoginRequest = null,
     Object? editJobRequest = null,
     Object? jobtypeList = null,
     Object? compensationTypeList = null,
@@ -9548,6 +10844,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? getJobSeekerJobState = null,
     Object? getEmployerJobState = null,
     Object? postJobState = null,
+    Object? postJobWithoutLoginState = null,
     Object? editJobState = null,
     Object? applyForJobState = null,
     Object? getCategoryState = null,
@@ -9653,6 +10950,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.postJobRequest
           : postJobRequest // ignore: cast_nullable_to_non_nullable
               as PostJobEntity,
+      postJobWithoutLoginRequest: null == postJobWithoutLoginRequest
+          ? _value.postJobWithoutLoginRequest
+          : postJobWithoutLoginRequest // ignore: cast_nullable_to_non_nullable
+              as PostJobWithoutLoginEntity,
       editJobRequest: null == editJobRequest
           ? _value.editJobRequest
           : editJobRequest // ignore: cast_nullable_to_non_nullable
@@ -9713,6 +11014,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.postJobState
           : postJobState // ignore: cast_nullable_to_non_nullable
               as PostJobState,
+      postJobWithoutLoginState: null == postJobWithoutLoginState
+          ? _value.postJobWithoutLoginState
+          : postJobWithoutLoginState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       editJobState: null == editJobState
           ? _value.editJobState
           : editJobState // ignore: cast_nullable_to_non_nullable
@@ -9778,6 +11083,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       CountryResponseEntity? country,
       StateResponseEntity? state,
       PostJobEntity postJobRequest,
+      PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       EditJobEntity editJobRequest,
       List<String> jobtypeList,
       List<String> compensationTypeList,
@@ -9793,6 +11099,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetJobSeekerJobState getJobSeekerJobState,
       GetEmployerJobState getEmployerJobState,
       PostJobState postJobState,
+      ViewState postJobWithoutLoginState,
       ViewState editJobState,
       ApplyForJobState applyForJobState,
       GetCategoryState getCategoryState,
@@ -9837,6 +11144,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? country = freezed,
     Object? state = freezed,
     Object? postJobRequest = null,
+    Object? postJobWithoutLoginRequest = null,
     Object? editJobRequest = null,
     Object? jobtypeList = null,
     Object? compensationTypeList = null,
@@ -9852,6 +11160,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getJobSeekerJobState = null,
     Object? getEmployerJobState = null,
     Object? postJobState = null,
+    Object? postJobWithoutLoginState = null,
     Object? editJobState = null,
     Object? applyForJobState = null,
     Object? getCategoryState = null,
@@ -9957,6 +11266,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.postJobRequest
           : postJobRequest // ignore: cast_nullable_to_non_nullable
               as PostJobEntity,
+      postJobWithoutLoginRequest: null == postJobWithoutLoginRequest
+          ? _value.postJobWithoutLoginRequest
+          : postJobWithoutLoginRequest // ignore: cast_nullable_to_non_nullable
+              as PostJobWithoutLoginEntity,
       editJobRequest: null == editJobRequest
           ? _value.editJobRequest
           : editJobRequest // ignore: cast_nullable_to_non_nullable
@@ -10017,6 +11330,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.postJobState
           : postJobState // ignore: cast_nullable_to_non_nullable
               as PostJobState,
+      postJobWithoutLoginState: null == postJobWithoutLoginState
+          ? _value.postJobWithoutLoginState
+          : postJobWithoutLoginState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
       editJobState: null == editJobState
           ? _value.editJobState
           : editJobState // ignore: cast_nullable_to_non_nullable
@@ -10077,6 +11394,31 @@ class _$InitialImpl implements _Initial {
       this.country,
       this.state,
       this.postJobRequest = const PostJobEntity(
+          jobTitle: '',
+          companyName: '',
+          category: '',
+          workType: '',
+          jobDescription: '',
+          skills: '',
+          position: '',
+          hireType: '',
+          categoryId: 0,
+          yearsOfExperience: 0,
+          levelOfEducation: '',
+          skillLevel: '',
+          maxAmount: 0,
+          minAmount: 0,
+          country: '',
+          state: '',
+          city: '',
+          available: '',
+          availableFor: '',
+          compensationType: '',
+          gender: '',
+          currency: '',
+          officeAddress: '',
+          applicationDeadline: ''),
+      this.postJobWithoutLoginRequest = const PostJobWithoutLoginEntity(
           jobTitle: '',
           companyName: '',
           category: '',
@@ -10167,6 +11509,7 @@ class _$InitialImpl implements _Initial {
       this.getJobSeekerJobState = GetJobSeekerJobState.idle,
       this.getEmployerJobState = GetEmployerJobState.idle,
       this.postJobState = PostJobState.idle,
+      this.postJobWithoutLoginState = ViewState.idle,
       this.editJobState = ViewState.idle,
       this.applyForJobState = ApplyForJobState.idle,
       this.getCategoryState = GetCategoryState.idle,
@@ -10316,6 +11659,9 @@ class _$InitialImpl implements _Initial {
   final PostJobEntity postJobRequest;
   @override
   @JsonKey()
+  final PostJobWithoutLoginEntity postJobWithoutLoginRequest;
+  @override
+  @JsonKey()
   final EditJobEntity editJobRequest;
   final List<String> _jobtypeList;
   @override
@@ -10412,6 +11758,9 @@ class _$InitialImpl implements _Initial {
   final PostJobState postJobState;
   @override
   @JsonKey()
+  final ViewState postJobWithoutLoginState;
+  @override
+  @JsonKey()
   final ViewState editJobState;
   @override
   @JsonKey()
@@ -10434,7 +11783,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, postJobWithoutLoginRequest: $postJobWithoutLoginRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, postJobWithoutLoginState: $postJobWithoutLoginState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -10482,6 +11831,9 @@ class _$InitialImpl implements _Initial {
             (identical(other.state, state) || other.state == state) &&
             (identical(other.postJobRequest, postJobRequest) ||
                 other.postJobRequest == postJobRequest) &&
+            (identical(other.postJobWithoutLoginRequest, postJobWithoutLoginRequest) ||
+                other.postJobWithoutLoginRequest ==
+                    postJobWithoutLoginRequest) &&
             (identical(other.editJobRequest, editJobRequest) ||
                 other.editJobRequest == editJobRequest) &&
             const DeepCollectionEquality()
@@ -10504,8 +11856,7 @@ class _$InitialImpl implements _Initial {
                 .equals(other._skillLevelList, _skillLevelList) &&
             (identical(other.getFeaturedJobState, getFeaturedJobState) ||
                 other.getFeaturedJobState == getFeaturedJobState) &&
-            (identical(other.getFeaturedCandidateState,
-                    getFeaturedCandidateState) ||
+            (identical(other.getFeaturedCandidateState, getFeaturedCandidateState) ||
                 other.getFeaturedCandidateState == getFeaturedCandidateState) &&
             (identical(other.getJobSeekerJobState, getJobSeekerJobState) ||
                 other.getJobSeekerJobState == getJobSeekerJobState) &&
@@ -10513,6 +11864,8 @@ class _$InitialImpl implements _Initial {
                 other.getEmployerJobState == getEmployerJobState) &&
             (identical(other.postJobState, postJobState) ||
                 other.postJobState == postJobState) &&
+            (identical(other.postJobWithoutLoginState, postJobWithoutLoginState) ||
+                other.postJobWithoutLoginState == postJobWithoutLoginState) &&
             (identical(other.editJobState, editJobState) ||
                 other.editJobState == editJobState) &&
             (identical(other.applyForJobState, applyForJobState) ||
@@ -10521,12 +11874,9 @@ class _$InitialImpl implements _Initial {
                 other.getCategoryState == getCategoryState) &&
             (identical(other.getSkillState, getSkillState) ||
                 other.getSkillState == getSkillState) &&
-            (identical(other.getCountryState, getCountryState) ||
-                other.getCountryState == getCountryState) &&
-            (identical(other.getStateState, getStateState) ||
-                other.getStateState == getStateState) &&
-            (identical(other.getAllJobState, getAllJobState) ||
-                other.getAllJobState == getAllJobState));
+            (identical(other.getCountryState, getCountryState) || other.getCountryState == getCountryState) &&
+            (identical(other.getStateState, getStateState) || other.getStateState == getStateState) &&
+            (identical(other.getAllJobState, getAllJobState) || other.getAllJobState == getAllJobState));
   }
 
   @override
@@ -10556,6 +11906,7 @@ class _$InitialImpl implements _Initial {
         country,
         state,
         postJobRequest,
+        postJobWithoutLoginRequest,
         editJobRequest,
         const DeepCollectionEquality().hash(_jobtypeList),
         const DeepCollectionEquality().hash(_compensationTypeList),
@@ -10571,6 +11922,7 @@ class _$InitialImpl implements _Initial {
         getJobSeekerJobState,
         getEmployerJobState,
         postJobState,
+        postJobWithoutLoginState,
         editJobState,
         applyForJobState,
         getCategoryState,
@@ -10614,6 +11966,7 @@ class _$InitialImpl implements _Initial {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -10629,6 +11982,7 @@ class _$InitialImpl implements _Initial {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -10663,6 +12017,7 @@ class _$InitialImpl implements _Initial {
         country,
         state,
         postJobRequest,
+        postJobWithoutLoginRequest,
         editJobRequest,
         jobtypeList,
         compensationTypeList,
@@ -10678,6 +12033,7 @@ class _$InitialImpl implements _Initial {
         getJobSeekerJobState,
         getEmployerJobState,
         postJobState,
+        postJobWithoutLoginState,
         editJobState,
         applyForJobState,
         getCategoryState,
@@ -10715,6 +12071,7 @@ class _$InitialImpl implements _Initial {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -10730,6 +12087,7 @@ class _$InitialImpl implements _Initial {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -10764,6 +12122,7 @@ class _$InitialImpl implements _Initial {
         country,
         state,
         postJobRequest,
+        postJobWithoutLoginRequest,
         editJobRequest,
         jobtypeList,
         compensationTypeList,
@@ -10779,6 +12138,7 @@ class _$InitialImpl implements _Initial {
         getJobSeekerJobState,
         getEmployerJobState,
         postJobState,
+        postJobWithoutLoginState,
         editJobState,
         applyForJobState,
         getCategoryState,
@@ -10816,6 +12176,7 @@ class _$InitialImpl implements _Initial {
             CountryResponseEntity? country,
             StateResponseEntity? state,
             PostJobEntity postJobRequest,
+            PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
             List<String> compensationTypeList,
@@ -10831,6 +12192,7 @@ class _$InitialImpl implements _Initial {
             GetJobSeekerJobState getJobSeekerJobState,
             GetEmployerJobState getEmployerJobState,
             PostJobState postJobState,
+            ViewState postJobWithoutLoginState,
             ViewState editJobState,
             ApplyForJobState applyForJobState,
             GetCategoryState getCategoryState,
@@ -10867,6 +12229,7 @@ class _$InitialImpl implements _Initial {
           country,
           state,
           postJobRequest,
+          postJobWithoutLoginRequest,
           editJobRequest,
           jobtypeList,
           compensationTypeList,
@@ -10882,6 +12245,7 @@ class _$InitialImpl implements _Initial {
           getJobSeekerJobState,
           getEmployerJobState,
           postJobState,
+          postJobWithoutLoginState,
           editJobState,
           applyForJobState,
           getCategoryState,
@@ -10948,6 +12312,7 @@ abstract class _Initial implements HomeState {
       final CountryResponseEntity? country,
       final StateResponseEntity? state,
       final PostJobEntity postJobRequest,
+      final PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       final EditJobEntity editJobRequest,
       final List<String> jobtypeList,
       final List<String> compensationTypeList,
@@ -10963,6 +12328,7 @@ abstract class _Initial implements HomeState {
       final GetJobSeekerJobState getJobSeekerJobState,
       final GetEmployerJobState getEmployerJobState,
       final PostJobState postJobState,
+      final ViewState postJobWithoutLoginState,
       final ViewState editJobState,
       final ApplyForJobState applyForJobState,
       final GetCategoryState getCategoryState,
@@ -11020,6 +12386,8 @@ abstract class _Initial implements HomeState {
   @override
   PostJobEntity get postJobRequest;
   @override
+  PostJobWithoutLoginEntity get postJobWithoutLoginRequest;
+  @override
   EditJobEntity get editJobRequest;
   @override
   List<String> get jobtypeList;
@@ -11049,6 +12417,8 @@ abstract class _Initial implements HomeState {
   GetEmployerJobState get getEmployerJobState;
   @override
   PostJobState get postJobState;
+  @override
+  ViewState get postJobWithoutLoginState;
   @override
   ViewState get editJobState;
   @override

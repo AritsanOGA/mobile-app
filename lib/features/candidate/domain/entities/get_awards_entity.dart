@@ -8,6 +8,7 @@ class GetAwardEntity extends Equatable {
     required this.purpose,
     required this.description,
     required this.year,
+    required this.identity,
   });
   final int id;
   final String userId;
@@ -15,6 +16,7 @@ class GetAwardEntity extends Equatable {
   final String purpose;
   final String description;
   final String year;
+  final String identity;
 
   @override
   List<Object?> get props => [
@@ -24,5 +26,6 @@ class GetAwardEntity extends Equatable {
         purpose,
         description,
         year,
+        identity
       ];
 }
