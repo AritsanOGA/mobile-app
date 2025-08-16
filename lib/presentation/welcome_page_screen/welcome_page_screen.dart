@@ -94,14 +94,15 @@ class WelcomePageScreen extends StatelessWidget {
                 "Connecting Talent with Opportunity: Your Next Career Move Starts Here",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 style: CustomTextStyles.bodyMediumGray700_1,
               ),
             ),
             SizedBox(height: 48.v),
             CustomElevatedButton(
               onPressed: (() {
-                Navigator.pushNamed(context, AppRoutes.candidateSearchScreen);
+                Navigator.pushNamed(context, AppRoutes.postJobWithoutLogin);
+                //  Navigator.pushNamed(context, AppRoutes.candidateSearchScreen);
               }),
               text: "Continue as an Employer",
             ),

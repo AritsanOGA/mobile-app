@@ -1,5 +1,5 @@
 import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
-import 'package:artisan_oga/features/candidate/domain/entities/add_experience_entity.dart';
+import 'package:dio/dio.dart';
 
 class AddAwardModel extends AddAwardEntity {
   AddAwardModel({
@@ -14,17 +14,23 @@ class AddAwardModel extends AddAwardEntity {
       );
   factory AddAwardModel.fromJson(Map<String, dynamic> json) {
     return AddAwardModel(
-      certificate: json['certificate'],
+      certificate: json['image'],
       title: json['title'],
       identity: json['identity'],
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {
+  Future<FormData> toJson() async {
+    final Map<String, dynamic> formDataMap = {
       'identity': identity,
       'title': title,
-      'certificate': certificate,
     };
+    if (certificate?.path != null) {
+      formDataMap['image'] = await MultipartFile.fromFile(
+        "${certificate?.path}",
+        filename: "${certificate?.path.split('/').last}",
+      );
+    }
+    return FormData.fromMap(formDataMap);
   }
 }

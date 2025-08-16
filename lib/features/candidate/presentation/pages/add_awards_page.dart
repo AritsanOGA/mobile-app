@@ -1,10 +1,12 @@
 import 'package:artisan_oga/core/routes/app_routes.dart';
+import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
+import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:artisan_oga/theme/app_decoration.dart';
 import 'package:artisan_oga/theme/custom_text_style.dart';
@@ -18,6 +20,7 @@ class AddAwardsPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleController = useTextEditingController();
     return Scaffold(
       appBar: CustomAppBar(
         titleStatus: false,
@@ -30,7 +33,7 @@ class AddAwardsPage extends HookWidget {
               context,
               AppRoutes.successScreen2,
               arguments: {
-                'message': 'Uploaded Successfully',
+                'message': 'Added Successfully',
                 'onTap': () {
                   // Navigator.pop(context);
                   // Navigator.pop(context);
@@ -56,6 +59,15 @@ class AddAwardsPage extends HookWidget {
                   style: CustomTextStyles.titleSmallSemiBold,
                 ),
                 SizedBox(height: 10.v),
+                CustomTextFormField(
+                  title: 'Title',
+                  controller: titleController,
+                  hintText: "Enter title",
+                  hintStyle: theme.textTheme.titleSmall!,
+                  textInputType: TextInputType.emailAddress,
+                  validator: FormValidation.stringValidation,
+                ),
+                SizedBox(height: 20.v),
                 Container(
                     margin: EdgeInsets.only(right: 10.h),
                     padding:
@@ -93,7 +105,7 @@ class AddAwardsPage extends HookWidget {
                             child: Text(
                                 state.award == null
                                     ? "No file chosen"
-                                    : "Files selected",
+                                    : "File selected",
                                 style: theme.textTheme.labelLarge),
                           )
                         ])),
@@ -104,7 +116,8 @@ class AddAwardsPage extends HookWidget {
                   onPressed: () {
                     context.read<CandidatesBloc>().add(
                           CandidatesEvent.addAward(AddAwardEntity(
-                              certificate: state.award!, title: 'bbbb')),
+                              certificate: state.award!,
+                              title: titleController.text)),
                         );
                   },
                   text: "Submit",

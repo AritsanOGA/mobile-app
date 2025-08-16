@@ -20,6 +20,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_experience_en
 import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/repositories/candidate_repository.dart';
@@ -193,7 +194,7 @@ class CandidateRepositoryImpl implements CandidateRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> updateAwards(AddAwardEntity entity) {
+  Future<Either<Failure, bool>> updateAwards(UpdateAwardEntity entity) {
     return candidateRemoteSource.updateAwards(entity).makeRequest();
   }
 }

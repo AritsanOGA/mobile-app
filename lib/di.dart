@@ -60,6 +60,7 @@ import 'package:artisan_oga/features/home/domain/usecases/get_featured_candidate
 import 'package:artisan_oga/features/home/domain/usecases/get_featured_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/get_job_seeker_job_usecase.dart';
 import 'package:artisan_oga/features/home/domain/usecases/post_job_usecase.dart';
+import 'package:artisan_oga/features/home/domain/usecases/post_job_without_login_usecase.dart';
 import 'package:artisan_oga/features/payment/data/data_source/payment_remote_data_source.dart';
 import 'package:artisan_oga/features/payment/data/repository/payment_repository.dart';
 import 'package:artisan_oga/features/payment/domain/repositories/payment_repository.dart';
@@ -298,6 +299,8 @@ Future<void> init() async {
         () => UpdateAwardUsecase(locator()))
     ..registerLazySingleton<DeleteAwardUsecase>(
         () => DeleteAwardUsecase(locator()))
+    ..registerLazySingleton<PostJobWithoutLoginUsecase>(
+        () => PostJobWithoutLoginUsecase(locator()))
     ..registerLazySingleton<DeleteWorkPhotoUsecase>(
         () => DeleteWorkPhotoUsecase(locator()))
     ..registerLazySingleton<UploadWorkPhotoUsecase>(

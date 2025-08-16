@@ -24,7 +24,7 @@ class AddWorkPhotoPage extends HookWidget {
       ),
       body: BlocConsumer<CandidatesBloc, CandidatesState>(
         listener: (context, state) {
-          if (state.addExperienceState == ViewState.success) {
+          if (state.uploadWorkPhotoState == ViewState.success) {
             Navigator.pushNamed(
               context,
               AppRoutes.successScreen2,
@@ -40,7 +40,7 @@ class AddWorkPhotoPage extends HookWidget {
                 },
               },
             );
-          } else if (state.addExperienceState == ViewState.failure) {
+          } else if (state.uploadWorkPhotoState == ViewState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },

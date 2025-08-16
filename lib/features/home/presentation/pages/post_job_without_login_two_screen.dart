@@ -1,26 +1,35 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
-import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/country_response_enitity.dart';
+import 'package:artisan_oga/features/authentication/domain/entities/state_response_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
-import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:page_transition/page_transition.dart';
-
-import 'post_job_three_screen.dart';
 
 class PostJobWithoutLoginTwoScreen extends HookWidget {
   @override
   @override
   Widget build(BuildContext context) {
-    final hireesNumberController = useTextEditingController();
-    final companyNameController = useTextEditingController();
+    final officeAddressController = useTextEditingController();
+    final cityController = useTextEditingController();
+    final fullNameController = useTextEditingController();
+    final emailController = useTextEditingController();
+    final phoneNoController = useTextEditingController();
+    final descriptionController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
+    useEffect(() {
+      context.read<HomeBloc>().add(HomeEvent.getCountries());
+      context.read<HomeBloc>().add(HomeEvent.getState('161'));
+      return null;
+    }, []);
     return SafeArea(
         child: Scaffold(
             appBar: CustomAppBar(
@@ -44,355 +53,194 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            // SizedBox(height: 26.v),
-                            // Row(children: [
-                            //   CustomImageView(
-                            //       imagePath: ImageConstant.imgArrowLeftOnprimary,
-                            //       height: 16.adaptSize,
-                            //       width: 16.adaptSize,
-                            //       margin: EdgeInsets.symmetric(vertical: 2.v),
-                            //       onTap: () {
-                            //         Navigator.pop(context);
-                            //       }),
-                            //   Padding(
-                            //       padding: EdgeInsets.only(left: 7.h),
-                            //       child: Text("Back",
-                            //           style:
-                            //               CustomTextStyles.titleMediumOnPrimary))
-                            // ]),
-                            SizedBox(height: 25.v),
-                            Padding(
-                                padding: EdgeInsets.only(left: 3.h),
-                                child: Text("Skill Level",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18)),
-                            SizedBox(height: 20.v),
-                            CustomRadioButton(
-                                text: "Internship/Graduate Training",
-                                value: state.skillLevelList[0],
-                                groupValue: state.skillLevel,
-                                onChange: (value) {
+                            BlocBuilder<HomeBloc, HomeState>(
+                                builder: (context, state) {
+                              return CustomDropDown<CountryResponseEntity>(
+                                title: 'Country',
+                                items: state.countries,
+                                selectedItem: state.countries.isNotEmpty
+                                    ? state.countries.firstWhere(
+                                        (country) =>
+                                            country.id == (state.country?.id),
+                                        orElse: () => state.countries.first)
+                                    : CountryResponseEntity(
+                                        id: 4,
+                                        name: 'Algeria',
+                                      ),
+                                itemLabel: (country) => country.name,
+                                onChanged: (value) {
                                   context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedSkillLevel(
-                                            value),
+                                        HomeEvent.updateCountry(value!),
                                       );
-                                }),
-                            Padding(
-                                padding:
-                                    EdgeInsets.only(top: 11.v, right: 114.h),
-                                child: CustomRadioButton(
-                                    text: "Semi-Skilled",
-                                    value: state.skillLevelList[1],
-                                    groupValue: state.skillLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedSkillLevel(
-                                                value),
-                                          );
-                                    })),
-                            Padding(
-                                padding:
-                                    EdgeInsets.only(top: 11.v, right: 85.h),
-                                child: CustomRadioButton(
-                                    text: "Skilled",
-                                    value: state.skillLevelList[2],
-                                    groupValue: state.skillLevel,
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedSkillLevel(
-                                                value),
-                                          );
-                                    })),
-                            Padding(
-                                padding:
-                                    EdgeInsets.only(top: 11.v, right: 85.h),
-                                child: CustomRadioButton(
-                                    text: "Unskilled",
-                                    value: state.skillLevelList[3],
-                                    groupValue: state.skillLevel,
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedSkillLevel(
-                                                value),
-                                          );
-                                    })),
-                            SizedBox(height: 25.v),
-                            Padding(
-                                padding: EdgeInsets.only(left: 3.h),
-                                child: Text("Academic Qualification",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18)),
-                            SizedBox(height: 20.v),
-                            Padding(
-                                padding: EdgeInsets.only(right: 74.h),
-                                child: CustomRadioButton(
-                                    text: "BSC",
-                                    value: state.levelOfEducationList[0],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding:
-                                    EdgeInsets.only(top: 11.v, right: 58.h),
-                                child: CustomRadioButton(
-                                    text: "BA",
-                                    value: state.levelOfEducationList[1],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "MSC",
-                                    value: state.levelOfEducationList[2],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "OND",
-                                    value: state.levelOfEducationList[3],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "HND",
-                                    value: state.levelOfEducationList[4],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "SSCE",
-                                    value: state.levelOfEducationList[5],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "None",
-                                    value: state.levelOfEducationList[6],
-                                    groupValue: state.educationLevel,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedEducationlevel(
-                                                    value),
-                                          );
-                                    })),
-                            SizedBox(height: 25.v),
 
-                            Divider(),
-                            SizedBox(height: 23.v),
-                            CustomTextFormField(
-                              title: 'How many Hires?',
-                              textInputType: TextInputType.number,
-                              validator: FormValidation.stringValidation,
-                              titleStyle: CustomTextStyles.titleMediumMedium18,
-                              hintText: 'How many do you want to hire?',
-                              controller: hireesNumberController,
-                              isBorderNone: true,
+                                  context.read<HomeBloc>().add(
+                                        HomeEvent.getState(value.id.toString()),
+                                      );
+                                },
+                              );
+                            }),
+                            SizedBox(height: 30.v),
+                            Row(
+                              children: [
+                                BlocBuilder<HomeBloc, HomeState>(
+                                  builder: (context, state) {
+                                    return Expanded(
+                                      child:
+                                          CustomDropDown<StateResponseEntity>(
+                                        title: 'State',
+                                        items: state.states,
+                                        selectedItem: state.states.isNotEmpty
+                                            ? state.states.firstWhere(
+                                                (state) =>
+                                                    state.id == (state.id),
+                                                orElse: () =>
+                                                    state.states.first)
+                                            : StateResponseEntity(
+                                                id: 1098, name: 'Djelfa'),
+                                        itemLabel: (state) => state.name!,
+                                        onChanged: (value) {
+                                          context.read<HomeBloc>().add(
+                                                HomeEvent.updateState(value!),
+                                              );
+                                        },
+                                      ),
+                                    );
+                                  },
+                                ),
+                                SizedBox(width: 20.h),
+                                Expanded(
+                                  child: CustomTextFormField(
+                                    title: 'Area',
+                                    validator: FormValidation.stringValidation,
+                                    controller: cityController,
+                                    hintText: 'Enter Area',
+                                  ),
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 25.v),
-                            Padding(
-                                padding: EdgeInsets.only(left: 3.h),
-                                child: Text("Gender",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18)),
-                            SizedBox(height: 20.v),
-                            Padding(
-                                padding: EdgeInsets.only(right: 74.h),
-                                child: CustomRadioButton(
-                                    text: "Male",
-                                    value: state.genderList[0],
-                                    groupValue: state.gender,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedGender(
-                                                value),
-                                          );
-                                    })),
-                            Padding(
-                                padding:
-                                    EdgeInsets.only(top: 11.v, right: 58.h),
-                                child: CustomRadioButton(
-                                    text: "Female",
-                                    value: state.genderList[1],
-                                    groupValue: state.gender,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedGender(
-                                                value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 12.v),
-                                child: CustomRadioButton(
-                                    text: "No preferences",
-                                    value: state.genderList[2],
-                                    groupValue: state.gender,
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 1.v),
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent.updateSelectedGender(
-                                                value),
-                                          );
-                                    })),
-
-                            SizedBox(height: 27.v),
-                            Divider(),
-                            SizedBox(height: 23.v),
+                            SizedBox(height: 30.v),
                             CustomTextFormField(
-                              title: 'Company Name',
-                              titleStyle: CustomTextStyles.titleMediumMedium18,
-                              hintText: 'Enter your Company’s Name',
-                              controller: companyNameController,
+                              controller: officeAddressController,
+                              title: 'Office Address',
                               validator: FormValidation.stringValidation,
-                              isBorderNone: true,
+                              hintText: 'Enter Office Address',
                             ),
-                            SizedBox(height: 25.v),
-                            Padding(
-                                padding: EdgeInsets.only(left: 3.h),
-                                child: Text("Compensation Type",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18)),
-                            SizedBox(height: 20.v),
-                            Padding(
-                                padding: EdgeInsets.only(right: 35.h),
-                                child: CustomRadioButton(
-                                    text: "Salary",
-                                    value: state.compensationTypeList[0],
-                                    groupValue: state.compensationType,
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedCompensationType(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 11.v),
-                                child: CustomRadioButton(
-                                    text: "Pay per job",
-                                    value: state.compensationTypeList[1],
-                                    groupValue: state.compensationType,
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedCompensationType(
-                                                    value),
-                                          );
-                                    })),
-                            Padding(
-                                padding: EdgeInsets.only(top: 11.v),
-                                child: CustomRadioButton(
-                                    text: "Negotiable",
-                                    value: state.compensationTypeList[2],
-                                    groupValue: state.compensationType,
-                                    onChange: (value) {
-                                      context.read<HomeBloc>().add(
-                                            HomeEvent
-                                                .updateSelectedCompensationType(
-                                                    value),
-                                          );
-                                    })),
-                            SizedBox(height: 40.v),
-                            BlocSelector<HomeBloc, HomeState, PostJobEntity>(
-                              selector: (state) {
-                                return state.postJobRequest;
+                            SizedBox(height: 30.v),
+                            BlocBuilder<HomeBloc, HomeState>(
+                              builder: (context, state) {
+                                return CustomDropDown<String>(
+                                  title: 'Is Accommodation Available?',
+                                  items: state.availabilityLists,
+                                  selectedItem: state.availablitys,
+                                  itemLabel: (category) => category,
+                                  onChanged: (value) {
+                                    context.read<HomeBloc>().add(
+                                          HomeEvent.updateSelectedAvailability(
+                                              value ?? ''),
+                                        );
+                                  },
+                                );
                               },
-                              builder: (context, postJobRequest) {
+                            ),
+                            SizedBox(height: 25.v),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: CustomTextFormField(
+                                    title: 'Full Name',
+                                    validator: FormValidation.validateFullName,
+                                    controller: fullNameController,
+                                    hintText: 'Enter Full Name',
+                                  ),
+                                ),
+                                SizedBox(width: 20.h),
+                                Expanded(
+                                  child: CustomTextFormField(
+                                    title: 'Phone Number',
+                                    validator: FormValidation.stringValidation,
+                                    controller: phoneNoController,
+                                    hintText: 'Enter Phone Number',
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 25.v),
+                            CustomTextFormField(
+                              controller: emailController,
+                              title: 'Email',
+                              validator: FormValidation.emailValidation,
+                              hintText: 'Enter Email  Address',
+                            ),
+                            SizedBox(height: 25.v),
+                            CustomTextFormField(
+                              controller: descriptionController,
+                              title: 'Description',
+                              hintText: 'Enter description',
+                              maxLines: 4,
+                            ),
+                            SizedBox(height: 40.v),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Container(
+                                    width: 350.h,
+                                    margin:
+                                        EdgeInsets.only(left: 2.h, right: 12.h),
+                                    child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                              text:
+                                                  "By posting this job, you agree to our",
+                                              style: CustomTextStyles
+                                                  .bodyMediumff3a332c),
+                                          TextSpan(text: " "),
+                                          TextSpan(
+                                              text:
+                                                  " Recruitment Terms of Service.",
+                                              style: CustomTextStyles
+                                                  .titleSmallfff7941e_1),
+                                        ]),
+                                        textAlign: TextAlign.left))),
+                            SizedBox(height: 40.v),
+                            BlocSelector<HomeBloc, HomeState,
+                                PostJobWithoutLoginEntity>(
+                              selector: (state) {
+                                return state.postJobWithoutLoginRequest;
+                              },
+                              builder: (context, postJobWithoutLoginRequest) {
                                 return CustomElevatedButton(
+                                  isBusy: state.postJobWithoutLoginState ==
+                                      ViewState.loading,
                                   onPressed: (() {
                                     if (formKey.currentState?.validate() ??
                                         false) {
                                       print(
-                                          '${state.workMode} ${state.jobType} ${hireesNumberController.text}');
+                                          '${state.workMode} ${state.jobType} ${cityController.text}');
                                       context.read<HomeBloc>().add(
-                                            HomeEvent.updatePostJobRequest(
-                                              postJobRequest.copyWith(
-                                                  skillLevel: state.skillLevel,
-                                                  levelOfEducation:
-                                                      state.educationLevel,
-                                                  position:
-                                                      hireesNumberController
+                                            HomeEvent.postJobWithoutLogin(
+                                              postJobWithoutLoginRequest.copyWith(
+                                                  fullname:
+                                                      fullNameController.text,
+                                                  jobDescription:
+                                                      descriptionController
                                                           .text,
-                                                  gender: state.gender,
-                                                  companyName:
-                                                      companyNameController
+                                                  email: emailController.text,
+                                                  phoneNumber:
+                                                      phoneNoController.text,
+                                                  country: state.country?.id
+                                                          .toString() ??
+                                                      '161',
+                                                  state: state.state?.name ??
+                                                      state.states.first.name,
+                                                  companyName: 'Sadax',
+                                                  city: cityController.text,
+                                                  officeAddress:
+                                                      officeAddressController
                                                           .text,
+                                                  available: state.availablity,
                                                   compensationType:
                                                       state.compensationType),
                                             ),
                                           );
-
-                                      Navigator.push(
-                                          context,
-                                          PageTransition(
-                                              type: PageTransitionType
-                                                  .rightToLeft,
-                                              duration: Durations.long1,
-                                              child: PostJobThreeScreen(
-                                                compensationType:
-                                                    state.compensationType ??
-                                                        '',
-                                              )));
                                     }
                                   }),
                                   text: "Next",

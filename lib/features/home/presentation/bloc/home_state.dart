@@ -13,6 +13,11 @@ class HomeState with _$HomeState {
       String? package,
       DateTime? applicationTime,
       String? availablity,
+      @Default('--Select--') String jobTypes,
+      @Default('--Select--') String workModes,
+      @Default('--Select--') String skillLevels,
+      @Default('--Select--') String educationLevels,
+      @Default('--Select--') String availablitys,
       @Default([]) List<FeaturedCandidatesEntity> featureCandidateList,
       @Default([]) List<AllJobResponseEntity> allJobList,
       @Default([]) List<EmployerJobResponseEntity> employerJobList,
@@ -58,7 +63,7 @@ class HomeState with _$HomeState {
           category: '',
           workType: '',
           jobDescription: '',
-          skills: '',
+          skills: [],
           position: '',
           hireType: '',
           categoryId: 0,
@@ -72,6 +77,9 @@ class HomeState with _$HomeState {
           city: '',
           available: '',
           availableFor: '',
+          email: '',
+          phoneNumber: '',
+          fullName: '',
           compensationType: '',
           gender: '',
           currency: '',
@@ -111,14 +119,22 @@ class HomeState with _$HomeState {
       EditJobEntity editJobRequest,
       @Default(["Contract", "Full time", "Part_time", "Temporary"])
       List<String> jobtypeList,
+      @Default(
+          ["--Select--", "Contract", "Full time", "Part_time", "Temporary"])
+      List<String> jobtypeLists,
       @Default(["Salary", "Pay per job", "Negotiable"])
       List<String> compensationTypeList,
       @Default(["Onsite", "Hybrid", "Remote"]) List<String> workModeList,
+      @Default(["--Select--", "Onsite", "Hybrid", "Remote"])
+      List<String> workModeLists,
+      @Default(["--Select--", "BSC", "BA", "MSC", "OND", "HND", "SSCE", "NONE"])
+      List<String> levelOfEducationLists,
       @Default(["BSC", "BA", "MSC", "OND", "HND", "SSCE", "NONE"])
       List<String> levelOfEducationList,
       @Default(["Male", "Female", "No preferences"]) List<String> genderList,
       @Default(["Male", "Female", "Both"]) List<String> packageList,
       @Default(["Yes", "No"]) List<String> availabilityList,
+      @Default(["--Select--", "Yes", "No"]) List<String> availabilityLists,
       @Default(0) int selectedIndex,
       @Default([
         "Internship/Graduate Training",
@@ -127,6 +143,14 @@ class HomeState with _$HomeState {
         "Unskilled"
       ])
       List<String> skillLevelList,
+      @Default([
+        "--Select--",
+        "Internship/Graduate Training",
+        "Semi-Skilled",
+        "Skilled",
+        "Unskilled"
+      ])
+      List<String> skillLevelLists,
       @Default(GetFeaturedJobState.idle)
       GetFeaturedJobState getFeaturedJobState,
       @Default(GetFeaturedCandidateState.idle)

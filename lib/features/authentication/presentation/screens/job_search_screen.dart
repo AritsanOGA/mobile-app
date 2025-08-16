@@ -5,7 +5,6 @@ import 'package:artisan_oga/features/authentication/domain/entities/search_job_d
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_one_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/screens/j_s_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/widgets/job_seach_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';

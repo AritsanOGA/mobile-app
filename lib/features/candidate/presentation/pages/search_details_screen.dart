@@ -267,7 +267,11 @@ class SearchDetailsScreen extends StatelessWidget {
                                 ApplyForJobState.loading,
                             text: 'Apply Now',
                             onPressed: () {
-                              uploadWordID(context);
+                              uploadWordID(
+                                  context,
+                                  state.searchJobDetail?.jobDetails.id
+                                          .toString() ??
+                                      '');
 
                               //     arguments: state);
                               // context.read<HomeBloc>()
@@ -290,9 +294,7 @@ class SearchDetailsScreen extends StatelessWidget {
     );
   }
 
-  Future<void> uploadWordID(
-    context,
-  ) async {
+  Future<void> uploadWordID(context, String id) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
@@ -317,7 +319,8 @@ class SearchDetailsScreen extends StatelessWidget {
                   SizedBox(height: 40.v),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.addWorkIDPage);
+                      Navigator.pushNamed(context, AppRoutes.addWorkIDPage,
+                          arguments: id);
                     },
                     child: Container(
                       height: 40,

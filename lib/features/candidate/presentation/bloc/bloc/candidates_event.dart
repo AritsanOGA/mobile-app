@@ -16,7 +16,7 @@ class CandidatesEvent with _$CandidatesEvent {
   const factory CandidatesEvent.deleteExperience(String identity) =
       _DeleteExperience;
   const factory CandidatesEvent.addAward(AddAwardEntity param) = _AddAward;
-  const factory CandidatesEvent.updateAward(AddAwardEntity param) =
+  const factory CandidatesEvent.updateAward(UpdateAwardEntity param) =
       _UpdateAward;
   const factory CandidatesEvent.getAward() = _GetAward;
   const factory CandidatesEvent.deleteAward(String identity) = _DeleteAward;

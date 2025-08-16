@@ -16,6 +16,7 @@ import 'package:artisan_oga/features/candidate/data/model/get_experience_model.d
 import 'package:artisan_oga/features/candidate/data/model/get_work_photo_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/reject_candidate_without_interview_model.dart';
+import 'package:artisan_oga/features/candidate/data/model/update_award_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/update_experience_model.dart';
 import 'package:artisan_oga/features/candidate/data/model/upload_id_card_model.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/accept_candidate_entity.dart';
@@ -31,8 +32,10 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_experience_en
 import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
+import 'package:dio/dio.dart';
 
 abstract class CandidateRemoteSource {
   Future<List<GetAssignedApplicantsEntity>> getAssignedCandidate(String jobId);
@@ -56,7 +59,7 @@ abstract class CandidateRemoteSource {
   Future<List<GetExperienceEntity>> getExperience();
 
   Future<bool> addAwards(AddAwardEntity entity);
-  Future<bool> updateAwards(AddAwardEntity entity);
+  Future<bool> updateAwards(UpdateAwardEntity entity);
   Future<bool> deleteAwards(String identity);
   Future<List<GetAwardEntity>> getAwards();
   Future<List<GetWorkPhotoEntity>> getWorkPhotos();
@@ -210,7 +213,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   Future<bool> uploadIdCard(UploadIDCardEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.uploadIdCard,
-        body: UploadIDCardModel.fromEntity(entity).toJson(),
+        body: await UploadIDCardModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;
@@ -218,9 +221,25 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
 
   @override
   Future<bool> uploadWorkPhotos(List<File> workPhotos) async {
+    if (workPhotos.isEmpty) return false;
+
+    final form = FormData();
+
+    for (final f in workPhotos) {
+      form.files.add(
+        MapEntry(
+          'work_photos[]',
+          await MultipartFile.fromFile(
+            f.path,
+            filename: "${f.path.split('/').last}",
+          ),
+        ),
+      );
+    }
+
     final result = await api.post(
         url: AppApiEndpoint.uploadWorkPhoto,
-        body: {"work_photos": workPhotos},
+        body: form,
         headers: userService.authorizationHeader);
 
     return true;
@@ -276,7 +295,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   Future<bool> addAwards(AddAwardEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.addAward,
-        body: AddAwardModel.fromEntity(entity).toJson(),
+        body: await AddAwardModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;
@@ -286,7 +305,7 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   Future<bool> deleteAwards(String identity) async {
     final result = await api.post(
         url: AppApiEndpoint.deleteAward,
-        body: {"identtiy": identity},
+        body: {"identity": identity},
         headers: userService.authorizationHeader);
 
     return true;
@@ -325,10 +344,10 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<bool> updateAwards(AddAwardEntity entity) async {
+  Future<bool> updateAwards(UpdateAwardEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.updateAward,
-        body: AddAwardModel.fromEntity(entity).toJson(),
+        body:  UpdateAwardModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;

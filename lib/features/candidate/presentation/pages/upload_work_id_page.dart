@@ -16,7 +16,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class UploadWorkIDPage extends HookWidget {
+  final String id;
   const UploadWorkIDPage({
+    required this.id,
     super.key,
   });
 
@@ -44,8 +46,13 @@ class UploadWorkIDPage extends HookWidget {
                   // Navigator.pop(context);
                   Navigator.pushNamed(
                     context,
-                    AppRoutes.jobSeekerNavBarScreen,
+                    AppRoutes.jobSearchDetailsScreen,
+                    arguments: id,
                   );
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   AppRoutes.jobSeekerNavBarScreen,
+                  // );
                 },
               },
             );

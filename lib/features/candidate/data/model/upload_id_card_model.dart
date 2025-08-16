@@ -1,4 +1,5 @@
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
+import 'package:dio/dio.dart';
 
 class UploadIDCardModel extends UploadIDCardEntity {
   UploadIDCardModel({
@@ -12,8 +13,16 @@ class UploadIDCardModel extends UploadIDCardEntity {
         card: entity.card,
       );
 
-  Map<String, dynamic> toJson() => {
-        'identity': candidateIdentity,
-        'id_card': card,
-      };
+  Future<FormData> toJson() async {
+    final Map<String, dynamic> formDataMap = {
+      'identity': candidateIdentity,
+    };
+
+    formDataMap['id_card'] = await MultipartFile.fromFile(
+      "${card.path}",
+      filename: "${card.path.split('/').last}",
+    );
+
+    return FormData.fromMap(formDataMap);
+  }
 }

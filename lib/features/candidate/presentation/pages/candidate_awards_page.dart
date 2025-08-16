@@ -21,8 +21,7 @@ class CandidateAwardsPage extends HookWidget {
         title: '',
       ),
       body: BlocBuilder<CandidatesBloc, CandidatesState>(
-        bloc: context.read<CandidatesBloc>()
-          ..add(CandidatesEvent.getWorkPhotos()),
+        bloc: context.read<CandidatesBloc>()..add(CandidatesEvent.getAward()),
         builder: (context, state) {
           if (state.getAwardsState == ViewState.loading) {
             return Center(child: CircularProgressIndicator());
@@ -49,8 +48,8 @@ class CandidateAwardsPage extends HookWidget {
                     color: AppColors.kwhite,
                     fontWeight: FontWeight.w700,
                   )),
-              SizedBox(height: 15.v),
-              ...List.generate(state.getWorkPhotoEntity.length, (index) {
+              SizedBox(height: 25.v),
+              ...List.generate(state.getAwardsEntity.length, (index) {
                 return Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +62,7 @@ class CandidateAwardsPage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('${state.getAwardsEntity[index].purpose} ',
+                                Text('${state.getAwardsEntity[index].title} ',
                                     style: theme.textTheme.bodyMedium?.copyWith(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16)),
@@ -71,7 +70,7 @@ class CandidateAwardsPage extends HookWidget {
                                   onTap: () {
                                     Navigator.pushNamed(
                                       context,
-                                      AppRoutes.updateEducationScreen,
+                                      AppRoutes.updateAwardScreen,
                                       arguments: state.getAwardsEntity[index],
                                     );
                                   },
@@ -88,7 +87,8 @@ class CandidateAwardsPage extends HookWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 CachedNetworkImage(
-                                  imageUrl: '',
+                                  imageUrl:
+                                      'https://${state.getAwardsEntity[index].certificate}',
                                   fit: BoxFit.cover,
                                   progressIndicatorBuilder:
                                       (context, url, downloadProgress) =>

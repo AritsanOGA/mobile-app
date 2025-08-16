@@ -115,14 +115,14 @@ class AddCandidateEducationPage extends HookWidget {
                                 CandidatesEvent.addEducation(
                                   AddEducationEntity(
                                       courseName: courseNamCeontroller.text,
-                                      title: certificateController.text,
+                                      degree: certificateController.text,
                                       userId: UserService()
                                               .authData
                                               ?.user
                                               .id
                                               .toString() ??
                                           '',
-                                      description: courseNamCeontroller.text,
+                                      schoolName: schoolNameController.text,
                                       year: yearController.text),
                                 ),
                               );

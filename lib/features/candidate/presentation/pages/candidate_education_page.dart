@@ -86,13 +86,17 @@ class CandidateEducationPage extends HookWidget {
                               ],
                             ),
                             SizedBox(height: 8.v),
+                            Text(state.getEducationEntity[index].purpose,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w400, fontSize: 16)),
+                            SizedBox(height: 5.v),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(state.getEducationEntity[index].purpose,
+                                Text(state.getEducationEntity[index].degree,
                                     style: theme.textTheme.bodyMedium?.copyWith(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 16)),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14)),
                                 GestureDetector(
                                     onTap: () {
                                       deleteEducation(
@@ -103,15 +107,9 @@ class CandidateEducationPage extends HookWidget {
                                     },
                                     child: Image.asset(
                                       ImageConstant.delete,
-                                      // width: 27,
-                                      // height: 27,
                                     ))
                               ],
                             ),
-                            SizedBox(height: 5.v),
-                            Text('Bsc',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w600, fontSize: 14)),
                           ],
                         ),
                       ),

@@ -10500,6 +10500,11 @@ mixin _$HomeState {
   String? get package => throw _privateConstructorUsedError;
   DateTime? get applicationTime => throw _privateConstructorUsedError;
   String? get availablity => throw _privateConstructorUsedError;
+  String get jobTypes => throw _privateConstructorUsedError;
+  String get workModes => throw _privateConstructorUsedError;
+  String get skillLevels => throw _privateConstructorUsedError;
+  String get educationLevels => throw _privateConstructorUsedError;
+  String get availablitys => throw _privateConstructorUsedError;
   List<FeaturedCandidatesEntity> get featureCandidateList =>
       throw _privateConstructorUsedError;
   List<AllJobResponseEntity> get allJobList =>
@@ -10525,14 +10530,19 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   EditJobEntity get editJobRequest => throw _privateConstructorUsedError;
   List<String> get jobtypeList => throw _privateConstructorUsedError;
+  List<String> get jobtypeLists => throw _privateConstructorUsedError;
   List<String> get compensationTypeList => throw _privateConstructorUsedError;
   List<String> get workModeList => throw _privateConstructorUsedError;
+  List<String> get workModeLists => throw _privateConstructorUsedError;
+  List<String> get levelOfEducationLists => throw _privateConstructorUsedError;
   List<String> get levelOfEducationList => throw _privateConstructorUsedError;
   List<String> get genderList => throw _privateConstructorUsedError;
   List<String> get packageList => throw _privateConstructorUsedError;
   List<String> get availabilityList => throw _privateConstructorUsedError;
+  List<String> get availabilityLists => throw _privateConstructorUsedError;
   int get selectedIndex => throw _privateConstructorUsedError;
   List<String> get skillLevelList => throw _privateConstructorUsedError;
+  List<String> get skillLevelLists => throw _privateConstructorUsedError;
   GetFeaturedJobState get getFeaturedJobState =>
       throw _privateConstructorUsedError;
   GetFeaturedCandidateState get getFeaturedCandidateState =>
@@ -10563,6 +10573,11 @@ mixin _$HomeState {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -10580,14 +10595,19 @@ mixin _$HomeState {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10617,6 +10637,11 @@ mixin _$HomeState {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -10634,14 +10659,19 @@ mixin _$HomeState {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10671,6 +10701,11 @@ mixin _$HomeState {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -10688,14 +10723,19 @@ mixin _$HomeState {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10751,6 +10791,11 @@ abstract class $HomeStateCopyWith<$Res> {
       String? package,
       DateTime? applicationTime,
       String? availablity,
+      String jobTypes,
+      String workModes,
+      String skillLevels,
+      String educationLevels,
+      String availablitys,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
@@ -10768,14 +10813,19 @@ abstract class $HomeStateCopyWith<$Res> {
       PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       EditJobEntity editJobRequest,
       List<String> jobtypeList,
+      List<String> jobtypeLists,
       List<String> compensationTypeList,
       List<String> workModeList,
+      List<String> workModeLists,
+      List<String> levelOfEducationLists,
       List<String> levelOfEducationList,
       List<String> genderList,
       List<String> packageList,
       List<String> availabilityList,
+      List<String> availabilityLists,
       int selectedIndex,
       List<String> skillLevelList,
+      List<String> skillLevelLists,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
       GetJobSeekerJobState getJobSeekerJobState,
@@ -10814,6 +10864,11 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? package = freezed,
     Object? applicationTime = freezed,
     Object? availablity = freezed,
+    Object? jobTypes = null,
+    Object? workModes = null,
+    Object? skillLevels = null,
+    Object? educationLevels = null,
+    Object? availablitys = null,
     Object? featureCandidateList = null,
     Object? allJobList = null,
     Object? employerJobList = null,
@@ -10831,14 +10886,19 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? postJobWithoutLoginRequest = null,
     Object? editJobRequest = null,
     Object? jobtypeList = null,
+    Object? jobtypeLists = null,
     Object? compensationTypeList = null,
     Object? workModeList = null,
+    Object? workModeLists = null,
+    Object? levelOfEducationLists = null,
     Object? levelOfEducationList = null,
     Object? genderList = null,
     Object? packageList = null,
     Object? availabilityList = null,
+    Object? availabilityLists = null,
     Object? selectedIndex = null,
     Object? skillLevelList = null,
+    Object? skillLevelLists = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
     Object? getJobSeekerJobState = null,
@@ -10894,6 +10954,26 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
               as String?,
+      jobTypes: null == jobTypes
+          ? _value.jobTypes
+          : jobTypes // ignore: cast_nullable_to_non_nullable
+              as String,
+      workModes: null == workModes
+          ? _value.workModes
+          : workModes // ignore: cast_nullable_to_non_nullable
+              as String,
+      skillLevels: null == skillLevels
+          ? _value.skillLevels
+          : skillLevels // ignore: cast_nullable_to_non_nullable
+              as String,
+      educationLevels: null == educationLevels
+          ? _value.educationLevels
+          : educationLevels // ignore: cast_nullable_to_non_nullable
+              as String,
+      availablitys: null == availablitys
+          ? _value.availablitys
+          : availablitys // ignore: cast_nullable_to_non_nullable
+              as String,
       featureCandidateList: null == featureCandidateList
           ? _value.featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
@@ -10962,6 +11042,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.jobtypeList
           : jobtypeList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      jobtypeLists: null == jobtypeLists
+          ? _value.jobtypeLists
+          : jobtypeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       compensationTypeList: null == compensationTypeList
           ? _value.compensationTypeList
           : compensationTypeList // ignore: cast_nullable_to_non_nullable
@@ -10969,6 +11053,14 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       workModeList: null == workModeList
           ? _value.workModeList
           : workModeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      workModeLists: null == workModeLists
+          ? _value.workModeLists
+          : workModeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      levelOfEducationLists: null == levelOfEducationLists
+          ? _value.levelOfEducationLists
+          : levelOfEducationLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
       levelOfEducationList: null == levelOfEducationList
           ? _value.levelOfEducationList
@@ -10986,6 +11078,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.availabilityList
           : availabilityList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      availabilityLists: null == availabilityLists
+          ? _value.availabilityLists
+          : availabilityLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
@@ -10993,6 +11089,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       skillLevelList: null == skillLevelList
           ? _value.skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      skillLevelLists: null == skillLevelLists
+          ? _value.skillLevelLists
+          : skillLevelLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
       getFeaturedJobState: null == getFeaturedJobState
           ? _value.getFeaturedJobState
@@ -11069,6 +11169,11 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? package,
       DateTime? applicationTime,
       String? availablity,
+      String jobTypes,
+      String workModes,
+      String skillLevels,
+      String educationLevels,
+      String availablitys,
       List<FeaturedCandidatesEntity> featureCandidateList,
       List<AllJobResponseEntity> allJobList,
       List<EmployerJobResponseEntity> employerJobList,
@@ -11086,14 +11191,19 @@ abstract class _$$InitialImplCopyWith<$Res>
       PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       EditJobEntity editJobRequest,
       List<String> jobtypeList,
+      List<String> jobtypeLists,
       List<String> compensationTypeList,
       List<String> workModeList,
+      List<String> workModeLists,
+      List<String> levelOfEducationLists,
       List<String> levelOfEducationList,
       List<String> genderList,
       List<String> packageList,
       List<String> availabilityList,
+      List<String> availabilityLists,
       int selectedIndex,
       List<String> skillLevelList,
+      List<String> skillLevelLists,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
       GetJobSeekerJobState getJobSeekerJobState,
@@ -11130,6 +11240,11 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? package = freezed,
     Object? applicationTime = freezed,
     Object? availablity = freezed,
+    Object? jobTypes = null,
+    Object? workModes = null,
+    Object? skillLevels = null,
+    Object? educationLevels = null,
+    Object? availablitys = null,
     Object? featureCandidateList = null,
     Object? allJobList = null,
     Object? employerJobList = null,
@@ -11147,14 +11262,19 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? postJobWithoutLoginRequest = null,
     Object? editJobRequest = null,
     Object? jobtypeList = null,
+    Object? jobtypeLists = null,
     Object? compensationTypeList = null,
     Object? workModeList = null,
+    Object? workModeLists = null,
+    Object? levelOfEducationLists = null,
     Object? levelOfEducationList = null,
     Object? genderList = null,
     Object? packageList = null,
     Object? availabilityList = null,
+    Object? availabilityLists = null,
     Object? selectedIndex = null,
     Object? skillLevelList = null,
+    Object? skillLevelLists = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
     Object? getJobSeekerJobState = null,
@@ -11210,6 +11330,26 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.availablity
           : availablity // ignore: cast_nullable_to_non_nullable
               as String?,
+      jobTypes: null == jobTypes
+          ? _value.jobTypes
+          : jobTypes // ignore: cast_nullable_to_non_nullable
+              as String,
+      workModes: null == workModes
+          ? _value.workModes
+          : workModes // ignore: cast_nullable_to_non_nullable
+              as String,
+      skillLevels: null == skillLevels
+          ? _value.skillLevels
+          : skillLevels // ignore: cast_nullable_to_non_nullable
+              as String,
+      educationLevels: null == educationLevels
+          ? _value.educationLevels
+          : educationLevels // ignore: cast_nullable_to_non_nullable
+              as String,
+      availablitys: null == availablitys
+          ? _value.availablitys
+          : availablitys // ignore: cast_nullable_to_non_nullable
+              as String,
       featureCandidateList: null == featureCandidateList
           ? _value._featureCandidateList
           : featureCandidateList // ignore: cast_nullable_to_non_nullable
@@ -11278,6 +11418,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._jobtypeList
           : jobtypeList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      jobtypeLists: null == jobtypeLists
+          ? _value._jobtypeLists
+          : jobtypeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       compensationTypeList: null == compensationTypeList
           ? _value._compensationTypeList
           : compensationTypeList // ignore: cast_nullable_to_non_nullable
@@ -11285,6 +11429,14 @@ class __$$InitialImplCopyWithImpl<$Res>
       workModeList: null == workModeList
           ? _value._workModeList
           : workModeList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      workModeLists: null == workModeLists
+          ? _value._workModeLists
+          : workModeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      levelOfEducationLists: null == levelOfEducationLists
+          ? _value._levelOfEducationLists
+          : levelOfEducationLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
       levelOfEducationList: null == levelOfEducationList
           ? _value._levelOfEducationList
@@ -11302,6 +11454,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._availabilityList
           : availabilityList // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      availabilityLists: null == availabilityLists
+          ? _value._availabilityLists
+          : availabilityLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
@@ -11309,6 +11465,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       skillLevelList: null == skillLevelList
           ? _value._skillLevelList
           : skillLevelList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      skillLevelLists: null == skillLevelLists
+          ? _value._skillLevelLists
+          : skillLevelLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
       getFeaturedJobState: null == getFeaturedJobState
           ? _value.getFeaturedJobState
@@ -11380,6 +11540,11 @@ class _$InitialImpl implements _Initial {
       this.package,
       this.applicationTime,
       this.availablity,
+      this.jobTypes = '--Select--',
+      this.workModes = '--Select--',
+      this.skillLevels = '--Select--',
+      this.educationLevels = '--Select--',
+      this.availablitys = '--Select--',
       final List<FeaturedCandidatesEntity> featureCandidateList = const [],
       final List<AllJobResponseEntity> allJobList = const [],
       final List<EmployerJobResponseEntity> employerJobList = const [],
@@ -11424,7 +11589,7 @@ class _$InitialImpl implements _Initial {
           category: '',
           workType: '',
           jobDescription: '',
-          skills: '',
+          skills: [],
           position: '',
           hireType: '',
           categoryId: 0,
@@ -11438,6 +11603,9 @@ class _$InitialImpl implements _Initial {
           city: '',
           available: '',
           availableFor: '',
+          email: '',
+          phoneNumber: '',
+          fullName: '',
           compensationType: '',
           gender: '',
           currency: '',
@@ -11475,12 +11643,35 @@ class _$InitialImpl implements _Initial {
         "Part_time",
         "Temporary"
       ],
+      final List<String> jobtypeLists = const [
+        "--Select--",
+        "Contract",
+        "Full time",
+        "Part_time",
+        "Temporary"
+      ],
       final List<String> compensationTypeList = const [
         "Salary",
         "Pay per job",
         "Negotiable"
       ],
       final List<String> workModeList = const ["Onsite", "Hybrid", "Remote"],
+      final List<String> workModeLists = const [
+        "--Select--",
+        "Onsite",
+        "Hybrid",
+        "Remote"
+      ],
+      final List<String> levelOfEducationLists = const [
+        "--Select--",
+        "BSC",
+        "BA",
+        "MSC",
+        "OND",
+        "HND",
+        "SSCE",
+        "NONE"
+      ],
       final List<String> levelOfEducationList = const [
         "BSC",
         "BA",
@@ -11497,8 +11688,16 @@ class _$InitialImpl implements _Initial {
       ],
       final List<String> packageList = const ["Male", "Female", "Both"],
       final List<String> availabilityList = const ["Yes", "No"],
+      final List<String> availabilityLists = const ["--Select--", "Yes", "No"],
       this.selectedIndex = 0,
       final List<String> skillLevelList = const [
+        "Internship/Graduate Training",
+        "Semi-Skilled",
+        "Skilled",
+        "Unskilled"
+      ],
+      final List<String> skillLevelLists = const [
+        "--Select--",
         "Internship/Graduate Training",
         "Semi-Skilled",
         "Skilled",
@@ -11528,13 +11727,18 @@ class _$InitialImpl implements _Initial {
         _countries = countries,
         _states = states,
         _jobtypeList = jobtypeList,
+        _jobtypeLists = jobtypeLists,
         _compensationTypeList = compensationTypeList,
         _workModeList = workModeList,
+        _workModeLists = workModeLists,
+        _levelOfEducationLists = levelOfEducationLists,
         _levelOfEducationList = levelOfEducationList,
         _genderList = genderList,
         _packageList = packageList,
         _availabilityList = availabilityList,
-        _skillLevelList = skillLevelList;
+        _availabilityLists = availabilityLists,
+        _skillLevelList = skillLevelList,
+        _skillLevelLists = skillLevelLists;
 
   @override
   final String? errorMessage;
@@ -11556,6 +11760,21 @@ class _$InitialImpl implements _Initial {
   final DateTime? applicationTime;
   @override
   final String? availablity;
+  @override
+  @JsonKey()
+  final String jobTypes;
+  @override
+  @JsonKey()
+  final String workModes;
+  @override
+  @JsonKey()
+  final String skillLevels;
+  @override
+  @JsonKey()
+  final String educationLevels;
+  @override
+  @JsonKey()
+  final String availablitys;
   final List<FeaturedCandidatesEntity> _featureCandidateList;
   @override
   @JsonKey()
@@ -11672,6 +11891,15 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_jobtypeList);
   }
 
+  final List<String> _jobtypeLists;
+  @override
+  @JsonKey()
+  List<String> get jobtypeLists {
+    if (_jobtypeLists is EqualUnmodifiableListView) return _jobtypeLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_jobtypeLists);
+  }
+
   final List<String> _compensationTypeList;
   @override
   @JsonKey()
@@ -11689,6 +11917,25 @@ class _$InitialImpl implements _Initial {
     if (_workModeList is EqualUnmodifiableListView) return _workModeList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_workModeList);
+  }
+
+  final List<String> _workModeLists;
+  @override
+  @JsonKey()
+  List<String> get workModeLists {
+    if (_workModeLists is EqualUnmodifiableListView) return _workModeLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_workModeLists);
+  }
+
+  final List<String> _levelOfEducationLists;
+  @override
+  @JsonKey()
+  List<String> get levelOfEducationLists {
+    if (_levelOfEducationLists is EqualUnmodifiableListView)
+      return _levelOfEducationLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_levelOfEducationLists);
   }
 
   final List<String> _levelOfEducationList;
@@ -11729,6 +11976,16 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_availabilityList);
   }
 
+  final List<String> _availabilityLists;
+  @override
+  @JsonKey()
+  List<String> get availabilityLists {
+    if (_availabilityLists is EqualUnmodifiableListView)
+      return _availabilityLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_availabilityLists);
+  }
+
   @override
   @JsonKey()
   final int selectedIndex;
@@ -11739,6 +11996,15 @@ class _$InitialImpl implements _Initial {
     if (_skillLevelList is EqualUnmodifiableListView) return _skillLevelList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_skillLevelList);
+  }
+
+  final List<String> _skillLevelLists;
+  @override
+  @JsonKey()
+  List<String> get skillLevelLists {
+    if (_skillLevelLists is EqualUnmodifiableListView) return _skillLevelLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_skillLevelLists);
   }
 
   @override
@@ -11783,7 +12049,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, postJobWithoutLoginRequest: $postJobWithoutLoginRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, compensationTypeList: $compensationTypeList, workModeList: $workModeList, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, postJobWithoutLoginState: $postJobWithoutLoginState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, jobTypes: $jobTypes, workModes: $workModes, skillLevels: $skillLevels, educationLevels: $educationLevels, availablitys: $availablitys, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, postJobWithoutLoginRequest: $postJobWithoutLoginRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, jobtypeLists: $jobtypeLists, compensationTypeList: $compensationTypeList, workModeList: $workModeList, workModeLists: $workModeLists, levelOfEducationLists: $levelOfEducationLists, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, availabilityLists: $availabilityLists, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, skillLevelLists: $skillLevelLists, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, postJobWithoutLoginState: $postJobWithoutLoginState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -11808,6 +12074,16 @@ class _$InitialImpl implements _Initial {
                 other.applicationTime == applicationTime) &&
             (identical(other.availablity, availablity) ||
                 other.availablity == availablity) &&
+            (identical(other.jobTypes, jobTypes) ||
+                other.jobTypes == jobTypes) &&
+            (identical(other.workModes, workModes) ||
+                other.workModes == workModes) &&
+            (identical(other.skillLevels, skillLevels) ||
+                other.skillLevels == skillLevels) &&
+            (identical(other.educationLevels, educationLevels) ||
+                other.educationLevels == educationLevels) &&
+            (identical(other.availablitys, availablitys) ||
+                other.availablitys == availablitys) &&
             const DeepCollectionEquality()
                 .equals(other._featureCandidateList, _featureCandidateList) &&
             const DeepCollectionEquality()
@@ -11839,9 +12115,15 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality()
                 .equals(other._jobtypeList, _jobtypeList) &&
             const DeepCollectionEquality()
+                .equals(other._jobtypeLists, _jobtypeLists) &&
+            const DeepCollectionEquality()
                 .equals(other._compensationTypeList, _compensationTypeList) &&
             const DeepCollectionEquality()
                 .equals(other._workModeList, _workModeList) &&
+            const DeepCollectionEquality()
+                .equals(other._workModeLists, _workModeLists) &&
+            const DeepCollectionEquality()
+                .equals(other._levelOfEducationLists, _levelOfEducationLists) &&
             const DeepCollectionEquality()
                 .equals(other._levelOfEducationList, _levelOfEducationList) &&
             const DeepCollectionEquality()
@@ -11850,30 +12132,25 @@ class _$InitialImpl implements _Initial {
                 .equals(other._packageList, _packageList) &&
             const DeepCollectionEquality()
                 .equals(other._availabilityList, _availabilityList) &&
+            const DeepCollectionEquality()
+                .equals(other._availabilityLists, _availabilityLists) &&
             (identical(other.selectedIndex, selectedIndex) ||
                 other.selectedIndex == selectedIndex) &&
             const DeepCollectionEquality()
                 .equals(other._skillLevelList, _skillLevelList) &&
+            const DeepCollectionEquality()
+                .equals(other._skillLevelLists, _skillLevelLists) &&
             (identical(other.getFeaturedJobState, getFeaturedJobState) ||
                 other.getFeaturedJobState == getFeaturedJobState) &&
-            (identical(other.getFeaturedCandidateState, getFeaturedCandidateState) ||
-                other.getFeaturedCandidateState == getFeaturedCandidateState) &&
-            (identical(other.getJobSeekerJobState, getJobSeekerJobState) ||
-                other.getJobSeekerJobState == getJobSeekerJobState) &&
-            (identical(other.getEmployerJobState, getEmployerJobState) ||
-                other.getEmployerJobState == getEmployerJobState) &&
-            (identical(other.postJobState, postJobState) ||
-                other.postJobState == postJobState) &&
-            (identical(other.postJobWithoutLoginState, postJobWithoutLoginState) ||
-                other.postJobWithoutLoginState == postJobWithoutLoginState) &&
-            (identical(other.editJobState, editJobState) ||
-                other.editJobState == editJobState) &&
-            (identical(other.applyForJobState, applyForJobState) ||
-                other.applyForJobState == applyForJobState) &&
-            (identical(other.getCategoryState, getCategoryState) ||
-                other.getCategoryState == getCategoryState) &&
-            (identical(other.getSkillState, getSkillState) ||
-                other.getSkillState == getSkillState) &&
+            (identical(other.getFeaturedCandidateState, getFeaturedCandidateState) || other.getFeaturedCandidateState == getFeaturedCandidateState) &&
+            (identical(other.getJobSeekerJobState, getJobSeekerJobState) || other.getJobSeekerJobState == getJobSeekerJobState) &&
+            (identical(other.getEmployerJobState, getEmployerJobState) || other.getEmployerJobState == getEmployerJobState) &&
+            (identical(other.postJobState, postJobState) || other.postJobState == postJobState) &&
+            (identical(other.postJobWithoutLoginState, postJobWithoutLoginState) || other.postJobWithoutLoginState == postJobWithoutLoginState) &&
+            (identical(other.editJobState, editJobState) || other.editJobState == editJobState) &&
+            (identical(other.applyForJobState, applyForJobState) || other.applyForJobState == applyForJobState) &&
+            (identical(other.getCategoryState, getCategoryState) || other.getCategoryState == getCategoryState) &&
+            (identical(other.getSkillState, getSkillState) || other.getSkillState == getSkillState) &&
             (identical(other.getCountryState, getCountryState) || other.getCountryState == getCountryState) &&
             (identical(other.getStateState, getStateState) || other.getStateState == getStateState) &&
             (identical(other.getAllJobState, getAllJobState) || other.getAllJobState == getAllJobState));
@@ -11892,6 +12169,11 @@ class _$InitialImpl implements _Initial {
         package,
         applicationTime,
         availablity,
+        jobTypes,
+        workModes,
+        skillLevels,
+        educationLevels,
+        availablitys,
         const DeepCollectionEquality().hash(_featureCandidateList),
         const DeepCollectionEquality().hash(_allJobList),
         const DeepCollectionEquality().hash(_employerJobList),
@@ -11909,14 +12191,19 @@ class _$InitialImpl implements _Initial {
         postJobWithoutLoginRequest,
         editJobRequest,
         const DeepCollectionEquality().hash(_jobtypeList),
+        const DeepCollectionEquality().hash(_jobtypeLists),
         const DeepCollectionEquality().hash(_compensationTypeList),
         const DeepCollectionEquality().hash(_workModeList),
+        const DeepCollectionEquality().hash(_workModeLists),
+        const DeepCollectionEquality().hash(_levelOfEducationLists),
         const DeepCollectionEquality().hash(_levelOfEducationList),
         const DeepCollectionEquality().hash(_genderList),
         const DeepCollectionEquality().hash(_packageList),
         const DeepCollectionEquality().hash(_availabilityList),
+        const DeepCollectionEquality().hash(_availabilityLists),
         selectedIndex,
         const DeepCollectionEquality().hash(_skillLevelList),
+        const DeepCollectionEquality().hash(_skillLevelLists),
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -11952,6 +12239,11 @@ class _$InitialImpl implements _Initial {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -11969,14 +12261,19 @@ class _$InitialImpl implements _Initial {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12003,6 +12300,11 @@ class _$InitialImpl implements _Initial {
         package,
         applicationTime,
         availablity,
+        jobTypes,
+        workModes,
+        skillLevels,
+        educationLevels,
+        availablitys,
         featureCandidateList,
         allJobList,
         employerJobList,
@@ -12020,14 +12322,19 @@ class _$InitialImpl implements _Initial {
         postJobWithoutLoginRequest,
         editJobRequest,
         jobtypeList,
+        jobtypeLists,
         compensationTypeList,
         workModeList,
+        workModeLists,
+        levelOfEducationLists,
         levelOfEducationList,
         genderList,
         packageList,
         availabilityList,
+        availabilityLists,
         selectedIndex,
         skillLevelList,
+        skillLevelLists,
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -12057,6 +12364,11 @@ class _$InitialImpl implements _Initial {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -12074,14 +12386,19 @@ class _$InitialImpl implements _Initial {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12108,6 +12425,11 @@ class _$InitialImpl implements _Initial {
         package,
         applicationTime,
         availablity,
+        jobTypes,
+        workModes,
+        skillLevels,
+        educationLevels,
+        availablitys,
         featureCandidateList,
         allJobList,
         employerJobList,
@@ -12125,14 +12447,19 @@ class _$InitialImpl implements _Initial {
         postJobWithoutLoginRequest,
         editJobRequest,
         jobtypeList,
+        jobtypeLists,
         compensationTypeList,
         workModeList,
+        workModeLists,
+        levelOfEducationLists,
         levelOfEducationList,
         genderList,
         packageList,
         availabilityList,
+        availabilityLists,
         selectedIndex,
         skillLevelList,
+        skillLevelLists,
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -12162,6 +12489,11 @@ class _$InitialImpl implements _Initial {
             String? package,
             DateTime? applicationTime,
             String? availablity,
+            String jobTypes,
+            String workModes,
+            String skillLevels,
+            String educationLevels,
+            String availablitys,
             List<FeaturedCandidatesEntity> featureCandidateList,
             List<AllJobResponseEntity> allJobList,
             List<EmployerJobResponseEntity> employerJobList,
@@ -12179,14 +12511,19 @@ class _$InitialImpl implements _Initial {
             PostJobWithoutLoginEntity postJobWithoutLoginRequest,
             EditJobEntity editJobRequest,
             List<String> jobtypeList,
+            List<String> jobtypeLists,
             List<String> compensationTypeList,
             List<String> workModeList,
+            List<String> workModeLists,
+            List<String> levelOfEducationLists,
             List<String> levelOfEducationList,
             List<String> genderList,
             List<String> packageList,
             List<String> availabilityList,
+            List<String> availabilityLists,
             int selectedIndex,
             List<String> skillLevelList,
+            List<String> skillLevelLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12215,6 +12552,11 @@ class _$InitialImpl implements _Initial {
           package,
           applicationTime,
           availablity,
+          jobTypes,
+          workModes,
+          skillLevels,
+          educationLevels,
+          availablitys,
           featureCandidateList,
           allJobList,
           employerJobList,
@@ -12232,14 +12574,19 @@ class _$InitialImpl implements _Initial {
           postJobWithoutLoginRequest,
           editJobRequest,
           jobtypeList,
+          jobtypeLists,
           compensationTypeList,
           workModeList,
+          workModeLists,
+          levelOfEducationLists,
           levelOfEducationList,
           genderList,
           packageList,
           availabilityList,
+          availabilityLists,
           selectedIndex,
           skillLevelList,
+          skillLevelLists,
           getFeaturedJobState,
           getFeaturedCandidateState,
           getJobSeekerJobState,
@@ -12298,6 +12645,11 @@ abstract class _Initial implements HomeState {
       final String? package,
       final DateTime? applicationTime,
       final String? availablity,
+      final String jobTypes,
+      final String workModes,
+      final String skillLevels,
+      final String educationLevels,
+      final String availablitys,
       final List<FeaturedCandidatesEntity> featureCandidateList,
       final List<AllJobResponseEntity> allJobList,
       final List<EmployerJobResponseEntity> employerJobList,
@@ -12315,14 +12667,19 @@ abstract class _Initial implements HomeState {
       final PostJobWithoutLoginEntity postJobWithoutLoginRequest,
       final EditJobEntity editJobRequest,
       final List<String> jobtypeList,
+      final List<String> jobtypeLists,
       final List<String> compensationTypeList,
       final List<String> workModeList,
+      final List<String> workModeLists,
+      final List<String> levelOfEducationLists,
       final List<String> levelOfEducationList,
       final List<String> genderList,
       final List<String> packageList,
       final List<String> availabilityList,
+      final List<String> availabilityLists,
       final int selectedIndex,
       final List<String> skillLevelList,
+      final List<String> skillLevelLists,
       final GetFeaturedJobState getFeaturedJobState,
       final GetFeaturedCandidateState getFeaturedCandidateState,
       final GetJobSeekerJobState getJobSeekerJobState,
@@ -12358,6 +12715,16 @@ abstract class _Initial implements HomeState {
   @override
   String? get availablity;
   @override
+  String get jobTypes;
+  @override
+  String get workModes;
+  @override
+  String get skillLevels;
+  @override
+  String get educationLevels;
+  @override
+  String get availablitys;
+  @override
   List<FeaturedCandidatesEntity> get featureCandidateList;
   @override
   List<AllJobResponseEntity> get allJobList;
@@ -12392,9 +12759,15 @@ abstract class _Initial implements HomeState {
   @override
   List<String> get jobtypeList;
   @override
+  List<String> get jobtypeLists;
+  @override
   List<String> get compensationTypeList;
   @override
   List<String> get workModeList;
+  @override
+  List<String> get workModeLists;
+  @override
+  List<String> get levelOfEducationLists;
   @override
   List<String> get levelOfEducationList;
   @override
@@ -12404,9 +12777,13 @@ abstract class _Initial implements HomeState {
   @override
   List<String> get availabilityList;
   @override
+  List<String> get availabilityLists;
+  @override
   int get selectedIndex;
   @override
   List<String> get skillLevelList;
+  @override
+  List<String> get skillLevelLists;
   @override
   GetFeaturedJobState get getFeaturedJobState;
   @override

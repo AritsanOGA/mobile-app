@@ -26,6 +26,9 @@ class PostJobWithoutLoginEntity extends Equatable {
     required this.officeAddress,
     required this.applicationDeadline,
     required this.currency,
+    required this.email,
+    required this.phoneNumber,
+    required this.fullName
   });
 
   final String jobTitle;
@@ -33,7 +36,7 @@ class PostJobWithoutLoginEntity extends Equatable {
   final String category;
   final String workType;
   final String jobDescription;
-  final String skills;
+  final List<String> skills;
   final String position;
   final String hireType;
   final int categoryId;
@@ -52,6 +55,9 @@ class PostJobWithoutLoginEntity extends Equatable {
   final String officeAddress;
   final String applicationDeadline;
   final String currency;
+  final String fullName;
+  final String email;
+  final String phoneNumber;
 
   PostJobWithoutLoginEntity copyWith(
       {String? jobTitle,
@@ -59,7 +65,7 @@ class PostJobWithoutLoginEntity extends Equatable {
       String? category,
       String? workType,
       String? jobDescription,
-      String? skills,
+      List<String>? skills,
       String? position,
       String? hireType,
       int? categoryId,
@@ -77,6 +83,9 @@ class PostJobWithoutLoginEntity extends Equatable {
       String? gender,
       String? officeAddress,
       String? applicationDeadline,
+      String? phoneNumber,
+      String? email,
+      String? fullname,
       String? currency}) {
     return PostJobWithoutLoginEntity(
         currency: currency ?? this.currency,
@@ -102,6 +111,9 @@ class PostJobWithoutLoginEntity extends Equatable {
         compensationType: compensationType ?? this.compensationType,
         gender: gender ?? this.gender,
         officeAddress: officeAddress ?? this.officeAddress,
+        email: email ?? this.email,
+        phoneNumber: phoneNumber ?? this.phoneNumber,
+        fullName: fullname ?? this.fullName,
         applicationDeadline: applicationDeadline ?? this.applicationDeadline);
   }
 

@@ -2,14 +2,14 @@ import 'package:artisan_oga/core/app_constants/app_assets_paths.dart';
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
+import 'package:artisan_oga/core/utils/text_formatter.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/category_response_entity.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/skill_response_entity.dart';
-import 'package:artisan_oga/features/home/domain/entities/post_job_entity.dart';
+import 'package:artisan_oga/features/home/domain/entities/post_job_without_login_entity.dart';
 import 'package:artisan_oga/features/home/presentation/bloc/home_bloc.dart';
-import 'package:artisan_oga/features/home/presentation/pages/post_job_two_screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/post_job_without_login_two_screen.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
-import 'package:artisan_oga/shared/widgets/custom_radio_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +24,17 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final jobTitleController = useTextEditingController();
-    final jobDescriptionController = useTextEditingController();
+    final hireesNumberController = useTextEditingController();
+    final minSalaryController = useTextEditingController();
+    final maxSalaryController = useTextEditingController();
+    final applicationDeadlineController = useTextEditingController();
+    final yearsOfExperienceController = useTextEditingController();
     final formKey = useMemoized(GlobalKey<FormState>.new);
     useEffect(() {
       context.read<HomeBloc>().add(HomeEvent.getCategory());
       context.read<HomeBloc>().add(HomeEvent.getSkills('1'));
+      context.read<HomeBloc>().add(HomeEvent.getCountries());
+      context.read<HomeBloc>().add(HomeEvent.getState('161'));
       return null;
     }, []);
     return Scaffold(
@@ -48,30 +54,21 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                        //    SizedBox(height: 10.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 1.h),
-                                child: Text("Fields for Job Creation",
-                                    style: CustomTextStyles
-                                        .titleMediumPrimaryContainerMedium))),
                         SizedBox(height: 23.v),
+
                         CustomTextFormField(
-                          title: 'Job title*',
+                          title: 'Job title',
                           textInputType: TextInputType.name,
                           controller: jobTitleController,
-                          titleStyle: CustomTextStyles.titleMediumMedium18,
+
                           validator: FormValidation.stringValidation,
                           hintText: 'Add job title',
-                          isBorderNone: true,
+                          //isBorderNone: true,
                         ),
                         SizedBox(height: 25.v),
                         BlocBuilder<HomeBloc, HomeState>(
                           builder: (context, state) {
                             return CustomDropDown<CategoryResponseEntity>(
-                              isBorderNone: true,
-                              titleStyle: CustomTextStyles.titleMediumMedium18,
                               title: 'Select Job Category',
                               items: state.categoryList,
                               selectedItem: state.categoryList.isNotEmpty
@@ -98,10 +95,9 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Select Required Skill',
-                              style: CustomTextStyles.titleMediumMedium18,
-                            ),
+                            Text('Select Required Skill',
+                                style: CustomTextStyles
+                                    .bodyMediumPrimaryContainer_1),
                             SizedBox(height: 7.v),
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,6 +132,7 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                                       decoratorProps: DropDownDecoratorProps(
                                           decoration: InputDecoration(
                                         enabled: false,
+                                        // border: ,
                                         // border: InputBorder.none,
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
@@ -241,145 +238,213 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                         ),
 
                         SizedBox(height: 25.v),
-                        CustomTextFormField(
-                          title: 'Job Description',
-                          titleStyle: CustomTextStyles.titleMediumMedium18,
-                          hintText: 'Add a Job Description',
-                          controller: jobDescriptionController,
-                          validator: FormValidation.stringValidation,
-                          isBorderNone: true,
+                        // CustomTextFormField(
+                        //   title: 'Job Description',
+                        //   hintText: 'Add a Job Description',
+                        //   controller: jobDescriptionController,
+                        //   validator: FormValidation.stringValidation,
+                        //   isBorderNone: true,
+                        // ),
+                        // SizedBox(height: 23.v),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: BlocBuilder<HomeBloc, HomeState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: 'Commute Type',
+                                    items: state.workModeLists,
+                                    selectedItem: state.workModes,
+                                    itemLabel: (category) => category,
+                                    onChanged: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedWorkMode(
+                                                value ?? ''),
+                                          );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                            SizedBox(width: 15.h),
+                            Expanded(
+                              child: BlocBuilder<HomeBloc, HomeState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: 'Job Type',
+                                    items: state.jobtypeLists,
+                                    selectedItem: state.jobTypes,
+                                    itemLabel: (category) => category,
+                                    onChanged: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedJobType(
+                                                value ?? ''),
+                                          );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 23.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 1.h),
-                                child: Text("Work Type",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18))),
-                        SizedBox(height: 18.v),
-                        Padding(
-                            padding: EdgeInsets.only(right: 8.h),
-                            child: CustomRadioButton(
-                                width: 30.0,
-                                text: "Onsite",
-                                value: state.workModeList[0],
-                                groupValue: state.workMode,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedWorkMode(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v, right: 6.h),
-                            child: CustomRadioButton(
-                                text: "Hybrid",
-                                value: state.workModeList[1],
-                                groupValue: state.workMode,
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedWorkMode(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 10.v),
-                            child: CustomRadioButton(
-                                text: "Remote",
-                                value: state.workModeList[2],
-                                groupValue: state.workMode,
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedWorkMode(value),
-                                      );
-                                })),
-                        SizedBox(height: 27.v),
-                        Divider(),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: BlocBuilder<HomeBloc, HomeState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: 'Skill Level',
+                                    items: state.skillLevelLists,
+                                    selectedItem: state.skillLevels,
+                                    itemLabel: (category) => category,
+                                    onChanged: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent.updateSelectedSkillLevel(
+                                                value ?? ''),
+                                          );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                            SizedBox(width: 15.h),
+                            Expanded(
+                              child: BlocBuilder<HomeBloc, HomeState>(
+                                builder: (context, state) {
+                                  return CustomDropDown<String>(
+                                    title: 'Academic Qualification',
+                                    items: state.levelOfEducationLists,
+                                    selectedItem: state.educationLevels,
+                                    itemLabel: (category) => category,
+                                    onChanged: (value) {
+                                      context.read<HomeBloc>().add(
+                                            HomeEvent
+                                                .updateSelectedEducationlevel(
+                                                    value ?? ''),
+                                          );
+                                    },
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                         SizedBox(height: 23.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 1.h),
-                                child: Text("Job Type",
-                                    style:
-                                        CustomTextStyles.titleMediumMedium18))),
-                        SizedBox(height: 18.v),
-                        Padding(
-                            padding: EdgeInsets.only(right: 14.h),
-                            child: CustomRadioButton(
-                                text: "Contract",
-                                value: state.jobtypeList[0],
-                                groupValue: state.jobType,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedJobType(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v, right: 12.h),
-                            child: CustomRadioButton(
-                                text: "Full Time",
-                                value: state.jobtypeList[1],
-                                groupValue: state.jobType,
-                                padding: EdgeInsets.symmetric(vertical: 1.v),
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedJobType(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v, right: 7.h),
-                            child: CustomRadioButton(
-                                text: "Part Time",
-                                value: state.jobtypeList[2],
-                                groupValue: state.jobType,
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedJobType(value),
-                                      );
-                                })),
-                        Padding(
-                            padding: EdgeInsets.only(top: 11.v),
-                            child: CustomRadioButton(
-                                text: "Temporary",
-                                value: state.jobtypeList[3],
-                                groupValue: state.jobType,
-                                onChange: (value) {
-                                  context.read<HomeBloc>().add(
-                                        HomeEvent.updateSelectedJobType(value),
-                                      );
-                                })),
-                        SizedBox(height: 40.v),
-                        BlocSelector<HomeBloc, HomeState, PostJobEntity>(
-                          selector: (state) {
-                            return state.postJobRequest;
+                        Row(
+                          children: [
+                            Expanded(
+                              child: CustomTextFormField(
+                                title: 'How many Hires?',
+                                textInputType: TextInputType.number,
+                                validator: FormValidation.stringValidation,
+                                hintText: 'How many do you want to hire?',
+                                controller: hireesNumberController,
+                              ),
+                            ),
+                            SizedBox(width: 15.h),
+                            Expanded(
+                              child: CustomTextFormField(
+                                hintText: 'Years of Experience',
+                                validator: FormValidation.stringValidation,
+                                title: 'Years of Experience',
+                                inputFormatters: [DateInputFormatter2()],
+                                controller: yearsOfExperienceController,
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 23.v),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: CustomFormattedTextFormField(
+                                title: ' Minimum Salary',
+                                textInputType: TextInputType.number,
+                                validator: FormValidation.stringValidation,
+                                hintText: 'Enter Minimum Salary',
+                                controller: minSalaryController,
+                              ),
+                            ),
+                            SizedBox(width: 15.h),
+                            Expanded(
+                                child: CustomFormattedTextFormField(
+                              textInputType: TextInputType.number,
+                              title: ' Maximum Salary',
+                              validator: FormValidation.stringValidation,
+                              hintText: 'Enter Maximum Salary',
+                              controller: maxSalaryController,
+                            ))
+                          ],
+                        ),
+                        SizedBox(height: 23.v),
+                        CustomTextFormField(
+                          ontap: () async {
+                            DateTime? pickedDate = await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime(2100),
+                            );
+                            applicationDeadlineController.text =
+                                "${pickedDate!.year}-${pickedDate.month}-${pickedDate.day}";
+
+                            context
+                                .read<HomeBloc>()
+                                .add(HomeEvent.updateSelectedDate(pickedDate));
                           },
-                          builder: (context, postJobRequest) {
+                          hintText: 'YYYY-MM-DD',
+                          validator: FormValidation.stringValidation,
+                          readOnly: true,
+                          title: 'Application Deadline Date',
+                          controller: applicationDeadlineController,
+                        ),
+                        SizedBox(height: 23.v),
+                        BlocSelector<HomeBloc, HomeState,
+                            PostJobWithoutLoginEntity>(
+                          selector: (state) {
+                            return state.postJobWithoutLoginRequest;
+                          },
+                          builder: (context, postJobRequestWithoutLogin) {
                             return CustomElevatedButton(
                               onPressed: (() {
                                 List<SkillResponseEntity> mySkill =
                                     state.skills;
-                                String result = mySkill
-                                    .map((country) => country.name)
-                                    .where((name) => name != null)
-                                    .join(', ');
+                                List<String> result = mySkill
+                                    .map((s) => s.name)
+                                    .whereType<String>()
+                                    .toList();
                                 if (formKey.currentState?.validate() ?? false) {
                                   print(
                                       '${state.workMode} ${state.jobType} ${jobTitleController.text} ${state.category?.id}');
                                   context.read<HomeBloc>().add(
-                                        HomeEvent.updatePostJobRequest(
-                                          postJobRequest.copyWith(
-                                              jobTitle: jobTitleController.text,
-                                              workType: state.workMode,
-                                              hireType: state.jobType,
-                                              category: state.category?.name,
-                                              categoryId:
-                                                  state.category?.id ?? 1,
-                                              skills: result,
-                                              jobDescription:
-                                                  jobDescriptionController
-                                                      .text),
+                                        HomeEvent
+                                            .updatePostJobWithoutLoginRequest(
+                                          postJobRequestWithoutLogin.copyWith(
+                                            jobTitle: jobTitleController.text,
+                                            workType: state.workMode,
+                                            hireType: state.jobType,
+                                            minAmount: int.parse(
+                                                minSalaryController.text
+                                                    .replaceAll(',', '')),
+                                            maxAmount: int.parse(
+                                                maxSalaryController.text
+                                                    .replaceAll(',', '')),
+                                            skillLevel: state.skillLevel,
+                                            levelOfEducation:
+                                                state.educationLevel,
+                                            applicationDeadline:
+                                                applicationDeadlineController
+                                                    .text,
+                                            yearsOfExperience: int.parse(
+                                                yearsOfExperienceController
+                                                    .text),
+                                            position:
+                                                hireesNumberController.text,
+                                            category: state.category?.name,
+                                            categoryId: state.category?.id ?? 1,
+                                            skills: result,
+                                          ),
                                         ),
                                       );
 
@@ -388,7 +453,8 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                                       PageTransition(
                                           type: PageTransitionType.rightToLeft,
                                           duration: Durations.long1,
-                                          child: PostJobTwoScreen()));
+                                          child:
+                                              PostJobWithoutLoginTwoScreen()));
                                 }
                               }),
                               text: "Next",

@@ -22,7 +22,7 @@ class GetWorkPhotoModel extends GetWorkPhotoEntity {
         id: json['id'],
         userId: json['user_id'],
         name: json['name'],
-        photo: json['photos'],
+        photo: json['photo_url'],
         identity: json['identity']);
   }
 
@@ -31,7 +31,7 @@ class GetWorkPhotoModel extends GetWorkPhotoEntity {
       'id': id,
       'user_id': userId,
       'name': name,
-      'photos': photo,
+      'photo_url': photo,
       'identity': identity
     };
   }

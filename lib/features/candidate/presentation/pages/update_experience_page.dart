@@ -1,3 +1,4 @@
+import 'package:artisan_oga/core/routes/app_routes.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -23,7 +24,7 @@ class UpdateCandidateExperiencePage extends HookWidget {
     final roleCeontroller = useTextEditingController(text: entity.purpose);
     final startYearController =
         useTextEditingController(text: entity.startYear.toString());
-    final endYearController = useTextEditingController();
+    final endYearController = useTextEditingController(text: entity.yearEnd);
     final phoneCeontroller = useTextEditingController();
     final ighandleController = useTextEditingController();
     final descriptionController =
@@ -43,21 +44,21 @@ class UpdateCandidateExperiencePage extends HookWidget {
       body: BlocListener<CandidatesBloc, CandidatesState>(
         listener: (context, state) {
           if (state.updateExperienceState == ViewState.success) {
-            // Navigator.pushNamed(
-            //   context,
-            //   AppRoutes.successScreen2,
-            //   arguments: {
-            //     'message': 'Uploaded Successfully',
-            //     'onTap': () {
-            //       // Navigator.pop(context);
-            //       // Navigator.pop(context);
-            //       Navigator.pushNamed(
-            //         context,
-            //         AppRoutes.jobSeekerNavBarScreen,
-            //       );
-            //     },
-            //   },
-            // );
+            Navigator.pushNamed(
+              context,
+              AppRoutes.successScreen2,
+              arguments: {
+                'message': 'Uploaded Successfully',
+                'onTap': () {
+                  // Navigator.pop(context);
+                  // Navigator.pop(context);
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.jobSeekerNavBarScreen,
+                  );
+                },
+              },
+            );
           } else if (state.updateExperienceState == ViewState.failure) {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }

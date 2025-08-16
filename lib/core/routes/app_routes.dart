@@ -18,6 +18,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/verify_
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_forgot_password_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/verify_job_seeker_screen.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_assigned_applicants.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/get_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_education_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/get_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/accept_reject_page_screen.dart';
@@ -29,6 +30,7 @@ import 'package:artisan_oga/features/candidate/presentation/pages/candidates_pro
 import 'package:artisan_oga/features/candidate/presentation/pages/search_details_screen.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/success_screen2.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/update_Education_page.dart';
+import 'package:artisan_oga/features/candidate/presentation/pages/update_awards_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/update_experience_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/upload_work_id_page.dart';
 import 'package:artisan_oga/features/candidate/presentation/pages/view_candidates_page_screen.dart';
@@ -39,6 +41,7 @@ import 'package:artisan_oga/features/home/presentation/pages/candidate_profile_p
 import 'package:artisan_oga/features/home/presentation/pages/employer_dashboard_page.dart';
 import 'package:artisan_oga/features/home/presentation/pages/featured_job_details.dart';
 import 'package:artisan_oga/features/home/presentation/pages/job_details_details.screen.dart';
+import 'package:artisan_oga/features/home/presentation/pages/post_job_without_login_one_screen.dart';
 import 'package:artisan_oga/features/home/presentation/pages/success_job_application_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/create_invoice_screen.dart';
 import 'package:artisan_oga/features/payment/presentation/pages/invoice_history_screen.dart';
@@ -226,6 +229,7 @@ class AppRoutes {
   static const String updateProfilePageThreeScreen =
       '/update_profile_page_three_screen';
   static const String jobSearch = '/job-search_screen';
+  static const String postJobWithoutLogin = '/post_job_without_login_screen';
   static const String candidateJobSearchDetailsScreen =
       '/candidate_job_search_details_screen';
   static const String jobHistoryDetailsScreen = '/job_history_details_screen';
@@ -336,7 +340,9 @@ class AppRoutes {
 
       case updateAwardScreen:
         return AppPageRouteBuilder(
-          navigateTo: WelcomePageScreen(),
+          navigateTo: UpdateAwardPage(
+            entity: settings.arguments as GetAwardEntity,
+          ),
         );
       case addAwardScreen:
         return AppPageRouteBuilder(
@@ -353,6 +359,10 @@ class AppRoutes {
       case invoiceSuccessScreen:
         return AppPageRouteBuilder(
           navigateTo: InvoiceSuccessfulPage(),
+        );
+      case postJobWithoutLogin:
+        return AppPageRouteBuilder(
+          navigateTo: PostJobWithoutLoginOneScreen(),
         );
       case jsProfilePage:
         return AppPageRouteBuilder(
@@ -401,7 +411,7 @@ class AppRoutes {
         );
       case addWorkIDPage:
         return AppPageRouteBuilder(
-          navigateTo: const UploadWorkIDPage(),
+          navigateTo:  UploadWorkIDPage(id: settings.arguments as String,),
         );
       case addWorkPhotoPage:
         return AppPageRouteBuilder(

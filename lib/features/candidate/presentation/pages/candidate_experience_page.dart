@@ -14,67 +14,93 @@ class CandidateExperiencePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    // fire once
+    useEffect(() {
+      context.read<CandidatesBloc>().add(CandidatesEvent.getExperience());
+      return null;
+    }, const []);
+
     return Scaffold(
-      appBar: CustomAppBar(
-        titleStatus: false,
-        title: '',
-      ),
-      body: BlocBuilder<CandidatesBloc, CandidatesState>(
-        bloc: context.read<CandidatesBloc>()
-          ..add(CandidatesEvent.getExperience()),
-        builder: (context, state) {
-          if (state.getExperienceState == ViewState.loading) {
-            return Center(child: CircularProgressIndicator());
-          }
+      appBar: const CustomAppBar(titleStatus: false, title: ''),
+      body: Padding(
+        padding: EdgeInsets.only(
+          top: 12.v,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // ===== Fixed header (does not scroll)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.h),
+              child: CustomOutlinedButton(
+                height: 46.v,
+                width: 200.h,
+                text: "Add New Experience",
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.addExperiencePage),
+                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+                buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                  fontSize: 19.fSize,
+                  color: AppColors.kwhite,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            SizedBox(height: 30.v),
 
-          if (state.getExperienceState == ViewState.failure) {
-            return Center(child: Text('Error: '));
-          }
+            // ===== Only this area scrolls
+            Expanded(
+              child: BlocBuilder<CandidatesBloc, CandidatesState>(
+                builder: (context, state) {
+                  if (state.getExperienceState == ViewState.loading) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  if (state.getExperienceState == ViewState.failure) {
+                    return const Center(child: Text('Error'));
+                  }
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomOutlinedButton(
-                  height: 46.v,
-                  width: 200.h,
-                  text: "Add New Experience",
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.addExperiencePage);
-                  },
-                  margin: EdgeInsets.only(left: 22.h),
-                  buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-                  buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
-                    fontSize: 19.fSize,
-                    color: AppColors.kwhite,
-                    fontWeight: FontWeight.w700,
-                  )),
-              SizedBox(height: 30.v),
-              ...List.generate(state.getExperienceEntity.length, (index) {
-                return Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                  final items = state.getExperienceEntity;
+
+                  return ListView.separated(
+                    padding: EdgeInsets.only(
+                      left: 20.h,
+                      right: 20.h,
+                      bottom: 32.v,
+                    ),
+                    itemCount: items.length,
+                    separatorBuilder: (_, __) => Column(
+                      children: [
+                        SizedBox(height: 14.v),
+                        Divider(height: 2, color: theme.primaryColor),
+                        SizedBox(height: 20.v),
+                      ],
+                    ),
+                    itemBuilder: (context, index) {
+                      final exp = items[index];
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                    state.getExperienceEntity[index].title ??
-                                        '',
+                                Expanded(
+                                  child: Text(
+                                    exp.title ?? '',
                                     style: theme.textTheme.bodyMedium?.copyWith(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16)),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
                                       context,
                                       AppRoutes.updateExperienceScreen,
-                                      arguments:
-                                          state.getExperienceEntity[index],
+                                      arguments: exp,
                                     );
                                   },
                                   child: Image.asset(
@@ -82,68 +108,62 @@ class CandidateExperiencePage extends HookWidget {
                                     width: 22,
                                     height: 22,
                                   ),
-                                )
+                                ),
                               ],
                             ),
                             SizedBox(height: 5.v),
+
                             Text(
-                                '${state.getExperienceEntity[index].startYear} - ${state.getExperienceEntity[index].yearEnd}',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.w600, fontSize: 16)),
-                            SizedBox(height: 5.v),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                    state.getExperienceEntity[index].purpose ??
-                                        '',
-                                    style: theme.textTheme.bodyMedium?.copyWith(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14)),
-                              ],
+                              '${exp.startYear} - ${exp.yearEnd}',
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
                             ),
                             SizedBox(height: 5.v),
+
+                            Text(
+                              exp.purpose ?? '',
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                              ),
+                            ),
+                            SizedBox(height: 5.v),
+
+                            // Verified + Delete
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   'Verified',
                                   style: theme.textTheme.bodyMedium?.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                  ),
                                 ),
                                 GestureDetector(
-                                    onTap: () {
-                                      deleteExperience(
-                                          context,
-                                          state.getExperienceEntity[index]
-                                              .identity
-                                              .toString());
-                                    },
-                                    child: Image.asset(ImageConstant.delete))
+                                  onTap: () => deleteExperience(
+                                      context, exp.identity.toString()),
+                                  child: Image.asset(ImageConstant.delete),
+                                ),
                               ],
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(height: 14.v),
-                      Divider(
-                        height: 2,
-                        color: theme.primaryColor,
-                      ),
-                      SizedBox(height: 20.v),
-                    ],
-                  ),
-                );
-              })
-            ],
-          );
-        },
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Future<void> deleteExperience(context, String identity) async {
+  Future<void> deleteExperience(BuildContext context, String identity) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
@@ -158,9 +178,7 @@ class CandidateExperiencePage extends HookWidget {
                   'message': 'Deleted Successfully',
                   'onTap': () {
                     Navigator.pushNamed(
-                      context,
-                      AppRoutes.jobSeekerNavBarScreen,
-                    );
+                        context, AppRoutes.jobSeekerNavBarScreen);
                   },
                 },
               );
@@ -169,82 +187,75 @@ class CandidateExperiencePage extends HookWidget {
             }
           },
           child: AlertDialog(
-              titlePadding: EdgeInsets.zero,
-              actionsPadding: EdgeInsets.zero,
-              contentPadding: EdgeInsets.zero,
-              content: Container(
-                height: 200,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.v),
-                    Text(
-                      textAlign: TextAlign.center,
-                      'Are you sure you want to remove this experience?',
-                      style:
-                          CustomTextStyles.titleMediumPrimaryContainerMedium_1,
-                    ),
-                    SizedBox(height: 40.v),
-                    Row(
-                      children: [
-                        BlocBuilder<CandidatesBloc, CandidatesState>(
-                          builder: (context, state) {
-                            return GestureDetector(
-                              onTap: () {
-                                context.read<CandidatesBloc>().add(
-                                      CandidatesEvent.deleteExperience(
-                                        identity,
-                                      ),
-                                    );
-                              },
-                              child: Container(
-                                height: 40,
-                                width: 130,
-                                decoration: BoxDecoration(
-                                    color: Colors.red,
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Center(
-                                  child: state.deleteExperienceState ==
-                                          ViewState.loading
-                                      ? CircularProgressIndicator(
-                                          color: AppColors.kwhite,
-                                        )
-                                      : Text(
-                                          'Yes',
-                                          style: TextStyle(
-                                              color: AppColors.kwhite),
-                                        ),
-                                ),
+            titlePadding: EdgeInsets.zero,
+            actionsPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.zero,
+            content: Container(
+              height: 200,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                children: [
+                  SizedBox(height: 20.v),
+                  Text(
+                    'Are you sure you want to remove this experience?',
+                    textAlign: TextAlign.center,
+                    style: CustomTextStyles.titleMediumPrimaryContainerMedium_1,
+                  ),
+                  SizedBox(height: 40.v),
+                  Row(
+                    children: [
+                      BlocBuilder<CandidatesBloc, CandidatesState>(
+                        builder: (context, state) {
+                          final isLoading =
+                              state.deleteExperienceState == ViewState.loading;
+                          return GestureDetector(
+                            onTap: isLoading
+                                ? null
+                                : () => context.read<CandidatesBloc>().add(
+                                    CandidatesEvent.deleteExperience(identity)),
+                            child: Container(
+                              height: 40,
+                              width: 130,
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5),
                               ),
-                            );
-                          },
-                        ),
-                        SizedBox(width: 14.v),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Container(
-                            height: 40,
-                            width: 130,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.2),
-                                borderRadius: BorderRadius.circular(5)),
-                            child: Center(
-                              child: Text(
-                                'No',
-                                style: TextStyle(color: AppColors.kblack),
+                              child: Center(
+                                child: isLoading
+                                    ? const CircularProgressIndicator(
+                                        color: AppColors.kwhite)
+                                    : const Text('Yes',
+                                        style:
+                                            TextStyle(color: AppColors.kwhite)),
                               ),
                             ),
+                          );
+                        },
+                      ),
+                      SizedBox(width: 14.v),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Container(
+                          height: 40,
+                          width: 130,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(5),
                           ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              )),
+                          child: const Center(
+                            child: Text('No',
+                                style: TextStyle(color: AppColors.kblack)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         );
       },
     );

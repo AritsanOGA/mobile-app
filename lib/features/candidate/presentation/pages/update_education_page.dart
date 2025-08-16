@@ -1,5 +1,4 @@
 import 'package:artisan_oga/core/routes/app_routes.dart';
-import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
@@ -23,7 +22,7 @@ class UpdateCandidateEducationPage extends HookWidget {
     final schoolNameController = useTextEditingController(text: entity.title);
     final courseNamCeontroller = useTextEditingController(text: entity.purpose);
     final yearController = useTextEditingController(text: entity.year);
-    final certificateController = useTextEditingController();
+    final certificateController = useTextEditingController(text: entity.degree);
     final formKey = useMemoized(GlobalKey<FormState>.new);
 
     return Scaffold(
@@ -66,7 +65,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "School Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                 // validator: FormValidation.stringValidation,
+                  // validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -75,7 +74,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Course Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
-                //  validator: FormValidation.stringValidation,
+                  //  validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -84,7 +83,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Year",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.number,
-               //   validator: FormValidation.stringValidation,
+                  //   validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
@@ -93,7 +92,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                   hintText: "Certificate Obtained Eg Hnd, Bsc, Diploma etc",
                   textInputType: TextInputType.name,
                   hintStyle: theme.textTheme.titleSmall!,
-               //   validator: FormValidation.stringValidation,
+                  //   validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 50.v),
                 BlocBuilder<CandidatesBloc, CandidatesState>(
@@ -106,9 +105,9 @@ class UpdateCandidateEducationPage extends HookWidget {
                                 CandidatesEvent.updateEducation(
                                   AddEducationEntity(
                                       courseName: courseNamCeontroller.text,
-                                      title: certificateController.text,
+                                      degree: certificateController.text,
                                       identity: entity.identity,
-                                      description: courseNamCeontroller.text,
+                                      schoolName: schoolNameController.text,
                                       year: yearController.text),
                                 ),
                               );

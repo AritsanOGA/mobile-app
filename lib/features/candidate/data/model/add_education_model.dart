@@ -3,9 +3,9 @@ import 'package:artisan_oga/features/candidate/domain/entities/add_education_ent
 class AddEducationModel extends AddEducationEntity {
   const AddEducationModel({
     required super.userId,
-    required super.title,
+    required super.schoolName,
     required super.courseName,
-    required super.description,
+    required super.degree,
     required super.year,
     required super.identity,
   });
@@ -13,17 +13,17 @@ class AddEducationModel extends AddEducationEntity {
       AddEducationModel(
           courseName: entity.courseName,
           userId: entity.userId,
-          title: entity.title,
-          description: entity.description,
+          schoolName: entity.schoolName,
+          degree: entity.degree,
           year: entity.year,
           identity: entity.identity);
 
   factory AddEducationModel.fromJson(Map<String, dynamic> json) {
     return AddEducationModel(
         userId: json['user_id'],
-        title: json['title'],
-        courseName: json['role'],
-        description: json['description'],
+        schoolName: json['school_name'],
+        courseName: json['course_name'],
+        degree: json['degree'],
         year: json['year'],
         identity: json['identity']);
   }
@@ -31,9 +31,9 @@ class AddEducationModel extends AddEducationEntity {
   Map<String, dynamic> toJson() {
     return {
       'user_id': userId,
-      'title': title,
+      'school_name': schoolName,
       'course_name': courseName,
-      'description': description,
+      'degree': degree,
       'year': year,
       'identity': identity
     };

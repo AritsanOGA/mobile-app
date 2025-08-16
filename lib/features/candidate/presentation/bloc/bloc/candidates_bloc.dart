@@ -18,6 +18,7 @@ import 'package:artisan_oga/features/candidate/domain/entities/get_experience_en
 import 'package:artisan_oga/features/candidate/domain/entities/get_work_photo_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/reject_candidate_without_interview_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/update_awards_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/update_experience_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/entities/upload_card_entity.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/accept_candidate_usecase.dart';

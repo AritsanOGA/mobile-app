@@ -12,6 +12,7 @@ import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:artisan_oga/theme/theme_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -22,7 +23,7 @@ class AddCandidateExperiencePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final employerNameController = useTextEditingController();
+    final companyNameController = useTextEditingController();
     final roleCeontroller = useTextEditingController();
     final startYearController = useTextEditingController();
     final endYearController = useTextEditingController();
@@ -73,9 +74,9 @@ class AddCandidateExperiencePage extends HookWidget {
               children: [
                 SizedBox(height: 25.v),
                 CustomTextFormField(
-                  title: "Employer Name",
-                  controller: employerNameController,
-                  hintText: "Employer Name",
+                  title: "Company Name",
+                  controller: companyNameController,
+                  hintText: "Company Name",
                   hintStyle: theme.textTheme.titleSmall!,
                   textInputType: TextInputType.name,
                   validator: FormValidation.stringValidation,
@@ -123,6 +124,10 @@ class AddCandidateExperiencePage extends HookWidget {
                         title: 'Phone',
                         controller: phoneCeontroller,
                         hintText: "Phone",
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(11),
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputType: TextInputType.number,
                         //  validator: FormValidation.stringValidation,
@@ -166,7 +171,7 @@ class AddCandidateExperiencePage extends HookWidget {
                                     role: roleCeontroller.text,
                                     yearEnd: endYearController.text,
                                     startYear: startYearController.text,
-                                    companyName: employerNameController.text,
+                                    companyName: companyNameController.text,
                                     userId: UserService()
                                             .authData
                                             ?.user
