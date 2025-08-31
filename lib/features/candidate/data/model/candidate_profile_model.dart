@@ -91,6 +91,7 @@ class Profiles extends ProfileEntity {
     required super.guarantorPhone,
     required super.guarantorEmail,
     required super.referredByLink,
+    required super.idcard,
     required List<AwardsAndCertificateModel> super.awardsAndCertificates,
     required List<ArtisanAssignedSkillModel> super.artisanAssignedSkills,
     required List<AwardsAndCertificateModel> super.education,
@@ -131,6 +132,7 @@ class Profiles extends ProfileEntity {
           )
         : <Map<String, dynamic>>[];
     return Profiles(
+      idcard: json['id_cards'],
       id: json["id"],
       hired: json["hired"],
       hiredDate: json["hired_date"] == null

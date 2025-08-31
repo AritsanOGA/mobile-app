@@ -67,7 +67,7 @@ class AppApiEndpoint {
 
   //! Employer
   static const String getInvoice = '/api/v1/employer/invoice';
-  static const String deleteWorkPhoto = '/api/v1/candidate/delete/work-photo';
+  static const String deleteWorkPhoto = '/api/v1/candidate/delete/work-photos';
   static const String getWorkPhoto = '/api/v1/candidate/profile/work-photos';
 
   static const String uploadWorkPhoto = '/api/v1/candidate/upload-work-photos';

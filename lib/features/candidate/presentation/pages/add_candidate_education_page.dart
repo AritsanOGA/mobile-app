@@ -7,6 +7,7 @@ import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth
 import 'package:artisan_oga/features/candidate/domain/entities/add_education_entity.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
+import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -68,6 +69,24 @@ class AddCandidateEducationPage extends HookWidget {
             ),
             child: Column(
               children: [
+                SizedBox(height: 25.v),
+                BlocBuilder<AuthBloc, AuthState>(
+                  builder: (context, state) {
+                    return CustomDropDown<String>(
+                      title: "Educational Qualification",
+                      items: state.levelOfEducationList,
+                      selectedItem: state.educationalQualification,
+                      itemLabel: (gender) => gender,
+                      onChanged: (value) {
+                        context.read<AuthBloc>().add(
+                              AuthEvent.updateSelectedEducationQualification(
+                                  value ?? ''),
+                            );
+                        print('ssss ${value}');
+                      },
+                    );
+                  },
+                ),
                 SizedBox(height: 25.v),
                 CustomTextFormField(
                   title: "School Name",

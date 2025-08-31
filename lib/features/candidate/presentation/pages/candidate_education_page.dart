@@ -16,8 +16,7 @@ class CandidateEducationPage extends HookWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        titleStatus: false,
-        title: '',
+        title: 'Education',
       ),
       body: BlocBuilder<CandidatesBloc, CandidatesState>(
         bloc: context.read<CandidatesBloc>()

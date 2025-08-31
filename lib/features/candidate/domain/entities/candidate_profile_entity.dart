@@ -73,7 +73,7 @@ class ProfileEntity extends Equatable {
   final String? guarantorPhone;
   final String? guarantorEmail;
   final int? referredByLink;
-
+  final String? idcard;
   final List<AwardsAndCertificateEntity> awardsAndCertificates;
   final List<ArtisanAssignedSkillEntity> artisanAssignedSkills;
   final List<AwardsAndCertificateEntity> education;
@@ -115,6 +115,7 @@ class ProfileEntity extends Equatable {
     this.serviceDescription,
     this.availability,
     this.verifyCode,
+    this.idcard,
     this.minAmount,
     this.maxAmount,
     this.compensationType,
@@ -163,6 +164,7 @@ class ProfileEntity extends Equatable {
         dateOfBirth,
         streetAddress,
         city,
+        idcard,
         country,
         companyName,
         state,

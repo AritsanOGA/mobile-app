@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -8,15 +9,20 @@ import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../../shared/widgets/custom_appbar.dart';
 
-class SearchDetailsScreen extends StatelessWidget {
+class SearchDetailsScreen extends HookWidget {
   final String jobId;
   const SearchDetailsScreen({super.key, required this.jobId});
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      context.read<AuthBloc>().add(const AuthEvent.getUserData());
+      return null;
+    }, []);
     return BlocListener<HomeBloc, HomeState>(
       listener: (context, states) {
         if (states.applyForJobState == ApplyForJobState.success) {
@@ -33,9 +39,12 @@ class SearchDetailsScreen extends StatelessWidget {
         ),
         body: BlocBuilder<AuthBloc, AuthState>(
           bloc: context.read<AuthBloc>()
-            ..add(AuthEvent.searchJobDetails(jobId)),
+            ..add(AuthEvent.searchJobDetails(jobId))
+            ..add(AuthEvent.getCandidateProfile(
+                UserService().authData?.user.identity ?? '')),
           builder: (context, state) {
-            if (state.searchJobDetailState == SearchJobDetailState.loading) {
+            if (state.searchJobDetailState == SearchJobDetailState.loading &&
+                state.getCandidateProfileState == ViewState.loading) {
               return Center(child: CircularProgressIndicator());
             }
 
@@ -267,17 +276,16 @@ class SearchDetailsScreen extends StatelessWidget {
                                 ApplyForJobState.loading,
                             text: 'Apply Now',
                             onPressed: () {
-                              uploadWordID(
-                                  context,
-                                  state.searchJobDetail?.jobDetails.id
+                              if (state.candidateProfile?.profiles.idcard ==
+                                  null) {
+                                uploadWordID(context, jobId);
+                              } else {
+                                context.read<HomeBloc>()
+                                  ..add(HomeEvent.applyForJob(state
+                                          .searchJobDetail?.jobDetails.id
                                           .toString() ??
-                                      '');
-
-                              //     arguments: state);
-                              // context.read<HomeBloc>()
-                              //   ..add(HomeEvent.applyForJob(
-                              //       state.searchJobDetail?.jobDetails.id.toString() ??
-                              //           ''));
+                                      ''));
+                              }
                             });
                       },
                     ),

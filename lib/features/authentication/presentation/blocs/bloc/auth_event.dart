@@ -24,7 +24,8 @@ class AuthEvent with _$AuthEvent {
       _UpdateSelectedEducationQualification;
   const factory AuthEvent.updateEmploymentHistory(String value) =
       _UpdateEmploymentHistory;
-
+  const factory AuthEvent.getCandidateProfile(String jobId) =
+      _GetCandidateProfile;
   const factory AuthEvent.updateSelectedCompanyLogo(File value) =
       _UpdateSelectedCompanyLogo;
   const factory AuthEvent.selectCompanyLogo() = _SelectCompanyLogo;

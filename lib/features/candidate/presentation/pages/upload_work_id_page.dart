@@ -44,9 +44,9 @@ class UploadWorkIDPage extends HookWidget {
                 'onTap': () {
                   // Navigator.pop(context);
                   // Navigator.pop(context);
-                  Navigator.pushNamed(
+                  Navigator.pushReplacementNamed(
                     context,
-                    AppRoutes.jobSearchDetailsScreen,
+                    AppRoutes.searchDetailsScreen,
                     arguments: id,
                   );
                   // Navigator.pushNamed(
@@ -108,7 +108,7 @@ class UploadWorkIDPage extends HookWidget {
                             child: Text(
                                 state.workId == null
                                     ? "No file chosen"
-                                    : "Files selected",
+                                    : "File selected",
                                 style: theme.textTheme.labelLarge),
                           )
                         ])),

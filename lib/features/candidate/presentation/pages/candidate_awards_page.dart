@@ -17,8 +17,7 @@ class CandidateAwardsPage extends HookWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        titleStatus: false,
-        title: '',
+        title: 'Awards',
       ),
       body: BlocBuilder<CandidatesBloc, CandidatesState>(
         bloc: context.read<CandidatesBloc>()..add(CandidatesEvent.getAward()),

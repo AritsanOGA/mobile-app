@@ -9,6 +9,7 @@ class AuthState with _$AuthState {
     SearchJobDetailsResultEntity? searchJobDetail,
     String? jsCountry,
     File? file,
+    String? jobId,
     String? errorMessage,
     String? confirmPassword,
     String? countryId,
@@ -111,6 +112,7 @@ class AuthState with _$AuthState {
     @Default([]) List<CategoryResponseEntity> categoryList,
     @Default([]) List<SkillResponseEntity> skill,
     @Default([]) List<CandidateSearchEntity> candidateSearch,
+  CandidateProfileEntity?  candidateProfile,
     @Default(false) bool isChecked,
     @Default(false) bool isPhone,
     @Default(false) bool isEmail,
@@ -136,5 +138,7 @@ class AuthState with _$AuthState {
     JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
     @Default(SearchJobDetailState.idle)
     SearchJobDetailState searchJobDetailState,
+        @Default(ViewState.idle)
+    ViewState getCandidateProfileState,
   }) = _Initial;
 }

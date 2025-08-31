@@ -34,6 +34,7 @@ mixin _$AuthEvent {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -81,6 +82,7 @@ mixin _$AuthEvent {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -128,6 +130,7 @@ mixin _$AuthEvent {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -181,6 +184,7 @@ mixin _$AuthEvent {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -233,6 +237,7 @@ mixin _$AuthEvent {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -283,6 +288,7 @@ mixin _$AuthEvent {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -419,6 +425,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -469,6 +476,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -519,6 +527,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -578,6 +587,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -633,6 +643,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -686,6 +697,7 @@ class _$UpdateSelectedCountryImpl implements _UpdateSelectedCountry {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -819,6 +831,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -869,6 +882,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -919,6 +933,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -978,6 +993,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -1033,6 +1049,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -1086,6 +1103,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -1218,6 +1236,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -1268,6 +1287,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -1318,6 +1338,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -1377,6 +1398,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -1432,6 +1454,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -1485,6 +1508,7 @@ class _$UpdateSelectedStateImpl implements _UpdateSelectedState {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -1617,6 +1641,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -1667,6 +1692,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -1717,6 +1743,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -1776,6 +1803,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -1831,6 +1859,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -1884,6 +1913,7 @@ class _$UpdateSelectedCityImpl implements _UpdateSelectedCity {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -2016,6 +2046,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -2066,6 +2097,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -2116,6 +2148,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -2175,6 +2208,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -2230,6 +2264,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -2283,6 +2318,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -2417,6 +2453,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -2467,6 +2504,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -2517,6 +2555,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -2576,6 +2615,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -2631,6 +2671,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -2684,6 +2725,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -2815,6 +2857,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -2865,6 +2908,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -2915,6 +2959,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -2974,6 +3019,7 @@ class _$SearchJobsImpl implements _SearchJobs {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -3029,6 +3075,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -3082,6 +3129,7 @@ class _$SearchJobsImpl implements _SearchJobs {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -3220,6 +3268,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -3270,6 +3319,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -3320,6 +3370,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -3379,6 +3430,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -3434,6 +3486,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -3487,6 +3540,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -3618,6 +3672,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -3668,6 +3723,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -3718,6 +3774,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -3777,6 +3834,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -3832,6 +3890,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -3885,6 +3944,7 @@ class _$UpdateSkillImpl implements _UpdateSkill {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -4018,6 +4078,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -4068,6 +4129,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -4118,6 +4180,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -4177,6 +4240,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -4232,6 +4296,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -4285,6 +4350,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -4422,6 +4488,7 @@ class _$UpdateSelectedEducationQualificationImpl
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -4472,6 +4539,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -4522,6 +4590,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -4581,6 +4650,7 @@ class _$UpdateSelectedEducationQualificationImpl
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -4636,6 +4706,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -4689,6 +4760,7 @@ class _$UpdateSelectedEducationQualificationImpl
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -4824,6 +4896,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -4874,6 +4947,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -4924,6 +4998,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -4983,6 +5058,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -5038,6 +5114,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5091,6 +5168,7 @@ class _$UpdateEmploymentHistoryImpl implements _UpdateEmploymentHistory {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5140,6 +5218,411 @@ abstract class _UpdateEmploymentHistory implements AuthEvent {
   @JsonKey(ignore: true)
   _$$UpdateEmploymentHistoryImplCopyWith<_$UpdateEmploymentHistoryImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetCandidateProfileImplCopyWith<$Res> {
+  factory _$$GetCandidateProfileImplCopyWith(_$GetCandidateProfileImpl value,
+          $Res Function(_$GetCandidateProfileImpl) then) =
+      __$$GetCandidateProfileImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String jobId});
+}
+
+/// @nodoc
+class __$$GetCandidateProfileImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GetCandidateProfileImpl>
+    implements _$$GetCandidateProfileImplCopyWith<$Res> {
+  __$$GetCandidateProfileImplCopyWithImpl(_$GetCandidateProfileImpl _value,
+      $Res Function(_$GetCandidateProfileImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? jobId = null,
+  }) {
+    return _then(_$GetCandidateProfileImpl(
+      null == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCandidateProfileImpl implements _GetCandidateProfile {
+  const _$GetCandidateProfileImpl(this.jobId);
+
+  @override
+  final String jobId;
+
+  @override
+  String toString() {
+    return 'AuthEvent.getCandidateProfile(jobId: $jobId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCandidateProfileImpl &&
+            (identical(other.jobId, jobId) || other.jobId == jobId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, jobId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCandidateProfileImplCopyWith<_$GetCandidateProfileImpl> get copyWith =>
+      __$$GetCandidateProfileImplCopyWithImpl<_$GetCandidateProfileImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryResponseEntity value)
+        updateSelectedCountry,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(StateResponseEntity value) updateSelectedState,
+    required TResult Function(String value) updateSelectedCity,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(SearchJobDataEntity value) searchJobs,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(SkillResponseEntity value) updateSkill,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value)
+        updateSelectedEducationQualification,
+    required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(File value) updateSelectedCompanyLogo,
+    required TResult Function() selectCompanyLogo,
+    required TResult Function() selectPicture,
+    required TResult Function() selectResume,
+    required TResult Function(bool value) updateSelectedIsChecked,
+    required TResult Function(File value) updateSelectedPassport,
+    required TResult Function(File value) updateSelectedResume,
+    required TResult Function(VerifyCodeEntity value) verifyCode,
+    required TResult Function(LoginEntity param) loginUser,
+    required TResult Function(HireMeEntity param) hireMe,
+    required TResult Function(UpdatePasswordEntity param) updatePassword,
+    required TResult Function(ForgotPasswordEntity param) forgotPassword,
+    required TResult Function(VerifyCodeEntity param) verifyForgotPasswordCode,
+    required TResult Function() getCountries,
+    required TResult Function() candidateSearch,
+    required TResult Function(String id) getState,
+    required TResult Function(String email) checkEmail,
+    required TResult Function(String phone) checkPhone,
+    required TResult Function(String jobId) searchJobDetails,
+    required TResult Function() getCategory,
+    required TResult Function(RegisterEmployerEntity registerEmployerRequest)
+        updateRegisterEmployerRequest,
+    required TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(String id) getSkills,
+    required TResult Function(RegisterEmployerEntity param) registerEmployer,
+    required TResult Function(RegisterJobSeekerEntity param) registerJobSeeker,
+    required TResult Function() getUserData,
+    required TResult Function() removeUserData,
+    required TResult Function(int index) selectTab,
+    required TResult Function(String index) selectYear,
+  }) {
+    return getCandidateProfile(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(StateResponseEntity value)? updateSelectedState,
+    TResult? Function(String value)? updateSelectedCity,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(SearchJobDataEntity value)? searchJobs,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(SkillResponseEntity value)? updateSkill,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedEducationQualification,
+    TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(File value)? updateSelectedCompanyLogo,
+    TResult? Function()? selectCompanyLogo,
+    TResult? Function()? selectPicture,
+    TResult? Function()? selectResume,
+    TResult? Function(bool value)? updateSelectedIsChecked,
+    TResult? Function(File value)? updateSelectedPassport,
+    TResult? Function(File value)? updateSelectedResume,
+    TResult? Function(VerifyCodeEntity value)? verifyCode,
+    TResult? Function(LoginEntity param)? loginUser,
+    TResult? Function(HireMeEntity param)? hireMe,
+    TResult? Function(UpdatePasswordEntity param)? updatePassword,
+    TResult? Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult? Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult? Function()? getCountries,
+    TResult? Function()? candidateSearch,
+    TResult? Function(String id)? getState,
+    TResult? Function(String email)? checkEmail,
+    TResult? Function(String phone)? checkPhone,
+    TResult? Function(String jobId)? searchJobDetails,
+    TResult? Function()? getCategory,
+    TResult? Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult? Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(String id)? getSkills,
+    TResult? Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult? Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult? Function()? getUserData,
+    TResult? Function()? removeUserData,
+    TResult? Function(int index)? selectTab,
+    TResult? Function(String index)? selectYear,
+  }) {
+    return getCandidateProfile?.call(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryResponseEntity value)? updateSelectedCountry,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(StateResponseEntity value)? updateSelectedState,
+    TResult Function(String value)? updateSelectedCity,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(SearchJobDataEntity value)? searchJobs,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(SkillResponseEntity value)? updateSkill,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedEducationQualification,
+    TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(File value)? updateSelectedCompanyLogo,
+    TResult Function()? selectCompanyLogo,
+    TResult Function()? selectPicture,
+    TResult Function()? selectResume,
+    TResult Function(bool value)? updateSelectedIsChecked,
+    TResult Function(File value)? updateSelectedPassport,
+    TResult Function(File value)? updateSelectedResume,
+    TResult Function(VerifyCodeEntity value)? verifyCode,
+    TResult Function(LoginEntity param)? loginUser,
+    TResult Function(HireMeEntity param)? hireMe,
+    TResult Function(UpdatePasswordEntity param)? updatePassword,
+    TResult Function(ForgotPasswordEntity param)? forgotPassword,
+    TResult Function(VerifyCodeEntity param)? verifyForgotPasswordCode,
+    TResult Function()? getCountries,
+    TResult Function()? candidateSearch,
+    TResult Function(String id)? getState,
+    TResult Function(String email)? checkEmail,
+    TResult Function(String phone)? checkPhone,
+    TResult Function(String jobId)? searchJobDetails,
+    TResult Function()? getCategory,
+    TResult Function(RegisterEmployerEntity registerEmployerRequest)?
+        updateRegisterEmployerRequest,
+    TResult Function(RegisterJobSeekerEntity registerJobSeekerRequest)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(String id)? getSkills,
+    TResult Function(RegisterEmployerEntity param)? registerEmployer,
+    TResult Function(RegisterJobSeekerEntity param)? registerJobSeeker,
+    TResult Function()? getUserData,
+    TResult Function()? removeUserData,
+    TResult Function(int index)? selectTab,
+    TResult Function(String index)? selectYear,
+    required TResult orElse(),
+  }) {
+    if (getCandidateProfile != null) {
+      return getCandidateProfile(jobId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UpdateSelectedCountry value)
+        updateSelectedCountry,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedState value) updateSelectedState,
+    required TResult Function(_UpdateSelectedCity value) updateSelectedCity,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_SearchJobs value) searchJobs,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSkill value) updateSkill,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedEducationQualification value)
+        updateSelectedEducationQualification,
+    required TResult Function(_UpdateEmploymentHistory value)
+        updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSelectedCompanyLogo value)
+        updateSelectedCompanyLogo,
+    required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
+    required TResult Function(_SelectPicture value) selectPicture,
+    required TResult Function(_SelectResume value) selectResume,
+    required TResult Function(_UpdateSelectedIsChecked value)
+        updateSelectedIsChecked,
+    required TResult Function(_UpdateSelectedPassport value)
+        updateSelectedPassport,
+    required TResult Function(_UpdateSelectedResume value) updateSelectedResume,
+    required TResult Function(_VerifyCode value) verifyCode,
+    required TResult Function(_LoginUser value) loginUser,
+    required TResult Function(_HireMe value) hireMe,
+    required TResult Function(_UpdatePassword value) updatePassword,
+    required TResult Function(_ForgotPassword value) forgotPassword,
+    required TResult Function(_verifyForgotPasswordCode value)
+        verifyForgotPasswordCode,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_CandidateSearch value) candidateSearch,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_CheckEmail value) checkEmail,
+    required TResult Function(_CheckPhone value) checkPhone,
+    required TResult Function(_SearchJobDetails value) searchJobDetails,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_UpdateRegisterEmployerRequest value)
+        updateRegisterEmployerRequest,
+    required TResult Function(_UpdateRegisterJobSeekerRequest value)
+        updateRegisterJobSeekerRequest,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_RegisterEmployer value) registerEmployer,
+    required TResult Function(_RegisterJobSeeker value) registerJobSeeker,
+    required TResult Function(_GetUserData value) getUserData,
+    required TResult Function(_RemoveUserData value) removeUserData,
+    required TResult Function(_SelectTabEvent value) selectTab,
+    required TResult Function(_SelectYear value) selectYear,
+  }) {
+    return getCandidateProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult? Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_SearchJobs value)? searchJobs,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSkill value)? updateSkill,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult? Function(_SelectPicture value)? selectPicture,
+    TResult? Function(_SelectResume value)? selectResume,
+    TResult? Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult? Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult? Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult? Function(_VerifyCode value)? verifyCode,
+    TResult? Function(_LoginUser value)? loginUser,
+    TResult? Function(_HireMe value)? hireMe,
+    TResult? Function(_UpdatePassword value)? updatePassword,
+    TResult? Function(_ForgotPassword value)? forgotPassword,
+    TResult? Function(_verifyForgotPasswordCode value)?
+        verifyForgotPasswordCode,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_CandidateSearch value)? candidateSearch,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_CheckEmail value)? checkEmail,
+    TResult? Function(_CheckPhone value)? checkPhone,
+    TResult? Function(_SearchJobDetails value)? searchJobDetails,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult? Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_RegisterEmployer value)? registerEmployer,
+    TResult? Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult? Function(_GetUserData value)? getUserData,
+    TResult? Function(_RemoveUserData value)? removeUserData,
+    TResult? Function(_SelectTabEvent value)? selectTab,
+    TResult? Function(_SelectYear value)? selectYear,
+  }) {
+    return getCandidateProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UpdateSelectedCountry value)? updateSelectedCountry,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedState value)? updateSelectedState,
+    TResult Function(_UpdateSelectedCity value)? updateSelectedCity,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_SearchJobs value)? searchJobs,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSkill value)? updateSkill,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedEducationQualification value)?
+        updateSelectedEducationQualification,
+    TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSelectedCompanyLogo value)?
+        updateSelectedCompanyLogo,
+    TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
+    TResult Function(_SelectPicture value)? selectPicture,
+    TResult Function(_SelectResume value)? selectResume,
+    TResult Function(_UpdateSelectedIsChecked value)? updateSelectedIsChecked,
+    TResult Function(_UpdateSelectedPassport value)? updateSelectedPassport,
+    TResult Function(_UpdateSelectedResume value)? updateSelectedResume,
+    TResult Function(_VerifyCode value)? verifyCode,
+    TResult Function(_LoginUser value)? loginUser,
+    TResult Function(_HireMe value)? hireMe,
+    TResult Function(_UpdatePassword value)? updatePassword,
+    TResult Function(_ForgotPassword value)? forgotPassword,
+    TResult Function(_verifyForgotPasswordCode value)? verifyForgotPasswordCode,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_CandidateSearch value)? candidateSearch,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_CheckEmail value)? checkEmail,
+    TResult Function(_CheckPhone value)? checkPhone,
+    TResult Function(_SearchJobDetails value)? searchJobDetails,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_UpdateRegisterEmployerRequest value)?
+        updateRegisterEmployerRequest,
+    TResult Function(_UpdateRegisterJobSeekerRequest value)?
+        updateRegisterJobSeekerRequest,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_RegisterEmployer value)? registerEmployer,
+    TResult Function(_RegisterJobSeeker value)? registerJobSeeker,
+    TResult Function(_GetUserData value)? getUserData,
+    TResult Function(_RemoveUserData value)? removeUserData,
+    TResult Function(_SelectTabEvent value)? selectTab,
+    TResult Function(_SelectYear value)? selectYear,
+    required TResult orElse(),
+  }) {
+    if (getCandidateProfile != null) {
+      return getCandidateProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetCandidateProfile implements AuthEvent {
+  const factory _GetCandidateProfile(final String jobId) =
+      _$GetCandidateProfileImpl;
+
+  String get jobId;
+  @JsonKey(ignore: true)
+  _$$GetCandidateProfileImplCopyWith<_$GetCandidateProfileImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5225,6 +5708,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -5275,6 +5759,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -5325,6 +5810,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -5384,6 +5870,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -5439,6 +5926,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5492,6 +5980,7 @@ class _$UpdateSelectedCompanyLogoImpl implements _UpdateSelectedCompanyLogo {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5597,6 +6086,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -5647,6 +6137,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -5697,6 +6188,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -5756,6 +6248,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -5811,6 +6304,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5864,6 +6358,7 @@ class _$SelectCompanyLogoImpl implements _SelectCompanyLogo {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -5963,6 +6458,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -6013,6 +6509,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -6063,6 +6560,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -6122,6 +6620,7 @@ class _$SelectPictureImpl implements _SelectPicture {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -6177,6 +6676,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -6230,6 +6730,7 @@ class _$SelectPictureImpl implements _SelectPicture {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -6329,6 +6830,7 @@ class _$SelectResumeImpl implements _SelectResume {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -6379,6 +6881,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -6429,6 +6932,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -6488,6 +6992,7 @@ class _$SelectResumeImpl implements _SelectResume {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -6543,6 +7048,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -6596,6 +7102,7 @@ class _$SelectResumeImpl implements _SelectResume {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -6724,6 +7231,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -6774,6 +7282,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -6824,6 +7333,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -6883,6 +7393,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -6938,6 +7449,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -6991,6 +7503,7 @@ class _$UpdateSelectedIsCheckedImpl implements _UpdateSelectedIsChecked {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -7125,6 +7638,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -7175,6 +7689,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -7225,6 +7740,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -7284,6 +7800,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -7339,6 +7856,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -7392,6 +7910,7 @@ class _$UpdateSelectedPassportImpl implements _UpdateSelectedPassport {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -7525,6 +8044,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -7575,6 +8095,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -7625,6 +8146,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -7684,6 +8206,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -7739,6 +8262,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -7792,6 +8316,7 @@ class _$UpdateSelectedResumeImpl implements _UpdateSelectedResume {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -7923,6 +8448,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -7973,6 +8499,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -8023,6 +8550,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -8082,6 +8610,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -8137,6 +8666,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -8190,6 +8720,7 @@ class _$VerifyCodeImpl implements _VerifyCode {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -8320,6 +8851,7 @@ class _$LoginUserImpl implements _LoginUser {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -8370,6 +8902,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -8420,6 +8953,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -8479,6 +9013,7 @@ class _$LoginUserImpl implements _LoginUser {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -8534,6 +9069,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -8587,6 +9123,7 @@ class _$LoginUserImpl implements _LoginUser {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -8717,6 +9254,7 @@ class _$HireMeImpl implements _HireMe {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -8767,6 +9305,7 @@ class _$HireMeImpl implements _HireMe {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -8817,6 +9356,7 @@ class _$HireMeImpl implements _HireMe {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -8876,6 +9416,7 @@ class _$HireMeImpl implements _HireMe {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -8931,6 +9472,7 @@ class _$HireMeImpl implements _HireMe {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -8984,6 +9526,7 @@ class _$HireMeImpl implements _HireMe {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -9115,6 +9658,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -9165,6 +9709,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -9215,6 +9760,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -9274,6 +9820,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -9329,6 +9876,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -9382,6 +9930,7 @@ class _$UpdatePasswordImpl implements _UpdatePassword {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -9514,6 +10063,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -9564,6 +10114,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -9614,6 +10165,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -9673,6 +10225,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -9728,6 +10281,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -9781,6 +10335,7 @@ class _$ForgotPasswordImpl implements _ForgotPassword {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -9915,6 +10470,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -9965,6 +10521,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -10015,6 +10572,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -10074,6 +10632,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -10129,6 +10688,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -10182,6 +10742,7 @@ class _$verifyForgotPasswordCodeImpl implements _verifyForgotPasswordCode {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -10287,6 +10848,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -10337,6 +10899,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -10387,6 +10950,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -10446,6 +11010,7 @@ class _$GetCountriesImpl implements _GetCountries {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -10501,6 +11066,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -10554,6 +11120,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -10653,6 +11220,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -10703,6 +11271,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -10753,6 +11322,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -10812,6 +11382,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -10867,6 +11438,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -10920,6 +11492,7 @@ class _$CandidateSearchImpl implements _CandidateSearch {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -11045,6 +11618,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -11095,6 +11669,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -11145,6 +11720,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -11204,6 +11780,7 @@ class _$GetStateImpl implements _GetState {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -11259,6 +11836,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -11312,6 +11890,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -11442,6 +12021,7 @@ class _$CheckEmailImpl implements _CheckEmail {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -11492,6 +12072,7 @@ class _$CheckEmailImpl implements _CheckEmail {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -11542,6 +12123,7 @@ class _$CheckEmailImpl implements _CheckEmail {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -11601,6 +12183,7 @@ class _$CheckEmailImpl implements _CheckEmail {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -11656,6 +12239,7 @@ class _$CheckEmailImpl implements _CheckEmail {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -11709,6 +12293,7 @@ class _$CheckEmailImpl implements _CheckEmail {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -11839,6 +12424,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -11889,6 +12475,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -11939,6 +12526,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -11998,6 +12586,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -12053,6 +12642,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -12106,6 +12696,7 @@ class _$CheckPhoneImpl implements _CheckPhone {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -12237,6 +12828,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -12287,6 +12879,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -12337,6 +12930,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -12396,6 +12990,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -12451,6 +13046,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -12504,6 +13100,7 @@ class _$SearchJobDetailsImpl implements _SearchJobDetails {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -12608,6 +13205,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -12658,6 +13256,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -12708,6 +13307,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -12767,6 +13367,7 @@ class _$GetCategoryImpl implements _GetCategory {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -12822,6 +13423,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -12875,6 +13477,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -13007,6 +13610,7 @@ class _$UpdateRegisterEmployerRequestImpl
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -13057,6 +13661,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -13107,6 +13712,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -13166,6 +13772,7 @@ class _$UpdateRegisterEmployerRequestImpl
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -13221,6 +13828,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -13274,6 +13882,7 @@ class _$UpdateRegisterEmployerRequestImpl
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -13414,6 +14023,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -13464,6 +14074,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -13514,6 +14125,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -13573,6 +14185,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -13628,6 +14241,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -13681,6 +14295,7 @@ class _$UpdateRegisterJobSeekerRequestImpl
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -13814,6 +14429,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -13864,6 +14480,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -13914,6 +14531,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -13973,6 +14591,7 @@ class _$GetSkillsImpl implements _GetSkills {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -14028,6 +14647,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14081,6 +14701,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14212,6 +14833,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -14262,6 +14884,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -14312,6 +14935,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -14371,6 +14995,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -14426,6 +15051,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14479,6 +15105,7 @@ class _$RegisterEmployerImpl implements _RegisterEmployer {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14611,6 +15238,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -14661,6 +15289,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -14711,6 +15340,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -14770,6 +15400,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -14825,6 +15456,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14878,6 +15510,7 @@ class _$RegisterJobSeekerImpl implements _RegisterJobSeeker {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -14983,6 +15616,7 @@ class _$GetUserDataImpl implements _GetUserData {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -15033,6 +15667,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -15083,6 +15718,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -15142,6 +15778,7 @@ class _$GetUserDataImpl implements _GetUserData {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -15197,6 +15834,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -15250,6 +15888,7 @@ class _$GetUserDataImpl implements _GetUserData {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -15349,6 +15988,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -15399,6 +16039,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -15449,6 +16090,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -15508,6 +16150,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -15563,6 +16206,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -15616,6 +16260,7 @@ class _$RemoveUserDataImpl implements _RemoveUserData {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -15742,6 +16387,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -15792,6 +16438,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -15842,6 +16489,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -15901,6 +16549,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -15956,6 +16605,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -16009,6 +16659,7 @@ class _$SelectTabEventImpl implements _SelectTabEvent {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -16139,6 +16790,7 @@ class _$SelectYearImpl implements _SelectYear {
     required TResult Function(String value)
         updateSelectedEducationQualification,
     required TResult Function(String value) updateEmploymentHistory,
+    required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(File value) updateSelectedCompanyLogo,
     required TResult Function() selectCompanyLogo,
     required TResult Function() selectPicture,
@@ -16189,6 +16841,7 @@ class _$SelectYearImpl implements _SelectYear {
     TResult? Function(String value)? updateSelectedJobType,
     TResult? Function(String value)? updateSelectedEducationQualification,
     TResult? Function(String value)? updateEmploymentHistory,
+    TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(File value)? updateSelectedCompanyLogo,
     TResult? Function()? selectCompanyLogo,
     TResult? Function()? selectPicture,
@@ -16239,6 +16892,7 @@ class _$SelectYearImpl implements _SelectYear {
     TResult Function(String value)? updateSelectedJobType,
     TResult Function(String value)? updateSelectedEducationQualification,
     TResult Function(String value)? updateEmploymentHistory,
+    TResult Function(String jobId)? getCandidateProfile,
     TResult Function(File value)? updateSelectedCompanyLogo,
     TResult Function()? selectCompanyLogo,
     TResult Function()? selectPicture,
@@ -16298,6 +16952,7 @@ class _$SelectYearImpl implements _SelectYear {
         updateSelectedEducationQualification,
     required TResult Function(_UpdateEmploymentHistory value)
         updateEmploymentHistory,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSelectedCompanyLogo value)
         updateSelectedCompanyLogo,
     required TResult Function(_SelectCompanyLogo value) selectCompanyLogo,
@@ -16353,6 +17008,7 @@ class _$SelectYearImpl implements _SelectYear {
     TResult? Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult? Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult? Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -16406,6 +17062,7 @@ class _$SelectYearImpl implements _SelectYear {
     TResult Function(_UpdateSelectedEducationQualification value)?
         updateSelectedEducationQualification,
     TResult Function(_UpdateEmploymentHistory value)? updateEmploymentHistory,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSelectedCompanyLogo value)?
         updateSelectedCompanyLogo,
     TResult Function(_SelectCompanyLogo value)? selectCompanyLogo,
@@ -16465,6 +17122,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   String? get jsCountry => throw _privateConstructorUsedError;
   File? get file => throw _privateConstructorUsedError;
+  String? get jobId => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get confirmPassword => throw _privateConstructorUsedError;
   String? get countryId => throw _privateConstructorUsedError;
@@ -16506,6 +17164,8 @@ mixin _$AuthState {
   List<SkillResponseEntity> get skill => throw _privateConstructorUsedError;
   List<CandidateSearchEntity> get candidateSearch =>
       throw _privateConstructorUsedError;
+  CandidateProfileEntity? get candidateProfile =>
+      throw _privateConstructorUsedError;
   bool get isChecked => throw _privateConstructorUsedError;
   bool get isPhone => throw _privateConstructorUsedError;
   bool get isEmail => throw _privateConstructorUsedError;
@@ -16536,6 +17196,7 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   SearchJobDetailState get searchJobDetailState =>
       throw _privateConstructorUsedError;
+  ViewState get getCandidateProfileState => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -16545,6 +17206,7 @@ mixin _$AuthState {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -16579,6 +17241,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -16599,7 +17262,8 @@ mixin _$AuthState {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -16612,6 +17276,7 @@ mixin _$AuthState {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -16646,6 +17311,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -16666,7 +17332,8 @@ mixin _$AuthState {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)?
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -16679,6 +17346,7 @@ mixin _$AuthState {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -16713,6 +17381,7 @@ mixin _$AuthState {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -16733,7 +17402,8 @@ mixin _$AuthState {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)?
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)?
         initial,
     required TResult orElse(),
   }) =>
@@ -16772,6 +17442,7 @@ abstract class $AuthStateCopyWith<$Res> {
       SearchJobDetailsResultEntity? searchJobDetail,
       String? jsCountry,
       File? file,
+      String? jobId,
       String? errorMessage,
       String? confirmPassword,
       String? countryId,
@@ -16806,6 +17477,7 @@ abstract class $AuthStateCopyWith<$Res> {
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       List<CandidateSearchEntity> candidateSearch,
+      CandidateProfileEntity? candidateProfile,
       bool isChecked,
       bool isPhone,
       bool isEmail,
@@ -16826,7 +17498,8 @@ abstract class $AuthStateCopyWith<$Res> {
       GetStateState getStateState,
       EmployerVerifyCodeState employerVerifyCodeState,
       JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-      SearchJobDetailState searchJobDetailState});
+      SearchJobDetailState searchJobDetailState,
+      ViewState getCandidateProfileState});
 }
 
 /// @nodoc
@@ -16848,6 +17521,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? searchJobDetail = freezed,
     Object? jsCountry = freezed,
     Object? file = freezed,
+    Object? jobId = freezed,
     Object? errorMessage = freezed,
     Object? confirmPassword = freezed,
     Object? countryId = freezed,
@@ -16882,6 +17556,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? categoryList = null,
     Object? skill = null,
     Object? candidateSearch = null,
+    Object? candidateProfile = freezed,
     Object? isChecked = null,
     Object? isPhone = null,
     Object? isEmail = null,
@@ -16903,6 +17578,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? employerVerifyCodeState = null,
     Object? jobSeekerVerifyCodeState = null,
     Object? searchJobDetailState = null,
+    Object? getCandidateProfileState = null,
   }) {
     return _then(_value.copyWith(
       gender: null == gender
@@ -16929,6 +17605,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as File?,
+      jobId: freezed == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -17065,6 +17745,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.candidateSearch
           : candidateSearch // ignore: cast_nullable_to_non_nullable
               as List<CandidateSearchEntity>,
+      candidateProfile: freezed == candidateProfile
+          ? _value.candidateProfile
+          : candidateProfile // ignore: cast_nullable_to_non_nullable
+              as CandidateProfileEntity?,
       isChecked: null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
@@ -17149,6 +17833,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.searchJobDetailState
           : searchJobDetailState // ignore: cast_nullable_to_non_nullable
               as SearchJobDetailState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
     ) as $Val);
   }
 }
@@ -17168,6 +17856,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       SearchJobDetailsResultEntity? searchJobDetail,
       String? jsCountry,
       File? file,
+      String? jobId,
       String? errorMessage,
       String? confirmPassword,
       String? countryId,
@@ -17202,6 +17891,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<CategoryResponseEntity> categoryList,
       List<SkillResponseEntity> skill,
       List<CandidateSearchEntity> candidateSearch,
+      CandidateProfileEntity? candidateProfile,
       bool isChecked,
       bool isPhone,
       bool isEmail,
@@ -17222,7 +17912,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetStateState getStateState,
       EmployerVerifyCodeState employerVerifyCodeState,
       JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-      SearchJobDetailState searchJobDetailState});
+      SearchJobDetailState searchJobDetailState,
+      ViewState getCandidateProfileState});
 }
 
 /// @nodoc
@@ -17242,6 +17933,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? searchJobDetail = freezed,
     Object? jsCountry = freezed,
     Object? file = freezed,
+    Object? jobId = freezed,
     Object? errorMessage = freezed,
     Object? confirmPassword = freezed,
     Object? countryId = freezed,
@@ -17276,6 +17968,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? categoryList = null,
     Object? skill = null,
     Object? candidateSearch = null,
+    Object? candidateProfile = freezed,
     Object? isChecked = null,
     Object? isPhone = null,
     Object? isEmail = null,
@@ -17297,6 +17990,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? employerVerifyCodeState = null,
     Object? jobSeekerVerifyCodeState = null,
     Object? searchJobDetailState = null,
+    Object? getCandidateProfileState = null,
   }) {
     return _then(_$InitialImpl(
       gender: null == gender
@@ -17323,6 +18017,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as File?,
+      jobId: freezed == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -17459,6 +18157,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._candidateSearch
           : candidateSearch // ignore: cast_nullable_to_non_nullable
               as List<CandidateSearchEntity>,
+      candidateProfile: freezed == candidateProfile
+          ? _value.candidateProfile
+          : candidateProfile // ignore: cast_nullable_to_non_nullable
+              as CandidateProfileEntity?,
       isChecked: null == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
@@ -17543,6 +18245,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.searchJobDetailState
           : searchJobDetailState // ignore: cast_nullable_to_non_nullable
               as SearchJobDetailState,
+      getCandidateProfileState: null == getCandidateProfileState
+          ? _value.getCandidateProfileState
+          : getCandidateProfileState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
     ));
   }
 }
@@ -17557,6 +18263,7 @@ class _$InitialImpl implements _Initial {
       this.searchJobDetail,
       this.jsCountry,
       this.file,
+      this.jobId,
       this.errorMessage,
       this.confirmPassword,
       this.countryId,
@@ -17667,6 +18374,7 @@ class _$InitialImpl implements _Initial {
       final List<CategoryResponseEntity> categoryList = const [],
       final List<SkillResponseEntity> skill = const [],
       final List<CandidateSearchEntity> candidateSearch = const [],
+      this.candidateProfile,
       this.isChecked = false,
       this.isPhone = false,
       this.isEmail = false,
@@ -17687,7 +18395,8 @@ class _$InitialImpl implements _Initial {
       this.getStateState = GetStateState.idle,
       this.employerVerifyCodeState = EmployerVerifyCodeState.idle,
       this.jobSeekerVerifyCodeState = JobSeekerVerifyCodeState.idle,
-      this.searchJobDetailState = SearchJobDetailState.idle})
+      this.searchJobDetailState = SearchJobDetailState.idle,
+      this.getCandidateProfileState = ViewState.idle})
       : _skills = skills,
         _searchJobEntity = searchJobEntity,
         _yearEnd = yearEnd,
@@ -17714,6 +18423,8 @@ class _$InitialImpl implements _Initial {
   final String? jsCountry;
   @override
   final File? file;
+  @override
+  final String? jobId;
   @override
   final String? errorMessage;
   @override
@@ -17877,6 +18588,8 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  final CandidateProfileEntity? candidateProfile;
+  @override
   @JsonKey()
   final bool isChecked;
   @override
@@ -17939,10 +18652,13 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final SearchJobDetailState searchJobDetailState;
+  @override
+  @JsonKey()
+  final ViewState getCandidateProfileState;
 
   @override
   String toString() {
-    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, yearEnd: $yearEnd, selectedYear: $selectedYear, category: $category, authEntity: $authEntity, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, candidateSearch: $candidateSearch, isChecked: $isChecked, isPhone: $isPhone, isEmail: $isEmail, checkEmailState: $checkEmailState, candidateSearchState: $candidateSearchState, checkPhoneState: $checkPhoneState, hireMeState: $hireMeState, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState)';
+    return 'AuthState.initial(gender: $gender, country: $country, state: $state, searchJobDetail: $searchJobDetail, jsCountry: $jsCountry, file: $file, jobId: $jobId, errorMessage: $errorMessage, confirmPassword: $confirmPassword, countryId: $countryId, jsGender: $jsGender, dateOfBirth: $dateOfBirth, selectedIndex: $selectedIndex, jobType: $jobType, jsState: $jsState, city: $city, picture: $picture, educationalQualification: $educationalQualification, dateOFBirths: $dateOFBirths, startYear: $startYear, endYear: $endYear, employmentHistory: $employmentHistory, skills: $skills, searchJobEntity: $searchJobEntity, yearEnd: $yearEnd, selectedYear: $selectedYear, category: $category, authEntity: $authEntity, singleSkill: $singleSkill, registerEmployerRequest: $registerEmployerRequest, registerJobSeekerRequest: $registerJobSeekerRequest, resume: $resume, states: $states, genders: $genders, levelOfEducationList: $levelOfEducationList, employmentHistoryList: $employmentHistoryList, jobTypeList: $jobTypeList, countries: $countries, categoryList: $categoryList, skill: $skill, candidateSearch: $candidateSearch, candidateProfile: $candidateProfile, isChecked: $isChecked, isPhone: $isPhone, isEmail: $isEmail, checkEmailState: $checkEmailState, candidateSearchState: $candidateSearchState, checkPhoneState: $checkPhoneState, hireMeState: $hireMeState, changePasswordState: $changePasswordState, forgotPasswordState: $forgotPasswordState, employerLoginState: $employerLoginState, jobSeekerLoginState: $jobSeekerLoginState, employerSignUpState: $employerSignUpState, searchJobState: $searchJobState, jobSeekerSignUpState: $jobSeekerSignUpState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, employerVerifyCodeState: $employerVerifyCodeState, jobSeekerVerifyCodeState: $jobSeekerVerifyCodeState, searchJobDetailState: $searchJobDetailState, getCandidateProfileState: $getCandidateProfileState)';
   }
 
   @override
@@ -17958,6 +18674,7 @@ class _$InitialImpl implements _Initial {
             (identical(other.jsCountry, jsCountry) ||
                 other.jsCountry == jsCountry) &&
             (identical(other.file, file) || other.file == file) &&
+            (identical(other.jobId, jobId) || other.jobId == jobId) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.confirmPassword, confirmPassword) ||
@@ -18015,6 +18732,8 @@ class _$InitialImpl implements _Initial {
             const DeepCollectionEquality().equals(other._skill, _skill) &&
             const DeepCollectionEquality()
                 .equals(other._candidateSearch, _candidateSearch) &&
+            (identical(other.candidateProfile, candidateProfile) ||
+                other.candidateProfile == candidateProfile) &&
             (identical(other.isChecked, isChecked) ||
                 other.isChecked == isChecked) &&
             (identical(other.isPhone, isPhone) || other.isPhone == isPhone) &&
@@ -18027,8 +18746,7 @@ class _$InitialImpl implements _Initial {
                 other.checkPhoneState == checkPhoneState) &&
             (identical(other.hireMeState, hireMeState) ||
                 other.hireMeState == hireMeState) &&
-            (identical(other.changePasswordState, changePasswordState) ||
-                other.changePasswordState == changePasswordState) &&
+            (identical(other.changePasswordState, changePasswordState) || other.changePasswordState == changePasswordState) &&
             (identical(other.forgotPasswordState, forgotPasswordState) || other.forgotPasswordState == forgotPasswordState) &&
             (identical(other.employerLoginState, employerLoginState) || other.employerLoginState == employerLoginState) &&
             (identical(other.jobSeekerLoginState, jobSeekerLoginState) || other.jobSeekerLoginState == jobSeekerLoginState) &&
@@ -18041,7 +18759,8 @@ class _$InitialImpl implements _Initial {
             (identical(other.getStateState, getStateState) || other.getStateState == getStateState) &&
             (identical(other.employerVerifyCodeState, employerVerifyCodeState) || other.employerVerifyCodeState == employerVerifyCodeState) &&
             (identical(other.jobSeekerVerifyCodeState, jobSeekerVerifyCodeState) || other.jobSeekerVerifyCodeState == jobSeekerVerifyCodeState) &&
-            (identical(other.searchJobDetailState, searchJobDetailState) || other.searchJobDetailState == searchJobDetailState));
+            (identical(other.searchJobDetailState, searchJobDetailState) || other.searchJobDetailState == searchJobDetailState) &&
+            (identical(other.getCandidateProfileState, getCandidateProfileState) || other.getCandidateProfileState == getCandidateProfileState));
   }
 
   @override
@@ -18053,6 +18772,7 @@ class _$InitialImpl implements _Initial {
         searchJobDetail,
         jsCountry,
         file,
+        jobId,
         errorMessage,
         confirmPassword,
         countryId,
@@ -18087,6 +18807,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_categoryList),
         const DeepCollectionEquality().hash(_skill),
         const DeepCollectionEquality().hash(_candidateSearch),
+        candidateProfile,
         isChecked,
         isPhone,
         isEmail,
@@ -18107,7 +18828,8 @@ class _$InitialImpl implements _Initial {
         getStateState,
         employerVerifyCodeState,
         jobSeekerVerifyCodeState,
-        searchJobDetailState
+        searchJobDetailState,
+        getCandidateProfileState
       ]);
 
   @JsonKey(ignore: true)
@@ -18126,6 +18848,7 @@ class _$InitialImpl implements _Initial {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -18160,6 +18883,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -18180,7 +18904,8 @@ class _$InitialImpl implements _Initial {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)
         initial,
   }) {
     return initial(
@@ -18190,6 +18915,7 @@ class _$InitialImpl implements _Initial {
         searchJobDetail,
         jsCountry,
         file,
+        jobId,
         errorMessage,
         confirmPassword,
         countryId,
@@ -18224,6 +18950,7 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         candidateSearch,
+        candidateProfile,
         isChecked,
         isPhone,
         isEmail,
@@ -18244,7 +18971,8 @@ class _$InitialImpl implements _Initial {
         getStateState,
         employerVerifyCodeState,
         jobSeekerVerifyCodeState,
-        searchJobDetailState);
+        searchJobDetailState,
+        getCandidateProfileState);
   }
 
   @override
@@ -18257,6 +18985,7 @@ class _$InitialImpl implements _Initial {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -18291,6 +19020,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -18311,7 +19041,8 @@ class _$InitialImpl implements _Initial {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)?
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)?
         initial,
   }) {
     return initial?.call(
@@ -18321,6 +19052,7 @@ class _$InitialImpl implements _Initial {
         searchJobDetail,
         jsCountry,
         file,
+        jobId,
         errorMessage,
         confirmPassword,
         countryId,
@@ -18355,6 +19087,7 @@ class _$InitialImpl implements _Initial {
         categoryList,
         skill,
         candidateSearch,
+        candidateProfile,
         isChecked,
         isPhone,
         isEmail,
@@ -18375,7 +19108,8 @@ class _$InitialImpl implements _Initial {
         getStateState,
         employerVerifyCodeState,
         jobSeekerVerifyCodeState,
-        searchJobDetailState);
+        searchJobDetailState,
+        getCandidateProfileState);
   }
 
   @override
@@ -18388,6 +19122,7 @@ class _$InitialImpl implements _Initial {
             SearchJobDetailsResultEntity? searchJobDetail,
             String? jsCountry,
             File? file,
+            String? jobId,
             String? errorMessage,
             String? confirmPassword,
             String? countryId,
@@ -18422,6 +19157,7 @@ class _$InitialImpl implements _Initial {
             List<CategoryResponseEntity> categoryList,
             List<SkillResponseEntity> skill,
             List<CandidateSearchEntity> candidateSearch,
+            CandidateProfileEntity? candidateProfile,
             bool isChecked,
             bool isPhone,
             bool isEmail,
@@ -18442,7 +19178,8 @@ class _$InitialImpl implements _Initial {
             GetStateState getStateState,
             EmployerVerifyCodeState employerVerifyCodeState,
             JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-            SearchJobDetailState searchJobDetailState)?
+            SearchJobDetailState searchJobDetailState,
+            ViewState getCandidateProfileState)?
         initial,
     required TResult orElse(),
   }) {
@@ -18454,6 +19191,7 @@ class _$InitialImpl implements _Initial {
           searchJobDetail,
           jsCountry,
           file,
+          jobId,
           errorMessage,
           confirmPassword,
           countryId,
@@ -18488,6 +19226,7 @@ class _$InitialImpl implements _Initial {
           categoryList,
           skill,
           candidateSearch,
+          candidateProfile,
           isChecked,
           isPhone,
           isEmail,
@@ -18508,7 +19247,8 @@ class _$InitialImpl implements _Initial {
           getStateState,
           employerVerifyCodeState,
           jobSeekerVerifyCodeState,
-          searchJobDetailState);
+          searchJobDetailState,
+          getCandidateProfileState);
     }
     return orElse();
   }
@@ -18550,6 +19290,7 @@ abstract class _Initial implements AuthState {
       final SearchJobDetailsResultEntity? searchJobDetail,
       final String? jsCountry,
       final File? file,
+      final String? jobId,
       final String? errorMessage,
       final String? confirmPassword,
       final String? countryId,
@@ -18584,6 +19325,7 @@ abstract class _Initial implements AuthState {
       final List<CategoryResponseEntity> categoryList,
       final List<SkillResponseEntity> skill,
       final List<CandidateSearchEntity> candidateSearch,
+      final CandidateProfileEntity? candidateProfile,
       final bool isChecked,
       final bool isPhone,
       final bool isEmail,
@@ -18604,7 +19346,8 @@ abstract class _Initial implements AuthState {
       final GetStateState getStateState,
       final EmployerVerifyCodeState employerVerifyCodeState,
       final JobSeekerVerifyCodeState jobSeekerVerifyCodeState,
-      final SearchJobDetailState searchJobDetailState}) = _$InitialImpl;
+      final SearchJobDetailState searchJobDetailState,
+      final ViewState getCandidateProfileState}) = _$InitialImpl;
 
   @override
   String get gender;
@@ -18618,6 +19361,8 @@ abstract class _Initial implements AuthState {
   String? get jsCountry;
   @override
   File? get file;
+  @override
+  String? get jobId;
   @override
   String? get errorMessage;
   @override
@@ -18687,6 +19432,8 @@ abstract class _Initial implements AuthState {
   @override
   List<CandidateSearchEntity> get candidateSearch;
   @override
+  CandidateProfileEntity? get candidateProfile;
+  @override
   bool get isChecked;
   @override
   bool get isPhone;
@@ -18728,6 +19475,8 @@ abstract class _Initial implements AuthState {
   JobSeekerVerifyCodeState get jobSeekerVerifyCodeState;
   @override
   SearchJobDetailState get searchJobDetailState;
+  @override
+  ViewState get getCandidateProfileState;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

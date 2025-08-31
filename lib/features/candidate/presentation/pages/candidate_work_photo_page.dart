@@ -4,6 +4,7 @@ import 'package:artisan_oga/core/utils/image_constant.dart';
 import 'package:artisan_oga/core/utils/size_utils.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/widgets/work_photo_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -26,7 +27,7 @@ class CandidateWorkPhotoPage extends HookWidget {
     }, const []);
 
     return Scaffold(
-      appBar: const CustomAppBar(titleStatus: false, title: ''),
+      appBar: const CustomAppBar(title: 'Work Photo'),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
         child: BlocBuilder<CandidatesBloc, CandidatesState>(
@@ -93,29 +94,34 @@ class CandidateWorkPhotoPage extends HookWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            CachedNetworkImage(
-                              imageUrl: 'https://${item.photo}',
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                width: 40,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(0),
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
+                            GestureDetector(
+                              onTap: () {
+                                workPhotoDialog(context, item.photo);
+                              },
+                              child: CachedNetworkImage(
+                                imageUrl: 'https://${item.photo}',
+                                imageBuilder: (context, imageProvider) =>
+                                    Container(
+                                  width: 40,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(0),
+                                    image: DecorationImage(
+                                      image: imageProvider,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
+                                progressIndicatorBuilder: (_, __, ___) =>
+                                    const SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child:
+                                      CircularProgressIndicator(strokeWidth: 2),
+                                ),
+                                errorWidget: (_, __, ___) =>
+                                    const Icon(Icons.broken_image),
                               ),
-                              progressIndicatorBuilder: (_, __, ___) =>
-                                  const SizedBox(
-                                width: 24,
-                                height: 24,
-                                child:
-                                    CircularProgressIndicator(strokeWidth: 2),
-                              ),
-                              errorWidget: (_, __, ___) =>
-                                  const Icon(Icons.broken_image),
                             ),
                             GestureDetector(
                               onTap: () => deleteWorkPhoto(

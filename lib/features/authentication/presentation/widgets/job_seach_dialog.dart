@@ -85,22 +85,7 @@ Future<void> searchDialog(
                             );
                       },
                     ),
-//                     CustomDropDown<SkillResponseEntity>(
-//   title: 'Select Job Skill',
-//   items: state.skill,
-//   selectedItem: state.skill.isNotEmpty
-//       ? state.skill.firstWhere(
-//           (category) =>
-//               category.id == (state.category?.id ?? 1),
-//           orElse: () => null) // ✅ Now returns `null` instead of auto-selecting first skill
-//       : null, // ✅ Ensures it's empty if no skills are available
-//   itemLabel: (category) => category.name,
-//   onChanged: (value) {
-//     context.read<AuthBloc>().add(
-//           AuthEvent.updateSkill(value),
-//         );
-//   },
-// ),
+
                     SizedBox(
                       height: 20.h,
                     ),

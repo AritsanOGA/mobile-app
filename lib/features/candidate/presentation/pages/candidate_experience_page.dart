@@ -21,7 +21,7 @@ class CandidateExperiencePage extends HookWidget {
     }, const []);
 
     return Scaffold(
-      appBar: const CustomAppBar(titleStatus: false, title: ''),
+      appBar: const CustomAppBar( title: 'Experience'),
       body: Padding(
         padding: EdgeInsets.only(
           top: 12.v,

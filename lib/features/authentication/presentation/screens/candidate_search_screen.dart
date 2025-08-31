@@ -4,7 +4,6 @@ import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_login_page_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/employer_sign_uppage_screen.dart';
-import 'package:artisan_oga/features/authentication/presentation/widgets/job_seach_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +17,27 @@ class CandidateSearchScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final locationController = useTextEditingController();
+    // final query = useState<String>('');
+    // final filtered = useState<List<dynamic>>([]);
+
+    // List<dynamic> applyFilter({
+    //   required List<dynamic> source,
+    //   required String q,
+    // }) {
+    //   final text = q.trim().toLowerCase();
+    //   if (text.isEmpty) return List<dynamic>.from(source);
+
+    //   bool matches(dynamic item) {
+    //     final name = (item.fullName ?? '').toString().toLowerCase();
+    //     // final cat = (item.categoryName ?? '').toString().toLowerCase();
+    //     // final city = (item.city ?? '').toString().toLowerCase();
+    //     // final avail = (item.availability ?? '').toString().toLowerCase();
+
+    //     return name.contains(text);
+    //   }
+
+    //   return source.where(matches).toList();
+    // }
 
     return SafeArea(
       child: Scaffold(
@@ -100,7 +120,7 @@ class CandidateSearchScreen extends HookWidget {
                   ),
                   CustomTextFormField(
                     ontap: () {
-                      searchDialog(context, locationController);
+                      // searchDialog(context, locationController);
                     },
                     title: 'Search for talents',
                     readOnly: true,
@@ -179,14 +199,18 @@ class CandidateSearchScreen extends HookWidget {
                                                                 .circular(5),
                                                         color: Colors.blueGrey
                                                             .withOpacity(0.6)),
-                                                    child: Text('Hired',
+                                                    child: Text(
+                                                        state
+                                                            .candidateSearch[
+                                                                index]
+                                                            .availability,
                                                         style: theme.textTheme
                                                             .bodyMedium
                                                             ?.copyWith(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                fontSize: 15)),
+                                                                fontSize: 10)),
                                                   ),
                                                 ],
                                               ),

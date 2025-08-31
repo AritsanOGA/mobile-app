@@ -38,6 +38,8 @@ import 'package:artisan_oga/features/authentication/domain/usecases/state_usecas
 import 'package:artisan_oga/features/authentication/domain/usecases/update_password_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_code_usecase.dart';
 import 'package:artisan_oga/features/authentication/domain/usecases/verify_forgot_password_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -70,6 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       CheckPhoneUsecase? checkPhoneUseCase,
       CandidateSearchUsecase? candidateSearchUsecase,
       HireMeUseCase? hireMeUseCase,
+       CandidateProfileUseCase? candidateProfileUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
@@ -91,6 +94,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         _checkEmailUsecase = checkEmailUseCase ?? locator(),
         _checkPhoneUsecase = checkPhoneUseCase ?? locator(),
         _hireMeUsecase = hireMeUseCase ?? locator(),
+        _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
         super(_Initial()) {
     on<_UpdateSelectedCountry>(_onUpdateSelectedCountry);
     on<_SelectYear>(_onSelectYear);
@@ -133,6 +137,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_verifyForgotPasswordCode>(_onVerifyForgotPasswordCode);
     on<_SearchJobs>(_onSearchJobs);
     on<_SearchJobDetails>(_onSearchJobDetails);
+      on<_GetCandidateProfile>(_onGetCandidateProfile);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -155,6 +160,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final CheckEmailUsecase _checkEmailUsecase;
   final CheckPhoneUsecase _checkPhoneUsecase;
   final HireMeUseCase _hireMeUsecase;
+   final CandidateProfileUseCase _candidateProfileUseCase;
+
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -614,5 +621,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
     );
     emit(state.copyWith(hireMeState: ViewState.idle));
+  }
+
+  FutureOr<void> _onGetCandidateProfile(_GetCandidateProfile event, Emitter<AuthState> emit) async {
+
+        emit(state.copyWith(
+        getCandidateProfileState: ViewState.loading));
+    final result = await _candidateProfileUseCase(event.jobId);
+    result.fold(
+      (error) => emit(
+        state.copyWith(
+          getCandidateProfileState: ViewState.failure,
+          errorMessage: error.message,
+        ),
+      ),
+      (candidateProfileEntity) => emit(
+        state.copyWith(
+          candidateProfile: candidateProfileEntity,
+          getCandidateProfileState: ViewState.success,
+        ),
+      ),
+    );
+    emit(state.copyWith(
+        getCandidateProfileState: ViewState.idle));
   }
 }
