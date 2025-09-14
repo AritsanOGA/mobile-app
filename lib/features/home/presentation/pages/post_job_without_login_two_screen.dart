@@ -11,6 +11,7 @@ import 'package:artisan_oga/shared/widgets/custom_drop_down.dart';
 import 'package:artisan_oga/shared/widgets/custom_elevated_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -19,6 +20,7 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final officeAddressController = useTextEditingController();
+    final companyNameController = useTextEditingController();
     final cityController = useTextEditingController();
     final fullNameController = useTextEditingController();
     final emailController = useTextEditingController();
@@ -53,6 +55,26 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                            SizedBox(height: 25.v),
+                            BlocBuilder<HomeBloc, HomeState>(
+                              builder: (context, state) {
+                                return CustomDropDown<String>(
+                                  title: 'Compensation Type',
+                                  items: state.compensationTypeLists,
+                                  selectedItem: state.compensationTypes,
+                                  itemLabel: (category) => category,
+                                  onChanged: (value) {
+                                    context.read<HomeBloc>().add(
+                                          HomeEvent
+                                              .updateSelectedCompensationTypes(
+                                                  value ?? ''),
+                                        );
+                                    print('${value}');
+                                  },
+                                );
+                              },
+                            ),
+                            SizedBox(height: 25.v),
                             BlocBuilder<HomeBloc, HomeState>(
                                 builder: (context, state) {
                               return CustomDropDown<CountryResponseEntity>(
@@ -120,6 +142,13 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                             ),
                             SizedBox(height: 30.v),
                             CustomTextFormField(
+                              controller: companyNameController,
+                              title: 'Company Name',
+                              validator: FormValidation.stringValidation,
+                              hintText: 'Enter Company Name',
+                            ),
+                            SizedBox(height: 30.v),
+                            CustomTextFormField(
                               controller: officeAddressController,
                               title: 'Office Address',
                               validator: FormValidation.stringValidation,
@@ -157,6 +186,11 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                                 Expanded(
                                   child: CustomTextFormField(
                                     title: 'Phone Number',
+                                    textInputType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(11),
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
                                     validator: FormValidation.stringValidation,
                                     controller: phoneNoController,
                                     hintText: 'Enter Phone Number',
@@ -214,7 +248,7 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                                     if (formKey.currentState?.validate() ??
                                         false) {
                                       print(
-                                          '${state.workMode} ${state.jobType} ${cityController.text}');
+                                          '${state.workMode} ${state.jobType} ${cityController.text} ${state.compensationTypes}');
                                       context.read<HomeBloc>().add(
                                             HomeEvent.postJobWithoutLogin(
                                               postJobWithoutLoginRequest.copyWith(
@@ -231,14 +265,14 @@ class PostJobWithoutLoginTwoScreen extends HookWidget {
                                                       '161',
                                                   state: state.state?.name ??
                                                       state.states.first.name,
-                                                  companyName: 'Sadax',
+                                                  companyName: companyNameController.text,
                                                   city: cityController.text,
                                                   officeAddress:
                                                       officeAddressController
                                                           .text,
                                                   available: state.availablity,
                                                   compensationType:
-                                                      state.compensationType),
+                                                      state.compensationTypes),
                                             ),
                                           );
                                     }

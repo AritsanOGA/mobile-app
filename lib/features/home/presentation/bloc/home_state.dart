@@ -14,6 +14,7 @@ class HomeState with _$HomeState {
       DateTime? applicationTime,
       String? availablity,
       @Default('--Select--') String jobTypes,
+      @Default('--Select--') String compensationTypes,
       @Default('--Select--') String workModes,
       @Default('--Select--') String skillLevels,
       @Default('--Select--') String educationLevels,
@@ -66,8 +67,6 @@ class HomeState with _$HomeState {
           skills: [],
           position: '',
           hireType: '',
-          categoryId: 0,
-          yearsOfExperience: 0,
           levelOfEducation: '',
           skillLevel: '',
           maxAmount: 0,
@@ -76,12 +75,10 @@ class HomeState with _$HomeState {
           state: '',
           city: '',
           available: '',
-          availableFor: '',
           email: '',
           phoneNumber: '',
           fullName: '',
           compensationType: '',
-          gender: '',
           currency: '',
           officeAddress: '',
           applicationDeadline: ''))
@@ -151,6 +148,12 @@ class HomeState with _$HomeState {
         "Unskilled"
       ])
       List<String> skillLevelLists,
+      @Default([
+        "--Select--",
+        "Salary",
+        "Pay per job",
+      ])
+      List<String> compensationTypeLists,
       @Default(GetFeaturedJobState.idle)
       GetFeaturedJobState getFeaturedJobState,
       @Default(GetFeaturedCandidateState.idle)

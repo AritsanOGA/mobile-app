@@ -83,6 +83,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_UpdateSelectedWorkMode>(_onUpdateSelectedWorkMode);
     on<_UpdateSelectedAvailability>(_onUpdateSelectedAvailability);
     on<_UpdateSelectedCompensationType>(_onUpdateSelectedCompensationType);
+    on<_UpdateSelectedCompensationTypes>(_onUpdateSelectedCompensationTypes);
     on<_UpdateSelectedSkillLevel>(_onUpdateSelectedSkillLevel);
     on<_UpdateSelectedEducationLevel>(_onUpdateSelectedEducationLevel);
     on<_ApplyForJob>(_onApplyForJob);
@@ -442,5 +443,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
               )));
     });
     emit(state.copyWith(postJobWithoutLoginState: ViewState.idle));
+  }
+
+  FutureOr<void> _onUpdateSelectedCompensationTypes(
+      _UpdateSelectedCompensationTypes event, Emitter<HomeState> emit) {
+    emit(state.copyWith(compensationTypes: event.value));
   }
 }

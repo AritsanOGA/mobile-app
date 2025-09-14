@@ -238,7 +238,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
   @override
   Future<bool> postJobWithoutLogin(PostJobWithoutLoginEntity entity) async {
-    final result = await api.post(
+     await api.post(
       url: AppApiEndpoint.postJobWithoutLogin,
       body: PostJobWithoutLoginModel.fromEntity(entity).toJson(),
     ) as Map<String, dynamic>;

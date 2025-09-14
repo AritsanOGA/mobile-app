@@ -36,7 +36,7 @@ class AppApiEndpoint {
   static const String featuredJob = '/api/v1/featured-jobs';
   static const String postJob = '/api/v1/employer/post-a-job';
   static const String postJobWithoutLogin =
-      '/api/v1/mployer/post-job-without-login';
+      '/api/v1/employer/post-job-without-login';
   static const String editJob = '/api/v1/employer/update-jobs';
   static const String getAllJobs = '/api/v1/job/get-all-jobs';
   static const String applyForJob = '/api/v1/candidate/job/apply';
@@ -90,7 +90,7 @@ class AppApiEndpoint {
   static const String addAward = 'api/v1/candidate/profile/awards/add';
   static const String getAward = 'api/v1/candidate/profile/awards';
   static const String deleteAward = 'api/v1/candidate/profile/awards/delete';
-  static const String updateAward = 'api/v1/candidate/profile/awards/update';
+  static const String updateAward = 'api/v1/candidate/profile/award/update';
 
   static const String addEducation = 'api/v1/candidate/profile/education/add';
   static const String getEducation = 'api/v1/candidate/profile/education';

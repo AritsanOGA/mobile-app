@@ -411,7 +411,7 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                                 List<SkillResponseEntity> mySkill =
                                     state.skills;
                                 List<String> result = mySkill
-                                    .map((s) => s.name)
+                                    .map((s) => s.name?.trim())
                                     .whereType<String>()
                                     .toList();
                                 if (formKey.currentState?.validate() ?? false) {
@@ -436,13 +436,9 @@ class PostJobWithoutLoginOneScreen extends HookWidget {
                                             applicationDeadline:
                                                 applicationDeadlineController
                                                     .text,
-                                            yearsOfExperience: int.parse(
-                                                yearsOfExperienceController
-                                                    .text),
                                             position:
                                                 hireesNumberController.text,
                                             category: state.category?.name,
-                                            categoryId: state.category?.id ?? 1,
                                             skills: result,
                                           ),
                                         ),

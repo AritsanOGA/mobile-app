@@ -62,8 +62,8 @@ class CandidateEducationPage extends HookWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                    '${state.getEducationEntity[index].title}'
-                                    '(${state.getEducationEntity[index].year})',
+                                    '${state.getEducationEntity[index].title ?? ''}'
+                                    '(${state.getEducationEntity[index].year ?? ''})',
                                     style: theme.textTheme.bodyMedium?.copyWith(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16)),
@@ -85,14 +85,16 @@ class CandidateEducationPage extends HookWidget {
                               ],
                             ),
                             SizedBox(height: 8.v),
-                            Text(state.getEducationEntity[index].purpose,
+                            Text(state.getEducationEntity[index].purpose ?? '',
                                 style: theme.textTheme.bodyMedium?.copyWith(
                                     fontWeight: FontWeight.w400, fontSize: 16)),
                             SizedBox(height: 5.v),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(state.getEducationEntity[index].degree,
+                                Text(
+                                    state.getEducationEntity[index].degree ??
+                                        '',
                                     style: theme.textTheme.bodyMedium?.copyWith(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 14)),

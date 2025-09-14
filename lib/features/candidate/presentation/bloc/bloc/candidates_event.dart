@@ -25,6 +25,8 @@ class CandidatesEvent with _$CandidatesEvent {
   const factory CandidatesEvent.getWorkPhotos() = _GetWorkPhotos;
   const factory CandidatesEvent.deleteWorkPhoto(String identity) =
       _DeleteWorkPhoto;
+  const factory CandidatesEvent.updateEducationQualification(String param) =
+      _UpdateEducationQualification;
   const factory CandidatesEvent.selectWorkPhotos(List<File> photos) =
       _SelectWorkPhotos;
   const factory CandidatesEvent.uploadWorkPhoto(List<File> photos) =

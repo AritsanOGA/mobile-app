@@ -31,6 +31,7 @@ mixin _$CandidatesEvent {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -64,6 +65,7 @@ mixin _$CandidatesEvent {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -97,6 +99,7 @@ mixin _$CandidatesEvent {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -131,6 +134,8 @@ mixin _$CandidatesEvent {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -163,6 +168,8 @@ mixin _$CandidatesEvent {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -195,6 +202,8 @@ mixin _$CandidatesEvent {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -311,6 +320,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -347,6 +357,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -383,6 +394,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -423,6 +435,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -458,6 +472,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -493,6 +509,8 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -605,6 +623,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -641,6 +660,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -677,6 +697,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -717,6 +738,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -752,6 +775,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -787,6 +812,8 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -898,6 +925,7 @@ class _$AddExperienceImpl implements _AddExperience {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -934,6 +962,7 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -970,6 +999,7 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1010,6 +1040,8 @@ class _$AddExperienceImpl implements _AddExperience {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -1045,6 +1077,8 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -1080,6 +1114,8 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -1192,6 +1228,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -1228,6 +1265,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1264,6 +1302,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1304,6 +1343,8 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -1339,6 +1380,8 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -1374,6 +1417,8 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -1459,6 +1504,7 @@ class _$GetExperienceImpl implements _GetExperience {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -1495,6 +1541,7 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1531,6 +1578,7 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1571,6 +1619,8 @@ class _$GetExperienceImpl implements _GetExperience {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -1606,6 +1656,8 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -1641,6 +1693,8 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -1748,6 +1802,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -1784,6 +1839,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1820,6 +1876,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -1860,6 +1917,8 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -1895,6 +1954,8 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -1930,6 +1991,8 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -2041,6 +2104,7 @@ class _$AddAwardImpl implements _AddAward {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -2077,6 +2141,7 @@ class _$AddAwardImpl implements _AddAward {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2113,6 +2178,7 @@ class _$AddAwardImpl implements _AddAward {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2153,6 +2219,8 @@ class _$AddAwardImpl implements _AddAward {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -2188,6 +2256,8 @@ class _$AddAwardImpl implements _AddAward {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -2223,6 +2293,8 @@ class _$AddAwardImpl implements _AddAward {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -2333,6 +2405,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -2369,6 +2442,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2405,6 +2479,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2445,6 +2520,8 @@ class _$UpdateAwardImpl implements _UpdateAward {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -2480,6 +2557,8 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -2515,6 +2594,8 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -2599,6 +2680,7 @@ class _$GetAwardImpl implements _GetAward {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -2635,6 +2717,7 @@ class _$GetAwardImpl implements _GetAward {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2671,6 +2754,7 @@ class _$GetAwardImpl implements _GetAward {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2711,6 +2795,8 @@ class _$GetAwardImpl implements _GetAward {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -2746,6 +2832,8 @@ class _$GetAwardImpl implements _GetAward {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -2781,6 +2869,8 @@ class _$GetAwardImpl implements _GetAward {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -2887,6 +2977,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -2923,6 +3014,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2959,6 +3051,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -2999,6 +3092,8 @@ class _$DeleteAwardImpl implements _DeleteAward {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -3034,6 +3129,8 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -3069,6 +3166,8 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -3179,6 +3278,7 @@ class _$AddEducationImpl implements _AddEducation {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -3215,6 +3315,7 @@ class _$AddEducationImpl implements _AddEducation {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3251,6 +3352,7 @@ class _$AddEducationImpl implements _AddEducation {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3291,6 +3393,8 @@ class _$AddEducationImpl implements _AddEducation {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -3326,6 +3430,8 @@ class _$AddEducationImpl implements _AddEducation {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -3361,6 +3467,8 @@ class _$AddEducationImpl implements _AddEducation {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -3446,6 +3554,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -3482,6 +3591,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3518,6 +3628,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3558,6 +3669,8 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -3593,6 +3706,8 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -3628,6 +3743,8 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -3735,6 +3852,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -3771,6 +3889,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3807,6 +3926,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -3847,6 +3967,8 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -3882,6 +4004,8 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -3917,6 +4041,8 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -3948,6 +4074,315 @@ abstract class _DeleteWorkPhoto implements CandidatesEvent {
   @JsonKey(ignore: true)
   _$$DeleteWorkPhotoImplCopyWith<_$DeleteWorkPhotoImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateEducationQualificationImplCopyWith<$Res> {
+  factory _$$UpdateEducationQualificationImplCopyWith(
+          _$UpdateEducationQualificationImpl value,
+          $Res Function(_$UpdateEducationQualificationImpl) then) =
+      __$$UpdateEducationQualificationImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String param});
+}
+
+/// @nodoc
+class __$$UpdateEducationQualificationImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res,
+        _$UpdateEducationQualificationImpl>
+    implements _$$UpdateEducationQualificationImplCopyWith<$Res> {
+  __$$UpdateEducationQualificationImplCopyWithImpl(
+      _$UpdateEducationQualificationImpl _value,
+      $Res Function(_$UpdateEducationQualificationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? param = null,
+  }) {
+    return _then(_$UpdateEducationQualificationImpl(
+      null == param
+          ? _value.param
+          : param // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateEducationQualificationImpl
+    implements _UpdateEducationQualification {
+  const _$UpdateEducationQualificationImpl(this.param);
+
+  @override
+  final String param;
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.updateEducationQualification(param: $param)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateEducationQualificationImpl &&
+            (identical(other.param, param) || other.param == param));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, param);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateEducationQualificationImplCopyWith<
+          _$UpdateEducationQualificationImpl>
+      get copyWith => __$$UpdateEducationQualificationImplCopyWithImpl<
+          _$UpdateEducationQualificationImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddAwardEntity param) addAward,
+    required TResult Function(UpdateAwardEntity param) updateAward,
+    required TResult Function() getAward,
+    required TResult Function(String identity) deleteAward,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(UploadIDCardEntity entity) uploadWorkId,
+    required TResult Function() selectWorkId,
+    required TResult Function() selectAward,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+  }) {
+    return updateEducationQualification(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddAwardEntity param)? addAward,
+    TResult? Function(UpdateAwardEntity param)? updateAward,
+    TResult? Function()? getAward,
+    TResult? Function(String identity)? deleteAward,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
+    TResult? Function()? selectWorkId,
+    TResult? Function()? selectAward,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+  }) {
+    return updateEducationQualification?.call(param);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddAwardEntity param)? addAward,
+    TResult Function(UpdateAwardEntity param)? updateAward,
+    TResult Function()? getAward,
+    TResult Function(String identity)? deleteAward,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(UploadIDCardEntity entity)? uploadWorkId,
+    TResult Function()? selectWorkId,
+    TResult Function()? selectAward,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (updateEducationQualification != null) {
+      return updateEducationQualification(param);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddAward value) addAward,
+    required TResult Function(_UpdateAward value) updateAward,
+    required TResult Function(_GetAward value) getAward,
+    required TResult Function(_DeleteAward value) deleteAward,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UploadWorkId value) uploadWorkId,
+    required TResult Function(_SelectWorkId value) selectWorkId,
+    required TResult Function(_SelectAward value) selectAward,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+  }) {
+    return updateEducationQualification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddAward value)? addAward,
+    TResult? Function(_UpdateAward value)? updateAward,
+    TResult? Function(_GetAward value)? getAward,
+    TResult? Function(_DeleteAward value)? deleteAward,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UploadWorkId value)? uploadWorkId,
+    TResult? Function(_SelectWorkId value)? selectWorkId,
+    TResult? Function(_SelectAward value)? selectAward,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+  }) {
+    return updateEducationQualification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddAward value)? addAward,
+    TResult Function(_UpdateAward value)? updateAward,
+    TResult Function(_GetAward value)? getAward,
+    TResult Function(_DeleteAward value)? deleteAward,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UploadWorkId value)? uploadWorkId,
+    TResult Function(_SelectWorkId value)? selectWorkId,
+    TResult Function(_SelectAward value)? selectAward,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    required TResult orElse(),
+  }) {
+    if (updateEducationQualification != null) {
+      return updateEducationQualification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateEducationQualification implements CandidatesEvent {
+  const factory _UpdateEducationQualification(final String param) =
+      _$UpdateEducationQualificationImpl;
+
+  String get param;
+  @JsonKey(ignore: true)
+  _$$UpdateEducationQualificationImplCopyWith<
+          _$UpdateEducationQualificationImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4034,6 +4469,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -4070,6 +4506,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4106,6 +4543,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4146,6 +4584,8 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -4181,6 +4621,8 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -4216,6 +4658,8 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -4334,6 +4778,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -4370,6 +4815,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4406,6 +4852,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4446,6 +4893,8 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -4481,6 +4930,8 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -4516,6 +4967,8 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -4627,6 +5080,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -4663,6 +5117,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4699,6 +5154,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4739,6 +5195,8 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -4774,6 +5232,8 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -4809,6 +5269,8 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -4894,6 +5356,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -4930,6 +5393,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -4966,6 +5430,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5006,6 +5471,8 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -5041,6 +5508,8 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -5076,6 +5545,8 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -5155,6 +5626,7 @@ class _$SelectAwardImpl implements _SelectAward {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -5191,6 +5663,7 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5227,6 +5700,7 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5267,6 +5741,8 @@ class _$SelectAwardImpl implements _SelectAward {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -5302,6 +5778,8 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -5337,6 +5815,8 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -5443,6 +5923,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -5479,6 +5960,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5515,6 +5997,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5555,6 +6038,8 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -5590,6 +6075,8 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -5625,6 +6112,8 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -5710,6 +6199,7 @@ class _$GetEducationImpl implements _GetEducation {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -5746,6 +6236,7 @@ class _$GetEducationImpl implements _GetEducation {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5782,6 +6273,7 @@ class _$GetEducationImpl implements _GetEducation {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -5822,6 +6314,8 @@ class _$GetEducationImpl implements _GetEducation {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -5857,6 +6351,8 @@ class _$GetEducationImpl implements _GetEducation {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -5892,6 +6388,8 @@ class _$GetEducationImpl implements _GetEducation {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -5999,6 +6497,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -6035,6 +6534,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6071,6 +6571,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6111,6 +6612,8 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -6146,6 +6649,8 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -6181,6 +6686,8 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -6297,6 +6804,7 @@ class _$RejectCandidateWithoutInterviewImpl
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -6333,6 +6841,7 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6369,6 +6878,7 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6409,6 +6919,8 @@ class _$RejectCandidateWithoutInterviewImpl
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -6444,6 +6956,8 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -6479,6 +6993,8 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -6594,6 +7110,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -6630,6 +7147,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6666,6 +7184,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6706,6 +7225,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -6741,6 +7262,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -6776,6 +7299,8 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -6889,6 +7414,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -6925,6 +7451,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -6961,6 +7488,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7001,6 +7529,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -7036,6 +7566,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -7071,6 +7603,8 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -7191,6 +7725,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -7227,6 +7762,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7263,6 +7799,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7303,6 +7840,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -7338,6 +7877,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -7373,6 +7914,8 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -7486,6 +8029,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -7522,6 +8066,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7558,6 +8103,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7598,6 +8144,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -7633,6 +8181,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -7668,6 +8218,8 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -7789,6 +8341,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     required TResult Function(AddEducationEntity param) addEducation,
     required TResult Function() getWorkPhotos,
     required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
     required TResult Function(List<File> photos) selectWorkPhotos,
     required TResult Function(List<File> photos) uploadWorkPhoto,
     required TResult Function(UploadIDCardEntity entity) uploadWorkId,
@@ -7825,6 +8378,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult? Function(AddEducationEntity param)? addEducation,
     TResult? Function()? getWorkPhotos,
     TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
     TResult? Function(List<File> photos)? selectWorkPhotos,
     TResult? Function(List<File> photos)? uploadWorkPhoto,
     TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7861,6 +8415,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult Function(AddEducationEntity param)? addEducation,
     TResult Function()? getWorkPhotos,
     TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
     TResult Function(List<File> photos)? selectWorkPhotos,
     TResult Function(List<File> photos)? uploadWorkPhoto,
     TResult Function(UploadIDCardEntity entity)? uploadWorkId,
@@ -7901,6 +8456,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     required TResult Function(_AddEducation value) addEducation,
     required TResult Function(_GetWorkPhotos value) getWorkPhotos,
     required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
     required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
     required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
     required TResult Function(_UploadWorkId value) uploadWorkId,
@@ -7936,6 +8493,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult? Function(_AddEducation value)? addEducation,
     TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult? Function(_UploadWorkId value)? uploadWorkId,
@@ -7971,6 +8530,8 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult Function(_AddEducation value)? addEducation,
     TResult Function(_GetWorkPhotos value)? getWorkPhotos,
     TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
     TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
     TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
     TResult Function(_UploadWorkId value)? uploadWorkId,
@@ -8041,6 +8602,8 @@ mixin _$CandidatesState {
           throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get jobId => throw _privateConstructorUsedError;
+  File? get picture => throw _privateConstructorUsedError;
+  String get educationQuaification => throw _privateConstructorUsedError;
   String? get skillRating => throw _privateConstructorUsedError;
   int? get skillIndex => throw _privateConstructorUsedError;
   File? get workId => throw _privateConstructorUsedError;
@@ -8059,6 +8622,8 @@ mixin _$CandidatesState {
   List<GetAwardEntity> get getAwardsEntity =>
       throw _privateConstructorUsedError;
   List<String> get dropdownValues => throw _privateConstructorUsedError;
+  List<String> get educationQuaificationList =>
+      throw _privateConstructorUsedError;
   String get dropdownValue => throw _privateConstructorUsedError;
   List<String> get dropdownList => throw _privateConstructorUsedError;
   CandidateProfileEntity? get candidateProfileEntity =>
@@ -8092,6 +8657,8 @@ mixin _$CandidatesState {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -8104,6 +8671,7 @@ mixin _$CandidatesState {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)
@@ -8139,6 +8707,8 @@ mixin _$CandidatesState {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -8151,6 +8721,7 @@ mixin _$CandidatesState {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
@@ -8186,6 +8757,8 @@ mixin _$CandidatesState {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -8198,6 +8771,7 @@ mixin _$CandidatesState {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
@@ -8259,6 +8833,8 @@ abstract class $CandidatesStateCopyWith<$Res> {
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
+      File? picture,
+      String educationQuaification,
       String? skillRating,
       int? skillIndex,
       File? workId,
@@ -8271,6 +8847,7 @@ abstract class $CandidatesStateCopyWith<$Res> {
       List<GetWorkPhotoEntity> getWorkPhotoEntity,
       List<GetAwardEntity> getAwardsEntity,
       List<String> dropdownValues,
+      List<String> educationQuaificationList,
       String dropdownValue,
       List<String> dropdownList,
       CandidateProfileEntity? candidateProfileEntity});
@@ -8314,6 +8891,8 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? rejectCandidateWithoutInterviewState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
+    Object? picture = freezed,
+    Object? educationQuaification = null,
     Object? skillRating = freezed,
     Object? skillIndex = freezed,
     Object? workId = freezed,
@@ -8326,6 +8905,7 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? getWorkPhotoEntity = null,
     Object? getAwardsEntity = null,
     Object? dropdownValues = null,
+    Object? educationQuaificationList = null,
     Object? dropdownValue = null,
     Object? dropdownList = null,
     Object? candidateProfileEntity = freezed,
@@ -8432,6 +9012,14 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.jobId
           : jobId // ignore: cast_nullable_to_non_nullable
               as String?,
+      picture: freezed == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      educationQuaification: null == educationQuaification
+          ? _value.educationQuaification
+          : educationQuaification // ignore: cast_nullable_to_non_nullable
+              as String,
       skillRating: freezed == skillRating
           ? _value.skillRating
           : skillRating // ignore: cast_nullable_to_non_nullable
@@ -8479,6 +9067,10 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
       dropdownValues: null == dropdownValues
           ? _value.dropdownValues
           : dropdownValues // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      educationQuaificationList: null == educationQuaificationList
+          ? _value.educationQuaificationList
+          : educationQuaificationList // ignore: cast_nullable_to_non_nullable
               as List<String>,
       dropdownValue: null == dropdownValue
           ? _value.dropdownValue
@@ -8530,6 +9122,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
+      File? picture,
+      String educationQuaification,
       String? skillRating,
       int? skillIndex,
       File? workId,
@@ -8542,6 +9136,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       List<GetWorkPhotoEntity> getWorkPhotoEntity,
       List<GetAwardEntity> getAwardsEntity,
       List<String> dropdownValues,
+      List<String> educationQuaificationList,
       String dropdownValue,
       List<String> dropdownList,
       CandidateProfileEntity? candidateProfileEntity});
@@ -8583,6 +9178,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? rejectCandidateWithoutInterviewState = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
+    Object? picture = freezed,
+    Object? educationQuaification = null,
     Object? skillRating = freezed,
     Object? skillIndex = freezed,
     Object? workId = freezed,
@@ -8595,6 +9192,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getWorkPhotoEntity = null,
     Object? getAwardsEntity = null,
     Object? dropdownValues = null,
+    Object? educationQuaificationList = null,
     Object? dropdownValue = null,
     Object? dropdownList = null,
     Object? candidateProfileEntity = freezed,
@@ -8701,6 +9299,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.jobId
           : jobId // ignore: cast_nullable_to_non_nullable
               as String?,
+      picture: freezed == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as File?,
+      educationQuaification: null == educationQuaification
+          ? _value.educationQuaification
+          : educationQuaification // ignore: cast_nullable_to_non_nullable
+              as String,
       skillRating: freezed == skillRating
           ? _value.skillRating
           : skillRating // ignore: cast_nullable_to_non_nullable
@@ -8749,6 +9355,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._dropdownValues
           : dropdownValues // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      educationQuaificationList: null == educationQuaificationList
+          ? _value._educationQuaificationList
+          : educationQuaificationList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       dropdownValue: null == dropdownValue
           ? _value.dropdownValue
           : dropdownValue // ignore: cast_nullable_to_non_nullable
@@ -8795,6 +9405,8 @@ class _$InitialImpl implements _Initial {
           RejectCandidateWithoutInterviewState.idle,
       this.errorMessage,
       this.jobId,
+      this.picture,
+      this.educationQuaification = '--Select--',
       this.skillRating,
       this.skillIndex,
       this.workId,
@@ -8819,6 +9431,15 @@ class _$InitialImpl implements _Initial {
         '9',
         '10'
       ],
+      final List<String> educationQuaificationList = const [
+        '--Select--',
+        'Primary School',
+        'Secondary/High School',
+        'Technical School',
+        'College of Education',
+        'Polytechnic',
+        'University'
+      ],
       this.dropdownValue = '1',
       final List<String> dropdownList = const [
         '1',
@@ -8841,6 +9462,7 @@ class _$InitialImpl implements _Initial {
         _getWorkPhotoEntity = getWorkPhotoEntity,
         _getAwardsEntity = getAwardsEntity,
         _dropdownValues = dropdownValues,
+        _educationQuaificationList = educationQuaificationList,
         _dropdownList = dropdownList;
 
   @override
@@ -8916,6 +9538,11 @@ class _$InitialImpl implements _Initial {
   final String? errorMessage;
   @override
   final String? jobId;
+  @override
+  final File? picture;
+  @override
+  @JsonKey()
+  final String educationQuaification;
   @override
   final String? skillRating;
   @override
@@ -9001,6 +9628,16 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_dropdownValues);
   }
 
+  final List<String> _educationQuaificationList;
+  @override
+  @JsonKey()
+  List<String> get educationQuaificationList {
+    if (_educationQuaificationList is EqualUnmodifiableListView)
+      return _educationQuaificationList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_educationQuaificationList);
+  }
+
   @override
   @JsonKey()
   final String dropdownValue;
@@ -9018,7 +9655,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addAwardsState: $addAwardsState, updateAwardsState: $updateAwardsState, deleteAwardsState: $deleteAwardsState, getAwardsState: $getAwardsState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, getWorkPhotoState: $getWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, skillRating: $skillRating, skillIndex: $skillIndex, workId: $workId, award: $award, photos: $photos, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, getWorkPhotoEntity: $getWorkPhotoEntity, getAwardsEntity: $getAwardsEntity, dropdownValues: $dropdownValues, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addAwardsState: $addAwardsState, updateAwardsState: $updateAwardsState, deleteAwardsState: $deleteAwardsState, getAwardsState: $getAwardsState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, getWorkPhotoState: $getWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, picture: $picture, educationQuaification: $educationQuaification, skillRating: $skillRating, skillIndex: $skillIndex, workId: $workId, award: $award, photos: $photos, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, getWorkPhotoEntity: $getWorkPhotoEntity, getAwardsEntity: $getAwardsEntity, dropdownValues: $dropdownValues, educationQuaificationList: $educationQuaificationList, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -9076,6 +9713,9 @@ class _$InitialImpl implements _Initial {
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.jobId, jobId) || other.jobId == jobId) &&
+            (identical(other.picture, picture) || other.picture == picture) &&
+            (identical(other.educationQuaification, educationQuaification) ||
+                other.educationQuaification == educationQuaification) &&
             (identical(other.skillRating, skillRating) ||
                 other.skillRating == skillRating) &&
             (identical(other.skillIndex, skillIndex) ||
@@ -9097,8 +9737,8 @@ class _$InitialImpl implements _Initial {
                 .equals(other._getAwardsEntity, _getAwardsEntity) &&
             const DeepCollectionEquality()
                 .equals(other._dropdownValues, _dropdownValues) &&
-            (identical(other.dropdownValue, dropdownValue) ||
-                other.dropdownValue == dropdownValue) &&
+            const DeepCollectionEquality().equals(other._educationQuaificationList, _educationQuaificationList) &&
+            (identical(other.dropdownValue, dropdownValue) || other.dropdownValue == dropdownValue) &&
             const DeepCollectionEquality().equals(other._dropdownList, _dropdownList) &&
             (identical(other.candidateProfileEntity, candidateProfileEntity) || other.candidateProfileEntity == candidateProfileEntity));
   }
@@ -9131,6 +9771,8 @@ class _$InitialImpl implements _Initial {
         rejectCandidateWithoutInterviewState,
         errorMessage,
         jobId,
+        picture,
+        educationQuaification,
         skillRating,
         skillIndex,
         workId,
@@ -9143,6 +9785,7 @@ class _$InitialImpl implements _Initial {
         const DeepCollectionEquality().hash(_getWorkPhotoEntity),
         const DeepCollectionEquality().hash(_getAwardsEntity),
         const DeepCollectionEquality().hash(_dropdownValues),
+        const DeepCollectionEquality().hash(_educationQuaificationList),
         dropdownValue,
         const DeepCollectionEquality().hash(_dropdownList),
         candidateProfileEntity
@@ -9184,6 +9827,8 @@ class _$InitialImpl implements _Initial {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -9196,6 +9841,7 @@ class _$InitialImpl implements _Initial {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)
@@ -9227,6 +9873,8 @@ class _$InitialImpl implements _Initial {
         rejectCandidateWithoutInterviewState,
         errorMessage,
         jobId,
+        picture,
+        educationQuaification,
         skillRating,
         skillIndex,
         workId,
@@ -9239,6 +9887,7 @@ class _$InitialImpl implements _Initial {
         getWorkPhotoEntity,
         getAwardsEntity,
         dropdownValues,
+        educationQuaificationList,
         dropdownValue,
         dropdownList,
         candidateProfileEntity);
@@ -9274,6 +9923,8 @@ class _$InitialImpl implements _Initial {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -9286,6 +9937,7 @@ class _$InitialImpl implements _Initial {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
@@ -9317,6 +9969,8 @@ class _$InitialImpl implements _Initial {
         rejectCandidateWithoutInterviewState,
         errorMessage,
         jobId,
+        picture,
+        educationQuaification,
         skillRating,
         skillIndex,
         workId,
@@ -9329,6 +9983,7 @@ class _$InitialImpl implements _Initial {
         getWorkPhotoEntity,
         getAwardsEntity,
         dropdownValues,
+        educationQuaificationList,
         dropdownValue,
         dropdownList,
         candidateProfileEntity);
@@ -9364,6 +10019,8 @@ class _$InitialImpl implements _Initial {
                 rejectCandidateWithoutInterviewState,
             String? errorMessage,
             String? jobId,
+            File? picture,
+            String educationQuaification,
             String? skillRating,
             int? skillIndex,
             File? workId,
@@ -9376,6 +10033,7 @@ class _$InitialImpl implements _Initial {
             List<GetWorkPhotoEntity> getWorkPhotoEntity,
             List<GetAwardEntity> getAwardsEntity,
             List<String> dropdownValues,
+            List<String> educationQuaificationList,
             String dropdownValue,
             List<String> dropdownList,
             CandidateProfileEntity? candidateProfileEntity)?
@@ -9409,6 +10067,8 @@ class _$InitialImpl implements _Initial {
           rejectCandidateWithoutInterviewState,
           errorMessage,
           jobId,
+          picture,
+          educationQuaification,
           skillRating,
           skillIndex,
           workId,
@@ -9421,6 +10081,7 @@ class _$InitialImpl implements _Initial {
           getWorkPhotoEntity,
           getAwardsEntity,
           dropdownValues,
+          educationQuaificationList,
           dropdownValue,
           dropdownList,
           candidateProfileEntity);
@@ -9485,6 +10146,8 @@ abstract class _Initial implements CandidatesState {
           rejectCandidateWithoutInterviewState,
       final String? errorMessage,
       final String? jobId,
+      final File? picture,
+      final String educationQuaification,
       final String? skillRating,
       final int? skillIndex,
       final File? workId,
@@ -9497,6 +10160,7 @@ abstract class _Initial implements CandidatesState {
       final List<GetWorkPhotoEntity> getWorkPhotoEntity,
       final List<GetAwardEntity> getAwardsEntity,
       final List<String> dropdownValues,
+      final List<String> educationQuaificationList,
       final String dropdownValue,
       final List<String> dropdownList,
       final CandidateProfileEntity? candidateProfileEntity}) = _$InitialImpl;
@@ -9552,6 +10216,10 @@ abstract class _Initial implements CandidatesState {
   @override
   String? get jobId;
   @override
+  File? get picture;
+  @override
+  String get educationQuaification;
+  @override
   String? get skillRating;
   @override
   int? get skillIndex;
@@ -9575,6 +10243,8 @@ abstract class _Initial implements CandidatesState {
   List<GetAwardEntity> get getAwardsEntity;
   @override
   List<String> get dropdownValues;
+  @override
+  List<String> get educationQuaificationList;
   @override
   String get dropdownValue;
   @override

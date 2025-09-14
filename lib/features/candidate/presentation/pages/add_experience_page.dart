@@ -64,130 +64,132 @@ class AddCandidateExperiencePage extends HookWidget {
             ToastUtils.showRedToast(state.errorMessage ?? '');
           }
         },
-        child: Form(
-          key: formKey,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 22.h,
-            ),
-            child: Column(
-              children: [
-                SizedBox(height: 25.v),
-                CustomTextFormField(
-                  title: "Company Name",
-                  controller: companyNameController,
-                  hintText: "Company Name",
-                  hintStyle: theme.textTheme.titleSmall!,
-                  textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
-                ),
-                SizedBox(height: 25.v),
-                CustomTextFormField(
-                  title: 'Role',
-                  controller: roleCeontroller,
-                  hintText: "Role",
-                  hintStyle: theme.textTheme.titleSmall!,
-                  textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
-                ),
-                SizedBox(height: 25.v),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomTextFormField(
-                        title: 'Start Year',
-                        controller: startYearController,
-                        hintText: "Start Year",
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 22.h,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 25.v),
+                  CustomTextFormField(
+                    title: "Company Name",
+                    controller: companyNameController,
+                    hintText: "Company Name",
+                    hintStyle: theme.textTheme.titleSmall!,
+                    textInputType: TextInputType.name,
+                    validator: FormValidation.stringValidation,
+                  ),
+                  SizedBox(height: 25.v),
+                  CustomTextFormField(
+                    title: 'Role',
+                    controller: roleCeontroller,
+                    hintText: "Role",
+                    hintStyle: theme.textTheme.titleSmall!,
+                    textInputType: TextInputType.name,
+                    validator: FormValidation.stringValidation,
+                  ),
+                  SizedBox(height: 25.v),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomTextFormField(
+                          title: 'Start Year',
+                          controller: startYearController,
+                          hintText: "Start Year",
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputType: TextInputType.number,
+                          validator: FormValidation.stringValidation,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 15.h),
-                    Expanded(
-                      child: CustomTextFormField(
-                        title: 'End year',
-                        controller: endYearController,
-                        hintText: "End year",
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
+                      SizedBox(width: 15.h),
+                      Expanded(
+                        child: CustomTextFormField(
+                          title: 'End year',
+                          controller: endYearController,
+                          hintText: "End year",
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputType: TextInputType.number,
+                          validator: FormValidation.stringValidation,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 25.v),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomTextFormField(
-                        title: 'Phone',
-                        controller: phoneCeontroller,
-                        hintText: "Phone",
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(11),
-                          FilteringTextInputFormatter.digitsOnly,
-                        ],
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.number,
-                        //  validator: FormValidation.stringValidation,
+                    ],
+                  ),
+                  SizedBox(height: 25.v),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomTextFormField(
+                          title: 'Phone',
+                          controller: phoneCeontroller,
+                          hintText: "Phone",
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(11),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputType: TextInputType.number,
+                          //  validator: FormValidation.stringValidation,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 15.h),
-                    Expanded(
-                      child: CustomTextFormField(
-                        title: 'I.G Handle',
-                        controller: ighandleController,
-                        hintText: "I.G Handle",
-                        hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.number,
-                        validator: FormValidation.stringValidation,
+                      SizedBox(width: 15.h),
+                      Expanded(
+                        child: CustomTextFormField(
+                          title: 'I.G Handle',
+                          controller: ighandleController,
+                          hintText: "I.G Handle",
+                          hintStyle: theme.textTheme.titleSmall!,
+                          textInputType: TextInputType.number,
+                          // validator: FormValidation.stringValidation,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 25.v),
-                CustomTextFormField(
-                  title: 'Description',
-                  maxLines: 4,
-                  controller: descriptionController,
-                  hintText: "Start Description",
-                  textInputType: TextInputType.name,
-                  hintStyle: theme.textTheme.titleSmall!,
-                  validator: FormValidation.stringValidation,
-                ),
-                SizedBox(height: 50.v),
-                BlocBuilder<CandidatesBloc, CandidatesState>(
-                  builder: (context, state) {
-                    return CustomElevatedButton(
-                      isBusy: state.addExperienceState == ViewState.loading,
-                      onPressed: () {
-                        if (formKey.currentState?.validate() ?? false) {
-                          context.read<CandidatesBloc>().add(
-                                CandidatesEvent.addExperience(
-                                  AddExperienceEntity(
-                                    responsibilities:
-                                        descriptionController.text,
-                                    role: roleCeontroller.text,
-                                    yearEnd: endYearController.text,
-                                    startYear: startYearController.text,
-                                    companyName: companyNameController.text,
-                                    userId: UserService()
-                                            .authData
-                                            ?.user
-                                            .id
-                                            .toString() ??
-                                        '',
+                    ],
+                  ),
+                  SizedBox(height: 25.v),
+                  CustomTextFormField(
+                    title: 'Description',
+                    maxLines: 4,
+                    controller: descriptionController,
+                    hintText: "Start Description",
+                    textInputType: TextInputType.name,
+                    hintStyle: theme.textTheme.titleSmall!,
+                    validator: FormValidation.stringValidation,
+                  ),
+                  SizedBox(height: 50.v),
+                  BlocBuilder<CandidatesBloc, CandidatesState>(
+                    builder: (context, state) {
+                      return CustomElevatedButton(
+                        isBusy: state.addExperienceState == ViewState.loading,
+                        onPressed: () {
+                          if (formKey.currentState?.validate() ?? false) {
+                            context.read<CandidatesBloc>().add(
+                                  CandidatesEvent.addExperience(
+                                    AddExperienceEntity(
+                                      responsibilities:
+                                          descriptionController.text,
+                                      role: roleCeontroller.text,
+                                      yearEnd: endYearController.text,
+                                      startYear: startYearController.text,
+                                      companyName: companyNameController.text,
+                                      userId: UserService()
+                                              .authData
+                                              ?.user
+                                              .id
+                                              .toString() ??
+                                          '',
+                                    ),
                                   ),
-                                ),
-                              );
-                        }
-                      },
-                      text: "Submit",
-                    );
-                  },
-                ),
-              ],
+                                );
+                          }
+                        },
+                        text: "Submit",
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),

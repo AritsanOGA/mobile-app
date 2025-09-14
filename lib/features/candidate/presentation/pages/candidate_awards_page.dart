@@ -2,6 +2,7 @@ import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/candidate/presentation/bloc/bloc/candidates_bloc.dart';
+import 'package:artisan_oga/features/candidate/presentation/widgets/work_photo_dialog.dart';
 import 'package:artisan_oga/shared/widgets/custom_appbar.dart';
 import 'package:artisan_oga/shared/widgets/custom_outlined_button.dart';
 import 'package:artisan_oga/shared/widgets/custom_toast.dart';
@@ -85,27 +86,35 @@ class CandidateAwardsPage extends HookWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                CachedNetworkImage(
-                                  imageUrl:
-                                      'https://${state.getAwardsEntity[index].certificate}',
-                                  fit: BoxFit.cover,
-                                  progressIndicatorBuilder:
-                                      (context, url, downloadProgress) =>
-                                          const Center(),
-                                  imageBuilder: (context, imageProvider) =>
-                                      Container(
-                                    width: 40,
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover,
+                                GestureDetector(
+                                  onTap: () {
+                                    workPhotoDialog(
+                                        context,
+                                        state.getAwardsEntity[index]
+                                            .certificate);
+                                  },
+                                  child: CachedNetworkImage(
+                                    imageUrl:
+                                        'https://${state.getAwardsEntity[index].certificate}',
+                                    fit: BoxFit.cover,
+                                    progressIndicatorBuilder:
+                                        (context, url, downloadProgress) =>
+                                            const Center(),
+                                    imageBuilder: (context, imageProvider) =>
+                                        Container(
+                                      width: 40,
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: imageProvider,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
+                                    errorWidget: (context, url, error) =>
+                                        const Icon(Icons.error),
                                   ),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
                                 ),
                                 GestureDetector(
                                     onTap: () {

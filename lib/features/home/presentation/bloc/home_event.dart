@@ -41,6 +41,8 @@ class HomeEvent with _$HomeEvent {
       _UpdateSelectedGender;
   const factory HomeEvent.updateSelectedCompensationType(String value) =
       _UpdateSelectedCompensationType;
+  const factory HomeEvent.updateSelectedCompensationTypes(String value) =
+      _UpdateSelectedCompensationTypes;
   const factory HomeEvent.updateSelectedSkillLevel(String value) =
       _UpdateSelectedSkillLevel;
   const factory HomeEvent.updateSelectedEducationlevel(String value) =

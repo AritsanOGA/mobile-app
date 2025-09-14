@@ -47,6 +47,7 @@ mixin _$HomeEvent {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -84,6 +85,7 @@ mixin _$HomeEvent {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -120,6 +122,7 @@ mixin _$HomeEvent {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -162,6 +165,8 @@ mixin _$HomeEvent {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -203,6 +208,8 @@ mixin _$HomeEvent {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -243,6 +250,8 @@ mixin _$HomeEvent {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -342,6 +351,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -382,6 +392,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -421,6 +432,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -469,6 +481,8 @@ class _$StartedImpl implements _Started {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -513,6 +527,8 @@ class _$StartedImpl implements _Started {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -556,6 +572,8 @@ class _$StartedImpl implements _Started {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -647,6 +665,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -687,6 +706,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -726,6 +746,7 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -774,6 +795,8 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -818,6 +841,8 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -861,6 +886,8 @@ class _$GetFeaturedCandidateImpl implements _GetFeaturedCandidate {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -951,6 +978,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -991,6 +1019,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1030,6 +1059,7 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1078,6 +1108,8 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -1122,6 +1154,8 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -1165,6 +1199,8 @@ class _$GetFeaturedJobImpl implements _GetFeaturedJob {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -1255,6 +1291,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -1295,6 +1332,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1334,6 +1372,7 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1382,6 +1421,8 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -1426,6 +1467,8 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -1469,6 +1512,8 @@ class _$GetEmployerJobImpl implements _GetEmployerJob {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -1559,6 +1604,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -1599,6 +1645,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1638,6 +1685,7 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1686,6 +1734,8 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -1730,6 +1780,8 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -1773,6 +1825,8 @@ class _$GetAllJobsImpl implements _GetAllJobs {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -1863,6 +1917,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -1903,6 +1958,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1942,6 +1998,7 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -1990,6 +2047,8 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -2034,6 +2093,8 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -2077,6 +2138,8 @@ class _$GetJobSeekerJobsImpl implements _GetJobSeekerJobs {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -2193,6 +2256,7 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -2233,6 +2297,7 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2272,6 +2337,7 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2320,6 +2386,8 @@ class _$PostJobImpl implements _PostJob {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -2364,6 +2432,8 @@ class _$PostJobImpl implements _PostJob {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -2407,6 +2477,8 @@ class _$PostJobImpl implements _PostJob {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -2529,6 +2601,7 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -2569,6 +2642,7 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2608,6 +2682,7 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2656,6 +2731,8 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -2700,6 +2777,8 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -2743,6 +2822,8 @@ class _$PostJobWithoutLoginImpl implements _PostJobWithoutLogin {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -2865,6 +2946,7 @@ class _$EditJobImpl implements _EditJob {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -2905,6 +2987,7 @@ class _$EditJobImpl implements _EditJob {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2944,6 +3027,7 @@ class _$EditJobImpl implements _EditJob {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -2992,6 +3076,8 @@ class _$EditJobImpl implements _EditJob {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -3036,6 +3122,8 @@ class _$EditJobImpl implements _EditJob {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -3079,6 +3167,8 @@ class _$EditJobImpl implements _EditJob {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -3203,6 +3293,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -3243,6 +3334,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -3282,6 +3374,7 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -3330,6 +3423,8 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -3374,6 +3469,8 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -3417,6 +3514,8 @@ class _$UpdatePostJobRequestImpl implements _UpdatePostJobRequest {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -3548,6 +3647,7 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -3588,6 +3688,7 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -3627,6 +3728,7 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -3675,6 +3777,8 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -3719,6 +3823,8 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -3762,6 +3868,8 @@ class _$UpdatePostJobWithoutLoginRequestImpl
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -3889,6 +3997,7 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -3929,6 +4038,7 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -3968,6 +4078,7 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4016,6 +4127,8 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -4060,6 +4173,8 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -4103,6 +4218,8 @@ class _$UpdateEditJobRequestImpl implements _UpdateEditJobRequest {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -4226,6 +4343,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -4266,6 +4384,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4305,6 +4424,7 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4353,6 +4473,8 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -4397,6 +4519,8 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -4440,6 +4564,8 @@ class _$UpdateSelectedDateImpl implements _UpdateSelectedDate {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -4562,6 +4688,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -4602,6 +4729,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4641,6 +4769,7 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4689,6 +4818,8 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -4733,6 +4864,8 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -4776,6 +4909,8 @@ class _$ApplyForJobImpl implements _ApplyForJob {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -4871,6 +5006,7 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -4911,6 +5047,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4950,6 +5087,7 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -4998,6 +5136,8 @@ class _$GetCategoryImpl implements _GetCategory {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -5042,6 +5182,8 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -5085,6 +5227,8 @@ class _$GetCategoryImpl implements _GetCategory {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -5201,6 +5345,7 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -5241,6 +5386,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5280,6 +5426,7 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5328,6 +5475,8 @@ class _$GetSkillsImpl implements _GetSkills {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -5372,6 +5521,8 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -5415,6 +5566,8 @@ class _$GetSkillsImpl implements _GetSkills {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -5510,6 +5663,7 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -5550,6 +5704,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5589,6 +5744,7 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5637,6 +5793,8 @@ class _$GetCountriesImpl implements _GetCountries {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -5681,6 +5839,8 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -5724,6 +5884,8 @@ class _$GetCountriesImpl implements _GetCountries {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -5840,6 +6002,7 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -5880,6 +6043,7 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5919,6 +6083,7 @@ class _$GetStateImpl implements _GetState {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -5967,6 +6132,8 @@ class _$GetStateImpl implements _GetState {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -6011,6 +6178,8 @@ class _$GetStateImpl implements _GetState {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -6054,6 +6223,8 @@ class _$GetStateImpl implements _GetState {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -6178,6 +6349,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -6218,6 +6390,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6257,6 +6430,7 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6305,6 +6479,8 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -6349,6 +6525,8 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -6392,6 +6570,8 @@ class _$UpdateSelectedCategoryImpl implements _UpdateSelectedCategory {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -6516,6 +6696,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -6556,6 +6737,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6595,6 +6777,7 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6643,6 +6826,8 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -6687,6 +6872,8 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -6730,6 +6917,8 @@ class _$UpdateSelectedJobTypeImpl implements _UpdateSelectedJobType {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -6855,6 +7044,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -6895,6 +7085,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6934,6 +7125,7 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -6982,6 +7174,8 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -7026,6 +7220,8 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -7069,6 +7265,8 @@ class _$UpdateSelectedWorkModeImpl implements _UpdateSelectedWorkMode {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -7193,6 +7391,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -7233,6 +7432,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -7272,6 +7472,7 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -7320,6 +7521,8 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -7364,6 +7567,8 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -7407,6 +7612,8 @@ class _$UpdateSelectedGenderImpl implements _UpdateSelectedGender {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -7534,6 +7741,7 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -7574,6 +7782,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -7613,6 +7822,7 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -7661,6 +7871,8 @@ class _$UpdateSelectedCompensationTypeImpl
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -7705,6 +7917,8 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -7748,6 +7962,8 @@ class _$UpdateSelectedCompensationTypeImpl
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -7775,6 +7991,357 @@ abstract class _UpdateSelectedCompensationType implements HomeEvent {
   @JsonKey(ignore: true)
   _$$UpdateSelectedCompensationTypeImplCopyWith<
           _$UpdateSelectedCompensationTypeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedCompensationTypesImplCopyWith<$Res> {
+  factory _$$UpdateSelectedCompensationTypesImplCopyWith(
+          _$UpdateSelectedCompensationTypesImpl value,
+          $Res Function(_$UpdateSelectedCompensationTypesImpl) then) =
+      __$$UpdateSelectedCompensationTypesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String value});
+}
+
+/// @nodoc
+class __$$UpdateSelectedCompensationTypesImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UpdateSelectedCompensationTypesImpl>
+    implements _$$UpdateSelectedCompensationTypesImplCopyWith<$Res> {
+  __$$UpdateSelectedCompensationTypesImplCopyWithImpl(
+      _$UpdateSelectedCompensationTypesImpl _value,
+      $Res Function(_$UpdateSelectedCompensationTypesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = null,
+  }) {
+    return _then(_$UpdateSelectedCompensationTypesImpl(
+      null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedCompensationTypesImpl
+    implements _UpdateSelectedCompensationTypes {
+  const _$UpdateSelectedCompensationTypesImpl(this.value);
+
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'HomeEvent.updateSelectedCompensationTypes(value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedCompensationTypesImpl &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedCompensationTypesImplCopyWith<
+          _$UpdateSelectedCompensationTypesImpl>
+      get copyWith => __$$UpdateSelectedCompensationTypesImplCopyWithImpl<
+          _$UpdateSelectedCompensationTypesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getFeaturedCandidates,
+    required TResult Function() getFeaturedJob,
+    required TResult Function() getEmployerJob,
+    required TResult Function() getAllJobs,
+    required TResult Function() getJobSeekerJobs,
+    required TResult Function(PostJobEntity param) postJob,
+    required TResult Function(PostJobWithoutLoginEntity param)
+        postJobWithoutLogin,
+    required TResult Function(EditJobEntity param) editJob,
+    required TResult Function(PostJobEntity postJobRequest)
+        updatePostJobRequest,
+    required TResult Function(
+            PostJobWithoutLoginEntity postJobRequestWithoutLogin)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(EditJobEntity editJobRequest)
+        updateEditJobRequest,
+    required TResult Function(DateTime value) updateSelectedDate,
+    required TResult Function(String id) applyForJob,
+    required TResult Function() getCategory,
+    required TResult Function(String id) getSkills,
+    required TResult Function() getCountries,
+    required TResult Function(String id) getState,
+    required TResult Function(CategoryResponseEntity value)
+        updateSelectedCategory,
+    required TResult Function(String value) updateSelectedJobType,
+    required TResult Function(String value) updateSelectedWorkMode,
+    required TResult Function(String value) updateSelectedGender,
+    required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
+    required TResult Function(String value) updateSelectedSkillLevel,
+    required TResult Function(String value) updateSelectedEducationlevel,
+    required TResult Function(List<SkillResponseEntity> value)
+        updateSelectedSkill,
+    required TResult Function(String value) updateSelectedPackage,
+    required TResult Function(String value) updateSelectedAvailability,
+    required TResult Function(CountryResponseEntity value) updateCountry,
+    required TResult Function(StateResponseEntity value) updateState,
+    required TResult Function(int index) selectedDrawer,
+  }) {
+    return updateSelectedCompensationTypes(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getFeaturedCandidates,
+    TResult? Function()? getFeaturedJob,
+    TResult? Function()? getEmployerJob,
+    TResult? Function()? getAllJobs,
+    TResult? Function()? getJobSeekerJobs,
+    TResult? Function(PostJobEntity param)? postJob,
+    TResult? Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult? Function(EditJobEntity param)? editJob,
+    TResult? Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult? Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult? Function(DateTime value)? updateSelectedDate,
+    TResult? Function(String id)? applyForJob,
+    TResult? Function()? getCategory,
+    TResult? Function(String id)? getSkills,
+    TResult? Function()? getCountries,
+    TResult? Function(String id)? getState,
+    TResult? Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult? Function(String value)? updateSelectedJobType,
+    TResult? Function(String value)? updateSelectedWorkMode,
+    TResult? Function(String value)? updateSelectedGender,
+    TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
+    TResult? Function(String value)? updateSelectedSkillLevel,
+    TResult? Function(String value)? updateSelectedEducationlevel,
+    TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult? Function(String value)? updateSelectedPackage,
+    TResult? Function(String value)? updateSelectedAvailability,
+    TResult? Function(CountryResponseEntity value)? updateCountry,
+    TResult? Function(StateResponseEntity value)? updateState,
+    TResult? Function(int index)? selectedDrawer,
+  }) {
+    return updateSelectedCompensationTypes?.call(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getFeaturedCandidates,
+    TResult Function()? getFeaturedJob,
+    TResult Function()? getEmployerJob,
+    TResult Function()? getAllJobs,
+    TResult Function()? getJobSeekerJobs,
+    TResult Function(PostJobEntity param)? postJob,
+    TResult Function(PostJobWithoutLoginEntity param)? postJobWithoutLogin,
+    TResult Function(EditJobEntity param)? editJob,
+    TResult Function(PostJobEntity postJobRequest)? updatePostJobRequest,
+    TResult Function(PostJobWithoutLoginEntity postJobRequestWithoutLogin)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(EditJobEntity editJobRequest)? updateEditJobRequest,
+    TResult Function(DateTime value)? updateSelectedDate,
+    TResult Function(String id)? applyForJob,
+    TResult Function()? getCategory,
+    TResult Function(String id)? getSkills,
+    TResult Function()? getCountries,
+    TResult Function(String id)? getState,
+    TResult Function(CategoryResponseEntity value)? updateSelectedCategory,
+    TResult Function(String value)? updateSelectedJobType,
+    TResult Function(String value)? updateSelectedWorkMode,
+    TResult Function(String value)? updateSelectedGender,
+    TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
+    TResult Function(String value)? updateSelectedSkillLevel,
+    TResult Function(String value)? updateSelectedEducationlevel,
+    TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
+    TResult Function(String value)? updateSelectedPackage,
+    TResult Function(String value)? updateSelectedAvailability,
+    TResult Function(CountryResponseEntity value)? updateCountry,
+    TResult Function(StateResponseEntity value)? updateState,
+    TResult Function(int index)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCompensationTypes != null) {
+      return updateSelectedCompensationTypes(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetFeaturedCandidate value)
+        getFeaturedCandidates,
+    required TResult Function(_GetFeaturedJob value) getFeaturedJob,
+    required TResult Function(_GetEmployerJob value) getEmployerJob,
+    required TResult Function(_GetAllJobs value) getAllJobs,
+    required TResult Function(_GetJobSeekerJobs value) getJobSeekerJobs,
+    required TResult Function(_PostJob value) postJob,
+    required TResult Function(_PostJobWithoutLogin value) postJobWithoutLogin,
+    required TResult Function(_EditJob value) editJob,
+    required TResult Function(_UpdatePostJobRequest value) updatePostJobRequest,
+    required TResult Function(_UpdatePostJobWithoutLoginRequest value)
+        updatePostJobWithoutLoginRequest,
+    required TResult Function(_UpdateEditJobRequest value) updateEditJobRequest,
+    required TResult Function(_UpdateSelectedDate value) updateSelectedDate,
+    required TResult Function(_ApplyForJob value) applyForJob,
+    required TResult Function(_GetCategory value) getCategory,
+    required TResult Function(_GetSkills value) getSkills,
+    required TResult Function(_GetCountries value) getCountries,
+    required TResult Function(_GetState value) getState,
+    required TResult Function(_UpdateSelectedCategory value)
+        updateSelectedCategory,
+    required TResult Function(_UpdateSelectedJobType value)
+        updateSelectedJobType,
+    required TResult Function(_UpdateSelectedWorkMode value)
+        updateSelectedWorkMode,
+    required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
+    required TResult Function(_UpdateSelectedCompensationType value)
+        updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
+    required TResult Function(_UpdateSelectedSkillLevel value)
+        updateSelectedSkillLevel,
+    required TResult Function(_UpdateSelectedEducationLevel value)
+        updateSelectedEducationlevel,
+    required TResult Function(_UpdateSelectedSkill value) updateSelectedSkill,
+    required TResult Function(_UpdateSelectedPackage value)
+        updateSelectedPackage,
+    required TResult Function(_UpdateSelectedAvailability value)
+        updateSelectedAvailability,
+    required TResult Function(_UpdateCountry value) updateCountry,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_SelectedDrawer value) selectedDrawer,
+  }) {
+    return updateSelectedCompensationTypes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult? Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult? Function(_GetEmployerJob value)? getEmployerJob,
+    TResult? Function(_GetAllJobs value)? getAllJobs,
+    TResult? Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult? Function(_PostJob value)? postJob,
+    TResult? Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult? Function(_EditJob value)? editJob,
+    TResult? Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult? Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult? Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult? Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult? Function(_ApplyForJob value)? applyForJob,
+    TResult? Function(_GetCategory value)? getCategory,
+    TResult? Function(_GetSkills value)? getSkills,
+    TResult? Function(_GetCountries value)? getCountries,
+    TResult? Function(_GetState value)? getState,
+    TResult? Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult? Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult? Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult? Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
+    TResult? Function(_UpdateSelectedSkillLevel value)?
+        updateSelectedSkillLevel,
+    TResult? Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult? Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult? Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult? Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult? Function(_UpdateCountry value)? updateCountry,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_SelectedDrawer value)? selectedDrawer,
+  }) {
+    return updateSelectedCompensationTypes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetFeaturedCandidate value)? getFeaturedCandidates,
+    TResult Function(_GetFeaturedJob value)? getFeaturedJob,
+    TResult Function(_GetEmployerJob value)? getEmployerJob,
+    TResult Function(_GetAllJobs value)? getAllJobs,
+    TResult Function(_GetJobSeekerJobs value)? getJobSeekerJobs,
+    TResult Function(_PostJob value)? postJob,
+    TResult Function(_PostJobWithoutLogin value)? postJobWithoutLogin,
+    TResult Function(_EditJob value)? editJob,
+    TResult Function(_UpdatePostJobRequest value)? updatePostJobRequest,
+    TResult Function(_UpdatePostJobWithoutLoginRequest value)?
+        updatePostJobWithoutLoginRequest,
+    TResult Function(_UpdateEditJobRequest value)? updateEditJobRequest,
+    TResult Function(_UpdateSelectedDate value)? updateSelectedDate,
+    TResult Function(_ApplyForJob value)? applyForJob,
+    TResult Function(_GetCategory value)? getCategory,
+    TResult Function(_GetSkills value)? getSkills,
+    TResult Function(_GetCountries value)? getCountries,
+    TResult Function(_GetState value)? getState,
+    TResult Function(_UpdateSelectedCategory value)? updateSelectedCategory,
+    TResult Function(_UpdateSelectedJobType value)? updateSelectedJobType,
+    TResult Function(_UpdateSelectedWorkMode value)? updateSelectedWorkMode,
+    TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
+    TResult Function(_UpdateSelectedCompensationType value)?
+        updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
+    TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
+    TResult Function(_UpdateSelectedEducationLevel value)?
+        updateSelectedEducationlevel,
+    TResult Function(_UpdateSelectedSkill value)? updateSelectedSkill,
+    TResult Function(_UpdateSelectedPackage value)? updateSelectedPackage,
+    TResult Function(_UpdateSelectedAvailability value)?
+        updateSelectedAvailability,
+    TResult Function(_UpdateCountry value)? updateCountry,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_SelectedDrawer value)? selectedDrawer,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedCompensationTypes != null) {
+      return updateSelectedCompensationTypes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSelectedCompensationTypes implements HomeEvent {
+  const factory _UpdateSelectedCompensationTypes(final String value) =
+      _$UpdateSelectedCompensationTypesImpl;
+
+  String get value;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedCompensationTypesImplCopyWith<
+          _$UpdateSelectedCompensationTypesImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -7874,6 +8441,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -7914,6 +8482,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -7953,6 +8522,7 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8001,6 +8571,8 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -8045,6 +8617,8 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -8088,6 +8662,8 @@ class _$UpdateSelectedSkillLevelImpl implements _UpdateSelectedSkillLevel {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -8215,6 +8791,7 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -8255,6 +8832,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8294,6 +8872,7 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8342,6 +8921,8 @@ class _$UpdateSelectedEducationLevelImpl
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -8386,6 +8967,8 @@ class _$UpdateSelectedEducationLevelImpl
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -8429,6 +9012,8 @@ class _$UpdateSelectedEducationLevelImpl
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -8560,6 +9145,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -8600,6 +9186,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8639,6 +9226,7 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8687,6 +9275,8 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -8731,6 +9321,8 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -8774,6 +9366,8 @@ class _$UpdateSelectedSkillImpl implements _UpdateSelectedSkill {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -8898,6 +9492,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -8938,6 +9533,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -8977,6 +9573,7 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9025,6 +9622,8 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -9069,6 +9668,8 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -9112,6 +9713,8 @@ class _$UpdateSelectedPackageImpl implements _UpdateSelectedPackage {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -9237,6 +9840,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -9277,6 +9881,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9316,6 +9921,7 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9364,6 +9970,8 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -9408,6 +10016,8 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -9451,6 +10061,8 @@ class _$UpdateSelectedAvailabilityImpl implements _UpdateSelectedAvailability {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -9573,6 +10185,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -9613,6 +10226,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9652,6 +10266,7 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9700,6 +10315,8 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -9744,6 +10361,8 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -9787,6 +10406,8 @@ class _$UpdateCountryImpl implements _UpdateCountry {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -9909,6 +10530,7 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -9949,6 +10571,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -9988,6 +10611,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -10036,6 +10660,8 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -10080,6 +10706,8 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -10123,6 +10751,8 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -10246,6 +10876,7 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     required TResult Function(String value) updateSelectedWorkMode,
     required TResult Function(String value) updateSelectedGender,
     required TResult Function(String value) updateSelectedCompensationType,
+    required TResult Function(String value) updateSelectedCompensationTypes,
     required TResult Function(String value) updateSelectedSkillLevel,
     required TResult Function(String value) updateSelectedEducationlevel,
     required TResult Function(List<SkillResponseEntity> value)
@@ -10286,6 +10917,7 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult? Function(String value)? updateSelectedWorkMode,
     TResult? Function(String value)? updateSelectedGender,
     TResult? Function(String value)? updateSelectedCompensationType,
+    TResult? Function(String value)? updateSelectedCompensationTypes,
     TResult? Function(String value)? updateSelectedSkillLevel,
     TResult? Function(String value)? updateSelectedEducationlevel,
     TResult? Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -10325,6 +10957,7 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult Function(String value)? updateSelectedWorkMode,
     TResult Function(String value)? updateSelectedGender,
     TResult Function(String value)? updateSelectedCompensationType,
+    TResult Function(String value)? updateSelectedCompensationTypes,
     TResult Function(String value)? updateSelectedSkillLevel,
     TResult Function(String value)? updateSelectedEducationlevel,
     TResult Function(List<SkillResponseEntity> value)? updateSelectedSkill,
@@ -10373,6 +11006,8 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     required TResult Function(_UpdateSelectedGender value) updateSelectedGender,
     required TResult Function(_UpdateSelectedCompensationType value)
         updateSelectedCompensationType,
+    required TResult Function(_UpdateSelectedCompensationTypes value)
+        updateSelectedCompensationTypes,
     required TResult Function(_UpdateSelectedSkillLevel value)
         updateSelectedSkillLevel,
     required TResult Function(_UpdateSelectedEducationLevel value)
@@ -10417,6 +11052,8 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult? Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult? Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult? Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult? Function(_UpdateSelectedSkillLevel value)?
         updateSelectedSkillLevel,
     TResult? Function(_UpdateSelectedEducationLevel value)?
@@ -10460,6 +11097,8 @@ class _$SelectedDrawerImpl implements _SelectedDrawer {
     TResult Function(_UpdateSelectedGender value)? updateSelectedGender,
     TResult Function(_UpdateSelectedCompensationType value)?
         updateSelectedCompensationType,
+    TResult Function(_UpdateSelectedCompensationTypes value)?
+        updateSelectedCompensationTypes,
     TResult Function(_UpdateSelectedSkillLevel value)? updateSelectedSkillLevel,
     TResult Function(_UpdateSelectedEducationLevel value)?
         updateSelectedEducationlevel,
@@ -10501,6 +11140,7 @@ mixin _$HomeState {
   DateTime? get applicationTime => throw _privateConstructorUsedError;
   String? get availablity => throw _privateConstructorUsedError;
   String get jobTypes => throw _privateConstructorUsedError;
+  String get compensationTypes => throw _privateConstructorUsedError;
   String get workModes => throw _privateConstructorUsedError;
   String get skillLevels => throw _privateConstructorUsedError;
   String get educationLevels => throw _privateConstructorUsedError;
@@ -10543,6 +11183,7 @@ mixin _$HomeState {
   int get selectedIndex => throw _privateConstructorUsedError;
   List<String> get skillLevelList => throw _privateConstructorUsedError;
   List<String> get skillLevelLists => throw _privateConstructorUsedError;
+  List<String> get compensationTypeLists => throw _privateConstructorUsedError;
   GetFeaturedJobState get getFeaturedJobState =>
       throw _privateConstructorUsedError;
   GetFeaturedCandidateState get getFeaturedCandidateState =>
@@ -10574,6 +11215,7 @@ mixin _$HomeState {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -10608,6 +11250,7 @@ mixin _$HomeState {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10638,6 +11281,7 @@ mixin _$HomeState {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -10672,6 +11316,7 @@ mixin _$HomeState {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10702,6 +11347,7 @@ mixin _$HomeState {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -10736,6 +11382,7 @@ mixin _$HomeState {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -10792,6 +11439,7 @@ abstract class $HomeStateCopyWith<$Res> {
       DateTime? applicationTime,
       String? availablity,
       String jobTypes,
+      String compensationTypes,
       String workModes,
       String skillLevels,
       String educationLevels,
@@ -10826,6 +11474,7 @@ abstract class $HomeStateCopyWith<$Res> {
       int selectedIndex,
       List<String> skillLevelList,
       List<String> skillLevelLists,
+      List<String> compensationTypeLists,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
       GetJobSeekerJobState getJobSeekerJobState,
@@ -10865,6 +11514,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? applicationTime = freezed,
     Object? availablity = freezed,
     Object? jobTypes = null,
+    Object? compensationTypes = null,
     Object? workModes = null,
     Object? skillLevels = null,
     Object? educationLevels = null,
@@ -10899,6 +11549,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
     Object? selectedIndex = null,
     Object? skillLevelList = null,
     Object? skillLevelLists = null,
+    Object? compensationTypeLists = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
     Object? getJobSeekerJobState = null,
@@ -10957,6 +11608,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       jobTypes: null == jobTypes
           ? _value.jobTypes
           : jobTypes // ignore: cast_nullable_to_non_nullable
+              as String,
+      compensationTypes: null == compensationTypes
+          ? _value.compensationTypes
+          : compensationTypes // ignore: cast_nullable_to_non_nullable
               as String,
       workModes: null == workModes
           ? _value.workModes
@@ -11094,6 +11749,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.skillLevelLists
           : skillLevelLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      compensationTypeLists: null == compensationTypeLists
+          ? _value.compensationTypeLists
+          : compensationTypeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       getFeaturedJobState: null == getFeaturedJobState
           ? _value.getFeaturedJobState
           : getFeaturedJobState // ignore: cast_nullable_to_non_nullable
@@ -11170,6 +11829,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       DateTime? applicationTime,
       String? availablity,
       String jobTypes,
+      String compensationTypes,
       String workModes,
       String skillLevels,
       String educationLevels,
@@ -11204,6 +11864,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       int selectedIndex,
       List<String> skillLevelList,
       List<String> skillLevelLists,
+      List<String> compensationTypeLists,
       GetFeaturedJobState getFeaturedJobState,
       GetFeaturedCandidateState getFeaturedCandidateState,
       GetJobSeekerJobState getJobSeekerJobState,
@@ -11241,6 +11902,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? applicationTime = freezed,
     Object? availablity = freezed,
     Object? jobTypes = null,
+    Object? compensationTypes = null,
     Object? workModes = null,
     Object? skillLevels = null,
     Object? educationLevels = null,
@@ -11275,6 +11937,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? selectedIndex = null,
     Object? skillLevelList = null,
     Object? skillLevelLists = null,
+    Object? compensationTypeLists = null,
     Object? getFeaturedJobState = null,
     Object? getFeaturedCandidateState = null,
     Object? getJobSeekerJobState = null,
@@ -11333,6 +11996,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       jobTypes: null == jobTypes
           ? _value.jobTypes
           : jobTypes // ignore: cast_nullable_to_non_nullable
+              as String,
+      compensationTypes: null == compensationTypes
+          ? _value.compensationTypes
+          : compensationTypes // ignore: cast_nullable_to_non_nullable
               as String,
       workModes: null == workModes
           ? _value.workModes
@@ -11470,6 +12137,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._skillLevelLists
           : skillLevelLists // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      compensationTypeLists: null == compensationTypeLists
+          ? _value._compensationTypeLists
+          : compensationTypeLists // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       getFeaturedJobState: null == getFeaturedJobState
           ? _value.getFeaturedJobState
           : getFeaturedJobState // ignore: cast_nullable_to_non_nullable
@@ -11541,6 +12212,7 @@ class _$InitialImpl implements _Initial {
       this.applicationTime,
       this.availablity,
       this.jobTypes = '--Select--',
+      this.compensationTypes = '--Select--',
       this.workModes = '--Select--',
       this.skillLevels = '--Select--',
       this.educationLevels = '--Select--',
@@ -11592,8 +12264,7 @@ class _$InitialImpl implements _Initial {
           skills: [],
           position: '',
           hireType: '',
-          categoryId: 0,
-          yearsOfExperience: 0,
+          
           levelOfEducation: '',
           skillLevel: '',
           maxAmount: 0,
@@ -11602,12 +12273,10 @@ class _$InitialImpl implements _Initial {
           state: '',
           city: '',
           available: '',
-          availableFor: '',
           email: '',
           phoneNumber: '',
           fullName: '',
           compensationType: '',
-          gender: '',
           currency: '',
           officeAddress: '',
           applicationDeadline: ''),
@@ -11703,6 +12372,11 @@ class _$InitialImpl implements _Initial {
         "Skilled",
         "Unskilled"
       ],
+      final List<String> compensationTypeLists = const [
+        "--Select--",
+        "Salary",
+        "Pay per job"
+      ],
       this.getFeaturedJobState = GetFeaturedJobState.idle,
       this.getFeaturedCandidateState = GetFeaturedCandidateState.idle,
       this.getJobSeekerJobState = GetJobSeekerJobState.idle,
@@ -11738,7 +12412,8 @@ class _$InitialImpl implements _Initial {
         _availabilityList = availabilityList,
         _availabilityLists = availabilityLists,
         _skillLevelList = skillLevelList,
-        _skillLevelLists = skillLevelLists;
+        _skillLevelLists = skillLevelLists,
+        _compensationTypeLists = compensationTypeLists;
 
   @override
   final String? errorMessage;
@@ -11763,6 +12438,9 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final String jobTypes;
+  @override
+  @JsonKey()
+  final String compensationTypes;
   @override
   @JsonKey()
   final String workModes;
@@ -12007,6 +12685,16 @@ class _$InitialImpl implements _Initial {
     return EqualUnmodifiableListView(_skillLevelLists);
   }
 
+  final List<String> _compensationTypeLists;
+  @override
+  @JsonKey()
+  List<String> get compensationTypeLists {
+    if (_compensationTypeLists is EqualUnmodifiableListView)
+      return _compensationTypeLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_compensationTypeLists);
+  }
+
   @override
   @JsonKey()
   final GetFeaturedJobState getFeaturedJobState;
@@ -12049,7 +12737,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, jobTypes: $jobTypes, workModes: $workModes, skillLevels: $skillLevels, educationLevels: $educationLevels, availablitys: $availablitys, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, postJobWithoutLoginRequest: $postJobWithoutLoginRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, jobtypeLists: $jobtypeLists, compensationTypeList: $compensationTypeList, workModeList: $workModeList, workModeLists: $workModeLists, levelOfEducationLists: $levelOfEducationLists, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, availabilityLists: $availabilityLists, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, skillLevelLists: $skillLevelLists, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, postJobWithoutLoginState: $postJobWithoutLoginState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
+    return 'HomeState.initial(errorMessage: $errorMessage, jobType: $jobType, workMode: $workMode, gender: $gender, skillLevel: $skillLevel, educationLevel: $educationLevel, compensationType: $compensationType, package: $package, applicationTime: $applicationTime, availablity: $availablity, jobTypes: $jobTypes, compensationTypes: $compensationTypes, workModes: $workModes, skillLevels: $skillLevels, educationLevels: $educationLevels, availablitys: $availablitys, featureCandidateList: $featureCandidateList, allJobList: $allJobList, employerJobList: $employerJobList, featuredJobList: $featuredJobList, jobSeekerJobList: $jobSeekerJobList, skills: $skills, skill: $skill, categoryList: $categoryList, countries: $countries, states: $states, category: $category, country: $country, state: $state, postJobRequest: $postJobRequest, postJobWithoutLoginRequest: $postJobWithoutLoginRequest, editJobRequest: $editJobRequest, jobtypeList: $jobtypeList, jobtypeLists: $jobtypeLists, compensationTypeList: $compensationTypeList, workModeList: $workModeList, workModeLists: $workModeLists, levelOfEducationLists: $levelOfEducationLists, levelOfEducationList: $levelOfEducationList, genderList: $genderList, packageList: $packageList, availabilityList: $availabilityList, availabilityLists: $availabilityLists, selectedIndex: $selectedIndex, skillLevelList: $skillLevelList, skillLevelLists: $skillLevelLists, compensationTypeLists: $compensationTypeLists, getFeaturedJobState: $getFeaturedJobState, getFeaturedCandidateState: $getFeaturedCandidateState, getJobSeekerJobState: $getJobSeekerJobState, getEmployerJobState: $getEmployerJobState, postJobState: $postJobState, postJobWithoutLoginState: $postJobWithoutLoginState, editJobState: $editJobState, applyForJobState: $applyForJobState, getCategoryState: $getCategoryState, getSkillState: $getSkillState, getCountryState: $getCountryState, getStateState: $getStateState, getAllJobState: $getAllJobState)';
   }
 
   @override
@@ -12076,6 +12764,8 @@ class _$InitialImpl implements _Initial {
                 other.availablity == availablity) &&
             (identical(other.jobTypes, jobTypes) ||
                 other.jobTypes == jobTypes) &&
+            (identical(other.compensationTypes, compensationTypes) ||
+                other.compensationTypes == compensationTypes) &&
             (identical(other.workModes, workModes) ||
                 other.workModes == workModes) &&
             (identical(other.skillLevels, skillLevels) ||
@@ -12140,8 +12830,9 @@ class _$InitialImpl implements _Initial {
                 .equals(other._skillLevelList, _skillLevelList) &&
             const DeepCollectionEquality()
                 .equals(other._skillLevelLists, _skillLevelLists) &&
-            (identical(other.getFeaturedJobState, getFeaturedJobState) ||
-                other.getFeaturedJobState == getFeaturedJobState) &&
+            const DeepCollectionEquality()
+                .equals(other._compensationTypeLists, _compensationTypeLists) &&
+            (identical(other.getFeaturedJobState, getFeaturedJobState) || other.getFeaturedJobState == getFeaturedJobState) &&
             (identical(other.getFeaturedCandidateState, getFeaturedCandidateState) || other.getFeaturedCandidateState == getFeaturedCandidateState) &&
             (identical(other.getJobSeekerJobState, getJobSeekerJobState) || other.getJobSeekerJobState == getJobSeekerJobState) &&
             (identical(other.getEmployerJobState, getEmployerJobState) || other.getEmployerJobState == getEmployerJobState) &&
@@ -12170,6 +12861,7 @@ class _$InitialImpl implements _Initial {
         applicationTime,
         availablity,
         jobTypes,
+        compensationTypes,
         workModes,
         skillLevels,
         educationLevels,
@@ -12204,6 +12896,7 @@ class _$InitialImpl implements _Initial {
         selectedIndex,
         const DeepCollectionEquality().hash(_skillLevelList),
         const DeepCollectionEquality().hash(_skillLevelLists),
+        const DeepCollectionEquality().hash(_compensationTypeLists),
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -12240,6 +12933,7 @@ class _$InitialImpl implements _Initial {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -12274,6 +12968,7 @@ class _$InitialImpl implements _Initial {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12301,6 +12996,7 @@ class _$InitialImpl implements _Initial {
         applicationTime,
         availablity,
         jobTypes,
+        compensationTypes,
         workModes,
         skillLevels,
         educationLevels,
@@ -12335,6 +13031,7 @@ class _$InitialImpl implements _Initial {
         selectedIndex,
         skillLevelList,
         skillLevelLists,
+        compensationTypeLists,
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -12365,6 +13062,7 @@ class _$InitialImpl implements _Initial {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -12399,6 +13097,7 @@ class _$InitialImpl implements _Initial {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12426,6 +13125,7 @@ class _$InitialImpl implements _Initial {
         applicationTime,
         availablity,
         jobTypes,
+        compensationTypes,
         workModes,
         skillLevels,
         educationLevels,
@@ -12460,6 +13160,7 @@ class _$InitialImpl implements _Initial {
         selectedIndex,
         skillLevelList,
         skillLevelLists,
+        compensationTypeLists,
         getFeaturedJobState,
         getFeaturedCandidateState,
         getJobSeekerJobState,
@@ -12490,6 +13191,7 @@ class _$InitialImpl implements _Initial {
             DateTime? applicationTime,
             String? availablity,
             String jobTypes,
+            String compensationTypes,
             String workModes,
             String skillLevels,
             String educationLevels,
@@ -12524,6 +13226,7 @@ class _$InitialImpl implements _Initial {
             int selectedIndex,
             List<String> skillLevelList,
             List<String> skillLevelLists,
+            List<String> compensationTypeLists,
             GetFeaturedJobState getFeaturedJobState,
             GetFeaturedCandidateState getFeaturedCandidateState,
             GetJobSeekerJobState getJobSeekerJobState,
@@ -12553,6 +13256,7 @@ class _$InitialImpl implements _Initial {
           applicationTime,
           availablity,
           jobTypes,
+          compensationTypes,
           workModes,
           skillLevels,
           educationLevels,
@@ -12587,6 +13291,7 @@ class _$InitialImpl implements _Initial {
           selectedIndex,
           skillLevelList,
           skillLevelLists,
+          compensationTypeLists,
           getFeaturedJobState,
           getFeaturedCandidateState,
           getJobSeekerJobState,
@@ -12646,6 +13351,7 @@ abstract class _Initial implements HomeState {
       final DateTime? applicationTime,
       final String? availablity,
       final String jobTypes,
+      final String compensationTypes,
       final String workModes,
       final String skillLevels,
       final String educationLevels,
@@ -12680,6 +13386,7 @@ abstract class _Initial implements HomeState {
       final int selectedIndex,
       final List<String> skillLevelList,
       final List<String> skillLevelLists,
+      final List<String> compensationTypeLists,
       final GetFeaturedJobState getFeaturedJobState,
       final GetFeaturedCandidateState getFeaturedCandidateState,
       final GetJobSeekerJobState getJobSeekerJobState,
@@ -12716,6 +13423,8 @@ abstract class _Initial implements HomeState {
   String? get availablity;
   @override
   String get jobTypes;
+  @override
+  String get compensationTypes;
   @override
   String get workModes;
   @override
@@ -12784,6 +13493,8 @@ abstract class _Initial implements HomeState {
   List<String> get skillLevelList;
   @override
   List<String> get skillLevelLists;
+  @override
+  List<String> get compensationTypeLists;
   @override
   GetFeaturedJobState get getFeaturedJobState;
   @override

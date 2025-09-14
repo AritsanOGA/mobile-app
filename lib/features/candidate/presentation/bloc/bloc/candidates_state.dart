@@ -34,6 +34,8 @@ class CandidatesState with _$CandidatesState {
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
       String? errorMessage,
       String? jobId,
+          File? picture,
+    @Default('--Select--') String educationQuaification,
       String? skillRating,
       int? skillIndex,
       File? workId,
@@ -47,6 +49,16 @@ class CandidatesState with _$CandidatesState {
       @Default([]) List<GetAwardEntity> getAwardsEntity,
       @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
       List<String> dropdownValues,
+      @Default([
+        '--Select--',
+        'Primary School',
+        'Secondary/High School',
+        'Technical School',
+        'College of Education',
+        'Polytechnic',
+        'University',
+      ])
+      List<String> educationQuaificationList,
       @Default('1') String dropdownValue,
       @Default(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'])
       List<String> dropdownList,

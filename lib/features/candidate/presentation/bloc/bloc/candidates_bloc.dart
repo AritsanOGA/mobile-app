@@ -76,7 +76,6 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       UploadWorkPhotoUsecase? uploadWorkPhotoUsecase,
       DeleteWorkPhotoUsecase? deleteWorkPhotoUsecase,
       UploadWorkIDUsecase? uploadWorkIDUsecase,
-
       GetWorkPhotoUsecase? getWorkPhotoUsecase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
@@ -102,7 +101,6 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
         _deleteAwardUsecase = deleteAwardUsecase ?? locator(),
         _addAwardUsecase = addAwardUsecase ?? locator(),
         _updateAwardUsecase = updateAwardUsecase ?? locator(),
-        
         super(_Initial()) {
     on<_AcceptCandidate>(_onAcceptCandidate);
     on<_RejectCandidate>(_onRejectCandidate);
@@ -130,6 +128,7 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_SelectAward>(_onSelectAward);
     on<_DeleteExperience>(_onDeleteExperience);
     on<_DeleteEducation>(_onDeleteEducation);
+    on<_UpdateEducationQualification>(_onUpdateEducationQualification);
     on<_InitializeSkills>(_onInitializeSkills);
   }
 
@@ -157,7 +156,6 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   final GetAwardsUsecase _getAwardsUsecase;
   final DeleteAwardUsecase _deleteAwardUsecase;
   final UpdateAwardUsecase _updateAwardUsecase;
-
 
   FutureOr<void> _onAcceptCandidate(
       _AcceptCandidate event, Emitter<CandidatesState> emit) async {
@@ -578,5 +576,10 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       candidateSkillList: event.candidateSkills,
       dropdownValues: initialDropdownValues,
     ));
+  }
+
+  FutureOr<void> _onUpdateEducationQualification(
+      _UpdateEducationQualification event, Emitter<CandidatesState> emit) {
+    emit(state.copyWith(educationQuaification: event.param));
   }
 }

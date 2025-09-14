@@ -70,16 +70,16 @@ class AddCandidateEducationPage extends HookWidget {
             child: Column(
               children: [
                 SizedBox(height: 25.v),
-                BlocBuilder<AuthBloc, AuthState>(
+                BlocBuilder<CandidatesBloc, CandidatesState>(
                   builder: (context, state) {
                     return CustomDropDown<String>(
                       title: "Educational Qualification",
-                      items: state.levelOfEducationList,
-                      selectedItem: state.educationalQualification,
+                      items: state.educationQuaificationList,
+                      selectedItem: state.educationQuaification,
                       itemLabel: (gender) => gender,
                       onChanged: (value) {
-                        context.read<AuthBloc>().add(
-                              AuthEvent.updateSelectedEducationQualification(
+                        context.read<CandidatesBloc>().add(
+                              CandidatesEvent.updateEducationQualification(
                                   value ?? ''),
                             );
                         print('ssss ${value}');
@@ -97,15 +97,29 @@ class AddCandidateEducationPage extends HookWidget {
                   validator: FormValidation.stringValidation,
                 ),
                 SizedBox(height: 25.v),
-                CustomTextFormField(
-                  title: 'Course Name',
-                  controller: courseNamCeontroller,
-                  hintText: "Course Name",
-                  hintStyle: theme.textTheme.titleSmall!,
-                  textInputType: TextInputType.name,
-                  validator: FormValidation.stringValidation,
+                BlocBuilder<CandidatesBloc, CandidatesState>(
+                  builder: (context, state) {
+                    if (state.educationQuaification == "Primary School" ||
+                        state.educationQuaification ==
+                            "Secondary/High School") {
+                      return SizedBox();
+                    } else {
+                      return Column(
+                        children: [
+                          CustomTextFormField(
+                            title: 'Course Name',
+                            controller: courseNamCeontroller,
+                            hintText: "Course Name",
+                            hintStyle: theme.textTheme.titleSmall!,
+                            textInputType: TextInputType.name,
+                            validator: FormValidation.stringValidation,
+                          ),
+                          SizedBox(height: 25.v),
+                        ],
+                      );
+                    }
+                  },
                 ),
-                SizedBox(height: 25.v),
                 CustomTextFormField(
                   title: 'Year',
                   controller: yearController,
