@@ -246,7 +246,7 @@ class JobSearchDetailsScreen extends StatelessWidget {
                   CustomElevatedButton(
                       text: 'Apply Now',
                       onPressed: () {
-                        ToastUtils.showRedToast('Create a account to apply');
+                        ToastUtils.showRedToast('Signin or Create an account to apply');
                         Future.delayed(Duration(seconds: 3), () {
                           Navigator.push(
                               context,

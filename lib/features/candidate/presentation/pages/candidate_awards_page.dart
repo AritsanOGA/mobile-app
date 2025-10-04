@@ -94,27 +94,38 @@ class CandidateAwardsPage extends HookWidget {
                                             .certificate);
                                   },
                                   child: CachedNetworkImage(
-                                    imageUrl:
-                                        'https://${state.getAwardsEntity[index].certificate}',
-                                    fit: BoxFit.cover,
-                                    progressIndicatorBuilder:
-                                        (context, url, downloadProgress) =>
-                                            const Center(),
-                                    imageBuilder: (context, imageProvider) =>
-                                        Container(
-                                      width: 40,
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                          image: imageProvider,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    errorWidget: (context, url, error) =>
-                                        const Icon(Icons.error),
-                                  ),
+                                      imageUrl:
+                                          'https://${state.getAwardsEntity[index].certificate}',
+                                      fit: BoxFit.cover,
+                                      progressIndicatorBuilder:
+                                          (context, url, downloadProgress) =>
+                                              const Center(),
+                                      imageBuilder: (context, imageProvider) =>
+                                          Container(
+                                            width: 40,
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              image: DecorationImage(
+                                                image: imageProvider,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                            padding: EdgeInsets.all(5),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                border: Border.all(
+                                                    width: 1,
+                                                    color: AppColors.kblack)),
+                                            child: Icon(
+                                              color: AppColors.kblack,
+                                              Icons.error,
+                                              size: 40,
+                                            ),
+                                          )),
                                 ),
                                 GestureDetector(
                                     onTap: () {

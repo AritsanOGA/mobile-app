@@ -69,7 +69,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                         CustomTextFormField(
                             title: 'Full Name',
                             controller: fullNameController,
-                            hintText: "eg: Kingsley Adam ",
+                            hintText: "Your Name ",
                             textInputType: TextInputType.name,
                             validator: FormValidation.stringValidation,
                             hintStyle: theme.textTheme.titleSmall!),
@@ -91,7 +91,7 @@ class EmployerSignuppageOneScreen extends HookWidget {
                                 textInputType: TextInputType.name,
                                 controller: companyNameController,
                                 validator: FormValidation.stringValidation,
-                                hintText: "e.g ArtisanOga",
+                                hintText: "Your Company",
                                 hintStyle: theme.textTheme.titleSmall!)
                           ],
                         ),
@@ -202,103 +202,6 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             ),
                             SizedBox(width: 20.v),
                             Expanded(
-                              child: BlocBuilder<AuthBloc, AuthState>(
-                                builder: (context, state) {
-                                  return CustomDropDown<String>(
-                                    title: 'Gender',
-                                    items: state.genders,
-                                    selectedItem: state.gender,
-                                    itemLabel: (gender) => gender,
-                                    onChanged: (value) {
-                                      context.read<AuthBloc>().add(
-                                            AuthEvent.updateSelectedGender(
-                                                value ?? ''),
-                                          );
-                                    },
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 30.v),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Upload Company Logo",
-                                      style: theme.textTheme.bodyMedium),
-                                  SizedBox(height: 7.v),
-                                  BlocBuilder<AuthBloc, AuthState>(
-                                    builder: (context, state) {
-                                      return Container(
-                                          margin: EdgeInsets.only(right: 10.h),
-                                          padding: EdgeInsets.symmetric(
-                                              vertical: 8.v, horizontal: 5.v),
-                                          decoration: AppDecoration
-                                              .outlineBlueGray
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                InkWell(
-                                                    onTap: () {
-                                                      context
-                                                          .read<AuthBloc>()
-                                                          .add(const AuthEvent
-                                                              .selectCompanyLogo());
-                                                    },
-                                                    child: Container(
-                                                        height: 30,
-                                                        decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5),
-                                                            color: ColorSchemes
-                                                                .primaryColorScheme
-                                                                .primary),
-                                                        child: Center(
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsets
-                                                                    .symmetric(
-                                                                    horizontal:
-                                                                        5),
-                                                            child: Text(
-                                                                'choose file',
-                                                                style: theme
-                                                                    .textTheme
-                                                                    .labelMedium
-                                                                    ?.copyWith(
-                                                                        color: Colors
-                                                                            .white)),
-                                                          ),
-                                                        ))),
-                                                SizedBox(width: 5.v),
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                      top: 5.v, right: 5.v),
-                                                  child: Text(
-                                                      state.file == null
-                                                          ? "No file chosen"
-                                                          : "Image selected",
-                                                      style: theme.textTheme
-                                                          .labelLarge),
-                                                )
-                                              ]));
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -315,6 +218,104 @@ class EmployerSignuppageOneScreen extends HookWidget {
                             ),
                           ],
                         ),
+                        SizedBox(height: 30.v),
+                        // Row(
+                        //   children: [
+                        //     Expanded(
+                        //       child: Column(
+                        //         crossAxisAlignment: CrossAxisAlignment.start,
+                        //         children: [
+                        //           Text("Upload Company Logo",
+                        //               style: theme.textTheme.bodyMedium),
+                        //           SizedBox(height: 7.v),
+                        //           BlocBuilder<AuthBloc, AuthState>(
+                        //             builder: (context, state) {
+                        //               return Container(
+                        //                   margin: EdgeInsets.only(right: 10.h),
+                        //                   padding: EdgeInsets.symmetric(
+                        //                       vertical: 8.v, horizontal: 5.v),
+                        //                   decoration: AppDecoration
+                        //                       .outlineBlueGray
+                        //                       .copyWith(
+                        //                           borderRadius:
+                        //                               BorderRadiusStyle
+                        //                                   .roundedBorder7),
+                        //                   child: Row(
+                        //                       crossAxisAlignment:
+                        //                           CrossAxisAlignment.start,
+                        //                       children: [
+                        //                         InkWell(
+                        //                             onTap: () {
+                        //                               context
+                        //                                   .read<AuthBloc>()
+                        //                                   .add(const AuthEvent
+                        //                                       .selectCompanyLogo());
+                        //                             },
+                        //                             child: Container(
+                        //                                 height: 30,
+                        //                                 decoration: BoxDecoration(
+                        //                                     borderRadius:
+                        //                                         BorderRadius
+                        //                                             .circular(
+                        //                                                 5),
+                        //                                     color: ColorSchemes
+                        //                                         .primaryColorScheme
+                        //                                         .primary),
+                        //                                 child: Center(
+                        //                                   child: Padding(
+                        //                                     padding:
+                        //                                         const EdgeInsets
+                        //                                             .symmetric(
+                        //                                             horizontal:
+                        //                                                 5),
+                        //                                     child: Text(
+                        //                                         'choose file',
+                        //                                         style: theme
+                        //                                             .textTheme
+                        //                                             .labelMedium
+                        //                                             ?.copyWith(
+                        //                                                 color: Colors
+                        //                                                     .white)),
+                        //                                   ),
+                        //                                 ))),
+                        //                         SizedBox(width: 5.v),
+                        //                         Padding(
+                        //                           padding: EdgeInsets.only(
+                        //                               top: 5.v, right: 5.v),
+                        //                           child: Text(
+                        //                               state.file == null
+                        //                                   ? "No file chosen"
+                        //                                   : "Image selected",
+                        //                               style: theme.textTheme
+                        //                                   .labelLarge),
+                        //                         )
+                        //                       ]));
+                        //             },
+                        //           ),
+                        //         ],
+                        //       ),
+                        //     ),
+                        //                  Expanded(
+                        //       child: BlocBuilder<AuthBloc, AuthState>(
+                        //         builder: (context, state) {
+                        //           return CustomDropDown<String>(
+                        //             title: 'Gender',
+                        //             items: state.genders,
+                        //             selectedItem: state.gender,
+                        //             itemLabel: (gender) => gender,
+                        //             onChanged: (value) {
+                        //               context.read<AuthBloc>().add(
+                        //                     AuthEvent.updateSelectedGender(
+                        //                         value ?? ''),
+                        //                   );
+                        //             },
+                        //           );
+                        //         },
+                        //       ),
+                        //     ),
+
+                        //   ],
+                        // ),
                         SizedBox(height: 15.v),
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {

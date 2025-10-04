@@ -130,7 +130,6 @@ class UpdateCandidateExperiencePage extends HookWidget {
                         controller: ighandleController,
                         hintText: "I.G Handle",
                         hintStyle: theme.textTheme.titleSmall!,
-                        textInputType: TextInputType.number,
                       ),
                     ),
                   ],

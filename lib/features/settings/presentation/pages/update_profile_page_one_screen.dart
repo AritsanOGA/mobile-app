@@ -99,39 +99,74 @@ class UpdateProfilePageOneScreen extends HookWidget {
                           child: Column(children: [
                             SizedBox(height: 16.v),
                             SizedBox(
-                                height: 110.adaptSize,
-                                width: 110.adaptSize,
+                                height: 150.adaptSize,
+                                width: 150.adaptSize,
                                 child: Stack(
                                     alignment: Alignment.bottomRight,
                                     children: [
-                                      imageUrl != ''
-                                          ? CachedNetworkImage(
-                                              imageUrl:
-                                                  '${state.candidateProfileEntity?.passport ?? ''}',
-                                              fit: BoxFit.cover,
-                                              progressIndicatorBuilder:
-                                                  (context, url,
-                                                          downloadProgress) =>
-                                                      const Center(),
-                                              imageBuilder:
-                                                  (context, imageProvider) =>
-                                                      Container(
-                                                width: 100,
-                                                height: 100,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                    image: imageProvider,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                      state.picture != null
+                                          ? Container(
+                                              width: 150,
+                                              height: 150,
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    width: 2,
+                                                    color:
+                                                        appTheme.blueGray10001),
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                  image:
+                                                      FileImage(state.picture!),
+                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      const Icon(Icons.error),
                                             )
-                                          : state.picture == null
-                                              ? Container(
+                                          : imageUrl != ''
+                                              ? CachedNetworkImage(
+                                                  imageUrl:
+                                                      '${state.candidateProfileEntity?.passport ?? ''}',
+                                                  fit: BoxFit.cover,
+                                                  progressIndicatorBuilder:
+                                                      (context, url,
+                                                              downloadProgress) =>
+                                                          const Center(),
+                                                  imageBuilder: (context,
+                                                          imageProvider) =>
+                                                      Container(
+                                                        width: 100.adaptSize,
+                                                        height: 100.adaptSize,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          image:
+                                                              DecorationImage(
+                                                            image:
+                                                                imageProvider,
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                  errorWidget: (context, url,
+                                                          error) =>
+                                                      Container(
+                                                        padding:
+                                                            EdgeInsets.all(5),
+                                                        decoration: BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            border: Border.all(
+                                                                width: 2,
+                                                                color: AppColors
+                                                                    .kblack)),
+                                                        child: Icon(
+                                                          color:
+                                                              AppColors.kblack,
+                                                          Icons.error,
+                                                          size: 90,
+                                                        ),
+                                                      ))
+                                              : Container(
                                                   padding: EdgeInsets.all(5),
                                                   decoration: BoxDecoration(
                                                       shape: BoxShape.circle,
@@ -144,24 +179,13 @@ class UpdateProfilePageOneScreen extends HookWidget {
                                                     Icons.person,
                                                     size: 90,
                                                   ),
-                                                )
-                                              : Container(
-                                                  width: 150,
-                                                  height: 150,
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: DecorationImage(
-                                                      image: FileImage(
-                                                          state.picture!),
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
                                                 ),
                                       GestureDetector(
                                         onTap: (() {
                                           context.read<SettingBloc>().add(
                                               const SettingEvent
                                                   .selectPicture());
+                                          print('is it mine ${state.picture}');
                                         }),
                                         child: CustomIconButton(
                                             height: 40.adaptSize,

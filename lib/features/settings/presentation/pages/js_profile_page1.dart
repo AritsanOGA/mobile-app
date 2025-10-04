@@ -132,7 +132,17 @@ class JSProfilePage1 extends StatelessWidget {
                               ),
                             ),
                             errorWidget: (context, url, error) =>
-                                const Icon(Icons.error),
+                          Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(width: 1, color: AppColors.kblack)),
+                    child: Icon(
+                      color: AppColors.kblack,
+                      Icons.error,
+                      size: 40,
+                    ),
+                  )
                           ),
                         ),
                         SizedBox(

@@ -56,19 +56,28 @@ class AcceptRejectPageScreen extends HookWidget {
                                       const Center(),
                               imageBuilder: (context, imageProvider) =>
                                   Container(
-                                width: 70,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: imageProvider,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                            )
+                              errorWidget: (context, url, error) => Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            width: 1, color: AppColors.kblack)),
+                                    child: Icon(
+                                      color: AppColors.kblack,
+                                      Icons.error,
+                                      size: 70,
+                                    ),
+                                  ))
                           : Container(
                               padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(

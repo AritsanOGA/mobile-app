@@ -62,19 +62,28 @@ class JSProfilePage extends HookWidget {
                                       const Center(),
                               imageBuilder: (context, imageProvider) =>
                                   Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
+                                    width: 100,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: imageProvider,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                              errorWidget: (context, url, error) =>
-                                  const Icon(Icons.error),
-                            )
+                              errorWidget: (context, url, error) => Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            width: 1, color: AppColors.kblack)),
+                                    child: Icon(
+                                      color: AppColors.kblack,
+                                      Icons.error,
+                                      size: 70,
+                                    ),
+                                  ))
                           : Container(
                               padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
@@ -505,7 +514,8 @@ class JSProfilePage extends HookWidget {
                                                                   ? CachedNetworkImage(
                                                                       imageUrl: state
                                                                               .candidateProfileEntity
-                                                                              ?.employerFeedback[index]
+                                                                              ?.employerFeedback[
+                                                                                  index]
                                                                               .profileImage ??
                                                                           '',
                                                                       fit: BoxFit
@@ -517,29 +527,31 @@ class JSProfilePage extends HookWidget {
                                                                       imageBuilder:
                                                                           (context, imageProvider) =>
                                                                               Container(
-                                                                        width:
-                                                                            30,
-                                                                        height:
-                                                                            30,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          shape:
-                                                                              BoxShape.circle,
-                                                                          image:
-                                                                              DecorationImage(
-                                                                            image:
-                                                                                imageProvider,
-                                                                            fit:
-                                                                                BoxFit.cover,
-                                                                          ),
-                                                                        ),
-                                                                      ),
+                                                                                width: 30,
+                                                                                height: 30,
+                                                                                decoration: BoxDecoration(
+                                                                                  shape: BoxShape.circle,
+                                                                                  image: DecorationImage(
+                                                                                    image: imageProvider,
+                                                                                    fit: BoxFit.cover,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                       errorWidget: (context,
                                                                               url,
                                                                               error) =>
-                                                                          const Icon(
-                                                                              Icons.error),
-                                                                    )
+                                                                          Container(
+                                                                            padding:
+                                                                                EdgeInsets.all(5),
+                                                                            decoration:
+                                                                                BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 1, color: AppColors.kblack)),
+                                                                            child:
+                                                                                Icon(
+                                                                              color: AppColors.kblack,
+                                                                              Icons.error,
+                                                                              size: 30,
+                                                                            ),
+                                                                          ))
                                                                   : Container(
                                                                       padding:
                                                                           EdgeInsets.all(

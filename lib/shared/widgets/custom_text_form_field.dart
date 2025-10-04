@@ -4,39 +4,39 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  CustomTextFormField({
-    Key? key,
-    this.alignment,
-    this.width,
-    this.scrollPadding,
-    this.controller,
-    this.textStyle,
-    this.obscureText = false,
-    this.textInputAction = TextInputAction.next,
-    this.textInputType = TextInputType.text,
-    this.maxLines,
-    this.hintText,
-    this.hintStyle,
-    this.titleStyle,
-    this.prefix,
-    this.prefixConstraints,
-    this.suffix,
-    this.suffixConstraints,
-    this.contentPadding,
-    this.borderDecoration,
-    this.fillColor,
-    this.filled = false,
-    this.validator,
-    this.readOnly = false,
-    this.isPassword = false,
-    this.isObscure = false,
-    this.isBorderNone = false,
-    this.inputFormatters,
-    required this.title,
-    this.ontap,
-    this.maxLength,
-    this.onChanged
-  }) : super(
+  CustomTextFormField(
+      {Key? key,
+      this.alignment,
+      this.width,
+      this.scrollPadding,
+      this.controller,
+      this.textStyle,
+      this.obscureText = false,
+      this.textInputAction = TextInputAction.next,
+      this.textInputType = TextInputType.text,
+      this.maxLines,
+      this.hintText,
+      this.hintStyle,
+      this.titleStyle,
+      this.prefix,
+      this.prefixConstraints,
+      this.suffix,
+      this.suffixConstraints,
+      this.contentPadding,
+      this.borderDecoration,
+      this.fillColor,
+      this.filled = false,
+      this.validator,
+      this.readOnly = false,
+      this.isPassword = false,
+      this.isObscure = false,
+      this.isBorderNone = false,
+      this.inputFormatters,
+      required this.title,
+      this.ontap,
+      this.maxLength,
+      this.onChanged})
+      : super(
           key: key,
         );
 
@@ -83,7 +83,7 @@ class CustomTextFormField extends StatefulWidget {
 
   final bool? filled;
   final Function()? ontap;
- final Function(String)? onChanged;
+  final Function(String)? onChanged;
 
   final FormFieldValidator<String>? validator;
 

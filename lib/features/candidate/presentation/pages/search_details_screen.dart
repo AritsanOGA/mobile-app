@@ -276,16 +276,17 @@ class SearchDetailsScreen extends HookWidget {
                                 ApplyForJobState.loading,
                             text: 'Apply Now',
                             onPressed: () {
-                              if (state.candidateProfile?.profiles.idcard ==
-                                  null) {
-                                uploadWordID(context, jobId);
-                              } else {
-                                context.read<HomeBloc>()
-                                  ..add(HomeEvent.applyForJob(state
-                                          .searchJobDetail?.jobDetails.id
-                                          .toString() ??
-                                      ''));
-                              }
+                              // if (state.candidateProfile?.profiles.idcard ==
+                              //     null) {
+                              //   uploadWordID(context, jobId);
+                              // } else
+                              // {
+                              context.read<HomeBloc>()
+                                ..add(HomeEvent.applyForJob(state
+                                        .searchJobDetail?.jobDetails.id
+                                        .toString() ??
+                                    ''));
+                              // }
                             });
                       },
                     ),

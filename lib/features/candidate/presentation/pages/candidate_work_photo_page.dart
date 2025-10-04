@@ -120,7 +120,19 @@ class CandidateWorkPhotoPage extends HookWidget {
                                       CircularProgressIndicator(strokeWidth: 2),
                                 ),
                                 errorWidget: (_, __, ___) =>
-                                    const Icon(Icons.broken_image),
+                                                 Container(
+                                        padding: EdgeInsets.all(5),
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                width: 1,
+                                                color: AppColors.kblack)),
+                                        child: Icon(
+                                          color: AppColors.kblack,
+                                          Icons.error,
+                                          size: 40,
+                                        ),
+                                      )
                               ),
                             ),
                             GestureDetector(

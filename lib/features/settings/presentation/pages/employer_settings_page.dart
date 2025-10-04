@@ -50,26 +50,38 @@ class EmployerSettingsPage extends HookWidget {
                                             progressIndicatorBuilder: (context,
                                                     url, downloadProgress) =>
                                                 const Center(
-                                              child:
-                                                  CircularProgressIndicator(),
-                                            ),
+                                                  child:
+                                                      CircularProgressIndicator(),
+                                                ),
                                             imageBuilder:
                                                 (context, imageProvider) =>
                                                     Container(
-                                              width: 50,
-                                              height: 50,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  image: imageProvider,
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                            errorWidget:
-                                                (context, url, error) =>
-                                                    const Icon(Icons.error),
-                                          )
+                                                      width: 50,
+                                                      height: 50,
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: DecorationImage(
+                                                          image: imageProvider,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                            errorWidget: (context, url,
+                                                    error) =>
+                                                Container(
+                                                  padding: EdgeInsets.all(5),
+                                                  decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          width: 1,
+                                                          color: AppColors
+                                                              .kblack)),
+                                                  child: Icon(
+                                                    color: AppColors.kblack,
+                                                    Icons.error,
+                                                    size: 40,
+                                                  ),
+                                                ))
                                         : Container(
                                             padding: EdgeInsets.all(5),
                                             decoration: BoxDecoration(
