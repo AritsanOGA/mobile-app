@@ -1,13 +1,13 @@
 import 'package:artisan_oga/features/candidate/domain/entities/candidate_profile_entity.dart';
 
 class CandidateProfileModel extends CandidateProfileEntity {
-  CandidateProfileModel({
-    required super.passport,
-    required super.resume,
-    required super.profiles,
-    required super.employerFeedback,
-    required super.employerRating,
-  });
+  CandidateProfileModel(
+      {required super.passport,
+      required super.resume,
+      required super.profiles,
+      required super.employerFeedback,
+      required super.employerRating,
+      required super.category});
 
   factory CandidateProfileModel.fromJson(Map<String, dynamic> json) {
     final employerFeedbackList = json['employer_feedback'] != null
@@ -21,19 +21,22 @@ class CandidateProfileModel extends CandidateProfileEntity {
           )
         : <Map<String, dynamic>>[];
     return CandidateProfileModel(
-      passport: json["passport"],
-      resume: json["resume"],
-      profiles: Profiles.fromJson(json["profiles"]),
-      employerFeedback: employerFeedbackList.isNotEmpty
-          ? employerFeedbackList
-              .map(EmployerFeedbackModel.fromJson)
-              .toList()
-              .cast()
-          : [],
-      employerRating: employerRatingList.isNotEmpty
-          ? employerRatingList.map(EmployerRatingModel.fromJson).toList().cast()
-          : [],
-    );
+        passport: json["passport"],
+        resume: json["resume"],
+        profiles: Profiles.fromJson(json["profiles"]),
+        employerFeedback: employerFeedbackList.isNotEmpty
+            ? employerFeedbackList
+                .map(EmployerFeedbackModel.fromJson)
+                .toList()
+                .cast()
+            : [],
+        employerRating: employerRatingList.isNotEmpty
+            ? employerRatingList
+                .map(EmployerRatingModel.fromJson)
+                .toList()
+                .cast()
+            : [],
+        category: json['category']);
   }
 }
 

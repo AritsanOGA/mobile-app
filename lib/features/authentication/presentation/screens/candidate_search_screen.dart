@@ -17,27 +17,23 @@ class CandidateSearchScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final locationController = useTextEditingController();
-    // final query = useState<String>('');
-    // final filtered = useState<List<dynamic>>([]);
+    final query = useState<String>(''); // To hold the search query
+    final filteredCandidates =
+        useState<List<dynamic>>([]); // To hold the filtered candidates
 
-    // List<dynamic> applyFilter({
-    //   required List<dynamic> source,
-    //   required String q,
-    // }) {
-    //   final text = q.trim().toLowerCase();
-    //   if (text.isEmpty) return List<dynamic>.from(source);
+    // Filter candidates by name based on the search query
+    List<dynamic> applyFilter({
+      required List<dynamic> source,
+      required String q,
+    }) {
+      final text = q.trim().toLowerCase();
+      if (text.isEmpty) return List<dynamic>.from(source);
 
-    //   bool matches(dynamic item) {
-    //     final name = (item.fullName ?? '').toString().toLowerCase();
-    //     // final cat = (item.categoryName ?? '').toString().toLowerCase();
-    //     // final city = (item.city ?? '').toString().toLowerCase();
-    //     // final avail = (item.availability ?? '').toString().toLowerCase();
-
-    //     return name.contains(text);
-    //   }
-
-    //   return source.where(matches).toList();
-    // }
+      return source.where((item) {
+        final name = (item.fullName ?? '').toString().toLowerCase();
+        return name.contains(text);
+      }).toList();
+    }
 
     return SafeArea(
       child: Scaffold(
@@ -119,11 +115,7 @@ class CandidateSearchScreen extends HookWidget {
                     height: 20.h,
                   ),
                   CustomTextFormField(
-                    ontap: () {
-                      // searchDialog(context, locationController);
-                    },
                     title: 'Search for talents',
-                    readOnly: true,
                     controller: locationController,
                     hintText: "Search...",
                     hintStyle: theme.textTheme.titleSmall!,
@@ -139,7 +131,7 @@ class CandidateSearchScreen extends HookWidget {
                             ),
                           ],
                         )
-                      : state.candidateSearch.isEmpty
+                      : filteredCandidates.value.isEmpty
                           ? Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -155,8 +147,10 @@ class CandidateSearchScreen extends HookWidget {
                             )
                           : Expanded(
                               child: ListView.builder(
-                                  itemCount: state.candidateSearch.length,
+                                  itemCount: filteredCandidates.value.length,
                                   itemBuilder: (context, index) {
+                                    final filteredValue =
+                                        filteredCandidates.value;
                                     return Padding(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 5, vertical: 10),
@@ -178,9 +172,7 @@ class CandidateSearchScreen extends HookWidget {
                                                         .spaceBetween,
                                                 children: [
                                                   Text(
-                                                      state
-                                                          .candidateSearch[
-                                                              index]
+                                                      filteredValue[index]
                                                           .fullName,
                                                       style: theme
                                                           .textTheme.bodyMedium
@@ -200,9 +192,7 @@ class CandidateSearchScreen extends HookWidget {
                                                         color: Colors.blueGrey
                                                             .withOpacity(0.6)),
                                                     child: Text(
-                                                        state
-                                                            .candidateSearch[
-                                                                index]
+                                                        filteredValue[index]
                                                             .availability,
                                                         style: theme.textTheme
                                                             .bodyMedium
@@ -231,9 +221,7 @@ class CandidateSearchScreen extends HookWidget {
                                                         width: 10.v,
                                                       ),
                                                       Text(
-                                                          state
-                                                              .candidateSearch[
-                                                                  index]
+                                                          filteredValue[index]
                                                               .categoryName,
                                                           style: theme.textTheme
                                                               .bodyMedium
@@ -252,9 +240,7 @@ class CandidateSearchScreen extends HookWidget {
                                                         width: 10.v,
                                                       ),
                                                       Text(
-                                                          state
-                                                              .candidateSearch[
-                                                                  index]
+                                                          filteredValue[index]
                                                               .city,
                                                           style: theme.textTheme
                                                               .bodyMedium),
@@ -270,8 +256,7 @@ class CandidateSearchScreen extends HookWidget {
                                                   Navigator.pushNamed(context,
                                                       AppRoutes.hireMeScreen,
                                                       arguments:
-                                                          state.candidateSearch[
-                                                              index]);
+                                                          filteredValue[index]);
                                                 },
                                                 child: Container(
                                                   height: 40.h,
@@ -302,10 +287,9 @@ class CandidateSearchScreen extends HookWidget {
                                                       context,
                                                       AppRoutes
                                                           .candidatesProfilePage,
-                                                      arguments: state
-                                                          .candidateSearch[
-                                                              index]
-                                                          .identity);
+                                                      arguments:
+                                                          filteredValue[index]
+                                                              .identity);
                                                 },
                                                 child: Container(
                                                   height: 40.h,

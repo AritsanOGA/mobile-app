@@ -6,18 +6,19 @@ class CandidateProfileEntity extends Equatable {
   final ProfileEntity profiles;
   final List<EmployerFeedbackEntity> employerFeedback;
   final List<EmployerRatingEntity> employerRating;
+  final String category;
 
-  const CandidateProfileEntity({
-    required this.passport,
-    required this.resume,
-    required this.profiles,
-    required this.employerFeedback,
-    required this.employerRating,
-  });
+  const CandidateProfileEntity(
+      {required this.passport,
+      required this.resume,
+      required this.profiles,
+      required this.employerFeedback,
+      required this.employerRating,
+      required this.category});
 
   @override
   List<Object?> get props =>
-      [passport, resume, profiles, employerFeedback, employerRating];
+      [passport, resume, profiles, employerFeedback, employerRating, category];
 }
 
 class ProfileEntity extends Equatable {

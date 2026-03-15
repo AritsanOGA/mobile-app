@@ -43,7 +43,7 @@ class CandidatesProfilePage extends StatelessWidget {
 
                         // if (state.featureCandidateList.isEmpty) {
                         //   return Center(child: Text('No items found.'));
-                        // }
+               
                         return Column(children: [
                           //  SizedBox(height: 15.v),
                           state.candidateProfileEntity?.passport != ''
@@ -117,7 +117,11 @@ class CandidatesProfilePage extends StatelessWidget {
                               "Job Preference: ${state.candidateProfileEntity?.profiles.jobType ?? ''}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
-                          SizedBox(height: 20.v),
+                          SizedBox(height: 14.v),
+                          Text("Job Category: ${state.candidateProfileEntity?.category}",
+                              style:
+                                  CustomTextStyles.titleMediumGray700Medium17),
+                          SizedBox(height: 30.v),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,

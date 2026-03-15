@@ -21,7 +21,9 @@ class SearchScreenPage extends HookWidget {
     final locationController = useTextEditingController();
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
-
+      context.read<AuthBloc>().add(
+            AuthEvent.getSkills('1'),
+          );
       return null;
     }, []);
     return SafeArea(

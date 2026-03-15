@@ -57,19 +57,18 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           const Center(),
                                   imageBuilder: (context, imageProvider) =>
                                       Container(
-                                    width: 700,
-                                    height: 70,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover,
+                                        width: 700,
+                                        height: 70,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                            image: imageProvider,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
                                   errorWidget: (context, url, error) =>
-                      
-                                                 Container(
+                                      Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
@@ -81,8 +80,7 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                           Icons.error,
                                           size: 70,
                                         ),
-                                      )
-                                )
+                                      ))
                               : Container(
                                   padding: EdgeInsets.all(5),
                                   decoration: BoxDecoration(
@@ -118,6 +116,11 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                           SizedBox(height: 14.v),
                           Text(
                               "Job Preference: ${state.candidateProfileEntity?.profiles.jobType ?? ''}",
+                              style:
+                                  CustomTextStyles.titleMediumGray700Medium17),
+                          SizedBox(height: 14.v),
+                          Text(
+                              "Job Category: ${state.candidateProfileEntity?.category}",
                               style:
                                   CustomTextStyles.titleMediumGray700Medium17),
                           SizedBox(height: 20.v),
@@ -519,38 +522,40 @@ class CandidatesProfileAcceptPageScreen extends StatelessWidget {
                                                                     (context,
                                                                             imageProvider) =>
                                                                         Container(
-                                                                  width: 30,
-                                                                  height: 30,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                    image:
-                                                                        DecorationImage(
-                                                                      image:
-                                                                          imageProvider,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                errorWidget: (context,
-                                                                        url,
-                                                                        error) =>
-                                                                                           Container(
-                                        padding: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                width: 1,
-                                                color: AppColors.kblack)),
-                                        child: Icon(
-                                          color: AppColors.kblack,
-                                          Icons.error,
-                                          size: 30,
-                                        ),
-                                      )
-                                                              )
+                                                                          width:
+                                                                              30,
+                                                                          height:
+                                                                              30,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            shape:
+                                                                                BoxShape.circle,
+                                                                            image:
+                                                                                DecorationImage(
+                                                                              image: imageProvider,
+                                                                              fit: BoxFit.cover,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                errorWidget:
+                                                                    (context,
+                                                                            url,
+                                                                            error) =>
+                                                                        Container(
+                                                                          padding:
+                                                                              EdgeInsets.all(5),
+                                                                          decoration: BoxDecoration(
+                                                                              shape: BoxShape.circle,
+                                                                              border: Border.all(width: 1, color: AppColors.kblack)),
+                                                                          child:
+                                                                              Icon(
+                                                                            color:
+                                                                                AppColors.kblack,
+                                                                            Icons.error,
+                                                                            size:
+                                                                                30,
+                                                                          ),
+                                                                        ))
                                                             : Container(
                                                                 padding:
                                                                     EdgeInsets

@@ -53,10 +53,13 @@ class AddCandidateExperiencePage extends HookWidget {
                 'onTap': () {
                   // Navigator.pop(context);
                   // Navigator.pop(context);
-                  Navigator.pushNamed(
-                    context,
-                    AppRoutes.jobSeekerNavBarScreen,
-                  );
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   AppRoutes.jobSeekerNavBarScreen,
+                  // );
+
+                     Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.jobSeekerNavBarScreen, (router) => false);
                 },
               },
             );

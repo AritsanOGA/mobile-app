@@ -32,6 +32,9 @@ class CandidateWorkPhotoPage extends HookWidget {
         padding: EdgeInsets.symmetric(horizontal: 25.h, vertical: 12.v),
         child: BlocBuilder<CandidatesBloc, CandidatesState>(
           builder: (context, state) {
+            if (state.getWorkPhotoEntity.isEmpty) {
+              return _buildEmptyState(context);
+            }
             final header = Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -99,28 +102,28 @@ class CandidateWorkPhotoPage extends HookWidget {
                                 workPhotoDialog(context, item.photo);
                               },
                               child: CachedNetworkImage(
-                                imageUrl: 'https://${item.photo}',
-                                imageBuilder: (context, imageProvider) =>
-                                    Container(
-                                  width: 40,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(0),
-                                    image: DecorationImage(
-                                      image: imageProvider,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                progressIndicatorBuilder: (_, __, ___) =>
-                                    const SizedBox(
-                                  width: 24,
-                                  height: 24,
-                                  child:
-                                      CircularProgressIndicator(strokeWidth: 2),
-                                ),
-                                errorWidget: (_, __, ___) =>
-                                                 Container(
+                                  imageUrl: 'https://${item.photo}',
+                                  imageBuilder: (context, imageProvider) =>
+                                      Container(
+                                        width: 40,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(0),
+                                          image: DecorationImage(
+                                            image: imageProvider,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                  progressIndicatorBuilder: (_, __, ___) =>
+                                      const SizedBox(
+                                        width: 24,
+                                        height: 24,
+                                        child: CircularProgressIndicator(
+                                            strokeWidth: 2),
+                                      ),
+                                  errorWidget: (_, __, ___) => Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
                                             shape: BoxShape.circle,
@@ -132,8 +135,7 @@ class CandidateWorkPhotoPage extends HookWidget {
                                           Icons.error,
                                           size: 40,
                                         ),
-                                      )
-                              ),
+                                      )),
                             ),
                             GestureDetector(
                               onTap: () => deleteWorkPhoto(
@@ -154,6 +156,41 @@ class CandidateWorkPhotoPage extends HookWidget {
     );
   }
 
+  Widget _buildEmptyState(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(32.0.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 24.v),
+            Text(
+              'No work photo Yet',
+              style: theme.textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 60.v),
+            CustomOutlinedButton(
+              height: 46.v,
+              width: 200.h,
+              text: "Add work photo",
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.addWorkPhotoPage),
+              buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+              buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                fontSize: 19.fSize,
+                color: AppColors.kwhite,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Future<void> deleteWorkPhoto(BuildContext context, String identity) async {
     return showDialog<void>(
       context: context,
@@ -168,8 +205,11 @@ class CandidateWorkPhotoPage extends HookWidget {
                 arguments: {
                   'message': 'Deleted Successfully',
                   'onTap': () {
-                    Navigator.pushNamed(
-                        context, AppRoutes.jobSeekerNavBarScreen);
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRoutes.jobSeekerNavBarScreen,
+                      (route) => false,
+                    );
                   },
                 },
               );

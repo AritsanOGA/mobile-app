@@ -25,7 +25,7 @@ Future<void> searchDialog(
         builder: (context, state) {
           return AlertDialog(
               titlePadding: EdgeInsets.zero,
-              actionsPadding: EdgeInsets.zero, 
+              actionsPadding: EdgeInsets.zero,
               contentPadding: EdgeInsets.zero,
               backgroundColor: Colors.transparent,
               content: Container(
@@ -59,9 +59,6 @@ Future<void> searchDialog(
                             );
 
                         context.read<AuthBloc>().add(
-                              AuthEvent.getSkills(null.toString()),
-                            );
-                        context.read<AuthBloc>().add(
                               AuthEvent.getSkills(value.id.toString()),
                             );
                       },
@@ -77,7 +74,7 @@ Future<void> searchDialog(
                               (category) =>
                                   category.id == (state.category?.id ?? 1),
                               orElse: () => state.skill.first)
-                          : SkillResponseEntity(id: 1, name: '', categoryId: 0),
+                          : SkillResponseEntity(id: 0, name: '', categoryId: 0),
                       itemLabel: (category) => category.name ?? '',
                       onChanged: (value) {
                         context.read<AuthBloc>().add(
@@ -85,7 +82,6 @@ Future<void> searchDialog(
                             );
                       },
                     ),
-
                     SizedBox(
                       height: 20.h,
                     ),

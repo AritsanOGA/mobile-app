@@ -3,6 +3,7 @@ import 'package:artisan_oga/core/app_export.dart';
 import 'package:artisan_oga/features/settings/domain/entities/activities_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ActivitiesPage extends StatefulWidget {
   final List<ActivitiesEntity> activityEntity;
@@ -126,17 +127,23 @@ class ActivitiesPageState extends State<ActivitiesPage>
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 10.h),
+                padding: EdgeInsets.only(left: 70.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Row(
-                    //   children: [
-                    //     Image.asset(ImageConstant.whatsapp),
-                    //     SizedBox(width: 15.v),
-                    //     Text('Chat with us')
-                    //   ],
-                    // ),
+                    GestureDetector(
+                      onTap: () {
+                        launchWhatsAppRecruiter(
+                            widget.activityEntity[index].recruiterUrl ?? '');
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(ImageConstant.whatsapp),
+                          SizedBox(width: 15.v),
+                          Text('Chat with us')
+                        ],
+                      ),
+                    ),
                     Spacer(),
                     Padding(
                       padding: EdgeInsets.only(top: 5.v),
@@ -155,5 +162,22 @@ class ActivitiesPageState extends State<ActivitiesPage>
         );
       },
     );
+  }
+
+  Future<void> launchWhatsAppRecruiter(String recruiterUrl) async {
+    final Uri url = Uri.parse(recruiterUrl);
+
+    // Use `launchUrl` and specify `externalApplication` mode
+    // This tells the OS to open the link in the WhatsApp app directly.
+    if (await canLaunchUrl(url)) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.externalApplication,
+      );
+    } else {
+      // Fallback if the URL cannot be launched (e.g., WhatsApp not installed)
+      // You can show a SnackBar or an alert here.
+      throw 'Could not launch $recruiterUrl. WhatsApp may not be installed.';
+    }
   }
 }

@@ -29,13 +29,15 @@ class CandidateEducationPage extends HookWidget {
           if (state.getEducationeState == ViewState.failure) {
             return Center(child: Text('Error: '));
           }
-
+          if (state.getEducationEntity.isEmpty) {
+            return _buildEmptyState(context);
+          }
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomOutlinedButton(
                   height: 46.v,
-                  width: 200.h,
+                  width: 220.h,
                   text: "Add New Education",
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.addEducationPage);
@@ -131,6 +133,42 @@ class CandidateEducationPage extends HookWidget {
     );
   }
 
+  Widget _buildEmptyState(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(32.0.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 24.v),
+            Text(
+              'No Education Yet',
+              style: theme.textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 60.v),
+            CustomOutlinedButton(
+                height: 46.v,
+                width: 220.h,
+                text: "Add New Education",
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.addEducationPage);
+                },
+                margin: EdgeInsets.only(left: 22.h),
+                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+                buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                  fontSize: 19.fSize,
+                  color: AppColors.kwhite,
+                  fontWeight: FontWeight.w700,
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+
   Future<void> deleteEducation(context, String identity) async {
     return showDialog<void>(
       context: context,
@@ -145,9 +183,10 @@ class CandidateEducationPage extends HookWidget {
                 arguments: {
                   'message': 'Deleted Successfully',
                   'onTap': () {
-                    Navigator.pushNamed(
+                    Navigator.pushNamedAndRemoveUntil(
                       context,
                       AppRoutes.jobSeekerNavBarScreen,
+                      (route) => false,
                     );
                   },
                 },

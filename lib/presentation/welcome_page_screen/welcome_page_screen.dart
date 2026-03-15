@@ -99,14 +99,14 @@ class WelcomePageScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 48.v),
-            CustomElevatedButton(
-              onPressed: (() {
-                //  Navigator.pushNamed(context, AppRoutes.postJobWithoutLogin);
-                Navigator.pushNamed(context, AppRoutes.candidateSearchScreen);
-              }),
-              text: "Continue as an Employer",
-            ),
-            SizedBox(height: 25.v),
+            // CustomElevatedButton(
+            //   onPressed: (() {
+            //     //  Navigator.pushNamed(context, AppRoutes.postJobWithoutLogin);
+            //     Navigator.pushNamed(context, AppRoutes.candidateSearchScreen);
+            //   }),
+            //   text: "Continue as an Employer",
+            // ),
+            // SizedBox(height: 25.v),
             CustomElevatedButton(
               onPressed: (() {
                 Navigator.pushNamed(context, AppRoutes.jobSearch);

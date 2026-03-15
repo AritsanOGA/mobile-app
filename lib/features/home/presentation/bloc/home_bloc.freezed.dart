@@ -12264,7 +12264,6 @@ class _$InitialImpl implements _Initial {
           skills: [],
           position: '',
           hireType: '',
-          
           levelOfEducation: '',
           skillLevel: '',
           maxAmount: 0,

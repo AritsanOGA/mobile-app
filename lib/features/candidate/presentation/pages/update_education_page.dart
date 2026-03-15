@@ -40,10 +40,12 @@ class UpdateCandidateEducationPage extends HookWidget {
               arguments: {
                 'message': 'Updated Successfully',
                 'onTap': () {
-                  Navigator.pushNamed(
-                    context,
-                    AppRoutes.jobSeekerNavBarScreen,
-                  );
+                     Navigator.pushNamedAndRemoveUntil(context,
+                      AppRoutes.jobSeekerNavBarScreen, (router) => false);
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   AppRoutes.jobSeekerNavBarScreen,
+                  // );
                 },
               },
             );

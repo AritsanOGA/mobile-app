@@ -53,7 +53,6 @@ class ActivitiesTabContainerScreen extends HookWidget {
                                   .read<SettingBloc>()
                                   .add(SettingEvent.filteredActivities(index));
                               tabIndex.value = index;
-                    
                             },
                             child: Container(
                               width: 100,
@@ -199,23 +198,23 @@ class ActivitiesTabContainerScreen extends HookWidget {
                                   CustomTextStyles.titleMediumGray50Bold17))),
                 ],
               ),
-              Positioned(
-                bottom: 20,
-                left: 20,
-                child: Container(
-                  width: 100,
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  decoration: BoxDecoration(
-                      color: AppColors.kwhite,
-                      borderRadius: BorderRadius.circular(10)
-                      // border: Border.all(color: AppColors.)
-                      ),
-                  child: Text(
-                    'Apply now',
-                    style: theme.textTheme.titleMedium,
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   bottom: 20,
+              //   left: 20,
+              //   child: Container(
+              //     width: 100,
+              //     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              //     decoration: BoxDecoration(
+              //         color: AppColors.kwhite,
+              //         borderRadius: BorderRadius.circular(10)
+              //         // border: Border.all(color: AppColors.)
+              //         ),
+              //     child: Text(
+              //       'Apply now',
+              //       style: theme.textTheme.titleMedium,
+              //     ),
+              //   ),
+              // ),
               CustomImageView(
                   imagePath: ImageConstant.img9ebdc45a3e7a600,
                   height: 197.v,

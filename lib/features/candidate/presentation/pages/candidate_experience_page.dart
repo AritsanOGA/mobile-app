@@ -14,54 +14,57 @@ class CandidateExperiencePage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // fire once
     useEffect(() {
       context.read<CandidatesBloc>().add(CandidatesEvent.getExperience());
       return null;
     }, const []);
 
     return Scaffold(
-      appBar: const CustomAppBar( title: 'Experience'),
+      appBar: const CustomAppBar(title: 'Experience'),
       body: Padding(
         padding: EdgeInsets.only(
           top: 12.v,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ===== Fixed header (does not scroll)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 22.h),
-              child: CustomOutlinedButton(
-                height: 46.v,
-                width: 200.h,
-                text: "Add New Experience",
-                onPressed: () =>
-                    Navigator.pushNamed(context, AppRoutes.addExperiencePage),
-                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-                buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
-                  fontSize: 19.fSize,
-                  color: AppColors.kwhite,
-                  fontWeight: FontWeight.w700,
+        child: BlocBuilder<CandidatesBloc, CandidatesState>(
+          bloc: context.read<CandidatesBloc>()
+            ..add(CandidatesEvent.getExperience()),
+          builder: (context, state) {
+            if (state.getExperienceState == ViewState.loading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (state.getExperienceState == ViewState.failure) {
+              return const Center(child: Text('Error'));
+            }
+            if (state.getExperienceEntity.isEmpty) {
+              return _buildEmptyState(context);
+            }
+            final items = state.getExperienceEntity;
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomOutlinedButton(
+                      height: 46.v,
+                      width: 220.h,
+                      margin: EdgeInsets.only(left: 15.h),
+                      text: "Add New Experience",
+                      onPressed: () => Navigator.pushNamed(
+                          context, AppRoutes.addExperiencePage),
+                      buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+                      buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                        fontSize: 19.fSize,
+                        color: AppColors.kwhite,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(height: 50.v),
+                  ],
                 ),
-              ),
-            ),
-            SizedBox(height: 30.v),
-
-            // ===== Only this area scrolls
-            Expanded(
-              child: BlocBuilder<CandidatesBloc, CandidatesState>(
-                builder: (context, state) {
-                  if (state.getExperienceState == ViewState.loading) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                  if (state.getExperienceState == ViewState.failure) {
-                    return const Center(child: Text('Error'));
-                  }
-
-                  final items = state.getExperienceEntity;
-
-                  return ListView.separated(
+                Expanded(
+                  child: ListView.separated(
                     padding: EdgeInsets.only(
                       left: 20.h,
                       right: 20.h,
@@ -153,8 +156,43 @@ class CandidateExperiencePage extends HookWidget {
                         ),
                       );
                     },
-                  );
-                },
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEmptyState(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(32.0.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 24.v),
+            Text(
+              'No Experience Yet',
+              style: theme.textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 60.v),
+            CustomOutlinedButton(
+              height: 46.v,
+              width: 220.h,
+              text: "Add New Experience",
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.addExperiencePage),
+              buttonStyle: CustomButtonStyles.fillPrimaryTL8,
+              buttonTextStyle: theme.textTheme.titleMedium!.copyWith(
+                fontSize: 19.fSize,
+                color: AppColors.kwhite,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ],
