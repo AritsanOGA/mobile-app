@@ -199,7 +199,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     emit(state.copyWith(
         flutterwavePaymentState: FlutterWavePaymentState.loading));
     final Flutterwave flutterwave = Flutterwave(
-      context: event.context,
+      // context: event.context,
       publicKey: 'FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X',
       currency: "NGN",
       redirectUrl: 'https://www.google.com',
@@ -213,7 +213,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
 
     print('hiloadingfter');
     try {
-      final ChargeResponse paymentResponse = await flutterwave.charge();
+      final ChargeResponse paymentResponse =
+          await flutterwave.charge(event.context);
       print('is it ${paymentResponse}');
       if (paymentResponse.success == true) {
         log('Payment success: ${paymentResponse.transactionId}');
