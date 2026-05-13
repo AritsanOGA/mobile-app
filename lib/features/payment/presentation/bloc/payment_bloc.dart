@@ -24,6 +24,7 @@ import 'package:artisan_oga/features/payment/domain/usecases/verify_payment_usec
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutterwave_standard/core/flutterwave.dart';
 import 'package:flutterwave_standard/models/requests/customer.dart';
 import 'package:flutterwave_standard/models/requests/customizations.dart';
@@ -200,7 +201,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         flutterwavePaymentState: FlutterWavePaymentState.loading));
     final Flutterwave flutterwave = Flutterwave(
       // context: event.context,
-      publicKey: 'FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X',
+      publicKey: dotenv.env['PUBLIC_KEY'] ?? '',
+      //'FLWPUBK_TEST-c501afa423b7f306de5c70693b48b28d-X',
       currency: "NGN",
       redirectUrl: 'https://www.google.com',
       txRef: "${DateTime.now().millisecondsSinceEpoch}",

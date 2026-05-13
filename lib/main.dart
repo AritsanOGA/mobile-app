@@ -14,6 +14,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('🔔 Background notification received!');
@@ -22,10 +23,15 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('Data: ${message.data}');
 }
 
+Future<void> loadEnvFile(String envFileName) async {
+  await dotenv.load(fileName: envFileName);
+}
+
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  WidgetsFlutterBinding.ensureInitialized();
+
+  await loadEnvFile('.env');
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

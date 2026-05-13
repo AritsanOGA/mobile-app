@@ -85,6 +85,7 @@ import 'package:artisan_oga/features/settings/domain/usecases/update_job_seeker_
 import 'package:artisan_oga/features/settings/domain/usecases/update_password_usecase.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -107,7 +108,8 @@ Future<void> init() async {
 
   locator
     ..registerLazySingleton<Dio>(() => Dio(BaseOptions(
-        baseUrl: AppApiEndpoint.baseUri.toString(),
+        baseUrl: dotenv.env['API_BASE_URL'] ?? '',
+        //  AppApiEndpoint.baseUri.toString(),
         sendTimeout: Duration(seconds: AppApiEndpoint.sendTimeout),
         receiveTimeout: Duration(seconds: AppApiEndpoint.receiveTimeout)))
       ..interceptors.add(
