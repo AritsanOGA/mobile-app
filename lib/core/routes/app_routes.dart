@@ -411,7 +411,9 @@ class AppRoutes {
         );
       case addWorkIDPage:
         return AppPageRouteBuilder(
-          navigateTo:  UploadWorkIDPage(id: settings.arguments as String,),
+          navigateTo: UploadWorkIDPage(
+            id: settings.arguments as String,
+          ),
         );
       case addWorkPhotoPage:
         return AppPageRouteBuilder(
@@ -563,7 +565,7 @@ class AppRoutes {
         );
       case employerLoginPageScreen:
         return AppPageRouteBuilder(
-          navigateTo: const EmployerLoginPageScreen(),
+          navigateTo: EmployerLoginPageScreen(),
         );
       case acceptRejectPageScreen:
         final args = settings.arguments as Map<String, dynamic>;

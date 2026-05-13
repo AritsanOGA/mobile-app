@@ -41,6 +41,9 @@ dependencies:
   dash: ^1.0.5
   flutterwave_standard: ^1.0.8
   url_launcher: ^6.3.1
+  firebase_core: ^4.6.0
+  flutter_local_notifications: ^19.5.0
+  firebase_messaging: ^16.1.3
 
   
   

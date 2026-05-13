@@ -1,7 +1,9 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/local_storage.dart';
 import 'package:artisan_oga/core/utils/form_validator.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
+import 'package:artisan_oga/di.dart';
 import 'package:artisan_oga/features/authentication/domain/entities/login_entity.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
 import 'package:artisan_oga/presentation/welcome_page_screen/welcome_page_screen.dart';
@@ -13,12 +15,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class EmployerLoginPageScreen extends HookWidget {
-  const EmployerLoginPageScreen({super.key});
+  EmployerLoginPageScreen({super.key});
 
   @override
+  final _localStorage = locator<LocalStorageService>();
   Widget build(BuildContext context) {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
+
     final formKey = useMemoized(GlobalKey<FormState>.new);
     return Scaffold(
       backgroundColor: AppColors.kwhite,
@@ -117,10 +121,15 @@ class EmployerLoginPageScreen extends HookWidget {
                             isBusy: state.employerLoginState ==
                                 EmployerLoginState.loading,
                             onPressed: () {
+                              final notificationToken =
+                                  _localStorage.getFromDisk(
+                                'notificationToken',
+                              );
                               if (formKey.currentState?.validate() ?? false) {
                                 context.read<AuthBloc>().add(
                                       AuthEvent.loginUser(
                                         LoginEntity(
+                                          token: notificationToken.toString(),
                                           email: emailController.text.trim(),
                                           password:
                                               passwordController.text.trim(),

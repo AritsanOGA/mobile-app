@@ -54,28 +54,22 @@ class WelcomePageScreen extends StatelessWidget {
               height: 73.v,
               width: 246.h,
               child: Stack(
-                alignment: Alignment.topRight,
+                alignment: Alignment.center,
                 children: [
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: SizedBox(
-                      // width: 234.h,
-                      child: RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "Find Work. Find Worker.\n",
-                              style: CustomTextStyles.titleLargeff3a332c,
-                            ),
-                            TextSpan(
-                              text: "Fast and Easy.",
-                              style: CustomTextStyles.titleLargeff3a332c,
-                            ),
-                          ],
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Find Work.\n",
+                          style: CustomTextStyles.titleLargeff3a332c,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
+                        TextSpan(
+                          text: "Fast and Easy.",
+                          style: CustomTextStyles.titleLargeff3a332c,
+                        ),
+                      ],
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   CustomImageView(
                     imagePath: ImageConstant.imgBxsHardHat,

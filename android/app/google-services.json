@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731709069182",
+    "project_id": "artisanoga-8da9f",
+    "storage_bucket": "artisanoga-8da9f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731709069182:android:1585bdcd2f2d243ffdc52f",
+        "android_client_info": {
+          "package_name": "com.artisanoga.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzo5zbyCLoYzm6pg19KmTMGGi2omaMe6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

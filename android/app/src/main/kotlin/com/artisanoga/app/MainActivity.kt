@@ -1,4 +1,4 @@
-package com.artisanoga.app
+package com.artisanoga.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
