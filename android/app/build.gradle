@@ -99,7 +99,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.artisanoga.mobile"
+    namespace "com.artisanoga.app"
     compileSdk flutter.compileSdkVersion
 
     compileOptions {
@@ -112,7 +112,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.artisanoga.mobile"
+        applicationId "com.artisanoga.app"
         minSdk 23
         targetSdk flutter.targetSdkVersion
         versionCode flutter.versionCode

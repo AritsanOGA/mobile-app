@@ -40,7 +40,7 @@ class UpdateCandidateEducationPage extends HookWidget {
               arguments: {
                 'message': 'Updated Successfully',
                 'onTap': () {
-                     Navigator.pushNamedAndRemoveUntil(context,
+                  Navigator.pushNamedAndRemoveUntil(context,
                       AppRoutes.jobSeekerNavBarScreen, (router) => false);
                   // Navigator.pushNamed(
                   //   context,
@@ -141,6 +141,7 @@ class UpdateCandidateEducationPage extends HookWidget {
                           context.read<CandidatesBloc>().add(
                                 CandidatesEvent.updateEducation(
                                   AddEducationEntity(
+                                      userId: entity.userId,
                                       courseName: courseNamCeontroller.text,
                                       degree: certificateController.text,
                                       identity: entity.identity,

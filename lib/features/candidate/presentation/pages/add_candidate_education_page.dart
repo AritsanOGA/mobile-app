@@ -55,7 +55,7 @@ class AddCandidateEducationPage extends HookWidget {
                   //   AppRoutes.jobSeekerNavBarScreen,
                   // );
 
-                     Navigator.pushNamedAndRemoveUntil(context,
+                  Navigator.pushNamedAndRemoveUntil(context,
                       AppRoutes.jobSeekerNavBarScreen, (router) => false);
                 },
               },
@@ -156,6 +156,12 @@ class AddCandidateEducationPage extends HookWidget {
                                               .authData
                                               ?.user
                                               .id
+                                              .toString() ??
+                                          '',
+                                          identity: UserService()
+                                              .authData
+                                              ?.user
+                                              .identity
                                               .toString() ??
                                           '',
                                       schoolName: schoolNameController.text,
