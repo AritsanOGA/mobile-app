@@ -38,50 +38,67 @@ class SearchScreenPage extends HookWidget {
             ..add(AuthEvent.searchJobs(
                 SearchJobDataEntity(location: '', skill: ''))),
           builder: (context, state) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.h),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomTextFormField(
-                    ontap: () {
-                      searchDialog(context, locationController);
-                    },
-                    title: 'Search for jobs',
-                    readOnly: true,
-                    controller: locationController,
-                    hintText: "Search...",
-                    hintStyle: theme.textTheme.titleSmall!,
-                  ),
-                  state.searchJobState == SearchJobState.loading
-                      ? Column(
-                          children: [
-                            SizedBox(
-                              height: 100.h,
-                            ),
-                            CircularProgressIndicator(
-                              color: theme.primaryColor,
-                            ),
-                          ],
-                        )
-                      : state.searchJobEntity.isEmpty
-                          ? Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+            return RefreshIndicator(
+              onRefresh: () async {
+                final authBloc = context.read<AuthBloc>();
+                authBloc.add(AuthEvent.searchJobs(
+                    SearchJobDataEntity(location: '', skill: '')));
+                await authBloc.stream.firstWhere(
+                    (s) => s.searchJobState != SearchJobState.loading);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.h),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    CustomTextFormField(
+                      ontap: () {
+                        searchDialog(context, locationController);
+                      },
+                      title: 'Search for jobs',
+                      readOnly: true,
+                      controller: locationController,
+                      hintText: "Search...",
+                      hintStyle: theme.textTheme.titleSmall!,
+                    ),
+                    Expanded(
+                      child: state.searchJobState == SearchJobState.loading
+                          ? ListView(
+                              physics: const AlwaysScrollableScrollPhysics(),
                               children: [
                                 SizedBox(
-                                  height: 200,
+                                  height: 100.h,
                                 ),
-                                Text('No Result found',
-                                    style: theme.textTheme.bodyMedium?.copyWith(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w500,
-                                    )),
+                                Center(
+                                  child: CircularProgressIndicator(
+                                    color: theme.primaryColor,
+                                  ),
+                                ),
                               ],
                             )
-                          : Expanded(
-                              child: ListView.builder(
+                          : state.searchJobEntity.isEmpty
+                              ? ListView(
+                                  physics:
+                                      const AlwaysScrollableScrollPhysics(),
+                                  children: [
+                                    SizedBox(
+                                      height: 200,
+                                    ),
+                                    Center(
+                                      child: Text('No Result found',
+                                          style: theme.textTheme.bodyMedium
+                                              ?.copyWith(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500,
+                                          )),
+                                    ),
+                                  ],
+                                )
+                              : ListView.builder(
+                                  physics:
+                                      const AlwaysScrollableScrollPhysics(),
                                   itemCount: state.searchJobEntity.length,
                                   itemBuilder: (context, index) {
                                     return Padding(
@@ -259,8 +276,9 @@ class SearchScreenPage extends HookWidget {
                                       ),
                                     );
                                   }),
-                            )
-                ],
+                    )
+                  ],
+                ),
               ),
             );
           },

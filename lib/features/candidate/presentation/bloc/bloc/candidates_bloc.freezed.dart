@@ -48,6 +48,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +83,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +118,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +154,7 @@ mixin _$CandidatesEvent {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +189,7 @@ mixin _$CandidatesEvent {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -219,6 +224,7 @@ mixin _$CandidatesEvent {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -337,6 +343,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return acceptCandidate(param);
   }
@@ -374,6 +381,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return acceptCandidate?.call(param);
   }
@@ -411,6 +419,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (acceptCandidate != null) {
@@ -452,6 +461,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return acceptCandidate(this);
   }
@@ -489,6 +499,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return acceptCandidate?.call(this);
   }
@@ -526,6 +537,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (acceptCandidate != null) {
@@ -640,6 +652,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return rejectCandidate(param);
   }
@@ -677,6 +690,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return rejectCandidate?.call(param);
   }
@@ -714,6 +728,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidate != null) {
@@ -755,6 +770,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return rejectCandidate(this);
   }
@@ -792,6 +808,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return rejectCandidate?.call(this);
   }
@@ -829,6 +846,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidate != null) {
@@ -942,6 +960,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return addExperience(param);
   }
@@ -979,6 +998,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return addExperience?.call(param);
   }
@@ -1016,6 +1036,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addExperience != null) {
@@ -1057,6 +1078,7 @@ class _$AddExperienceImpl implements _AddExperience {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return addExperience(this);
   }
@@ -1094,6 +1116,7 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return addExperience?.call(this);
   }
@@ -1131,6 +1154,7 @@ class _$AddExperienceImpl implements _AddExperience {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addExperience != null) {
@@ -1245,6 +1269,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return updateExperience(param);
   }
@@ -1282,6 +1307,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return updateExperience?.call(param);
   }
@@ -1319,6 +1345,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateExperience != null) {
@@ -1360,6 +1387,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return updateExperience(this);
   }
@@ -1397,6 +1425,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return updateExperience?.call(this);
   }
@@ -1434,6 +1463,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateExperience != null) {
@@ -1521,6 +1551,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getExperience();
   }
@@ -1558,6 +1589,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getExperience?.call();
   }
@@ -1595,6 +1627,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getExperience != null) {
@@ -1636,6 +1669,7 @@ class _$GetExperienceImpl implements _GetExperience {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getExperience(this);
   }
@@ -1673,6 +1707,7 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getExperience?.call(this);
   }
@@ -1710,6 +1745,7 @@ class _$GetExperienceImpl implements _GetExperience {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getExperience != null) {
@@ -1819,6 +1855,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return deleteExperience(identity);
   }
@@ -1856,6 +1893,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return deleteExperience?.call(identity);
   }
@@ -1893,6 +1931,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteExperience != null) {
@@ -1934,6 +1973,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return deleteExperience(this);
   }
@@ -1971,6 +2011,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return deleteExperience?.call(this);
   }
@@ -2008,6 +2049,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteExperience != null) {
@@ -2121,6 +2163,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return addAward(param);
   }
@@ -2158,6 +2201,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return addAward?.call(param);
   }
@@ -2195,6 +2239,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addAward != null) {
@@ -2236,6 +2281,7 @@ class _$AddAwardImpl implements _AddAward {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return addAward(this);
   }
@@ -2273,6 +2319,7 @@ class _$AddAwardImpl implements _AddAward {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return addAward?.call(this);
   }
@@ -2310,6 +2357,7 @@ class _$AddAwardImpl implements _AddAward {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addAward != null) {
@@ -2422,6 +2470,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return updateAward(param);
   }
@@ -2459,6 +2508,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return updateAward?.call(param);
   }
@@ -2496,6 +2546,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateAward != null) {
@@ -2537,6 +2588,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return updateAward(this);
   }
@@ -2574,6 +2626,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return updateAward?.call(this);
   }
@@ -2611,6 +2664,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateAward != null) {
@@ -2697,6 +2751,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getAward();
   }
@@ -2734,6 +2789,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getAward?.call();
   }
@@ -2771,6 +2827,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAward != null) {
@@ -2812,6 +2869,7 @@ class _$GetAwardImpl implements _GetAward {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getAward(this);
   }
@@ -2849,6 +2907,7 @@ class _$GetAwardImpl implements _GetAward {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getAward?.call(this);
   }
@@ -2886,6 +2945,7 @@ class _$GetAwardImpl implements _GetAward {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAward != null) {
@@ -2994,6 +3054,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return deleteAward(identity);
   }
@@ -3031,6 +3092,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return deleteAward?.call(identity);
   }
@@ -3068,6 +3130,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteAward != null) {
@@ -3109,6 +3172,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return deleteAward(this);
   }
@@ -3146,6 +3210,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return deleteAward?.call(this);
   }
@@ -3183,6 +3248,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteAward != null) {
@@ -3295,6 +3361,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return addEducation(param);
   }
@@ -3332,6 +3399,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return addEducation?.call(param);
   }
@@ -3369,6 +3437,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addEducation != null) {
@@ -3410,6 +3479,7 @@ class _$AddEducationImpl implements _AddEducation {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return addEducation(this);
   }
@@ -3447,6 +3517,7 @@ class _$AddEducationImpl implements _AddEducation {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return addEducation?.call(this);
   }
@@ -3484,6 +3555,7 @@ class _$AddEducationImpl implements _AddEducation {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addEducation != null) {
@@ -3571,6 +3643,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getWorkPhotos();
   }
@@ -3608,6 +3681,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getWorkPhotos?.call();
   }
@@ -3645,6 +3719,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getWorkPhotos != null) {
@@ -3686,6 +3761,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getWorkPhotos(this);
   }
@@ -3723,6 +3799,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getWorkPhotos?.call(this);
   }
@@ -3760,6 +3837,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getWorkPhotos != null) {
@@ -3869,6 +3947,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return deleteWorkPhoto(identity);
   }
@@ -3906,6 +3985,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return deleteWorkPhoto?.call(identity);
   }
@@ -3943,6 +4023,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteWorkPhoto != null) {
@@ -3984,6 +4065,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return deleteWorkPhoto(this);
   }
@@ -4021,6 +4103,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return deleteWorkPhoto?.call(this);
   }
@@ -4058,6 +4141,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteWorkPhoto != null) {
@@ -4176,6 +4260,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return updateEducationQualification(param);
   }
@@ -4213,6 +4298,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return updateEducationQualification?.call(param);
   }
@@ -4250,6 +4336,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducationQualification != null) {
@@ -4291,6 +4378,7 @@ class _$UpdateEducationQualificationImpl
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return updateEducationQualification(this);
   }
@@ -4328,6 +4416,7 @@ class _$UpdateEducationQualificationImpl
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return updateEducationQualification?.call(this);
   }
@@ -4365,6 +4454,7 @@ class _$UpdateEducationQualificationImpl
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducationQualification != null) {
@@ -4486,6 +4576,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return selectWorkPhotos(photos);
   }
@@ -4523,6 +4614,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return selectWorkPhotos?.call(photos);
   }
@@ -4560,6 +4652,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkPhotos != null) {
@@ -4601,6 +4694,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return selectWorkPhotos(this);
   }
@@ -4638,6 +4732,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return selectWorkPhotos?.call(this);
   }
@@ -4675,6 +4770,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkPhotos != null) {
@@ -4795,6 +4891,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return uploadWorkPhoto(photos);
   }
@@ -4832,6 +4929,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return uploadWorkPhoto?.call(photos);
   }
@@ -4869,6 +4967,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkPhoto != null) {
@@ -4910,6 +5009,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return uploadWorkPhoto(this);
   }
@@ -4947,6 +5047,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return uploadWorkPhoto?.call(this);
   }
@@ -4984,6 +5085,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkPhoto != null) {
@@ -5097,6 +5199,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return uploadWorkId(entity);
   }
@@ -5134,6 +5237,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return uploadWorkId?.call(entity);
   }
@@ -5171,6 +5275,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkId != null) {
@@ -5212,6 +5317,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return uploadWorkId(this);
   }
@@ -5249,6 +5355,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return uploadWorkId?.call(this);
   }
@@ -5286,6 +5393,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkId != null) {
@@ -5373,6 +5481,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return selectWorkId();
   }
@@ -5410,6 +5519,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return selectWorkId?.call();
   }
@@ -5447,6 +5557,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkId != null) {
@@ -5488,6 +5599,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return selectWorkId(this);
   }
@@ -5525,6 +5637,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return selectWorkId?.call(this);
   }
@@ -5562,6 +5675,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkId != null) {
@@ -5643,6 +5757,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return selectAward();
   }
@@ -5680,6 +5795,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return selectAward?.call();
   }
@@ -5717,6 +5833,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectAward != null) {
@@ -5758,6 +5875,7 @@ class _$SelectAwardImpl implements _SelectAward {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return selectAward(this);
   }
@@ -5795,6 +5913,7 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return selectAward?.call(this);
   }
@@ -5832,6 +5951,7 @@ class _$SelectAwardImpl implements _SelectAward {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectAward != null) {
@@ -5940,6 +6060,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return updateEducation(param);
   }
@@ -5977,6 +6098,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return updateEducation?.call(param);
   }
@@ -6014,6 +6136,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducation != null) {
@@ -6055,6 +6178,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return updateEducation(this);
   }
@@ -6092,6 +6216,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return updateEducation?.call(this);
   }
@@ -6129,6 +6254,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducation != null) {
@@ -6216,6 +6342,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getEducation();
   }
@@ -6253,6 +6380,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getEducation?.call();
   }
@@ -6290,6 +6418,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getEducation != null) {
@@ -6331,6 +6460,7 @@ class _$GetEducationImpl implements _GetEducation {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getEducation(this);
   }
@@ -6368,6 +6498,7 @@ class _$GetEducationImpl implements _GetEducation {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getEducation?.call(this);
   }
@@ -6405,6 +6536,7 @@ class _$GetEducationImpl implements _GetEducation {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getEducation != null) {
@@ -6514,6 +6646,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return deleteEducation(identity);
   }
@@ -6551,6 +6684,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return deleteEducation?.call(identity);
   }
@@ -6588,6 +6722,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteEducation != null) {
@@ -6629,6 +6764,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return deleteEducation(this);
   }
@@ -6666,6 +6802,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return deleteEducation?.call(this);
   }
@@ -6703,6 +6840,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteEducation != null) {
@@ -6821,6 +6959,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview(param);
   }
@@ -6858,6 +6997,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview?.call(param);
   }
@@ -6895,6 +7035,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidateWithoutInterview != null) {
@@ -6936,6 +7077,7 @@ class _$RejectCandidateWithoutInterviewImpl
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview(this);
   }
@@ -6973,6 +7115,7 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview?.call(this);
   }
@@ -7010,6 +7153,7 @@ class _$RejectCandidateWithoutInterviewImpl
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidateWithoutInterview != null) {
@@ -7127,6 +7271,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getAssignedCandidate(jobId);
   }
@@ -7164,6 +7309,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getAssignedCandidate?.call(jobId);
   }
@@ -7201,6 +7347,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAssignedCandidate != null) {
@@ -7242,6 +7389,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getAssignedCandidate(this);
   }
@@ -7279,6 +7427,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getAssignedCandidate?.call(this);
   }
@@ -7316,6 +7465,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAssignedCandidate != null) {
@@ -7431,6 +7581,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getCandidateSkill(identityId);
   }
@@ -7468,6 +7619,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getCandidateSkill?.call(identityId);
   }
@@ -7505,6 +7657,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateSkill != null) {
@@ -7546,6 +7699,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getCandidateSkill(this);
   }
@@ -7583,6 +7737,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getCandidateSkill?.call(this);
   }
@@ -7620,6 +7775,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateSkill != null) {
@@ -7742,6 +7898,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return initializeSkills(candidateSkills);
   }
@@ -7779,6 +7936,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return initializeSkills?.call(candidateSkills);
   }
@@ -7816,6 +7974,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (initializeSkills != null) {
@@ -7857,6 +8016,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return initializeSkills(this);
   }
@@ -7894,6 +8054,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return initializeSkills?.call(this);
   }
@@ -7931,6 +8092,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (initializeSkills != null) {
@@ -8046,6 +8208,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return getCandidateProfile(jobId);
   }
@@ -8083,6 +8246,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return getCandidateProfile?.call(jobId);
   }
@@ -8120,6 +8284,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateProfile != null) {
@@ -8161,6 +8326,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return getCandidateProfile(this);
   }
@@ -8198,6 +8364,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return getCandidateProfile?.call(this);
   }
@@ -8235,6 +8402,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateProfile != null) {
@@ -8358,6 +8526,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
   }) {
     return updateSkillRating(value, skillIndex);
   }
@@ -8395,6 +8564,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
   }) {
     return updateSkillRating?.call(value, skillIndex);
   }
@@ -8432,6 +8602,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateSkillRating != null) {
@@ -8473,6 +8644,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     required TResult Function(_InitializeSkills value) initializeSkills,
     required TResult Function(_GetCandidateProfile value) getCandidateProfile,
     required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
   }) {
     return updateSkillRating(this);
   }
@@ -8510,6 +8682,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult? Function(_InitializeSkills value)? initializeSkills,
     TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
   }) {
     return updateSkillRating?.call(this);
   }
@@ -8547,6 +8720,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
     TResult Function(_InitializeSkills value)? initializeSkills,
     TResult Function(_GetCandidateProfile value)? getCandidateProfile,
     TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateSkillRating != null) {
@@ -8564,6 +8738,314 @@ abstract class _UpdateSkillRating implements CandidatesEvent {
   int get skillIndex;
   @JsonKey(ignore: true)
   _$$UpdateSkillRatingImplCopyWith<_$UpdateSkillRatingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckIfAppliedImplCopyWith<$Res> {
+  factory _$$CheckIfAppliedImplCopyWith(_$CheckIfAppliedImpl value,
+          $Res Function(_$CheckIfAppliedImpl) then) =
+      __$$CheckIfAppliedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String jobId});
+}
+
+/// @nodoc
+class __$$CheckIfAppliedImplCopyWithImpl<$Res>
+    extends _$CandidatesEventCopyWithImpl<$Res, _$CheckIfAppliedImpl>
+    implements _$$CheckIfAppliedImplCopyWith<$Res> {
+  __$$CheckIfAppliedImplCopyWithImpl(
+      _$CheckIfAppliedImpl _value, $Res Function(_$CheckIfAppliedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? jobId = null,
+  }) {
+    return _then(_$CheckIfAppliedImpl(
+      null == jobId
+          ? _value.jobId
+          : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckIfAppliedImpl implements _CheckIfApplied {
+  const _$CheckIfAppliedImpl(this.jobId);
+
+  @override
+  final String jobId;
+
+  @override
+  String toString() {
+    return 'CandidatesEvent.checkIfApplied(jobId: $jobId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIfAppliedImpl &&
+            (identical(other.jobId, jobId) || other.jobId == jobId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, jobId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckIfAppliedImplCopyWith<_$CheckIfAppliedImpl> get copyWith =>
+      __$$CheckIfAppliedImplCopyWithImpl<_$CheckIfAppliedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AcceptCandidateEntity param) acceptCandidate,
+    required TResult Function(RejectCandidateEntity param) rejectCandidate,
+    required TResult Function(AddExperienceEntity param) addExperience,
+    required TResult Function(UpdateExperienceEntity param) updateExperience,
+    required TResult Function() getExperience,
+    required TResult Function(String identity) deleteExperience,
+    required TResult Function(AddAwardEntity param) addAward,
+    required TResult Function(UpdateAwardEntity param) updateAward,
+    required TResult Function() getAward,
+    required TResult Function(String identity) deleteAward,
+    required TResult Function(AddEducationEntity param) addEducation,
+    required TResult Function() getWorkPhotos,
+    required TResult Function(String identity) deleteWorkPhoto,
+    required TResult Function(String param) updateEducationQualification,
+    required TResult Function(List<File> photos) selectWorkPhotos,
+    required TResult Function(List<File> photos) uploadWorkPhoto,
+    required TResult Function(UploadIDCardEntity entity) uploadWorkId,
+    required TResult Function() selectWorkId,
+    required TResult Function() selectAward,
+    required TResult Function(AddEducationEntity param) updateEducation,
+    required TResult Function() getEducation,
+    required TResult Function(String identity) deleteEducation,
+    required TResult Function(RejectCandidateWithoutInterviewEntity param)
+        rejectCandidateWithoutInterview,
+    required TResult Function(String jobId) getAssignedCandidate,
+    required TResult Function(String identityId) getCandidateSkill,
+    required TResult Function(List<CandidateSkillEntity> candidateSkills)
+        initializeSkills,
+    required TResult Function(String jobId) getCandidateProfile,
+    required TResult Function(String value, int skillIndex) updateSkillRating,
+    required TResult Function(String jobId) checkIfApplied,
+  }) {
+    return checkIfApplied(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult? Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult? Function(AddExperienceEntity param)? addExperience,
+    TResult? Function(UpdateExperienceEntity param)? updateExperience,
+    TResult? Function()? getExperience,
+    TResult? Function(String identity)? deleteExperience,
+    TResult? Function(AddAwardEntity param)? addAward,
+    TResult? Function(UpdateAwardEntity param)? updateAward,
+    TResult? Function()? getAward,
+    TResult? Function(String identity)? deleteAward,
+    TResult? Function(AddEducationEntity param)? addEducation,
+    TResult? Function()? getWorkPhotos,
+    TResult? Function(String identity)? deleteWorkPhoto,
+    TResult? Function(String param)? updateEducationQualification,
+    TResult? Function(List<File> photos)? selectWorkPhotos,
+    TResult? Function(List<File> photos)? uploadWorkPhoto,
+    TResult? Function(UploadIDCardEntity entity)? uploadWorkId,
+    TResult? Function()? selectWorkId,
+    TResult? Function()? selectAward,
+    TResult? Function(AddEducationEntity param)? updateEducation,
+    TResult? Function()? getEducation,
+    TResult? Function(String identity)? deleteEducation,
+    TResult? Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(String jobId)? getAssignedCandidate,
+    TResult? Function(String identityId)? getCandidateSkill,
+    TResult? Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult? Function(String jobId)? getCandidateProfile,
+    TResult? Function(String value, int skillIndex)? updateSkillRating,
+    TResult? Function(String jobId)? checkIfApplied,
+  }) {
+    return checkIfApplied?.call(jobId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AcceptCandidateEntity param)? acceptCandidate,
+    TResult Function(RejectCandidateEntity param)? rejectCandidate,
+    TResult Function(AddExperienceEntity param)? addExperience,
+    TResult Function(UpdateExperienceEntity param)? updateExperience,
+    TResult Function()? getExperience,
+    TResult Function(String identity)? deleteExperience,
+    TResult Function(AddAwardEntity param)? addAward,
+    TResult Function(UpdateAwardEntity param)? updateAward,
+    TResult Function()? getAward,
+    TResult Function(String identity)? deleteAward,
+    TResult Function(AddEducationEntity param)? addEducation,
+    TResult Function()? getWorkPhotos,
+    TResult Function(String identity)? deleteWorkPhoto,
+    TResult Function(String param)? updateEducationQualification,
+    TResult Function(List<File> photos)? selectWorkPhotos,
+    TResult Function(List<File> photos)? uploadWorkPhoto,
+    TResult Function(UploadIDCardEntity entity)? uploadWorkId,
+    TResult Function()? selectWorkId,
+    TResult Function()? selectAward,
+    TResult Function(AddEducationEntity param)? updateEducation,
+    TResult Function()? getEducation,
+    TResult Function(String identity)? deleteEducation,
+    TResult Function(RejectCandidateWithoutInterviewEntity param)?
+        rejectCandidateWithoutInterview,
+    TResult Function(String jobId)? getAssignedCandidate,
+    TResult Function(String identityId)? getCandidateSkill,
+    TResult Function(List<CandidateSkillEntity> candidateSkills)?
+        initializeSkills,
+    TResult Function(String jobId)? getCandidateProfile,
+    TResult Function(String value, int skillIndex)? updateSkillRating,
+    TResult Function(String jobId)? checkIfApplied,
+    required TResult orElse(),
+  }) {
+    if (checkIfApplied != null) {
+      return checkIfApplied(jobId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AcceptCandidate value) acceptCandidate,
+    required TResult Function(_RejectCandidate value) rejectCandidate,
+    required TResult Function(_AddExperience value) addExperience,
+    required TResult Function(_UpdateExperience value) updateExperience,
+    required TResult Function(_GetExperience value) getExperience,
+    required TResult Function(_DeleteExperience value) deleteExperience,
+    required TResult Function(_AddAward value) addAward,
+    required TResult Function(_UpdateAward value) updateAward,
+    required TResult Function(_GetAward value) getAward,
+    required TResult Function(_DeleteAward value) deleteAward,
+    required TResult Function(_AddEducation value) addEducation,
+    required TResult Function(_GetWorkPhotos value) getWorkPhotos,
+    required TResult Function(_DeleteWorkPhoto value) deleteWorkPhoto,
+    required TResult Function(_UpdateEducationQualification value)
+        updateEducationQualification,
+    required TResult Function(_SelectWorkPhotos value) selectWorkPhotos,
+    required TResult Function(_UploadWorkPhoto value) uploadWorkPhoto,
+    required TResult Function(_UploadWorkId value) uploadWorkId,
+    required TResult Function(_SelectWorkId value) selectWorkId,
+    required TResult Function(_SelectAward value) selectAward,
+    required TResult Function(_UpdateEducation value) updateEducation,
+    required TResult Function(_GetEducation value) getEducation,
+    required TResult Function(_DeleteEducation value) deleteEducation,
+    required TResult Function(_RejectCandidateWithoutInterview value)
+        rejectCandidateWithoutInterview,
+    required TResult Function(_GetAssignedCandidate value) getAssignedCandidate,
+    required TResult Function(_GetCandidateSkill value) getCandidateSkill,
+    required TResult Function(_InitializeSkills value) initializeSkills,
+    required TResult Function(_GetCandidateProfile value) getCandidateProfile,
+    required TResult Function(_UpdateSkillRating value) updateSkillRating,
+    required TResult Function(_CheckIfApplied value) checkIfApplied,
+  }) {
+    return checkIfApplied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AcceptCandidate value)? acceptCandidate,
+    TResult? Function(_RejectCandidate value)? rejectCandidate,
+    TResult? Function(_AddExperience value)? addExperience,
+    TResult? Function(_UpdateExperience value)? updateExperience,
+    TResult? Function(_GetExperience value)? getExperience,
+    TResult? Function(_DeleteExperience value)? deleteExperience,
+    TResult? Function(_AddAward value)? addAward,
+    TResult? Function(_UpdateAward value)? updateAward,
+    TResult? Function(_GetAward value)? getAward,
+    TResult? Function(_DeleteAward value)? deleteAward,
+    TResult? Function(_AddEducation value)? addEducation,
+    TResult? Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult? Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult? Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
+    TResult? Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult? Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult? Function(_UploadWorkId value)? uploadWorkId,
+    TResult? Function(_SelectWorkId value)? selectWorkId,
+    TResult? Function(_SelectAward value)? selectAward,
+    TResult? Function(_UpdateEducation value)? updateEducation,
+    TResult? Function(_GetEducation value)? getEducation,
+    TResult? Function(_DeleteEducation value)? deleteEducation,
+    TResult? Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult? Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult? Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult? Function(_InitializeSkills value)? initializeSkills,
+    TResult? Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult? Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult? Function(_CheckIfApplied value)? checkIfApplied,
+  }) {
+    return checkIfApplied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AcceptCandidate value)? acceptCandidate,
+    TResult Function(_RejectCandidate value)? rejectCandidate,
+    TResult Function(_AddExperience value)? addExperience,
+    TResult Function(_UpdateExperience value)? updateExperience,
+    TResult Function(_GetExperience value)? getExperience,
+    TResult Function(_DeleteExperience value)? deleteExperience,
+    TResult Function(_AddAward value)? addAward,
+    TResult Function(_UpdateAward value)? updateAward,
+    TResult Function(_GetAward value)? getAward,
+    TResult Function(_DeleteAward value)? deleteAward,
+    TResult Function(_AddEducation value)? addEducation,
+    TResult Function(_GetWorkPhotos value)? getWorkPhotos,
+    TResult Function(_DeleteWorkPhoto value)? deleteWorkPhoto,
+    TResult Function(_UpdateEducationQualification value)?
+        updateEducationQualification,
+    TResult Function(_SelectWorkPhotos value)? selectWorkPhotos,
+    TResult Function(_UploadWorkPhoto value)? uploadWorkPhoto,
+    TResult Function(_UploadWorkId value)? uploadWorkId,
+    TResult Function(_SelectWorkId value)? selectWorkId,
+    TResult Function(_SelectAward value)? selectAward,
+    TResult Function(_UpdateEducation value)? updateEducation,
+    TResult Function(_GetEducation value)? getEducation,
+    TResult Function(_DeleteEducation value)? deleteEducation,
+    TResult Function(_RejectCandidateWithoutInterview value)?
+        rejectCandidateWithoutInterview,
+    TResult Function(_GetAssignedCandidate value)? getAssignedCandidate,
+    TResult Function(_GetCandidateSkill value)? getCandidateSkill,
+    TResult Function(_InitializeSkills value)? initializeSkills,
+    TResult Function(_GetCandidateProfile value)? getCandidateProfile,
+    TResult Function(_UpdateSkillRating value)? updateSkillRating,
+    TResult Function(_CheckIfApplied value)? checkIfApplied,
+    required TResult orElse(),
+  }) {
+    if (checkIfApplied != null) {
+      return checkIfApplied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckIfApplied implements CandidatesEvent {
+  const factory _CheckIfApplied(final String jobId) = _$CheckIfAppliedImpl;
+
+  String get jobId;
+  @JsonKey(ignore: true)
+  _$$CheckIfAppliedImplCopyWith<_$CheckIfAppliedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -8600,6 +9082,8 @@ mixin _$CandidatesState {
   RejectCandidateWithoutInterviewState
       get rejectCandidateWithoutInterviewState =>
           throw _privateConstructorUsedError;
+  ViewState get checkIfAppliedState => throw _privateConstructorUsedError;
+  bool get hasAppliedForJob => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   String? get jobId => throw _privateConstructorUsedError;
   File? get picture => throw _privateConstructorUsedError;
@@ -8655,6 +9139,8 @@ mixin _$CandidatesState {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -8705,6 +9191,8 @@ mixin _$CandidatesState {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -8755,6 +9243,8 @@ mixin _$CandidatesState {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -8831,6 +9321,8 @@ abstract class $CandidatesStateCopyWith<$Res> {
       GetCandidateProfileState getCandidateProfileState,
       GetCandidateSkillState getCandidateSkillState,
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
+      ViewState checkIfAppliedState,
+      bool hasAppliedForJob,
       String? errorMessage,
       String? jobId,
       File? picture,
@@ -8889,6 +9381,8 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
     Object? getCandidateProfileState = null,
     Object? getCandidateSkillState = null,
     Object? rejectCandidateWithoutInterviewState = null,
+    Object? checkIfAppliedState = null,
+    Object? hasAppliedForJob = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? picture = freezed,
@@ -9004,6 +9498,14 @@ class _$CandidatesStateCopyWithImpl<$Res, $Val extends CandidatesState>
           ? _value.rejectCandidateWithoutInterviewState
           : rejectCandidateWithoutInterviewState // ignore: cast_nullable_to_non_nullable
               as RejectCandidateWithoutInterviewState,
+      checkIfAppliedState: null == checkIfAppliedState
+          ? _value.checkIfAppliedState
+          : checkIfAppliedState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
+      hasAppliedForJob: null == hasAppliedForJob
+          ? _value.hasAppliedForJob
+          : hasAppliedForJob // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -9120,6 +9622,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       GetCandidateProfileState getCandidateProfileState,
       GetCandidateSkillState getCandidateSkillState,
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
+      ViewState checkIfAppliedState,
+      bool hasAppliedForJob,
       String? errorMessage,
       String? jobId,
       File? picture,
@@ -9176,6 +9680,8 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? getCandidateProfileState = null,
     Object? getCandidateSkillState = null,
     Object? rejectCandidateWithoutInterviewState = null,
+    Object? checkIfAppliedState = null,
+    Object? hasAppliedForJob = null,
     Object? errorMessage = freezed,
     Object? jobId = freezed,
     Object? picture = freezed,
@@ -9291,6 +9797,14 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.rejectCandidateWithoutInterviewState
           : rejectCandidateWithoutInterviewState // ignore: cast_nullable_to_non_nullable
               as RejectCandidateWithoutInterviewState,
+      checkIfAppliedState: null == checkIfAppliedState
+          ? _value.checkIfAppliedState
+          : checkIfAppliedState // ignore: cast_nullable_to_non_nullable
+              as ViewState,
+      hasAppliedForJob: null == hasAppliedForJob
+          ? _value.hasAppliedForJob
+          : hasAppliedForJob // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -9403,6 +9917,8 @@ class _$InitialImpl implements _Initial {
       this.getCandidateSkillState = GetCandidateSkillState.idle,
       this.rejectCandidateWithoutInterviewState =
           RejectCandidateWithoutInterviewState.idle,
+      this.checkIfAppliedState = ViewState.idle,
+      this.hasAppliedForJob = false,
       this.errorMessage,
       this.jobId,
       this.picture,
@@ -9535,6 +10051,12 @@ class _$InitialImpl implements _Initial {
   final RejectCandidateWithoutInterviewState
       rejectCandidateWithoutInterviewState;
   @override
+  @JsonKey()
+  final ViewState checkIfAppliedState;
+  @override
+  @JsonKey()
+  final bool hasAppliedForJob;
+  @override
   final String? errorMessage;
   @override
   final String? jobId;
@@ -9655,7 +10177,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addAwardsState: $addAwardsState, updateAwardsState: $updateAwardsState, deleteAwardsState: $deleteAwardsState, getAwardsState: $getAwardsState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, getWorkPhotoState: $getWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, errorMessage: $errorMessage, jobId: $jobId, picture: $picture, educationQuaification: $educationQuaification, skillRating: $skillRating, skillIndex: $skillIndex, workId: $workId, award: $award, photos: $photos, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, getWorkPhotoEntity: $getWorkPhotoEntity, getAwardsEntity: $getAwardsEntity, dropdownValues: $dropdownValues, educationQuaificationList: $educationQuaificationList, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
+    return 'CandidatesState.initial(acceptCandidateEntity: $acceptCandidateEntity, acceptCandidateState: $acceptCandidateState, addExperienceState: $addExperienceState, updateExperienceState: $updateExperienceState, deleteExperienceState: $deleteExperienceState, getExperienceState: $getExperienceState, addAwardsState: $addAwardsState, updateAwardsState: $updateAwardsState, deleteAwardsState: $deleteAwardsState, getAwardsState: $getAwardsState, addEducationState: $addEducationState, deleteEducationeState: $deleteEducationeState, updateEducationState: $updateEducationState, getEducationeState: $getEducationeState, uploadWorkIdState: $uploadWorkIdState, uploadWorkPhotoState: $uploadWorkPhotoState, getWorkPhotoState: $getWorkPhotoState, deleteWorkPhotoState: $deleteWorkPhotoState, rejectCandidateState: $rejectCandidateState, getAssignedCandidateState: $getAssignedCandidateState, getCandidateProfileState: $getCandidateProfileState, getCandidateSkillState: $getCandidateSkillState, rejectCandidateWithoutInterviewState: $rejectCandidateWithoutInterviewState, checkIfAppliedState: $checkIfAppliedState, hasAppliedForJob: $hasAppliedForJob, errorMessage: $errorMessage, jobId: $jobId, picture: $picture, educationQuaification: $educationQuaification, skillRating: $skillRating, skillIndex: $skillIndex, workId: $workId, award: $award, photos: $photos, getAssignedCandidateList: $getAssignedCandidateList, candidateSkillList: $candidateSkillList, getExperienceEntity: $getExperienceEntity, getEducationEntity: $getEducationEntity, getWorkPhotoEntity: $getWorkPhotoEntity, getAwardsEntity: $getAwardsEntity, dropdownValues: $dropdownValues, educationQuaificationList: $educationQuaificationList, dropdownValue: $dropdownValue, dropdownList: $dropdownList, candidateProfileEntity: $candidateProfileEntity)';
   }
 
   @override
@@ -9710,6 +10232,10 @@ class _$InitialImpl implements _Initial {
             (identical(other.rejectCandidateWithoutInterviewState, rejectCandidateWithoutInterviewState) ||
                 other.rejectCandidateWithoutInterviewState ==
                     rejectCandidateWithoutInterviewState) &&
+            (identical(other.checkIfAppliedState, checkIfAppliedState) ||
+                other.checkIfAppliedState == checkIfAppliedState) &&
+            (identical(other.hasAppliedForJob, hasAppliedForJob) ||
+                other.hasAppliedForJob == hasAppliedForJob) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.jobId, jobId) || other.jobId == jobId) &&
@@ -9733,10 +10259,8 @@ class _$InitialImpl implements _Initial {
                 .equals(other._getEducationEntity, _getEducationEntity) &&
             const DeepCollectionEquality()
                 .equals(other._getWorkPhotoEntity, _getWorkPhotoEntity) &&
-            const DeepCollectionEquality()
-                .equals(other._getAwardsEntity, _getAwardsEntity) &&
-            const DeepCollectionEquality()
-                .equals(other._dropdownValues, _dropdownValues) &&
+            const DeepCollectionEquality().equals(other._getAwardsEntity, _getAwardsEntity) &&
+            const DeepCollectionEquality().equals(other._dropdownValues, _dropdownValues) &&
             const DeepCollectionEquality().equals(other._educationQuaificationList, _educationQuaificationList) &&
             (identical(other.dropdownValue, dropdownValue) || other.dropdownValue == dropdownValue) &&
             const DeepCollectionEquality().equals(other._dropdownList, _dropdownList) &&
@@ -9769,6 +10293,8 @@ class _$InitialImpl implements _Initial {
         getCandidateProfileState,
         getCandidateSkillState,
         rejectCandidateWithoutInterviewState,
+        checkIfAppliedState,
+        hasAppliedForJob,
         errorMessage,
         jobId,
         picture,
@@ -9825,6 +10351,8 @@ class _$InitialImpl implements _Initial {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -9871,6 +10399,8 @@ class _$InitialImpl implements _Initial {
         getCandidateProfileState,
         getCandidateSkillState,
         rejectCandidateWithoutInterviewState,
+        checkIfAppliedState,
+        hasAppliedForJob,
         errorMessage,
         jobId,
         picture,
@@ -9921,6 +10451,8 @@ class _$InitialImpl implements _Initial {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -9967,6 +10499,8 @@ class _$InitialImpl implements _Initial {
         getCandidateProfileState,
         getCandidateSkillState,
         rejectCandidateWithoutInterviewState,
+        checkIfAppliedState,
+        hasAppliedForJob,
         errorMessage,
         jobId,
         picture,
@@ -10017,6 +10551,8 @@ class _$InitialImpl implements _Initial {
             GetCandidateSkillState getCandidateSkillState,
             RejectCandidateWithoutInterviewState
                 rejectCandidateWithoutInterviewState,
+            ViewState checkIfAppliedState,
+            bool hasAppliedForJob,
             String? errorMessage,
             String? jobId,
             File? picture,
@@ -10065,6 +10601,8 @@ class _$InitialImpl implements _Initial {
           getCandidateProfileState,
           getCandidateSkillState,
           rejectCandidateWithoutInterviewState,
+          checkIfAppliedState,
+          hasAppliedForJob,
           errorMessage,
           jobId,
           picture,
@@ -10144,6 +10682,8 @@ abstract class _Initial implements CandidatesState {
       final GetCandidateSkillState getCandidateSkillState,
       final RejectCandidateWithoutInterviewState
           rejectCandidateWithoutInterviewState,
+      final ViewState checkIfAppliedState,
+      final bool hasAppliedForJob,
       final String? errorMessage,
       final String? jobId,
       final File? picture,
@@ -10211,6 +10751,10 @@ abstract class _Initial implements CandidatesState {
   GetCandidateSkillState get getCandidateSkillState;
   @override
   RejectCandidateWithoutInterviewState get rejectCandidateWithoutInterviewState;
+  @override
+  ViewState get checkIfAppliedState;
+  @override
+  bool get hasAppliedForJob;
   @override
   String? get errorMessage;
   @override

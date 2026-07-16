@@ -197,4 +197,9 @@ class CandidateRepositoryImpl implements CandidateRepository {
   Future<Either<Failure, bool>> updateAwards(UpdateAwardEntity entity) {
     return candidateRemoteSource.updateAwards(entity).makeRequest();
   }
+
+  @override
+  Future<Either<Failure, bool>> checkIfApplied(String jobId) {
+    return candidateRemoteSource.checkIfApplied(jobId).makeRequest();
+  }
 }

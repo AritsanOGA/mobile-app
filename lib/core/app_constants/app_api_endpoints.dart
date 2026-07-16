@@ -64,6 +64,7 @@ class AppApiEndpoint {
   static const String candidateProfile = '/api/v1/candidate/get-profile';
   static const String getCandidateSkill =
       'api/v1/employer/candidate/technical-skills';
+  static const String checkIfApplied = '/api/v1/check-if-applied';
 
   //! Employer
   static const String getInvoice = '/api/v1/employer/invoice';

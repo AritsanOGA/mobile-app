@@ -37,6 +37,7 @@ import 'package:artisan_oga/features/candidate/domain/usecases/delete_awards_use
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_work_photo_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/check_if_applied_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_assigned_candidate.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/get_education_usecase.dart';
@@ -199,6 +200,8 @@ Future<void> init() async {
         () => RejectCandidateUseCase(locator()))
     ..registerLazySingleton<GetAssignedCandidateUseCase>(
         () => GetAssignedCandidateUseCase(locator()))
+    ..registerLazySingleton<CheckIfAppliedUseCase>(
+        () => CheckIfAppliedUseCase(locator()))
     ..registerLazySingleton<RegisterJobSeekerUseCase>(
         () => RegisterJobSeekerUseCase(locator()))
     ..registerLazySingleton<CandidateProfileUseCase>(

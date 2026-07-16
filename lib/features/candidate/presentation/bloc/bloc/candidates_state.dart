@@ -32,6 +32,8 @@ class CandidatesState with _$CandidatesState {
       GetCandidateSkillState getCandidateSkillState,
       @Default(RejectCandidateWithoutInterviewState.idle)
       RejectCandidateWithoutInterviewState rejectCandidateWithoutInterviewState,
+      @Default(ViewState.idle) ViewState checkIfAppliedState,
+      @Default(false) bool hasAppliedForJob,
       String? errorMessage,
       String? jobId,
           File? picture,

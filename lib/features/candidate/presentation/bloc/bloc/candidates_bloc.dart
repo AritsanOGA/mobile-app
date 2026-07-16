@@ -26,6 +26,7 @@ import 'package:artisan_oga/features/candidate/domain/usecases/add_awards_usecas
 import 'package:artisan_oga/features/candidate/domain/usecases/add_education_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/add_experience_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_profile_usecase.dart';
+import 'package:artisan_oga/features/candidate/domain/usecases/check_if_applied_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/candidate_skill_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_awards_usecase.dart';
 import 'package:artisan_oga/features/candidate/domain/usecases/delete_education_usecase.dart';
@@ -76,8 +77,10 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
       UploadWorkPhotoUsecase? uploadWorkPhotoUsecase,
       DeleteWorkPhotoUsecase? deleteWorkPhotoUsecase,
       UploadWorkIDUsecase? uploadWorkIDUsecase,
-      GetWorkPhotoUsecase? getWorkPhotoUsecase})
+      GetWorkPhotoUsecase? getWorkPhotoUsecase,
+      CheckIfAppliedUseCase? checkIfAppliedUseCase})
       : _acceptCandidateUsecase = acceptCandidateUsecase ?? locator(),
+        _checkIfAppliedUseCase = checkIfAppliedUseCase ?? locator(),
         _rejectCandidateUsecase = rejectCandidateUseCase ?? locator(),
         _getAssignedCandidateUseCase = getAssignedCandidateUseCase ?? locator(),
         _candidateProfileUseCase = candidateProfileUseCase ?? locator(),
@@ -130,9 +133,11 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
     on<_DeleteEducation>(_onDeleteEducation);
     on<_UpdateEducationQualification>(_onUpdateEducationQualification);
     on<_InitializeSkills>(_onInitializeSkills);
+    on<_CheckIfApplied>(_onCheckIfApplied);
   }
 
   final AcceptCandidateUseCase _acceptCandidateUsecase;
+  final CheckIfAppliedUseCase _checkIfAppliedUseCase;
   final RejectCandidateUseCase _rejectCandidateUsecase;
   final GetAssignedCandidateUseCase _getAssignedCandidateUseCase;
   final CandidateSkillUseCase _candidateSkillUseCase;
@@ -581,5 +586,22 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   FutureOr<void> _onUpdateEducationQualification(
       _UpdateEducationQualification event, Emitter<CandidatesState> emit) {
     emit(state.copyWith(educationQuaification: event.param));
+  }
+
+  FutureOr<void> _onCheckIfApplied(
+      _CheckIfApplied event, Emitter<CandidatesState> emit) async {
+    emit(state.copyWith(checkIfAppliedState: ViewState.loading));
+    final result = await _checkIfAppliedUseCase(event.jobId);
+    result.fold(
+        (error) => emit(state.copyWith(
+              checkIfAppliedState: ViewState.failure,
+              errorMessage: error.message,
+            )),
+        (hasApplied) => emit(state.copyWith(
+              checkIfAppliedState: ViewState.success,
+              hasAppliedForJob: hasApplied,
+            )));
+
+    emit(state.copyWith(checkIfAppliedState: ViewState.idle));
   }
 }

@@ -63,6 +63,7 @@ abstract class CandidateRemoteSource {
   Future<bool> deleteAwards(String identity);
   Future<List<GetAwardEntity>> getAwards();
   Future<List<GetWorkPhotoEntity>> getWorkPhotos();
+  Future<bool> checkIfApplied(String jobId);
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -347,9 +348,21 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   Future<bool> updateAwards(UpdateAwardEntity entity) async {
     final result = await api.post(
         url: AppApiEndpoint.updateAward,
-        body:  UpdateAwardModel.fromEntity(entity).toJson(),
+        body: UpdateAwardModel.fromEntity(entity).toJson(),
         headers: userService.authorizationHeader);
 
     return true;
+  }
+
+  @override
+  Future<bool> checkIfApplied(String jobId) async {
+    print('fhfhhf${userService.authorizationHeader}');
+    final result = await api.get(
+      url: AppApiEndpoint.checkIfApplied,
+      headers: userService.authorizationHeader,
+      queryParameters: {"job_id": jobId},
+    ) as Map<String, dynamic>;
+
+    return result['data'] as bool;
   }
 }
