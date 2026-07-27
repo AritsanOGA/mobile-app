@@ -48,7 +48,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,7 +83,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -118,7 +118,7 @@ mixin _$CandidatesEvent {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -343,7 +343,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return acceptCandidate(param);
   }
@@ -381,7 +381,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return acceptCandidate?.call(param);
   }
@@ -419,7 +419,7 @@ class _$AcceptCandidateImpl implements _AcceptCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (acceptCandidate != null) {
@@ -652,7 +652,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return rejectCandidate(param);
   }
@@ -690,7 +690,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return rejectCandidate?.call(param);
   }
@@ -728,7 +728,7 @@ class _$RejectCandidateImpl implements _RejectCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidate != null) {
@@ -960,7 +960,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return addExperience(param);
   }
@@ -998,7 +998,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return addExperience?.call(param);
   }
@@ -1036,7 +1036,7 @@ class _$AddExperienceImpl implements _AddExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addExperience != null) {
@@ -1269,7 +1269,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return updateExperience(param);
   }
@@ -1307,7 +1307,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return updateExperience?.call(param);
   }
@@ -1345,7 +1345,7 @@ class _$UpdateExperienceImpl implements _UpdateExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateExperience != null) {
@@ -1551,7 +1551,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getExperience();
   }
@@ -1589,7 +1589,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getExperience?.call();
   }
@@ -1627,7 +1627,7 @@ class _$GetExperienceImpl implements _GetExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getExperience != null) {
@@ -1855,7 +1855,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return deleteExperience(identity);
   }
@@ -1893,7 +1893,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return deleteExperience?.call(identity);
   }
@@ -1931,7 +1931,7 @@ class _$DeleteExperienceImpl implements _DeleteExperience {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteExperience != null) {
@@ -2163,7 +2163,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return addAward(param);
   }
@@ -2201,7 +2201,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return addAward?.call(param);
   }
@@ -2239,7 +2239,7 @@ class _$AddAwardImpl implements _AddAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addAward != null) {
@@ -2470,7 +2470,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return updateAward(param);
   }
@@ -2508,7 +2508,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return updateAward?.call(param);
   }
@@ -2546,7 +2546,7 @@ class _$UpdateAwardImpl implements _UpdateAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateAward != null) {
@@ -2751,7 +2751,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getAward();
   }
@@ -2789,7 +2789,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getAward?.call();
   }
@@ -2827,7 +2827,7 @@ class _$GetAwardImpl implements _GetAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAward != null) {
@@ -3054,7 +3054,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return deleteAward(identity);
   }
@@ -3092,7 +3092,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return deleteAward?.call(identity);
   }
@@ -3130,7 +3130,7 @@ class _$DeleteAwardImpl implements _DeleteAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteAward != null) {
@@ -3361,7 +3361,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return addEducation(param);
   }
@@ -3399,7 +3399,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return addEducation?.call(param);
   }
@@ -3437,7 +3437,7 @@ class _$AddEducationImpl implements _AddEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (addEducation != null) {
@@ -3643,7 +3643,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getWorkPhotos();
   }
@@ -3681,7 +3681,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getWorkPhotos?.call();
   }
@@ -3719,7 +3719,7 @@ class _$GetWorkPhotosImpl implements _GetWorkPhotos {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getWorkPhotos != null) {
@@ -3947,7 +3947,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return deleteWorkPhoto(identity);
   }
@@ -3985,7 +3985,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return deleteWorkPhoto?.call(identity);
   }
@@ -4023,7 +4023,7 @@ class _$DeleteWorkPhotoImpl implements _DeleteWorkPhoto {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteWorkPhoto != null) {
@@ -4260,7 +4260,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return updateEducationQualification(param);
   }
@@ -4298,7 +4298,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return updateEducationQualification?.call(param);
   }
@@ -4336,7 +4336,7 @@ class _$UpdateEducationQualificationImpl
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducationQualification != null) {
@@ -4576,7 +4576,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return selectWorkPhotos(photos);
   }
@@ -4614,7 +4614,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return selectWorkPhotos?.call(photos);
   }
@@ -4652,7 +4652,7 @@ class _$SelectWorkPhotosImpl implements _SelectWorkPhotos {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkPhotos != null) {
@@ -4891,7 +4891,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return uploadWorkPhoto(photos);
   }
@@ -4929,7 +4929,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return uploadWorkPhoto?.call(photos);
   }
@@ -4967,7 +4967,7 @@ class _$UploadWorkPhotoImpl implements _UploadWorkPhoto {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkPhoto != null) {
@@ -5199,7 +5199,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return uploadWorkId(entity);
   }
@@ -5237,7 +5237,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return uploadWorkId?.call(entity);
   }
@@ -5275,7 +5275,7 @@ class _$UploadWorkIdImpl implements _UploadWorkId {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (uploadWorkId != null) {
@@ -5481,7 +5481,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return selectWorkId();
   }
@@ -5519,7 +5519,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return selectWorkId?.call();
   }
@@ -5557,7 +5557,7 @@ class _$SelectWorkIdImpl implements _SelectWorkId {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectWorkId != null) {
@@ -5757,7 +5757,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return selectAward();
   }
@@ -5795,7 +5795,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return selectAward?.call();
   }
@@ -5833,7 +5833,7 @@ class _$SelectAwardImpl implements _SelectAward {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (selectAward != null) {
@@ -6060,7 +6060,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return updateEducation(param);
   }
@@ -6098,7 +6098,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return updateEducation?.call(param);
   }
@@ -6136,7 +6136,7 @@ class _$UpdateEducationImpl implements _UpdateEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateEducation != null) {
@@ -6342,7 +6342,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getEducation();
   }
@@ -6380,7 +6380,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getEducation?.call();
   }
@@ -6418,7 +6418,7 @@ class _$GetEducationImpl implements _GetEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getEducation != null) {
@@ -6646,7 +6646,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return deleteEducation(identity);
   }
@@ -6684,7 +6684,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return deleteEducation?.call(identity);
   }
@@ -6722,7 +6722,7 @@ class _$DeleteEducationImpl implements _DeleteEducation {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (deleteEducation != null) {
@@ -6959,7 +6959,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview(param);
   }
@@ -6997,7 +6997,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return rejectCandidateWithoutInterview?.call(param);
   }
@@ -7035,7 +7035,7 @@ class _$RejectCandidateWithoutInterviewImpl
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (rejectCandidateWithoutInterview != null) {
@@ -7271,7 +7271,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getAssignedCandidate(jobId);
   }
@@ -7309,7 +7309,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getAssignedCandidate?.call(jobId);
   }
@@ -7347,7 +7347,7 @@ class _$GetAssignedCandidateImpl implements _GetAssignedCandidate {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getAssignedCandidate != null) {
@@ -7581,7 +7581,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getCandidateSkill(identityId);
   }
@@ -7619,7 +7619,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getCandidateSkill?.call(identityId);
   }
@@ -7657,7 +7657,7 @@ class _$GetCandidateSkillImpl implements _GetCandidateSkill {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateSkill != null) {
@@ -7898,7 +7898,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return initializeSkills(candidateSkills);
   }
@@ -7936,7 +7936,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return initializeSkills?.call(candidateSkills);
   }
@@ -7974,7 +7974,7 @@ class _$InitializeSkillsImpl implements _InitializeSkills {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (initializeSkills != null) {
@@ -8208,7 +8208,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return getCandidateProfile(jobId);
   }
@@ -8246,7 +8246,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return getCandidateProfile?.call(jobId);
   }
@@ -8284,7 +8284,7 @@ class _$GetCandidateProfileImpl implements _GetCandidateProfile {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (getCandidateProfile != null) {
@@ -8526,7 +8526,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
     return updateSkillRating(value, skillIndex);
   }
@@ -8564,7 +8564,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
     return updateSkillRating?.call(value, skillIndex);
   }
@@ -8602,7 +8602,7 @@ class _$UpdateSkillRatingImpl implements _UpdateSkillRating {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (updateSkillRating != null) {
@@ -8747,7 +8747,7 @@ abstract class _$$CheckIfAppliedImplCopyWith<$Res> {
           $Res Function(_$CheckIfAppliedImpl) then) =
       __$$CheckIfAppliedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String jobId});
+  $Res call({String jobId, String identity});
 }
 
 /// @nodoc
@@ -8762,11 +8762,16 @@ class __$$CheckIfAppliedImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? jobId = null,
+    Object? identity = null,
   }) {
     return _then(_$CheckIfAppliedImpl(
       null == jobId
           ? _value.jobId
           : jobId // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == identity
+          ? _value.identity
+          : identity // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -8775,14 +8780,16 @@ class __$$CheckIfAppliedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CheckIfAppliedImpl implements _CheckIfApplied {
-  const _$CheckIfAppliedImpl(this.jobId);
+  const _$CheckIfAppliedImpl(this.jobId, this.identity);
 
   @override
   final String jobId;
+  @override
+  final String identity;
 
   @override
   String toString() {
-    return 'CandidatesEvent.checkIfApplied(jobId: $jobId)';
+    return 'CandidatesEvent.checkIfApplied(jobId: $jobId, identity: $identity)';
   }
 
   @override
@@ -8790,11 +8797,13 @@ class _$CheckIfAppliedImpl implements _CheckIfApplied {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CheckIfAppliedImpl &&
-            (identical(other.jobId, jobId) || other.jobId == jobId));
+            (identical(other.jobId, jobId) || other.jobId == jobId) &&
+            (identical(other.identity, identity) ||
+                other.identity == identity));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, jobId);
+  int get hashCode => Object.hash(runtimeType, jobId, identity);
 
   @JsonKey(ignore: true)
   @override
@@ -8836,9 +8845,9 @@ class _$CheckIfAppliedImpl implements _CheckIfApplied {
         initializeSkills,
     required TResult Function(String jobId) getCandidateProfile,
     required TResult Function(String value, int skillIndex) updateSkillRating,
-    required TResult Function(String jobId) checkIfApplied,
+    required TResult Function(String jobId, String identity) checkIfApplied,
   }) {
-    return checkIfApplied(jobId);
+    return checkIfApplied(jobId, identity);
   }
 
   @override
@@ -8874,9 +8883,9 @@ class _$CheckIfAppliedImpl implements _CheckIfApplied {
         initializeSkills,
     TResult? Function(String jobId)? getCandidateProfile,
     TResult? Function(String value, int skillIndex)? updateSkillRating,
-    TResult? Function(String jobId)? checkIfApplied,
+    TResult? Function(String jobId, String identity)? checkIfApplied,
   }) {
-    return checkIfApplied?.call(jobId);
+    return checkIfApplied?.call(jobId, identity);
   }
 
   @override
@@ -8912,11 +8921,11 @@ class _$CheckIfAppliedImpl implements _CheckIfApplied {
         initializeSkills,
     TResult Function(String jobId)? getCandidateProfile,
     TResult Function(String value, int skillIndex)? updateSkillRating,
-    TResult Function(String jobId)? checkIfApplied,
+    TResult Function(String jobId, String identity)? checkIfApplied,
     required TResult orElse(),
   }) {
     if (checkIfApplied != null) {
-      return checkIfApplied(jobId);
+      return checkIfApplied(jobId, identity);
     }
     return orElse();
   }
@@ -9041,9 +9050,11 @@ class _$CheckIfAppliedImpl implements _CheckIfApplied {
 }
 
 abstract class _CheckIfApplied implements CandidatesEvent {
-  const factory _CheckIfApplied(final String jobId) = _$CheckIfAppliedImpl;
+  const factory _CheckIfApplied(final String jobId, final String identity) =
+      _$CheckIfAppliedImpl;
 
   String get jobId;
+  String get identity;
   @JsonKey(ignore: true)
   _$$CheckIfAppliedImplCopyWith<_$CheckIfAppliedImpl> get copyWith =>
       throw _privateConstructorUsedError;

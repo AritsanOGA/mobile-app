@@ -591,7 +591,8 @@ class CandidatesBloc extends Bloc<CandidatesEvent, CandidatesState> {
   FutureOr<void> _onCheckIfApplied(
       _CheckIfApplied event, Emitter<CandidatesState> emit) async {
     emit(state.copyWith(checkIfAppliedState: ViewState.loading));
-    final result = await _checkIfAppliedUseCase(event.jobId);
+    final result = await _checkIfAppliedUseCase(
+        (jobId: event.jobId, identity: event.identity));
     result.fold(
         (error) => emit(state.copyWith(
               checkIfAppliedState: ViewState.failure,

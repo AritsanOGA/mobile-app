@@ -72,7 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       CheckPhoneUsecase? checkPhoneUseCase,
       CandidateSearchUsecase? candidateSearchUsecase,
       HireMeUseCase? hireMeUseCase,
-       CandidateProfileUseCase? candidateProfileUseCase,
+      CandidateProfileUseCase? candidateProfileUseCase,
       GetUserDataUseCase? getUserUseCase})
       : _registerEmployerUseCase = registerEmployerUseCase ?? locator(),
         _registerJobSeekerUseCase = registerJobSeekerUseCase ?? locator(),
@@ -137,7 +137,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_verifyForgotPasswordCode>(_onVerifyForgotPasswordCode);
     on<_SearchJobs>(_onSearchJobs);
     on<_SearchJobDetails>(_onSearchJobDetails);
-      on<_GetCandidateProfile>(_onGetCandidateProfile);
+    on<_GetCandidateProfile>(_onGetCandidateProfile);
   }
 
   final RegisterEmployerUseCase _registerEmployerUseCase;
@@ -160,8 +160,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final CheckEmailUsecase _checkEmailUsecase;
   final CheckPhoneUsecase _checkPhoneUsecase;
   final HireMeUseCase _hireMeUsecase;
-   final CandidateProfileUseCase _candidateProfileUseCase;
-
+  final CandidateProfileUseCase _candidateProfileUseCase;
 
   FutureOr<void> _onUpdateSelectedCountry(
       _UpdateSelectedCountry event, Emitter<AuthState> emit) {
@@ -552,12 +551,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           errorMessage: error.message,
         ),
       ),
-      (email) => emit(
-        state.copyWith(
-          isEmail: email,
-          checkEmailState: ViewState.success,
-        ),
-      ),
+      (email) {
+        print('my email ${email}');
+        emit(
+          state.copyWith(
+            isEmail: email,
+            checkEmailState: ViewState.success,
+          ),
+        );
+      },
     );
     emit(state.copyWith(checkEmailState: ViewState.idle));
   }
@@ -623,10 +625,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(state.copyWith(hireMeState: ViewState.idle));
   }
 
-  FutureOr<void> _onGetCandidateProfile(_GetCandidateProfile event, Emitter<AuthState> emit) async {
-
-        emit(state.copyWith(
-        getCandidateProfileState: ViewState.loading));
+  FutureOr<void> _onGetCandidateProfile(
+      _GetCandidateProfile event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(getCandidateProfileState: ViewState.loading));
     final result = await _candidateProfileUseCase(event.jobId);
     result.fold(
       (error) => emit(
@@ -642,7 +643,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         ),
       ),
     );
-    emit(state.copyWith(
-        getCandidateProfileState: ViewState.idle));
+    emit(state.copyWith(getCandidateProfileState: ViewState.idle));
   }
 }

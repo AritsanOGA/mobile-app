@@ -54,6 +54,6 @@ class CandidatesEvent with _$CandidatesEvent {
       _GetCandidateProfile;
   const factory CandidatesEvent.updateSkillRating(
       String value, int skillIndex) = _UpdateSkillRating;
-  const factory CandidatesEvent.checkIfApplied(String jobId) =
+  const factory CandidatesEvent.checkIfApplied(String jobId, String identity) =
       _CheckIfApplied;
 }

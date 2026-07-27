@@ -303,7 +303,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                     textInputType: TextInputType.name,
                                     controller: whatYouDoController,
                                     validator: FormValidation.stringValidation,
-                                    hintText: "Enter what you can do",
+                                    hintText: "I can do....",
                                     maxLines: 5,
                                     hintStyle: theme.textTheme.titleSmall!)),
                             SizedBox(height: 45.v),

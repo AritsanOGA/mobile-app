@@ -199,7 +199,9 @@ class CandidateRepositoryImpl implements CandidateRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> checkIfApplied(String jobId) {
-    return candidateRemoteSource.checkIfApplied(jobId).makeRequest();
+  Future<Either<Failure, bool>> checkIfApplied(String jobId, String identity) {
+    return candidateRemoteSource
+        .checkIfApplied(jobId, identity)
+        .makeRequest();
   }
 }

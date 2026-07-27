@@ -63,7 +63,7 @@ abstract class CandidateRemoteSource {
   Future<bool> deleteAwards(String identity);
   Future<List<GetAwardEntity>> getAwards();
   Future<List<GetWorkPhotoEntity>> getWorkPhotos();
-  Future<bool> checkIfApplied(String jobId);
+  Future<bool> checkIfApplied(String jobId, String identity);
 }
 
 class CandidateRemoteSourceImpl extends CandidateRemoteSource {
@@ -355,12 +355,12 @@ class CandidateRemoteSourceImpl extends CandidateRemoteSource {
   }
 
   @override
-  Future<bool> checkIfApplied(String jobId) async {
+  Future<bool> checkIfApplied(String jobId, String identity) async {
     print('fhfhhf${userService.authorizationHeader}');
     final result = await api.get(
       url: AppApiEndpoint.checkIfApplied,
       headers: userService.authorizationHeader,
-      queryParameters: {"job_id": jobId},
+      queryParameters: {"job_id": jobId, "user_identity": identity},
     ) as Map<String, dynamic>;
 
     return result['data'] as bool;

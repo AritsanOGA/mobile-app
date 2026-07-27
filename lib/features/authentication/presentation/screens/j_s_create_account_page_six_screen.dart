@@ -71,7 +71,7 @@ class JSCreateAccountPageSixScreen extends HookWidget {
                                 hintStyle: theme.textTheme.titleSmall!),
                             SizedBox(height: 30.v),
                             CustomTextFormField(
-                                title: 'Email',
+                                title: 'Email (Optional)',
                                 controller: guaranterEmailController,
                                 textInputType: TextInputType.emailAddress,
                                 hintText: "Enter Guarantor’s Email",

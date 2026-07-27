@@ -32,6 +32,7 @@ class PasswordResetPage extends HookWidget {
           listener: (context, state) {
             if (state.changePasswordState == ChangePasswordState.success) {
               print('suceess');
+              ToastUtils.showGreenToast('Password Reset Succesfully');
               Navigator.pushNamed(context, AppRoutes.employerLoginPageScreen);
             } else if (state.changePasswordState ==
                 ChangePasswordState.failure) {
@@ -97,7 +98,9 @@ class PasswordResetPage extends HookWidget {
                         title: 'Confirm Password',
                         controller: confirmPasswordController,
                         hintText: "*************",
-                        validator: FormValidation.passwordValidation,
+                        validator: (value) =>
+                            FormValidation.confirmPasswordValidator(
+                                value, passwordController.text),
                         hintStyle: theme.textTheme.titleSmall!,
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
@@ -119,6 +122,10 @@ class PasswordResetPage extends HookWidget {
                             isBusy: state.changePasswordState ==
                                 ChangePasswordState.loading,
                             onPressed: () {
+                              if (!formKey.currentState!.validate()) {
+                                return;
+                              }
+                              print('ghghg');
                               context.read<AuthBloc>().add(
                                     AuthEvent.updatePassword(
                                       UpdatePasswordEntity(

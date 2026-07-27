@@ -99,14 +99,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                               },
                             ),
                             SizedBox(height: 30.v),
-                            CustomTextFormField(
-                                title: 'Street Address',
-                                textInputType: TextInputType.name,
-                                controller: streetaddressController,
-                                validator: FormValidation.stringValidation,
-                                hintText: "Enter Street Address",
-                                hintStyle: theme.textTheme.titleSmall!),
-                            SizedBox(height: 30.v),
+
                             Text('Country',
                                 style: CustomTextStyles
                                     .bodyMediumPrimaryContainer_1),
@@ -282,6 +275,15 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                       ]));
                             }),
                             SizedBox(height: 30.v),
+                            CustomTextFormField(
+                                title: 'Street Address',
+                                textInputType: TextInputType.name,
+                                controller: streetaddressController,
+                                validator: FormValidation.stringValidation,
+                                hintText: "Enter Street Address",
+                                hintStyle: theme.textTheme.titleSmall!),
+
+                            SizedBox(height: 30.v),
                             Row(
                               children: [
                                 Expanded(
@@ -299,7 +301,7 @@ class JSCreateAccountPagetTwoScreen extends HookWidget {
                                 ),
                                 Expanded(
                                   child: CustomTextFormField(
-                                      title: 'Referral Code',
+                                      title: 'Referral Code (Optional)',
                                       controller: referralCodeController,
                                       textInputType: TextInputType.name,
                                       // validator:

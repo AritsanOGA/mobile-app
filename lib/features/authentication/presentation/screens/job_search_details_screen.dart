@@ -106,7 +106,8 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.qualification ?? '',
+                            state.searchJobDetail?.jobDetails.qualification ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -141,19 +142,22 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             'Pay',
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
-                           state.searchJobDetail?.jobDetails.compensationType ==
-                                        'payperjob' ||
-                                    state.searchJobDetail?.jobDetails.compensationType ==
-                                        'Negotiable'
-                                ? Text('Pay per job',
-                                    style: theme.textTheme.bodyMedium?.copyWith(
-                                      fontWeight: FontWeight.w500,
-                                    ))
-                                :    Text(
-                            state.searchJobDetail?.jobDetails.basicSalary ?? '',
-                            style:
-                                CustomTextStyles.labelLargePrimaryContainer_2,
-                          ),
+                          state.searchJobDetail?.jobDetails.compensationType ==
+                                      'payperjob' ||
+                                  state.searchJobDetail?.jobDetails
+                                          .compensationType ==
+                                      'Negotiable'
+                              ? Text('Pay per job',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                  ))
+                              : Text(
+                                  state.searchJobDetail?.jobDetails
+                                          .basicSalary ??
+                                      '',
+                                  style: CustomTextStyles
+                                      .labelLargePrimaryContainer_2,
+                                ),
                         ],
                       ),
                       Column(
@@ -164,7 +168,9 @@ class JobSearchDetailsScreen extends StatelessWidget {
                             style: CustomTextStyles.titleSmallSemiBold,
                           ),
                           Text(
-                            state.searchJobDetail?.jobDetails.applicationDeadline ?? '',
+                            state.searchJobDetail?.jobDetails
+                                    .applicationDeadline ??
+                                '',
                             style:
                                 CustomTextStyles.labelLargePrimaryContainer_2,
                           ),
@@ -246,7 +252,8 @@ class JobSearchDetailsScreen extends StatelessWidget {
                   CustomElevatedButton(
                       text: 'Apply Now',
                       onPressed: () {
-                        ToastUtils.showRedToast('Signin or Create an account to apply');
+                        ToastUtils.showRedToast(
+                            'Signin or Create an account to apply');
                         Future.delayed(Duration(seconds: 3), () {
                           Navigator.push(
                               context,

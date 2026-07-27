@@ -41,13 +41,13 @@ class _DashboardPageState extends State<DashboardPage> {
             );
           },
         ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.jsNotificationPage);
-              },
-              icon: Icon(Icons.notifications))
-        ],
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {
+        //         Navigator.pushNamed(context, AppRoutes.jsNotificationPage);
+        //       },
+        //       icon: Icon(Icons.notifications))
+        // ],
       ),
       body: Container(
         width: double.maxFinite,
@@ -214,18 +214,18 @@ class _DashboardPageState extends State<DashboardPage> {
                                   width: 10,
                                 ),
                                 Text(
-                                  state.jobSeekerJobList[index].status == '0'
+                                  state.jobSeekerJobList[index].approved == 0
                                       ? 'Applied'
                                       : state.jobSeekerJobList[index].status ==
-                                              '1'
+                                              1
                                           ? 'Screened'
                                           : state.jobSeekerJobList[index]
                                                       .status ==
-                                                  '2'
+                                                  2
                                               ? 'Rejected'
                                               : state.jobSeekerJobList[index]
                                                           .status ==
-                                                      '5'
+                                                      5
                                                   ? 'Accepted'
                                                   : '',
                                   style: CustomTextStyles

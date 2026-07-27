@@ -46,5 +46,5 @@ abstract class CandidateRepository {
   Future<Either<Failure, bool>> uploadWorkPhoto(List<File> workPhotos);
   Future<Either<Failure, bool>> rejectCandidateWithoutInterview(
       RejectCandidateWithoutInterviewEntity entity);
-  Future<Either<Failure, bool>> checkIfApplied(String jobId);
+  Future<Either<Failure, bool>> checkIfApplied(String jobId, String identity);
 }

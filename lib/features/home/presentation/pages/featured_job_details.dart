@@ -1,5 +1,6 @@
 import 'package:artisan_oga/core/app_constants/app_colors.dart';
 import 'package:artisan_oga/core/app_export.dart';
+import 'package:artisan_oga/core/services/user_service.dart';
 import 'package:artisan_oga/core/utils/app_formatter.dart';
 import 'package:artisan_oga/core/utils/view_state.dart';
 import 'package:artisan_oga/features/authentication/presentation/blocs/bloc/auth_bloc.dart';
@@ -310,8 +311,12 @@ class FeaturedJobDetailsScreen extends StatelessWidget {
                                             .searchJobDetail?.jobDetails.id
                                             .toString() ??
                                         '';
+                                    final identity =
+                                        UserService().authData?.user.identity ??
+                                            '';
                                     context.read<CandidatesBloc>().add(
-                                        CandidatesEvent.checkIfApplied(jobId));
+                                        CandidatesEvent.checkIfApplied(
+                                            jobId, identity));
                                     // }
                                   });
                             },

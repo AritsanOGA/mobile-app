@@ -80,19 +80,19 @@ class WelcomePageScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15.v),
-            Container(
-              width: 344.h,
-              margin: EdgeInsets.symmetric(horizontal: 8.h),
-              child: Text(
-                "Connecting Talent with Opportunity: Your Next Career Move Starts Here",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: CustomTextStyles.bodyMediumGray700_1,
-              ),
-            ),
-            SizedBox(height: 48.v),
+            // SizedBox(height: 15.v),
+            // Container(
+            //   width: 344.h,
+            //   margin: EdgeInsets.symmetric(horizontal: 8.h),
+            //   child: Text(
+            //     "Connecting Talent with Opportunity: Your Next Career Move Starts Here",
+            //     maxLines: 2,
+            //     overflow: TextOverflow.ellipsis,
+            //     textAlign: TextAlign.center,
+            //     style: CustomTextStyles.bodyMediumGray700_1,
+            //   ),
+            // ),
+            SizedBox(height: 40.v),
             // CustomElevatedButton(
             //   onPressed: (() {
             //     //  Navigator.pushNamed(context, AppRoutes.postJobWithoutLogin);
@@ -105,7 +105,7 @@ class WelcomePageScreen extends StatelessWidget {
               onPressed: (() {
                 Navigator.pushNamed(context, AppRoutes.jobSearch);
               }),
-              text: "Continue as a Job Seeker",
+              text: "Continue",
             ),
             SizedBox(height: 30.v),
             GestureDetector(
@@ -135,7 +135,7 @@ class WelcomePageScreen extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            SizedBox(height: 40.v),
+            SizedBox(height: 70.v),
           ],
         ),
       ),

@@ -13,6 +13,7 @@ class JobSeekerJobResponseEntity extends Equatable {
     this.workType,
     this.profileImage,
     this.status,
+    this.approved,
   });
 
   final int? id;
@@ -26,6 +27,7 @@ class JobSeekerJobResponseEntity extends Equatable {
   final String? workType;
   final dynamic profileImage;
   final String? status;
+  final int? approved;
 
   @override
   List<Object?> get props => [
@@ -40,5 +42,6 @@ class JobSeekerJobResponseEntity extends Equatable {
         profileImage,
         workType,
         status,
+        approved,
       ];
 }
