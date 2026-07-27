@@ -344,7 +344,7 @@ class JSCreateAccountPageFiveScreen extends HookWidget {
                                       Navigator.pushNamed(
                                           context,
                                           AppRoutes
-                                              .jSCreateAccountPageSixScreen,
+                                              .jSCreateAccountWorkPhotosScreen,
                                           arguments: email);
                                     }
                                   }),

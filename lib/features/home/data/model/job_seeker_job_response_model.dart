@@ -14,6 +14,7 @@ class JobSeekerJobResponseModel extends JobSeekerJobResponseEntity {
     super.industry,
     super.status,
     super.approved,
+    super.recruiterUrl,
   });
 
   factory JobSeekerJobResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -30,5 +31,6 @@ class JobSeekerJobResponseModel extends JobSeekerJobResponseEntity {
         industry: json["industry"],
         status: json["status"],
         approved: json["approved"],
+        recruiterUrl: json["recruiter_url"],
       );
 }

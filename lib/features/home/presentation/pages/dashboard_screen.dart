@@ -9,6 +9,7 @@ import 'package:artisan_oga/shared/widgets/app_bar/appbar_leading_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -178,63 +179,74 @@ class _DashboardPageState extends State<DashboardPage> {
                                     state.jobSeekerJobList[index].jobIdentity);
                           },
                           child: ListTile(
-                            leading: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: Center(
-                                child: CircleAvatar(
-                                  radius: 40,
-                                  backgroundImage:
-                                      AssetImage(ImageConstant.jobImage),
+                              leading: SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: Center(
+                                  child: CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage:
+                                        AssetImage(ImageConstant.jobImage),
+                                  ),
                                 ),
                               ),
-                            ),
-                            title: Text(
-                              state.jobSeekerJobList[index].jobTitle ?? '',
-                              style: CustomTextStyles.titleMediumMedium18,
-                            ),
-                            subtitle: Row(
-                              children: [
-                                Text(
-                                  state.jobSeekerJobList[index].workType ?? '',
-                                  style: CustomTextStyles
-                                      .labelLargePrimaryContainer13,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  width: 5,
-                                  height: 5,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: AppColors.kblack),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  state.jobSeekerJobList[index].approved == 0
-                                      ? 'Applied'
-                                      : state.jobSeekerJobList[index].status ==
-                                              1
-                                          ? 'Screened'
-                                          : state.jobSeekerJobList[index]
-                                                      .status ==
-                                                  2
-                                              ? 'Rejected'
-                                              : state.jobSeekerJobList[index]
-                                                          .status ==
-                                                      5
-                                                  ? 'Accepted'
-                                                  : '',
-                                  style: CustomTextStyles
-                                      .labelLargePrimaryContainer13,
-                                ),
-                              ],
-                            ),
-                            trailing: Icon(Icons.more_vert),
-                          ),
+                              title: Text(
+                                state.jobSeekerJobList[index].jobTitle ?? '',
+                                style: CustomTextStyles.titleMediumMedium18,
+                              ),
+                              subtitle: Row(
+                                children: [
+                                  Text(
+                                    state.jobSeekerJobList[index].workType ??
+                                        '',
+                                    style: CustomTextStyles
+                                        .labelLargePrimaryContainer13,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    width: 5,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: AppColors.kblack),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    state.jobSeekerJobList[index].approved == 0
+                                        ? 'Applied'
+                                        : state.jobSeekerJobList[index]
+                                                    .status ==
+                                                1
+                                            ? 'Screened'
+                                            : state.jobSeekerJobList[index]
+                                                        .status ==
+                                                    2
+                                                ? 'Rejected'
+                                                : state.jobSeekerJobList[index]
+                                                            .status ==
+                                                        5
+                                                    ? 'Accepted'
+                                                    : '',
+                                    style: CustomTextStyles
+                                        .labelLargePrimaryContainer13,
+                                  ),
+                                ],
+                              ),
+                              trailing: GestureDetector(
+                                onTap: () {
+                                  launchWhatsAppRecruiter(state
+                                          .jobSeekerJobList[index]
+                                          .recruiterUrl ??
+                                      '');
+                                },
+                                child: RotatedBox(
+                                    quarterTurns: 3,
+                                    child: Image.asset(ImageConstant.whatsapp)),
+                              )),
                         );
                       },
                     ),
@@ -311,6 +323,20 @@ class _DashboardPageState extends State<DashboardPage> {
                   ])),
           Spacer(),
         ]));
+  }
+
+  Future<void> launchWhatsAppRecruiter(String recruiterUrl) async {
+    if (recruiterUrl.isEmpty) return;
+    final Uri url = Uri.parse(recruiterUrl);
+
+    if (await canLaunchUrl(url)) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.externalApplication,
+      );
+    } else {
+      throw 'Could not launch $recruiterUrl. WhatsApp may not be installed.';
+    }
   }
 }
 

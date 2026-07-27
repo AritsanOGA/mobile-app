@@ -25,6 +25,7 @@ abstract class ApiService {
     required String url,
     required dynamic body,
     Map<String, String> headers,
+    Map<String, dynamic>? queryParameters,
   });
 
   //? For making put request to the endpoint
@@ -119,6 +120,7 @@ class ApiServiceImpl implements ApiService {
     required String url,
     required dynamic body,
     Map<String, String>? headers,
+    Map<String, dynamic>? queryParameters,
   }) async {
     //final jsonBody = jsonEncode(body);
     print('hiii ${body.toString()}');
@@ -130,6 +132,7 @@ class ApiServiceImpl implements ApiService {
       final response = await _dio.post<Map<String, dynamic>>(
         url.toString(),
         data: body,
+        queryParameters: queryParameters,
         options: Options(
           headers: headers,
           followRedirects: false,

@@ -115,6 +115,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<_SelectCompanyLogo>(_onSselectCompanyLogo);
     on<_SelectPicture>(_onSelectPicture);
     on<_SelectResume>(_onSelectResume);
+    on<_SelectWorkPhotos>(_onSelectWorkPhotos);
     on<_SelectTabEvent>(_onSelectTabEvent);
     on<_UpdateSelectedState>(_onUpdateSelectedState);
     on<_UpdateSelectedIsChecked>(_onUpdateSelectedIsChecked);
@@ -389,7 +390,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final resumeFile = await _filePickerService.pickFiles(['pdf']);
 
     if (resumeFile == null) return;
-    emit(state.copyWith(resume: File(resumeFile)));
+    if (resumeFile.toLowerCase().endsWith('.pdf')) {
+      emit(state.copyWith(resume: File(resumeFile)));
+    } else {
+      ToastUtils.showRedToast('Only PDF files are allowed.');
+    }
+  }
+
+  FutureOr<void> _onSelectWorkPhotos(
+      _SelectWorkPhotos event, Emitter<AuthState> emit) async {
+    final photos = await _filePickerService.pickImages();
+    if (photos.isEmpty) return;
+    emit(state.copyWith(workPhotos: photos));
   }
 
   FutureOr<void> _onUpdateRegisterEmployerRequest(
@@ -496,7 +508,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   FutureOr<void> _onSearchJobs(
       _SearchJobs event, Emitter<AuthState> emit) async {
-    emit(state.copyWith(searchJobState: SearchJobState.loading));
+    final isLoadMore = event.value.page > 1;
+    emit(state.copyWith(
+      searchJobState:
+          isLoadMore ? SearchJobState.loadingMore : SearchJobState.loading,
+    ));
     final result = await _searchJobUseCase(event.value);
     result.fold(
       (error) => emit(
@@ -507,7 +523,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ),
       (searchJobEntity) => emit(
         state.copyWith(
-          searchJobEntity: searchJobEntity,
+          searchJobEntity: isLoadMore
+              ? [...state.searchJobEntity, ...searchJobEntity]
+              : searchJobEntity,
+          searchJobPage: event.value.page,
+          hasMoreSearchJobs: searchJobEntity.isNotEmpty,
           searchJobState: SearchJobState.success,
         ),
       ),

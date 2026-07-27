@@ -37,7 +37,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       required super.employmentHistory,
       required super.guarantorPhoneNumber,
       required super.referralCode,
-      required super.yearOfGraduation});
+      required super.yearOfGraduation,
+      super.workPhotos});
 
   factory RegisterJobSeekerModel.fromEntity(RegisterJobSeekerEntity entity) =>
       RegisterJobSeekerModel(
@@ -75,7 +76,8 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
           courseName: entity.courseName,
           employmentHistory: entity.employmentHistory,
           guarantorPhoneNumber: entity.guarantorPhoneNumber,
-          yearOfGraduation: entity.yearOfGraduation);
+          yearOfGraduation: entity.yearOfGraduation,
+          workPhotos: entity.workPhotos);
 
   Future<FormData> toJson() async {
     final Map<String, dynamic> formDataMap = {
@@ -140,6 +142,17 @@ class RegisterJobSeekerModel extends RegisterJobSeekerEntity {
       formDataMap['resume'] = await MultipartFile.fromFile(
         "${resume?.path}",
         filename: "${resume?.path.split('/').last}",
+      );
+    }
+
+    if (workPhotos.isNotEmpty) {
+      formDataMap['work_photos[]'] = await Future.wait(
+        workPhotos.map(
+          (path) async => MultipartFile.fromFile(
+            path,
+            filename: path.split('/').last,
+          ),
+        ),
       );
     }
 

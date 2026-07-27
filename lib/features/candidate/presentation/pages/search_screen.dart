@@ -19,13 +19,37 @@ class SearchScreenPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final locationController = useTextEditingController();
+    final scrollController = useScrollController();
     useEffect(() {
       context.read<AuthBloc>().add(AuthEvent.getCategory());
       context.read<AuthBloc>().add(
             AuthEvent.getSkills('1'),
           );
+      context.read<AuthBloc>().add(
+          AuthEvent.searchJobs(SearchJobDataEntity(location: '', skill: '')));
       return null;
     }, []);
+    useEffect(() {
+      void onScroll() {
+        if (scrollController.position.pixels >=
+            scrollController.position.maxScrollExtent - 200) {
+          final authBloc = context.read<AuthBloc>();
+          final currentState = authBloc.state;
+          if (currentState.hasMoreSearchJobs &&
+              currentState.searchJobState != SearchJobState.loading &&
+              currentState.searchJobState != SearchJobState.loadingMore) {
+            authBloc.add(AuthEvent.searchJobs(SearchJobDataEntity(
+              location: '',
+              skill: '',
+              page: currentState.searchJobPage + 1,
+            )));
+          }
+        }
+      }
+
+      scrollController.addListener(onScroll);
+      return () => scrollController.removeListener(onScroll);
+    }, [scrollController]);
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.kwhite,
@@ -34,9 +58,6 @@ class SearchScreenPage extends HookWidget {
           title: 'Search For Jobs',
         ),
         body: BlocBuilder<AuthBloc, AuthState>(
-          bloc: context.read<AuthBloc>()
-            ..add(AuthEvent.searchJobs(
-                SearchJobDataEntity(location: '', skill: ''))),
           builder: (context, state) {
             return RefreshIndicator(
               onRefresh: () async {
@@ -97,10 +118,26 @@ class SearchScreenPage extends HookWidget {
                                   ],
                                 )
                               : ListView.builder(
+                                  controller: scrollController,
                                   physics:
                                       const AlwaysScrollableScrollPhysics(),
-                                  itemCount: state.searchJobEntity.length,
+                                  itemCount: state.searchJobEntity.length +
+                                      (state.searchJobState ==
+                                              SearchJobState.loadingMore
+                                          ? 1
+                                          : 0),
                                   itemBuilder: (context, index) {
+                                    if (index >= state.searchJobEntity.length) {
+                                      return Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            vertical: 20.h),
+                                        child: Center(
+                                          child: CircularProgressIndicator(
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      );
+                                    }
                                     return Padding(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 5, vertical: 10),

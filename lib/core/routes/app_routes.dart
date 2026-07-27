@@ -6,6 +6,7 @@ import 'package:artisan_oga/features/authentication/presentation/screens/forgot_
 import 'package:artisan_oga/features/authentication/presentation/screens/hire_me_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/hire_me_success_page.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_six_screen.dart';
+import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_work_photos_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_three_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_create_account_page_two_screen.dart';
 import 'package:artisan_oga/features/authentication/presentation/screens/j_s_navbar_page.dart';
@@ -168,6 +169,9 @@ class AppRoutes {
 
   static const String jSCreateAccountPageSixScreen =
       '/j_s_create_account_page_six_screen';
+
+  static const String jSCreateAccountWorkPhotosScreen =
+      '/j_s_create_account_work_photos_screen';
 
   static const String jSCreateAccountPageScreen =
       '/j_s_create_account_page_screen';
@@ -560,6 +564,12 @@ class AppRoutes {
       case jSCreateAccountPageSixScreen:
         return AppPageRouteBuilder(
           navigateTo: JSCreateAccountPageSixScreen(
+            email: settings.arguments as String,
+          ),
+        );
+      case jSCreateAccountWorkPhotosScreen:
+        return AppPageRouteBuilder(
+          navigateTo: JSCreateAccountWorkPhotosScreen(
             email: settings.arguments as String,
           ),
         );

@@ -27,6 +27,8 @@ class AuthState with _$AuthState {
     @Default('--Select--') String employmentHistory,
     @Default([]) List<SkillResponseEntity> skills,
     @Default([]) List<SearchJobEntity> searchJobEntity,
+    @Default(1) int searchJobPage,
+    @Default(true) bool hasMoreSearchJobs,
     @Default([]) List<String> yearEnd,
     @Default('1980') String selectedYear,
     // String? selectedYear,
@@ -86,6 +88,7 @@ class AuthState with _$AuthState {
         yearOfGraduation: ''))
     RegisterJobSeekerEntity registerJobSeekerRequest,
     File? resume,
+    @Default([]) List<String> workPhotos,
     @Default([]) List<StateResponseEntity> states,
     @Default(['--Select--', 'Male', 'Female', 'Other']) List<String> genders,
     @Default([

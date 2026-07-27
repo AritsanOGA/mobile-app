@@ -246,6 +246,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final result = await api.post(
       url: AppApiEndpoint.searchJobs,
       body: SearchJobDataModel.fromEntity(entity).toJson(),
+      queryParameters: {'page': entity.page},
     ) as Map<String, dynamic>;
 
     return List<dynamic>.from(result['data']['employers_job']['data'] as List)

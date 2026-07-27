@@ -72,7 +72,7 @@ enum GetCandidateSkillState { idle, loading, success, failure }
 
 enum FlutterWavePaymentState { idle, loading, success, failure }
 
-enum SearchJobState { idle, loading, success, failure }
+enum SearchJobState { idle, loading, loadingMore, success, failure }
 
 enum NoOfCandidateState { idle, loading, success, failure }
 
